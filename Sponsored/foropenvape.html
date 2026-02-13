@@ -1114,6 +1114,80 @@
             .brand-item:last-child {
                 border-bottom: none;
             }
+
+            /* Responsive Comparison Table */
+            .comparison-table-wrapper table,
+            .comparison-table-wrapper thead,
+            .comparison-table-wrapper tbody,
+            .comparison-table-wrapper th,
+            .comparison-table-wrapper td,
+            .comparison-table-wrapper tr {
+                display: block;
+            }
+
+            .comparison-table-wrapper table {
+                min-width: 0 !important;
+                /* Overriding previous fix */
+            }
+
+            .comparison-table-wrapper thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            .comparison-table-wrapper tr {
+                border: 1px solid rgba(15, 58, 95, 0.1);
+                margin-bottom: 30px;
+                border-radius: 20px;
+                padding: 20px;
+                background: var(--white);
+                box-shadow: var(--shadow-sm);
+            }
+
+            .comparison-table-wrapper td {
+                border: none;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                position: relative;
+                padding: 15px 0 15px 50% !important;
+                text-align: right;
+                font-size: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: var(--primary-dark);
+            }
+
+            .comparison-table-wrapper td:before {
+                content: attr(data-label);
+                font-weight: 800;
+                color: var(--primary-teal);
+                text-align: left;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            /* Header for each card */
+            .comparison-table-wrapper td:first-child {
+                background: var(--primary-teal);
+                color: var(--white);
+                margin: -20px -20px 20px -20px;
+                padding: 15px 20px !important;
+                border-radius: 18px 18px 0 0;
+                justify-content: center;
+                font-weight: 900;
+                font-size: 1.2rem;
+                border: none;
+            }
+
+            .comparison-table-wrapper td:first-child:before {
+                display: none;
+            }
+
+            .comparison-table-wrapper td:last-child {
+                border-bottom: none;
+            }
         }
     </style>
 </head>
