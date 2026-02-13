@@ -1,0 +1,97 @@
+<style>
+    #dl-reddit-modal-2025 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999999;
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    #dl-reddit-modal-2025.dl-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    #dl-reddit-modal-2025 .dl-modal-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 94%;
+        max-width: 960px;
+        height: 85vh;
+        background: #fbf8f2;
+        border-radius: 16px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 20px;
+    }
+
+    #dl-reddit-modal-2025 .dl-modal-x {
+        position: sticky;
+        top: 0;
+        float: right;
+        width: 36px;
+        height: 36px;
+        background: #1d508a;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        font-size: 18px;
+        line-height: 1;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    #dl-reddit-modal-2025 .dl-modal-x:hover {
+        background: #ef4444;
+    }
+
+    @media (max-width: 768px) {
+        #dl-reddit-modal-2025 .dl-modal-box {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            padding: 16px;
+        }
+    }
+</style>
+
+<div id="dl-reddit-modal-2025">
+    <div class="dl-modal-box">
+        <button class="dl-modal-x" data-action="close-dl-modal">&times;</button>
+        [reddit_gallery id="delighted"]
+    </div>
+</div>
+
+<script>
+    (function() {
+        'use strict';
+        var modal = document.getElementById('dl-reddit-modal-2025');
+        if (!modal) return;
+
+        document.addEventListener('click', function(e) {
+            var openBtn = e.target.closest('[href="#dl-reddit-scope"]');
+            if (openBtn) {
+                e.preventDefault();
+                modal.classList.add('dl-open');
+                document.body.style.overflow = 'hidden';
+                return;
+            }
+
+            var closeBtn = e.target.closest('[data-action="close-dl-modal"]');
+            var isBackdrop = e.target === modal;
+            if (closeBtn || isBackdrop) {
+                modal.classList.remove('dl-open');
+                document.body.style.overflow = '';
+            }
+        });
+    })();
+</script>

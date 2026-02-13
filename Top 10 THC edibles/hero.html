@@ -1,0 +1,493 @@
+<!-- LAXCC THC Guide Hero (Elementor-safe, mobile-first) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<section class="laxclub-hero-widget" role="region" aria-label="LAX Cannabis Club THC Guide Hero">
+  <div class="laxclub-hero-pattern" aria-hidden="true"></div>
+
+  <div class="laxclub-hero-container">
+    <!-- LEFT: Content -->
+    <div class="laxclub-content">
+      <div class="laxclub-hero-badge" aria-label="Guide badge">
+        <span>🌿</span>
+        <span>LAX Cannabis Club Guide 2026</span>
+      </div>
+
+      <h1 class="laxclub-hero-title">Top THC Edibles &amp; Gummies in LA</h1>
+
+      <p class="laxclub-hero-description">
+        Discover LA's finest cannabis-infused treats in our comprehensive guide. From artisanal chocolates to innovative gummies, explore the best California has to offer.
+      </p>
+
+      <div class="laxclub-hero-stats" aria-label="Guide highlights">
+        <div class="laxclub-stat">
+          <span class="laxclub-stat-number">10+</span>
+          <span class="laxclub-stat-label">Premium Brands</span>
+        </div>
+        <div class="laxclub-stat">
+          <span class="laxclub-stat-number">50+</span>
+          <span class="laxclub-stat-label">Unique Products</span>
+        </div>
+        <div class="laxclub-stat">
+          <span class="laxclub-stat-number">100%</span>
+          <span class="laxclub-stat-label">Lab Tested</span>
+        </div>
+      </div>
+
+      <a href="https://laxcc.com/shop/thc-gummies-edibles-near-lax-airport/" class="laxclub-hero-cta">Shop THC Edibles Near LAX</a>
+    </div>
+
+    <!-- RIGHT: Video (bigger on all screens) -->
+    <div class="laxclub-video-section">
+      <div class="laxclub-video-shell">
+        <div class="video-frame" aria-label="Product video">
+          <video
+            id="hero-video"
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="http://laxcc.com/wp-content/uploads/2025/02/smokiez-edibles11.jpg"
+          >
+            <!-- Use HTTPS if your site is HTTPS -->
+            <source src="http://laxcc.com/wp-content/uploads/2025/08/drops-edibles-gummies-live-rosin.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <div class="video-overlay" aria-hidden="true"></div>
+
+          <button id="sound-toggle" class="sound-toggle muted" aria-label="Toggle sound" title="Toggle sound">
+            <i class="fas fa-volume-mute sound-icon muted" aria-hidden="true"></i>
+            <i class="fas fa-volume-up sound-icon unmuted" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* =========================================
+   LAXCC Hero — Mobile-First, Elementor-safe
+========================================= */
+.laxclub-hero-widget {
+  /* BRAND THEME (scoped) */
+  --brand-primary: #007A8C;
+  --brand-accent:  #00AFC9;
+  --text-on-dark:  #ffffff;
+  --text-muted:    rgba(255,255,255,.86);
+  --panel:         rgba(255,255,255,.10);
+  --ring:          rgba(255,255,255,.20);
+
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  color: var(--text-on-dark);
+  background:
+    linear-gradient(135deg, rgba(0,122,140,.85) 0%, rgba(0,175,201,.78) 100%),
+    url('http://laxcc.com/wp-content/uploads/2025/02/smokiez-edibles11.jpg') center/cover no-repeat;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+/* Background pattern */
+.laxclub-hero-widget .laxclub-hero-pattern{
+  position:absolute; 
+  inset:0;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,.4) 1px, transparent 0);
+  background-size: 36px 36px;
+  opacity:.06;
+  pointer-events:none;
+}
+
+/* Main container - Mobile First */
+.laxclub-hero-widget .laxclub-hero-container{
+  width:100%;
+  max-width: 1920px;
+  display:flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  padding-block: 24px;
+  text-align: center;
+}
+
+/* Content Section */
+.laxclub-hero-widget .laxclub-content{
+  display:flex;
+  flex-direction:column;
+  gap: 16px;
+  max-width: 100%;
+  align-items: center;
+}
+
+/* Badge */
+.laxclub-hero-widget .laxclub-hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--brand-primary) 16%, transparent);
+  backdrop-filter: blur(8px);
+  border:1px solid var(--ring);
+  font-size: 14px;
+  color: #ffffff !important; /* Force white text */
+}
+
+/* Title - FORCE WHITE COLOR with high specificity */
+.laxclub-hero-widget .laxclub-hero-title{
+  margin:0;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-size: 32px; /* Bigger mobile text */
+  color: #ffffff !important; /* Force white text */
+  text-align: center;
+}
+
+/* Description - Better mobile text size */
+.laxclub-hero-widget .laxclub-hero-description{
+  margin:0;
+  font-size: 18px; /* Larger mobile text */
+  line-height: 1.6;
+  color: rgba(255,255,255,.9) !important; /* Force white text */
+  max-width: 90%;
+}
+
+/* Stats Section - SINGLE ROW ON MOBILE */
+.laxclub-hero-widget .laxclub-hero-stats{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Force 3 columns always */
+  gap: 8px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.laxclub-hero-widget .laxclub-stat{
+  padding: 12px 8px;
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--brand-accent) 14%, transparent);
+  border:1px solid var(--ring);
+  text-align:center;
+  min-width: 0; /* Allow shrinking */
+}
+
+.laxclub-hero-widget .laxclub-stat-number{
+  display:block;
+  font-weight: 900;
+  font-size: 24px; /* Bigger mobile numbers */
+  line-height:1.2;
+  text-shadow: 0 2px 10px rgba(0,0,0,.25);
+  color: #ffffff !important; /* Force white text */
+}
+
+.laxclub-hero-widget .laxclub-stat-label{
+  display:block;
+  font-size: 11px; /* Compact labels for mobile */
+  line-height: 1.3;
+  opacity:.95;
+  margin-top: 4px;
+  color: rgba(255,255,255,.95) !important; /* Force white text */
+}
+
+/* Video Section - Mobile First */
+.laxclub-hero-widget .laxclub-video-section{
+  display:flex;
+  justify-content:center;
+  width: 100%;
+}
+
+.laxclub-hero-widget .laxclub-video-shell{
+  width: min(92vw, 560px);
+}
+
+.laxclub-hero-widget .video-frame{
+  position: relative;
+  aspect-ratio: 9 / 16;
+  height: min(520px, 70vh);
+  width: auto;
+  max-width: 100%;
+  margin-inline: auto;
+  border-radius: 20px;
+  overflow: clip;
+  background: linear-gradient(135deg, #1D508A 0%, var(--brand-accent) 100%);
+  border: 2px solid rgba(255,255,255,.18);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.3),
+    0 10px 20px color-mix(in oklab, var(--brand-primary) 20%, transparent);
+  transform: translateZ(0);
+  opacity: 0;
+  animation: laxclub-video-in .9s cubic-bezier(.2,.8,.2,1) .25s forwards;
+}
+
+@keyframes laxclub-video-in{
+  from { transform: translateY(24px) scale(.985); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.laxclub-hero-widget .hero-video{
+  position:absolute; 
+  inset:0;
+  width:100%; 
+  height:100%;
+  object-fit: cover;
+  object-position: center;
+  display:block;
+  border-radius: 18px;
+  background: inherit;
+}
+
+.laxclub-hero-widget .video-overlay{
+  position:absolute; 
+  inset:0;
+  pointer-events:none;
+  background: linear-gradient(to top, rgba(0,0,0,.12), transparent 30%);
+}
+
+/* Sound toggle button */
+.laxclub-hero-widget .sound-toggle{
+  position:absolute;
+  bottom: 14px; 
+  right: 14px;
+  width: 44px; 
+  height: 44px;
+  display:grid; 
+  place-items:center;
+  border:none; 
+  border-radius: 999px;
+  background: rgba(255,255,255,.96);
+  color: var(--brand-primary);
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+  cursor:pointer;
+  transition: transform .2s ease;
+  z-index: 2;
+}
+
+.laxclub-hero-widget .sound-toggle:hover{ 
+  transform: scale(1.08); 
+}
+
+.laxclub-hero-widget .sound-toggle:active{ 
+  transform: scale(.96); 
+}
+
+.laxclub-hero-widget .sound-icon{
+  font-size: 16px;
+  position:absolute; 
+  inset:0;
+  display:grid; 
+  place-items:center;
+  transition: opacity .15s linear;
+}
+
+.laxclub-hero-widget .sound-icon.unmuted{ 
+  opacity:0; 
+}
+
+.laxclub-hero-widget .sound-toggle.unmuted .sound-icon.unmuted{ 
+  opacity:1; 
+}
+
+.laxclub-hero-widget .sound-toggle.unmuted .sound-icon.muted{ 
+  opacity:0; 
+}
+
+/* CTA Button */
+.laxclub-hero-widget .laxclub-hero-cta{
+  display:inline-block;
+  margin-top: 12px;
+  padding: 14px 32px;
+  background: #F89459;
+  color: #ffffff !important;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 12px;
+  border: none;
+  letter-spacing: 0.02em;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+  box-shadow: 0 4px 16px rgba(248, 148, 89, 0.35);
+}
+
+.laxclub-hero-widget .laxclub-hero-cta:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(248, 148, 89, 0.45);
+  background: #e5843e;
+}
+
+.laxclub-hero-widget .laxclub-hero-cta:active{
+  transform: translateY(0);
+}
+
+/* ====== TABLET (768px+) ====== */
+@media (min-width: 768px) {
+  .laxclub-hero-widget {
+    padding: 20px;
+  }
+  
+  .laxclub-hero-widget .laxclub-hero-container{
+    gap: 40px;
+  }
+  
+  .laxclub-hero-widget .laxclub-hero-title{
+    font-size: 42px;
+  }
+  
+  .laxclub-hero-widget .laxclub-hero-description{
+    font-size: 19px;
+    max-width: 80%;
+  }
+  
+  .laxclub-hero-widget .laxclub-hero-stats{
+    gap: 16px;
+    max-width: 500px;
+  }
+  
+  .laxclub-hero-widget .laxclub-stat{
+    padding: 14px 12px;
+  }
+  
+  .laxclub-hero-widget .laxclub-stat-number{
+    font-size: 28px;
+  }
+  
+  .laxclub-hero-widget .laxclub-stat-label{
+    font-size: 13px;
+  }
+  
+  .laxclub-hero-widget .video-frame{
+    height: min(600px, 75vh);
+    border-radius: 24px;
+  }
+  
+  .laxclub-hero-widget .sound-toggle{
+    width: 48px; 
+    height: 48px;
+    bottom: 16px; 
+    right: 16px;
+  }
+}
+
+/* ====== DESKTOP (1024px+) ====== */
+@media (min-width: 1024px) {
+  .laxclub-hero-widget {
+    padding: 32px;
+    max-height: 1080px;
+  }
+  
+  .laxclub-hero-widget .laxclub-hero-container{
+    display: grid;
+    grid-template-columns: minmax(320px, 1.05fr) minmax(320px, .95fr);
+    gap: clamp(32px, 4vw, 64px);
+    text-align: left;
+  }
+  
+  .laxclub-hero-widget .laxclub-content{
+    align-items: flex-start;
+    max-width: 72ch;
+  }
+  
+  .laxclub-hero-widget .laxclub-hero-title{
+    font-size: clamp(42px, 4.2vw, 64px);
+    text-align: left;
+  }
+  
+  .laxclub-hero-widget .laxclub-hero-description{
+    font-size: clamp(18px, 1.4vw, 20px);
+    max-width: 60ch;
+    text-align: left;
+  }
+  
+  .laxclub-hero-widget .laxclub-hero-stats{
+    display: flex; /* Switch to flex on desktop */
+    gap: 24px;
+    max-width: none;
+  }
+  
+  .laxclub-hero-widget .laxclub-stat{
+    min-width: 140px;
+    padding: 14px 16px;
+    border-radius: 16px;
+  }
+  
+  .laxclub-hero-widget .laxclub-stat-number{
+    font-size: clamp(28px, 3vw, 36px);
+  }
+  
+  .laxclub-hero-widget .laxclub-stat-label{
+    font-size: 14px;
+  }
+  
+  .laxclub-hero-widget .laxclub-video-shell{
+    width: min(46vw, 900px);
+  }
+  
+  .laxclub-hero-widget .video-frame{
+    height: clamp(560px, 82vh, 960px);
+    border-radius: 28px;
+    border-width: 3px;
+  }
+  
+  .laxclub-hero-widget .sound-toggle{
+    width: 52px; 
+    height: 52px;
+    bottom: 18px; 
+    right: 18px;
+  }
+  
+  .laxclub-hero-widget .sound-icon{
+    font-size: 18px;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce){
+  .laxclub-hero-widget .video-frame{ 
+    animation: none; 
+    opacity:1; 
+  }
+}
+</style>
+
+<script>
+/* LAXCC Hero — small QoL JS (scoped) */
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('hero-video');
+  const toggle = document.getElementById('sound-toggle');
+
+  if (!video || !toggle) return;
+
+  // Initial UI state
+  toggle.classList.add('muted');
+
+  // Toggle mute/unmute
+  toggle.addEventListener('click', () => {
+    const willUnmute = video.muted;
+    video.muted = !video.muted;
+    toggle.classList.toggle('unmuted', willUnmute);
+    toggle.classList.toggle('muted', !willUnmute);
+  });
+
+  // Pause when off-screen; resume when visible
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Resume only if user hasn't paused (we use 'data-paused' to remember)
+        if (!video.dataset.pausedByUser) video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.25 });
+  io.observe(video);
+
+  // If user manually pauses via native controls (if enabled later)
+  video.addEventListener('pause', () => { video.dataset.pausedByUser = '1'; });
+  video.addEventListener('play',  () => { delete video.dataset.pausedByUser; });
+});
+</script>

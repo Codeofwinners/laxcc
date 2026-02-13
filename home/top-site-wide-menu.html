@@ -1,0 +1,3768 @@
+
+    <style>
+        /* LAXCC Mobile Navigation - Elementor Scoped Styles */
+        .laxcc-mobile-nav-widget {
+            --laxcc-primary: #1d1d1f;
+            --laxcc-secondary: #424245;
+            --laxcc-blue: #007aff;
+            --laxcc-brand: #00AFC9;
+            --laxcc-brand-light: #7ECBB3;
+            --laxcc-brand-dark: #1D508A;
+            --laxcc-white: #ffffff;
+            --laxcc-gray-50: #fafafa;
+            --laxcc-gray-100: #f5f5f7;
+            --laxcc-gray-200: #e8e8ed;
+            --laxcc-tertiary: #86868b;
+            --laxcc-red: #ff3b30;
+            --laxcc-orange: #ff9500;
+            --laxcc-green: #34c759;
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        /* Reset only for LAXCC components */
+        .laxcc-mobile-nav-widget *,
+        .laxcc-mobile-nav-widget *::before,
+        .laxcc-mobile-nav-widget *::after {
+            box-sizing: border-box;
+        }
+
+        .laxcc-mobile-nav-widget {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+            color: var(--laxcc-primary) !important;
+            line-height: 1.6 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* --- Main Header (Compact Design) --- */
+        .laxcc-mobile-nav-widget .laxcc-header {
+            background: #00AFC9;
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: none;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            left: 0;
+            right: 0;
+        }
+
+        /* Fix scroll offset for sticky header */
+        html {
+            scroll-padding-top: 120px;
+            scroll-behavior: smooth;
+        }
+
+        /* Alternative method for older browsers */
+        .laxcc-mobile-nav-widget .laxcc-quick-action:target::before,
+        *[id]:target::before {
+            content: "";
+            display: block;
+            height: 120px;
+            margin-top: -120px;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* Ensure menu buttons don't cause content cutoff */
+        .laxcc-mobile-nav-widget .laxcc-quick-action {
+            position: relative;
+        }
+
+        /* Additional mobile-specific offset */
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 140px;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-quick-action:target::before,
+            *[id]:target::before {
+                height: 140px;
+                margin-top: -140px;
+            }
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.375rem 0.75rem;
+            max-width: 100%;
+            width: 100%;
+            margin: 0;
+            gap: 0.5rem;
+            position: relative;
+        }
+
+        /* Elementor-specific fixes for full width */
+        #laxcc-nav-widget-unique {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        #laxcc-nav-widget-unique .laxcc-header {
+            width: 100vw !important;
+            max-width: 100vw !important;
+            margin-left: calc(-50vw + 50%) !important;
+            margin-right: calc(-50vw + 50%) !important;
+            left: 0 !important;
+            right: 0 !important;
+        }
+
+        #laxcc-nav-widget-unique .laxcc-header-container {
+            width: 100% !important;
+            margin: 0 auto !important;
+        }
+
+        /* Quick Actions Full Width */
+        #laxcc-nav-widget-unique .laxcc-quick-actions {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 0.75rem !important;
+            box-sizing: border-box !important;
+        }
+
+        /* Prevent any parent containers from constraining width */
+        #laxcc-nav-widget-unique * {
+            box-sizing: border-box !important;
+        }
+
+        /* Hamburger Menu Button */
+        .laxcc-mobile-nav-widget .laxcc-hamburger {
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            padding: 0;
+            transition: var(--transition-smooth);
+            position: relative;
+            z-index: 100;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--laxcc-white);
+            transition: var(--transition-smooth);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger:hover span {
+            background: var(--laxcc-white);
+        }
+
+        /* Hide hamburger on desktop */
+        @media (min-width: 769px) {
+            .laxcc-mobile-nav-widget .laxcc-hamburger {
+                display: none;
+            }
+        }
+
+        /* Hamburger Menu Button */
+        .laxcc-mobile-nav-widget .laxcc-hamburger {
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            padding: 0;
+            transition: var(--transition-smooth);
+            position: relative;
+            z-index: 100;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--laxcc-white);
+            transition: var(--transition-smooth);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger:hover span {
+            background: var(--laxcc-white);
+        }
+
+        /* Hide hamburger on desktop */
+        @media (min-width: 769px) {
+            .laxcc-mobile-nav-widget .laxcc-hamburger {
+                display: none;
+            }
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-logo {
+            flex-shrink: 0;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-logo img {
+            height: 36px;
+            width: auto;
+            transition: var(--transition-bounce);
+        }
+
+        /* Search Bar for Mobile */
+        .laxcc-mobile-nav-widget .laxcc-search-wrapper {
+            flex: 1;
+            position: relative;
+        }
+
+        /* Autocomplete Dropdown */
+        .laxcc-mobile-nav-widget .laxcc-autocomplete {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--laxcc-white);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            z-index: 10000 !important;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+            margin-top: 4px;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-autocomplete.show {
+            display: block;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-autocomplete-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: background-color 0.2s ease;
+            font-size: 14px;
+            color: var(--laxcc-primary);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-autocomplete-item:last-child {
+            border-bottom: none;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-autocomplete-item:hover,
+        .laxcc-mobile-nav-widget .laxcc-autocomplete-item.highlighted {
+            background: var(--laxcc-gray-100);
+            color: var(--laxcc-brand);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-autocomplete-item.highlighted {
+            background: rgba(0, 175, 201, 0.1);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-search {
+            width: 100%;
+            background: var(--laxcc-white);
+            border: none;
+            padding: 0.625rem 2.5rem 0.625rem 1rem;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-search::placeholder {
+            color: var(--laxcc-tertiary);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-search:focus {
+            outline: none;
+            background: var(--laxcc-white);
+            box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-search-submit {
+            position: absolute;
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            color: var(--laxcc-brand);
+            pointer-events: auto;
+            padding: 0;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-search-submit:hover {
+            color: var(--laxcc-primary);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-search-submit svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Header CTA Button */
+        .laxcc-mobile-nav-widget .laxcc-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Google Translate Wrapper - Compact Styling */
+        /* Language Switcher Styling */
+        .laxcc-mobile-nav-widget .laxcc-language-switcher {
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            margin-right: 0.25rem;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-language-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.375rem 0.75rem;
+            background: transparent;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--laxcc-white);
+            user-select: none;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-language-toggle:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-language-toggle i {
+            font-size: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-language-toggle.active i {
+            transform: rotate(180deg);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-language-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: var(--laxcc-white);
+            border: 1px solid var(--laxcc-gray-200);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1001;
+            min-width: 160px;
+            overflow: hidden;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-language-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-lang-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            color: var(--laxcc-primary);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            font-size: 14px;
+            font-weight: 500;
+            border-bottom: 1px solid var(--laxcc-gray-100);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-lang-option:last-child {
+            border-bottom: none;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-lang-option:hover {
+            background: var(--laxcc-gray-50);
+            color: var(--laxcc-brand);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-lang-option.active {
+            background: rgba(0, 175, 201, 0.1);
+            color: var(--laxcc-brand);
+            font-weight: 600;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-flag {
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Hide Google Translate's default elements */
+        .goog-te-banner-frame,
+        .goog-te-menu-frame {
+            display: none !important;
+        }
+        
+        #google_translate_element {
+            display: none !important;
+        }
+        
+        /* Prevent Google Translate from adding top padding to body */
+        body {
+            top: 0 !important;
+        }
+        
+        .goog-te-spinner-pos {
+            display: none !important;
+        }
+
+        /* Elementor compatibility fixes for autocomplete */
+        .elementor-widget-container .laxcc-autocomplete,
+        .elementor-html-tag .laxcc-autocomplete {
+            z-index: 10000 !important;
+            position: absolute !important;
+        }
+        
+        /* Elementor popup autocomplete fix */
+        .dialog-container .laxcc-autocomplete,
+        .elementor-popup-modal .laxcc-autocomplete {
+            z-index: 10001 !important;
+        }
+
+        /* Elementor widget container overflow fixes for hover effects */
+        .elementor-widget-container:has(.laxcc-mobile-nav-widget),
+        .elementor-widget-container .laxcc-mobile-nav-widget,
+        .elementor-html-tag:has(.laxcc-mobile-nav-widget) {
+            overflow: visible !important;
+            contain: none !important;
+            clip-path: none !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* Ensure Elementor sections don't clip hover effects */
+        .elementor-section:has(.laxcc-mobile-nav-widget),
+        .elementor-container:has(.laxcc-mobile-nav-widget) {
+            overflow: visible !important;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        /* Elementor column fixes for full width */
+        .elementor-column:has(#laxcc-nav-widget-unique),
+        .elementor-widget:has(#laxcc-nav-widget-unique) {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+
+        /* Desktop/Mobile visibility controls */
+        .laxcc-mobile-nav-widget .laxcc-desktop-only {
+            display: flex;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-mobile-only {
+            display: none;
+        }
+
+
+
+        /* Mobile responsive adjustments for translate */
+        @media (max-width: 768px) {
+            .laxcc-mobile-nav-widget .laxcc-desktop-only {
+                display: none !important;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-mobile-only {
+                display: flex !important;
+            }
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-header-cta {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--laxcc-white);
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            white-space: nowrap;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-header-cta:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Quick Actions Bar - Compact */
+        .laxcc-mobile-nav-widget .laxcc-quick-actions {
+            background: transparent;
+            padding: 0 0.75rem;
+            display: flex;
+            gap: 0.375rem;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            border: none;
+            flex-wrap: wrap;
+        }
+
+        /* Category Row - Ensure no white background */
+        .laxcc-mobile-nav-widget #laxcc-category-row,
+        .laxcc-mobile-nav-widget .laxcc-quick-actions {
+            background: transparent !important;
+            background-color: transparent !important;
+            background-image: none !important;
+            /* Enhanced scrolling */
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            /* Better touch scrolling */
+            touch-action: pan-x;
+            overscroll-behavior-x: contain;
+            /* Custom scrollbar */
+            scrollbar-width: thin;
+            scrollbar-color: var(--laxcc-brand) rgba(0, 175, 201, 0.1);
+        }
+
+        /* Hide default scrollbar completely */
+        .laxcc-mobile-nav-widget #laxcc-category-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .laxcc-mobile-nav-widget #laxcc-category-row {
+            scrollbar-width: none;
+        }
+
+        /* Progress bar removed for compact mobile design */
+
+        .laxcc-mobile-nav-widget .laxcc-quick-action {
+            flex-shrink: 0;
+            padding: 0.375rem 0.75rem;
+            background: transparent;
+            border: none;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--laxcc-white);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            box-shadow: none;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-quick-action.active {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--laxcc-white);
+            border: none;
+            transform: translateY(-1px);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-quick-action:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            transform: translateY(-1px);
+        }
+
+        /* --- Desktop Navigation (Hidden on Mobile) --- */
+        .laxcc-mobile-nav-widget .laxcc-nav {
+            display: none;
+        }
+
+        /* --- Working CSS-Only Mobile Navigation --- */
+        
+        /* Hide the toggle checkbox */
+        .laxcc-mobile-nav-widget .laxcc-mobile-toggle {
+            display: none;
+        }
+
+        /* Hamburger button styling */
+        .laxcc-mobile-nav-widget .laxcc-hamburger-label {
+            display: flex;
+            flex-direction: column;
+            width: 50px;
+            height: 50px;
+            background: var(--laxcc-brand);
+            border-radius: 50%;
+            position: fixed;
+            bottom: 6rem;
+            left: 1rem;
+            cursor: pointer;
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-label:hover {
+            transform: scale(1.1);
+            background: var(--laxcc-brand-dark);
+        }
+
+        /* Hamburger lines */
+        .laxcc-mobile-nav-widget .laxcc-hamburger-line {
+            width: 20px;
+            height: 2px;
+            background: white;
+            margin: 2px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Hamburger animation to X */
+        .laxcc-mobile-nav-widget .laxcc-mobile-toggle:checked + .laxcc-hamburger-label .laxcc-hamburger-line:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-mobile-toggle:checked + .laxcc-hamburger-label .laxcc-hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-mobile-toggle:checked + .laxcc-hamburger-label .laxcc-hamburger-line:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Mobile navigation menu - expands from button */
+        .laxcc-mobile-nav-widget #laxccMobileNav.laxcc-mobile-nav {
+            position: fixed;
+            left: 1rem;
+            bottom: 11.5rem;
+            width: 50px;
+            background: transparent;
+            backdrop-filter: none;
+            border-radius: 25px;
+            padding: 0;
+            max-height: 0px;
+            overflow-x: visible;
+            overflow-y: hidden;
+            transition: all 0.3s ease-out;
+            z-index: 998;
+            box-shadow: none;
+            padding-top: 0px;
+        }
+
+        /* Show navigation when toggle is checked */
+        .laxcc-mobile-nav-widget .laxcc-mobile-toggle:checked ~ #laxccMobileNav.laxcc-mobile-nav {
+            max-height: 400px;
+            width: 60px;
+            border-radius: 30px;
+            padding-top: 0px;
+            padding-bottom: 1rem;
+            background: rgba(0, 175, 201, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hide on desktop */
+        @media (min-width: 769px) {
+            .laxcc-mobile-nav-widget .laxcc-hamburger-label,
+            .laxcc-mobile-nav-widget .laxcc-hamburger-label,
+            .laxcc-mobile-nav-widget #laxccMobileNav.laxcc-mobile-nav {
+                display: none !important;
+            }
+        }
+
+
+
+
+        /* Fallback for browsers without backdrop-filter support */
+        @supports not (backdrop-filter: blur(10px)) {
+            .laxcc-mobile-nav-widget .laxcc-mobile-nav {
+                background: rgba(255, 255, 255, 0.9) !important;
+            }
+        }
+
+
+        .laxcc-mobile-nav-widget #laxccMobileNav .laxcc-mobile-link {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 3px !important;
+            text-decoration: none !important;
+            color: white !important;
+            font-size: 10px !important;
+            font-weight: 600 !important;
+            padding: 0.6rem 0.3rem !important;
+            border: none !important;
+            margin: 0.1rem 0 !important;
+            min-height: 48px !important;
+            background: transparent !important;
+            border-radius: 15px !important;
+            transition: all 0.3s ease !important;
+            background: transparent !important;
+            cursor: pointer;
+            position: relative;
+            border-radius: 12px;
+            min-height: 50px;
+        }
+
+        .laxcc-mobile-nav-widget #laxccMobileNav .laxcc-mobile-link svg {
+            width: 17px !important;
+            height: 17px !important;
+            color: inherit !important;
+            fill: none !important;
+            stroke: currentColor !important;
+            transition: all 0.3s ease !important;
+            flex-shrink: 0 !important;
+        }
+
+        .laxcc-mobile-nav-widget #laxccMobileNav .laxcc-mobile-link span {
+            font-weight: 600 !important;
+            letter-spacing: 0.025em !important;
+            text-align: center !important;
+            line-height: 1.1 !important;
+            white-space: nowrap !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            max-width: 45px !important;
+        }
+
+        /* First navigation item */
+        .laxcc-mobile-nav-widget #laxccMobileNav .laxcc-mobile-link:first-child {
+            margin-top: 0 !important;
+        }
+
+        .laxcc-mobile-nav-widget #laxccMobileNav .laxcc-mobile-link:hover {
+            color: white !important;
+            background: rgba(255, 255, 255, 0.2) !important;
+            backdrop-filter: blur(25px) saturate(1.5) !important;
+            border-radius: 12px !important;
+            transform: scale(1.05) !important;
+            -webkit-backdrop-filter: blur(25px) saturate(1.5);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow:
+                0 12px 40px rgba(29, 80, 138, 0.2),
+                0 0 20px rgba(0, 175, 201, 0.3),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-mobile-link.active {
+            color: #1D508A !important;
+            background: transparent !important;
+            box-shadow: inset 0 0 0 1px rgba(0, 175, 201, 0.4);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-mobile-link.cta {
+            color: var(--laxcc-orange);
+            font-weight: 700;
+            background: transparent !important;
+            box-shadow: inset 0 0 0 1px rgba(255, 149, 0, 0.4);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-mobile-link.cta:hover {
+            background: transparent !important;
+            backdrop-filter: blur(25px) saturate(1.5);
+            -webkit-backdrop-filter: blur(25px) saturate(1.5);
+            box-shadow:
+                0 12px 40px rgba(255, 149, 0, 0.4),
+                0 0 20px rgba(255, 149, 0, 0.5),
+                inset 0 0 0 1px rgba(255, 149, 0, 0.6);
+            transform: translateY(-3px) scale(1.08);
+            border-radius: 16px;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-mobile-link .pulse-dot {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 6px;
+            height: 6px;
+            background: var(--laxcc-red);
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.5;
+            }
+        }
+
+        /* EPIC Fire animation for deals button */
+        .laxcc-mobile-nav-widget .laxcc-quick-action[data-category="deals"] {
+            position: relative !important;
+            overflow: visible !important;
+            z-index: 10 !important;
+        }
+
+        /* Main fire emoji with advanced animation */
+        .laxcc-mobile-nav-widget .laxcc-quick-action[data-category="deals"] span:first-child {
+            display: inline-block !important;
+            animation:
+                epicFireDance 0.8s ease-in-out infinite alternate,
+                fireColorShift 3s linear infinite,
+                fireIntensity 2s ease-in-out infinite !important;
+            transform-origin: center bottom !important;
+            filter: drop-shadow(0 0 3px #ff6b00) drop-shadow(0 0 6px #ff3300) !important;
+            position: relative !important;
+            z-index: 2 !important;
+        }
+
+        /* Daily Deals button - same style as other buttons */
+        .laxcc-mobile-nav-widget .laxcc-quick-action[data-category="deals"] {
+            background: transparent !important;
+            background-size: 100% 100% !important;
+            animation: none !important;
+            color: var(--laxcc-white) !important;
+            font-weight: 600 !important;
+            text-shadow: none !important;
+            box-shadow: none !important;
+            border: none !important;
+            transition: var(--transition-smooth) !important;
+        }
+
+        /* Hover state */
+        .laxcc-mobile-nav-widget .laxcc-quick-action[data-category="deals"]:hover {
+            transform: translateY(-1px) !important;
+            background: rgba(255, 255, 255, 0.15) !important;
+            color: var(--laxcc-white) !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        /* Removed pulsing ring effect to prevent bleeding */
+
+        /* Removed static sparkle to prevent overlap */
+
+        /* Advanced keyframes */
+        @keyframes epicFireDance {
+            0% {
+                transform: scale(1) rotate(-2deg) translateY(0);
+            }
+            20% {
+                transform: scale(1.15) rotate(1deg) translateY(-1px);
+            }
+            40% {
+                transform: scale(1.05) rotate(-1.5deg) translateY(-2px);
+            }
+            60% {
+                transform: scale(1.2) rotate(2deg) translateY(-1px);
+            }
+            80% {
+                transform: scale(1.1) rotate(-1deg) translateY(0);
+            }
+            100% {
+                transform: scale(1.15) rotate(1.5deg) translateY(-2px);
+            }
+        }
+
+        @keyframes fireColorShift {
+            0% { filter: hue-rotate(0deg) brightness(1) contrast(1.1); }
+            25% { filter: hue-rotate(-10deg) brightness(1.2) contrast(1.2); }
+            50% { filter: hue-rotate(10deg) brightness(1.1) contrast(1.15); }
+            75% { filter: hue-rotate(-5deg) brightness(1.3) contrast(1.2); }
+            100% { filter: hue-rotate(0deg) brightness(1) contrast(1.1); }
+        }
+
+        @keyframes fireIntensity {
+            0%, 100% { opacity: 0.9; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes fireGradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+
+        @keyframes sparkFloat {
+            0%, 100% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-20px) translateX(10px) rotate(180deg);
+                opacity: 1;
+            }
+            90% {
+                opacity: 0;
+            }
+        }
+
+        /* Mobile-specific enhancements removed - using standard styling */
+
+        @keyframes mobilePulseGlow {
+            0%, 100% {
+                box-shadow: none;
+            }
+            50% {
+                box-shadow: none;
+            }
+        }
+
+        /* Floating fire particles */
+        .laxcc-mobile-nav-widget .fire-particle {
+            position: absolute;
+            font-size: 12px;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        .laxcc-mobile-nav-widget .fire-particle-1 {
+            bottom: 5px;
+            left: 10%;
+            animation: floatUp1 4s ease-out infinite;
+            animation-delay: 0s;
+        }
+
+        .laxcc-mobile-nav-widget .fire-particle-2 {
+            bottom: 5px;
+            left: 50%;
+            animation: floatUp2 4s ease-out infinite;
+            animation-delay: 1.3s;
+        }
+
+        .laxcc-mobile-nav-widget .fire-particle-3 {
+            bottom: 5px;
+            right: 10%;
+            animation: floatUp3 4s ease-out infinite;
+            animation-delay: 2.6s;
+        }
+
+        @keyframes floatUp1 {
+            0% {
+                transform: translateY(0) translateX(0) scale(0);
+                opacity: 0;
+            }
+            10% {
+                transform: translateY(-5px) translateX(2px) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-30px) translateX(5px) scale(1.1) rotate(180deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-60px) translateX(10px) scale(0.5) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatUp2 {
+            0% {
+                transform: translateY(0) translateX(0) scale(0);
+                opacity: 0;
+            }
+            10% {
+                transform: translateY(-5px) translateX(-2px) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-35px) translateX(-5px) scale(1.2) rotate(-180deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-65px) translateX(-8px) scale(0.4) rotate(-360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatUp3 {
+            0% {
+                transform: translateY(0) translateX(0) scale(0);
+                opacity: 0;
+            }
+            10% {
+                transform: translateY(-5px) translateX(1px) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-32px) translateX(3px) scale(1.15) rotate(90deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-58px) translateX(5px) scale(0.3) rotate(270deg);
+                opacity: 0;
+            }
+        }
+
+        /* Show more particles on hover */
+        .laxcc-mobile-nav-widget .laxcc-quick-action[data-category="deals"]:hover .fire-particle {
+            animation-duration: 2s !important;
+        }
+
+        /* Budget Button - same style as other buttons */
+        .laxcc-mobile-nav-widget .laxcc-quick-action[data-category="hundred-oz"] {
+            background: transparent !important;
+            color: var(--laxcc-white) !important;
+            font-weight: 600 !important;
+            border: none !important;
+            position: relative !important;
+            overflow: visible !important;
+            box-shadow: none !important;
+        }
+
+        /* Cannabis leaf icon */
+        .laxcc-mobile-nav-widget .laxcc-quick-action[data-category="hundred-oz"] i {
+            display: inline-block !important;
+            color: var(--laxcc-white) !important;
+            filter: none !important;
+        }
+
+        /* Hover effects for Budget */
+        .laxcc-mobile-nav-widget .laxcc-quick-action[data-category="hundred-oz"]:hover {
+            transform: translateY(-1px) !important;
+            background: rgba(255, 255, 255, 0.15) !important;
+            color: var(--laxcc-white) !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        /* Green gradient animation */
+        @keyframes greenGradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+
+        /* Desktop specific styles for Budget */
+        @media (min-width: 769px) {
+            .laxcc-mobile-nav-widget .desktop-categories .laxcc-quick-action[data-category="hundred-oz"] {
+                background: transparent !important;
+                border: none !important;
+                color: var(--laxcc-white) !important;
+            }
+
+            .laxcc-mobile-nav-widget .desktop-categories .laxcc-quick-action[data-category="hundred-oz"]:hover {
+                transform: translateY(-1px) scale(1.02) !important;
+                background: rgba(255, 255, 255, 0.15) !important;
+                color: var(--laxcc-white) !important;
+                border: none !important;
+                z-index: 10 !important;
+                position: relative !important;
+            }
+        }
+
+        /* Cool Glass Reflection Animation */
+        .laxcc-mobile-nav-widget .laxcc-mobile-link::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -50px;
+            width: 30px;
+            height: calc(100% + 4px);
+            background: linear-gradient(90deg,
+                transparent,
+                rgba(255, 255, 255, 0.6) 50%,
+                transparent);
+            transform: skewX(-25deg);
+            opacity: 0;
+            transition: all 0.6s ease;
+            pointer-events: none;
+            border-radius: 16px;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-mobile-link:hover::before {
+            animation: glass-shine 1.5s ease-out;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-mobile-nav:hover .laxcc-mobile-link::before {
+            animation: glass-shine 2s ease-in-out infinite;
+        }
+
+        @keyframes glass-shine {
+            0% {
+                left: -50px;
+                opacity: 0;
+            }
+            50% {
+                left: calc(100% + 20px);
+                opacity: 1;
+            }
+            100% {
+                left: calc(100% + 50px);
+                opacity: 0;
+            }
+        }
+
+        /* --- Mobile Menu Modals --- */
+        .laxcc-mobile-nav-widget .laxcc-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Blue overlay for hamburger menu */
+        .laxcc-mobile-nav-widget .laxcc-modal-overlay.active.hamburger-overlay {
+            background: rgba(0, 175, 201, 0.3);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-modal {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--laxcc-white);
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            z-index: 1002;
+            padding: 1.5rem 1rem calc(1rem + env(safe-area-inset-bottom));
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        /* Hamburger Menu Specific Styles */
+        .laxcc-mobile-nav-widget .laxcc-hamburger-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 90%;
+            max-width: 400px;
+            background: var(--laxcc-white);
+            z-index: 1002;
+            transform: translateX(-100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            padding: 0;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-modal.active {
+            transform: translateX(0);
+        }
+
+        /* Hamburger Modal Header */
+        .laxcc-mobile-nav-widget .laxcc-hamburger-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            background: #00AFC9;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-header .laxcc-logo {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-header .laxcc-logo img {
+            height: 40px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-close {
+            background: transparent;
+            border: none;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--laxcc-white);
+            transition: var(--transition-smooth);
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1;
+            border-radius: 50%;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--laxcc-white);
+        }
+
+        /* Hamburger Menu Navigation */
+        .laxcc-mobile-nav-widget .laxcc-hamburger-nav {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-nav a {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            color: var(--laxcc-primary);
+            font-weight: 500;
+            font-size: 14px;
+            transition: var(--transition-smooth);
+            border-bottom: 1px solid var(--laxcc-gray-100);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-nav a:hover {
+            background: var(--laxcc-gray-50);
+            color: var(--laxcc-brand);
+            padding-left: 2rem;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-nav a:last-child {
+            border-bottom: none;
+        }
+
+        /* Hamburger Main Navigation Grid */
+        .laxcc-mobile-nav-widget .laxcc-hamburger-main-nav {
+            padding: 0.5rem 0.5rem 0.5rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-main-nav-grid {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 0.25rem;
+            margin-top: 0.5rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-nav-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            padding: 0.3rem 0.4rem;
+            background: var(--laxcc-white);
+            border: 1px solid var(--laxcc-gray-200);
+            border-radius: 6px;
+            font-size: 9px;
+            font-weight: 600;
+            color: var(--laxcc-primary);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            white-space: nowrap;
+            min-height: 28px;
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-nav-pill:hover {
+            transform: translateY(-1px);
+            border-color: var(--laxcc-gray-200);
+            background: var(--laxcc-gray-50);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hamburger Categories Grid */
+        .laxcc-mobile-nav-widget .laxcc-hamburger-categories {
+            padding: 0.5rem 0.5rem 0.5rem;
+            border-top: 1px solid var(--laxcc-gray-100);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-categories-grid {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 0.25rem;
+            margin-top: 0.5rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-category-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            padding: 0.3rem 0.4rem;
+            background: var(--laxcc-white);
+            border: 1px solid var(--laxcc-gray-200);
+            border-radius: 6px;
+            font-size: 9px;
+            font-weight: 600;
+            color: var(--laxcc-primary);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            white-space: nowrap;
+            min-height: 28px;
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            box-shadow: none;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-category-pill:hover {
+            transform: translateY(-1px);
+            background: var(--laxcc-gray-50);
+            border-color: var(--laxcc-gray-200);
+            box-shadow: none;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-category-pill[data-category="deals"] {
+            background: var(--laxcc-white);
+            color: var(--laxcc-primary);
+            border: 1px solid var(--laxcc-gray-200);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-category-pill[data-category="deals"]:hover {
+            transform: translateY(-1px);
+            background: var(--laxcc-gray-50);
+            border-color: var(--laxcc-gray-200);
+            box-shadow: none;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-category-pill[data-category="hundred-oz"] {
+            background: var(--laxcc-white) !important;
+            color: var(--laxcc-primary) !important;
+            border: 1px solid var(--laxcc-gray-200) !important;
+            box-shadow: none !important;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-category-pill[data-category="hundred-oz"] i {
+            color: var(--laxcc-primary) !important;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-category-pill[data-category="hundred-oz"]:hover {
+            transform: translateY(-1px);
+            background: var(--laxcc-gray-50) !important;
+            border-color: var(--laxcc-gray-200) !important;
+            box-shadow: none !important;
+        }
+
+
+        /* Responsive adjustments for pills */
+        @media (max-width: 360px) {
+            .laxcc-mobile-nav-widget .laxcc-hamburger-modal {
+                width: 95%;
+                max-width: 350px;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-main-nav-grid,
+            .laxcc-mobile-nav-widget .laxcc-categories-grid {
+                gap: 0.2rem;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-nav-pill,
+            .laxcc-mobile-nav-widget .laxcc-category-pill {
+                padding: 0.25rem 0.3rem;
+                font-size: 8px;
+                min-height: 26px;
+                gap: 0.15rem;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-hamburger-main-nav,
+            .laxcc-mobile-nav-widget .laxcc-hamburger-categories {
+                padding: 0.5rem 0.3rem 0.5rem;
+            }
+        }
+
+        /* Hamburger Menu Specific Styles */
+        .laxcc-mobile-nav-widget .laxcc-hamburger-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 90%;
+            max-width: 400px;
+            background: var(--laxcc-white);
+            z-index: 1002;
+            transform: translateX(-100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            padding: 0;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-modal.active {
+            transform: translateX(0);
+        }
+
+        /* Hamburger Modal Header */
+        .laxcc-mobile-nav-widget .laxcc-hamburger-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            background: #00AFC9;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-header .laxcc-logo {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-header .laxcc-logo img {
+            height: 40px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-close {
+            background: transparent;
+            border: none;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--laxcc-white);
+            transition: var(--transition-smooth);
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1;
+            border-radius: 50%;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--laxcc-white);
+        }
+
+        /* Hamburger Menu Navigation */
+        .laxcc-mobile-nav-widget .laxcc-hamburger-nav {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-nav a {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            color: var(--laxcc-primary);
+            font-weight: 500;
+            font-size: 14px;
+            transition: var(--transition-smooth);
+            border-bottom: 1px solid var(--laxcc-gray-100);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-nav a:hover {
+            background: var(--laxcc-gray-50);
+            color: var(--laxcc-brand);
+            padding-left: 2rem;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-hamburger-nav a:last-child {
+            border-bottom: none;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-modal.active {
+            transform: translateY(0);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0 0.5rem;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-modal-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--laxcc-brand-dark);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-modal-close {
+            background: var(--laxcc-brand-dark);
+            border: none;
+            width: 40px;
+            height: 40px;
+            min-width: 40px !important;
+            min-height: 40px !important;
+            max-width: 40px !important;
+            max-height: 40px !important;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--laxcc-white);
+            transition: var(--transition-smooth);
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(29, 80, 138, 0.25);
+            flex-shrink: 0;
+            line-height: 1;
+            z-index: 1003;
+            position: relative;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            aspect-ratio: 1;
+            padding: 0;
+            margin: 0;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-modal-close:hover {
+            background: var(--laxcc-brand);
+            color: var(--laxcc-white);
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 175, 201, 0.35);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-modal-close:active {
+            transform: scale(0.95);
+            background: var(--laxcc-brand-dark);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-modal-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-modal-list a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: var(--laxcc-primary);
+            font-weight: 500;
+            border-radius: 12px;
+            transition: var(--transition-smooth);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-modal-list a:hover {
+            background: var(--laxcc-gray-100);
+            color: var(--laxcc-brand-dark);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-modal-list a svg {
+            width: 20px;
+            height: 20px;
+            color: var(--laxcc-tertiary);
+        }
+
+        /* Featured Section in Modal - Updated to match brand theme */
+        .laxcc-mobile-nav-widget .laxcc-modal-featured {
+            background: rgba(0, 175, 201, 0.1);
+            padding: 1rem;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-modal-featured h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--laxcc-brand);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-modal-featured a {
+            display: inline-block;
+            background: var(--laxcc-white);
+            color: var(--laxcc-primary);
+            border: 1px solid var(--laxcc-gray-200);
+            padding: 0.625rem 1.5rem;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition-smooth);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-modal-featured a:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Loading state for search */
+        .laxcc-mobile-nav-widget .laxcc-search-loading {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            border: 2px solid var(--laxcc-gray-200);
+            border-top-color: var(--laxcc-brand);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            to { transform: translateY(-50%) rotate(360deg); }
+        }
+
+        /* --- Responsive Design --- */
+        @media (min-width: 769px) {
+            .laxcc-mobile-nav-widget .laxcc-header-container {
+                display: flex;
+                align-items: center;
+                padding: 0.75rem 2rem;
+                max-width: 1920px;
+                width: 100%;
+                margin: 0 auto;
+                gap: 2rem;
+                height: 80px;
+            }
+
+            /* Desktop full width enforcement */
+            #laxcc-nav-widget-unique .laxcc-header-container {
+                max-width: 1920px !important;
+                width: 100% !important;
+                margin: 0 auto !important;
+                padding-left: 2rem !important;
+                padding-right: 2rem !important;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-logo {
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                height: 100%;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-search-wrapper {
+                display: flex;
+                flex: 1;
+                max-width: 600px;
+                position: relative;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-search {
+                width: 100%;
+                padding: 0.625rem 2.5rem 0.625rem 1rem;
+                font-size: 15px;
+                border-radius: 10px;
+                background: var(--laxcc-gray-50);
+                border: 1px solid var(--laxcc-gray-200);
+                font-weight: 500;
+                transition: var(--transition-smooth);
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-search:focus {
+                outline: none;
+                background: var(--laxcc-white);
+                box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+                border-color: var(--laxcc-brand);
+            }
+
+            .laxcc-mobile-nav-widget .desktop-categories {
+                display: flex !important;
+                width: 100vw;
+                padding: 0;
+                margin-left: calc(-50vw + 50%);
+                margin-right: calc(-50vw + 50%);
+                background: transparent;
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                border-bottom: none;
+                border-top: none;
+                justify-content: center;
+                left: 0;
+                right: 0;
+                position: relative;
+            }
+
+            /* Scroll Arrow Buttons - Super Minimal */
+            .laxcc-mobile-nav-widget .laxcc-scroll-arrow {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 28px;
+                height: 28px;
+                background: transparent;
+                border: none;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                z-index: 10;
+                transition: all 0.2s ease;
+                opacity: 0;
+                pointer-events: none;
+                padding: 0;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-scroll-arrow.visible {
+                opacity: 0.6;
+                pointer-events: auto;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-scroll-arrow:hover {
+                opacity: 1;
+                background: rgba(0, 175, 201, 0.1);
+                transform: translateY(-50%) scale(1.15);
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-scroll-arrow:active {
+                transform: translateY(-50%) scale(0.9);
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-scroll-arrow-left {
+                left: 0.5rem;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-scroll-arrow-right {
+                right: 0.5rem;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-scroll-arrow svg {
+                width: 24px;
+                height: 24px;
+                stroke: var(--laxcc-white);
+                fill: none;
+                transition: all 0.2s ease;
+                stroke-width: 3;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-scroll-arrow:hover svg {
+                stroke: var(--laxcc-white);
+            }
+
+            .laxcc-mobile-nav-widget .desktop-categories-container {
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+                justify-content: flex-start;
+                width: 100%;
+                max-width: 1920px;
+                margin: 0 auto;
+                padding: 0 2rem;
+                overflow-x: auto !important;
+                overflow-y: hidden !important;
+                flex-wrap: nowrap !important;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                -webkit-overflow-scrolling: touch;
+                /* Ensure touch horizontal panning works across devices */
+                touch-action: pan-x;
+                overscroll-behavior-x: contain;
+                /* Ensure items don't wrap and can scroll */
+                white-space: nowrap;
+            }
+
+            .laxcc-mobile-nav-widget .desktop-categories-container::-webkit-scrollbar {
+                display: none;
+            }
+
+            /* Hide mobile category row on desktop */
+            .laxcc-mobile-nav-widget #laxcc-category-row {
+                display: none !important;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-header-actions {
+                flex-shrink: 0;
+            }
+
+            /* Desktop category buttons - white text style */
+            .laxcc-mobile-nav-widget .desktop-categories .laxcc-quick-action {
+                font-size: 12px;
+                padding: 0.5rem 0.875rem;
+                white-space: nowrap;
+                background: transparent;
+                border: none;
+                border-radius: 8px;
+                transition: var(--transition-smooth);
+                flex-shrink: 0;
+                font-weight: 600;
+                text-decoration: none;
+                color: var(--laxcc-white);
+                display: flex;
+                align-items: center;
+                gap: 0.375rem;
+                box-shadow: none;
+            }
+
+            .laxcc-mobile-nav-widget .desktop-categories .laxcc-quick-action:hover {
+                transform: translateY(-1px) scale(1.02);
+                background: rgba(255, 255, 255, 0.15);
+                border: none;
+                z-index: 10;
+                position: relative;
+                box-shadow: none;
+            }
+
+            /* Daily Deals uses standard styling now */
+
+            .laxcc-mobile-nav-widget .laxcc-logo img {
+                height: 44px;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-hamburger-label,
+            .laxcc-mobile-nav-widget #laxccMobileNav.laxcc-mobile-nav {
+                display: none !important;
+            }
+
+            /* Hide progress bar on desktop */
+            .laxcc-mobile-nav-widget .laxcc-scroll-progress {
+                display: none !important;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-center {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                flex: 1;
+                justify-content: center;
+            }
+
+            /* Language switcher styling for desktop */
+            .laxcc-mobile-nav-widget .laxcc-language-switcher {
+                display: flex !important;
+                align-items: center !important;
+            }
+        }
+
+        /* Mobile Search Section - Hidden by default */
+        .laxcc-mobile-nav-widget .laxcc-mobile-search-section {
+            display: none;
+            width: 100%;
+            padding: 0.5rem 1rem;
+            background: transparent;
+        }
+
+        /* Mobile search wrapper - needs relative positioning */
+        .laxcc-mobile-nav-widget .laxcc-mobile-search-section .laxcc-search-wrapper {
+            position: relative !important;
+            width: 100% !important;
+        }
+
+        /* Mobile search input styling */
+        .laxcc-mobile-nav-widget .laxcc-mobile-search-section .laxcc-search {
+            width: 100%;
+            background: var(--laxcc-gray-50);
+            border: 1px solid var(--laxcc-gray-200);
+            padding: 0.625rem 3rem 0.625rem 1rem !important;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+            box-sizing: border-box !important;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-mobile-search-section .laxcc-search::placeholder {
+            color: var(--laxcc-tertiary);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-mobile-search-section .laxcc-search:focus {
+            outline: none;
+            background: var(--laxcc-white);
+            box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+            border-color: var(--laxcc-brand);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-mobile-search-section .laxcc-search-submit {
+            position: absolute;
+            right: calc(0.5rem + 20px);
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            color: var(--laxcc-tertiary);
+            pointer-events: auto;
+            padding: 0.25rem;
+            width: 32px;
+            height: 32px;
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-mobile-search-section .laxcc-search-submit:hover {
+            color: var(--laxcc-brand);
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-mobile-search-section .laxcc-search-submit svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Mobile search autocomplete positioning */
+        .laxcc-mobile-nav-widget .laxcc-mobile-search-section .laxcc-autocomplete {
+            position: absolute !important;
+            top: 100% !important;
+            left: 0 !important;
+            right: 0 !important;
+            margin-top: 4px !important;
+            z-index: 10020 !important;
+        }
+
+        /* Mobile responsive - rebuild with 100% width and proper separation */
+        @media (max-width: 768px) {
+            /* Show mobile search section */
+            .laxcc-mobile-nav-widget .laxcc-mobile-search-section {
+                display: block !important;
+            }
+            /* Header container - reduced padding for mobile */
+            .laxcc-mobile-nav-widget .laxcc-header-container {
+                padding: 0.25rem 1rem !important;
+                margin: 0 !important;
+                max-width: none !important;
+                width: 100% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                min-height: 50px !important;
+                flex-wrap: wrap !important;
+                position: relative !important;
+            }
+
+            /* Logo container - properly centered on mobile */
+            .laxcc-mobile-nav-widget .laxcc-logo {
+                position: absolute !important;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                height: 50px !important;
+                z-index: 1 !important;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-logo img {
+                height: 50px !important;
+                width: auto !important;
+                display: block !important;
+            }
+
+            /* Hide desktop search/center section on mobile */
+            .laxcc-mobile-nav-widget .laxcc-center {
+                display: none !important;
+            }
+
+            /* Header actions - compact */
+            .laxcc-mobile-nav-widget .laxcc-header-actions {
+                flex-shrink: 0 !important;
+                display: flex !important;
+                align-items: center !important;
+                gap: 0.5rem !important;
+                order: 3 !important;
+                position: relative !important;
+                z-index: 2 !important;
+            }
+
+            /* Hamburger - left side */
+            .laxcc-mobile-nav-widget .laxcc-hamburger {
+                flex-shrink: 0 !important;
+                order: 1 !important;
+                position: relative !important;
+                z-index: 2 !important;
+            }
+
+            /* Quick actions - completely separate section, 100% width */
+            .laxcc-mobile-nav-widget .laxcc-quick-actions {
+                position: static !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0.75rem 1rem !important;
+                background: transparent !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                border-top: none !important;
+                border-bottom: none !important;
+                box-shadow: none !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                gap: 0.5rem !important;
+                display: flex !important;
+                /* Hide scrollbar */
+                scrollbar-width: none !important;
+                -ms-overflow-style: none !important;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-quick-actions::-webkit-scrollbar {
+                display: none !important;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-quick-action {
+                flex-shrink: 0 !important;
+                min-width: auto !important;
+                padding: 0.5rem 0.75rem !important;
+                border-radius: 8px !important;
+                font-size: 12px !important;
+                font-weight: 600 !important;
+                border: none !important;
+                background: transparent !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                color: var(--laxcc-white) !important;
+                white-space: nowrap !important;
+                display: flex !important;
+                align-items: center !important;
+                gap: 0.375rem !important;
+                transition: all 0.2s ease !important;
+                box-shadow: none !important;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-quick-action:hover {
+                transform: translateY(-1px) !important;
+                box-shadow: none !important;
+                background: rgba(255, 255, 255, 0.15) !important;
+                border: none !important;
+            }
+
+            /* Hide desktop categories on mobile */
+            .laxcc-mobile-nav-widget .desktop-categories {
+                display: none !important;
+            }
+
+            /* Hide scroll arrows on mobile */
+            .laxcc-mobile-nav-widget .laxcc-scroll-arrow {
+                display: none !important;
+            }
+
+            /* Make sure autocomplete works on mobile */
+            .laxcc-mobile-nav-widget .laxcc-autocomplete {
+                z-index: 1010 !important;
+            }
+
+            /* Show mobile category row */
+            .laxcc-mobile-nav-widget #laxcc-category-row {
+                display: flex !important;
+            }
+
+            /* Add bottom spacing for fixed mobile nav */
+            .laxcc-mobile-nav-widget {
+                margin-bottom: calc(70px + env(safe-area-inset-bottom));
+            }
+
+            /* Tighter header on mobile */
+            .laxcc-mobile-nav-widget .laxcc-header {
+                padding: 0;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-header-container {
+                padding: 0.25rem 1rem !important;
+                margin-bottom: 0 !important;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-quick-actions {
+                padding: 0 0.75rem;
+            }
+        }
+
+        /* === TABLET VERSION (769px - 1024px) - Mobile-style Layout === */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            /* Tablet header - similar to mobile but bigger */
+            .laxcc-mobile-nav-widget .laxcc-header-container {
+                padding: 0.5rem 1.5rem !important;
+                margin: 0 !important;
+                max-width: none !important;
+                width: 100% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                min-height: 70px !important;
+                flex-wrap: wrap !important;
+                position: relative !important;
+            }
+
+            /* Tablet logo - centered like mobile */
+            .laxcc-mobile-nav-widget .laxcc-logo {
+                position: absolute !important;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                height: 60px !important;
+                z-index: 1 !important;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-logo img {
+                height: 54px !important;
+                width: auto !important;
+                display: block !important;
+            }
+
+            /* Hide desktop search/center section on tablet */
+            .laxcc-mobile-nav-widget .laxcc-center {
+                display: none !important;
+            }
+
+            /* Show tablet mobile search section - 100% width */
+            .laxcc-mobile-nav-widget .laxcc-mobile-search-section {
+                display: block !important;
+                padding: 0.75rem 1.5rem !important;
+                width: 100% !important;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-mobile-search-section .laxcc-search-wrapper {
+                width: 100% !important;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-mobile-search-section .laxcc-search {
+                width: 100% !important;
+                font-size: 16px !important;
+                padding: 0.875rem 3.5rem 0.875rem 1.5rem !important;
+                border-radius: 30px !important;
+                box-sizing: border-box !important;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-mobile-search-section .laxcc-search-submit {
+                right: calc(0.5rem + 25px) !important;
+            }
+
+            /* Tablet header actions - positioned like mobile */
+            .laxcc-mobile-nav-widget .laxcc-header-actions {
+                flex-shrink: 0 !important;
+                display: flex !important;
+                align-items: center !important;
+                gap: 0.75rem !important;
+                order: 3 !important;
+                position: relative !important;
+                z-index: 2 !important;
+            }
+
+
+            /* Tablet hamburger - positioned like mobile */
+            .laxcc-mobile-nav-widget .laxcc-hamburger {
+                flex-shrink: 0 !important;
+                order: 1 !important;
+                position: relative !important;
+                z-index: 2 !important;
+            }
+
+            /* Tablet header CTA - bigger than mobile */
+            .laxcc-mobile-nav-widget .laxcc-header-cta {
+                padding: 0.75rem 1.5rem !important;
+                font-size: 15px !important;
+                border-radius: 24px !important;
+            }
+
+            /* Hide tablet mobile category row - use desktop categories instead */
+            .laxcc-mobile-nav-widget #laxcc-category-row {
+                display: none !important;
+            }
+
+            /* Tablet category buttons - bigger than mobile */
+            .laxcc-mobile-nav-widget .laxcc-quick-action {
+                font-size: 14px !important;
+                padding: 0.625rem 1rem !important;
+                border-radius: 8px !important;
+            }
+
+            /* Hide tablet floating nav */
+            .laxcc-mobile-nav-widget .laxcc-hamburger-label,
+            .laxcc-mobile-nav-widget #laxccMobileNav.laxcc-mobile-nav {
+                display: none !important;
+            }
+
+            /* Show desktop categories on tablet */
+            .laxcc-mobile-nav-widget .desktop-categories {
+                display: flex !important;
+                width: 100%;
+                padding: 0.75rem 1.5rem;
+                margin: 0;
+                background: transparent;
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                border-bottom: none;
+                border-top: none;
+                justify-content: center;
+            }
+
+            .laxcc-mobile-nav-widget .desktop-categories-container {
+                display: flex !important;
+                gap: 0.5rem;
+                align-items: center;
+                justify-content: flex-start;
+                width: 100%;
+                overflow-x: auto;
+                flex-wrap: nowrap !important;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                -webkit-overflow-scrolling: touch;
+                /* Ensure touch horizontal panning works across devices */
+                touch-action: pan-x;
+                overscroll-behavior-x: contain;
+            }
+        }
+
+        /* Body padding removed for Elementor compatibility - handled by fixed bottom nav */
+
+        @media (max-width: 360px) {
+            .laxcc-mobile-nav-widget .laxcc-header-cta {
+                padding: 0.5rem 0.75rem;
+                font-size: 12px;
+            }
+        }
+
+        .laxcc-mobile-nav-widget .laxcc-header-container,
+        .laxcc-mobile-nav-widget .laxcc-quick-actions,
+        .laxcc-mobile-nav-widget .laxcc-search-wrapper {
+            margin: 0 auto !important;
+            padding: inherit !important;
+            background: transparent !important;
+            border: none !important;
+        }
+
+        .laxcc-mobile-nav-widget input.laxcc-search {
+            border-radius: 10px !important;
+            box-shadow: none !important;
+        }
+
+        /* Rewards Image Styles */
+        .laxcc-mobile-nav-widget .laxcc-rewards-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem auto;
+            border-radius: 12px;
+        }
+
+        /* Ultra-wide screens (1920px+) - Ensure full-width backgrounds */
+        @media (min-width: 1920px) {
+            .laxcc-mobile-nav-widget .laxcc-header,
+            .laxcc-mobile-nav-widget .desktop-categories {
+                width: 100vw !important;
+                min-width: 100vw !important;
+                margin-left: calc(-50vw + 50%) !important;
+                margin-right: calc(-50vw + 50%) !important;
+            }
+
+            .laxcc-mobile-nav-widget .laxcc-header-container {
+                max-width: 1920px !important;
+                width: 100% !important;
+                margin: 0 auto !important;
+                padding: 0.75rem 2rem !important;
+            }
+
+            .laxcc-mobile-nav-widget .desktop-categories-container {
+                max-width: 1920px !important;
+                width: 100% !important;
+                margin: 0 auto !important;
+                padding: 0 2rem !important;
+            }
+
+            /* Ultra-wide full width enforcement */
+            #laxcc-nav-widget-unique .laxcc-header,
+            #laxcc-nav-widget-unique .desktop-categories {
+                width: 100vw !important;
+                margin-left: calc(-50vw + 50%) !important;
+                margin-right: calc(-50vw + 50%) !important;
+            }
+
+            #laxcc-nav-widget-unique .laxcc-header-container,
+            #laxcc-nav-widget-unique .desktop-categories-container {
+                max-width: 1920px !important;
+                width: 100% !important;
+                margin: 0 auto !important;
+                padding-left: 2rem !important;
+                padding-right: 2rem !important;
+            }
+        }
+
+        /* High Specificity Overrides for Elementor WordPress */
+        #laxcc-nav-widget-unique .laxcc-quick-action,
+        #laxcc-nav-widget-unique.laxcc-mobile-nav-widget .laxcc-quick-action {
+            border-radius: 8px !important;
+        }
+
+        #laxcc-nav-widget-unique .laxcc-category-pill,
+        #laxcc-nav-widget-unique.laxcc-mobile-nav-widget .laxcc-category-pill {
+            border-radius: 6px !important;
+        }
+
+        #laxcc-nav-widget-unique .laxcc-nav-pill,
+        #laxcc-nav-widget-unique.laxcc-mobile-nav-widget .laxcc-nav-pill {
+            border-radius: 6px !important;
+        }
+
+        /* Budget Button - High Specificity Styles - Updated to match white theme */
+        #laxcc-nav-widget-unique .laxcc-quick-action[data-category="hundred-oz"],
+        #laxcc-nav-widget-unique.laxcc-mobile-nav-widget .laxcc-quick-action[data-category="hundred-oz"] {
+            background: transparent !important;
+            color: var(--laxcc-white) !important;
+            font-weight: 600 !important;
+            border: none !important;
+            position: relative !important;
+            overflow: visible !important;
+            box-shadow: none !important;
+        }
+
+        #laxcc-nav-widget-unique .laxcc-quick-action[data-category="hundred-oz"] i,
+        #laxcc-nav-widget-unique.laxcc-mobile-nav-widget .laxcc-quick-action[data-category="hundred-oz"] i {
+            display: inline-block !important;
+            color: var(--laxcc-white) !important;
+            filter: none !important;
+        }
+
+        #laxcc-nav-widget-unique .laxcc-quick-action[data-category="hundred-oz"]:hover,
+        #laxcc-nav-widget-unique.laxcc-mobile-nav-widget .laxcc-quick-action[data-category="hundred-oz"]:hover {
+            transform: translateY(-1px) !important;
+            background: rgba(255, 255, 255, 0.15) !important;
+            color: var(--laxcc-white) !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        #laxcc-nav-widget-unique .laxcc-category-pill[data-category="hundred-oz"],
+        #laxcc-nav-widget-unique.laxcc-mobile-nav-widget .laxcc-category-pill[data-category="hundred-oz"] {
+            background: var(--laxcc-white) !important;
+            color: var(--laxcc-primary) !important;
+            border: 1px solid var(--laxcc-gray-200) !important;
+            box-shadow: none !important;
+        }
+
+        #laxcc-nav-widget-unique .laxcc-category-pill[data-category="hundred-oz"] i,
+        #laxcc-nav-widget-unique.laxcc-mobile-nav-widget .laxcc-category-pill[data-category="hundred-oz"] i {
+            color: var(--laxcc-primary) !important;
+        }
+
+        #laxcc-nav-widget-unique .laxcc-category-pill[data-category="hundred-oz"]:hover,
+        #laxcc-nav-widget-unique.laxcc-mobile-nav-widget .laxcc-category-pill[data-category="hundred-oz"]:hover {
+            transform: translateY(-1px) !important;
+            background: var(--laxcc-gray-50) !important;
+            border-color: var(--laxcc-gray-200) !important;
+            box-shadow: none !important;
+        }
+
+        @media (min-width: 769px) {
+            #laxcc-nav-widget-unique .desktop-categories .laxcc-quick-action[data-category="hundred-oz"],
+            #laxcc-nav-widget-unique.laxcc-mobile-nav-widget .desktop-categories .laxcc-quick-action[data-category="hundred-oz"] {
+                background: transparent !important;
+                border: none !important;
+                color: var(--laxcc-white) !important;
+            }
+
+            #laxcc-nav-widget-unique .desktop-categories .laxcc-quick-action[data-category="hundred-oz"]:hover,
+            #laxcc-nav-widget-unique.laxcc-mobile-nav-widget .desktop-categories .laxcc-quick-action[data-category="hundred-oz"]:hover {
+                transform: translateY(-1px) scale(1.02) !important;
+                background: rgba(255, 255, 255, 0.15) !important;
+                color: var(--laxcc-white) !important;
+                border: none !important;
+                z-index: 10 !important;
+                position: relative !important;
+            }
+        }
+
+        /* ===== COMPREHENSIVE ELEMENTOR WORDPRESS COMPATIBILITY ===== */
+        /* Force full width and prevent left-side cutoff in all Elementor containers */
+
+        /* Widget container overrides */
+        .elementor-widget-container:has(#laxcc-nav-widget-unique) {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: visible !important;
+        }
+
+        /* Section and column overrides */
+        .elementor-section:has(#laxcc-nav-widget-unique),
+        .elementor-column:has(#laxcc-nav-widget-unique),
+        .elementor-column-wrap:has(#laxcc-nav-widget-unique) {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* Ensure no Elementor container interferes */
+        .elementor-container:has(#laxcc-nav-widget-unique),
+        .elementor-row:has(#laxcc-nav-widget-unique) {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+        }
+
+        /* Force full viewport width positioning */
+        #laxcc-nav-widget-unique {
+            position: relative !important;
+            left: 0 !important;
+            right: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        /* Override any Elementor inline styles */
+        #laxcc-nav-widget-unique[style] {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        /* Desktop categories full width */
+        #laxcc-nav-widget-unique .desktop-categories {
+            width: 100vw !important;
+            max-width: 100vw !important;
+            margin-left: calc(-50vw + 50%) !important;
+            margin-right: calc(-50vw + 50%) !important;
+            left: 0 !important;
+            right: 0 !important;
+        }
+
+        #laxcc-nav-widget-unique .desktop-categories-container {
+            width: 100% !important;
+            max-width: 1920px !important;
+            margin: 0 auto !important;
+            padding: 0 2rem !important;
+        }
+    </style>
+
+<!-- LAXCC Mobile Navigation Widget - Elementor Compatible -->
+<div id="laxcc-nav-widget-unique" class="laxcc-mobile-nav-widget">
+    <header class="laxcc-header" role="banner">
+        <div class="laxcc-header-container">
+            <!-- Hamburger Menu Button (Mobile Only) -->
+            <button class="laxcc-hamburger" onclick="openHamburgerMenu()" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <a href="https://laxcc.com/" class="laxcc-logo" aria-label="LAXCC Home">
+                <img src="https://laxcc.com/wp-content/uploads/2023/07/Logov1_white.png" alt="LAXCC Logo">
+            </a>
+
+            <!-- Center group for desktop -->
+            <div class="laxcc-center">
+                <!-- Search bar -->
+                <div class="laxcc-search-wrapper">
+                    <input type="search" class="laxcc-search" placeholder="Search..." aria-label="Search products">
+                    <button type="button" class="laxcc-search-submit" onclick="performSearch()" aria-label="Search">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                    <div class="laxcc-search-loading"></div>
+                    <div class="laxcc-autocomplete" id="laxcc-autocomplete"></div>
+                </div>
+            </div>
+
+            <!-- Header CTA -->
+            <div class="laxcc-header-actions">
+                <a href="https://laxcc.com/shop/" class="laxcc-header-cta">Order</a>
+                <!-- Language Switcher - Desktop only -->
+                <div class="laxcc-language-switcher laxcc-desktop-only">
+                    <div class="laxcc-language-toggle" onclick="toggleLanguageMenu()">
+                        <span class="laxcc-current-lang">🇺🇸 EN</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="laxcc-language-menu" id="languageMenu">
+                        <a href="#" onclick="changeLanguage('en', '🇺🇸', 'EN')" class="laxcc-lang-option active">
+                            <span class="laxcc-flag">🇺🇸</span>
+                            <span>English</span>
+                        </a>
+                        <a href="#" onclick="changeLanguage('es', '🇪🇸', 'ES')" class="laxcc-lang-option">
+                            <span class="laxcc-flag">🇪🇸</span>
+                            <span>Español</span>
+                        </a>
+                        <a href="#" onclick="changeLanguage('fr', '🇫🇷', 'FR')" class="laxcc-lang-option">
+                            <span class="laxcc-flag">🇫🇷</span>
+                            <span>Français</span>
+                        </a>
+                        <a href="#" onclick="changeLanguage('de', '🇩🇪', 'DE')" class="laxcc-lang-option">
+                            <span class="laxcc-flag">🇩🇪</span>
+                            <span>Deutsch</span>
+                        </a>
+                        <a href="#" onclick="changeLanguage('it', '🇮🇹', 'IT')" class="laxcc-lang-option">
+                            <span class="laxcc-flag">🇮🇹</span>
+                            <span>Italiano</span>
+                        </a>
+                        <a href="#" onclick="changeLanguage('pt', '🇵🇹', 'PT')" class="laxcc-lang-option">
+                            <span class="laxcc-flag">🇵🇹</span>
+                            <span>Português</span>
+                        </a>
+                        <a href="#" onclick="changeLanguage('ru', '🇷🇺', 'RU')" class="laxcc-lang-option">
+                            <span class="laxcc-flag">🇷🇺</span>
+                            <span>Русский</span>
+                        </a>
+                        <a href="#" onclick="changeLanguage('zh', '🇨🇳', 'ZH')" class="laxcc-lang-option">
+                            <span class="laxcc-flag">🇨🇳</span>
+                            <span>中文</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Categories Full-Width Row (hidden on mobile/tablet) -->
+        <div id="laxcc-category-row-desktop" class="laxcc-quick-actions desktop-categories">
+            <div class="desktop-categories-container">
+                <a href="https://laxcc.com/best-la-weed-dispensary-deals/" class="laxcc-quick-action" data-category="deals">
+                    <span>🔥</span>
+                    <span>Daily Deals</span>
+                    <span class="fire-particle fire-particle-1">🔥</span>
+                    <span class="fire-particle fire-particle-2">✨</span>
+                    <span class="fire-particle fire-particle-3">🔥</span>
+                </a>
+                <a href="https://laxcc.com/best-cheap-weed-prices-la" class="laxcc-quick-action" data-category="hundred-oz">
+                    <i class="fas fa-cannabis"></i>
+                    <span>Budget</span>
+                </a>
+                <a href="https://laxcc.com/best-100-ounce-weed-deal-los-angeles-2025" class="laxcc-quick-action" data-category="hundred-oz-deal">
+                    <i class="fas fa-cannabis"></i>
+                    <span>$100 OZ</span>
+                </a>
+                <a href="https://laxcc.com/shop/cannabis-nearby-lax-airport/" class="laxcc-quick-action" data-category="flower">
+                    <span>🌸</span>
+                    <span>Flower</span>
+                </a>
+                <a href="https://laxcc.com/shop/pre-rolls-nearby-lax-airport/" class="laxcc-quick-action" data-category="prerolls">
+                    <span>🍃</span>
+                    <span>Pre-rolls</span>
+                </a>
+                <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=infused" class="laxcc-quick-action" data-category="infused">
+                    <span>🌟</span>
+                    <span>Infused</span>
+                </a>
+                <a href="https://laxcc.com/shop/thc-gummies-edibles-near-lax-airport/" class="laxcc-quick-action" data-category="edibles">
+                    <span>🍫</span>
+                    <span>Edibles</span>
+                </a>
+                <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=AIO" class="laxcc-quick-action" data-category="aio">
+                    <img src="https://images.dutchie.com/b5c1dda81a1ff0009edd13e6ae38c5af?w=500&h=500&fm=webp" alt="AIO" style="width: 1.2em; height: 1.2em;">
+                    <span>AIO</span>
+                </a>
+                <a href="https://laxcc.com/shop/buy-thc-concentrates-dabs-near-lax/" class="laxcc-quick-action" data-category="concentrates">
+                    <span>💎</span>
+                    <span>Concentrates</span>
+                </a>
+                <a href="https://laxcc.com/buy-thc-pills-los-angeles/" class="laxcc-quick-action" data-category="pills">
+                    <span>💊</span>
+                    <span>THC Pills</span>
+                </a>
+                <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=CBN" class="laxcc-quick-action" data-category="cbn">
+                    <span>🌙</span>
+                    <span>CBN</span>
+                </a>
+                <a href="https://laxcc.com/buy-thc-drinks-in-los-angeles-nearby-venice-and-playa-del-rey-beach/" class="laxcc-quick-action" data-category="drinks">
+                    <span>🥤</span>
+                    <span>THC Drinks</span>
+                </a>
+                <a href="https://laxcc.com/categories/vaporizers/" class="laxcc-quick-action" data-category="vapes">
+                    <span>💨</span>
+                    <span>Vapes</span>
+                </a>
+                <a href="https://laxcc.com/categories/accessories" class="laxcc-quick-action" data-category="accessories">
+                    <span>🛠️</span>
+                    <span>Accessories</span>
+                </a>
+                <a href="https://laxcc.com/categories/topicals/" class="laxcc-quick-action" data-category="topicals">
+                    <span>🧴</span>
+                    <span>Topicals</span>
+                </a>
+                <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=CBD" class="laxcc-quick-action" data-category="cbd">
+                    <span>💚</span>
+                    <span>CBD</span>
+                </a>
+            </div>
+
+            <!-- Scroll Arrow Buttons -->
+            <button class="laxcc-scroll-arrow laxcc-scroll-arrow-left" aria-label="Scroll left">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="laxcc-scroll-arrow laxcc-scroll-arrow-right" aria-label="Scroll right">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Search Bar -->
+        <div class="laxcc-mobile-search-section">
+            <div class="laxcc-search-wrapper">
+                <input type="search" class="laxcc-search laxcc-mobile-search-input" placeholder="Search products..." aria-label="Search products">
+                <button type="button" class="laxcc-search-submit" onclick="performMobileSearch()" aria-label="Search">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <div class="laxcc-autocomplete" id="laxcc-mobile-autocomplete"></div>
+            </div>
+        </div>
+
+        <!-- Quick actions bar -->
+        <div id="laxcc-category-row" class="laxcc-quick-actions">
+            <a href="https://laxcc.com/best-la-weed-dispensary-deals/" class="laxcc-quick-action" data-category="deals">
+                <span>🔥</span>
+                <span>Daily Deals</span>
+                <span class="fire-particle fire-particle-1">🔥</span>
+                <span class="fire-particle fire-particle-2">✨</span>
+                <span class="fire-particle fire-particle-3">🔥</span>
+            </a>
+            <a href="https://laxcc.com/best-cheap-weed-prices-la" class="laxcc-quick-action" data-category="hundred-oz">
+                <i class="fas fa-cannabis"></i>
+                <span>Budget</span>
+            </a>
+            <a href="https://laxcc.com/best-100-ounce-weed-deal-los-angeles-2025" class="laxcc-quick-action" data-category="hundred-oz-deal">
+                <i class="fas fa-cannabis" style="color: #32CD32;"></i>
+                <span>$100 OZ</span>
+            </a>
+            <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=AIO" class="laxcc-quick-action" data-category="aio">
+                <img src="https://images.dutchie.com/b5c1dda81a1ff0009edd13e6ae38c5af?w=500&h=500&fm=webp" alt="AIO" style="width: 1.2em; height: 1.2em;">
+                <span>AIO</span>
+            </a>
+            <a href="https://laxcc.com/shop/buy-thc-concentrates-dabs-near-lax/" class="laxcc-quick-action" data-category="concentrates">
+                <span>💎</span>
+                <span>Concentrates</span>
+            </a>
+            <a href="https://laxcc.com/buy-thc-pills-los-angeles/" class="laxcc-quick-action" data-category="pills">
+                <span>💊</span>
+                <span>THC Pills</span>
+            </a>
+            <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=CBN" class="laxcc-quick-action" data-category="cbn">
+                <span>🌙</span>
+                <span>CBN</span>
+            </a>
+            <a href="https://laxcc.com/buy-thc-drinks-in-los-angeles-nearby-venice-and-playa-del-rey-beach/" class="laxcc-quick-action" data-category="drinks">
+                <span>🥤</span>
+                <span>THC Drinks</span>
+            </a>
+            <a href="https://laxcc.com/shop/cannabis-nearby-lax-airport/" class="laxcc-quick-action" data-category="flower">
+                <span>🌸</span>
+                <span>Flower</span>
+            </a>
+            <a href="https://laxcc.com/shop/pre-rolls-nearby-lax-airport/" class="laxcc-quick-action" data-category="prerolls">
+                <span>🍃</span>
+                <span>Pre-rolls</span>
+            </a>
+            <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=infused" class="laxcc-quick-action" data-category="infused">
+                <span>🌟</span>
+                <span>Infused</span>
+            </a>
+            <a href="https://laxcc.com/shop/thc-gummies-edibles-near-lax-airport/" class="laxcc-quick-action" data-category="edibles">
+                <span>🍫</span>
+                <span>Edibles</span>
+            </a>
+            <a href="https://laxcc.com/categories/vaporizers/" class="laxcc-quick-action" data-category="vapes">
+                <span>💨</span>
+                <span>Vapes</span>
+            </a>
+            <a href="https://laxcc.com/categories/accessories" class="laxcc-quick-action" data-category="accessories">
+                <span>🛠️</span>
+                <span>Accessories</span>
+            </a>
+            <a href="https://laxcc.com/categories/topicals/" class="laxcc-quick-action" data-category="topicals">
+                <span>🧴</span>
+                <span>Topicals</span>
+            </a>
+            <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=CBD" class="laxcc-quick-action" data-category="cbd">
+                <span>💚</span>
+                <span>CBD</span>
+            </a>
+        </div>
+
+    </header>
+
+    <!-- CSS-Only Mobile Toggle -->
+    <input type="checkbox" id="laxccMobileToggle" class="laxcc-mobile-toggle">
+    <label for="laxccMobileToggle" class="laxcc-hamburger-label" aria-label="Toggle mobile navigation">
+        <span class="laxcc-hamburger-line"></span>
+        <span class="laxcc-hamburger-line"></span>
+        <span class="laxcc-hamburger-line"></span>
+    </label>
+
+    <nav class="laxcc-mobile-nav" role="navigation" aria-label="Mobile Navigation" id="laxccMobileNav">
+        <a href="https://laxcc.com/" class="laxcc-mobile-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Home</span>
+        </a>
+        <a href="tel:(310) 429-3789" class="laxcc-mobile-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>Call</span>
+        </a>
+        <a href="https://laxcc.com/shop/" class="laxcc-mobile-link cta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            <span>Order</span>
+        </a>
+        <a href="https://laxcc.com/best-la-weed-dispensary-deals/" class="laxcc-mobile-link">
+            <span class="pulse-dot"></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                <line x1="7" y1="7" x2="7.01" y2="7"></line>
+            </svg>
+            <span>Deals</span>
+        </a>
+        <a href="https://laxcc.com/best-cannabis-club-in-la/" class="laxcc-mobile-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+            <span>Join</span>
+        </a>
+    </nav>
+
+    <div id="modalOverlay" class="laxcc-modal-overlay"></div>
+
+    <!-- Hamburger Menu Modal -->
+    <div id="hamburgerModal" class="laxcc-hamburger-modal" role="dialog" aria-modal="true" aria-labelledby="hamburgerModalTitle">
+        <div class="laxcc-hamburger-header">
+            <a href="https://laxcc.com/" class="laxcc-logo" aria-label="LAXCC Home">
+                <img src="https://laxcc.com/wp-content/uploads/2023/07/Logov1_white.png" alt="LAXCC Logo">
+            </a>
+            <button class="laxcc-hamburger-close" onclick="closeHamburgerMenu()" aria-label="Close menu">×</button>
+        </div>
+
+        <nav class="laxcc-hamburger-nav">
+            <!-- Main Navigation Grid -->
+            <div class="laxcc-hamburger-main-nav">
+                <div class="laxcc-main-nav-grid">
+                    <a href="https://laxcc.com/shop/" class="laxcc-nav-pill">
+                        <span>🛒</span>
+                        <span>Shop</span>
+                    </a>
+                    <a href="https://laxcc.com/blog/" class="laxcc-nav-pill">
+                        <span>📝</span>
+                        <span>Blog</span>
+                    </a>
+                    <a href="https://laxcc.com/dispensary-gallery/" class="laxcc-nav-pill">
+                        <span>🖼️</span>
+                        <span>Gallery</span>
+                    </a>
+                    <a href="https://laxcc.com/contact-us/" class="laxcc-nav-pill">
+                        <span>📞</span>
+                        <span>Contact Us</span>
+                    </a>
+                    <a href="https://laxcc.com/about-us/" class="laxcc-nav-pill">
+                        <span>ℹ️</span>
+                        <span>About Us</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product Categories Grid -->
+            <div class="laxcc-hamburger-categories">
+                <div class="laxcc-categories-grid">
+                    <a href="https://laxcc.com/best-la-weed-dispensary-deals/" class="laxcc-category-pill" data-category="deals">
+                        <span>🔥</span>
+                        <span>Daily Deals</span>
+                    </a>
+                    <a href="https://laxcc.com/best-cheap-weed-prices-la" class="laxcc-category-pill" data-category="hundred-oz">
+                        <i class="fas fa-cannabis"></i>
+                        <span>Budget</span>
+                    </a>
+                    <a href="https://laxcc.com/best-100-ounce-weed-deal-los-angeles-2025" class="laxcc-category-pill" data-category="hundred-oz-deal">
+                        <i class="fas fa-cannabis"></i>
+                        <span>$100 OZ</span>
+                    </a>
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=AIO" class="laxcc-category-pill" data-category="aio">
+                        <img src="https://images.dutchie.com/b5c1dda81a1ff0009edd13e6ae38c5af?w=500&h=500&fm=webp" alt="AIO" style="width: 2em; height: 2em;">
+                        <span>AIO</span>
+                    </a>
+                    <a href="https://laxcc.com/shop/buy-thc-concentrates-dabs-near-lax/" class="laxcc-category-pill" data-category="concentrates">
+                        <span>💎</span>
+                        <span>Concentrates</span>
+                    </a>
+                    <a href="https://laxcc.com/buy-thc-pills-los-angeles/" class="laxcc-category-pill" data-category="pills">
+                        <span>💊</span>
+                        <span>THC Pills</span>
+                    </a>
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=CBN" class="laxcc-category-pill" data-category="cbn">
+                        <span>🌙</span>
+                        <span>CBN</span>
+                    </a>
+                    <a href="https://laxcc.com/buy-thc-drinks-in-los-angeles-nearby-venice-and-playa-del-rey-beach/" class="laxcc-category-pill" data-category="drinks">
+                        <span>🥤</span>
+                        <span>THC Drinks</span>
+                    </a>
+                    <a href="https://laxcc.com/shop/cannabis-nearby-lax-airport/" class="laxcc-category-pill" data-category="flower">
+                        <span>🌸</span>
+                        <span>Flower</span>
+                    </a>
+                    <a href="https://laxcc.com/shop/pre-rolls-nearby-lax-airport/" class="laxcc-category-pill" data-category="prerolls">
+                        <span>🍃</span>
+                        <span>Pre-rolls</span>
+                    </a>
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=infused" class="laxcc-category-pill" data-category="infused">
+                        <span>🌟</span>
+                        <span>Infused</span>
+                    </a>
+                    <a href="https://laxcc.com/shop/thc-gummies-edibles-near-lax-airport/" class="laxcc-category-pill" data-category="edibles">
+                        <span>🍫</span>
+                        <span>Edibles</span>
+                    </a>
+                    <a href="https://laxcc.com/categories/vaporizers/" class="laxcc-category-pill" data-category="vapes">
+                        <span>💨</span>
+                        <span>Vapes</span>
+                    </a>
+                    <a href="https://laxcc.com/categories/accessories" class="laxcc-category-pill" data-category="accessories">
+                        <span>🛠️</span>
+                        <span>Accessories</span>
+                    </a>
+                    <a href="https://laxcc.com/categories/topicals/" class="laxcc-category-pill" data-category="topicals">
+                        <span>🧴</span>
+                        <span>Topicals</span>
+                    </a>
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=CBD" class="laxcc-category-pill" data-category="cbd">
+                        <span>💚</span>
+                        <span>CBD</span>
+                    </a>
+                </div>
+            </div>
+
+
+        </nav>
+    </div>
+
+    <div id="rewardsModal" class="laxcc-modal" role="dialog" aria-modal="true" aria-labelledby="rewardsModalTitle">
+        <div class="laxcc-modal-header">
+            <h2 id="rewardsModalTitle" class="laxcc-modal-title">Rewards & Loyalty</h2>
+            <button class="laxcc-modal-close" onclick="closeAllModals()" aria-label="Close rewards">×</button>
+        </div>
+
+        <!-- EXCITING Loyalty Program CTA -->
+        <div class="laxcc-modal-featured" style="background: linear-gradient(135deg, #00AFC9, #7ECBB3); color: white; text-align: center; padding: 1.5rem; margin-bottom: 1rem;">
+            <h3 style="margin: 0 0 0.5rem 0; font-size: 1.1rem;">🎉 NEW MEMBER SPECIAL!</h3>
+            <p style="margin: 0 0 1rem 0; font-size: 0.9rem; opacity: 0.9;">Get a Premium Preroll for just $0.01 when you join our FREE loyalty program!</p>
+            <a href="https://laxcc.com/best-cannabis-club-in-la/" style="display: inline-block; background: white; color: #00AFC9; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                🌟 JOIN FREE NOW & GET $0.01 PREROLL!
+            </a>
+        </div>
+
+        <!-- Embedded Rewards Image -->
+        <img src="http://laxcc.com/wp-content/uploads/2025/07/Best-LA_dispensary-Loyalty-rewards.jpg" alt="July Loyalty Rewards at LAX CC" class="laxcc-rewards-image">
+
+        <!-- Rewards Options -->
+        <ul class="laxcc-modal-list">
+            <li><a href="https://laxcc.com/best-cannabis-club-in-la/">🎁 Join Free Loyalty Club</a></li>
+            <li><a href="https://laxcc.com/best-la-weed-dispensary-deals/">💰 Today's Special Deals</a></li>
+            <li><a href="https://laxcc.com/shop/cannabis-nearby-lax-airport/">🌸 Shop Flower</a></li>
+            <li><a href="https://laxcc.com/shop/pre-rolls-nearby-lax-airport/">🍃 Shop Pre-rolls</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Search functionality
+        function performSearch() {
+            const searchInput = document.querySelector('.laxcc-search');
+            const searchTerm = searchInput.value.trim();
+
+            if (searchTerm) {
+                const searchUrl = `https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=${encodeURIComponent(searchTerm)}`;
+                window.location.href = searchUrl;
+            }
+        }
+
+        // Mobile search functionality
+        function performMobileSearch() {
+            const searchInput = document.querySelector('.laxcc-mobile-search-input');
+            const searchTerm = searchInput.value.trim();
+
+            if (searchTerm) {
+                const searchUrl = `https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=${encodeURIComponent(searchTerm)}`;
+                window.location.href = searchUrl;
+            }
+        }
+
+        // Allow Enter key to search
+        document.querySelector('.laxcc-search')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                performSearch();
+            }
+        });
+
+        // Allow Enter key for mobile search
+        document.querySelector('.laxcc-mobile-search-input')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                performMobileSearch();
+            }
+        });
+
+        // Hamburger menu functions
+        function openHamburgerMenu(event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            
+            const modal = document.getElementById('hamburgerModal');
+            const overlay = document.getElementById('modalOverlay');
+            
+            if (modal && overlay) {
+                modal.classList.add('active');
+                overlay.classList.add('active', 'hamburger-overlay');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeHamburgerMenu(event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            
+            const modal = document.getElementById('hamburgerModal');
+            const overlay = document.getElementById('modalOverlay');
+            
+            if (modal && overlay) {
+                modal.classList.remove('active');
+                overlay.classList.remove('active', 'hamburger-overlay');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Enhanced hamburger menu initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerButton = document.querySelector('.laxcc-hamburger');
+            const closeButton = document.querySelector('.laxcc-hamburger-close');
+            const overlay = document.getElementById('modalOverlay');
+            
+            // Add event listeners with proper event handling
+            if (hamburgerButton) {
+                hamburgerButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openHamburgerMenu(e);
+                });
+                
+                // Prevent child span elements from interfering
+                const spans = hamburgerButton.querySelectorAll('span');
+                spans.forEach(span => {
+                    span.style.pointerEvents = 'none';
+                });
+            }
+            
+            if (closeButton) {
+                closeButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeHamburgerMenu(e);
+                });
+            }
+            
+            if (overlay) {
+                overlay.addEventListener('click', function(e) {
+                    if (e.target === overlay) {
+                        closeHamburgerMenu(e);
+                    }
+                });
+            }
+        });
+
+
+        // CSS-only mobile navigation - no JavaScript needed!
+
+        // Search functionality with autocomplete
+        let autocompleteInitialized = false;
+        
+        function initializeAutocomplete(forceInit = false) {
+            // Prevent multiple initializations unless forced
+            if (autocompleteInitialized && !forceInit) return;
+            
+            // Debug logging for Elementor troubleshooting
+            console.log('Initializing autocomplete...', {
+                readyState: document.readyState,
+                hasElementor: typeof elementorFrontend !== 'undefined',
+                hasJQuery: typeof jQuery !== 'undefined'
+            });
+            
+            const searchInput = document.querySelector('.laxcc-search');
+            const mobileSearchInput = document.querySelector('.laxcc-mobile-search-input');
+            const searchLoading = document.querySelector('.laxcc-search-loading');
+            const autocompleteEl = document.getElementById('laxcc-autocomplete');
+            const mobileAutocompleteEl = document.getElementById('laxcc-mobile-autocomplete');
+
+            // Exit if elements don't exist yet
+            if (!searchInput || !autocompleteEl) {
+                console.log('Autocomplete elements not found, retrying...', {
+                    searchInput: !!searchInput,
+                    autocompleteEl: !!autocompleteEl
+                });
+                setTimeout(() => initializeAutocomplete(forceInit), 100);
+                return;
+            }
+            
+            console.log('Autocomplete elements found, proceeding with initialization...');
+            
+            autocompleteInitialized = true;
+
+        // Brand list for autocomplete
+        const brands = [
+            '7 Leaves', '710 Labs', 'Aether Fields', 'Albert Einstone', 'American Weed Co.',
+            'BLOOM', 'BREEZ', 'Bangers', 'Big Pete\'s Treats', 'Big Tree', 'Blue Moon Cannabis',
+            'CAM', 'CQ', 'Camino', 'Cannabiotix', 'Cold Fire', 'Connected Cannabis',
+            'Decibel Gardens', 'Delighted', 'Dompen', 'Dr. Norm\'s', 'Drops', 'El Blunto',
+            'Element', 'Elements', 'Emerald Bay Extracts', 'Emerald Sky', 'Emerald Sun',
+            'Froot', 'Good Tide', 'Heirbloom', 'Highatus', 'Jeeter', 'KANHA', 'KOA Cannabis Co.',
+            'Kingpen', 'Kingroll', 'Kiva', 'Korova', 'Kush Company', 'LA Family Farms',
+            'LA Kush', 'LAX Packs', 'LAXCC', 'LEVEL', 'Lift Tickets', 'Lost Farm',
+            'Loudpack', 'Lusty', 'Maven Genetics', 'Micro Bar', 'Nameless', 'Nasha',
+            'Not Your Fathers Root Beer', 'OCB® Rolling Papers & Cones', 'Originals', 'PAX',
+            'Pabst Labs', 'Pacific Stone', 'Papa & Barkley', 'Paraphernalia', 'Petra',
+            'Plug Play', 'Presidential', 'Punch Extracts', 'Quickies', 'RAW', 'ROYAL BLUNTS',
+            'Raw Garden', 'Rove', 'SELFiES', 'Seed Junky', 'Shish', 'Sluggers',
+            'Smokiez Edibles', 'Sparkiez', 'St. Ides', 'Stiiizy', 'THE TABLET', 'Ted\'s Budz',
+            'Time Machine', 'Top Shelf Cultivation', 'Turtle Pie', 'Uncle Arnie\'s', 'Vesuvio',
+            'West Coast Cure', 'Wyld', 'Zig Zag', 'cheech', 'turn'
+        ];
+
+        let currentFocus = -1;
+
+        function showAutocomplete(query, autocompleteElement = autocompleteEl) {
+            if (!query) {
+                autocompleteElement.classList.remove('show');
+                return;
+            }
+
+            const filtered = brands.filter(brand =>
+                brand.toLowerCase().includes(query.toLowerCase())
+            ).slice(0, 8); // Show max 8 results
+
+            if (filtered.length === 0) {
+                autocompleteElement.classList.remove('show');
+                return;
+            }
+
+            autocompleteElement.innerHTML = filtered.map((brand, index) =>
+                `<div class="laxcc-autocomplete-item" data-brand="${brand}" data-index="${index}">${brand}</div>`
+            ).join('');
+
+            autocompleteElement.classList.add('show');
+            currentFocus = -1;
+        }
+
+        function hideAutocomplete(autocompleteElement = autocompleteEl) {
+            setTimeout(() => {
+                autocompleteElement.classList.remove('show');
+            }, 150);
+        }
+
+        function highlightItem(index, autocompleteElement = autocompleteEl) {
+            const items = autocompleteElement.querySelectorAll('.laxcc-autocomplete-item');
+            items.forEach(item => item.classList.remove('highlighted'));
+            if (items[index]) {
+                items[index].classList.add('highlighted');
+                currentFocus = index;
+            }
+        }
+
+        searchInput?.addEventListener('input', (e) => {
+            const query = e.target.value.trim();
+            showAutocomplete(query);
+        });
+
+        searchInput?.addEventListener('focus', (e) => {
+            const query = e.target.value.trim();
+            if (query) showAutocomplete(query);
+        });
+
+        searchInput?.addEventListener('blur', hideAutocomplete);
+
+        searchInput?.addEventListener('keydown', (e) => {
+            const items = autocompleteEl.querySelectorAll('.laxcc-autocomplete-item');
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                currentFocus = currentFocus < items.length - 1 ? currentFocus + 1 : 0;
+                highlightItem(currentFocus);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                currentFocus = currentFocus > 0 ? currentFocus - 1 : items.length - 1;
+                highlightItem(currentFocus);
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (currentFocus > -1 && items[currentFocus]) {
+                    searchInput.value = items[currentFocus].dataset.brand;
+                    hideAutocomplete();
+                    performSearch(); // Trigger search on Enter selection
+                }
+            } else if (e.key === 'Escape') {
+                hideAutocomplete();
+            }
+        });
+
+        autocompleteEl?.addEventListener('mousedown', (e) => {
+            e.preventDefault(); // Prevent blur
+        });
+
+        autocompleteEl?.addEventListener('click', (e) => {
+            if (e.target.classList.contains('laxcc-autocomplete-item')) {
+                searchInput.value = e.target.dataset.brand;
+                hideAutocomplete();
+                performSearch(); // Trigger search on click selection
+            }
+        });
+
+        // MOBILE SEARCH AUTOCOMPLETE EVENT LISTENERS
+        mobileSearchInput?.addEventListener('input', (e) => {
+            const query = e.target.value.trim();
+            showAutocomplete(query, mobileAutocompleteEl);
+        });
+
+        mobileSearchInput?.addEventListener('focus', (e) => {
+            const query = e.target.value.trim();
+            if (query) showAutocomplete(query, mobileAutocompleteEl);
+        });
+
+        mobileSearchInput?.addEventListener('blur', () => hideAutocomplete(mobileAutocompleteEl));
+
+        mobileSearchInput?.addEventListener('keydown', (e) => {
+            const items = mobileAutocompleteEl.querySelectorAll('.laxcc-autocomplete-item');
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                currentFocus = currentFocus < items.length - 1 ? currentFocus + 1 : 0;
+                highlightItem(currentFocus, mobileAutocompleteEl);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                currentFocus = currentFocus > 0 ? currentFocus - 1 : items.length - 1;
+                highlightItem(currentFocus, mobileAutocompleteEl);
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (currentFocus > -1 && items[currentFocus]) {
+                    mobileSearchInput.value = items[currentFocus].dataset.brand;
+                    hideAutocomplete(mobileAutocompleteEl);
+                    performMobileSearch(); // Trigger search on Enter selection
+                }
+            } else if (e.key === 'Escape') {
+                hideAutocomplete(mobileAutocompleteEl);
+            }
+        });
+
+        mobileAutocompleteEl?.addEventListener('mousedown', (e) => {
+            e.preventDefault(); // Prevent blur
+        });
+
+        mobileAutocompleteEl?.addEventListener('click', (e) => {
+            if (e.target.classList.contains('laxcc-autocomplete-item')) {
+                mobileSearchInput.value = e.target.dataset.brand;
+                hideAutocomplete(mobileAutocompleteEl);
+                performMobileSearch(); // Trigger search on click selection
+            }
+        });
+
+        } // End initializeAutocomplete
+
+        // Enhanced Elementor-compatible initialization
+        function initializeWithElementorSupport() {
+            // Multiple initialization attempts for Elementor compatibility
+            initializeAutocomplete();
+            
+            // Elementor frontend ready event
+            if (typeof elementorFrontend !== 'undefined') {
+                elementorFrontend.hooks.addAction('frontend/element_ready/widget', initializeAutocomplete);
+            }
+            
+            // jQuery ready for Elementor Pro compatibility
+            if (typeof jQuery !== 'undefined') {
+                jQuery(document).ready(function($) {
+                    initializeAutocomplete();
+                    
+                    // Elementor Pro popup compatibility
+                    $(document).on('elementor/popup/show', function() {
+                        setTimeout(initializeAutocomplete, 100);
+                    });
+                });
+            }
+        }
+
+        // Multiple initialization triggers
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeWithElementorSupport);
+        } else {
+            initializeWithElementorSupport();
+        }
+        
+        // Additional fallbacks for Elementor timing
+        setTimeout(initializeWithElementorSupport, 500);
+        setTimeout(initializeWithElementorSupport, 1000);
+        setTimeout(initializeWithElementorSupport, 2000);
+        
+        // Window load fallback
+        if (typeof elementorFrontend !== 'undefined') {
+            elementorFrontend.hooks.addAction('frontend/element_ready/global', initializeAutocomplete);
+        }
+        
+        // Manual trigger for debugging - call window.forceInitAutocomplete() in console
+        window.forceInitAutocomplete = function() {
+            console.log('Force initializing autocomplete...');
+            autocompleteInitialized = false;
+            initializeAutocomplete(true);
+        };
+        
+        // Expose for debugging
+        window.debugAutocomplete = function() {
+            console.log('Autocomplete Debug Info:', {
+                initialized: autocompleteInitialized,
+                searchInput: !!document.querySelector('.laxcc-search'),
+                autocompleteEl: !!document.getElementById('laxcc-autocomplete'),
+                mobileAutocompleteEl: !!document.getElementById('laxcc-mobile-autocomplete'),
+                elementorFrontend: typeof elementorFrontend !== 'undefined',
+                jQuery: typeof jQuery !== 'undefined'
+            });
+        };
+
+        // Unified horizontal scroll helper (wheel + drag + touch)
+        function enableHorizontalScroll(scroller) {
+            if (!scroller) return;
+            if (scroller.dataset && scroller.dataset.hScrollAttached === '1') return;
+            if (scroller.dataset) scroller.dataset.hScrollAttached = '1';
+
+            // Enhanced horizontal scrolling via mouse wheel (works on all devices)
+            scroller.addEventListener('wheel', (e) => {
+                // Recalculate on every wheel event for accuracy
+                const scrollWidth = scroller.scrollWidth;
+                const clientWidth = scroller.clientWidth;
+                const scrollLeft = scroller.scrollLeft;
+
+                // Check if there's horizontal scrollability
+                const hasHorizontalScroll = scrollWidth > clientWidth;
+
+                if (hasHorizontalScroll) {
+                    // Calculate boundaries
+                    const isAtStart = scrollLeft <= 0;
+                    const isAtEnd = scrollLeft + clientWidth >= scrollWidth - 1;
+
+                    // Determine scroll direction
+                    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+                    const scrollingRight = delta > 0;
+                    const scrollingLeft = delta < 0;
+
+                    // Only prevent default and scroll if not at boundaries
+                    const shouldScroll = (!isAtStart || scrollingRight) && (!isAtEnd || scrollingLeft);
+
+                    if (shouldScroll) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        scroller.scrollLeft += delta * 1.5; // Smooth multiplier
+                    }
+                }
+            }, { passive: false });
+
+            // Enhanced touch swipe support with momentum
+            let isTouchScrolling = false;
+            let touchStartX = 0;
+            let touchStartY = 0;
+            let touchScrollLeft = 0;
+            let lastTouchX = 0;
+            let lastTouchTime = 0;
+            let velocityX = 0;
+
+            scroller.addEventListener('touchstart', (e) => {
+                // Only handle single touch
+                if (e.touches.length !== 1) return;
+
+                isTouchScrolling = true;
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+                touchScrollLeft = scroller.scrollLeft;
+                lastTouchX = touchStartX;
+                lastTouchTime = Date.now();
+                velocityX = 0;
+
+                // Stop any ongoing momentum scroll
+                if (scroller.momentumAnimation) {
+                    cancelAnimationFrame(scroller.momentumAnimation);
+                }
+            }, { passive: true });
+
+            scroller.addEventListener('touchmove', (e) => {
+                if (!isTouchScrolling || e.touches.length !== 1) return;
+
+                const touchX = e.touches[0].clientX;
+                const touchY = e.touches[0].clientY;
+                const deltaX = touchX - touchStartX;
+                const deltaY = touchY - touchStartY;
+
+                // Determine if this is a horizontal swipe
+                if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                    // Prevent vertical scroll when swiping horizontally
+                    e.preventDefault();
+
+                    // Calculate velocity for momentum
+                    const now = Date.now();
+                    const timeDelta = now - lastTouchTime;
+                    if (timeDelta > 0) {
+                        velocityX = (touchX - lastTouchX) / timeDelta;
+                    }
+                    lastTouchX = touchX;
+                    lastTouchTime = now;
+
+                    // Apply scroll
+                    scroller.scrollLeft = touchScrollLeft - deltaX;
+                }
+            }, { passive: false });
+
+            scroller.addEventListener('touchend', (e) => {
+                if (!isTouchScrolling) return;
+                isTouchScrolling = false;
+
+                // Apply momentum scrolling
+                if (Math.abs(velocityX) > 0.5) {
+                    let momentum = velocityX * 300; // Momentum factor
+                    const deceleration = 0.95; // Deceleration rate
+
+                    const momentumScroll = () => {
+                        momentum *= deceleration;
+                        scroller.scrollLeft -= momentum;
+
+                        if (Math.abs(momentum) > 0.5) {
+                            scroller.momentumAnimation = requestAnimationFrame(momentumScroll);
+                        }
+                    };
+
+                    scroller.momentumAnimation = requestAnimationFrame(momentumScroll);
+                }
+            }, { passive: true });
+
+            // Enhanced mouse drag support
+            let isMouseDragging = false;
+            let mouseStartX = 0;
+            let mouseScrollLeft = 0;
+            let hasMoved = false;
+
+            scroller.addEventListener('mousedown', (e) => {
+                // Don't interfere with link clicks
+                if (e.target.tagName === 'A' || e.target.closest('a')) {
+                    return;
+                }
+
+                isMouseDragging = true;
+                hasMoved = false;
+                mouseStartX = e.pageX - scroller.offsetLeft;
+                mouseScrollLeft = scroller.scrollLeft;
+                scroller.style.cursor = 'grabbing';
+                scroller.style.userSelect = 'none';
+            });
+
+            scroller.addEventListener('mousemove', (e) => {
+                if (!isMouseDragging) return;
+                e.preventDefault();
+
+                const x = e.pageX - scroller.offsetLeft;
+                const walk = (x - mouseStartX) * 1.5; // Smooth multiplier
+                scroller.scrollLeft = mouseScrollLeft - walk;
+
+                // Track if mouse has moved significantly
+                if (Math.abs(walk) > 5) {
+                    hasMoved = true;
+                }
+            });
+
+            const stopDragging = () => {
+                if (isMouseDragging) {
+                    isMouseDragging = false;
+                    scroller.style.cursor = 'grab';
+                    scroller.style.userSelect = 'auto';
+                }
+            };
+
+            scroller.addEventListener('mouseup', stopDragging);
+            scroller.addEventListener('mouseleave', stopDragging);
+
+            // Prevent click events when dragging
+            scroller.addEventListener('click', (e) => {
+                if (hasMoved) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            }, { capture: true });
+
+            // Initial cursor hint
+            scroller.style.cursor = 'grab';
+
+            // Ensure smooth scrolling behavior
+            scroller.style.scrollBehavior = 'auto';
+        }
+
+        // Setup scroll arrows for desktop categories
+        function setupScrollArrows() {
+            const desktopCategories = document.querySelector('#laxcc-category-row-desktop');
+            if (!desktopCategories) return;
+
+            const container = desktopCategories.querySelector('.desktop-categories-container');
+            const leftArrow = desktopCategories.querySelector('.laxcc-scroll-arrow-left');
+            const rightArrow = desktopCategories.querySelector('.laxcc-scroll-arrow-right');
+
+            if (!container || !leftArrow || !rightArrow) return;
+
+            // Update arrow visibility based on scroll position
+            function updateArrows() {
+                const scrollLeft = container.scrollLeft;
+                const scrollWidth = container.scrollWidth;
+                const clientWidth = container.clientWidth;
+                const maxScroll = scrollWidth - clientWidth;
+
+                // Show/hide arrows based on scroll position
+                if (maxScroll <= 1) {
+                    // No scrolling needed
+                    leftArrow.classList.remove('visible');
+                    rightArrow.classList.remove('visible');
+                } else {
+                    // Show left arrow if not at start
+                    if (scrollLeft > 5) {
+                        leftArrow.classList.add('visible');
+                    } else {
+                        leftArrow.classList.remove('visible');
+                    }
+
+                    // Show right arrow if not at end
+                    if (scrollLeft < maxScroll - 5) {
+                        rightArrow.classList.add('visible');
+                    } else {
+                        rightArrow.classList.remove('visible');
+                    }
+                }
+            }
+
+            // Smooth scroll function
+            function smoothScrollTo(target) {
+                const start = container.scrollLeft;
+                const distance = target - start;
+                const duration = 300;
+                let startTime = null;
+
+                function animation(currentTime) {
+                    if (startTime === null) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const progress = Math.min(timeElapsed / duration, 1);
+
+                    // Easing function for smooth animation
+                    const easeProgress = progress < 0.5
+                        ? 2 * progress * progress
+                        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+                    container.scrollLeft = start + distance * easeProgress;
+
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animation);
+                    } else {
+                        updateArrows();
+                    }
+                }
+
+                requestAnimationFrame(animation);
+            }
+
+            // Arrow click handlers
+            leftArrow.addEventListener('click', () => {
+                const scrollAmount = container.clientWidth * 0.8;
+                const target = Math.max(0, container.scrollLeft - scrollAmount);
+                smoothScrollTo(target);
+            });
+
+            rightArrow.addEventListener('click', () => {
+                const scrollAmount = container.clientWidth * 0.8;
+                const maxScroll = container.scrollWidth - container.clientWidth;
+                const target = Math.min(maxScroll, container.scrollLeft + scrollAmount);
+                smoothScrollTo(target);
+            });
+
+            // Update arrows on scroll
+            container.addEventListener('scroll', updateArrows);
+
+            // Update arrows on window resize
+            window.addEventListener('resize', updateArrows);
+
+            // Initial update
+            setTimeout(updateArrows, 100);
+        }
+
+        function setupHorizontalScroll() {
+            // Apply scroll behavior to both mobile and desktop pill rows
+            const categoryRow = document.getElementById('laxcc-category-row');
+            if (categoryRow) {
+                enableHorizontalScroll(categoryRow);
+            }
+
+            // Also enable for quick-actions sections (mobile)
+            const quickActionsContainers = document.querySelectorAll('.laxcc-quick-actions');
+            quickActionsContainers.forEach(container => {
+                enableHorizontalScroll(container);
+            });
+
+            // Try multiple selectors for desktop categories
+            const desktopCategoriesContainer = document.querySelector('.desktop-categories-container') ||
+                                              document.querySelector('#laxcc-category-row-desktop .desktop-categories-container') ||
+                                              document.querySelector('.desktop-categories .desktop-categories-container');
+
+            if (desktopCategoriesContainer) {
+                enableHorizontalScroll(desktopCategoriesContainer);
+                console.log('Desktop categories scroll enabled', {
+                    scrollWidth: desktopCategoriesContainer.scrollWidth,
+                    clientWidth: desktopCategoriesContainer.clientWidth,
+                    canScroll: desktopCategoriesContainer.scrollWidth > desktopCategoriesContainer.clientWidth
+                });
+            } else {
+                console.warn('Desktop categories container not found');
+            }
+
+            // Preserve active state behavior on mobile row
+            if (categoryRow && !categoryRow.dataset.activeHandlerAttached) {
+                const categoryLinks = categoryRow.querySelectorAll('.laxcc-quick-action[data-category]');
+                categoryLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        categoryLinks.forEach(l => l.classList.remove('active'));
+                        link.classList.add('active');
+                    });
+                });
+                categoryRow.dataset.activeHandlerAttached = '1';
+            }
+        }
+
+        // Run immediately and on re-renders (Elementor/WordPress)
+        setupHorizontalScroll();
+        setupScrollArrows();
+
+        // Run after DOM is fully loaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                setupHorizontalScroll();
+                setupScrollArrows();
+            });
+        } else {
+            // DOM already loaded, run with a small delay to ensure render
+            setTimeout(() => {
+                setupHorizontalScroll();
+                setupScrollArrows();
+            }, 100);
+        }
+
+        // Also run after window load (images, etc)
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                setupHorizontalScroll();
+                setupScrollArrows();
+            }, 100);
+        });
+
+        // Elementor hooks
+        if (typeof elementorFrontend !== 'undefined') {
+            if (elementorFrontend.hooks && elementorFrontend.hooks.addAction) {
+                elementorFrontend.hooks.addAction('frontend/element_ready/global', () => {
+                    setupHorizontalScroll();
+                    setupScrollArrows();
+                });
+                elementorFrontend.hooks.addAction('frontend/element_ready/widget', () => {
+                    setupHorizontalScroll();
+                    setupScrollArrows();
+                });
+            }
+        }
+
+        // jQuery/Elementor Pro init
+        if (typeof jQuery !== 'undefined') {
+            jQuery(function() {
+                setupHorizontalScroll();
+                setupScrollArrows();
+                setTimeout(() => {
+                    setupHorizontalScroll();
+                    setupScrollArrows();
+                }, 200);
+            });
+            jQuery(window).on('elementor/frontend/init', function() {
+                setupHorizontalScroll();
+                setupScrollArrows();
+                setTimeout(() => {
+                    setupHorizontalScroll();
+                    setupScrollArrows();
+                }, 200);
+            });
+        }
+
+        // Observe DOM changes within the widget for late mounts
+        (function() {
+            const root = document.querySelector('.laxcc-mobile-nav-widget');
+            if (!root || typeof MutationObserver === 'undefined') return;
+            const obs = new MutationObserver(() => {
+                setupHorizontalScroll();
+                setupScrollArrows();
+            });
+            obs.observe(root, { childList: true, subtree: true });
+        })();
+
+
+        // Modal functionality
+        const overlay = document.getElementById('modalOverlay');
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) {
+                if (overlay.classList.contains('hamburger-overlay')) {
+                    closeHamburgerMenu();
+                } else {
+                    closeAllModals();
+                }
+            }
+        });
+
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            overlay.classList.add('active');
+        }
+
+        function closeAllModals() {
+            document.querySelectorAll('.laxcc-modal').forEach(modal => modal.classList.remove('active'));
+            overlay.classList.remove('active');
+        }
+
+        // Language Switcher Functions
+        function toggleLanguageMenu() {
+            const menu = document.getElementById('languageMenu');
+            const toggle = document.querySelector('.laxcc-language-toggle');
+            
+            menu.classList.toggle('show');
+            toggle.classList.toggle('active');
+        }
+
+        function changeLanguage(langCode, flag, shortCode) {
+            // Update the current language display
+            const currentLang = document.querySelector('.laxcc-current-lang');
+            currentLang.textContent = `${flag} ${shortCode}`;
+            
+            // Update active state
+            document.querySelectorAll('.laxcc-lang-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            event.target.closest('.laxcc-lang-option').classList.add('active');
+            
+            // Close the menu
+            const menu = document.getElementById('languageMenu');
+            const toggle = document.querySelector('.laxcc-language-toggle');
+            menu.classList.remove('show');
+            toggle.classList.remove('active');
+            
+            // Trigger Google Translate
+            triggerGoogleTranslate(langCode);
+            
+            return false;
+        }
+
+        function triggerGoogleTranslate(langCode) {
+            // Simple method: use URL parameter approach
+            const currentUrl = window.location.href.split('#')[0].split('?')[0];
+            const targetLang = langCode === 'en' ? '' : langCode;
+            
+            if (targetLang) {
+                // Use Google Translate URL method
+                window.location.href = `https://translate.google.com/translate?sl=en&tl=${targetLang}&u=${encodeURIComponent(currentUrl)}`;
+            } else {
+                // Return to original page
+                if (window.location.href.includes('translate.google.com')) {
+                    // Extract original URL from Google Translate
+                    const urlParam = new URLSearchParams(window.location.search).get('u');
+                    if (urlParam) {
+                        window.location.href = decodeURIComponent(urlParam);
+                    }
+                }
+            }
+        }
+
+        // Close language menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const languageSwitcher = document.querySelector('.laxcc-language-switcher');
+            const menu = document.getElementById('languageMenu');
+            const toggle = document.querySelector('.laxcc-language-toggle');
+            
+            if (languageSwitcher && !languageSwitcher.contains(event.target)) {
+                if (menu) menu.classList.remove('show');
+                if (toggle) toggle.classList.remove('active');
+            }
+
+        });
+
+        // Note: Horizontal scroll interactions are initialized above for both rows
+
+    </script>
+    
+    <!-- Note: Using direct Google Translate URL method - no additional scripts needed -->
+</div>
+<!-- End LAXCC Mobile Navigation Widget -->

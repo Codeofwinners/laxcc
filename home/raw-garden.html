@@ -1,0 +1,144 @@
+<style>
+    #rawgarden-brand-scope {
+        --rg-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --rg-bg: #fbf8f2;
+        --rg-text: #1d508a;
+        --rg-text-muted: #64748b;
+        --rg-accent: #F89459;
+
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow: visible;
+        padding: 60px 20px;
+        background: var(--rg-bg);
+        font-family: var(--rg-font);
+        color: var(--rg-text);
+        position: relative;
+    }
+
+    #rawgarden-brand-scope .rg-header {
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    #rawgarden-brand-scope .rg-header__sup {
+        font-size: 11px;
+        font-weight: 700;
+        color: #1D508A;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        margin-bottom: 12px;
+        display: inline-block;
+        border: 1px solid #1D508A;
+        padding: 4px 12px;
+        border-radius: 50px;
+        background: rgba(29, 80, 138, 0.05);
+    }
+
+    #rawgarden-brand-scope .rg-header__title {
+        font-size: clamp(32px, 5vw, 64px) !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        text-transform: uppercase !important;
+        margin: 0 0 16px 0 !important;
+        letter-spacing: -0.02em !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        flex-wrap: wrap !important;
+        color: #2d6a30 !important;
+    }
+
+    #rawgarden-brand-scope .rg-text-gradient {
+        background: linear-gradient(135deg, #2d6a30 0%, #6db33f 100%) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        color: transparent !important;
+        display: inline-block !important;
+    }
+
+    #rawgarden-brand-scope .rg-best-badge {
+        background: #2d6a30;
+        color: #fff;
+        font-size: 0.4em;
+        padding: 6px 14px;
+        border-radius: 50px;
+        -webkit-text-fill-color: white !important;
+        color: white !important;
+        letter-spacing: 0.05em;
+        position: relative;
+        top: -4px;
+        box-shadow: 0 4px 12px rgba(45, 106, 48, 0.4);
+        animation: rg-pulse-badge 2s infinite;
+    }
+
+    @keyframes rg-pulse-badge {
+        0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(45, 106, 48, 0.7); }
+        70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(45, 106, 48, 0); }
+        100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(45, 106, 48, 0); }
+    }
+
+    #rawgarden-brand-scope .rg-header__desc {
+        font-size: 18px;
+        color: var(--rg-text-muted);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    #rawgarden-brand-scope .rg-products-section {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #rawgarden-brand-scope .rg-reddit-link {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #ff4500;
+        text-decoration: none;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+    }
+
+    #rawgarden-brand-scope .rg-reddit-link:hover { opacity: 1; }
+
+    #rawgarden-brand-scope .rg-reddit-link svg {
+        width: 16px;
+        height: 16px;
+        fill: #ff4500;
+    }
+
+    @media (max-width: 768px) {
+        #rawgarden-brand-scope { padding: 40px 16px; }
+        #rawgarden-brand-scope .rg-header__title { font-size: 64px !important; }
+    }
+</style>
+
+<div id="rawgarden-brand-scope">
+    <header class="rg-header">
+        <a href="https://www.google.com/search?udm=2&q=reddit+raw+garden+weed" class="rg-reddit-link" target="_blank" rel="noopener nofollow">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12C24 5.373 18.627 0 12 0zm6.066 13.71c.147.422.22.864.22 1.317 0 2.47-2.87 4.473-6.413 4.473S5.46 17.497 5.46 15.027c0-.453.073-.895.22-1.317a1.5 1.5 0 01-.507-1.129c0-.832.674-1.506 1.506-1.506.397 0 .779.162 1.057.448a8.86 8.86 0 014.137-1.279l.835-3.94a.3.3 0 01.356-.236l2.784.593a1.08 1.08 0 012.065.453 1.08 1.08 0 01-1.08 1.08 1.08 1.08 0 01-1.06-.878l-2.478-.528-.744 3.506a8.835 8.835 0 014.088 1.274 1.5 1.5 0 011.057-.448c.832 0 1.506.674 1.506 1.506a1.5 1.5 0 01-.507 1.129zM8.727 13.927c-.663 0-1.2.537-1.2 1.2s.537 1.2 1.2 1.2 1.2-.537 1.2-1.2-.537-1.2-1.2-1.2zm6.546 0c-.663 0-1.2.537-1.2 1.2s.537 1.2 1.2 1.2 1.2-.537 1.2-1.2-.537-1.2-1.2-1.2zm-5.14 3.727a.18.18 0 01.254 0c.678.678 1.882 1.006 2.613 1.006s1.935-.328 2.613-1.006a.18.18 0 01.254.254c-.758.758-2.037 1.112-2.867 1.112s-2.109-.354-2.867-1.112a.18.18 0 010-.254z"/></svg>
+            Reviews
+        </a>
+        <span class="rg-header__sup">California's #1 Extracts</span>
+        <h2 class="rg-header__title">
+            <span class="rg-text-gradient">Raw Garden</span> <span class="rg-best-badge">#1 SELLER</span>
+        </h2>
+        <p class="rg-header__desc">Farm-grown in Santa Barbara County. <strong>Raw Garden</strong> crafts Refined Live Resin and solventless Live Rosin from fresh-frozen, single-source cannabis. 100% pure — no additives, no artificial flavors. California's best-selling extract brand.</p>
+    </header>
+
+    <div class="rg-products-section">
+        [leafbridge_specific_product_filter brand="bbdf26e3-c442-4346-898a-9dc657ff3acb" count="20"]
+    </div>
+</div>

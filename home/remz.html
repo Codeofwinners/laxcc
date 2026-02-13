@@ -1,0 +1,468 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap');
+
+    #dual-brand-scope {
+        /* --- THEME VARS --- */
+        --db-font: 'Manrope', sans-serif;
+        --db-bg: transparent;
+        --db-card-bg: #ffffff;
+        --db-card-border: #e2e8f0;
+        --db-text: #1D508A;
+        --db-text-muted: #64748b;
+
+        /* Brand 1 Colors (Remz) */
+        --db-brand1: #F89459;
+
+        /* Brand 2 Colors (Boutiq) */
+        --db-brand2: #f89359;
+
+        /* Spacing */
+        --db-spacing-sm: 8px;
+        --db-spacing-md: 12px;
+        --db-spacing-lg: 16px;
+        --db-spacing-xl: 30px;
+
+        /* Border Radius */
+        --db-radius-sm: 6px;
+        --db-radius-md: 10px;
+        --db-radius-lg: 16px;
+
+        /* Transitions */
+        --db-transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        --db-transition-fast: 0.2s ease;
+
+        /* Shadows */
+        --db-shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+        --db-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+        font-family: var(--db-font);
+        color: var(--db-text);
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        padding: 40px 0;
+    }
+
+    #dual-brand-scope *,
+    #dual-brand-scope *::before,
+    #dual-brand-scope *::after {
+        box-sizing: border-box;
+    }
+
+    /* --- BRAND SECTION --- */
+    .db-section {
+        margin-bottom: 50px;
+    }
+
+    .db-section:last-child {
+        margin-bottom: 0;
+    }
+
+    /* --- HEADER --- */
+    .db-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .db-header__titles {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .db-header__sup {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--db-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 6px;
+    }
+
+    .db-header__title {
+        font-size: 36px;
+        font-weight: 900;
+        line-height: 0.9;
+        text-transform: uppercase;
+        margin: 0;
+        color: var(--db-text);
+    }
+
+    .db-header__title--brand1 span {
+        color: var(--db-brand1);
+    }
+
+    .db-header__title--brand2 span {
+        color: var(--db-brand2);
+    }
+
+    .db-header__desc {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--db-text-muted);
+        line-height: 1.5;
+        max-width: 400px;
+        margin-top: var(--db-spacing-md);
+    }
+
+    /* --- GRID --- */
+    .db-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-bottom: 30px;
+        align-items: start;
+    }
+
+    /* --- CARD --- */
+    .db-card {
+        background: var(--db-card-bg);
+        border: 1px solid var(--db-card-border);
+        border-radius: 16px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: inherit;
+        box-shadow: var(--db-shadow-sm);
+    }
+
+
+    .db-card__image {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1;
+        background: #f8fafc;
+        border-radius: 10px;
+        border: 1px solid #f1f5f9;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+        overflow: hidden;
+    }
+
+    .db-card__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        mix-blend-mode: multiply;
+        transition: transform 0.4s ease;
+        will-change: transform;
+    }
+
+
+    .db-card__name {
+        font-size: 20px;
+        font-weight: 800;
+        margin: 0 0 6px 0;
+        color: var(--db-text);
+        line-height: 1.25;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .db-card__meta {
+        font-size: 16px;
+        color: var(--db-text-muted);
+        line-height: 1.4;
+        font-weight: 600;
+        margin-bottom: var(--db-spacing-sm);
+    }
+
+    .db-card__price {
+        margin-top: auto;
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--db-text);
+    }
+
+    /* --- FOOTER / CTA --- */
+    .db-footer {
+        display: flex;
+        justify-content: center;
+        margin-top: var(--db-spacing-xl);
+        border-top: 1px solid var(--db-card-border);
+        padding-top: var(--db-spacing-xl);
+    }
+
+    .db-footer__cta {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 800;
+        padding: 12px 32px;
+        border-radius: var(--db-radius-md);
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .db-footer__cta--brand1 {
+        background: var(--db-brand1);
+    }
+
+    .db-footer__cta--brand2 {
+        background: var(--db-brand2);
+    }
+
+    .db-footer__cta--brand1:hover,
+    .db-footer__cta--brand1:visited,
+    .db-footer__cta--brand1:active,
+    .db-footer__cta--brand1:focus {
+        color: #fff;
+        background: var(--db-brand1);
+        text-decoration: none;
+    }
+
+    .db-footer__cta--brand2:hover,
+    .db-footer__cta--brand2:visited,
+    .db-footer__cta--brand2:active,
+    .db-footer__cta--brand2:focus {
+        color: #fff;
+        background: var(--db-brand2);
+        text-decoration: none;
+    }
+
+    /* RESPONSIVE - Tablet */
+    @media (min-width: 640px) {
+        .db-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            align-items: start;
+        }
+    }
+
+    /* RESPONSIVE - Desktop */
+    @media (min-width: 1024px) {
+        .db-grid {
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            align-items: start;
+        }
+    }
+
+    /* RESPONSIVE - Mobile */
+    @media (max-width: 600px) {
+        #dual-brand-scope {
+            padding: 20px 0;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .db-section {
+            margin-bottom: var(--db-spacing-xl);
+            padding: 0 12px;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .db-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+            width: 100%;
+            max-width: 100%;
+            align-items: start;
+        }
+
+        .db-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .db-header__titles {
+            min-width: 0;
+            width: 100%;
+        }
+
+        .db-header__title {
+            font-size: 26px;
+        }
+
+        .db-header__desc {
+            max-width: 100%;
+        }
+
+        .db-card {
+            padding: 12px;
+            min-width: 0;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .db-card__image {
+            margin-bottom: var(--db-spacing-sm);
+        }
+
+        .db-card__name {
+            font-size: 14px;
+            max-width: 100%;
+        }
+
+        .db-card__meta {
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+
+        .db-card__price {
+            font-size: 16px;
+        }
+
+        .db-footer {
+            margin-top: 24px;
+            padding-top: 24px;
+        }
+
+        .db-footer__cta {
+            padding: 10px 24px;
+            font-size: 13px;
+        }
+    }
+</style>
+
+<div id="dual-brand-scope">
+
+    <!-- REMZ SECTION -->
+    <div class="db-section">
+        <div class="db-header">
+            <div class="db-header__titles">
+                <div class="db-header__sup">Premium Indoor Cannabis</div>
+                <h2 class="db-header__title db-header__title--brand1">Shop <span>Remz</span></h2>
+                <div class="db-header__desc">Precision Grown • High Potency Exotics</div>
+            </div>
+        </div>
+
+        <div class="db-grid">
+            <!-- Product 1 -->
+            <a href="https://laxcc.com/categories/flower/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=FLOWER&brands=90dd2493-2815-47bc-8a71-b1a611af25bd" class="db-card db-card--brand1" target="_blank">
+                <div class="db-card__image">
+                    <img src="https://images.dutchie.com/27d0618cb91b7295d13d3c9f600e3e6f" alt="REMZ I Permanent Cherries">
+                </div>
+                <div class="db-card__name">Permanent Cherries</div>
+                <div class="db-card__meta">Indica • 1/8 oz</div>
+                <div class="db-card__price">$45</div>
+            </a>
+
+            <!-- Product 2 -->
+            <a href="https://laxcc.com/categories/flower/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=FLOWER&brands=90dd2493-2815-47bc-8a71-b1a611af25bd" class="db-card db-card--brand1" target="_blank">
+                <div class="db-card__image">
+                    <img src="https://images.dutchie.com/c99703932d10ed13f74db636e0b22985" alt="REMZ I London Purpz">
+                </div>
+                <div class="db-card__name">London Purpz</div>
+                <div class="db-card__meta">Indica • 1/4 oz</div>
+                <div class="db-card__price">$60</div>
+            </a>
+
+            <!-- Product 3 -->
+            <a href="https://laxcc.com/categories/flower/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=FLOWER&brands=90dd2493-2815-47bc-8a71-b1a611af25bd" class="db-card db-card--brand1" target="_blank">
+                <div class="db-card__image">
+                    <img src="https://images.dutchie.com/1c8c11e88992c7dad58a20dc79733f44" alt="REMZ S Key Lime Jack">
+                </div>
+                <div class="db-card__name">Key Lime Jack</div>
+                <div class="db-card__meta">Sativa • 1/8 oz</div>
+                <div class="db-card__price">$45</div>
+            </a>
+
+            <!-- Product 4 -->
+            <a href="https://laxcc.com/categories/flower/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=FLOWER&brands=90dd2493-2815-47bc-8a71-b1a611af25bd" class="db-card db-card--brand1" target="_blank">
+                <div class="db-card__image">
+                    <img src="https://images.dutchie.com/ea4963f66707fa69a5bb6c7eefcce103" alt="REMZ S Pink Paletas">
+                </div>
+                <div class="db-card__name">Pink Paletas</div>
+                <div class="db-card__meta">Sativa • 1/4 oz</div>
+                <div class="db-card__price">$60</div>
+            </a>
+
+            <!-- Product 5 -->
+            <a href="https://laxcc.com/categories/flower/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=FLOWER&brands=90dd2493-2815-47bc-8a71-b1a611af25bd" class="db-card db-card--brand1" target="_blank">
+                <div class="db-card__image">
+                    <img src="https://images.dutchie.com/5499dcce603744ed9343adff72030d2f" alt="REMZ H Bolo Runtz">
+                </div>
+                <div class="db-card__name">Bolo Runtz</div>
+                <div class="db-card__meta">Hybrid • 1/8 oz</div>
+                <div class="db-card__price">$45</div>
+            </a>
+        </div>
+
+        <div class="db-footer">
+            <a href="https://laxcc.com/categories/flower/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=FLOWER&brands=90dd2493-2815-47bc-8a71-b1a611af25bd" class="db-footer__cta db-footer__cta--brand1" target="_blank">View All Remz</a>
+        </div>
+    </div>
+
+    <!-- BOUTIQ SECTION -->
+    <div class="db-section">
+        <div class="db-header">
+            <div class="db-header__titles">
+                <div class="db-header__sup">Liquid Diamonds THC Oil</div>
+                <h2 class="db-header__title db-header__title--brand2">Shop <span>Boutiq</span></h2>
+                <div class="db-header__desc">Cannabis-Derived Terpenes • Full-Spectrum Flavor</div>
+            </div>
+        </div>
+
+        <div class="db-grid">
+            <!-- Product 1 -->
+            <a href="https://laxcc.com/product/boutiq-aio-h-artic-frost-x-cookie-monster/" class="db-card db-card--brand2" target="_blank">
+                <div class="db-card__image">
+                    <img src="https://images.dutchie.com/86931aac588d2d025c4eebcd3f706a6c" alt="Boutiq AIO H Artic Frost x Cookie Monster">
+                </div>
+                <div class="db-card__name">Artic Frost x Cookie Monster</div>
+                <div class="db-card__meta">Hybrid • Liquid Diamonds</div>
+                <div class="db-card__price">$35</div>
+            </a>
+
+            <!-- Product 2 -->
+            <a href="https://laxcc.com/product/boutiq-aio-s-h-lemon-stripe-x-star-fruit/" class="db-card db-card--brand2" target="_blank">
+                <div class="db-card__image">
+                    <img src="https://images.dutchie.com/fc1704f8075702438aff8a0819941267" alt="Boutiq AIO S/H Lemon Stripe x Star Fruit">
+                </div>
+                <div class="db-card__name">Lemon Stripe x Star Fruit</div>
+                <div class="db-card__meta">Sativa/Hybrid • Liquid Diamonds</div>
+                <div class="db-card__price">$35</div>
+            </a>
+
+            <!-- Product 3 -->
+            <a href="https://laxcc.com/product/boutiq-aio-s-i-pineapple-x-daydream/" class="db-card db-card--brand2" target="_blank">
+                <div class="db-card__image">
+                    <img src="https://images.dutchie.com/ca9dca9d866616038735b2dd22cab51e" alt="Boutiq AIO S/I Pineapple x Daydream">
+                </div>
+                <div class="db-card__name">Pineapple x Daydream</div>
+                <div class="db-card__meta">Sativa/Indica • Liquid Diamonds</div>
+                <div class="db-card__price">$35</div>
+            </a>
+
+            <!-- Product 4 -->
+            <a href="https://laxcc.com/product/boutiq-aio-i-papaya-x-mango-melon/" class="db-card db-card--brand2" target="_blank">
+                <div class="db-card__image">
+                    <img src="https://images.dutchie.com/5694aed6b956011adf16392b70e43657" alt="Boutiq AIO I Papaya x Mango Melon">
+                </div>
+                <div class="db-card__name">Papaya x Mango Melon</div>
+                <div class="db-card__meta">Indica • Liquid Diamonds</div>
+                <div class="db-card__price">$35</div>
+            </a>
+
+            <!-- Product 5 -->
+            <a href="https://laxcc.com/product/boutiq-aio-i-h-watermelon-x-dragonfruit/" class="db-card db-card--brand2" target="_blank">
+                <div class="db-card__image">
+                    <img src="https://images.dutchie.com/95ab0e8d03022a386b93b6c7f0432fc9" alt="Boutiq AIO I/H Watermelon x Dragonfruit">
+                </div>
+                <div class="db-card__name">Watermelon x Dragonfruit</div>
+                <div class="db-card__meta">Indica/Hybrid • Liquid Diamonds</div>
+                <div class="db-card__price">$35</div>
+            </a>
+        </div>
+
+        <div class="db-footer">
+            <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=boutiq" class="db-footer__cta db-footer__cta--brand2" target="_blank">View All Boutiq</a>
+        </div>
+    </div>
+
+</div>

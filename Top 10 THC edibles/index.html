@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LA's Top Cannabis Edibles Guide 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #fbf8f2;
+      --ink: #1a1a18;
+      --ink-light: #4a4a45;
+      --ink-faint: #8a8a82;
+      --terracotta: #c4704b;
+      --terracotta-light: #d4896a;
+      --sage: #7a8c6e;
+      --sage-light: #a3b396;
+      --gold: #b8973a;
+      --rule: rgba(26, 26, 24, 0.12);
+      --rule-heavy: rgba(26, 26, 24, 0.25);
+      --ff-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      --ff-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--ff-body);
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ═══════════════════════════════════════════
+       EDITORIAL CONTAINER
+    ═══════════════════════════════════════════ */
+    .editorial {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .editorial-wide {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ═══════════════════════════════════════════
+       MASTHEAD — magazine-style top
+    ═══════════════════════════════════════════ */
+    .masthead {
+      padding: 4rem 0 3rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .masthead::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: var(--ink);
+      margin: 3rem auto 0;
+    }
+
+    .masthead-eyebrow {
+      font-family: var(--ff-body);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .masthead h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .masthead h1 em {
+      font-style: italic;
+      color: #00AFC9;
+    }
+
+    .masthead-sub {
+      font-family: var(--ff-body);
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--ink-light);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════════
+       ACCORDION — REGULATIONS (editorial style)
+    ═══════════════════════════════════════════ */
+    .reg-section {
+      padding: 2rem 0 3rem;
+    }
+
+    .reg-toggle {
+      width: 100%;
+      background: none;
+      border: 1px solid var(--rule);
+      border-left: none;
+      border-right: none;
+      padding: 1.25rem 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--ff-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      transition: color 0.3s ease;
+    }
+
+    .reg-toggle:hover { color: var(--terracotta); }
+
+    .reg-toggle svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      stroke: currentColor;
+    }
+
+    .reg-toggle.active svg {
+      transform: rotate(180deg);
+    }
+
+    .reg-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                  padding 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reg-body.active {
+      max-height: 800px;
+      padding: 2rem 0;
+    }
+
+    .reg-body p {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      border-left: 2px solid var(--rule);
+    }
+
+    .reg-body p:last-child { margin-bottom: 0; }
+
+    .reg-body p strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* ═══════════════════════════════════════════
+       CHAPTER COUNTER
+    ═══════════════════════════════════════════ */
+    .chapter-divider {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 3rem 0 0;
+    }
+
+    .chapter-divider::before,
+    .chapter-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    .chapter-number {
+      font-family: var(--ff-display);
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: var(--ink-faint);
+      white-space: nowrap;
+    }
+
+    /* ═══════════════════════════════════════════
+       STORY ENTRY — Each product is a chapter
+    ═══════════════════════════════════════════ */
+    .story {
+      padding: 0 0 2rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .story.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .story-header {
+      padding: 2.5rem 0 2rem;
+      position: relative;
+    }
+
+    .story-rank {
+      font-family: var(--ff-display);
+      font-size: clamp(5rem, 12vw, 9rem);
+      font-weight: 900;
+      line-height: 0.85;
+      color: transparent;
+      -webkit-text-stroke: 1.5px var(--rule-heavy);
+      position: absolute;
+      top: 0.5rem;
+      right: 0;
+      z-index: 0;
+      user-select: none;
+      pointer-events: none;
+      transition: -webkit-text-stroke-color 0.5s ease;
+    }
+
+    .story:hover .story-rank {
+      -webkit-text-stroke-color: #00AFC9;
+    }
+
+    .story-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      position: relative;
+      z-index: 1;
+      max-width: 75%;
+      transition: color 0.3s ease;
+    }
+
+    .story:hover .story-title {
+      color: #00AFC9;
+    }
+
+    /* Shortcode area */
+    .story-products {
+      padding: 1.5rem 0;
+      font-family: var(--ff-body);
+      font-size: 1rem;
+      color: var(--ink-light);
+    }
+
+    /* Video (Smokiez) */
+    .story-video {
+      margin: 0 0 2rem;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    .story-video video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .story-video video:fullscreen,
+    .story-video video:-webkit-full-screen,
+    .story-video video:-moz-full-screen,
+    .story-video video:-ms-fullscreen {
+      object-fit: contain;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    /* Editorial body text */
+    .story-body {
+      position: relative;
+    }
+
+    .story-description {
+      font-family: var(--ff-body);
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--ink-light);
+      max-width: 680px;
+      margin-bottom: 2rem;
+    }
+
+    .story-description strong {
+      display: none; /* Hide the "Description:" label for cleaner editorial feel */
+    }
+
+    /* Flavors / Products list */
+    .story-flavors-label {
+      font-family: var(--ff-body);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.75rem;
+    }
+
+    .story-flavors {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem;
+    }
+
+    .story-flavors li {
+      font-family: var(--ff-body);
+      font-size: 0.92rem;
+      font-weight: 400;
+      color: var(--ink-light);
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--rule);
+      line-height: 1.5;
+      transition: color 0.2s ease, padding-left 0.3s ease;
+    }
+
+    .story-flavors li:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+    .story-flavors li:hover {
+      color: var(--ink);
+      padding-left: 0.5rem;
+    }
+
+    /* Quality badge */
+    .story-quality {
+      font-family: var(--ff-body);
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--ink-faint);
+      line-height: 1.7;
+      padding-left: 1rem;
+      border-left: 2px solid var(--sage-light);
+      max-width: 600px;
+    }
+
+    .story-quality strong {
+      display: none;
+    }
+
+    .story-collab {
+      font-family: var(--ff-body);
+      font-size: 0.85rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--ink-faint);
+      margin-top: 1rem;
+    }
+
+    .story-collab strong {
+      display: none;
+    }
+
+    /* ═══════════════════════════════════════════
+       CTA / CLOSING SECTION
+    ═══════════════════════════════════════════ */
+    .closing {
+      background: var(--ink);
+      color: var(--cream);
+      padding: 6rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .closing::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--terracotta), transparent);
+    }
+
+    .closing-inner {
+      text-align: center;
+    }
+
+    .closing-eyebrow {
+      font-family: var(--ff-body);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--terracotta-light);
+      margin-bottom: 2rem;
+    }
+
+    .closing h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--cream);
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      letter-spacing: -0.01em;
+    }
+
+    .closing-text {
+      font-family: var(--ff-body);
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(251, 248, 242, 0.65);
+      max-width: 600px;
+      margin: 0 auto 3.5rem;
+      line-height: 1.8;
+    }
+
+    /* Brand ticker */
+    .brand-list {
+      padding: 3rem 0;
+      border-top: 1px solid rgba(251, 248, 242, 0.08);
+      border-bottom: 1px solid rgba(251, 248, 242, 0.08);
+      margin: 0 0 3.5rem;
+    }
+
+    .brand-list-label {
+      font-family: var(--ff-body);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(251, 248, 242, 0.35);
+      margin-bottom: 1.5rem;
+    }
+
+    .brand-list-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .brand-list-items span {
+      font-family: var(--ff-body);
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: rgba(251, 248, 242, 0.5);
+      padding: 0.45rem 1rem;
+      border: 1px solid rgba(251, 248, 242, 0.1);
+      border-radius: 100px;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .brand-list-items span:hover {
+      color: var(--cream);
+      border-color: var(--terracotta);
+      background: rgba(196, 112, 75, 0.15);
+    }
+
+    /* CTA Button */
+    .cta-link {
+      display: inline-block;
+      font-family: var(--ff-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+      padding: 1.2rem 3rem;
+      border: 1px solid rgba(251, 248, 242, 0.3);
+      border-radius: 0;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cta-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: var(--terracotta);
+      z-index: -1;
+      transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .cta-link:hover {
+      border-color: var(--terracotta);
+    }
+
+    .cta-link:hover::before {
+      width: 100%;
+    }
+
+    .closing-note {
+      margin-top: 3rem;
+      font-family: var(--ff-body);
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: rgba(251, 248, 242, 0.4);
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 768px) {
+      .editorial, .editorial-wide {
+        padding: 0 1.25rem;
+      }
+
+      .masthead {
+        padding: 3rem 0 2.5rem;
+      }
+
+      .story-rank {
+        font-size: clamp(4rem, 15vw, 6rem);
+        right: -0.5rem;
+        top: 0.75rem;
+      }
+
+      .story-title {
+        max-width: 85%;
+      }
+
+      .closing {
+        padding: 4rem 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .editorial, .editorial-wide {
+        padding: 0 1rem;
+      }
+
+      .masthead h1 {
+        font-size: 2.2rem;
+      }
+
+      .story-rank {
+        position: static;
+        font-size: 3.5rem;
+        margin-bottom: -1rem;
+        display: block;
+      }
+
+      .story-title {
+        max-width: 100%;
+      }
+
+      .cta-link {
+        padding: 1rem 2rem;
+        font-size: 0.7rem;
+      }
+    }
+
+    /* ═══════════════════════════════════════════
+       MOTION PREFERENCES
+    ═══════════════════════════════════════════ */
+    @media (prefers-reduced-motion: reduce) {
+      .story {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    @media (prefers-contrast: high) {
+      .story-rank {
+        -webkit-text-stroke-color: var(--ink);
+      }
+      .reg-toggle {
+        border-color: var(--ink);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════
+       MASTHEAD
+  ════════════════════════════════════════ -->
+  <header class="masthead">
+    <div class="editorial">
+      <span class="masthead-eyebrow">LAX Cannabis Club &mdash; Edibles Guide 2026</span>
+      <h1>The <em>Definitive</em> Top&nbsp;10 THC Edibles in Los&nbsp;Angeles</h1>
+      <p class="masthead-sub">A curated editorial guide to the finest cannabis edibles available at LAX Cannabis Club, ranked by quality, flavor, and experience.</p>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════
+       REGULATIONS ACCORDION
+  ════════════════════════════════════════ -->
+  <section class="reg-section">
+    <div class="editorial">
+      <button class="reg-toggle" id="regToggle">
+        <span>Legality &amp; Regulations of Edibles in California</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div class="reg-body" id="regBody">
+        <p><strong>Legal Age:</strong> You must be 21 years of age or older to purchase, possess, or consume cannabis edibles in California.</p>
+        <p><strong>Possession Limits:</strong> Adults can possess up to one ounce (28.5 grams) of cannabis flower or eight grams of cannabis concentrate.</p>
+        <p><strong>THC Limits:</strong> Edible products are limited to 10mg of THC per serving and 100mg of THC per package.</p>
+        <p><strong>Consumption Restrictions:</strong> Consuming cannabis in public places is generally prohibited. Consumption is also restricted in areas where smoking is banned.</p>
+        <p><strong>Packaging and Labeling:</strong> Products must be in child-resistant containers and clearly labeled with THC content, health warnings, and batch numbers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       THE STORIES — 10 through 1
+  ════════════════════════════════════════ -->
+  <main>
+
+    <!-- ░░░ No. 10 — Big Pete's Treats ░░░ -->
+    <article class="story" data-story>
+      <div class="editorial">
+        <div class="chapter-divider"><span class="chapter-number">No. 10</span></div>
+        <div class="story-header">
+          <span class="story-rank">10</span>
+          <h2 class="story-title">Big Pete's Treats</h2>
+        </div>
+        <div class="story-products">
+          [leafbridge_specific_product_filter category="EDIBLES" brand="f6f6b30a-49d4-4bbf-b9fa-775f6fc6d70c" count="20"]
+        </div>
+        <div class="story-body">
+          <p class="story-description">A family-owned bakery from Santa Cruz, CA, baking cannabis-infused cookies and treats since 2009, inspired by classic homemade recipes.</p>
+          <p class="story-flavors-label">Signature Products</p>
+          <ul class="story-flavors">
+            <li>Chocolate Chip (Sativa &amp; Indica options)</li>
+            <li>Peanut Butter</li>
+            <li>Double Chocolate Chip</li>
+            <li>Cinnamon &amp; Sugar</li>
+            <li>Sleepytime CBN</li>
+          </ul>
+          <p class="story-collab">Collaborations include Insane Churro (with B-Real) and Tyson 2.0 (with Mike Tyson).</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ░░░ No. 9 — Dr. Norm's ░░░ -->
+    <article class="story" data-story>
+      <div class="editorial">
+        <div class="chapter-divider"><span class="chapter-number">No. 9</span></div>
+        <div class="story-header">
+          <span class="story-rank">9</span>
+          <h2 class="story-title">Dr. Norm's</h2>
+        </div>
+        <div class="story-products">
+          [leafbridge_specific_product_filter category="EDIBLES" brand="1355ef2b-c6d3-4e85-b4f0-f680943bac75" count="20"]
+        </div>
+        <div class="story-body">
+          <p class="story-description">Founded in 2017 by siblings Jeff Koz and Roberta Wilson, offering carefully crafted edibles with accurate dosing and innovative formulations.</p>
+          <p class="story-flavors-label">Signature Products</p>
+          <ul class="story-flavors">
+            <li>Cookies: Chocolate Chip, Snickerdoodle, Red Velvet, MAX Vegan Peanut Butter Chocolate Chip</li>
+            <li>Brownies &amp; Blondies: Vegan Chocolate Fudge, Salted Caramel Blondies</li>
+            <li>Crispy Rice Bars: Original, fruity, and fast-acting variations</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- ░░░ No. 8 — Camino ░░░ -->
+    <article class="story" data-story>
+      <div class="editorial">
+        <div class="chapter-divider"><span class="chapter-number">No. 8</span></div>
+        <div class="story-header">
+          <span class="story-rank">8</span>
+          <h2 class="story-title">Camino</h2>
+        </div>
+        <div class="story-products">
+          [leafbridge_specific_product_filter brand="d5a04b99-5ebf-4f65-b243-2d36ac5de7db" count="20"]
+        </div>
+        <div class="story-body">
+          <p class="story-description">Created by Kiva Confections — California's most recognized edibles brand, founded in 2010 — Camino gummies pioneered the "effect-forward" approach. Rather than labeling by strain, each gummy is engineered for a specific mood using curated terpene blends and cannabinoid ratios, making it effortless to shop by feeling: Chill, Sleep, Uplift, Social, Focus, or Bliss.</p>
+          <p class="story-flavors-label">Signature Products</p>
+          <ul class="story-flavors">
+            <li>Classic Gummies (5mg THC): Wild Berry (Chill), Midnight Blueberry (Sleep + CBN), Wild Cherry (Excite), Pineapple Habanero (Uplifting), Watermelon Lemonade (Social)</li>
+            <li>Camino Sours (10mg THC, Vegan): Watermelon Spritz (Uplift), Blackberry Dream (Sleep + CBN), Blood Orange (Spirited), Strawberry Sunset (Chill)</li>
+            <li>Specialty Blends: Sparkling Pear (2mg THC + 6mg CBD for Balance), Green Apple (5mg THC + THCV for Focus), Freshly Squeezed (5mg THC + 10mg CBG for Recovery)</li>
+          </ul>
+          <p class="story-quality">Six-time Clio Award winner. All-natural flavors and colors, no artificial preservatives, gluten-free. Sours line is 100% vegan (pectin-based). Precision-dosed with rigorous lab testing for potency and purity.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ░░░ No. 7 — St. Ides ░░░ -->
+    <article class="story" data-story>
+      <div class="editorial">
+        <div class="chapter-divider"><span class="chapter-number">No. 7</span></div>
+        <div class="story-header">
+          <span class="story-rank">7</span>
+          <h2 class="story-title">St. Ides</h2>
+        </div>
+        <div class="story-products">
+          [leafbridge_specific_product_filter brand="9002435f-1106-405e-8ebd-f47ff0ad67eb" count="20"]
+        </div>
+        <div class="story-body">
+          <p class="story-description">California's #1 cannabis beverage brand, born from iconic 1990s hip-hop culture. Originally endorsed by Tupac, Biggie, Snoop Dogg, and Ice Cube, St. Ides transitioned into legal cannabis through Pabst Labs in 2021. Their High Tea line uses Vertosa nano-emulsion technology for fast-acting effects in 15-30 minutes — not the 60-90 typical of edibles — with 100mg THC per can at just $11.</p>
+          <p class="story-flavors-label">Signature Products</p>
+          <ul class="story-flavors">
+            <li>High Tea 100mg Cans: Lemonade, Georgia Peach, Maui Mango, Lychee Pear, High Punch — brewed with real black tea and cane sugar</li>
+            <li>4oz Shots 100mg: Snooze Berries (100mg THC + 20mg CBN for sleep), Blue Razz, Watermelon, Strawberry Lemonade</li>
+            <li>Snooze Berries: Specialty sleep formula combining THC with CBN for deep relaxation and restful nights</li>
+          </ul>
+          <p class="story-quality">Made with real brewed black tea, cane sugar, and natural flavors — no cannabis aftertaste. Vertosa nano-emulsion for rapid onset. Third-party lab tested for potency and purity.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ░░░ No. 6 — Drops ░░░ -->
+    <article class="story" data-story>
+      <div class="editorial">
+        <div class="chapter-divider"><span class="chapter-number">No. 6</span></div>
+        <div class="story-header">
+          <span class="story-rank">6</span>
+          <h2 class="story-title">Drops</h2>
+        </div>
+        <div class="story-products">
+          [leafbridge_specific_product_filter category="EDIBLES" brand="edb40dc1-9b3c-43a6-8dc8-dc3aa37b1c4e" count="20"]
+        </div>
+        <div class="story-body">
+          <p class="story-description">Premium cannabis brand specializing in live rosin-infused jellies that capture the authentic essence of each cannabis strain. Available exclusively at LAX Cannabis Club, these artisanal edibles deliver strain-specific experiences through full-spectrum extraction.</p>
+          <p class="story-flavors-label">Signature Products</p>
+          <ul class="story-flavors">
+            <li>Live Rosin Jellies: Strain-specific flavors including Lime, Lemon, Orange, Watermelon, Cherry, Blueberry, and Mango</li>
+            <li>Enhanced Energy: Sativa strains with uplifting cannabinoids (CBG, THCv, CBC) for daytime clarity</li>
+            <li>Enhanced Relaxation: Indica strains with calming cannabinoids (CBD, CBN) for evening comfort</li>
+            <li>Classic Strains: Single-varietal cannabis jellies showcasing unique terpene profiles</li>
+          </ul>
+          <p class="story-quality">Sun-grown using regenerative methods, USDA Organic certified, vegan and gluten-free, with rigorous third-party lab testing for potency and purity.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ░░░ No. 5 — Good Tide ░░░ -->
+    <article class="story" data-story>
+      <div class="editorial">
+        <div class="chapter-divider"><span class="chapter-number">No. 5</span></div>
+        <div class="story-header">
+          <span class="story-rank">5</span>
+          <h2 class="story-title">Good Tide</h2>
+        </div>
+        <div class="story-products">
+          [leafbridge_specific_product_filter category="EDIBLES" brand="c6349e33-3c1e-4c16-9bf8-00fa42d59469" count="20"]
+        </div>
+        <div class="story-body">
+          <p class="story-description">Focuses on real-fruit infused gummies that deliver targeted effects with a commitment to sustainability.</p>
+          <p class="story-flavors-label">Signature Products</p>
+          <ul class="story-flavors">
+            <li>Gummies: Mango, Guava, Pineapple &amp; Grapefruit, Kiwi Strawberry &amp; Passion Fruit</li>
+          </ul>
+          <p class="story-quality">Thorough third-party lab testing ensures high purity and potency.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ░░░ No. 4 — CQ Drinks ░░░ -->
+    <article class="story" data-story>
+      <div class="editorial">
+        <div class="chapter-divider"><span class="chapter-number">No. 4</span></div>
+        <div class="story-header">
+          <span class="story-rank">4</span>
+          <h2 class="story-title">CQ Drinks</h2>
+        </div>
+        <div class="story-products">
+          [leafbridge_specific_product_filter category="EDIBLES" brand="d68c4f6a-32db-4b2b-a3c2-598a6f5f9d2a" count="20"]
+        </div>
+        <div class="story-body">
+          <p class="story-description">California's longest-standing cannabis beverage brand since 2008, offering award-winning THC-infused sodas, lemonades, and teas. Available at LAX Cannabis Club, CQ pioneered the cannabis beverage category with fast-acting, refreshing drinks.</p>
+          <p class="story-flavors-label">Signature Products</p>
+          <ul class="story-flavors">
+            <li>12oz Spritzer Cans (10mg THC): Classic Cola, Blackberry Lemon Lime, Pear Vanilla Cardamom, Watermelon Cucumber</li>
+            <li>16oz Mixer Bottles (100mg THC): Strawberry Lemonade, Old Fashioned Lemonade, Tropical Punch</li>
+            <li>2oz Shots (100mg THC): Concentrated Strawberry Lemonade for maximum convenience</li>
+            <li>Specialty Blends: Nighttime Berry Lime + CBN for sleep support</li>
+          </ul>
+          <p class="story-quality">Made with organic fruit, full-spectrum cannabis, vegan and non-GMO ingredients, gluten-free and free from artificial sweeteners with effects felt in as little as 15 minutes.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ░░░ No. 3 — Smokiez Edibles ░░░ -->
+    <article class="story" data-story>
+      <div class="editorial">
+        <div class="chapter-divider"><span class="chapter-number">No. 3</span></div>
+        <div class="story-header">
+          <span class="story-rank">3</span>
+          <h2 class="story-title">Smokiez Edibles</h2>
+        </div>
+        <div class="story-video">
+          <video
+            src="https://laxcc.com/wp-content/uploads/2025/08/smokiez-edibles.mp4"
+            controls
+            muted
+            loop
+            playsinline
+            preload="metadata">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="story-products">
+          [leafbridge_specific_product_filter category="EDIBLES" brand="42fc93f4-b11c-4b69-8110-198027021ad4" count="20"]
+        </div>
+        <div class="story-body">
+          <p class="story-description">Vegan, pectin-based "Fruit Chews" made with high-clarity cannabis distillate for clean flavor and consistent potency. Gluten-free, dairy-free, and no high-fructose corn syrup formulation.</p>
+          <p class="story-flavors-label">Signature Products</p>
+          <ul class="story-flavors">
+            <li>THC Fruit Chews: Peach, Watermelon, Blue Raspberry, Blackberry in Sativa/Hybrid/Indica profiles</li>
+            <li>Ratio Blends: 1:1 THC:CBD, CBN:THC 1:1 (Jamberry) for sleep, CBG:THC 1:1 (Green Apple)</li>
+            <li>Live-Resin Gummies: Flash-frozen flower infusion for enhanced terpene profiles</li>
+            <li>Maximum Strength: 250mg and 1000mg packages for experienced users</li>
+          </ul>
+          <p class="story-quality">Vegan, gluten-free, dairy-free, no HFCS. Public COAs with batch number lookup system for lab-tested potency and purity verification.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ░░░ No. 2 — WYLD Gummies ░░░ -->
+    <article class="story" data-story>
+      <div class="editorial">
+        <div class="chapter-divider"><span class="chapter-number">No. 2</span></div>
+        <div class="story-header">
+          <span class="story-rank">2</span>
+          <h2 class="story-title">WYLD Gummies</h2>
+        </div>
+        <div class="story-products">
+          [leafbridge_specific_product_filter category="EDIBLES" brand="d8a9a6d9-224c-440e-a408-bc56b5e3785c" count="20"]
+        </div>
+        <div class="story-body">
+          <p class="story-description">Pacific Northwest pioneers since 2016, WYLD creates world-class cannabis edibles using real fruit and natural flavors. Available exclusively at LAX Cannabis Club, these vegan gummies blend authentic taste with precisely crafted cannabinoid profiles for targeted effects.</p>
+          <p class="story-flavors-label">Signature Products</p>
+          <ul class="story-flavors">
+            <li>Real Fruit Gummies: Huckleberry, Marionberry, Raspberry, Boysenberry, Pear, Strawberry, Elderberry</li>
+            <li>Enhanced Blends: Sour Apple, Grapefruit, Sour Cherry, Sour Tangerine with unique botanical terpenes</li>
+            <li>Targeted Effects: Elderberry 2:1 CBN + Indica for deep sleep, THC:CBG:CBC combinations for energy</li>
+            <li>THC Sparkling Waters: "Your favorite gummy, now in a can" with real fruit flavors</li>
+          </ul>
+          <p class="story-quality">Manufactured in-house by food scientists with strict quality control, using real fruit ingredients and natural flavors for authentic, true-to-fruit taste with consistent cannabinoid profiles.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ░░░ No. 1 — WHOA Gummies ░░░ -->
+    <article class="story" data-story>
+      <div class="editorial">
+        <div class="chapter-divider"><span class="chapter-number">No. 1</span></div>
+        <div class="story-header">
+          <span class="story-rank">1</span>
+          <h2 class="story-title">WHOA Gummies</h2>
+        </div>
+        <div class="story-products">
+          [leafbridge_specific_product_filter category="EDIBLES" brand="536abc1c-7ae9-4389-a71a-696e6808b03b" count="20"]
+        </div>
+        <div class="story-body">
+          <p class="story-description">California's premier cannabis edibles brand from Long Beach, specializing in premium gummies crafted with precision, quality, and innovation. Now available at LAX Cannabis Club, WHOA delivers exceptional flavor profiles and consistent potency in every bite.</p>
+          <p class="story-flavors-label">Signature Products</p>
+          <ul class="story-flavors">
+            <li>Classic Fruit Gummies: Blueberry, Strawberry, Pineapple, Mixed Berries, Raspberry, Green Apple, Lemon, Tangerine</li>
+            <li>Specialty Blends: Strawberry Lemonade (Indica), Mango Chile, Pineapple Con Chile, Sour Blue Raspberry</li>
+            <li>Functional Gummies: Blueberry Pear 1:1 THC:CBN for sleep, Grape for recovery and relaxation</li>
+            <li>Premium Chocolates: Rich chocolate confections infused with precision-dosed THC</li>
+          </ul>
+          <p class="story-quality">Each gummy contains exactly 10mg THC per serving, manufactured following strict internal protocols with rigorous third-party lab testing for uniform potency, consistency, and purity.</p>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- ════════════════════════════════════════
+       CLOSING / CTA
+  ════════════════════════════════════════ -->
+  <section class="closing">
+    <div class="editorial closing-inner">
+      <p class="closing-eyebrow">Shop the Collection</p>
+      <h2>Explore Every Premium Edible at LAX Cannabis Club</h2>
+      <p class="closing-text">From the ten brands featured above to dozens more exceptional options — artisanal gummies, fast-acting beverages, classic baked treats — we carry the perfect edible for every preference and experience level.</p>
+
+      <div class="brand-list">
+        <p class="brand-list-label">All Available Brands</p>
+        <div class="brand-list-items">
+          <span>BREEZ</span>
+          <span>Big Pete's Treats</span>
+          <span>CQ</span>
+          <span>Camino</span>
+          <span>Dr. Norm's</span>
+          <span>Drops</span>
+          <span>Emerald Sky</span>
+          <span>Good Tide</span>
+          <span>Highatus</span>
+          <span>KANHA</span>
+          <span>Kiva</span>
+          <span>Korova</span>
+          <span>Lost Farm</span>
+          <span>Loudpack</span>
+          <span>Not Your Fathers Root Beer</span>
+          <span>Pabst Labs</span>
+          <span>Petra</span>
+          <span>Punch Extracts</span>
+          <span>Smokiez Edibles</span>
+          <span>St. Ides</span>
+          <span>Uncle Arnie's</span>
+          <span>WHOA</span>
+          <span>Wyld</span>
+        </div>
+      </div>
+
+      <a href="https://laxcc.com/categories/edibles/" class="cta-link">
+        Shop All Edibles
+      </a>
+
+      <p class="closing-note">Visit LAX Cannabis Club today and discover why we're LA's premier destination for premium cannabis edibles. Our knowledgeable staff is ready to help you find the perfect product.</p>
+    </div>
+  </section>
+
+  <script>
+    // Accordion
+    const regToggle = document.getElementById('regToggle');
+    const regBody = document.getElementById('regBody');
+    regToggle.addEventListener('click', () => {
+      regToggle.classList.toggle('active');
+      regBody.classList.toggle('active');
+    });
+
+    // Scroll reveal for stories
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('[data-story]').forEach(story => {
+      observer.observe(story);
+    });
+  </script>
+
+</body>
+</html>

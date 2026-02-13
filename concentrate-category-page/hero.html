@@ -1,0 +1,230 @@
+<style>
+    /* ===== LAXCC HERO - ELEMENTOR SAFE ===== */
+    #laxcc-hero-2025 {
+        --primary: #f2690d;
+        --ocean: #00AFC9;
+        --bg-dark: #1a120b;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    #laxcc-hero-2025 [class^="laxcc-"],
+    #laxcc-hero-2025 [class*=" laxcc-"] {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* ===== HERO SECTION ===== */
+    #laxcc-hero-2025 .laxcc-hero-section {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        overflow: hidden;
+        background-color: var(--bg-dark);
+    }
+
+    #laxcc-hero-2025 .laxcc-hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+
+    #laxcc-hero-2025 .laxcc-hero-mask {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.6) 100%);
+    }
+
+    #laxcc-hero-2025 .laxcc-hero-image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    #laxcc-hero-2025 .laxcc-verified {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        z-index: 30;
+        color: var(--ocean);
+        font-size: 2.5rem;
+    }
+
+    #laxcc-hero-2025 .laxcc-hero-content {
+        position: relative;
+        z-index: 20;
+        text-align: center;
+        padding: 0 1.5rem;
+    }
+
+    /* ===== ANIMATED TITLE ===== */
+    @keyframes laxcc-flow {
+        0% { background-position: 100% 50%; }
+        50% { background-position: 0% 50%; }
+        100% { background-position: 100% 50%; }
+    }
+
+    #laxcc-hero-2025 .laxcc-title {
+        background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.25) 0%,
+            rgba(255, 255, 255, 0.25) 35%,
+            #00AFC9 40%,
+            #00D4E8 50%,
+            #00AFC9 60%,
+            rgba(255, 255, 255, 0.25) 65%,
+            rgba(255, 255, 255, 0.25) 100%
+        );
+        background-size: 300% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: laxcc-flow 12s ease-in-out infinite;
+        font-size: 3rem;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        line-height: 0.9;
+        max-width: 100%;
+    }
+
+    #laxcc-hero-2025 .laxcc-subtitle {
+        color: #fff;
+        font-size: 1.25rem;
+        font-weight: 600;
+        max-width: 40rem;
+        margin: 0 auto 1rem;
+    }
+
+    #laxcc-hero-2025 .laxcc-subtitle a {
+        color: var(--ocean);
+        text-decoration: none;
+    }
+
+    #laxcc-hero-2025 .laxcc-subtitle a:hover {
+        text-decoration: underline;
+    }
+
+    #laxcc-hero-2025 .laxcc-desc {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1rem;
+        font-weight: 500;
+        max-width: 32rem;
+        margin: 0 auto 2rem;
+    }
+
+    #laxcc-hero-2025 .laxcc-scroll-hint {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 3rem;
+        animation: laxcc-bounce 1s infinite;
+    }
+
+    @keyframes laxcc-bounce {
+        0%, 100% { transform: translateY(-25%); }
+        50% { transform: translateY(0); }
+    }
+
+    #laxcc-hero-2025 .laxcc-scroll-text {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+    }
+
+    #laxcc-hero-2025 .laxcc-scroll-icon {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 1.5rem;
+    }
+
+    #laxcc-hero-2025 .laxcc-credit {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        z-index: 30;
+    }
+
+    #laxcc-hero-2025 .laxcc-credit a {
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.625rem;
+        text-decoration: none;
+        letter-spacing: 0.05em;
+        transition: color 0.2s ease;
+    }
+
+    #laxcc-hero-2025 .laxcc-credit a:hover {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 640px) {
+        #laxcc-hero-2025 .laxcc-title {
+            font-size: 5rem;
+        }
+        #laxcc-hero-2025 .laxcc-subtitle {
+            font-size: 1.5rem;
+        }
+        #laxcc-hero-2025 .laxcc-desc {
+            font-size: 1.125rem;
+        }
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-hero-2025 .laxcc-title {
+            font-size: 6rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        #laxcc-hero-2025 .laxcc-title {
+            font-size: 8rem;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        #laxcc-hero-2025 .laxcc-title {
+            font-size: 10rem;
+        }
+    }
+</style>
+
+<div id="laxcc-hero-2025">
+    <section class="laxcc-hero-section">
+
+        <!-- Verified Badge -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+        <span class="laxcc-verified material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 700;">verified</span>
+
+        <!-- Background -->
+        <div class="laxcc-hero-bg">
+            <div class="laxcc-hero-mask"></div>
+            <div class="laxcc-hero-image" style="background-image: url('https://static.wixstatic.com/media/4a2c54_8ff282bea0554b39853a4be8bf7d040d~mv2.png');"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="laxcc-hero-content">
+            <h1 class="laxcc-title">Shop THC Concentrates Near LAX</h1>
+            <p class="laxcc-subtitle">Featuring <a href="https://www.makersmj.com/" target="_blank" rel="nofollow noopener">Makers MJ</a> &amp; California's Top THC Brands</p>
+            <p class="laxcc-desc">Shop premium concentrates from highly rated California extractors. Live resin, rosin &amp; more — available for delivery in LA.</p>
+            <div class="laxcc-scroll-hint">
+                <span class="laxcc-scroll-text">Scroll</span>
+                <span class="laxcc-scroll-icon">&#x25BC;</span>
+            </div>
+        </div>
+
+        <!-- Image Credit -->
+        <div class="laxcc-credit">
+            <a href="https://www.makersmj.com/" target="_blank" rel="nofollow noopener">Image: Makers MJ</a>
+        </div>
+
+    </section>
+</div>

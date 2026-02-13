@@ -1,0 +1,799 @@
+<style>
+    /* ===== TRULY MOBILE FIRST CSS ===== */
+    /* Scoped Variables */
+    #laxcc-hero-2025 {
+        --dark-bg: #1D508A;
+        --brand-orange: #F89459;
+        --glass-bg: rgba(29, 80, 138, 0.6);
+        --glass-border: rgba(255, 255, 255, 0.15);
+        --blur: 20px;
+    }
+
+    /* Global Reset to hide scrollbars */
+    :host,
+    :root {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    ::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    #laxcc-hero-2025 {
+        margin: 0;
+        padding: 0;
+        background: #1D508A;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        overflow: hidden;
+        /* Prevent any internal overflow from showing */
+        position: relative;
+        width: 100%;
+        max-height: 1080px;
+    }
+
+    #laxcc-hero-2025 .hero-content-inner {
+        position: relative;
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        /* Mobile default */
+    }
+
+    /* STAGE */
+    #laxcc-hero-2025 .hero-mobile-first {
+        position: relative;
+        width: 100%;
+        min-height: 100dvh;
+        /* Dynamic viewport height with fallback */
+        overflow: visible;
+        position: relative;
+        padding-bottom: 90px;
+        /* Space for the floating dock */
+    }
+
+    /* BACKGROUND VIDEO */
+    #laxcc-hero-2025 .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+
+    #laxcc-hero-2025 .hero-bg::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(29, 80, 138, 0.4);
+        z-index: 1;
+    }
+
+    #laxcc-hero-2025 .hero-bg video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.5;
+        /* Visible but not overwhelming */
+    }
+
+    #laxcc-hero-2025 .hero-bg::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, #1D508A 10%, transparent 60%);
+        z-index: 1;
+    }
+
+    /* MASSIVE BACKGROUND TEXT (Fixed position) */
+    #laxcc-hero-2025 .hero-text-layer {
+        position: absolute;
+        top: 12%;
+        /* Moved down slightly to clear header */
+        left: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+        pointer-events: none;
+        padding: 0 20px;
+    }
+
+    #laxcc-hero-2025 .hero-text-layer h1 {
+        font-size: 9.5vw;
+        line-height: 1.1;
+        margin: 0 auto;
+        font-weight: 800;
+        color: rgba(255, 255, 255, 0.05);
+        /* Subtle watermark effect */
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        max-width: 90%;
+    }
+
+    #laxcc-hero-2025 .hero-text-layer p {
+        font-size: 0.9rem;
+        color: var(--brand-orange);
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    /* SCROLL DECK CONTAINER */
+    #laxcc-hero-2025 .deck-container {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        /* The deck height determines card size - Reduced for better proportions */
+        height: 48vh;
+        display: flex;
+        align-items: center;
+        /* Scroll Logic */
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 0 7.5vw;
+        /* Centers the first card (100 - 85 = 15 / 2 = 7.5) */
+        gap: 1.25rem;
+        /* Hide scrollbars */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        position: relative;
+    }
+
+    #laxcc-hero-2025 .deck-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* SLIDER WRAPPER */
+    #laxcc-hero-2025 .slider-wrapper {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    /* SCROLL ARROWS (Shadcn inspired) */
+    #laxcc-hero-2025 .scroll-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 30;
+        transition: all 0.2s ease;
+        padding: 0;
+        outline: none;
+    }
+
+    #laxcc-hero-2025 .scroll-arrow:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-50%) scale(1.05);
+    }
+
+    #laxcc-hero-2025 .scroll-arrow:active {
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    #laxcc-hero-2025 .scroll-arrow--prev {
+        left: 5px;
+    }
+
+    #laxcc-hero-2025 .scroll-arrow--next {
+        right: 5px;
+    }
+
+    #laxcc-hero-2025 .scroll-arrow svg {
+        width: 20px;
+        height: 20px;
+        opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-hero-2025 .scroll-arrow {
+            width: 38px;
+            height: 38px;
+            background: rgba(29, 80, 138, 0.4);
+            /* Brand blue with transparency */
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        #laxcc-hero-2025 .scroll-arrow--prev {
+            left: 10px;
+        }
+
+        #laxcc-hero-2025 .scroll-arrow--next {
+            right: 10px;
+        }
+    }
+
+    /* THE CARDS (Big & Tall) */
+    #laxcc-hero-2025 .deck-card {
+        flex: 0 0 85vw;
+        /* 85% of screen width */
+        height: 100%;
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+        /* Glass Style */
+        background: var(--glass-bg);
+        backdrop-filter: blur(var(--blur));
+        -webkit-backdrop-filter: blur(var(--blur));
+        border-radius: 28px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        /* Fix for border-radius rendering glitches during transforms */
+        isolation: isolate;
+        -webkit-mask-image: -webkit-radial-gradient(white, black);
+        mask-image: radial-gradient(white, black);
+        backface-visibility: hidden;
+        transform: translateZ(0);
+    }
+
+    /* Image takes up most of the card */
+    #laxcc-hero-2025 .deck-card__media {
+        flex: 1;
+        /* Fills available space */
+        width: 100%;
+        position: relative;
+    }
+
+    #laxcc-hero-2025 .deck-card__media img,
+    #laxcc-hero-2025 .deck-card__media video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* BRAND SPECIFIC CARD BACKGROUNDS */
+    #laxcc-hero-2025 .deck-card--time-machine {
+        background: radial-gradient(circle at 18% 20%, rgba(34, 211, 238, 0.28), transparent 38%),
+            linear-gradient(135deg, #0b1f34, #1f6feb, #22c55e);
+    }
+
+    #laxcc-hero-2025 .deck-card--stiiizy {
+        background: radial-gradient(circle at 82% 8%, rgba(255, 255, 255, 0.16), transparent 42%),
+            linear-gradient(135deg, #0f172a, #2f3e52, #06b6d4);
+    }
+
+    #laxcc-hero-2025 .deck-card--banana-fruz {
+        background: radial-gradient(circle at 20% 20%, rgba(254, 240, 138, 0.3), transparent 40%),
+            linear-gradient(135deg, #fde047, #eab308, #84cc16);
+    }
+
+    #laxcc-hero-2025 .deck-card--mango-fruz {
+        background: radial-gradient(circle at 80% 20%, rgba(251, 146, 60, 0.3), transparent 40%),
+            linear-gradient(135deg, #fb923c, #f97316, #ea580c);
+    }
+
+    #laxcc-hero-2025 .deck-card.deck-card--crescendo {
+        background:
+            url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20Z' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E"),
+            linear-gradient(165deg, #391d68 0%, #4a2785 50%, #5c31a2 100%) !important;
+    }
+
+    #laxcc-hero-2025 .deck-card.deck-card--tangie-frosting {
+        background:
+            url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20Z' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E"),
+            linear-gradient(165deg, #391d68 0%, #4a2785 50%, #5c31a2 100%) !important;
+    }
+
+    #laxcc-hero-2025 .deck-card.deck-card--tangie-frosting .deck-card__media {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0.5rem !important;
+        overflow: visible !important;
+    }
+
+    #laxcc-hero-2025 .deck-card.deck-card--tangie-frosting .tangie-circle-wrap {
+        width: 85% !important;
+        aspect-ratio: 1 / 1 !important;
+        border-radius: 50% !important;
+        border: 1px solid rgba(255, 255, 255, 0.4) !important;
+        box-shadow:
+            inset 0 0 20px rgba(255, 255, 255, 0.2),
+            0 15px 40px rgba(0, 0, 0, 0.25),
+            0 0 0 4px rgba(255, 255, 255, 0.1) !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
+        animation: tangie-float 4s ease-in-out infinite !important;
+        margin: 0 auto !important;
+        overflow: hidden !important;
+        position: relative;
+    }
+
+    /* Mylar Sheen - Glossy Overlay */
+    #laxcc-hero-2025 .deck-card.deck-card--tangie-frosting .tangie-circle-wrap::after,
+    #laxcc-hero-2025 .deck-card.deck-card--crescendo .crescendo-circle-wrap::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background:
+            radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 20%),
+            linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 40%, rgba(255, 255, 255, 0.1) 100%),
+            url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        z-index: 10;
+        mix-blend-mode: overlay;
+        pointer-events: none;
+    }
+
+    /* Mylar Reflection Highlight */
+    #laxcc-hero-2025 .deck-card.deck-card--tangie-frosting .tangie-circle-wrap::before,
+    #laxcc-hero-2025 .deck-card.deck-card--crescendo .crescendo-circle-wrap::before {
+        content: '';
+        position: absolute;
+        top: 5%;
+        left: 10%;
+        width: 40%;
+        height: 20%;
+        background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), transparent);
+        border-radius: 50%;
+        filter: blur(5px);
+        z-index: 11;
+        opacity: 0.7;
+    }
+
+    #laxcc-hero-2025 .deck-card.deck-card--tangie-frosting .tangie-circle-wrap img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        transform: scale(1.2) !important;
+    }
+
+    @keyframes tangie-float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-12px);
+        }
+    }
+
+    #laxcc-hero-2025 .deck-card.deck-card--crescendo .deck-card__media {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0.5rem !important;
+        overflow: visible !important;
+    }
+
+    #laxcc-hero-2025 .deck-card.deck-card--crescendo .crescendo-circle-wrap {
+        width: 85% !important;
+        aspect-ratio: 1 / 1 !important;
+        border-radius: 50% !important;
+        animation: crescendo-float 4s ease-in-out infinite !important;
+        margin: 0 auto !important;
+        overflow: hidden !important;
+        position: relative;
+        /* Mylar Style */
+        border: 1px solid rgba(255, 255, 255, 0.4) !important;
+        box-shadow:
+            inset 0 0 20px rgba(255, 255, 255, 0.2),
+            0 15px 40px rgba(0, 0, 0, 0.25),
+            0 0 0 4px rgba(255, 255, 255, 0.1) !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    #laxcc-hero-2025 .deck-card.deck-card--crescendo .crescendo-circle-wrap img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    @keyframes crescendo-float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-12px);
+        }
+    }
+
+    #laxcc-hero-2025 .deck-card--time-machine img,
+    #laxcc-hero-2025 .deck-card--stiiizy img {
+        width: 90%;
+        height: 90%;
+        object-fit: contain;
+        margin: auto;
+    }
+
+    /* Content at bottom of card */
+    #laxcc-hero-2025 .deck-card__content {
+        padding: 1.25rem;
+        background: linear-gradient(to top, rgba(29, 80, 138, 0.9), transparent);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    #laxcc-hero-2025 .deck-card__title {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0 0 0.3rem 0;
+        line-height: 1.1;
+    }
+
+    #laxcc-hero-2025 .deck-card__subtitle {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.95rem;
+        margin: 0;
+    }
+
+    /* Price Badge */
+    #laxcc-hero-2025 .deck-card__badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: #F89459;
+        color: #fff;
+        font-weight: 700;
+        padding: 0.4rem 0.8rem;
+        border-radius: 100px;
+        font-size: 0.85rem;
+        z-index: 20;
+        box-shadow: 0 4px 12px rgba(29, 80, 138, 0.3);
+    }
+
+    /* BOTTOM DOCK */
+    #laxcc-hero-2025 .floating-dock {
+        position: relative;
+        /* Changed from absolute to prevent overlap */
+        bottom: auto;
+        left: auto;
+        transform: none;
+        width: max-content;
+        margin: 20px auto 0 auto;
+        /* Add spacing from cards */
+        background: rgba(29, 80, 138, 0.9);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px;
+        z-index: 50;
+        box-shadow: 0 20px 40px rgba(29, 80, 138, 0.6);
+    }
+
+    #laxcc-hero-2025 .dock-btn {
+        background: var(--brand-orange);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 12px 24px;
+        border-radius: 100px;
+        font-size: 0.95rem;
+    }
+
+    /* ===== MOBILE FIX: STOP TEXT OVERLAPPING CARDS (NO VISUAL RESTYLE) ===== */
+    /* Make the hero text take real space on mobile so the slider starts below it */
+    @media (max-width: 1023px) {
+        #laxcc-hero-2025 .hero-mobile-first {
+            justify-content: flex-start;
+            /* was flex-end */
+        }
+
+        #laxcc-hero-2025 .hero-text-layer {
+            position: relative;
+            /* was absolute */
+            top: auto;
+            left: auto;
+            z-index: 10;
+        }
+    }
+
+    /* ===== DESKTOP OVERRIDE (Media Query) ===== */
+    @media (min-width: 1024px) {
+        #laxcc-hero-2025 .hero-mobile-first {
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 0 1rem 0;
+            min-height: min(100dvh, 1080px);
+            height: auto;
+            overflow: visible;
+        }
+
+        #laxcc-hero-2025 .hero-content-inner {
+            justify-content: center;
+        }
+
+        #laxcc-hero-2025 .hero-text-layer {
+            position: relative;
+            top: auto;
+            transform: none;
+            margin-bottom: 1rem;
+            z-index: 1;
+        }
+
+        #laxcc-hero-2025 .hero-text-layer h1 {
+            font-size: min(6vw, 115px);
+            line-height: 1;
+            max-width: 95%;
+        }
+
+        #laxcc-hero-2025 .hero-text-layer p {
+            font-size: 1rem;
+        }
+
+        #laxcc-hero-2025 .slider-wrapper {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        #laxcc-hero-2025 .scroll-arrow--prev {
+            left: -60px;
+        }
+
+        #laxcc-hero-2025 .scroll-arrow--next {
+            right: -60px;
+        }
+
+        #laxcc-hero-2025 .deck-container {
+            height: 580px;
+            padding: 0;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            justify-content: flex-start;
+            gap: 1.5rem;
+        }
+
+        #laxcc-hero-2025 .deck-card {
+            flex: 0 0 400px;
+            transition: transform 0.3s ease;
+            will-change: transform;
+        }
+
+
+        #laxcc-hero-2025 .floating-dock {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+        }
+    }
+</style>
+
+<div id="laxcc-hero-2025">
+    <section class="hero-mobile-first">
+        <div class="hero-bg">
+            <video autoplay muted playsinline loop>
+                <source src="https://laxcc.com/wp-content/uploads/2025/05/Best-La-Dispensary-2025.webm"
+                    type="video/webm">
+            </video>
+        </div>
+
+        <div class="hero-content-inner">
+            <div class="hero-text-layer">
+                <p>LAXCC Airport Premium Cannabis</p>
+                <h1 style="display: none;">Los Angeles' Highest-Rated Dispensary Near LAX Airport</h1>
+                <h1 class="watermark-h1" aria-hidden="true">Los Angeles' Highest-Rated Dispensary
+                    Near LAX Airport</h1>
+                <p class="hero-seo-text"
+                    style="color: rgba(255, 255, 255, 0.6); font-size: 1rem; max-width: 850px; margin: 0.5rem auto; text-transform: none; letter-spacing: normal; line-height: 1.4;">
+                    Los Angeles' premier dispensary near LAX. Shop 750+ products from top brands with fast online
+                    ordering
+                    and instant pickup.
+                </p>
+            </div>
+
+            <div class="slider-wrapper">
+                <button class="scroll-arrow scroll-arrow--prev" aria-label="Previous slide">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="m15 18-6-6 6-6" />
+                    </svg>
+                </button>
+
+                <div class="deck-container" id="hero-slider">
+
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=thc+design&brands=61c55fcf-2d64-4e61-82e2-b730dd46826a"
+                        class="deck-card deck-card--tangie-frosting">
+                        <div class="deck-card__badge">$15 1g</div>
+                        <div class="deck-card__media">
+                            <div class="tangie-circle-wrap">
+                                <img src="https://thcdesign.com/wp-content/uploads/2025/08/THCD_BUD_BERRY_BONDS-scaled.jpg"
+                                    alt="THC Design S Tangie Frosting - Top Shelf Sativa Near LAX">
+                            </div>
+                        </div>
+                        <div class="deck-card__content">
+                            <h3 class="deck-card__title">S Tangie Frosting</h3>
+                            <p class="deck-card__subtitle">THC Design • 28.4% THC • Sativa</p>
+                        </div>
+                    </a>
+
+                    <a href="https://laxcc.com/buy-crescendo-strain-thc-design/" class="deck-card deck-card--crescendo">
+                        <div class="deck-card__badge">$60 1/8oz</div>
+                        <div class="deck-card__media">
+                            <div class="crescendo-circle-wrap">
+                                <img src="https://thcdesign.com/wp-content/uploads/2023/01/nug_of_the_week_crescendo.jpg"
+                                    alt="THC Design Crescendo - Buy Near LAX Airport">
+                            </div>
+                        </div>
+                        <div class="deck-card__content">
+                            <h3 class="deck-card__title">Crescendo</h3>
+                            <p class="deck-card__subtitle">THC Design • 30%+ THC</p>
+                        </div>
+                    </a>
+
+                    <a href="https://laxcc.com/product/shop-cannabis-lax_seed-junky-flower-banana-fruz/"
+                        class="deck-card deck-card--banana-fruz">
+                        <div class="deck-card__badge">$40 1/8oz</div>
+                        <div class="deck-card__media">
+                            <img src="https://res.cloudinary.com/dcwq74lfg/image/upload/fl_lossy,f_auto/v1757436112/brand/Seed%20Junky/product/9c781f9c67dded79631f4c8f50c14240.png"
+                                alt="Banana Fruz">
+                        </div>
+                        <div class="deck-card__content">
+                            <h3 class="deck-card__title">Banana Fruz</h3>
+                            <p class="deck-card__subtitle">Seed Junky Flower</p>
+                        </div>
+                    </a>
+
+                    <a href="https://laxcc.com/product/shop-cannabis-lax_seed-junky-mango-fruz-3-5/"
+                        class="deck-card deck-card--mango-fruz">
+                        <div class="deck-card__badge">$40 1/8oz</div>
+                        <div class="deck-card__media">
+                            <img src="https://res.cloudinary.com/dcwq74lfg/image/upload/fl_lossy,f_auto/v1758708667/brand/Seed%20Junky%20Flower/product/15dc4779b9753da00b65b8e9736f9a93.png"
+                                alt="Mango Fruz">
+                        </div>
+                        <div class="deck-card__content">
+                            <h3 class="deck-card__title">Mango Fruz</h3>
+                            <p class="deck-card__subtitle">Seed Junky Flower</p>
+                        </div>
+                    </a>
+
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=cc54b2b6-dacf-49bf-88d7-cda128fddca5"
+                        class="deck-card">
+                        <div class="deck-card__badge">$49.99 1/8oz</div>
+                        <div class="deck-card__media">
+                            <img src="https://images.dutchie.com/332f18541693953eb78a8eb171760865" alt="Clone Goddess">
+                        </div>
+                        <div class="deck-card__content">
+                            <h3 class="deck-card__title">Clone Goddess</h3>
+                            <p class="deck-card__subtitle">H Sherblato Runtz</p>
+                        </div>
+                    </a>
+
+
+                    <a href="https://laxcc.com/top-10-los-angeles-weed-brands-in-2025/" class="deck-card">
+                        <div class="deck-card__badge">Featured</div>
+                        <div class="deck-card__media">
+                            <img src="https://laxcc.com/wp-content/uploads/2025/12/top-10-best-los-angeles-weed-brands-2025.jpg"
+                                alt="Top 10 Weed Brands">
+                        </div>
+                        <div class="deck-card__content">
+                            <h3 class="deck-card__title">Top 10 of 2025</h3>
+                            <p class="deck-card__subtitle">The definitive list of LA's best brands.</p>
+                        </div>
+                    </a>
+
+
+                    <a href="https://laxcc.com/raw-garden-vape-near-lax/" class="deck-card">
+                        <div class="deck-card__badge">Live Resin</div>
+                        <div class="deck-card__media">
+                            <video autoplay muted playsinline loop style="object-fit:cover; width:100%; height:100%;">
+                                <source
+                                    src="https://laxcc.com/wp-content/uploads/2025/12/buy-raw-garden-sprout-near-lax.mp4"
+                                    type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="deck-card__content">
+                            <h3 class="deck-card__title">Raw Garden</h3>
+                            <p class="deck-card__subtitle">Refined Live Resin Vapes</p>
+                        </div>
+                    </a>
+
+                    <a href="https://laxcc.com/categories/vaporizers/?brands=1cebe6f5-bab2-4f15-a50a-9730fee79de4"
+                        class="deck-card deck-card--stiiizy">
+                        <div class="deck-card__badge">Top Seller</div>
+                        <div class="deck-card__media" style="display:flex;">
+                            <img src="https://www.stiiizy.com/cdn/shop/files/IL_AIO_POD_FAMILY_SHOTS_1200x.png?v=1692232410"
+                                alt="Stiiizy">
+                        </div>
+                        <div class="deck-card__content"
+                            style="background:linear-gradient(to top, rgba(29, 80, 138, 0.8), transparent);">
+                            <h3 class="deck-card__title">Stiiizy Pods</h3>
+                            <p class="deck-card__subtitle">Starting at $20</p>
+                        </div>
+                    </a>
+
+                    <a href="https://laxcc.com/shop/?products_search=Time%20Machine"
+                        class="deck-card deck-card--time-machine">
+                        <div class="deck-card__badge">$55 1/2oz</div>
+                        <div class="deck-card__media" style="display:flex;">
+                            <img src="https://timemachinebrand.com/wp-content/uploads/2025/04/TM_3.5G_Nug_s_CLM.png"
+                                alt="Time Machine">
+                        </div>
+                        <div class="deck-card__content">
+                            <h3 class="deck-card__title">Time Machine</h3>
+                            <p class="deck-card__subtitle">Hydroponic Greenhouse Flower</p>
+                        </div>
+                    </a>
+
+                    <a href="https://laxcc.com/categories/vaporizers/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=1d682d79-2ceb-45dc-826a-0c702cc68f42"
+                        class="deck-card" style="background:#1e293b;">
+                        <div class="deck-card__badge">$30-$42</div>
+                        <div class="deck-card__media">
+                            <img src="https://thebloombrands.com/wp-content/uploads/2023/08/Bloom-Which-Surf-Is-Right-For-You-004.jpg"
+                                alt="Bloom" style="object-fit: cover;">
+                        </div>
+                        <div class="deck-card__content">
+                            <h3 class="deck-card__title">Bloom</h3>
+                            <p class="deck-card__subtitle">Live and Classic Vapes</p>
+                        </div>
+                    </a>
+
+
+                </div>
+
+                <button class="scroll-arrow scroll-arrow--next" aria-label="Next slide">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="m9 18 6-6-6-6" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="floating-dock">
+                <a href="https://laxcc.com/shop" class="dock-btn">Shop Menu</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    document.addEventListener('click', function (e) {
+        // Event Delegation: Check if click is on an arrow or inside it
+        const prevBtn = e.target.closest('#laxcc-hero-2025 .scroll-arrow--prev');
+        const nextBtn = e.target.closest('#laxcc-hero-2025 .scroll-arrow--next');
+
+        if (!prevBtn && !nextBtn) return;
+
+        // Find the slider within the same container
+        const wrapper = document.getElementById('laxcc-hero-2025');
+        const slider = wrapper ? wrapper.querySelector('.deck-container') : null;
+
+        if (!slider) return;
+
+        e.preventDefault();
+
+        // Calculate scroll amount
+        const card = slider.querySelector('.deck-card');
+        const gap = 16;
+        const amount = (card ? card.offsetWidth : 300) + gap;
+
+        if (prevBtn) {
+            slider.scrollBy({ left: -amount, behavior: 'smooth' });
+        } else if (nextBtn) {
+            slider.scrollBy({ left: amount, behavior: 'smooth' });
+        }
+    });
+</script>
+

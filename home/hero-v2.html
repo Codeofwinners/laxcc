@@ -1,0 +1,942 @@
+<style>
+    #laxcc-h1-ticker {
+        width: 100%;
+        overflow: hidden;
+        background: #1D508A;
+        padding: 10px 0;
+        position: relative;
+    }
+
+    #laxcc-h1-ticker h1 {
+        display: flex !important;
+        white-space: nowrap !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.15em !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        line-height: 1 !important;
+        animation: h1-scroll 20s linear infinite !important;
+    }
+
+    #laxcc-h1-ticker .h1-sep {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background: #F89459;
+        border-radius: 50%;
+        margin: 0 24px;
+        flex-shrink: 0;
+        vertical-align: middle;
+        position: relative;
+        top: -1px;
+    }
+
+    @keyframes h1-scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-h1-ticker h1 {
+            font-size: 11px !important;
+            letter-spacing: 0.1em !important;
+        }
+
+        #laxcc-h1-ticker .h1-sep {
+            margin: 0 16px;
+        }
+    }
+</style>
+
+<div id="laxcc-h1-ticker">
+    <h1>
+        <span>Los Angeles' Highest-Rated Dispensary Near LAX Airport</span>
+        <span class="h1-sep"></span>
+        <span>Shop Cannabis, Vapes, Edibles & Prerolls</span>
+        <span class="h1-sep"></span>
+        <span>Open Daily 9am–9:30pm — Walk-ins Welcome</span>
+        <span class="h1-sep"></span>
+        <span>Los Angeles' Highest-Rated Dispensary Near LAX Airport</span>
+        <span class="h1-sep"></span>
+        <span>Shop Cannabis, Vapes, Edibles & Prerolls</span>
+        <span class="h1-sep"></span>
+        <span>Open Daily 9am–9:30pm — Walk-ins Welcome</span>
+        <span class="h1-sep"></span>
+    </h1>
+</div>
+
+<style>
+    #laxcc-hero-v2 {
+        --h-primary: #1D508A;
+        --h-accent: #F89459;
+        --h-white: #ffffff;
+        --h-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        max-height: 1080px;
+        overflow: hidden;
+        background: #0a0a0a;
+        font-family: var(--h-font);
+        margin: 0;
+        padding: 0;
+    }
+
+    /* ── WATERMARK ── */
+    #laxcc-hero-v2 .h-watermark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: clamp(40px, 8vw, 140px);
+        font-weight: 900;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.03);
+        letter-spacing: -0.03em;
+        line-height: 0.9;
+        text-align: center;
+        pointer-events: none;
+        z-index: 1;
+        white-space: nowrap;
+    }
+
+    /* ── SLIDES CONTAINER ── */
+    #laxcc-hero-v2 .h-slides {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+    }
+
+    #laxcc-hero-v2 .h-slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    #laxcc-hero-v2 .h-slide.h-active {
+        opacity: 1;
+        visibility: visible;
+        z-index: 5;
+    }
+
+    /* ── SLIDE BACKGROUND ── */
+    #laxcc-hero-v2 .h-slide-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+
+    /* Ambient background video layer */
+    #laxcc-hero-v2 .h-slide-bg .h-bg-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 1;
+        z-index: 0;
+    }
+
+    /* Gradient overlay sits on top of video */
+    #laxcc-hero-v2 .h-slide-bg .h-bg-gradient {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+    }
+
+    /* Individual slide gradients — ~80-85% opacity to let video bleed through */
+    #laxcc-hero-v2 .h-slide[data-slide="0"] .h-bg-gradient {
+        background: radial-gradient(ellipse at 30% 40%, rgba(183, 28, 28, 0.82) 0%, rgba(136, 14, 79, 0.85) 60%, rgba(74, 20, 40, 0.92) 100%);
+    }
+
+    #laxcc-hero-v2 .h-slide[data-slide="1"] .h-bg-gradient {
+        background: radial-gradient(ellipse at 70% 30%, rgba(253, 224, 71, 0.8) 0%, rgba(234, 179, 8, 0.85) 60%, rgba(161, 98, 7, 0.9) 100%);
+    }
+
+    #laxcc-hero-v2 .h-slide[data-slide="2"] .h-bg-gradient {
+        background: radial-gradient(ellipse at 40% 50%, rgba(56, 189, 248, 0.8) 0%, rgba(14, 165, 233, 0.84) 40%, rgba(3, 105, 161, 0.9) 100%);
+    }
+
+    #laxcc-hero-v2 .h-slide[data-slide="3"] .h-bg-gradient {
+        background: radial-gradient(ellipse at 60% 40%, rgba(34, 197, 94, 0.75) 0%, rgba(11, 31, 52, 0.82) 70%, rgba(0, 0, 0, 0.9) 100%);
+    }
+
+    #laxcc-hero-v2 .h-slide[data-slide="4"] .h-bg-gradient {
+        background: radial-gradient(ellipse at 50% 30%, rgba(6, 182, 212, 0.8) 0%, rgba(15, 23, 42, 0.85) 70%, rgba(0, 0, 0, 0.9) 100%);
+    }
+
+    #laxcc-hero-v2 .h-slide[data-slide="5"] .h-bg-gradient {
+        background: radial-gradient(ellipse at 30% 60%, rgba(31, 111, 235, 0.8) 0%, rgba(34, 197, 94, 0.8) 50%, rgba(11, 31, 52, 0.9) 100%);
+    }
+
+    #laxcc-hero-v2 .h-slide[data-slide="6"] .h-bg-gradient {
+        background: radial-gradient(ellipse at 50% 50%, rgba(51, 65, 85, 0.8) 0%, rgba(30, 41, 59, 0.85) 60%, rgba(15, 23, 42, 0.9) 100%);
+    }
+
+    /* Grain overlay on every slide */
+    #laxcc-hero-v2 .h-slide-bg::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+        background-size: 128px 128px;
+        opacity: 0.5;
+        mix-blend-mode: overlay;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    /* ── SLIDE INNER LAYOUT ── */
+    #laxcc-hero-v2 .h-slide-inner {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1400px;
+        height: 100%;
+        margin: 0 auto;
+        padding: 80px 80px 140px 80px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    /* ── TEXT SIDE ── */
+    #laxcc-hero-v2 .h-slide-text {
+        flex: 1;
+        max-width: 500px;
+        z-index: 3;
+    }
+
+    #laxcc-hero-v2 .h-badge {
+        display: inline-block;
+        background: var(--h-accent);
+        color: var(--h-white);
+        font-weight: 800;
+        font-size: 14px;
+        padding: 8px 20px;
+        border-radius: 100px;
+        letter-spacing: 0.02em;
+        margin-bottom: 20px;
+        box-shadow: 0 8px 24px rgba(248, 148, 89, 0.4);
+    }
+
+    #laxcc-hero-v2 .h-product-name {
+        font-size: clamp(36px, 6vw, 80px);
+        font-weight: 900;
+        color: var(--h-white);
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        margin: 0 0 16px 0;
+        text-transform: uppercase;
+        text-shadow: 0 4px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    #laxcc-hero-v2 .h-subtitle {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 400;
+        margin: 0 0 10px 0;
+        letter-spacing: 0.02em;
+    }
+
+    #laxcc-hero-v2 .h-desc {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.45);
+        font-weight: 400;
+        margin: 0 0 28px 0;
+        line-height: 1.5;
+        max-width: 420px;
+    }
+
+    #laxcc-hero-v2 .h-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--h-white);
+        color: #0a0a0a;
+        font-family: var(--h-font);
+        font-size: 15px;
+        font-weight: 700;
+        padding: 14px 32px;
+        border-radius: 100px;
+        text-decoration: none;
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        letter-spacing: 0.01em;
+    }
+
+    #laxcc-hero-v2 .h-cta:hover {
+        transform: translateY(-2px) scale(1.03);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    #laxcc-hero-v2 .h-cta svg {
+        width: 18px;
+        height: 18px;
+        transition: transform 0.3s;
+    }
+
+    #laxcc-hero-v2 .h-cta:hover svg {
+        transform: translateX(3px);
+    }
+
+    /* ── IMAGE SIDE ── */
+    #laxcc-hero-v2 .h-slide-media {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    #laxcc-hero-v2 .h-slide-media img,
+    #laxcc-hero-v2 .h-slide-media video {
+        max-width: 100%;
+        max-height: 65vh;
+        object-fit: contain;
+        filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.4));
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    #laxcc-hero-v2 .h-slide.h-active .h-slide-media img,
+    #laxcc-hero-v2 .h-slide.h-active .h-slide-media video {
+        animation: h-media-enter 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes h-media-enter {
+        0% {
+            opacity: 0;
+            transform: scale(0.9) translateY(20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    /* Text entrance */
+    #laxcc-hero-v2 .h-slide.h-active .h-slide-text {
+        animation: h-text-enter 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+    }
+
+    @keyframes h-text-enter {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* ── PROGRESS BAR ── */
+    #laxcc-hero-v2 .h-progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    #laxcc-hero-v2 .h-progress-bar {
+        height: 100%;
+        width: 0%;
+        background: var(--h-accent);
+        transition: width 0.1s linear;
+    }
+
+    /* ── SLIDE COUNTER ── */
+    #laxcc-hero-v2 .h-counter {
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        z-index: 30;
+        font-size: 13px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: 0.1em;
+    }
+
+    #laxcc-hero-v2 .h-counter-current {
+        color: var(--h-white);
+        font-size: 18px;
+    }
+
+    /* ── THUMBNAIL DOCK ── */
+    #laxcc-hero-v2 .h-dock {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 40;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px;
+        background: rgba(10, 10, 10, 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+    }
+
+    #laxcc-hero-v2 .h-dock-thumb {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        opacity: 0.5;
+        flex-shrink: 0;
+    }
+
+    #laxcc-hero-v2 .h-dock-thumb:hover {
+        opacity: 0.8;
+        transform: translateY(-3px);
+    }
+
+    #laxcc-hero-v2 .h-dock-thumb.h-thumb-active {
+        border-color: var(--h-accent);
+        opacity: 1;
+        box-shadow: 0 0 16px rgba(248, 148, 89, 0.5);
+        transform: translateY(-2px) scale(1.08);
+    }
+
+    #laxcc-hero-v2 .h-dock-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Video thumb fallback */
+    #laxcc-hero-v2 .h-dock-thumb .h-thumb-color {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* ── PREV / NEXT ARROWS ── */
+    #laxcc-hero-v2 .h-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 30;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: var(--h-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.25s;
+        padding: 0;
+        outline: none;
+    }
+
+    #laxcc-hero-v2 .h-arrow:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-50%) scale(1.08);
+    }
+
+    #laxcc-hero-v2 .h-arrow svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    #laxcc-hero-v2 .h-arrow-prev {
+        left: 12px;
+    }
+
+    #laxcc-hero-v2 .h-arrow-next {
+        right: 12px;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+        #laxcc-hero-v2 .h-slide-inner {
+            flex-direction: column-reverse;
+            padding: 60px 20px 130px 20px;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        #laxcc-hero-v2 .h-slide-text {
+            text-align: center;
+            max-width: 100%;
+        }
+
+        #laxcc-hero-v2 .h-product-name {
+            font-size: clamp(32px, 10vw, 52px);
+        }
+
+        #laxcc-hero-v2 .h-subtitle {
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        #laxcc-hero-v2 .h-desc {
+            font-size: 12px;
+            margin-bottom: 18px;
+            max-width: 100%;
+        }
+
+        #laxcc-hero-v2 .h-slide-media img,
+        #laxcc-hero-v2 .h-slide-media video {
+            max-height: 35vh;
+        }
+
+        #laxcc-hero-v2 .h-dock {
+            bottom: 16px;
+            gap: 4px;
+            padding: 4px;
+            border-radius: 12px;
+        }
+
+        #laxcc-hero-v2 .h-dock-thumb {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+        }
+
+        #laxcc-hero-v2 .h-arrow {
+            display: none;
+        }
+
+        #laxcc-hero-v2 .h-counter {
+            top: 16px;
+            right: 20px;
+            font-size: 12px;
+        }
+
+        #laxcc-hero-v2 .h-counter-current {
+            font-size: 15px;
+        }
+
+        #laxcc-hero-v2 .h-watermark {
+            font-size: clamp(30px, 12vw, 60px);
+        }
+    }
+
+    /* Valentine's CTA override */
+    #laxcc-hero-v2 .h-cta-valentine {
+        background: #F89459 !important;
+        color: #ffffff !important;
+        border-radius: 12px !important;
+        box-shadow: 0 8px 32px rgba(248, 148, 89, 0.4) !important;
+    }
+
+    #laxcc-hero-v2 .h-cta-valentine:hover {
+        background: #ffaa75 !important;
+        box-shadow: 0 12px 40px rgba(248, 148, 89, 0.5) !important;
+    }
+</style>
+
+<div id="laxcc-hero-v2">
+    <div class="h-watermark" aria-hidden="true">LAXCC</div>
+
+    <div class="h-progress">
+        <div class="h-progress-bar"></div>
+    </div>
+
+    <div class="h-counter">
+        <span class="h-counter-current">01</span> / <span class="h-counter-total">07</span>
+    </div>
+
+    <div class="h-slides">
+        <!-- Slide 0: THC Design -->
+        <div class="h-slide h-active" data-slide="0">
+            <div class="h-slide-bg">
+                <video class="h-bg-video" autoplay muted playsinline loop>
+                    <source src="https://laxcc.com/wp-content/uploads/2025/05/Best-La-Dispensary-2025.webm"
+                        type="video/webm">
+                </video>
+                <div class="h-bg-gradient"></div>
+            </div>
+            <div class="h-slide-inner">
+                <div class="h-slide-text">
+                    <span class="h-badge">💝 Valentine's Gifts</span>
+                    <h2 class="h-product-name">Gifts for Stoners</h2>
+                    <p class="h-subtitle">Top 10 Valentine's Picks • Edibles, Vapes & Pre-Rolls</p>
+                    <p class="h-desc">Forget generic chocolates. THC-infused treats, premium pre-rolls, and curated
+                        vapes to make your stoner's heart skip a beat. Shop the Top 10 at LAXCC.</p>
+                    <a href="https://laxcc.com/top-10-valentines-gifts-for-stoners-2026/" class="h-cta h-cta-valentine">
+                        See The Top 10
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="h-slide-media">
+                    <picture>
+                        <source media="(max-width: 768px)"
+                            srcset="https://laxcc.com/wp-content/uploads/2026/02/best-valentines-gifts-for-stoners-2026.jpg">
+                        <img src="https://laxcc.com/wp-content/uploads/2026/02/best-valentines-gifts-for-him-her.jpg"
+                            alt="Best Valentines Gifts for Stoners 2026" style="border-radius:16px;">
+                    </picture>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 1: Live Rosin Gummies -->
+        <div class="h-slide" data-slide="1">
+            <div class="h-slide-bg">
+                <video class="h-bg-video" autoplay muted playsinline loop>
+                    <source src="https://laxcc.com/wp-content/uploads/2025/05/Best-La-Dispensary-2025.webm"
+                        type="video/webm">
+                </video>
+                <div class="h-bg-gradient"></div>
+            </div>
+            <div class="h-slide-inner">
+                <div class="h-slide-text">
+                    <span class="h-badge">$10 ea</span>
+                    <h2 class="h-product-name">Live Rosin Gummies</h2>
+                    <p class="h-subtitle">Lemon, Watermelon, Orange, Raspberry</p>
+                    <p class="h-desc">Solventless live rosin edibles — no distillate, no fillers. Full-spectrum flavor
+                        in every bite. Best-selling edible at our weed dispensary near LAX airport.</p>
+                    <a href="https://laxcc.com/shop/?products_search=drops" class="h-cta">
+                        Shop Now
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="h-slide-media">
+                    <img src="https://laxcc.com/wp-content/uploads/2026/01/live-rosin-gummies-near-lax-1.png"
+                        alt="Live Rosin Gummies Near LAX">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Aims Horticulture -->
+        <div class="h-slide" data-slide="2">
+            <div class="h-slide-bg">
+                <video class="h-bg-video" autoplay muted playsinline loop>
+                    <source src="https://laxcc.com/wp-content/uploads/2025/05/Best-La-Dispensary-2025.webm"
+                        type="video/webm">
+                </video>
+                <div class="h-bg-gradient"></div>
+            </div>
+            <div class="h-slide-inner">
+                <div class="h-slide-text">
+                    <span class="h-badge">Premium Flower</span>
+                    <h2 class="h-product-name">Aims Horticulture</h2>
+                    <p class="h-subtitle">LA-Grown Indoor Craft Flower &bull; Est. 2006</p>
+                    <p class="h-desc">18+ years growing in Los Angeles. Hand-trimmed, hang-dried one full week.
+                        Connoisseur-quality buds at everyday prices. Seed-to-sale, never outsourced.</p>
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=aims"
+                        class="h-cta">
+                        Shop Now
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="h-slide-media">
+                    <img src="https://aims.la/wp-content/uploads/2021/04/E69A9763.jpg" alt="Aims Horticulture"
+                        style="border-radius:16px;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Raw Garden -->
+        <div class="h-slide" data-slide="3">
+            <div class="h-slide-bg">
+                <video class="h-bg-video" autoplay muted playsinline loop>
+                    <source src="https://laxcc.com/wp-content/uploads/2025/05/Best-La-Dispensary-2025.webm"
+                        type="video/webm">
+                </video>
+                <div class="h-bg-gradient"></div>
+            </div>
+            <div class="h-slide-inner">
+                <div class="h-slide-text">
+                    <span class="h-badge">Live Resin</span>
+                    <h2 class="h-product-name">Raw Garden</h2>
+                    <p class="h-subtitle">California's #1 Extract Brand &bull; Santa Barbara</p>
+                    <p class="h-desc">Refined Live Resin from fresh-frozen, single-source cannabis. 100% pure — no
+                        additives, no artificial flavors. Shop Raw Garden vapes near LAX.</p>
+                    <a href="https://laxcc.com/raw-garden-vape-near-lax/" class="h-cta">
+                        Shop Now
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="h-slide-media">
+                    <video autoplay muted playsinline loop
+                        style="max-height:65vh;object-fit:contain;border-radius:16px;">
+                        <source src="https://laxcc.com/wp-content/uploads/2025/12/buy-raw-garden-sprout-near-lax.mp4"
+                            type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Stiiizy -->
+        <div class="h-slide" data-slide="4">
+            <div class="h-slide-bg">
+                <video class="h-bg-video" autoplay muted playsinline loop>
+                    <source src="https://laxcc.com/wp-content/uploads/2025/05/Best-La-Dispensary-2025.webm"
+                        type="video/webm">
+                </video>
+                <div class="h-bg-gradient"></div>
+            </div>
+            <div class="h-slide-inner">
+                <div class="h-slide-text">
+                    <span class="h-badge">Top Seller</span>
+                    <h2 class="h-product-name">Stiiizy Pods</h2>
+                    <p class="h-subtitle">California's Best-Selling Vape &bull; Starting at $20</p>
+                    <p class="h-desc">Pods, all-in-ones, and disposables in Live Resin, Solventless, and Original. The
+                        #1 cannabis vape brand — always in stock at our dispensary near LAX.</p>
+                    <a href="https://laxcc.com/categories/vaporizers/?brands=1cebe6f5-bab2-4f15-a50a-9730fee79de4"
+                        class="h-cta">
+                        Shop Now
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="h-slide-media">
+                    <img src="https://www.stiiizy.com/cdn/shop/files/IL_AIO_POD_FAMILY_SHOTS_1200x.png?v=1692232410"
+                        alt="Stiiizy Pods">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Time Machine -->
+        <div class="h-slide" data-slide="5">
+            <div class="h-slide-bg">
+                <video class="h-bg-video" autoplay muted playsinline loop>
+                    <source src="https://laxcc.com/wp-content/uploads/2025/05/Best-La-Dispensary-2025.webm"
+                        type="video/webm">
+                </video>
+                <div class="h-bg-gradient"></div>
+            </div>
+            <div class="h-slide-inner">
+                <div class="h-slide-text">
+                    <span class="h-badge">$55 1/2oz</span>
+                    <h2 class="h-product-name">Time Machine</h2>
+                    <p class="h-subtitle">Hydroponic Greenhouse Flower &bull; Central Coast</p>
+                    <p class="h-desc">Sun-grown in Dutch-style greenhouses. Single-source, farm-direct — no shake, no
+                        stems. Half ounces from $55. Premium cannabis near LAX airport.</p>
+                    <a href="https://laxcc.com/shop/?products_search=Time%20Machine" class="h-cta">
+                        Shop Now
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="h-slide-media">
+                    <img src="https://timemachinebrand.com/wp-content/uploads/2025/04/TM_3.5G_Nug_s_CLM.png"
+                        alt="Time Machine">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Bloom -->
+        <div class="h-slide" data-slide="6">
+            <div class="h-slide-bg">
+                <video class="h-bg-video" autoplay muted playsinline loop>
+                    <source src="https://laxcc.com/wp-content/uploads/2025/05/Best-La-Dispensary-2025.webm"
+                        type="video/webm">
+                </video>
+                <div class="h-bg-gradient"></div>
+            </div>
+            <div class="h-slide-inner">
+                <div class="h-slide-text">
+                    <span class="h-badge">$30 - $42</span>
+                    <h2 class="h-product-name">Bloom</h2>
+                    <p class="h-subtitle">SoCal OG Since 2014 &bull; Live &amp; Classic Vapes</p>
+                    <p class="h-desc">Cannabis Cup winner. ECCO Certified clean. Bloom Live preserves 200+ terpenes with
+                        solventless water extraction. LA's favorite vape near LAX.</p>
+                    <a href="https://laxcc.com/categories/vaporizers/?brands=1d682d79-2ceb-45dc-826a-0c702cc68f42"
+                        class="h-cta">
+                        Shop Now
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="h-slide-media">
+                    <img src="https://thebloombrands.com/wp-content/uploads/2023/08/Bloom-Which-Surf-Is-Right-For-You-004.jpg"
+                        alt="Bloom Vapes" style="border-radius:16px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Arrows -->
+    <button class="h-arrow h-arrow-prev" aria-label="Previous slide" data-action="h-prev">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6" />
+        </svg>
+    </button>
+    <button class="h-arrow h-arrow-next" aria-label="Next slide" data-action="h-next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="m9 18 6-6-6-6" />
+        </svg>
+    </button>
+
+    <!-- Dock -->
+    <nav class="h-dock" aria-label="Product navigation">
+        <div class="h-dock-thumb h-thumb-active" data-thumb="0">
+            <img src="https://laxcc.com/wp-content/uploads/2026/02/best-valentines-gifts-for-him-her.jpg"
+                alt="Valentine's Gifts">
+        </div>
+        <div class="h-dock-thumb" data-thumb="1">
+            <img src="https://laxcc.com/wp-content/uploads/2026/01/live-rosin-gummies-near-lax-1.png" alt="Gummies">
+        </div>
+        <div class="h-dock-thumb" data-thumb="2">
+            <img src="https://aims.la/wp-content/uploads/2021/04/E69A9763.jpg" alt="Aims Horticulture">
+        </div>
+        <div class="h-dock-thumb" data-thumb="3">
+            <img src="https://rawgarden.farm/wp-content/uploads/2025/02/RLR_SproutAIO_1.0gVape_WebsiteImage.webp"
+                alt="Raw Garden">
+        </div>
+        <div class="h-dock-thumb" data-thumb="4">
+            <img src="https://www.stiiizy.com/cdn/shop/files/IL_AIO_POD_FAMILY_SHOTS_1200x.png?v=1692232410"
+                alt="Stiiizy">
+        </div>
+        <div class="h-dock-thumb" data-thumb="5">
+            <img src="https://timemachinebrand.com/wp-content/uploads/2025/04/TM_3.5G_Nug_s_CLM.png" alt="Time Machine">
+        </div>
+        <div class="h-dock-thumb" data-thumb="6">
+            <img src="https://thebloombrands.com/wp-content/uploads/2023/08/Bloom-Which-Surf-Is-Right-For-You-004.jpg"
+                alt="Bloom">
+        </div>
+    </nav>
+</div>
+
+<script>
+    (function () {
+        'use strict';
+        var wrap = document.getElementById('laxcc-hero-v2');
+        if (!wrap) return;
+
+        var slides = wrap.querySelectorAll('.h-slide');
+        var thumbs = wrap.querySelectorAll('.h-dock-thumb');
+        var bar = wrap.querySelector('.h-progress-bar');
+        var counterCur = wrap.querySelector('.h-counter-current');
+        var total = slides.length;
+        var current = 0;
+        var interval = 6000;
+        var timer = null;
+        var elapsed = 0;
+        var tick = 50;
+        var paused = false;
+
+        function goTo(idx) {
+            if (idx < 0) idx = total - 1;
+            if (idx >= total) idx = 0;
+            slides[current].classList.remove('h-active');
+            thumbs[current].classList.remove('h-thumb-active');
+            current = idx;
+            slides[current].classList.add('h-active');
+            thumbs[current].classList.add('h-thumb-active');
+            counterCur.textContent = String(current + 1).length < 2 ? '0' + (current + 1) : current + 1;
+            elapsed = 0;
+        }
+
+        function startTimer() {
+            if (timer) return;
+            timer = setInterval(function () {
+                if (paused) return;
+                elapsed += tick;
+                var pct = (elapsed / interval) * 100;
+                bar.style.width = pct + '%';
+                if (elapsed >= interval) {
+                    goTo(current + 1);
+                }
+            }, tick);
+        }
+
+        function resetTimer() {
+            elapsed = 0;
+            bar.style.width = '0%';
+        }
+
+        // Event delegation for clicks
+        wrap.addEventListener('click', function (e) {
+            var thumb = e.target.closest('[data-thumb]');
+            if (thumb) {
+                var idx = parseInt(thumb.getAttribute('data-thumb'), 10);
+                goTo(idx);
+                resetTimer();
+                return;
+            }
+            var prev = e.target.closest('[data-action="h-prev"]');
+            if (prev) {
+                e.preventDefault();
+                goTo(current - 1);
+                resetTimer();
+                return;
+            }
+            var next = e.target.closest('[data-action="h-next"]');
+            if (next) {
+                e.preventDefault();
+                goTo(current + 1);
+                resetTimer();
+                return;
+            }
+        });
+
+        // Pause on hover
+        wrap.addEventListener('mouseenter', function () { paused = true; });
+        wrap.addEventListener('mouseleave', function () { paused = false; });
+
+        // Touch swipe
+        var touchX = 0;
+        wrap.addEventListener('touchstart', function (e) {
+            touchX = e.changedTouches[0].clientX;
+            paused = true;
+        });
+        wrap.addEventListener('touchend', function (e) {
+            var diff = e.changedTouches[0].clientX - touchX;
+            if (Math.abs(diff) > 50) {
+                goTo(diff < 0 ? current + 1 : current - 1);
+                resetTimer();
+            }
+            paused = false;
+        });
+
+        startTimer();
+    })();
+</script>

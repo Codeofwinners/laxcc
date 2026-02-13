@@ -1,0 +1,437 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap');
+
+    #laxcc_daily_modern {
+        --dm-bg: transparent;
+        --dm-card-bg: #ffffff;
+        --dm-card-border: #e2e8f0;
+        --dm-accent: #F97316;
+        --dm-accent-glow: rgba(249, 115, 22, 0.15);
+        --dm-text: #1D508A;
+        --dm-text-muted: #64748b;
+        --dm-font: 'Manrope', sans-serif;
+        font-family: var(--dm-font);
+        color: var(--dm-text);
+        padding: 40px 0;
+        position: relative;
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    #laxcc_daily_modern * {
+        box-sizing: border-box;
+    }
+
+    .dm_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .dm_titles {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .dm_sup {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--dm-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 6px;
+    }
+
+    .dm_main_title {
+        font-size: 36px;
+        font-weight: 900;
+        line-height: 0.9;
+        text-transform: uppercase;
+        margin: 0;
+        color: var(--dm-text);
+    }
+
+    .dm_main_title span {
+        color: var(--dm-accent);
+    }
+
+    .dm_desc {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--dm-text-muted);
+        line-height: 1.5;
+        max-width: 400px;
+        margin-top: 12px;
+    }
+
+    .dm_pills {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .dm_pill {
+        background: #fff;
+        border: 1px solid var(--dm-card-border);
+        color: var(--dm-text-muted);
+        font-size: 13px;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .dm_pill.active {
+        color: var(--dm-accent);
+        background: rgba(249, 115, 22, 0.08);
+        border-color: rgba(249, 115, 22, 0.2);
+    }
+
+    .dm_grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-bottom: 30px;
+        align-items: start;
+    }
+
+    @media (min-width: 640px) {
+        .dm_grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            align-items: start;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .dm_grid {
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            align-items: start;
+        }
+    }
+
+    .dm_card {
+        background: var(--dm-card-bg);
+        border: 1px solid var(--dm-card-border);
+        border-radius: 16px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+    }
+
+    .dm_card:hover {
+        transform: translateY(-6px);
+        border-color: var(--dm-accent);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .dm_img_box {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1;
+        background: #f8fafc;
+        border-radius: 10px;
+        border: 1px solid #f1f5f9;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+        overflow: hidden;
+    }
+
+    .dm_img_box img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        mix-blend-mode: multiply;
+        transition: transform 0.4s ease;
+    }
+
+    .dm_card:hover .dm_img_box img {
+        transform: scale(1.1);
+    }
+
+    #dm_card_st_ides .dm_img_box,
+    #dm_card_cizi .dm_img_box {
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
+    }
+
+    #dm_card_st_ides .dm_img_box img,
+    #dm_card_cizi .dm_img_box img {
+        object-fit: cover !important;
+        mix-blend-mode: normal !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .dm_badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: var(--dm-accent);
+        color: #fff;
+        font-size: 12px;
+        font-weight: 800;
+        padding: 6px 12px;
+        border-radius: 8px;
+        text-transform: uppercase;
+        z-index: 2;
+        letter-spacing: 0.03em;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .dm_title {
+        font-size: 20px;
+        font-weight: 800;
+        margin: 0 0 6px 0;
+        color: var(--dm-text);
+        line-height: 1.25;
+    }
+
+    .dm_deal {
+        font-size: 16px;
+        color: var(--dm-text-muted);
+        line-height: 1.4;
+        font-weight: 600;
+    }
+
+    .dm_footer {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        border-top: 1px solid var(--dm-card-border);
+        padding-top: 30px;
+    }
+
+    .dm_cta {
+        background: #1D508A;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 800;
+        padding: 12px 32px;
+        border-radius: 12px;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transition: all 0.2s;
+    }
+
+    .dm_cta:hover {
+        background: var(--dm-accent);
+        transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+        #laxcc_daily_modern {
+            padding: 20px 0;
+        }
+        .dm_header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .dm_main_title {
+            font-size: 32px;
+        }
+        .dm_desc {
+            font-size: 14px;
+        }
+        .dm_card {
+            padding: 12px;
+        }
+        .dm_title {
+            font-size: 14px;
+        }
+        .dm_deal {
+            font-size: 13px;
+        }
+        .dm_badge {
+            font-size: 11px;
+            padding: 5px 10px;
+            top: 8px;
+            left: 8px;
+        }
+    }
+</style>
+
+<div id="laxcc_daily_modern">
+    <div class="dm_header">
+        <div class="dm_titles">
+            <div class="dm_sup" id="dm_date_label">Today's Deals</div>
+            <h2 class="dm_main_title">Daily <span>Drops</span></h2>
+            <div class="dm_desc">Limit one BOGO per brand/day. Mix & match across brands allowed. While supplies last.</div>
+        </div>
+        <div class="dm_pills">
+            <div class="dm_pill active">🔥 Today's Picks</div>
+            <div class="dm_pill">🚀 Everyday Deals</div>
+        </div>
+    </div>
+    <div class="dm_grid" id="dm_grid"></div>
+    <div class="dm_footer">
+        <a href="https://laxcc.com/shop" class="dm_cta" target="_blank">View All Deals</a>
+    </div>
+</div>
+
+<script>
+(function(){
+var t=document.getElementById('dm_grid');
+if(!t)return;
+
+var everyday=[
+{b:'710 Labs',d:'Buy pod get battery',t:'HOT',c:'#F97316'},
+{b:'Cizi',d:'Buy 2 get 1 on AIO & 7g',t:'B2G1',c:'#3B82f6'},
+{b:'Kanha',d:'Solventless Belts Buy 1 Get 1',t:'BOGO',c:'#F97316'}
+];
+
+var weekly={
+Sunday:[
+{b:'Koa',d:'Buy 10pk get 2pk',t:'HOT',c:'#db2777'},
+{b:'Uncle Arnies',d:'Buy 2 Get 1',t:'B2G1',c:'#3B82f6'},
+{b:'Turn',d:'Buy POD get battery / B2G1 Pods & AIO',t:'HOT',c:'#EF4444'},
+{b:'Aims',d:'Buy 1/8th get 1g / Buy 2 7pk get 1',t:'BOGO',c:'#F97316'},
+{b:'Korova',d:'Buy Bar/Gel Tabs get Terp Ropes',t:'HOT',c:'#EF4444'}
+],
+Monday:[
+{b:'Drops',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'},
+{b:'Aether Fields',d:'Buy 1/8th Get 1g flower',t:'HOT',c:'#EF4444'},
+{b:'Sluggers',d:'Buy 5pk get .7g Infused Preroll',t:'HOT',c:'#EF4444'},
+{b:'St. Ides',d:'Buy 2 get 1 (St. Ides/PBR/NY Fathers)',t:'B2G1',c:'#3B82f6'},
+{b:'Daily Smoke',d:'Buy 1/8th get 1g Preroll',t:'HOT',c:'#EF4444'}
+],
+Tuesday:[
+{b:'Raw Garden',d:'Buy 2 1g Cart get 1g AIO / Buy 2 Get 1 Wax',t:'HOT',c:'#EF4444'},
+{b:'Bloom',d:'BOGO on cart',t:'BOGO',c:'#F97316'},
+{b:'Lost Farm',d:'Buy 2 Get 1',t:'B2G1',c:'#3B82f6'},
+{b:'MicroBar',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'},
+{b:'Habitat',d:'Buy 1/8th get 1g preroll',t:'HOT',c:'#EF4444'}
+],
+Wednesday:[
+{b:'Good Tides',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'},
+{b:'7 Leaves',d:'Buy 1/8th get a 1g preroll',t:'HOT',c:'#EF4444'},
+{b:'Kingroll',d:'Buy 2 1.3g get 1 / B1G.5g / B2G1 Cart',t:'B2G1',c:'#3B82f6'},
+{b:'American Weed Co.',d:'Buy 14g get 3.5g / Buy 1/8th get 1g',t:'BOGO',c:'#F97316'},
+{b:'Pacific Stone',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'}
+],
+Thursday:[
+{b:'West Coast Cure',d:'Buy 1 cart get 2nd 1/2 off / Buy 1/8th get 1g',t:'HOT',c:'#EF4444'},
+{b:'Nameless',d:'Buy 1 get 1 1/2 off',t:'50% OFF',c:'#8B5CF6'},
+{b:'CQ',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'},
+{b:'CAM',d:'Buy 1/8th get a 1g Preroll',t:'HOT',c:'#EF4444'},
+{b:'LAX Packs',d:'Buy 1/8th get a 1g Preroll',t:'HOT',c:'#EF4444'}
+],
+Friday:[
+{b:'Maven',d:'Buy 1/8th get 1g',t:'HOT',c:'#EF4444'},
+{b:'Rove',d:'BOGO Carts / BOGO AIO / B2G1 Reload',t:'BOGO',c:'#F97316'},
+{b:'Stiiizy',d:'Buy 2 (1g/0.5g) get 1',t:'B2G1',c:'#3B82f6'},
+{b:'El Blunto',d:'Buy 1.6g get .65g Preroll',t:'HOT',c:'#EF4444'},
+{b:'Claybourne',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'},
+{b:'Highatus',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'}
+],
+Saturday:[
+{b:'Canabiotix',d:'Buy Rosin get 1 Terp sugar',t:'HOT',c:'#EF4444'},
+{b:'Dompen',d:'Buy 2 get 1 AIO',t:'B2G1',c:'#3B82f6'},
+{b:'Jeeter',d:'Buy 1 get 0.5g',t:'HOT',c:'#EF4444'},
+{b:'St. Ides',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'},
+{b:'Clone Goddess',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'}
+]
+};
+
+var imgs={
+'710 Labs':'https://images.dutchie.com/cc815160c7bcdafb3dd0e07500d4afbf?w=500&h=500&fm=webp',
+'Cizi':'https://laxcc.com/wp-content/uploads/2026/01/buy-cizi-vape-near-lax.png',
+'Kanha':'https://images.dutchie.com/8b16bf446b8c2192ef8a5eb1841b60b3?w=500&h=500&fm=webp',
+'Koa':'https://images.dutchie.com/b2212a5e874b578d0b06ed126eba0b76?w=500&h=500&fm=webp',
+'Uncle Arnies':'https://images.dutchie.com/2b369c452ce5f21c9101609da9e3ea29?w=500&h=500&fm=webp',
+'Turn':'https://images.dutchie.com/5cb159360fde764c5cd67a017a53e3c2?w=500&h=500&fm=webp',
+'Aims':'https://images.dutchie.com/1d8b4202e7f0a3b63273d971090027f0',
+'Korova':'https://images.dutchie.com/1658c38caf59faed9d8028854dbb27ea?w=500&h=500&fm=webp',
+'Drops':'https://images.dutchie.com/64d303efb692f19992a19c558da440d8?w=500&h=500&fm=webp',
+'Aether Fields':'https://images.dutchie.com/db7558cd89c095e6a084658a200dbb80',
+'Sluggers':'https://images.dutchie.com/003a21eb653bab7b1e81aeb054e47b9b?w=500&h=500&fm=webp',
+'St. Ides':'https://laxcc.com/wp-content/uploads/2026/01/best-thc-drinks-for-sale.jpg',
+'Daily Smoke':'https://images.dutchie.com/cc815160c7bcdafb3dd0e07500d4afbf?w=500&h=500&fm=webp',
+'Raw Garden':'https://images.dutchie.com/c60382b8c18664439cd3d7bb071ae49e',
+'Bloom':'https://images.dutchie.com/f930bb84f256cc546ce1755ac36e8791?w=500&h=500&fm=webp',
+'Lost Farm':'https://images.dutchie.com/5f387aa9537824113c8cb0abd19225ff',
+'MicroBar':'https://images.dutchie.com/b5c1dda81a1ff0009edd13e6ae38c5af?w=500&h=500&fm=webp',
+'Habitat':'https://images.dutchie.com/e605f609299926260afd3000964681f4',
+'Good Tides':'https://images.dutchie.com/cc58a6d9402b6f0017956b108e5f6c70?w=500&h=500&fm=webp',
+'7 Leaves':'https://images.dutchie.com/b15f2780158a377b365e05a178e0b6a3?w=500&h=500&fm=webp',
+'Kingroll':'https://images.dutchie.com/fc640cae64abbb9ca90de3a75cb1ccd7?w=500&h=500&fm=webp',
+'American Weed Co.':'https://images.dutchie.com/e04d8595a8dbe67338a86f1ab7be83ba?w=500&h=500&fm=webp',
+'Pacific Stone':'https://images.dutchie.com/ec44daf8c8000c09961b649a33e5aa97',
+'West Coast Cure':'https://images.dutchie.com/95aedabf83f5cc29fe96240bb3ebba55?w=500&h=500&fm=webp',
+'Nameless':'https://images.dutchie.com/d2f209986822b007c952fc881bbd9327?w=500&h=500&fm=webp',
+'CQ':'https://images.dutchie.com/d6cb43e006a59fee777dbc318a0a7f0b?w=500&h=500&fm=webp',
+'CAM':'https://images.dutchie.com/36dbccacc58b34dd893e9bc4db7a4559?w=500&h=500&fm=webp',
+'LAX Packs':'https://images.dutchie.com/9708fce7cefb47ca683b42ef4104fd9b?w=500&h=500&fm=webp',
+'Maven':'https://images.dutchie.com/515bf5602c7ad9df9ca6eeaf0a7f6757?w=500&h=500&fm=webp',
+'Rove':'https://dutchie-images.s3.us-west-2.amazonaws.com/819919252882ad3f8f0a6e7bf4db89aa?w=500&h=500&fm=webp',
+'Stiiizy':'https://images.dutchie.com/1ef5da628dfa4e18c3b46362aa579f54',
+'El Blunto':'https://images.dutchie.com/b8a7c6c380faee2471303a62de7bf240?w=500&h=500&fm=webp',
+'Claybourne':'https://images.dutchie.com/801acb3de7abcdc894439c2e645ffc28',
+'Highatus':'https://images.dutchie.com/b35b91297274d9daa40305be77a0d6c8?w=500&h=500&fm=webp',
+'Canabiotix':'https://cdn.prod.website-files.com/609f053ed9b5e241593f931b/68489755c344e73e394f335f_concentrates-solventless.png',
+'Dompen':'https://laxcc.com/wp-content/uploads/2026/01/buy-dompen-vape-near-lax-airport.png',
+'Jeeter':'https://images.dutchie.com/dde10e30cf0c8922ba2cc7d098451ebb?w=500&h=500&fm=webp',
+'Clone Goddess':'https://images.dutchie.com/332f18541693953eb78a8eb171760865'
+};
+
+var links={
+'Jeeter':'https://laxcc.com/categories/pre_rolls/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=PRE_ROLLS&brands=d80165b1-f4b5-45ea-9071-f5f571b47e4d',
+'Kanha':'https://laxcc.com/shop/?pagination=1&sort=NAME_ASC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP',
+'Lost Farm':'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=Lost+Farm'
+};
+
+var base='https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=';
+
+var days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var today=days[new Date().getDay()];
+
+var label=document.getElementById('dm_date_label');
+if(label)label.innerText=today+"'s Deals";
+
+var picks=weekly[today]||[];
+var used={};
+for(var i=0;i<picks.length;i++)used[picks[i].b]=1;
+var evday=[];
+for(var i=0;i<everyday.length;i++){
+if(!used[everyday[i].b])evday.push(everyday[i]);
+}
+var all=picks.concat(evday);
+
+t.innerHTML='';
+for(var i=0;i<all.length;i++){
+var item=all[i];
+var link=links[item.b]||base+encodeURIComponent(item.b);
+var img=imgs[item.b]||'https://placehold.co/300x400/f8fafc/0f172a.png?font=roboto&text='+encodeURIComponent(item.b);
+
+var a=document.createElement('a');
+a.className='dm_card';
+a.href=link;
+a.target='_blank';
+a.rel='nofollow';
+
+if(item.b==='St. Ides'){a.id='dm_card_st_ides';a.className+=' dm_card--filled';}
+if(item.b==='Cizi'){a.id='dm_card_cizi';a.className+=' dm_card--filled';}
+
+a.innerHTML='<div class="dm_img_box"><span class="dm_badge" style="background:'+item.c+'">'+item.t+'</span><img src="'+img+'" alt="'+item.b+'" loading="lazy"></div><div class="dm_title">'+item.b+'</div><div class="dm_deal">'+item.d+'</div>';
+t.appendChild(a);
+}
+})();
+</script>

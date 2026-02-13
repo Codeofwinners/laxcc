@@ -1,0 +1,144 @@
+<style>
+    #delighted-brand-scope {
+        --dl-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --dl-bg: #fbf8f2;
+        --dl-text: #1d508a;
+        --dl-text-muted: #64748b;
+        --dl-accent: #F89459;
+
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow: visible;
+        padding: 60px 20px;
+        background: var(--dl-bg);
+        font-family: var(--dl-font);
+        color: var(--dl-text);
+        position: relative;
+    }
+
+    #delighted-brand-scope .dl-header {
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    #delighted-brand-scope .dl-header__sup {
+        font-size: 11px;
+        font-weight: 700;
+        color: #1D508A;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        margin-bottom: 12px;
+        display: inline-block;
+        border: 1px solid #1D508A;
+        padding: 4px 12px;
+        border-radius: 50px;
+        background: rgba(29, 80, 138, 0.05);
+    }
+
+    #delighted-brand-scope .dl-header__title {
+        font-size: clamp(32px, 5vw, 64px) !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        text-transform: uppercase !important;
+        margin: 0 0 16px 0 !important;
+        letter-spacing: -0.02em !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        flex-wrap: wrap !important;
+        color: #00AFC9 !important;
+    }
+
+    #delighted-brand-scope .dl-text-gradient {
+        background: linear-gradient(135deg, #00AFC9 0%, #7ECBB3 100%) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        color: transparent !important;
+        display: inline-block !important;
+    }
+
+    #delighted-brand-scope .dl-new-badge {
+        background: #ef4444;
+        color: #fff;
+        font-size: 0.4em;
+        padding: 6px 14px;
+        border-radius: 50px;
+        -webkit-text-fill-color: white !important;
+        color: white !important;
+        letter-spacing: 0.05em;
+        position: relative;
+        top: -4px;
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+        animation: dl-pulse-badge 2s infinite;
+    }
+
+    @keyframes dl-pulse-badge {
+        0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+        70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+        100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+    }
+
+    #delighted-brand-scope .dl-header__desc {
+        font-size: 18px;
+        color: var(--dl-text-muted);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    #delighted-brand-scope .dl-products-section {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    #delighted-brand-scope .dl-reddit-link {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #ff4500;
+        text-decoration: none;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+    }
+
+    #delighted-brand-scope .dl-reddit-link:hover { opacity: 1; }
+
+    #delighted-brand-scope .dl-reddit-link svg {
+        width: 16px;
+        height: 16px;
+        fill: #ff4500;
+    }
+
+    @media (max-width: 768px) {
+        #delighted-brand-scope { padding: 40px 16px; }
+        #delighted-brand-scope .dl-header__title { font-size: 64px !important; }
+    }
+</style>
+
+<div id="delighted-brand-scope">
+    <header class="dl-header">
+        <a href="https://www.google.com/search?udm=2&q=reddit+delighted+weed" class="dl-reddit-link" target="_blank" rel="noopener nofollow">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 6.627 5.373 12 12 12s12-5.373 12-12C24 5.373 18.627 0 12 0zm6.066 13.71c.147.422.22.864.22 1.317 0 2.47-2.87 4.473-6.413 4.473S5.46 17.497 5.46 15.027c0-.453.073-.895.22-1.317a1.5 1.5 0 01-.507-1.129c0-.832.674-1.506 1.506-1.506.397 0 .779.162 1.057.448a8.86 8.86 0 014.137-1.279l.835-3.94a.3.3 0 01.356-.236l2.784.593a1.08 1.08 0 012.065.453 1.08 1.08 0 01-1.08 1.08 1.08 1.08 0 01-1.06-.878l-2.478-.528-.744 3.506a8.835 8.835 0 014.088 1.274 1.5 1.5 0 011.057-.448c.832 0 1.506.674 1.506 1.506a1.5 1.5 0 01-.507 1.129zM8.727 13.927c-.663 0-1.2.537-1.2 1.2s.537 1.2 1.2 1.2 1.2-.537 1.2-1.2-.537-1.2-1.2-1.2zm6.546 0c-.663 0-1.2.537-1.2 1.2s.537 1.2 1.2 1.2 1.2-.537 1.2-1.2-.537-1.2-1.2-1.2zm-5.14 3.727a.18.18 0 01.254 0c.678.678 1.882 1.006 2.613 1.006s1.935-.328 2.613-1.006a.18.18 0 01.254.254c-.758.758-2.037 1.112-2.867 1.112s-2.109-.354-2.867-1.112a.18.18 0 010-.254z"/></svg>
+            Reviews
+        </a>
+        <span class="dl-header__sup">Premium Cannabis</span>
+        <h2 class="dl-header__title">
+            <span class="dl-text-gradient">Delighted</span> <span class="dl-new-badge">NEW</span>
+        </h2>
+        <p class="dl-header__desc"><strong>Delighted</strong> grows all their own indoor flower — never sourced, never outsourced. Hand-trimmed, hand-packed buds that burn clean with white ash every time. One of California's top 10 fastest-growing flower brands.</p>
+    </header>
+
+    <div class="dl-products-section">
+        [leafbridge_specific_product_filter brand="44bfe537-7bbb-4a78-940c-227efb7fbac3" count="20"]
+    </div>
+</div>

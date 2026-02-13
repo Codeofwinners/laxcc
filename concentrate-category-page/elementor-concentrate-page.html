@@ -1,0 +1,363 @@
+<style>
+    /* ===== LAXCC CONCENTRATES - ELEMENTOR SAFE ===== */
+    #laxcc-concentrates-2025 {
+        --primary: #f2690d;
+        --secondary: #00AFC9;
+        --bg-light: #fbf8f2;
+        --bg-dark: #221710;
+        --seafoam-light: #e0f2f1;
+        --seafoam-dark: #00695c;
+        --sand-accent: #efebe9;
+        --text-dark: #1c130d;
+        --card-bg: #ffffff;
+        --gray-100: #f3f4f6;
+        --gray-400: #9ca3af;
+        --gray-500: #6b7280;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* Reset only for laxcc- prefixed elements */
+    #laxcc-concentrates-2025 [class^="laxcc-"],
+    #laxcc-concentrates-2025 [class*=" laxcc-"] {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    #laxcc-concentrates-2025 .laxcc-wrapper {
+        background-color: var(--bg-light);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== SCROLLBAR HIDE ===== */
+    #laxcc-concentrates-2025 .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    #laxcc-concentrates-2025 .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    /* ===== HERO CAROUSEL ===== */
+    #laxcc-concentrates-2025 .laxcc-hero-section {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding-top: 0.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    #laxcc-concentrates-2025 .laxcc-hero-carousel {
+        display: flex;
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-card {
+        scroll-snap-align: center;
+        flex-shrink: 0;
+        width: 85vw;
+        max-width: 400px;
+        position: relative;
+        border-radius: 2rem;
+        overflow: hidden;
+        aspect-ratio: 3/4;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-card.white-bg {
+        background-color: #ffffff;
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-card.red-bg {
+        background-color: #c41e3a;
+    }
+
+    /* ===== RAW GARDEN CARD ===== */
+    #laxcc-concentrates-2025 .laxcc-story-card.rawgarden-card .laxcc-story-title {
+        color: #1a3a2f;
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-card.rawgarden-card .laxcc-story-desc {
+        color: #2d5a47;
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-card.rawgarden-card .laxcc-story-credit {
+        color: rgba(26, 58, 47, 0.6);
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-card.rawgarden-card .laxcc-story-credit a {
+        color: rgba(26, 58, 47, 0.7);
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-card.rawgarden-card .laxcc-story-credit a:hover {
+        color: #1a3a2f;
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-bg {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: transform 0.7s ease;
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-bg.product-img {
+        background-size: cover;
+        background-position: center;
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-card:hover .laxcc-story-bg {
+        transform: scale(1.05);
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-overlay {
+        display: none;
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 1.5rem;
+        width: 100%;
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-tag {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        margin-bottom: 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: #000;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 9999px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-tag.seafoam {
+        background-color: rgba(224, 242, 241, 0.9);
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-title {
+        color: #fff;
+        font-size: 1.875rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-desc {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.875rem;
+        font-weight: 500;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-credit {
+        margin-top: 0.5rem;
+        font-size: 0.625rem;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-credit a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: none;
+    }
+
+    #laxcc-concentrates-2025 .laxcc-story-credit a:hover {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* ===== FILTER BUTTONS ===== */
+    #laxcc-concentrates-2025 .laxcc-filter-section {
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    #laxcc-concentrates-2025 .laxcc-filter-scroll {
+        display: flex;
+        gap: 0.75rem;
+        padding: 0 1rem;
+        overflow-x: auto;
+        align-items: center;
+    }
+
+    #laxcc-concentrates-2025 .laxcc-filter-btn {
+        display: flex;
+        height: 2.5rem;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        border-radius: 9999px;
+        padding: 0 1.25rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    #laxcc-concentrates-2025 .laxcc-filter-btn.active {
+        background-color: var(--primary);
+        color: #fff;
+        box-shadow: 0 4px 15px rgba(242, 105, 13, 0.2);
+    }
+
+    #laxcc-concentrates-2025 .laxcc-filter-btn.seafoam {
+        background-color: var(--seafoam-light);
+        color: var(--seafoam-dark);
+    }
+
+    #laxcc-concentrates-2025 .laxcc-filter-btn.sand {
+        background-color: var(--sand-accent);
+        color: var(--text-dark);
+    }
+
+    #laxcc-concentrates-2025 .laxcc-filter-btn span {
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing: 0.025em;
+        text-transform: uppercase;
+    }
+
+    /* ===== DESKTOP STYLES ===== */
+    @media (min-width: 768px) {
+        #laxcc-concentrates-2025 .laxcc-story-card {
+            width: 45vw;
+            max-width: 500px;
+        }
+
+        #laxcc-concentrates-2025 .laxcc-hero-carousel {
+            padding: 0 2rem;
+        }
+
+        #laxcc-concentrates-2025 .laxcc-filter-scroll {
+            padding: 0 2rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        #laxcc-concentrates-2025 .laxcc-story-card {
+            width: 30vw;
+            max-width: 400px;
+        }
+    }
+</style>
+
+<div id="laxcc-concentrates-2025">
+    <div class="laxcc-wrapper">
+
+        <!-- Brand Cards Carousel -->
+        <section class="laxcc-hero-section">
+            <div class="laxcc-hero-carousel no-scrollbar">
+
+                <!-- Raw Garden - Live Resin -->
+                <div class="laxcc-story-card white-bg rawgarden-card">
+                    <div class="laxcc-story-bg product-img" style="background-image: url('https://rawgarden.farm/wp-content/uploads/2025/03/Concentrates_LiveResin_onWhite-1024x1024.jpg');"></div>
+                    <div class="laxcc-story-overlay"></div>
+                    <div class="laxcc-story-content">
+                        <span class="laxcc-story-tag seafoam">Live Resin</span>
+                        <h2 class="laxcc-story-title">Raw Garden</h2>
+                        <p class="laxcc-story-desc">California's finest live resin. Clean, pure, and crafted from fresh-frozen cannabis.</p>
+                        <p class="laxcc-story-credit">Image: <a href="https://rawgarden.farm/" target="_blank" rel="nofollow noopener">Raw Garden</a></p>
+                    </div>
+                </div>
+
+                <!-- Punch Extracts - Rosin -->
+                <div class="laxcc-story-card red-bg">
+                    <div class="laxcc-story-bg product-img" style="background-image: url('https://corberacreative.com/hosted/punchextracts/wp-content/uploads/2021/02/rosin.png');"></div>
+                    <div class="laxcc-story-overlay"></div>
+                    <div class="laxcc-story-content">
+                        <span class="laxcc-story-tag">Rosin</span>
+                        <h2 class="laxcc-story-title">Punch Extracts</h2>
+                        <p class="laxcc-story-desc">Premium solventless rosin and top-tier concentrates. Heat and pressure perfection.</p>
+                        <p class="laxcc-story-credit">Image: <a href="https://punchextracts.com/rosin/" target="_blank" rel="nofollow noopener">Punch Extracts</a></p>
+                    </div>
+                </div>
+
+                <!-- West Coast Cure -->
+                <div class="laxcc-story-card">
+                    <div class="laxcc-story-bg" style="background-image: url('https://wcc.com/wp-content/uploads/2025/11/Bhomb-Header-v2.jpg');"></div>
+                    <div class="laxcc-story-overlay"></div>
+                    <div class="laxcc-story-content">
+                        <span class="laxcc-story-tag">Premium</span>
+                        <h2 class="laxcc-story-title">West Coast Cure</h2>
+                        <p class="laxcc-story-desc">Legendary California concentrates. Premium quality and potency since day one.</p>
+                        <p class="laxcc-story-credit">Image: <a href="https://wcc.com/" target="_blank" rel="nofollow noopener">West Coast Cure</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<!-- ========== SHORTCODE BELOW - COMPLETELY OUTSIDE STYLED COMPONENT ========== -->
+[leafbridge_shop_wizard category="CONCENTRATES"]
+
+<script>
+(function() {
+    'use strict';
+
+    var wrapper = document.getElementById('laxcc-concentrates-2025');
+    if (!wrapper) return;
+
+    // Event delegation for filter buttons
+    wrapper.addEventListener('click', function(e) {
+        var filterBtn = e.target.closest('.laxcc-filter-btn');
+        if (filterBtn) {
+            e.preventDefault();
+            var allFilters = wrapper.querySelectorAll('.laxcc-filter-btn');
+            allFilters.forEach(function(btn) {
+                btn.classList.remove('active');
+                if (!btn.classList.contains('seafoam') && !btn.classList.contains('sand')) {
+                    btn.classList.add('sand');
+                }
+            });
+            filterBtn.classList.add('active');
+            filterBtn.classList.remove('sand');
+            filterBtn.classList.remove('seafoam');
+        }
+    });
+
+    // Drag to scroll for carousel
+    var carousel = wrapper.querySelector('.laxcc-hero-carousel');
+    if (carousel) {
+        var isDown = false;
+        var startX;
+        var scrollLeft;
+
+        carousel.addEventListener('mousedown', function(e) {
+            isDown = true;
+            startX = e.pageX - carousel.offsetLeft;
+            scrollLeft = carousel.scrollLeft;
+        });
+
+        carousel.addEventListener('mouseleave', function() {
+            isDown = false;
+        });
+
+        carousel.addEventListener('mouseup', function() {
+            isDown = false;
+        });
+
+        carousel.addEventListener('mousemove', function(e) {
+            if (!isDown) return;
+            e.preventDefault();
+            var x = e.pageX - carousel.offsetLeft;
+            var walk = (x - startX) * 1.5;
+            carousel.scrollLeft = scrollLeft - walk;
+        });
+    }
+})();
+</script>

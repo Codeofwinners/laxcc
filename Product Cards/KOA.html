@@ -1,0 +1,535 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+    #koa-brand-scope {
+        /* --- THEME VARS --- */
+        --koa-font: 'Space Grotesk', sans-serif;
+        --koa-bg: #fbf8f2;
+        --koa-card-bg: #1D508A;
+        --koa-card-border: rgba(255, 255, 255, 0.1);
+        --koa-text: #1d508a;
+        /* Dark text for body */
+        --koa-text-muted: #64748b;
+
+        /* Brand Colors */
+        --koa-accent: #F89459;
+        /* Brand Orange */
+        --koa-holo-1: #ff00cc;
+        --koa-holo-2: #333399;
+        --koa-holo-3: #00ccff;
+
+        /* Spacing */
+        --koa-spacing-sm: 8px;
+        --koa-spacing-md: 16px;
+        --koa-spacing-lg: 24px;
+        --koa-spacing-xl: 40px;
+
+        /* Border Radius */
+        --koa-radius-sm: 8px;
+        --koa-radius-md: 16px;
+        --koa-radius-lg: 24px;
+
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow: hidden;
+        padding: 60px 20px;
+        background: var(--koa-bg);
+        font-family: var(--koa-font);
+        color: var(--koa-text);
+        position: relative;
+        isolation: isolate;
+    }
+
+    #koa-brand-scope *,
+    #koa-brand-scope *::before,
+    #koa-brand-scope *::after {
+        box-sizing: border-box;
+    }
+
+    /* --- GEOMETRIC BACKGROUND --- */
+    #koa-brand-scope::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image:
+            linear-gradient(rgba(29, 80, 138, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(29, 80, 138, 0.03) 1px, transparent 1px);
+        background-size: 50px 50px;
+        mask-image: radial-gradient(circle at center, black, transparent 80%);
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    #koa-brand-scope::after {
+        content: '';
+        position: absolute;
+        top: -20%;
+        right: -10%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, var(--koa-accent) 0%, transparent 70%);
+        opacity: 0.15;
+        filter: blur(80px);
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    /* --- HEADER --- */
+    #koa-brand-scope .koa-header {
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+    }
+
+    #koa-brand-scope .koa-header__sup {
+        font-size: 11px;
+        /* Reduced from 14px */
+        font-weight: 700;
+        color: #1D508A;
+        /* Changed from var(--koa-accent) */
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        margin-bottom: 12px;
+        display: inline-block;
+        border: 1px solid #1D508A;
+        padding: 4px 12px;
+        border-radius: 50px;
+        background: rgba(29, 80, 138, 0.05);
+        backdrop-filter: blur(5px);
+    }
+
+    #koa-brand-scope .koa-header__title {
+        font-size: clamp(32px, 5vw, 64px) !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        text-transform: uppercase !important;
+        margin: 0 0 16px 0 !important;
+        letter-spacing: -0.02em !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        flex-wrap: wrap !important;
+        color: #00AFC9 !important;
+        /* Fallback */
+    }
+
+    /* Wrap just the text for the gradient to work reliably with flexbox */
+    /* Wrap just the text for the gradient to work reliably with flexbox */
+    #koa-brand-scope .koa-text-gradient {
+        background: linear-gradient(135deg, #00AFC9 0%, #7ECBB3 100%) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        color: transparent !important;
+        display: inline-block !important;
+    }
+
+    #koa-brand-scope .koa-new-badge {
+        background: #ef4444;
+        color: #fff;
+        font-size: 0.4em;
+        padding: 6px 14px;
+        border-radius: 50px;
+        vertical-align: middle;
+        -webkit-text-fill-color: white !important;
+        color: white !important;
+        /* Override gradient text fill */
+        letter-spacing: 0.05em;
+        position: relative;
+        top: -4px;
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+        animation: pulse-badge 2s infinite;
+    }
+
+    @keyframes pulse-badge {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+        }
+
+        70% {
+            transform: scale(1.05);
+            box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+        }
+
+        100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+        }
+    }
+
+    #koa-brand-scope .koa-header__desc {
+        font-size: 18px;
+        color: var(--koa-text-muted);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    /* --- GRID --- */
+    #koa-brand-scope .koa-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1400px;
+        margin: 0 auto 60px auto;
+    }
+
+    /* --- HOLOGRAPHIC CARD --- */
+    #koa-brand-scope .koa-card {
+        background: transparent;
+        border: none;
+        border-radius: var(--koa-radius-lg);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: #fff;
+        /* Force white text in cards */
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Holographic Gradient Border Effect */
+    #koa-brand-scope .koa-card::before {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        z-index: -1;
+        background: linear-gradient(135deg,
+                var(--koa-holo-1),
+                var(--koa-holo-2),
+                var(--koa-holo-3),
+                var(--koa-holo-1));
+        background-size: 200% 200%;
+        animation: holo-border 4s linear infinite;
+        opacity: 1;
+        border-radius: var(--koa-radius-lg);
+    }
+
+    #koa-brand-scope .koa-card::after {
+        content: "";
+        position: absolute;
+        inset: 1px;
+        background:
+            /* HIGH VISIBILITY GEOMETRIC PATTERNS */
+            radial-gradient(rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px) 0 0 / 24px 24px,
+            /* Dotted Grid */
+            repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.08) 0px, rgba(255, 255, 255, 0.08) 1px, transparent 1px, transparent 12px),
+            /* Diagonal Pattern */
+            linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%, rgba(255, 255, 255, 0.05) 100%),
+            var(--koa-card-bg);
+        border-radius: var(--koa-radius-lg);
+        z-index: -1;
+        transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+
+    @keyframes holo-border {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    /* Shine effect over card */
+    #koa-brand-scope .koa-card-shine {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(105deg,
+                transparent 20%,
+                rgba(255, 255, 255, 0.2) 40%,
+                transparent 60%);
+        transform: translateX(-100%);
+        transition: transform 0.8s;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    #koa-brand-scope .koa-card:hover .koa-card-shine {
+        transform: translateX(100%);
+    }
+
+
+    #koa-brand-scope .koa-card__image-wrap {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: var(--koa-radius-md);
+        overflow: hidden;
+        margin-bottom: 20px;
+        background: #0e0e0e;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+    }
+
+    /* First card image background white */
+    #koa-brand-scope .koa-card:nth-of-type(1) .koa-card__image-wrap {
+        background: #ffffff;
+    }
+
+    #koa-brand-scope .koa-card__image-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        opacity: 0.9;
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+
+
+
+
+    #koa-brand-scope .koa-card__content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    #koa-brand-scope .koa-card__title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 8px;
+        line-height: 1.3;
+    }
+
+    #koa-brand-scope .koa-card__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    #koa-brand-scope .koa-tag {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 4px 8px;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border: none;
+    }
+
+    #koa-brand-scope .koa-tag--sativa {
+        background: #3b82f6;
+        color: #fff;
+    }
+
+    #koa-brand-scope .koa-tag--hybrid {
+        background: #a855f7;
+        color: #fff;
+    }
+
+    #koa-brand-scope .koa-tag--indica {
+        background: #ef4444;
+        color: #fff;
+    }
+
+    #koa-brand-scope .koa-tag--pack {
+        background: var(--koa-accent);
+        color: #fff;
+        font-weight: 700;
+    }
+
+    #koa-brand-scope .koa-card__price-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: auto;
+        padding-top: 16px;
+        border-top: 1px solid var(--koa-card-border);
+    }
+
+    #koa-brand-scope .koa-price {
+        font-size: 24px;
+        font-weight: 700;
+        color: #fff;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    #koa-brand-scope .koa-btn-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--koa-accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    #koa-brand-scope .koa-btn-icon svg {
+        width: 20px;
+        height: 20px;
+        fill: #fff;
+    }
+
+
+
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+        #koa-brand-scope {
+            padding: 40px 16px;
+        }
+
+        #koa-brand-scope .koa-grid {
+            display: flex;
+            gap: 16px;
+            max-width: 100%;
+            margin: 0 auto 60px auto;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        #koa-brand-scope .koa-grid::-webkit-scrollbar {
+            display: none;
+        }
+
+        #koa-brand-scope .koa-card {
+            width: 280px;
+            min-width: 280px;
+            max-width: 280px;
+            flex-shrink: 0;
+            scroll-snap-align: center;
+        }
+
+        #koa-brand-scope .koa-header__title {
+            font-size: 36px;
+        }
+    }
+</style>
+
+<div id="koa-brand-scope">
+    <header class="koa-header">
+        <span class="koa-header__sup">100% Live Resin Infused</span>
+        <h2 class="koa-header__title">
+            <span class="koa-text-gradient">KOA</span> <span class="koa-new-badge">NEW</span> <span
+                class="koa-text-gradient">10-Pack Prerolls</span>
+        </h2>
+        <p class="koa-header__desc"><strong>10 premium prerolls per pack.</strong> Top-shelf indoor flower infused with <strong>Live Resin</strong> concentrate. No distillate. No artificial terpenes. Maximum potency & flavor.
+        </p>
+    </header>
+
+    <div class="koa-grid">
+        <!-- Card 1 -->
+        <a href="https://laxcc.com/product/shop-cannabis-lax_koa-10pk-infused-preroll-s-blue-dream/" class="koa-card"
+            target="_blank">
+            <div class="koa-card-shine"></div>
+
+
+            <div class="koa-card__image-wrap">
+                <img src="https://images.dutchie.com/b2212a5e874b578d0b06ed126eba0b76"
+                    alt="KOA Blue Dream Infused Preroll">
+            </div>
+
+            <div class="koa-card__content">
+                <h3 class="koa-card__title">Blue Dream 10-Pack</h3>
+                <div class="koa-card__tags">
+                    <span class="koa-tag koa-tag--pack">10 Prerolls</span>
+                    <span class="koa-tag koa-tag--sativa">Sativa</span>
+                    <span class="koa-tag">Live Resin</span>
+                </div>
+
+                <div class="koa-card__price-row">
+                    <span class="koa-price">$45 <small style="font-size:12px;opacity:0.7;">($4.50/ea)</small></span>
+                    <div class="koa-btn-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="https://laxcc.com/product/shop-cannabis-lax_koa-10pk-infused-preroll-h-gelato/" class="koa-card"
+            target="_blank">
+            <div class="koa-card-shine"></div>
+
+
+            <div class="koa-card__image-wrap">
+                <img src="https://images.dutchie.com/d611c675173ad6bc8c45906c22efb850" alt="KOA Gelato Infused Preroll">
+            </div>
+
+            <div class="koa-card__content">
+                <h3 class="koa-card__title">Gelato 10-Pack</h3>
+                <div class="koa-card__tags">
+                    <span class="koa-tag koa-tag--pack">10 Prerolls</span>
+                    <span class="koa-tag koa-tag--hybrid">Hybrid</span>
+                    <span class="koa-tag">Live Resin</span>
+                </div>
+
+                <div class="koa-card__price-row">
+                    <span class="koa-price">$45 <small style="font-size:12px;opacity:0.7;">($4.50/ea)</small></span>
+                    <div class="koa-btn-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="https://laxcc.com/product/shop-cannabis-lax_koa-10pk-infused-preroll-i-blueberry-x-white-guava/"
+            class="koa-card" target="_blank">
+            <div class="koa-card-shine"></div>
+
+
+            <div class="koa-card__image-wrap">
+                <img src="https://images.dutchie.com/d611c675173ad6bc8c45906c22efb850"
+                    alt="KOA Blueberry Guava Infused Preroll">
+            </div>
+
+            <div class="koa-card__content">
+                <h3 class="koa-card__title">Blueberry x Guava 10-Pack</h3>
+                <div class="koa-card__tags">
+                    <span class="koa-tag koa-tag--pack">10 Prerolls</span>
+                    <span class="koa-tag koa-tag--indica">Indica</span>
+                    <span class="koa-tag">Live Resin</span>
+                </div>
+
+                <div class="koa-card__price-row">
+                    <span class="koa-price">$45 <small style="font-size:12px;opacity:0.7;">($4.50/ea)</small></span>
+                    <div class="koa-btn-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

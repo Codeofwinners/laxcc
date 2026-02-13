@@ -1,0 +1,307 @@
+<style>
+    /* --- SCOPED STYLES --- */
+    .laxcc-pro-wrapper {
+        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .laxcc-pro-wrapper *,
+    .laxcc-pro-wrapper *::before,
+    .laxcc-pro-wrapper *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .laxcc-pro-wrapper .lax-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .laxcc-pro-wrapper .lax-card {
+        background: #ffffff;
+        border-radius: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        border: none;
+        box-shadow: none;
+        text-decoration: none;
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    /* Video */
+    .laxcc-pro-wrapper .lax-video-wrap {
+        position: relative;
+        width: 100%;
+        background: #000;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    /* Mobile Aspect Ratios */
+    .laxcc-pro-wrapper .card-rove .lax-video-wrap {
+        aspect-ratio: 16/9 !important;
+    }
+
+    .laxcc-pro-wrapper .card-sluggers .lax-video-wrap {
+        aspect-ratio: 4/3 !important;
+        /* Slightly taller than landscape, but not huge square */
+    }
+
+    .laxcc-pro-wrapper video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover !important;
+        display: block;
+        opacity: 0.9;
+    }
+
+    /* Play Button */
+    .laxcc-pro-wrapper .lax-play-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 2;
+    }
+
+    .laxcc-pro-wrapper .lax-play-btn {
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .laxcc-pro-wrapper .lax-play-btn svg {
+        width: 24px;
+        height: 24px;
+        fill: #0f172a;
+        margin-left: 4px;
+    }
+
+    .laxcc-pro-wrapper .lax-video-wrap.is-playing .lax-play-overlay {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .laxcc-pro-wrapper .lax-video-wrap.is-playing video {
+        opacity: 1;
+    }
+
+    /* Content */
+    .laxcc-pro-wrapper .lax-content {
+        padding: 24px 20px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 10px;
+        background: #ffffff;
+    }
+
+    /* Badges */
+    .laxcc-pro-wrapper .lax-badge {
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 5px 10px !important;
+        border-radius: 4px !important;
+        /* Square-ish */
+        color: #fff !important;
+        margin-bottom: 5px !important;
+        display: inline-block !important;
+    }
+
+    .laxcc-pro-wrapper .card-rove .lax-badge {
+        background-color: #1D508A !important;
+    }
+
+    .laxcc-pro-wrapper .card-sluggers .lax-badge {
+        background-color: #00A651 !important;
+    }
+
+    /* Title & Desc */
+    .laxcc-pro-wrapper .lax-title {
+        font-size: 1.5rem !important;
+        font-weight: 800 !important;
+        line-height: 1.1 !important;
+        color: #0f172a !important;
+        margin: 0 0 5px 0 !important;
+    }
+
+    .laxcc-pro-wrapper .lax-desc {
+        font-size: 0.9rem !important;
+        color: #475569 !important;
+        line-height: 1.4 !important;
+        margin: 0 0 15px 0 !important;
+    }
+
+    /* Buttons */
+    .laxcc-pro-wrapper .lax-cta {
+        display: inline-flex !important;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px !important;
+        border-radius: 4px !important;
+        font-weight: 700 !important;
+        font-size: 0.9rem !important;
+        color: #fff !important;
+        text-decoration: none !important;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        background-color: #F89459 !important;
+        /* Force Orange */
+        white-space: nowrap !important;
+        border: none !important;
+    }
+
+    /* Desktop */
+    @media (min-width: 900px) {
+        .laxcc-pro-wrapper .lax-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .laxcc-pro-wrapper .lax-card {
+            flex-direction: row;
+            min-height: 400px;
+        }
+
+        .laxcc-pro-wrapper .lax-video-wrap {
+            width: 50%;
+            aspect-ratio: unset !important;
+            height: auto;
+        }
+
+        .laxcc-pro-wrapper .lax-content {
+            width: 50%;
+            padding: 40px !important;
+        }
+
+        .laxcc-pro-wrapper .lax-title {
+            font-size: 2rem !important;
+        }
+    }
+</style>
+
+<div class="laxcc-pro-wrapper">
+    <div class="lax-grid">
+
+        <!-- ROVE CARD -->
+        <div class="lax-card card-rove">
+            <div class="lax-video-wrap js-video-trigger">
+                <video playsinline preload="none" poster="https://images.dutchie.com/c8efb4d4f0eb317033454ae97e1f8bf0"
+                    muted loop>
+                    <source src="https://laxcc.com/wp-content/uploads/2025/10/rove-melted-diamonds-pods-vape-review.mp4"
+                        type="video/mp4">
+                </video>
+                <div class="lax-play-overlay">
+                    <button class="lax-play-btn" aria-label="Play Rove Video">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="lax-content">
+                <span class="lax-badge">Featured Brand</span>
+                <h2 class="lax-title">Rove Melted Diamonds</h2>
+                <p class="lax-desc">Experience the purity of live resin diamonds. 87–94% THC in All-In-One disposables.
+                </p>
+                <a href="https://laxcc.com/shop/?products_search=rove" class="lax-cta">
+                    Shop Rove <span>&rarr;</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- SLUGGERS CARD -->
+        <div class="lax-card card-sluggers">
+            <div class="lax-video-wrap js-video-trigger">
+                <video playsinline preload="metadata" muted loop>
+                    <source src="https://laxcc.com/wp-content/uploads/2025/12/buy-infused-prerolls-near-lax-airport.mp4"
+                        type="video/mp4">
+                </video>
+                <div class="lax-play-overlay">
+                    <button class="lax-play-btn" aria-label="Play Sluggers Video">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="lax-content">
+                <span class="lax-badge">Top Seller</span>
+                <h2 class="lax-title">Sluggers Hit</h2>
+                <p class="lax-desc">Triple-infused prerolls with liquid diamonds & kief. The hardest hitting joints in
+                    LA.</p>
+                <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=Sluggers"
+                    class="lax-cta">
+                    Shop Sluggers <span>&rarr;</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    (function () {
+        const wrappers = document.querySelectorAll('.laxcc-pro-wrapper .js-video-trigger');
+
+        wrappers.forEach(wrapper => {
+            const video = wrapper.querySelector('video');
+            const source = video.querySelector('source');
+            const playBtn = wrapper.querySelector('.lax-play-btn');
+
+            if (!video || !source) return;
+
+            const handlePlay = (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+
+                if (source.dataset.src && !video.getAttribute('src') && !video.currentSrc) {
+                    video.src = source.dataset.src;
+                    video.load();
+                } else if (!video.getAttribute('src') && !video.currentSrc) {
+                    // For direct src (Sluggers), ensure it's ready
+                    video.load();
+                }
+
+                if (video.paused) {
+                    wrapper.classList.add('is-playing');
+                    video.play();
+                    video.muted = false;
+                } else {
+                    wrapper.classList.remove('is-playing');
+                    video.pause();
+                }
+            };
+
+            wrapper.addEventListener('click', handlePlay);
+            if (playBtn) playBtn.addEventListener('click', handlePlay);
+
+            video.addEventListener('ended', () => {
+                wrapper.classList.remove('is-playing');
+                video.load();
+            });
+        });
+    })();
+</script>

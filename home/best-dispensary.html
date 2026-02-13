@@ -1,0 +1,704 @@
+<style>
+    /* Scoped Container - WordPress Safe */
+    #laxcc-lax-promo,
+    #laxcc-lax-promo * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    #laxcc-lax-promo {
+        font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif !important;
+        background: linear-gradient(135deg, #1D508A 0%, #00AFC9 50%, #7ECBB3 100%) !important;
+        width: 100% !important;
+        max-width: 1920px !important;
+        margin: 0 auto !important;
+        box-shadow: 0 20px 60px rgba(29, 80, 138, 0.4) !important;
+        position: relative !important;
+        overflow: hidden !important;
+        isolation: isolate;
+    }
+
+    /* Ambient Background Effect */
+    #laxcc-ambient-bg {
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at 30% 50%, rgba(0, 175, 201, 0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 70% 30%, rgba(126, 203, 179, 0.12) 0%, transparent 50%);
+        animation: laxcc-ambient 20s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    @keyframes laxcc-ambient {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(20px, 20px) scale(1.05); }
+    }
+
+    /* Main Content Grid */
+    #laxcc-lax-promo .laxcc-container {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        padding: 60px;
+        align-items: center;
+        min-height: 700px;
+    }
+
+    /* Left Content Section */
+    #laxcc-lax-promo .laxcc-content {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    /* Location Badge */
+    #laxcc-lax-promo .laxcc-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50px;
+        padding: 10px 20px;
+        width: fit-content;
+        color: #FFF;
+        animation: laxcc-badge-glow 3s ease-in-out infinite;
+    }
+
+    #laxcc-lax-promo .laxcc-badge-text {
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: #FFF;
+    }
+
+    @keyframes laxcc-badge-glow {
+        0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); }
+        50% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.4); }
+    }
+
+    #laxcc-lax-promo .laxcc-badge-icon {
+        font-size: 1.2rem;
+        animation: laxcc-pulse-icon 2s ease-in-out infinite;
+    }
+
+    @keyframes laxcc-pulse-icon {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.15); }
+    }
+
+    /* Main Heading */
+    #laxcc-lax-promo .laxcc-heading {
+        font-size: 3.2rem;
+        font-weight: 800;
+        line-height: 1.1;
+        color: #FFF;
+        letter-spacing: -0.02em;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        text-transform: uppercase;
+    }
+
+    /* Subheading */
+    #laxcc-lax-promo .laxcc-subheading {
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.95);
+        line-height: 1.5;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Description */
+    #laxcc-lax-promo .laxcc-description {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.95);
+        line-height: 1.4;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Features Grid */
+    #laxcc-lax-promo .laxcc-features {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-top: 8px;
+    }
+
+    #laxcc-lax-promo .laxcc-feature {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        padding: 14px 18px;
+        transition: all 0.3s ease;
+    }
+
+    #laxcc-lax-promo .laxcc-feature:hover {
+        background: rgba(255, 255, 255, 0.12);
+        transform: translateX(5px);
+        border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    #laxcc-lax-promo .laxcc-feature-icon {
+        font-size: 1.8rem;
+        flex-shrink: 0;
+    }
+
+    #laxcc-lax-promo .laxcc-feature-text {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #FFF;
+        line-height: 1.3;
+    }
+
+    /* CTA Buttons */
+    #laxcc-lax-promo .laxcc-cta-group {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 12px;
+    }
+
+    #laxcc-lax-promo .laxcc-btn-primary {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 18px 36px !important;
+        background: linear-gradient(135deg, #F89459 0%, #FAAC7A 100%) !important;
+        color: #FFF !important;
+        font-size: 1.15rem !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+        border-radius: 14px !important;
+        border: none !important;
+        box-shadow: 0 10px 30px rgba(248, 148, 89, 0.4) !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        cursor: pointer !important;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #laxcc-lax-promo .laxcc-btn-primary::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+    }
+
+    #laxcc-lax-promo .laxcc-btn-primary:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    #laxcc-lax-promo .laxcc-btn-primary:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 15px 40px rgba(248, 148, 89, 0.6) !important;
+        background: linear-gradient(135deg, #FAAC7A 0%, #F89459 100%) !important;
+    }
+
+    #laxcc-lax-promo .laxcc-btn-primary span {
+        position: relative;
+        z-index: 1;
+    }
+
+    #laxcc-lax-promo .laxcc-btn-secondary {
+        display: inline-flex !important;
+        align-items: center;
+        gap: 8px;
+        padding: 18px 32px !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        backdrop-filter: blur(10px);
+        color: #FFF !important;
+        font-size: 1.05rem !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        border-radius: 14px !important;
+        border: 2px solid rgba(255, 255, 255, 0.3) !important;
+        transition: all 0.3s ease !important;
+        cursor: pointer !important;
+    }
+
+    #laxcc-lax-promo .laxcc-btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.18) !important;
+        border-color: rgba(255, 255, 255, 0.5) !important;
+        transform: translateY(-2px);
+    }
+
+    /* Trust Indicators */
+    #laxcc-lax-promo .laxcc-trust {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        margin-top: 20px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    #laxcc-lax-promo .laxcc-trust-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.85);
+        font-weight: 500;
+    }
+
+    #laxcc-lax-promo .laxcc-trust-icon {
+        font-size: 1.2rem;
+        color: #7ECBB3;
+    }
+
+    /* Right Image Gallery */
+    #laxcc-lax-promo .laxcc-gallery {
+        position: relative;
+        height: 600px;
+    }
+
+    #laxcc-lax-promo .laxcc-gallery-track {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        overflow: hidden;
+        mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+        -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+    }
+
+    #laxcc-lax-promo .laxcc-gallery-row {
+        display: flex;
+        gap: 20px;
+        animation: laxcc-scroll-horizontal 30s linear infinite;
+        will-change: transform;
+    }
+
+    #laxcc-lax-promo .laxcc-gallery-row:nth-child(2) {
+        animation-direction: reverse;
+        animation-duration: 35s;
+    }
+
+    @keyframes laxcc-scroll-horizontal {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    #laxcc-lax-promo .laxcc-gallery-item {
+        flex-shrink: 0;
+        width: 280px;
+        height: 200px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        transition: transform 0.4s ease;
+    }
+
+    #laxcc-lax-promo .laxcc-gallery-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+    }
+
+    #laxcc-lax-promo .laxcc-gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    #laxcc-lax-promo .laxcc-gallery-item:hover img {
+        transform: scale(1.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        #laxcc-lax-promo .laxcc-container {
+            grid-template-columns: 1fr;
+            gap: 25px;
+            padding: 40px 30px;
+        }
+
+        #laxcc-lax-promo .laxcc-content {
+            text-align: center;
+            align-items: center;
+        }
+
+        #laxcc-lax-promo .laxcc-heading {
+            font-size: 2.4rem;
+        }
+
+        #laxcc-lax-promo .laxcc-heading-highlight {
+            font-size: 2.8rem;
+        }
+
+        #laxcc-lax-promo .laxcc-features {
+            max-width: 500px;
+        }
+
+        #laxcc-lax-promo .laxcc-gallery {
+            height: 450px;
+        }
+
+        #laxcc-lax-promo .laxcc-gallery-item {
+            width: 240px;
+            height: 180px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-lax-promo .laxcc-container {
+            padding: 20px 20px 30px 20px;
+            min-height: auto;
+        }
+
+        #laxcc-lax-promo .laxcc-content {
+            gap: 16px;
+        }
+
+        #laxcc-lax-promo .laxcc-heading {
+            font-size: 1.8rem;
+        }
+
+        #laxcc-lax-promo .laxcc-subheading {
+            font-size: 1rem;
+        }
+
+        #laxcc-lax-promo .laxcc-description {
+            font-size: 0.9rem;
+        }
+
+        #laxcc-lax-promo .laxcc-features {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        #laxcc-lax-promo .laxcc-feature {
+            flex-direction: column;
+            padding: 12px 8px;
+            text-align: center;
+            gap: 6px;
+        }
+
+        #laxcc-lax-promo .laxcc-feature-icon {
+            font-size: 1.5rem;
+        }
+
+        #laxcc-lax-promo .laxcc-feature-text {
+            font-size: 0.75rem;
+        }
+
+        #laxcc-lax-promo .laxcc-cta-group {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        #laxcc-lax-promo .laxcc-btn-primary,
+        #laxcc-lax-promo .laxcc-btn-secondary {
+            width: 100%;
+            justify-content: center;
+        }
+
+        #laxcc-lax-promo .laxcc-trust {
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        #laxcc-lax-promo .laxcc-trust-item {
+            font-size: 0.85rem;
+        }
+
+        #laxcc-lax-promo .laxcc-gallery {
+            height: 300px;
+            order: -1;
+        }
+
+        #laxcc-lax-promo .laxcc-gallery-track {
+            flex-direction: row;
+            align-items: center;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        #laxcc-lax-promo .laxcc-gallery-row {
+            flex-direction: row;
+            min-width: max-content;
+            animation: laxcc-scroll-horizontal-mobile 35s linear infinite;
+        }
+
+        #laxcc-lax-promo .laxcc-gallery-row:nth-child(2) {
+            display: flex;
+            animation: laxcc-scroll-horizontal-mobile 35s linear infinite;
+        }
+
+        @keyframes laxcc-scroll-horizontal-mobile {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        #laxcc-lax-promo .laxcc-gallery-item {
+            width: 280px;
+            height: 200px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #laxcc-lax-promo .laxcc-container {
+            padding: 15px 16px 25px 16px;
+        }
+
+        #laxcc-lax-promo .laxcc-content {
+            gap: 14px;
+        }
+
+        #laxcc-lax-promo .laxcc-heading {
+            font-size: 1.6rem;
+        }
+
+        #laxcc-lax-promo .laxcc-subheading {
+            font-size: 0.95rem;
+        }
+
+        #laxcc-lax-promo .laxcc-description {
+            font-size: 0.9rem;
+        }
+
+        #laxcc-lax-promo .laxcc-badge {
+            padding: 8px 16px;
+        }
+
+        #laxcc-lax-promo .laxcc-badge-text {
+            font-size: 0.95rem;
+        }
+
+        #laxcc-lax-promo .laxcc-features {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        #laxcc-lax-promo .laxcc-feature {
+            padding: 10px 6px;
+        }
+
+        #laxcc-lax-promo .laxcc-feature-icon {
+            font-size: 1.3rem;
+        }
+
+        #laxcc-lax-promo .laxcc-feature-text {
+            font-size: 0.7rem;
+            line-height: 1.2;
+        }
+
+        #laxcc-lax-promo .laxcc-btn-primary {
+            font-size: 1.05rem !important;
+            padding: 16px 30px !important;
+        }
+
+        #laxcc-lax-promo .laxcc-gallery {
+            height: 250px;
+        }
+
+        #laxcc-lax-promo .laxcc-gallery-item {
+            width: 240px;
+            height: 170px;
+        }
+
+        #laxcc-lax-promo .laxcc-gallery-row {
+            animation-duration: 40s;
+        }
+    }
+
+    /* Accessibility */
+    #laxcc-lax-promo *:focus-visible {
+        outline: 3px solid rgba(255, 255, 255, 0.6);
+        outline-offset: 2px;
+    }
+</style>
+
+<!-- Schema Markup for Local SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "LAX Cannabis Club",
+  "description": "Premium cannabis dispensary just 5-15 minutes from Manhattan Beach (3 miles), Venice Beach (12 miles), Santa Monica, Marina del Rey (5 miles), Hermosa Beach, Playa del Rey and Dockweiler Beach. Located 5 minutes from LAX Airport in Los Angeles.",
+  "url": "https://laxcc.com",
+  "telephone": "+1-XXX-XXX-XXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Near LAX Airport",
+    "addressLocality": "Los Angeles",
+    "addressRegion": "CA",
+    "postalCode": "90045",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "33.9416",
+    "longitude": "-118.4085"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "09:00",
+      "closes": "21:00"
+    }
+  ],
+  "priceRange": "$$",
+  "servesCuisine": "Cannabis Products",
+  "areaServed": [
+    "Manhattan Beach",
+    "Venice Beach",
+    "Santa Monica",
+    "Marina del Rey",
+    "Hermosa Beach",
+    "Playa del Rey",
+    "Dockweiler Beach",
+    "El Segundo",
+    "Westchester"
+  ]
+}
+</script>
+
+<!-- Main Banner Container -->
+<div id="laxcc-lax-promo" class="laxcc-promo-banner">
+    <div id="laxcc-ambient-bg"></div>
+    <div class="laxcc-container">
+        <!-- Left Content Section -->
+        <div class="laxcc-content">
+            <!-- Location Badge -->
+            <div class="laxcc-badge">
+                <span class="laxcc-badge-icon">✈️</span>
+                <span class="laxcc-badge-text">5 Minutes from LAX Airport</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="laxcc-heading">
+                Best Dispensary Near Manhattan Beach, Venice & Santa Monica
+            </h1>
+
+            <!-- Subheading -->
+            <p class="laxcc-subheading">
+                Just 5-15 Minutes from All Your Favorite LA Beaches
+            </p>
+
+            <!-- Description -->
+            <p class="laxcc-description">
+                🏖️ Manhattan Beach (3 mi) • Venice (12 mi) • Marina del Rey (5 mi) 🏖️<br>🌊 Santa Monica • Hermosa • Playa del Rey • Dockweiler 🌊
+            </p>
+
+            <!-- Key Features -->
+            <div class="laxcc-features">
+                <div class="laxcc-feature">
+                    <span class="laxcc-feature-icon">🌟</span>
+                    <span class="laxcc-feature-text">Top-Shelf<br>Products</span>
+                </div>
+                <div class="laxcc-feature">
+                    <span class="laxcc-feature-icon">⚡</span>
+                    <span class="laxcc-feature-text">Fast Service<br>Guaranteed</span>
+                </div>
+                <div class="laxcc-feature">
+                    <span class="laxcc-feature-icon">🏆</span>
+                    <span class="laxcc-feature-text">Award-Winning<br>Selection</span>
+                </div>
+                <div class="laxcc-feature">
+                    <span class="laxcc-feature-icon">🚗</span>
+                    <span class="laxcc-feature-text">Free Parking<br>Available</span>
+                </div>
+            </div>
+
+            <!-- Call-to-Action Buttons -->
+            <div class="laxcc-cta-group">
+                <a href="https://laxcc.com/shop/" class="laxcc-btn-primary" aria-label="Shop cannabis near Manhattan Beach and Venice Beach">
+                    <span>🛒 Shop Now</span>
+                </a>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="laxcc-trust">
+                <div class="laxcc-trust-item">
+                    <span class="laxcc-trust-icon">✓</span>
+                    <span>Licensed & Compliant</span>
+                </div>
+                <div class="laxcc-trust-item">
+                    <span class="laxcc-trust-icon">✓</span>
+                    <span>Lab-Tested Products</span>
+                </div>
+                <div class="laxcc-trust-item">
+                    <span class="laxcc-trust-icon">✓</span>
+                    <span>Expert Staff</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Gallery Section -->
+        <div class="laxcc-gallery">
+            <div class="laxcc-gallery-track">
+                <!-- First Row -->
+                <div class="laxcc-gallery-row">
+                    <div class="laxcc-gallery-item">
+                        <img src="https://laxcc.com/wp-content/uploads/2025/06/best-dispensary-near-Los-Angeles-Beaches.jpg" alt="Best dispensary near Manhattan Beach and Venice Beach" loading="lazy">
+                    </div>
+                    <div class="laxcc-gallery-item">
+                        <img src="https://laxcc.com/wp-content/uploads/2025/06/dispensary-near-Los-Angeles-beaches.jpg" alt="Cannabis dispensary near Santa Monica and Marina del Rey" loading="lazy">
+                    </div>
+                    <div class="laxcc-gallery-item">
+                        <img src="https://laxcc.com/wp-content/uploads/2025/06/best-cannabis-Los-Angeles-beaches.jpg" alt="Premium cannabis near Hermosa Beach and Playa del Rey" loading="lazy">
+                    </div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="laxcc-gallery-item">
+                        <img src="https://laxcc.com/wp-content/uploads/2025/06/best-dispensary-near-Los-Angeles-Beaches.jpg" alt="Best dispensary near Manhattan Beach and Venice Beach" loading="lazy">
+                    </div>
+                    <div class="laxcc-gallery-item">
+                        <img src="https://laxcc.com/wp-content/uploads/2025/06/dispensary-near-Los-Angeles-beaches.jpg" alt="Cannabis dispensary near Santa Monica and Marina del Rey" loading="lazy">
+                    </div>
+                    <div class="laxcc-gallery-item">
+                        <img src="https://laxcc.com/wp-content/uploads/2025/06/best-cannabis-Los-Angeles-beaches.jpg" alt="Premium cannabis near Hermosa Beach and Playa del Rey" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Second Row (Reverse Direction) -->
+                <div class="laxcc-gallery-row">
+                    <div class="laxcc-gallery-item">
+                        <img src="https://laxcc.com/wp-content/uploads/2025/06/Best-dispensary-near-LA-beaches-scaled.jpg" alt="Cannabis dispensary near Dockweiler Beach and LAX" loading="lazy">
+                    </div>
+                    <div class="laxcc-gallery-item">
+                        <img src="https://laxcc.com/wp-content/uploads/2025/06/Todays-hot-LA-dispensary-Deals-copy-1-scaled.jpg" alt="Dispensary deals near Venice Beach and Santa Monica" loading="lazy">
+                    </div>
+                    <div class="laxcc-gallery-item">
+                        <img src="https://laxcc.com/wp-content/uploads/2025/06/Los-Angeles-dispensary-near-beaches-scaled.jpg" alt="Top cannabis shop near Manhattan Beach Marina del Rey" loading="lazy">
+                    </div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="laxcc-gallery-item">
+                        <img src="https://laxcc.com/wp-content/uploads/2025/06/Best-dispensary-near-LA-beaches-scaled.jpg" alt="Cannabis dispensary near Dockweiler Beach and LAX" loading="lazy">
+                    </div>
+                    <div class="laxcc-gallery-item">
+                        <img src="https://laxcc.com/wp-content/uploads/2025/06/Todays-hot-LA-dispensary-Deals-copy-1-scaled.jpg" alt="Dispensary deals near Venice Beach and Santa Monica" loading="lazy">
+                    </div>
+                    <div class="laxcc-gallery-item">
+                        <img src="https://laxcc.com/wp-content/uploads/2025/06/Los-Angeles-dispensary-near-beaches-scaled.jpg" alt="Top cannabis shop near Manhattan Beach Marina del Rey" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

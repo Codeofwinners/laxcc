@@ -1,0 +1,231 @@
+# Elementor 403-Safe Code Guidelines
+
+Based on your working hero slider code, here are the **strict rules** to follow for Elementor HTML widgets that won't trigger 403 errors:
+
+---
+
+## 🛡️ CORE PRINCIPLES
+
+### 1. **ALWAYS Scope Everything to a Unique Container ID**
+```css
+/* ✅ CORRECT - Fully scoped */
+#your-unique-id-2025 .your-class { }
+#your-unique-id-2025 .your-class .child { }
+
+/* ❌ WRONG - Global selectors */
+.your-class { }
+body .your-class { }
+```
+
+### 2. **CSS Variables Must Be Scoped**
+```css
+/* ✅ CORRECT */
+#your-unique-id {
+    --brand-color: #F89459;
+    --glass-bg: rgba(29, 80, 138, 0.6);
+}
+
+/* ❌ WRONG */
+:root {
+    --brand-color: #F89459;
+}
+```
+
+---
+
+## 📝 HTML RULES
+
+| ✅ DO | ❌ DON'T |
+|-------|----------|
+| Use semantic HTML5 (`<section>`, `<article>`, `<nav>`) | Use deprecated tags (`<font>`, `<center>`) |
+| Use `<a href="">` for links | Use `javascript:` in href |
+| Use `data-*` attributes for custom data | Use inline event handlers (`onclick=""`) |
+| Keep DOM structure simple and flat | Nest more than 6-7 levels deep |
+| Use standard attributes | Use custom non-data attributes |
+
+### Required Container Structure:
+```html
+<div id="unique-component-name-2025">
+    <!-- ALL content inside this wrapper -->
+</div>
+```
+
+---
+
+## 🎨 CSS RULES
+
+### ALLOWED:
+```css
+/* Standard properties */
+background, color, padding, margin, border
+display: flex/grid/block
+position: relative/absolute/fixed
+transform, transition, animation
+backdrop-filter, filter
+box-shadow, border-radius
+@keyframes (scoped animations)
+@media queries
+```
+
+### FORBIDDEN:
+```css
+/* ❌ These trigger 403s */
+@import url();           /* No external imports */
+@font-face { }           /* No custom font loading */
+expression()             /* IE expressions */
+behavior:                /* IE behaviors */
+-moz-binding:            /* XBL bindings */
+```
+
+### Safe Font Stack:
+```css
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+```
+
+---
+
+## ⚡ JAVASCRIPT RULES
+
+### ✅ ALLOWED PATTERNS:
+
+```javascript
+// 1. Event Delegation (PREFERRED)
+document.addEventListener('click', function(e) {
+    const target = e.target.closest('#your-id .your-class');
+    if (!target) return;
+    // handle click
+});
+
+// 2. DOM Queries (scoped to your container)
+const wrapper = document.getElementById('your-unique-id');
+const elements = wrapper.querySelectorAll('.your-class');
+
+// 3. Standard DOM manipulation
+element.classList.add('active');
+element.style.display = 'none';
+element.scrollBy({ left: 100, behavior: 'smooth' });
+
+// 4. Simple loops
+elements.forEach(el => { });
+for (let i = 0; i < items.length; i++) { }
+```
+
+### ❌ FORBIDDEN PATTERNS:
+
+```javascript
+// These WILL trigger 403 errors:
+eval()                          // Code execution
+new Function()                  // Dynamic function creation
+document.write()                // Document manipulation
+innerHTML = userInput           // XSS vectors (with user input)
+fetch('external-api.com')       // External API calls
+import / require                // Module imports
+setTimeout(string)              // String-based timeout
+setInterval(string)             // String-based interval
+location.href = variable        // Dynamic redirects
+window.open()                   // Popup windows
+postMessage()                   // Cross-origin messaging
+localStorage/sessionStorage     // Sometimes flagged
+XMLHttpRequest                  // AJAX calls
+$.ajax() / axios                // HTTP libraries
+```
+
+---
+
+## 🖼️ MEDIA RULES
+
+### Images:
+```html
+<!-- ✅ CORRECT - Direct URLs from trusted sources -->
+<img src="https://yourdomain.com/image.jpg" alt="Description">
+<img src="https://res.cloudinary.com/..." alt="Description">
+
+<!-- ❌ WRONG -->
+<img src="data:image/..." >     <!-- Large base64 can trigger WAF -->
+<img src="javascript:...">       <!-- XSS vector -->
+```
+
+### Videos:
+```html
+<!-- ✅ CORRECT -->
+<video autoplay muted playsinline loop>
+    <source src="https://yourdomain.com/video.webm" type="video/webm">
+</video>
+
+<!-- ❌ WRONG -->
+<iframe src="...">              <!-- External embeds risky -->
+```
+
+---
+
+## 📋 COMPLETE TEMPLATE
+
+```html
+<style>
+    /* ===== SCOPED CSS ===== */
+    #mycomponent-2025 {
+        --primary: #1D508A;
+        --accent: #F89459;
+    }
+    
+    #mycomponent-2025 * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    #mycomponent-2025 .container {
+        /* your styles */
+    }
+    
+    @media (min-width: 768px) {
+        #mycomponent-2025 .container {
+            /* tablet+ styles */
+        }
+    }
+</style>
+
+<div id="mycomponent-2025">
+    <section class="container">
+        <!-- Your HTML content -->
+    </section>
+</div>
+
+<script>
+    (function() {
+        'use strict';
+        
+        // Scoped to your component
+        const wrapper = document.getElementById('mycomponent-2025');
+        if (!wrapper) return;
+        
+        // Event delegation
+        wrapper.addEventListener('click', function(e) {
+            const btn = e.target.closest('.your-button');
+            if (!btn) return;
+            
+            e.preventDefault();
+            // Handle click
+        });
+    })();
+</script>
+```
+
+---
+
+## 🚨 QUICK CHECKLIST BEFORE PASTING
+
+- [ ] Unique ID prefix on container (`#projectname-2025`)
+- [ ] ALL CSS selectors start with `#your-id`
+- [ ] CSS variables scoped to container
+- [ ] No `@import` or `@font-face`
+- [ ] No inline event handlers (`onclick`, `onmouseover`)
+- [ ] JavaScript uses event delegation
+- [ ] No `eval()`, `fetch()`, `document.write()`
+- [ ] All URLs are HTTPS and from trusted domains
+- [ ] No external library imports
+- [ ] Script wrapped in IIFE `(function() { })();`
+
+---
+
+Want me to save this as a markdown file you can reference, or create a Google Doc version?

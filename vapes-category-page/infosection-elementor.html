@@ -1,0 +1,675 @@
+<style>
+    /* ===== LAXCC VAPES INFO - ELEMENTOR SAFE ===== */
+    #laxcc-vapes-info-2025 {
+        --primary: #06B6D4;
+        --panel-light: #FBF8F2;
+        --accent-teal: #00AFC9;
+        --accent-cyan: #0891B2;
+        --text-dark: #0f172a;
+        --bg-light: #f8f6f5;
+        --gray-500: #6b7280;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    #laxcc-vapes-info-2025 [class^="laxcc-"],
+    #laxcc-vapes-info-2025 [class*=" laxcc-"] {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* ===== SCROLLBAR HIDE ===== */
+    #laxcc-vapes-info-2025 .laxcc-no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    #laxcc-vapes-info-2025 .laxcc-no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    /* ===== MAIN CONTAINER ===== */
+    #laxcc-vapes-info-2025 .laxcc-main {
+        position: relative;
+        width: 100%;
+        background-color: var(--bg-light);
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-scroll-wrapper {
+        display: flex;
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+    }
+
+    /* ===== SLIDE SECTION ===== */
+    #laxcc-vapes-info-2025 .laxcc-slide {
+        min-width: 100%;
+        scroll-snap-align: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-vapes-info-2025 .laxcc-slide {
+            flex-direction: row;
+            min-height: 100vh;
+        }
+    }
+
+    /* ===== VISUAL PANEL ===== */
+    #laxcc-vapes-info-2025 .laxcc-visual {
+        width: 100%;
+        height: 200px;
+        position: relative !important;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    #laxcc-vapes-info-2025 a.laxcc-visual {
+        display: block;
+        position: relative !important;
+        text-decoration: none;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-vapes-info-2025 .laxcc-visual {
+            width: 50%;
+            height: auto;
+            min-height: 100vh;
+        }
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-visual-bg {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.7s ease;
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-slide:hover .laxcc-visual-bg {
+        transform: scale(1.05);
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-visual-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right, rgba(0,0,0,0.2), transparent);
+        pointer-events: none;
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-image-credit {
+        position: absolute;
+        bottom: 0.5rem;
+        left: 0.5rem;
+        z-index: 5;
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-image-credit a {
+        color: #06B6D4;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-decoration: none;
+        letter-spacing: 0.03em;
+        transition: color 0.2s ease;
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-image-credit a:hover {
+        color: #fff;
+    }
+
+    /* ===== INFO PANEL ===== */
+    #laxcc-vapes-info-2025 .laxcc-info {
+        width: 100%;
+        background-color: var(--panel-light);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-vapes-info-2025 .laxcc-info {
+            width: 50%;
+            padding: 3rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        #laxcc-vapes-info-2025 .laxcc-info {
+            padding: 4rem;
+        }
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-info-inner {
+        max-width: 28rem;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /* ===== EXHIBIT BADGE ===== */
+    #laxcc-vapes-info-2025 .laxcc-exhibit {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.25rem;
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-exhibit-icon {
+        color: var(--accent-cyan);
+        font-size: 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-vapes-info-2025 .laxcc-exhibit-icon {
+            font-size: 2rem;
+        }
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-exhibit-label {
+        color: var(--accent-cyan);
+        font-size: 0.625rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-vapes-info-2025 .laxcc-exhibit-label {
+            font-size: 0.75rem;
+        }
+    }
+
+    /* ===== TITLE ===== */
+    #laxcc-vapes-info-2025 .laxcc-title {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--text-dark);
+        line-height: 1;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.75rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-vapes-info-2025 .laxcc-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        #laxcc-vapes-info-2025 .laxcc-title {
+            font-size: 3rem;
+        }
+    }
+
+    /* ===== INFO BLOCKS ===== */
+    #laxcc-vapes-info-2025 .laxcc-blocks {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-vapes-info-2025 .laxcc-blocks {
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-block {
+        border-left: 3px solid var(--accent-cyan);
+        padding-left: 0.75rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-vapes-info-2025 .laxcc-block {
+            border-left-width: 4px;
+            padding-left: 1.25rem;
+        }
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-block.teal-border {
+        border-left-color: var(--accent-teal);
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-block-title {
+        color: var(--accent-cyan);
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 0.375rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-vapes-info-2025 .laxcc-block-title {
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-block-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.375rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-vapes-info-2025 .laxcc-block-list {
+            gap: 0.5rem;
+        }
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-block-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        color: var(--text-dark);
+        font-weight: 500;
+        line-height: 1.4;
+        font-size: 0.8125rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-vapes-info-2025 .laxcc-block-item {
+            font-size: 0.9375rem;
+            gap: 0.75rem;
+        }
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-block-icon {
+        flex-shrink: 0;
+        font-size: 0.875rem;
+    }
+
+    /* ===== BRAND BUTTONS ===== */
+    #laxcc-vapes-info-2025 .laxcc-brands {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-brand-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.625rem 0.875rem;
+        background-color: #fff;
+        border: 1px solid rgba(0,0,0,0.08);
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-align: left;
+        flex: 1 1 calc(50% - 0.25rem);
+        min-width: 120px;
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-brand-btn:hover {
+        border-color: var(--accent-cyan);
+        box-shadow: 0 4px 12px rgba(8,145,178,0.15);
+        transform: translateY(-2px);
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-brand-name {
+        font-size: 0.8125rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 0.125rem;
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-brand-desc {
+        font-size: 0.625rem;
+        color: var(--gray-500);
+        line-height: 1.3;
+    }
+
+    /* ===== PAGINATION ===== */
+    #laxcc-vapes-info-2025 .laxcc-pagination {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0;
+        background-color: var(--bg-light);
+        z-index: 10;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-vapes-info-2025 .laxcc-pagination {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 0;
+            padding: 0;
+            background: transparent;
+            pointer-events: none;
+        }
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-pagination-inner {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: var(--accent-cyan);
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-pagination-arrow {
+        color: rgba(255,255,255,0.8);
+        font-size: 0.875rem;
+        cursor: pointer;
+        pointer-events: auto;
+        transition: color 0.2s ease;
+        user-select: none;
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-pagination-arrow:hover {
+        color: #fff;
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-pagination-dots {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 9999px;
+        background-color: rgba(255,255,255,0.5);
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        cursor: pointer;
+        pointer-events: auto;
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-dot:hover {
+        transform: scale(1.3);
+        background-color: rgba(255,255,255,0.8);
+    }
+
+    #laxcc-vapes-info-2025 .laxcc-dot.active {
+        background-color: #fff;
+    }
+</style>
+
+<div id="laxcc-vapes-info-2025">
+    <main class="laxcc-main">
+        <div class="laxcc-scroll-wrapper laxcc-no-scrollbar">
+
+            <!-- Slide 1: 510 Cartridges -->
+            <section class="laxcc-slide">
+                <a href="https://laxcc.com/categories/vaporizers/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=VAPORIZERS&brands=%22daa99d8d-6b0b-4db5-8664-534d7d3868b1%22%2C" class="laxcc-visual">
+                    <div class="laxcc-visual-bg" style="background-image: url('https://rovebrand.com/cdn/shop/files/Classic_Waui_Half_sq_720x.png?v=1676826189'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                    <div class="laxcc-visual-overlay"></div>
+                    <p class="laxcc-image-credit"><a href="https://rovebrand.com/" target="_blank" rel="nofollow noopener">Image: ROVE</a></p>
+                </a>
+                <div class="laxcc-info">
+                    <div class="laxcc-info-inner">
+                        <div class="laxcc-exhibit">
+                            <span class="laxcc-exhibit-icon">&#x1F4A8;</span>
+                            <span class="laxcc-exhibit-label">Exhibit 01</span>
+                        </div>
+                        <h1 class="laxcc-title">510 CARTRIDGES</h1>
+                        <div class="laxcc-blocks">
+                            <div class="laxcc-block">
+                                <h3 class="laxcc-block-title">The Tech</h3>
+                                <ul class="laxcc-block-list">
+                                    <li class="laxcc-block-item">
+                                        <span class="laxcc-block-icon">&#x2713;</span>
+                                        <span>Universal 510-thread fits most batteries.</span>
+                                    </li>
+                                    <li class="laxcc-block-item">
+                                        <span class="laxcc-block-icon">&#x2713;</span>
+                                        <span>Available in distillate, live resin, and full-spectrum.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="laxcc-block teal-border">
+                                <h3 class="laxcc-block-title">The Experience</h3>
+                                <ul class="laxcc-block-list">
+                                    <li class="laxcc-block-item">
+                                        <span class="laxcc-block-icon">&#x26A1;</span>
+                                        <span>Smooth vapor, instant effects.</span>
+                                    </li>
+                                    <li class="laxcc-block-item">
+                                        <span class="laxcc-block-icon">&#x26A1;</span>
+                                        <span>Wide strain variety from top California brands.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="laxcc-brands">
+                            <button class="laxcc-brand-btn">
+                                <span class="laxcc-brand-name">Raw Garden</span>
+                                <span class="laxcc-brand-desc">Live resin carts</span>
+                            </button>
+                            <button class="laxcc-brand-btn">
+                                <span class="laxcc-brand-name">Rove</span>
+                                <span class="laxcc-brand-desc">Featured Farms live resin</span>
+                            </button>
+                            <button class="laxcc-brand-btn">
+                                <span class="laxcc-brand-name">Kingpen</span>
+                                <span class="laxcc-brand-desc">Award-winning carts</span>
+                            </button>
+                            <button class="laxcc-brand-btn">
+                                <span class="laxcc-brand-name">Dompen</span>
+                                <span class="laxcc-brand-desc">Clean distillate</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 2: Pod Systems -->
+            <section class="laxcc-slide">
+                <a href="https://laxcc.com/categories/vaporizers/?pagination=1&sort=NAME_ASC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=VAPORIZERS" class="laxcc-visual">
+                    <div class="laxcc-visual-bg" style="background-image: url('https://www.stiiizy.com/cdn/shop/products/UNIVERSAL_POD_FAMILY-SHOT_OG_1024x1024.png?v=1678837702'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                    <div class="laxcc-visual-overlay"></div>
+                    <p class="laxcc-image-credit"><a href="https://www.stiiizy.com/" target="_blank" rel="nofollow noopener">Image: STIIIZY</a></p>
+                </a>
+                <div class="laxcc-info">
+                    <div class="laxcc-info-inner">
+                        <div class="laxcc-exhibit">
+                            <span class="laxcc-exhibit-icon">&#x1F50C;</span>
+                            <span class="laxcc-exhibit-label">Exhibit 02</span>
+                        </div>
+                        <h1 class="laxcc-title">POD SYSTEMS</h1>
+                        <div class="laxcc-blocks">
+                            <div class="laxcc-block">
+                                <h3 class="laxcc-block-title">The Tech</h3>
+                                <ul class="laxcc-block-list">
+                                    <li class="laxcc-block-item">
+                                        <span class="laxcc-block-icon">&#x2713;</span>
+                                        <span>Proprietary magnetic connection for secure fit.</span>
+                                    </li>
+                                    <li class="laxcc-block-item">
+                                        <span class="laxcc-block-icon">&#x2713;</span>
+                                        <span>Sleek, discreet designs with draw-activated firing.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="laxcc-block teal-border">
+                                <h3 class="laxcc-block-title">Why Pods</h3>
+                                <ul class="laxcc-block-list">
+                                    <li class="laxcc-block-item">
+                                        <span class="laxcc-block-icon">&#x26A1;</span>
+                                        <span>No buttons, no hassle. Just draw and go.</span>
+                                    </li>
+                                    <li class="laxcc-block-item">
+                                        <span class="laxcc-block-icon">&#x26A1;</span>
+                                        <span>Premium oil quality from trusted brands.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="laxcc-brands">
+                            <button class="laxcc-brand-btn">
+                                <span class="laxcc-brand-name">STIIIZY</span>
+                                <span class="laxcc-brand-desc">California's #1 pod</span>
+                            </button>
+                            <button class="laxcc-brand-btn">
+                                <span class="laxcc-brand-name">Plug Play</span>
+                                <span class="laxcc-brand-desc">DNA Exotics pods</span>
+                            </button>
+                            <button class="laxcc-brand-btn">
+                                <span class="laxcc-brand-name">PAX</span>
+                                <span class="laxcc-brand-desc">Era pods</span>
+                            </button>
+                            <button class="laxcc-brand-btn">
+                                <span class="laxcc-brand-name">BLOOM</span>
+                                <span class="laxcc-brand-desc">Surf pods</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: Disposables -->
+            <section class="laxcc-slide">
+                <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=pods&brands=%22ddf076f1-936e-4eb5-8d8d-0d726ff4a2b6%22%2C" class="laxcc-visual">
+                    <div class="laxcc-visual-bg" style="background-image: url('https://turn.me/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpen-hero-2.28fe2057.png&w=640&q=75'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                    <div class="laxcc-visual-overlay"></div>
+                    <p class="laxcc-image-credit"><a href="https://turn.me/" target="_blank" rel="nofollow noopener">Image: Turn</a></p>
+                </a>
+                <div class="laxcc-info">
+                    <div class="laxcc-info-inner">
+                        <div class="laxcc-exhibit">
+                            <span class="laxcc-exhibit-icon">&#x26A1;</span>
+                            <span class="laxcc-exhibit-label">Exhibit 03</span>
+                        </div>
+                        <h1 class="laxcc-title">DISPOSABLES</h1>
+                        <div class="laxcc-blocks">
+                            <div class="laxcc-block">
+                                <h3 class="laxcc-block-title">The Tech</h3>
+                                <ul class="laxcc-block-list">
+                                    <li class="laxcc-block-item">
+                                        <span class="laxcc-block-icon">&#x2713;</span>
+                                        <span>All-in-one: battery and oil in one device.</span>
+                                    </li>
+                                    <li class="laxcc-block-item">
+                                        <span class="laxcc-block-icon">&#x2713;</span>
+                                        <span>Pre-charged, ready to use right out of the box.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="laxcc-block teal-border">
+                                <h3 class="laxcc-block-title">Why Disposable</h3>
+                                <ul class="laxcc-block-list">
+                                    <li class="laxcc-block-item">
+                                        <span class="laxcc-block-icon">&#x26A1;</span>
+                                        <span>Ultimate convenience for on-the-go use.</span>
+                                    </li>
+                                    <li class="laxcc-block-item">
+                                        <span class="laxcc-block-icon">&#x26A1;</span>
+                                        <span>Perfect for trying new strains without commitment.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="laxcc-brands">
+                            <button class="laxcc-brand-btn">
+                                <span class="laxcc-brand-name">Jeeter Juice</span>
+                                <span class="laxcc-brand-desc">Live resin disposables</span>
+                            </button>
+                            <button class="laxcc-brand-btn">
+                                <span class="laxcc-brand-name">Raw Garden</span>
+                                <span class="laxcc-brand-desc">Ready-to-use pens</span>
+                            </button>
+                            <button class="laxcc-brand-btn">
+                                <span class="laxcc-brand-name">STIIIZY</span>
+                                <span class="laxcc-brand-desc">LIIIL disposables</span>
+                            </button>
+                            <button class="laxcc-brand-btn">
+                                <span class="laxcc-brand-name">Turn</span>
+                                <span class="laxcc-brand-desc">Podbar disposables</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Pagination -->
+        <div class="laxcc-pagination">
+            <div class="laxcc-pagination-inner">
+                <span class="laxcc-pagination-arrow">&#x2190;</span>
+                <div class="laxcc-pagination-dots">
+                    <div class="laxcc-dot active" data-slide="0"></div>
+                    <div class="laxcc-dot" data-slide="1"></div>
+                    <div class="laxcc-dot" data-slide="2"></div>
+                </div>
+                <span class="laxcc-pagination-arrow">&#x2192;</span>
+            </div>
+        </div>
+
+    </main>
+</div>
+
+<script>
+(function() {
+    'use strict';
+
+    var wrapper = document.getElementById('laxcc-vapes-info-2025');
+    if (!wrapper) return;
+
+    var scrollWrapper = wrapper.querySelector('.laxcc-scroll-wrapper');
+    var dots = wrapper.querySelectorAll('.laxcc-dot');
+    var totalSlides = dots.length;
+    var currentSlide = 0;
+
+    function scrollToSlide(index) {
+        if (index < 0) index = 0;
+        if (index >= totalSlides) index = totalSlides - 1;
+        currentSlide = index;
+        var slideWidth = scrollWrapper.offsetWidth;
+        scrollWrapper.scrollTo({
+            left: slideWidth * index,
+            behavior: 'smooth'
+        });
+    }
+
+    if (scrollWrapper && dots.length) {
+        scrollWrapper.addEventListener('scroll', function() {
+            var scrollLeft = scrollWrapper.scrollLeft;
+            var slideWidth = scrollWrapper.offsetWidth;
+            currentSlide = Math.round(scrollLeft / slideWidth);
+
+            dots.forEach(function(dot, index) {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        });
+    }
+
+    wrapper.addEventListener('click', function(e) {
+        var arrow = e.target.closest('.laxcc-pagination-arrow');
+        if (arrow) {
+            var isLeft = arrow.textContent.charCodeAt(0) === 8592;
+            if (isLeft) {
+                scrollToSlide(currentSlide - 1);
+            } else {
+                scrollToSlide(currentSlide + 1);
+            }
+            return;
+        }
+
+        var dot = e.target.closest('.laxcc-dot');
+        if (dot) {
+            var slideIndex = parseInt(dot.getAttribute('data-slide'), 10);
+            scrollToSlide(slideIndex);
+        }
+    });
+})();
+</script>
