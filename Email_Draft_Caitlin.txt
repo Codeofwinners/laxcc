@@ -2,7 +2,7 @@ Subject: Content Ready for Review
 
 Hi Caitlin,
 
-Apologies for the slight delay. O.pen has agreed to the link trade, and I have the content ready for your review on the GitHub preview pages below.
+The content is ready for your review on the GitHub preview pages below.
 
 1. Content for the LAXCC site (Supports O.pen)
 https://codeofwinners.github.io/laxcc/Sponsored/foropenvape.html
