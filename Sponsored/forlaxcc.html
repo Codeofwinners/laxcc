@@ -284,15 +284,13 @@
         @media (max-width: 1024px) {
             .article-hero {
                 display: flex;
-                /* Ensure it stays flex */
                 flex-direction: column;
                 justify-content: center;
-                padding: 40px 24px 0;
-                /* Remove bottom padding */
+                padding: 20px 24px 0;
+                /* Reduced top padding */
                 text-align: center;
                 height: auto;
                 min-height: auto;
-                /* Fix huge space */
                 align-content: stretch;
                 overflow: hidden;
             }
@@ -302,7 +300,6 @@
                 order: 1;
                 z-index: 3;
                 background: transparent;
-                /* Remove weird background if any */
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -323,7 +320,6 @@
 
             .hero-desc {
                 margin: 0 auto 20px;
-                /* Back to Center */
                 font-size: 1rem;
                 line-height: 1.5;
                 font-weight: 500;
@@ -340,7 +336,8 @@
                 width: 100%;
                 height: auto;
                 position: relative;
-                margin-top: 40px;
+                margin-top: 10px;
+                /* Reduced gap above image */
                 background: transparent;
             }
 
@@ -371,7 +368,8 @@
         /* Content */
         .content-container {
             max-width: 800px;
-            margin: 60px auto;
+            margin: 40px auto;
+            /* Reduced from 60px */
             padding: 0 20px;
         }
 
