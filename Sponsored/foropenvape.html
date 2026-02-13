@@ -1087,23 +1087,32 @@
 
 
             .brand-scroll-container {
-                padding: 20px 24px 60px;
+                padding: 40px 24px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
                 gap: 30px;
-                /* Remove mask/snap on mobile for full visibility */
+                /* Remove scroll styles for grid layout */
+                overflow-x: visible;
                 mask-image: none !important;
                 -webkit-mask-image: none !important;
                 scroll-snap-type: none !important;
-                scrollbar-width: none;
-            }
-
-            .brand-scroll-container::-webkit-scrollbar {
-                display: none;
             }
 
             .brand-item {
-                min-width: 280px;
-                max-width: 280px;
+                min-width: 0;
+                max-width: 100%;
                 scroll-snap-align: none !important;
+                /* Remove vertical divider on mobile grid */
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding-bottom: 30px;
+            }
+
+            .brand-item:nth-child(even)::after {
+                display: none;
+            }
+
+            .brand-item:last-child {
+                border-bottom: none;
             }
         }
     </style>
