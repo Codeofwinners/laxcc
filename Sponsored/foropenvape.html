@@ -1089,15 +1089,21 @@
             .brand-scroll-container {
                 padding: 20px 24px 60px;
                 gap: 30px;
-                /* Relax mask for mobile to see content better */
-                mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-                -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+                /* Remove mask/snap on mobile for full visibility */
+                mask-image: none !important;
+                -webkit-mask-image: none !important;
+                scroll-snap-type: none !important;
+                scrollbar-width: none;
+            }
+
+            .brand-scroll-container::-webkit-scrollbar {
+                display: none;
             }
 
             .brand-item {
-                min-width: 260px;
-                /* Slightly narrower for mobile */
-                max-width: 260px;
+                min-width: 280px;
+                max-width: 280px;
+                scroll-snap-align: none !important;
             }
         }
     </style>
