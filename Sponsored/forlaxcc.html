@@ -281,26 +281,29 @@
         /* Mobile Responsive */
         @media (max-width: 1024px) {
             .article-hero {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto 1fr;
-                padding: 0;
+                display: flex;
+                /* Ensure it stays flex */
+                flex-direction: column;
+                justify-content: center;
+                padding: 40px 24px;
                 text-align: center;
-                /* Back to Center */
-                height: 100vh;
+                height: auto;
+                min-height: 80vh;
                 align-content: stretch;
                 overflow: hidden;
             }
 
             .hero-content {
-                padding: 60px 24px 40px;
+                padding: 0;
                 order: 1;
                 z-index: 3;
-                background: linear-gradient(to bottom, #f4f9e8 0%, #ffffff 100%);
+                background: transparent;
+                /* Remove weird background if any */
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                /* Back to Center */
+                width: 100%;
             }
 
             .meta-tag {
