@@ -438,6 +438,7 @@
             position: relative;
             width: 100%;
             max-width: 360px;
+            aspect-ratio: 9 / 16;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
@@ -447,7 +448,8 @@
         .laxcc-video-wrapper video {
             display: block;
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             border-radius: 20px;
         }
 
@@ -622,8 +624,7 @@
             <!-- LAXCC Video -->
             <div class="laxcc-video-section">
                 <div class="laxcc-video-wrapper">
-                    <video controls playsinline preload="metadata"
-                        poster="https://laxcc.com/wp-content/uploads/2025/01/Best-LA_dispensary-weed-deals.mp4#t=0.5">
+                    <video controls playsinline preload="auto">
                         <source src="https://laxcc.com/wp-content/uploads/2025/01/Best-LA_dispensary-weed-deals.mp4"
                             type="video/mp4">
                         Your browser does not support the video tag.
