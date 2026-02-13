@@ -626,6 +626,14 @@
             -webkit-backdrop-filter: none;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            /* Hide scrollbar Firefox */
+        }
+
+
+        .comparison-table-wrapper::-webkit-scrollbar {
+            display: none;
+            /* Hide scrollbar Chrome/Safari */
         }
 
 
@@ -1081,6 +1089,15 @@
             .brand-scroll-container {
                 padding: 20px 24px 60px;
                 gap: 30px;
+                /* Relax mask for mobile to see content better */
+                mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+                -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            }
+
+            .brand-item {
+                min-width: 260px;
+                /* Slightly narrower for mobile */
+                max-width: 260px;
             }
         }
     </style>
