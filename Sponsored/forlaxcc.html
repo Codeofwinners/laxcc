@@ -424,6 +424,43 @@
             opacity: 0.6;
             font-size: 0.9rem;
         }
+
+        /* LAXCC Video Section */
+        .laxcc-video-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+            padding: 0;
+        }
+
+        .laxcc-video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 360px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            background: #000;
+        }
+
+        .laxcc-video-wrapper video {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        @media (max-width: 1024px) {
+            .laxcc-video-wrapper {
+                max-width: 280px;
+                border-radius: 16px;
+            }
+
+            .laxcc-video-wrapper video {
+                border-radius: 16px;
+            }
+        }
     </style>
 </head>
 
@@ -581,6 +618,18 @@
                     style="color:var(--brand-lime);">Los Angeles dispensary</a> near the
                 airport, they carry top-tier brands that are worth savoring, not burning. And don't forget the power
                 source—ensure you have a reliable battery to protect your terpene-rich oil:</p>
+
+            <!-- LAXCC Video -->
+            <div class="laxcc-video-section">
+                <div class="laxcc-video-wrapper">
+                    <video controls playsinline preload="metadata"
+                        poster="https://laxcc.com/wp-content/uploads/2025/01/Best-LA_dispensary-weed-deals.mp4#t=0.5">
+                        <source src="https://laxcc.com/wp-content/uploads/2025/01/Best-LA_dispensary-weed-deals.mp4"
+                            type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
 
 
             <p style="margin-top: 20px;">
