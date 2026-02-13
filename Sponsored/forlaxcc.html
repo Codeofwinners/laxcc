@@ -334,33 +334,41 @@
             .hero-visual {
                 order: 2;
                 width: 100%;
-                height: 100%;
+                height: auto;
                 position: relative;
-                margin: 0;
-                background: #ffffff;
+                margin-top: 40px;
+                background: transparent;
             }
 
             .hero-img-container {
                 width: 100%;
-                height: 100%;
-                display: block;
+                height: auto;
+                display: flex;
+                justify-content: center;
             }
 
             .hero-image-clean {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: 80% center;
-                /* KEEP THIS - USER LOVES */
+                width: auto;
+                max-width: 100%;
+                height: auto;
+                max-height: 50vh;
+                object-fit: contain;
                 transform: none;
                 filter: none;
-                border-radius: 0;
-                /* No rounding on mobile */
+                border-radius: 10px;
+                /* Slight rounding for mobile too if desired, or 0 */
             }
 
-            .hero-blob {
-                opacity: 0.5;
-            }
+            /* KEEP THIS - USER LOVES */
+            transform: none;
+            filter: none;
+            border-radius: 0;
+            /* No rounding on mobile */
+        }
+
+        .hero-blob {
+            opacity: 0.5;
+        }
         }
 
 
