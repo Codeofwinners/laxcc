@@ -224,7 +224,6 @@
         .hero-title {
             font-size: clamp(4rem, 11vw, 10rem);
             font-weight: 900;
-            color: var(--primary-dark);
             line-height: 0.85;
             letter-spacing: -0.04em;
             text-transform: uppercase;
@@ -239,12 +238,16 @@
         }
 
 
-        .hero-title span:nth-child(2) {
+        #hero-title-line-1 {
+            color: var(--primary-dark);
+        }
+
+
+        #hero-title-line-2 {
             color: #00AFC9;
             margin-left: 10vw;
             /* Staggered effect */
             opacity: 1;
-            /* Ensure it's fully filled and visible */
         }
 
 
@@ -1093,8 +1096,8 @@
             <div class="hero-text-column">
                 <div class="hero-badge">The Ultimate Guide</div>
                 <h1 class="hero-title">
-                    <span>What is a weed pen</span>
-                    <span>and which type is the best?</span>
+                    <span id="hero-title-line-1">What is a weed pen</span>
+                    <span id="hero-title-line-2">and which type is the best?</span>
                 </h1>
                 <p class="hero-subtitle">
                     Navigating the vapor. A definitive breakdown of <strong><a
