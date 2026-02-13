@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Learn the differences between dab pens, vape pens, and wax pens. Explore top brands like Plug Play, 710 Labs, Stiiizy, and O.pen from a dispensary expert's perspective.">
+    <title>What Is a Pen in Weed Terms? Dab Pen vs. Vape Pen vs. Wax Pen | LAXCC Guide</title>
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <style>
+        /* Modern Cannabis Pen Guide - Storyboard Revamp */
+        :root {
+            /* Brand Colors */
+            --primary-teal: #00AFC9;
+            --primary-dark: #0f3a5f;
+            --primary-gradient: linear-gradient(135deg, #0f3a5f 0%, #0e6a78 60%, #1196a7 100%);
+            --accent-orange: #F89459;
+            --accent-peach: #FBD1A1;
+
+
+            /* Enhanced Palette for Storyboard */
+            --teal-light: rgba(0, 175, 201, 0.08);
+            --orange-light: rgba(248, 148, 89, 0.08);
+
+
+            /* Neutral Palette */
+            --white: #ffffff;
+            --cream: #fbf8f2;
+            --light-gray: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+
+
+            /* Shadows */
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 16px 48px rgba(15, 58, 95, 0.12);
+
+
+            /* Transitions */
+            --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--cream);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+
+        /* --- Global Animations --- */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        .animate-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+
+        /* --- Hero Section: "Vapor & Void" --- */
+        .hero-section {
+            background: var(--cream);
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 40px 0;
+            /* Standard padding */
+        }
+
+
+        /* Dynamic Background (Default / CTA) */
+        .hero-bg-anim {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(0, 175, 201, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(248, 148, 89, 0.12) 0%, transparent 50%);
+            filter: blur(60px);
+            z-index: 0;
+            animation: breathe 10s ease-in-out infinite alternate;
+        }
+
+
+        /* Hero Specific Background (Start Fresh / Abstract) */
+        .hero-section .hero-bg-anim {
+            background: transparent;
+            /* Remove the full-screen image override */
+            filter: blur(60px);
+            /* Re-apply blur for abstract feel */
+        }
+
+
+        /* Remove Overlay */
+        .hero-section .hero-bg-anim::after {
+            display: none;
+        }
+
+
+        /* Hero Text Shadow to pop against image */
+        .hero-title,
+        .hero-subtitle,
+        .hero-badge {
+            text-shadow: 0 4px 20px rgba(255, 255, 255, 0.9);
+        }
+
+
+        @keyframes breathe {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+
+            100% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+
+
+        .hero-container {
+            max-width: 1400px;
+            /* Wider for massive text */
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* 50/50 Split */
+            gap: 60px;
+            align-items: center;
+            height: 100%;
+        }
+
+
+        .hero-text-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 3;
+        }
+
+
+        .hero-image-column {
+            width: 100%;
+            height: 80vh;
+            /* Tall image column */
+            background-image: url('https://openvapeshop.com/cdn/shop/files/open-510-batteries-collections-banner-min.jpg?v=1749572834');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            border-radius: 40px;
+            position: relative;
+            box-shadow: var(--shadow-xl);
+        }
+
+
+        .hero-badge {
+            display: inline-block;
+            color: var(--primary-teal);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 50px;
+        }
+
+
+        .hero-badge::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-teal);
+        }
+
+
+        /* Massive Typography */
+        .hero-title {
+            font-size: clamp(4rem, 11vw, 10rem);
+            font-weight: 900;
+            color: var(--primary-dark);
+            line-height: 0.85;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .hero-title span {
+            display: block;
+        }
+
+
+        .hero-title span:nth-child(2) {
+            color: transparent;
+            -webkit-text-stroke: 2px var(--primary-dark);
+            margin-left: 10vw;
+            /* Staggered effect */
+            opacity: 0.8;
+        }
+
+
+        .hero-title span:nth-child(3) {
+            margin-left: 5vw;
+            color: var(--accent-orange);
+        }
+
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-main);
+            max-width: 500px;
+            line-height: 1.6;
+            margin-left: auto;
+            /* Push to right */
+            margin-right: 10vw;
+            border-left: 3px solid var(--primary-teal);
+            padding-left: 30px;
+        }
+
+
+        .hero-scroll-btn {
+            position: relative;
+            /* In flow */
+            bottom: auto;
+            left: auto;
+            transform: none;
+            margin: 20px auto 0;
+            /* Center in grid */
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            transition: var(--transition);
+            animation: bounce 2s infinite;
+            text-decoration: none;
+            justify-self: center;
+            /* Grid center */
+        }
+
+
+        .hero-scroll-btn:hover {
+            border-color: var(--primary-dark);
+            background: var(--primary-dark);
+            color: var(--white);
+        }
+
+
+        /* --- Storyboard Layout: "Editorial" --- */
+        .story-section {
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+            /* For blobs */
+        }
+
+
+        /* Ambient Blobs for Story Sections */
+        .story-blob {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.08;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+
+        .story-section:nth-child(even) .story-blob {
+            right: -200px;
+            top: 10%;
+            background: var(--primary-teal);
+        }
+
+
+        .story-section:nth-child(odd) .story-blob {
+            left: -200px;
+            bottom: 10%;
+            background: var(--accent-orange);
+        }
+
+
+        /* Alternating Backgrounds */
+        .story-section:nth-child(even) {
+            background: var(--white);
+        }
+
+
+        .story-section:nth-child(odd) {
+            background: #fafcfd;
+            /* Very subtle blue-ish grey */
+        }
+
+
+        .story-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            /* Huge gap for editorial feel */
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+
+        /* Zig-Zag Flow */
+        .story-section:nth-child(even) .story-container {
+            direction: rtl;
+        }
+
+
+        .story-section:nth-child(even) .story-content {
+            direction: ltr;
+        }
+
+
+        /* Visual Side */
+        .story-visual {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .visual-card {
+            background: transparent;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+
+        .visual-icon-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+
+        /* Stronger iconic glow */
+        .visual-icon-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.2;
+            filter: blur(50px);
+        }
+
+
+        .visual-accent-teal .visual-icon-wrapper::after {
+            background: var(--primary-teal);
+        }
+
+
+        .visual-accent-orange .visual-icon-wrapper::after {
+            background: var(--accent-orange);
+        }
+
+
+        .visual-accent-dark .visual-icon-wrapper::after {
+            background: var(--primary-dark);
+        }
+
+
+        .visual-icon {
+            width: 180px;
+            /* Larger */
+            height: 180px;
+            background: transparent;
+            border: 4px solid currentColor;
+            color: inherit;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+
+        .visual-card h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            /* More space */
+            color: var(--primary-dark);
+            letter-spacing: -0.02em;
+        }
+
+
+        .visual-tag {
+            display: inline-block;
+            background: transparent;
+            /* No card bg */
+            color: var(--text-muted);
+            /* Muted text */
+            border: none;
+            /* No border */
+            box-shadow: none;
+            /* No shadow */
+            padding: 0;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+            display: block;
+            /* Stack above/below */
+        }
+
+
+        .visual-tag::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-orange);
+            margin: 10px auto 0;
+        }
+
+
+        /* Content Side */
+        .story-content {
+            padding: 20px 0;
+        }
+
+
+        .story-number {
+            font-size: 8rem;
+            font-weight: 900;
+            color: rgba(15, 58, 95, 0.03);
+            line-height: 0.8;
+            margin-bottom: -40px;
+            margin-left: -10px;
+            position: relative;
+            z-index: 0;
+            user-select: none;
+        }
+
+
+        .story-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.03em;
+            line-height: 1;
+        }
+
+
+        .story-desc {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            /* Stack vertically for seamless list */
+            gap: 15px;
+        }
+
+
+        .feature-list li {
+            background: transparent;
+            /* No box */
+            padding: 0;
+            padding-left: 30px;
+            border-radius: 0;
+            font-weight: 600;
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            /* Larger text */
+            position: relative;
+        }
+
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-teal);
+            font-weight: 800;
+        }
+
+
+        .pros-cons-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+
+
+            /* Seamless border join */
+            margin-top: 40px;
+            border-top: 2px solid rgba(15, 58, 95, 0.05);
+            padding-top: 30px;
+        }
+
+
+        .pc-box {
+            padding: 0 20px;
+        }
+
+
+        .pc-pros {
+            border-right: 2px solid rgba(15, 58, 95, 0.05);
+            padding-left: 0;
+            color: var(--primary-dark);
+        }
+
+
+        .pc-cons {
+            color: var(--text-muted);
+        }
+
+
+        .pc-box strong {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+
+        .pc-pros strong {
+            color: var(--primary-teal);
+        }
+
+
+        .pc-cons strong {
+            color: var(--accent-orange);
+        }
+
+
+        /* --- Comparison Table: Seamless (No Card) --- */
+        .comparison-table-wrapper {
+            background: transparent;
+            border-radius: 0;
+            padding: 0;
+            box-shadow: none;
+            border: none;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            overflow: visible;
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+
+        th {
+            text-align: left;
+            padding: 15px 10px;
+            /* Tighter padding */
+            font-weight: 800;
+            color: var(--primary-dark);
+            border-bottom: 2px solid var(--primary-dark);
+            font-size: 1.2rem;
+            background: transparent !important;
+        }
+
+
+        td {
+            padding: 20px 10px;
+            border-bottom: 1px solid rgba(15, 58, 95, 0.1);
+            color: var(--text-main);
+            font-size: 1.1rem;
+            background: transparent !important;
+        }
+
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+
+        tr:hover td {
+            background: transparent !important;
+            color: var(--primary-teal);
+        }
+
+
+        /* Highlight specific columns if needed, or just let hover do work */
+
+
+        /* --- FAQ Section: "Editorial Clarity" --- */
+        .faq-section {
+            padding: 140px 0;
+            background: var(--white);
+            position: relative;
+        }
+
+
+        .faq-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+
+        .faq-header {
+            position: sticky;
+            top: 40px;
+        }
+
+
+        .faq-header h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary-dark);
+            line-height: 1;
+            margin-bottom: 30px;
+            letter-spacing: -0.03em;
+        }
+
+
+        .faq-header p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+
+        .faq-deco {
+            width: 100px;
+            height: 10px;
+            background: var(--primary-teal);
+            display: block;
+        }
+
+
+        /* FAQ List - Massive Type */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+
+        .faq-item {
+            border-bottom: 1px solid rgba(15, 58, 95, 0.1);
+            padding: 40px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+
+        .faq-item:first-child {
+            border-top: 1px solid rgba(15, 58, 95, 0.1);
+        }
+
+
+        /* Interaction: Dim inactive items */
+        .faq-list:hover .faq-item:not(:hover) {
+            opacity: 0.3;
+        }
+
+
+        .faq-question {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            background: none;
+            border: none;
+            text-align: left;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+
+        .faq-question:hover {
+            color: var(--primary-teal);
+            transform: translateX(10px);
+        }
+
+
+        .faq-icon {
+            font-size: 1.5rem;
+            font-weight: 300;
+            transition: transform 0.4s ease;
+        }
+
+
+        .faq-item[open] .faq-icon {
+            transform: rotate(45deg);
+            color: var(--accent-orange);
+        }
+
+
+        .faq-answer {
+            font-size: 1.3rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 90%;
+            padding-top: 20px;
+            display: block;
+            /* Animation handled by details/summary default or JS,
+                but for pure CSS height anim we need hack or just fade */
+            animation: fadeIn 0.5s ease;
+        }
+
+
+        /* --- Brand Strip (Seamless) --- */
+        .brand-showcase {
+            padding: 120px 0;
+            background: var(--primary-dark);
+            color: var(--white);
+            overflow: hidden;
+            position: relative;
+
+
+        }
+
+
+        .brand-showcase-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            padding: 0 24px;
+        }
+
+
+        .brand-showcase-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+
+        .brand-scroll-container {
+            display: flex;
+            gap: 80px;
+            /* Wider gap for premium feel */
+            overflow-x: auto;
+            padding: 20px 40px 60px;
+            scroll-snap-type: x mandatory;
+            align-items: flex-start;
+            scrollbar-width: none;
+            /* Hide scrollbar */
+
+
+            /* Fade edges */
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        }
+
+
+        .brand-scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        .brand-item {
+            /* Removed card styling */
+            min-width: 300px;
+            max-width: 300px;
+            background: transparent;
+            border: none;
+            padding: 0;
+            scroll-snap-align: center;
+            position: relative;
+            transition: opacity 0.3s;
+        }
+
+
+        .brand-scroll-container:hover .brand-item:not(:hover) {
+            opacity: 0.5;
+            /* Focus effect */
+        }
+
+
+        /* Add a subtle divider between items visible only if needed, or just space */
+        .brand-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -30px;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+
+        .brand-logo-alt {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--white);
+            /* White text for contrast on dark bg */
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+
+        .brand-category-tag {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4px 12px;
+        }
+
+
+        .brand-desc {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+
+        .brand-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-orange);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+
+        .brand-btn:hover {
+            color: var(--accent-peach);
+            gap: 12px;
+        }
+
+
+        /* --- FAQ (Seamless List) --- */
+        .faq-details {
+            background: transparent !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 30px 0 !important;
+            margin: 0 !important;
+        }
+
+
+        .faq-details:last-child {
+            border-bottom: none;
+        }
+
+
+        .faq-summary {
+            padding: 0 !important;
+        }
+
+
+        /* --- Footer CTA --- */
+        /* --- Footer CTA (Seamless) --- */
+        .final-cta {
+            text-align: center;
+            padding: 160px 24px;
+            background: var(--primary-dark);
+            position: relative;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+
+        .cta-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: transparent;
+            box-shadow: none;
+            border-radius: 0;
+            padding: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .cta-btn {
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: 20px 48px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition);
+            margin-top: 30px;
+            border: 2px solid transparent;
+        }
+
+
+        .cta-btn:hover {
+            background: transparent;
+            border-color: var(--accent-orange);
+            transform: translateY(-5px);
+        }
+
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 900px) {
+            .story-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+
+            .story-section:nth-child(even) .story-container {
+                direction: ltr;
+                /* Reset visual flow for mobile stack */
+            }
+
+
+            /* Reorder for mobile: Visual often looks better first or second?
+               Usually Text then Visual or Visual then Text.
+               Let's keep standard source order (Text first in HTML usually, or use order css).
+            */
+            .story-visual {
+                order: -1;
+                /* Visual first on mobile */
+                min-height: auto;
+            }
+
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                /* Stack on mobile */
+                gap: 40px;
+                padding-bottom: 60px;
+            }
+
+
+            .hero-text-column {
+                order: 1;
+            }
+
+
+            .hero-image-column {
+                order: 2;
+                height: 50vh;
+                /* Shorter image on mobile */
+                width: 100%;
+            }
+
+
+
+
+            /* FAQ Mobile */
+            .faq-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                padding: 0 24px;
+            }
+
+
+            .faq-header {
+                position: relative;
+                top: 0;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+
+            .faq-header h2 {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+            }
+
+
+            .faq-deco {
+                margin: 20px auto 0;
+            }
+
+
+            .faq-question {
+                font-size: 1.5rem;
+                /* Smaller for mobile */
+            }
+
+
+            .brand-scroll-container {
+                padding: 20px 24px 60px;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- Hero: Vapor & Void -->
+    <section class="hero-section">
+        <div class="hero-bg-anim"></div>
+        <div class="hero-container animate-in">
+            <!-- Column 1: Text -->
+            <div class="hero-text-column">
+                <div class="hero-badge">The Ultimate Guide</div>
+                <h1 class="hero-title">
+                    <span>What Is</span>
+                    <span>A PEN?</span>
+                    <span>In Weed Terms</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Navigating the vapor. A definitive breakdown of <strong>Vape</strong>, <strong>Dab</strong>, and
+                    <strong>Wax</strong> pens for the modern connoisseur.
+                </p>
+                <a href="#start-guide" class="hero-scroll-btn">
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+            </div>
+
+
+            <!-- Column 2: Image -->
+            <div class="hero-image-column"></div>
+        </div>
+    </section>
+
+
+    <!-- Story Section 1: Vape Pen -->
+    <section id="start-guide" class="story-section">
+        <div class="story-blob"></div>
+        <div class="story-container">
+            <div class="story-content animate-in">
+                <div class="story-number">01</div>
+                <h2 class="story-title">The Vape Pen</h2>
+
+
+                <p class="story-desc">
+                    The entry point for most cannabis users. Vape pens are battery-powered devices designed for
+                    510-thread cartridges. They heat oil (distillate, live resin, or CO2 oil) just enough to create
+                    vapor without burning it.
+                </p>
+                <ul class="feature-list">
+                    <li>Universal 510-thread compatibility</li>
+                    <li>Simple push-button or draw activation</li>
+                    <li>Prefilled cartridges (no loading required)</li>
+                </ul>
+
+
+                <div class="pros-cons-row">
+                    <div class="pc-box pc-pros">
+                        <strong><i class="fas fa-check"></i> Pros</strong>
+                        Discreet, easy to use, huge variety of flavors.
+                    </div>
+                    <div class="pc-box pc-cons">
+                        <strong><i class="fas fa-exclamation-circle"></i> Cons</strong>
+                        Less potent than dabs; cartridge quality varies.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="story-visual animate-in">
+                <!-- Replaced icon with seamless product image -->
+                <div class="visual-card visual-accent-teal"
+                    style="background: transparent; box-shadow: none; border: none; padding: 0;">
+                    <div class="visual-tag" style="margin-bottom: 20px;">Most Common</div>
+                    <img src="https://openvapeshop.com/cdn/shop/products/510-battery-20-variable-voltage-vape-pen-769329.jpg?v=1761313459&width=640"
+                        alt="510 Thread Battery Vape Pen"
+                        style="max-width: 100%; border-radius: 20px; box-shadow: var(--shadow-xl); display: block;">
+
+
+                    <h3 style="margin-top: 30px;">Simplicity First</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.9rem; line-height: 1.6;">
+                        Perfect for beginners and convenience seekers.<br>Pop in a cart and go.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Story Section 2: Dab Pen -->
+    <section class="story-section">
+        <div class="story-blob"></div>
+        <div class="story-container">
+            <div class="story-content animate-in">
+                <div class="story-number">02</div>
+                <h2 class="story-title">The Dab Pen</h2>
+
+
+                <p class="story-desc">
+                    For those who chase potency. Unlike vape pens that use prefilled liquid carts, dab pens allow you to
+                    load your own solid concentrates directly onto a heating coil. It's a portable rig in your pocket.
+                </p>
+                <ul class="feature-list">
+                    <li>Uses concentrates (Wax, Shatter, Crumble)</li>
+                    <li>Direct coil heating system</li>
+                    <li>Similar intensity to a dab rig</li>
+                </ul>
+
+
+                <div class="pros-cons-row">
+                    <div class="pc-box pc-pros">
+                        <strong><i class="fas fa-check"></i> Pros</strong>
+                        Extremely potent, full control over material quality.
+                    </div>
+                    <div class="pc-box pc-cons">
+                        <strong><i class="fas fa-exclamation-circle"></i> Cons</strong>
+                        Requires cleaning; messy to load on the go.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="story-visual animate-in">
+                <div class="visual-card visual-accent-orange">
+                    <div class="visual-tag">Potency King</div>
+                    <div class="visual-icon-wrapper">
+                        <div class="visual-icon"
+                            style="color: var(--accent-orange); border-color: var(--accent-orange);">
+                            <i class="fas fa-cannabis"></i>
+                        </div>
+                    </div>
+                    <h3>Concentrate Power</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.9rem; line-height: 1.6;">
+                        The choice for connoisseurs who want the<br>full spectrum effect of dabs without the torch.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Story Section 3: Wax Pen -->
+    <section class="story-section">
+        <div class="story-blob"></div>
+        <div class="story-container">
+            <div class="story-content animate-in">
+                <div class="story-number">03</div>
+                <h2 class="story-title">The Wax Pen</h2>
+
+
+                <p class="story-desc">
+                    Often used interchangeably with dab pens, but strictly speaking, wax pens are designed specifically
+                    for waxy concentrates. They bridge the gap between ease of use and high potency, often featuring
+                    specialized chambers.
+                </p>
+                <ul class="feature-list">
+                    <li>Designed for thicker waxy extracts</li>
+                    <li>Ceramic or Quartz chambers</li>
+                    <li>Often features variable voltage</li>
+                </ul>
+
+
+                <div class="pros-cons-row">
+                    <div class="pc-box pc-pros">
+                        <strong><i class="fas fa-check"></i> Pros</strong>
+                        Great flavor preservation, durable design.
+                    </div>
+                    <div class="pc-box pc-cons">
+                        <strong><i class="fas fa-exclamation-circle"></i> Cons</strong>
+                        Higher learning curve than standard vapes.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="story-visual animate-in">
+                <div class="visual-card visual-accent-dark">
+                    <div class="visual-tag">The Hybrid</div>
+                    <div class="visual-icon-wrapper">
+                        <div class="visual-icon" style="color: var(--primary-dark); border-color: var(--primary-dark);">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                    </div>
+                    <h3>Material Matters</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.9rem; line-height: 1.6;">
+                        If you love live resin badder or sugar,<br>a specialized wax pen is your best friend.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Quick Comparison Table (Glassmorphism) -->
+    <section class="story-section" style="background: var(--cream);">
+        <div class="story-container" style="display: block; max-width: 1000px;">
+            <div class="brand-showcase-header" style="margin-bottom: 40px;">
+                <h2 style="color: var(--primary-dark);">Quick Comparison</h2>
+                <p style="color: var(--text-muted);">At a glance differences to help you decide.</p>
+            </div>
+
+
+            <div class="comparison-table-wrapper animate-in">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="color: var(--primary-teal);">Feature</th>
+                            <th>Vape Pen</th>
+                            <th>Dab Pen</th>
+                            <th>Wax Pen</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 700;">Best For</td>
+                            <td>Convenience</td>
+                            <td>Potency</td>
+                            <td>Flavor</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700;">Material</td>
+                            <td>Oil / Distillate</td>
+                            <td>Concentrates</td>
+                            <td>Waxy Extracts</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700;">Ease of Use</td>
+                            <td>Very Easy</td>
+                            <td>Moderate</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 700;">Maintenance</td>
+                            <td>Low / None</td>
+                            <td>High (Cleaning)</td>
+                            <td>Medium</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ Section (Seamless List) -->
+    <!-- FAQ Section: "Editorial Clarity" -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <!-- Left Header -->
+            <div class="faq-header">
+                <h2>Frequently<br>Asked<br>Questions</h2>
+                <p>Everything you need to know about cannabis pens, explained by experts.</p>
+                <span class="faq-deco"></span>
+            </div>
+
+
+            <!-- Right List -->
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        What is the strongest pen?
+                        <i class="fas fa-plus faq-icon"></i>
+                    </summary>
+                    <p class="faq-answer">
+                        Generally, <strong>Dab Pens</strong> take the crown. Because you load pure concentrates like
+                        rosin or shatter directly onto the coil, you get the full, undiluted potency of the extract.
+                        Vape pens are limited by the oil's formulation.
+                    </p>
+                </details>
+
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Are chargers universal?
+                        <i class="fas fa-plus faq-icon"></i>
+                    </summary>
+                    <p class="faq-answer">
+                        Not anymore. While <strong>510-thread</strong> batteries are the standard for carts, proprietary
+                        pod systems like <strong>Plug Play</strong> and <strong>Stiiizy</strong> require their own
+                        specific cables. Always check your device's port (USB-C vs Micro-USB).
+                    </p>
+                </details>
+
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Can I use flower in a pen?
+                        <i class="fas fa-plus faq-icon"></i>
+                    </summary>
+                    <p class="faq-answer">
+                        Only if it's a <strong>Dry Herb Vaporizer</strong>. Putting flower into a wax pen or oil pen
+                        will ruin the heating element immediately. You need a device specifically built with a
+                        convection or conduction oven for herbs.
+                    </p>
+                </details>
+
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        How long do pens last?
+                        <i class="fas fa-plus faq-icon"></i>
+                    </summary>
+                    <p class="faq-answer">
+                        A typical 1g cartridge lasts a moderate user about 2 weeks. The battery itself can last 1-2
+                        years with proper care. Disposable pens last until the oil runs out, but are less eco-friendly.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Brand Showcase (Film Strip) -->
+    <section class="brand-showcase">
+        <div class="brand-showcase-header">
+            <span style="color: var(--primary-teal); font-weight: 700; text-transform: uppercase;">Our Favorites</span>
+            <h2>Top Brands We Carry</h2>
+            <p style="opacity: 0.7;">Swipe to explore the best hardware and pods in the LA market.</p>
+        </div>
+
+
+        <div class="brand-scroll-container">
+            <!-- Brand 1 -->
+            <div class="brand-item">
+                <span class="brand-logo-alt">PLUG PLAY</span>
+                <span class="brand-category-tag">Pod System</span>
+                <p class="brand-desc">Known for their proprietary "Play" batteries and Exotics line. High potency
+                    distillate that hits hard.</p>
+                <a href="https://laxcc.com/shop/brand/plug-play" class="brand-btn">Shop Plug Play <i
+                        class="fas fa-arrow-right"></i></a>
+            </div>
+
+
+            <!-- Brand 2 -->
+            <div class="brand-item">
+                <span class="brand-logo-alt">710 LABS</span>
+                <span class="brand-category-tag">Live Rosin</span>
+                <p class="brand-desc">The gold standard for solventless. Their pods offer the purest terpene expression.
+                </p>
+                <a href="https://laxcc.com/shop/brand/710-labs" class="brand-btn">Shop 710 Labs <i
+                        class="fas fa-arrow-right"></i></a>
+            </div>
+
+
+            <!-- Brand 3 -->
+            <div class="brand-item">
+                <span class="brand-logo-alt">STIIIZY</span>
+                <span class="brand-category-tag">Lifestyle</span>
+                <p class="brand-desc">The most recognizable pod system. sleek, magnetic batteries and a huge strain
+                    library.</p>
+                <a href="https://laxcc.com/shop/brand/stiiizy" class="brand-btn">Shop Stiiizy <i
+                        class="fas fa-arrow-right"></i></a>
+            </div>
+
+
+            <!-- Brand 4 -->
+            <div class="brand-item">
+                <span class="brand-logo-alt">O.PEN</span>
+                <span class="brand-category-tag">510 Thread</span>
+                <p class="brand-desc">Reliable 510 batteries with variable voltage. A classic choice for universal
+                    carts.</p>
+                <a href="https://laxcc.com/shop/brand/open" class="brand-btn">Shop O.pen <i
+                        class="fas fa-arrow-right"></i></a>
+            </div>
+
+
+            <!-- Brand 5 -->
+            <div class="brand-item">
+                <span class="brand-logo-alt">JEETER</span>
+                <span class="brand-category-tag">Disposable</span>
+                <p class="brand-desc">Famous for their 'Juice' disposables. Flavor-forward and ready to use out of the
+                    box.</p>
+                <a href="https://laxcc.com/shop/brand/jeeter" class="brand-btn">Shop Jeeter <i
+                        class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Final CTA -->
+
+
+    <section class="final-cta">
+        <!-- Reuse hero breathing gradient -->
+        <div class="hero-bg-anim" style="opacity: 0.3;"></div>
+
+
+        <div class="cta-box animate-in">
+            <h2 style="font-size: 3.5rem; margin-bottom: 20px; font-weight: 900;">Ready to Choose?</h2>
+            <p
+                style="font-size: 1.3rem; opacity: 0.9; margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                Whether you want the convenience of a vape pen or the power of a dab pen, we've got the best
+                selection in Los Angeles.
+            </p>
+            <a href="https://laxcc.com/shop/" class="cta-btn">
+                <i class="fas fa-shopping-bag"></i> Show Me the Menu
+            </a>
+        </div>
+    </section>
+
+
+</body>
+
+
+</html>
