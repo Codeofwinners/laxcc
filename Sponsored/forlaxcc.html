@@ -430,8 +430,28 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 30px 0;
+            margin: 0;
             padding: 0;
+        }
+
+        .laxcc-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        .laxcc-two-col .laxcc-text-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (max-width: 1024px) {
+            .laxcc-two-col {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
         }
 
         .laxcc-video-wrapper {
@@ -612,31 +632,35 @@
                 sourcing your <a href="https://laxcc.com/shop/thc-carts-disposable-vapes-near-lax/"
                     style="color:var(--brand-lime);">vape cartridges</a> from a reputable, licensed retailer.</p>
 
+            <div class="laxcc-two-col">
+                <div class="laxcc-text-col">
+                    <p>For our friends on the West Coast, check out the extensive menu at LAXCC.
+                        One
+                        of the original dispensaries <strong>since 2006</strong> near LAX, they have grown into a
+                        destination
+                        loved by travelers from all over. As a top-rated <a href="https://laxcc.com"
+                            style="color:var(--brand-lime);">Los Angeles dispensary</a> near the
+                        airport, they carry top-tier brands that are worth savoring, not burning. And don't forget the
+                        power
+                        source—ensure you have a reliable battery to protect your terpene-rich oil:</p>
 
-            <p>For our friends on the West Coast, check out the extensive menu at LAXCC.
-                One
-                of the original dispensaries <strong>since 2006</strong> near LAX, they have grown into a destination
-                loved by travelers from all over. As a top-rated <a href="https://laxcc.com"
-                    style="color:var(--brand-lime);">Los Angeles dispensary</a> near the
-                airport, they carry top-tier brands that are worth savoring, not burning. And don't forget the power
-                source—ensure you have a reliable battery to protect your terpene-rich oil:</p>
+                    <p style="margin-top: 20px;">
+                        <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=battery"
+                            class="btn" style="background-color: var(--brand-dark);">Shop Vape Batteries at LAXCC</a>
+                    </p>
+                </div>
 
-            <!-- LAXCC Video -->
-            <div class="laxcc-video-section">
-                <div class="laxcc-video-wrapper">
-                    <video controls playsinline preload="auto">
-                        <source src="https://laxcc.com/wp-content/uploads/2025/01/Best-LA_dispensary-weed-deals.mp4"
-                            type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                <!-- LAXCC Video -->
+                <div class="laxcc-video-section">
+                    <div class="laxcc-video-wrapper">
+                        <video controls playsinline preload="auto">
+                            <source src="https://laxcc.com/wp-content/uploads/2025/01/Best-LA_dispensary-weed-deals.mp4"
+                                type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 </div>
             </div>
-
-
-            <p style="margin-top: 20px;">
-                <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=battery"
-                    class="btn" style="background-color: var(--brand-dark);">Shop Vape Batteries at LAXCC</a>
-            </p>
         </div>
 
 
