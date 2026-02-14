@@ -1115,73 +1115,107 @@
                 border-bottom: none;
             }
 
-            .comparison-table-wrapper {
-                width: 100% !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                overflow: hidden !important;
+            /* Feature-First Comparison Mobile */
+            .comparison-container {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                padding: 0 24px;
             }
 
-            .comparison-table-wrapper table {
-                width: 100% !important;
-                min-width: 0 !important;
-            }
-
-            .comparison-table-wrapper thead tr {
-                display: none;
-            }
-
-            .comparison-table-wrapper tr {
-                display: block;
-                border: 1px solid rgba(15, 58, 95, 0.1);
-                margin-bottom: 24px;
-                border-radius: 16px;
-                padding: 16px;
+            .feature-group {
+                text-align: center;
                 background: var(--white);
+                border-radius: 24px;
+                padding: 30px 20px;
                 box-shadow: var(--shadow-sm);
-                width: 100% !important;
+                border: 1px solid rgba(15, 58, 95, 0.05);
             }
 
-            .comparison-table-wrapper td {
-                display: grid;
-                grid-template-columns: 120px 1fr;
-                gap: 12px;
-                padding: 12px 0;
-                border: none;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            .feature-title {
+                color: var(--primary-teal);
+                font-size: 1rem;
+                font-weight: 900;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                margin-bottom: 25px;
+                display: block;
+            }
+
+            .feature-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .pen-row {
+                display: flex;
+                justify-content: space-between;
                 align-items: center;
-                text-align: left;
+                padding-bottom: 12px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+
+            .pen-row:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+            .pen-label {
+                font-weight: 700;
+                color: var(--primary-dark);
                 font-size: 0.95rem;
             }
 
-            .comparison-table-wrapper td:before {
-                content: attr(data-label);
-                font-weight: 800;
-                color: var(--primary-teal);
-                font-size: 0.8rem;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
+            .pen-val {
+                color: var(--text-muted);
+                font-size: 0.95rem;
+                text-align: right;
             }
 
-            .comparison-table-wrapper td:first-child {
-                display: block;
-                background: var(--primary-teal);
-                color: var(--white);
-                margin: -16px -16px 16px -16px;
-                padding: 12px 16px !important;
-                border-radius: 14px 14px 0 0;
-                text-align: center;
-                font-weight: 900;
-                font-size: 1.1rem;
-                border: none;
+            /* Hide Desktop Table on Mobile */
+            .comparison-table-desktop {
+                display: none;
             }
+        }
 
-            .comparison-table-wrapper td:first-child:before {
+        /* Desktop specific styles */
+        @media (min-width: 901px) {
+            .comparison-mobile-view {
                 display: none;
             }
 
-            .comparison-table-wrapper td:last-child {
-                border-bottom: none;
+            .comparison-table-wrapper table {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0 10px;
+            }
+
+            .comparison-table-wrapper th {
+                padding: 20px;
+                text-align: left;
+                font-weight: 800;
+                color: var(--primary-dark);
+                border-bottom: 2px solid var(--primary-teal);
+            }
+
+            .comparison-table-wrapper td {
+                padding: 24px 20px;
+                background: var(--white);
+                border-top: 1px solid rgba(0, 0, 0, 0.05);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+
+            .comparison-table-wrapper tr td:first-child {
+                border-left: 1px solid rgba(0, 0, 0, 0.05);
+                border-radius: 12px 0 0 12px;
+                font-weight: 800;
+                color: var(--primary-teal);
+            }
+
+            .comparison-table-wrapper tr td:last-child {
+                border-right: 1px solid rgba(0, 0, 0, 0.05);
+                border-radius: 0 12px 12px 0;
             }
         }
     </style>
@@ -1393,7 +1427,8 @@
             </div>
 
 
-            <div class="comparison-table-wrapper animate-in">
+            <!-- Desktop Table (Hidden on Mobile) -->
+            <div class="comparison-table-wrapper comparison-table-desktop">
                 <table>
                     <thead>
                         <tr>
@@ -1405,28 +1440,112 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td data-label="Type">Vape Pen</td>
-                            <td data-label="Best For">Convenience</td>
-                            <td data-label="Material">Oil / Distillate</td>
-                            <td data-label="Ease of Use">Very Easy</td>
-                            <td data-label="Maintenance">Low / None</td>
+                            <td>Best For</td>
+                            <td>Convenience</td>
+                            <td>Potency</td>
+                            <td>Flavor</td>
                         </tr>
                         <tr>
-                            <td data-label="Type">Dab Pen</td>
-                            <td data-label="Best For">Potency</td>
-                            <td data-label="Material">Concentrates</td>
-                            <td data-label="Ease of Use">Moderate</td>
-                            <td data-label="Maintenance">High (Cleaning)</td>
+                            <td>Material</td>
+                            <td>Oil / Distillate</td>
+                            <td>Concentrates</td>
+                            <td>Waxy Extracts</td>
                         </tr>
                         <tr>
-                            <td data-label="Type">Wax Pen</td>
-                            <td data-label="Best For">Flavor</td>
-                            <td data-label="Material">Waxy Extracts</td>
-                            <td data-label="Ease of Use">Moderate</td>
-                            <td data-label="Maintenance">Medium</td>
+                            <td>Ease of Use</td>
+                            <td>Very Easy</td>
+                            <td>Moderate</td>
+                            <td>Moderate</td>
+                        </tr>
+                        <tr>
+                            <td>Maintenance</td>
+                            <td>Low / None</td>
+                            <td>High (Cleaning)</td>
+                            <td>Medium</td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <!-- Mobile Feature-First View -->
+            <div class="comparison-mobile-view">
+                <div class="comparison-container">
+                    <!-- Feature: Best For -->
+                    <div class="feature-group">
+                        <span class="feature-title">Best For</span>
+                        <div class="feature-grid">
+                            <div class="pen-row">
+                                <span class="pen-label">Vape Pen</span>
+                                <span class="pen-val">Convenience</span>
+                            </div>
+                            <div class="pen-row">
+                                <span class="pen-label">Dab Pen</span>
+                                <span class="pen-val">Potency</span>
+                            </div>
+                            <div class="pen-row">
+                                <span class="pen-label">Wax Pen</span>
+                                <span class="pen-val">Flavor</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature: Material -->
+                    <div class="feature-group">
+                        <span class="feature-title">Material</span>
+                        <div class="feature-grid">
+                            <div class="pen-row">
+                                <span class="pen-label">Vape Pen</span>
+                                <span class="pen-val">Oil / Distillate</span>
+                            </div>
+                            <div class="pen-row">
+                                <span class="pen-label">Dab Pen</span>
+                                <span class="pen-val">Concentrates</span>
+                            </div>
+                            <div class="pen-row">
+                                <span class="pen-label">Wax Pen</span>
+                                <span class="pen-val">Waxy Extracts</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature: Ease of Use -->
+                    <div class="feature-group">
+                        <span class="feature-title">Ease of Use</span>
+                        <div class="feature-grid">
+                            <div class="pen-row">
+                                <span class="pen-label">Vape Pen</span>
+                                <span class="pen-val">Very Easy</span>
+                            </div>
+                            <div class="pen-row">
+                                <span class="pen-label">Dab Pen</span>
+                                <span class="pen-val">Moderate</span>
+                            </div>
+                            <div class="pen-row">
+                                <span class="pen-label">Wax Pen</span>
+                                <span class="pen-val">Moderate</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature: Maintenance -->
+                    <div class="feature-group">
+                        <span class="feature-title">Maintenance</span>
+                        <div class="feature-grid">
+                            <div class="pen-row">
+                                <span class="pen-label">Vape Pen</span>
+                                <span class="pen-val">Low / None</span>
+                            </div>
+                            <div class="pen-row">
+                                <span class="pen-label">Dab Pen</span>
+                                <span class="pen-val">High (Cleaning)</span>
+                            </div>
+                            <div class="pen-row">
+                                <span class="pen-label">Wax Pen</span>
+                                <span class="pen-val">Medium</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
