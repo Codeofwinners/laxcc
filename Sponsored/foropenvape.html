@@ -1207,12 +1207,18 @@
             /* Make rows look like cards */
             .comparison-table-wrapper tbody tr {
                 transition: transform 0.2s ease, box-shadow 0.2s ease;
+                background: var(--white);
+                /* Ensure row has background for shadow */
+                border-radius: 16px;
+                /* Rounded corners for the row */
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+                /* Stronger default shadow */
             }
 
             .comparison-table-wrapper tbody tr:hover {
                 transform: translateY(-2px);
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-                /* Lift effect */
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+                /* Stronger lift effect */
             }
 
             .comparison-table-wrapper td {
@@ -1242,7 +1248,20 @@
 
             /* Apply shadow to the cells to mimic row shadow since pure TR shadow is tricky with separate collapse */
             .comparison-table-wrapper td {
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+                /* Remove individual cell shadow, rely on row shadow/filter if possible,
+                   but since drop-shadow on TR works best: */
+            }
+
+            /* Use drop-shadow filter on the row for true 'card' look including spacing */
+            .comparison-table-wrapper tbody tr {
+                box-shadow: none;
+                /* Reset box-shadow */
+                filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.06));
+            }
+
+            .comparison-table-wrapper tbody tr:hover {
+                box-shadow: none;
+                filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.1));
             }
         }
     </style>
