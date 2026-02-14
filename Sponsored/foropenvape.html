@@ -1115,70 +1115,64 @@
                 border-bottom: none;
             }
 
-            /* Responsive Comparison Table */
-            .comparison-table-wrapper table,
-            .comparison-table-wrapper thead,
-            .comparison-table-wrapper tbody,
-            .comparison-table-wrapper th,
-            .comparison-table-wrapper td,
-            .comparison-table-wrapper tr {
-                display: block;
+            .comparison-table-wrapper {
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: hidden !important;
             }
 
             .comparison-table-wrapper table {
+                width: 100% !important;
                 min-width: 0 !important;
-                /* Overriding previous fix */
             }
 
             .comparison-table-wrapper thead tr {
-                position: absolute;
-                top: -9999px;
-                left: -9999px;
+                display: none;
             }
 
             .comparison-table-wrapper tr {
+                display: block;
                 border: 1px solid rgba(15, 58, 95, 0.1);
-                margin-bottom: 30px;
-                border-radius: 20px;
-                padding: 20px;
+                margin-bottom: 24px;
+                border-radius: 16px;
+                padding: 16px;
                 background: var(--white);
                 box-shadow: var(--shadow-sm);
+                width: 100% !important;
             }
 
             .comparison-table-wrapper td {
+                display: grid;
+                grid-template-columns: 120px 1fr;
+                gap: 12px;
+                padding: 12px 0;
                 border: none;
                 border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-                position: relative;
-                padding: 15px 0 !important;
-                text-align: right;
-                font-size: 1rem;
-                display: flex;
-                justify-content: space-between;
                 align-items: center;
-                color: var(--primary-dark);
-                gap: 20px;
+                text-align: left;
+                font-size: 0.95rem;
             }
 
             .comparison-table-wrapper td:before {
                 content: attr(data-label);
                 font-weight: 800;
                 color: var(--primary-teal);
-                text-align: left;
-                font-size: 0.9rem;
+                font-size: 0.8rem;
                 text-transform: uppercase;
-                letter-spacing: 1px;
+                letter-spacing: 0.5px;
             }
 
-            /* Header for each card */
             .comparison-table-wrapper td:first-child {
+                display: block;
                 background: var(--primary-teal);
                 color: var(--white);
-                margin: -20px -20px 20px -20px;
-                padding: 15px 20px !important;
-                border-radius: 18px 18px 0 0;
-                justify-content: center;
+                margin: -16px -16px 16px -16px;
+                padding: 12px 16px !important;
+                border-radius: 14px 14px 0 0;
+                text-align: center;
                 font-weight: 900;
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 border: none;
             }
 
