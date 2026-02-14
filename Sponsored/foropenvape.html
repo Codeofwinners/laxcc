@@ -1188,7 +1188,8 @@
             .comparison-table-wrapper table {
                 width: 100%;
                 border-collapse: separate;
-                border-spacing: 0 10px;
+                border-spacing: 0 15px;
+                /* Increase spacing for card effect */
             }
 
             .comparison-table-wrapper th {
@@ -1196,26 +1197,52 @@
                 text-align: left;
                 font-weight: 800;
                 color: var(--primary-dark);
-                border-bottom: 2px solid var(--primary-teal);
+                border-bottom: none;
+                /* Remove border for cleaner look */
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                font-size: 0.9rem;
+            }
+
+            /* Make rows look like cards */
+            .comparison-table-wrapper tbody tr {
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+
+            .comparison-table-wrapper tbody tr:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+                /* Lift effect */
             }
 
             .comparison-table-wrapper td {
                 padding: 24px 20px;
                 background: var(--white);
-                border-top: 1px solid rgba(0, 0, 0, 0.05);
-                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                border-top: 1px solid rgba(15, 58, 95, 0.08);
+                border-bottom: 1px solid rgba(15, 58, 95, 0.08);
+                color: var(--text-dark);
+                font-size: 1rem;
+                vertical-align: middle;
             }
 
+            /* First cell (Feature) styling */
             .comparison-table-wrapper tr td:first-child {
-                border-left: 1px solid rgba(0, 0, 0, 0.05);
-                border-radius: 12px 0 0 12px;
+                border-left: 1px solid rgba(15, 58, 95, 0.08);
+                border-radius: 16px 0 0 16px;
                 font-weight: 800;
                 color: var(--primary-teal);
+                background: var(--white);
             }
 
+            /* Last cell styling */
             .comparison-table-wrapper tr td:last-child {
-                border-right: 1px solid rgba(0, 0, 0, 0.05);
-                border-radius: 0 12px 12px 0;
+                border-right: 1px solid rgba(15, 58, 95, 0.08);
+                border-radius: 0 16px 16px 0;
+            }
+
+            /* Apply shadow to the cells to mimic row shadow since pure TR shadow is tricky with separate collapse */
+            .comparison-table-wrapper td {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
             }
         }
     </style>
