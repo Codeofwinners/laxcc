@@ -1250,17 +1250,14 @@
 
         /* Liquid Glass Product Card (Camino featured) */
         .pcard--glass {
-            background: rgba(0, 175, 201, 0.07) !important;
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border: 1.5px solid rgba(0, 175, 201, 0.28) !important;
+            background: rgba(255,255,255,0.55) !important;
+            backdrop-filter: blur(20px) saturate(160%);
+            -webkit-backdrop-filter: blur(20px) saturate(160%);
+            border: 1px solid rgba(255,255,255,0.8) !important;
             box-shadow:
-                0 8px 32px rgba(0, 175, 201, 0.14),
-                0 1px 0 rgba(255,255,255,0.7) inset !important;
+                0 8px 32px rgba(15,58,95,0.08),
+                0 1px 0 rgba(255,255,255,0.9) inset !important;
         }
-        .pcard--glass .pcard-brand { color: var(--primary-teal); }
-        .pcard--glass .pcard-name  { color: var(--primary-dark); }
-        .pcard--glass .pcard-price { color: var(--primary-teal); }
 
         /* Product Card */
         .pcard {
@@ -1311,35 +1308,27 @@
             display: block;
         }
 
-        /* Badges */
+        /* Badges — unified dark glass, no color clutter */
         .pcard-badge {
             position: absolute;
-            top: 12px;
-            left: 12px;
-            font-size: 0.65rem;
-            font-weight: 800;
+            top: 10px;
+            left: 10px;
+            font-size: 0.6rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 4px 10px;
-            border-radius: 6px;
+            letter-spacing: 1.2px;
+            padding: 4px 9px;
+            border-radius: 5px;
+            background: rgba(10, 20, 35, 0.72);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            color: rgba(255,255,255,0.9);
+            border: none;
         }
 
-        .pcard-badge--topseller {
-            background: var(--primary-dark);
-            color: #fff;
-        }
-
-        .pcard-badge--staff {
-            background: var(--accent-orange);
-            color: #fff;
-        }
-
-        .pcard-badge--cbd {
-            left: 12px;
-            background: rgba(61,170,110,0.15);
-            color: var(--accent-green);
-            border: 1px solid rgba(61,170,110,0.3);
-        }
+        .pcard-badge--topseller { background: rgba(10,20,35,0.72); color: rgba(255,255,255,0.9); }
+        .pcard-badge--staff     { background: rgba(10,20,35,0.72); color: rgba(255,255,255,0.9); }
+        .pcard-badge--cbd       { left: 10px; background: rgba(10,20,35,0.65); color: rgba(255,255,255,0.85); border: none; }
 
         /* Card Body */
         .pcard-body {
@@ -1350,11 +1339,11 @@
         }
 
         .pcard-brand {
-            font-size: 0.7rem;
+            font-size: 0.62rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-muted);
+            letter-spacing: 2px;
+            color: #b0bac5;
             margin-bottom: 6px;
         }
 
@@ -1375,14 +1364,14 @@
         }
 
         .pcard-spec {
-            font-size: 0.68rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            background: var(--light-gray);
-            border: 1px solid rgba(15,58,95,0.07);
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: #94a3b8;
+            background: transparent;
+            border: 1px solid rgba(15,58,95,0.10);
             padding: 3px 8px;
-            border-radius: 5px;
-            letter-spacing: 0.3px;
+            border-radius: 4px;
+            letter-spacing: 0.2px;
         }
 
         .pcard-footer {
