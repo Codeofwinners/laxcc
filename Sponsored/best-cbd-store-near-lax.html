@@ -124,7 +124,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
-            align-items: center;
+            align-items: stretch;
             height: 100%;
         }
 
@@ -138,14 +138,16 @@
 
         .hero-image-column {
             width: 100%;
-            height: 80vh;
-            background: linear-gradient(145deg, #0e6a78 0%, #00AFC9 40%, #3daa6e 100%);
+            height: 100%;
+            background-image: url('https://kiva.sfo2.digitaloceanspaces.com/kiva/_1920xAUTO_crop_center-center_none/Kiva4920_JM_EDIT_BL-1180x1470-e270448.jpg');
+            background-size: cover;
+            background-position: center top;
             border-radius: 40px;
             position: relative;
             box-shadow: var(--shadow-xl);
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: flex-end;
+            justify-content: flex-start;
             overflow: hidden;
         }
 
@@ -153,23 +155,15 @@
             content: '';
             position: absolute;
             inset: 0;
-            background:
-                radial-gradient(circle at 30% 40%, rgba(255,255,255,0.15) 0%, transparent 60%),
-                radial-gradient(circle at 75% 70%, rgba(0,0,0,0.15) 0%, transparent 50%);
+            background: linear-gradient(to top, rgba(15,58,95,0.75) 0%, transparent 55%);
+            border-radius: 40px;
         }
 
         .hero-image-col-inner {
             position: relative;
             z-index: 1;
-            text-align: center;
+            text-align: left;
             padding: 40px;
-        }
-
-        .hero-image-col-inner .col-icon {
-            font-size: 5rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 24px;
-            display: block;
         }
 
         .hero-image-col-inner h3 {
@@ -177,29 +171,157 @@
             font-weight: 900;
             color: #fff;
             letter-spacing: -0.03em;
-            margin-bottom: 12px;
+            line-height: 1.1;
+            margin-bottom: 10px;
         }
 
         .hero-image-col-inner p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: rgba(255,255,255,0.8);
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .hero-license-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,0.2);
-            border: 1px solid rgba(255,255,255,0.4);
+            gap: 6px;
+            background: rgba(0,175,201,0.25);
+            border: 1px solid rgba(0,175,201,0.6);
             color: #fff;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 700;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            padding: 8px 16px;
+            padding: 6px 12px;
             border-radius: 100px;
-            margin-top: 24px;
+            margin-bottom: 16px;
+            white-space: nowrap;
+        }
+
+        /* --- Hero Image Wrapper --- */
+        .hero-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 80vh;
+        }
+
+        /* --- Liquid Glass Product Card --- */
+        .liquid-glass-card {
+            position: absolute;
+            top: 32px;
+            right: 28px;
+            width: 192px;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(28px) saturate(200%) brightness(1.08);
+            -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.08);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.38);
+            box-shadow:
+                0 8px 32px rgba(15, 58, 95, 0.22),
+                0 1.5px 0 0 rgba(255,255,255,0.55) inset,
+                0 -1px 0 0 rgba(255,255,255,0.10) inset;
+            overflow: hidden;
+            animation: fadeIn 1s ease 0.4s both;
+        }
+
+        .lg-product-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .lg-product-body {
+            padding: 14px 16px 16px;
+        }
+
+        .lg-product-tag {
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .lg-product-name {
+            font-size: 1rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .lg-stars {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 10px;
+        }
+
+        .lg-stars i {
+            font-size: 0.65rem;
+            color: #F89459;
+        }
+
+        .lg-product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .lg-badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.65);
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 3px 8px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .lg-product-name {
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .lg-product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 6px;
+        }
+
+        .lg-shop-btn {
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: #fff !important;
+            background: rgba(0,175,201,0.55);
+            border: 1px solid rgba(0,175,201,0.7);
+            padding: 5px 10px;
+            border-radius: 8px;
+            text-decoration: none !important;
+            letter-spacing: 0.3px;
+            transition: background 0.2s;
+            backdrop-filter: blur(8px);
+            white-space: nowrap;
+        }
+
+        .lg-shop-btn:hover,
+        .lg-shop-btn:visited,
+        .lg-shop-btn:active {
+            background: rgba(0,175,201,0.85);
+            color: #fff !important;
         }
 
         .hero-badge {
@@ -238,7 +360,7 @@
         .hero-title span { display: block; }
 
         #hero-line-1 { color: var(--primary-dark); }
-        #hero-line-2 { color: var(--primary-teal); margin-left: 8vw; }
+        #hero-line-2 { color: #fbf8f2; margin-left: 8vw; -webkit-text-stroke: 2px var(--primary-dark); }
         #hero-line-3 { color: var(--primary-dark); margin-left: 3vw; }
 
         .hero-subtitle {
@@ -798,269 +920,211 @@
             gap: 12px;
         }
 
-        /* --- Strava Coffee Recommendation Section --- */
+        /* --- Sträva Section: 2-Col, Full Image --- */
         .strava-section {
-            padding: 120px 0;
-            background: #fafcfd;
-            position: relative;
-            overflow: hidden;
+            background: var(--primary-dark);
+            padding: 80px 0;
         }
 
-        .strava-section::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            right: -150px;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(0,175,201,0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .strava-section::after {
-            content: '';
-            position: absolute;
-            bottom: -80px;
-            left: -100px;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(61,170,110,0.07) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .strava-container {
-            max-width: 1400px;
+        .strava-content-wrap {
+            max-width: 1300px;
             margin: 0 auto;
             padding: 0 40px;
-            position: relative;
-            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
         }
 
-        .strava-label {
+        /* Left: image col — full natural aspect ratio, no crop */
+        .strava-img-col-new {
+            width: 100%;
+        }
+
+        .strava-img-col-new a { display: block; }
+
+        .strava-img-col-new img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            display: block;
+        }
+
+        .strava-content-left {}
+
+        .strava-eyebrow-new {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.8rem;
-            font-weight: 700;
+            font-size: 0.72rem;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-            margin-bottom: 48px;
-        }
-
-        .strava-label::before {
-            content: '';
-            width: 32px;
-            height: 2px;
-            background: var(--text-muted);
-        }
-
-        .strava-inner {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 100px;
-            align-items: center;
-        }
-
-        .strava-content-col {}
-
-        .strava-eyebrow {
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 2.5px;
             color: var(--accent-green);
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
-        .strava-eyebrow::before {
+        .strava-eyebrow-new::before {
             content: '';
-            width: 30px;
+            width: 24px;
             height: 2px;
             background: var(--accent-green);
+            flex-shrink: 0;
         }
 
-        .strava-title {
-            font-size: 3.5rem;
+        .strava-headline {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
             font-weight: 900;
-            color: var(--primary-dark);
-            letter-spacing: -0.03em;
-            line-height: 1;
-            margin-bottom: 30px;
+            color: #fff;
+            letter-spacing: -0.04em;
+            line-height: 0.95;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
-        .strava-desc {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            line-height: 1.7;
+        .strava-subline {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.65;
+            margin-bottom: 0;
             font-weight: 300;
-            margin-bottom: 40px;
+            max-width: 480px;
         }
 
-        .strava-features {
+        .strava-content-right {
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            margin-bottom: 48px;
+            gap: 24px;
         }
 
-        .strava-feature {
+        .strava-doses {
             display: flex;
-            align-items: flex-start;
-            gap: 16px;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
-        .strava-feature-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--green-light);
-            border-radius: 12px;
+        .strava-dose-pill {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.18);
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 7px 16px;
+            border-radius: 100px;
+        }
+
+        .strava-dose-label {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .strava-stats-row {
+            display: flex;
+            gap: 0;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .strava-stat {
+            flex: 1;
+            padding: 14px 10px;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .strava-stat:last-child { border-right: none; }
+
+        .strava-stat-val {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #fff;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .strava-stat-key {
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 3px;
+            display: block;
+        }
+
+        .strava-cta-row {
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: var(--accent-green);
-            font-size: 1rem;
-            flex-shrink: 0;
-            margin-top: 2px;
+            gap: 16px;
+            flex-wrap: wrap;
         }
 
-        .strava-feature-text {}
-
-        .strava-feature-text strong {
-            display: block;
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 2px;
-        }
-
-        .strava-feature-text span {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .strava-link {
+        .strava-cta-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: var(--primary-dark);
+            gap: 8px;
+            background: var(--accent-green);
             color: #fff;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            padding: 16px 32px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            padding: 14px 28px;
             border-radius: 12px;
             transition: var(--transition);
             border: 2px solid transparent;
+            white-space: nowrap;
         }
 
-        .strava-link:hover {
+        .strava-cta-btn:hover {
             background: transparent;
-            border-color: var(--primary-dark);
-            color: var(--primary-dark);
-            gap: 14px;
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+            gap: 12px;
         }
 
-        .strava-visual-col {
+        .strava-shipping-note {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.45);
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 6px;
         }
 
-        .strava-card {
-            background: var(--white);
-            border-radius: 32px;
-            padding: 60px 48px;
-            box-shadow: var(--shadow-lg);
-            text-align: center;
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-        }
+        .strava-shipping-note i { color: var(--accent-green); }
 
-        .strava-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-green), var(--primary-teal));
-        }
-
-        .strava-card-icon {
-            font-size: 4rem;
-            margin-bottom: 24px;
-            display: block;
-        }
-
-        .strava-card-brand {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--primary-dark);
-            letter-spacing: -0.03em;
-            margin-bottom: 8px;
-        }
-
-        .strava-card-sub {
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent-green);
-            margin-bottom: 32px;
-        }
-
-        .strava-strength-pills {
+        .strava-press-row {
             display: flex;
             gap: 8px;
-            justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 32px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.08);
         }
 
-        .strava-pill {
-            background: var(--teal-light);
-            color: var(--primary-dark);
-            font-size: 0.8rem;
+        .strava-press-tag {
+            font-size: 0.62rem;
             font-weight: 700;
-            padding: 6px 14px;
-            border-radius: 100px;
-            border: 1px solid rgba(0,175,201,0.2);
-        }
-
-        .strava-card-quote {
-            font-size: 1rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            font-style: italic;
-            border-top: 1px solid rgba(15,58,95,0.06);
-            padding-top: 24px;
-        }
-
-        .strava-press {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 32px;
-        }
-
-        .strava-press-badge {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            text-transform: uppercase;
             letter-spacing: 1px;
-            border: 1px solid rgba(15,58,95,0.1);
-            padding: 4px 12px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 4px 10px;
             border-radius: 4px;
+        }
+
+        @media (max-width: 900px) {
+            .strava-section { padding: 48px 0; }
+            .strava-content-wrap {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 0 24px;
+            }
+            .strava-headline { font-size: 2.2rem; }
+            .strava-stats-row { display: none; }
+            .strava-subline { max-width: 100%; }
+            .strava-img-col-new { order: -1; }
         }
 
         /* --- Final CTA --- */
@@ -1120,6 +1184,222 @@
             text-decoration: none !important;
         }
 
+        /* --- Product Grid Section --- */
+        .product-grid-section {
+            padding: 80px 0 100px;
+            background: #fbf8f2;
+        }
+
+        .product-grid-wrap {
+            max-width: 1680px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .product-grid-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .product-grid-eyebrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary-teal);
+            margin-bottom: 16px;
+        }
+
+        .product-grid-title {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: var(--primary-dark);
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 16px;
+        }
+
+        .product-grid-sub {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 12px;
+        }
+
+        /* Product Card */
+        .pcard {
+            background: var(--white);
+            border-radius: 20px;
+            border: 1px solid rgba(15, 58, 95, 0.07);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            box-shadow: 0 2px 12px rgba(15,58,95,0.05);
+        }
+
+        .pcard:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(15,58,95,0.12);
+            border-color: rgba(0,175,201,0.2);
+        }
+
+        .pcard--featured {
+            border-color: rgba(0,175,201,0.3);
+            box-shadow: 0 4px 20px rgba(0,175,201,0.1);
+        }
+
+        /* Image Area */
+        .pcard-img-wrap {
+            position: relative;
+        }
+
+        .pcard-img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .pcard-img--teal   { background: linear-gradient(135deg, #e8f7fa 0%, #c5edf4 100%); color: var(--primary-teal); }
+        .pcard-img--dark   { background: linear-gradient(135deg, #e8edf3 0%, #ccd6e4 100%); color: var(--primary-dark); }
+        .pcard-img--orange { background: linear-gradient(135deg, #fdf1ea 0%, #fad9c2 100%); color: var(--accent-orange); }
+        .pcard-img--green  { background: linear-gradient(135deg, #eaf6f0 0%, #c5e8d5 100%); color: var(--accent-green); }
+
+        .pcard-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Badges */
+        .pcard-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .pcard-badge--topseller {
+            background: var(--primary-dark);
+            color: #fff;
+        }
+
+        .pcard-badge--staff {
+            background: var(--accent-orange);
+            color: #fff;
+        }
+
+        .pcard-badge--cbd {
+            left: 12px;
+            background: rgba(61,170,110,0.15);
+            color: var(--accent-green);
+            border: 1px solid rgba(61,170,110,0.3);
+        }
+
+        /* Card Body */
+        .pcard-body {
+            padding: 20px 20px 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .pcard-brand {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .pcard-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.35;
+            margin-bottom: 14px;
+            flex: 1;
+        }
+
+        .pcard-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 18px;
+        }
+
+        .pcard-spec {
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: var(--light-gray);
+            border: 1px solid rgba(15,58,95,0.07);
+            padding: 3px 8px;
+            border-radius: 5px;
+            letter-spacing: 0.3px;
+        }
+
+        .pcard-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(15,58,95,0.06);
+        }
+
+        .pcard-price {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary-dark);
+            letter-spacing: -0.03em;
+            line-height: 1;
+        }
+
+        .pcard-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--primary-teal);
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 9px 14px;
+            border-radius: 10px;
+            transition: var(--transition);
+            white-space: nowrap;
+            letter-spacing: 0.2px;
+            border: 2px solid transparent;
+        }
+
+        .pcard-btn:hover {
+            background: transparent;
+            border-color: var(--primary-teal);
+            color: var(--primary-teal);
+            gap: 8px;
+        }
+
+        .pcard-btn i { font-size: 0.65rem; }
+
         /* --- Mobile Responsive --- */
         @media (max-width: 900px) {
             .story-container {
@@ -1144,10 +1424,15 @@
 
             .hero-text-column { order: 1; }
 
-            .hero-image-column {
+            .hero-image-wrapper {
                 order: 2;
+                width: 100%;
+            }
+
+            .hero-image-column {
                 height: 50vh;
                 width: 100%;
+                border-radius: 20px;
             }
 
             .hero-subtitle {
@@ -1232,6 +1517,41 @@
             .strava-title { font-size: 2.5rem; }
 
             .strava-card { padding: 40px 28px; }
+
+            /* Product grid mobile */
+            .product-grid-wrap { padding: 0 20px; }
+            .product-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+            .product-grid-header { margin-bottom: 40px; }
+
+            /* Card below image on mobile — clean white card, no overlap */
+            .hero-image-wrapper { height: auto; }
+            .hero-image-column { height: 50vh; border-radius: 20px; }
+            .liquid-glass-card {
+                position: relative;
+                top: auto;
+                right: auto;
+                width: 100%;
+                margin-top: 12px;
+                border-radius: 16px;
+                background: var(--white);
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                border: 1px solid rgba(15,58,95,0.1);
+                box-shadow: var(--shadow-sm);
+            }
+            .lg-product-tag { color: var(--text-muted) !important; }
+            .lg-product-name { color: var(--primary-dark) !important; }
+            .lg-stars i { color: var(--accent-orange); }
+            .lg-badge {
+                color: var(--text-muted) !important;
+                background: var(--light-gray) !important;
+                border-color: rgba(15,58,95,0.1) !important;
+            }
+            .lg-shop-btn {
+                background: var(--primary-teal) !important;
+                border-color: var(--primary-teal) !important;
+                backdrop-filter: none;
+            }
         }
     </style>
 </head>
@@ -1250,27 +1570,229 @@
                 <div class="hero-badge">Licensed Dispensary</div>
                 <h1 class="hero-title">
                     <span id="hero-line-1">Best CBD</span>
-                    <span id="hero-line-2">Store</span>
-                    <span id="hero-line-3">Near LAX</span>
+                    <span id="hero-line-2">Store Near</span>
+                    <span id="hero-line-3">LAX Airport</span>
                 </h1>
                 <p class="hero-subtitle">
                     <a href="https://laxcc.com" style="color: var(--primary-teal); font-weight: 700; text-decoration: none;">LAXCC</a> is Los Angeles' fully licensed cannabis dispensary — steps from LAX. Shop lab-tested CBD tinctures, edibles, topicals, and more with confidence.
                 </p>
             </div>
 
-            <!-- Visual Column -->
-            <div class="hero-image-column">
-                <div class="hero-image-col-inner">
-                    <i class="fas fa-certificate col-icon"></i>
-                    <h3>Fully Licensed &amp; Legal</h3>
-                    <p>Every product on our shelves is state-compliant, lab-tested, and safe to purchase near LAX.</p>
-                    <div class="hero-license-badge">
-                        <i class="fas fa-shield-halved"></i>
-                        California Licensed Retailer
+            <!-- Visual Column: wrapper holds image + floating card -->
+            <div class="hero-image-wrapper">
+                <div class="hero-image-column">
+                    <!-- Bottom text overlay -->
+                    <div class="hero-image-col-inner">
+                        <div class="hero-license-badge">
+                            <i class="fas fa-shield-halved"></i>
+                            CA Licensed Retailer
+                        </div>
+                        <h3>CBD for Sale<br>Near LAX</h3>
+                        <p>Lab-tested. State-licensed. Ready for pickup.</p>
+                        <a href="https://www.kivaconfections.com/flavor/sparkling-pear" target="_blank" rel="nofollow noopener noreferrer" style="display:block; margin-top: 12px; font-size: 0.6rem; color: rgba(255,255,255,0.35); text-decoration: none; letter-spacing: 0.5px;">Photo © Kiva Confections</a>
+                    </div>
+                </div>
+
+                <!-- Liquid Glass Card: absolute on desktop, block below on mobile -->
+                <div class="liquid-glass-card">
+                    <a href="https://www.kivaconfections.com/flavor/sparkling-pear" target="_blank" rel="nofollow noopener noreferrer">
+                        <img class="lg-product-img"
+                            src="https://kiva.sfo2.digitaloceanspaces.com/kiva/_1024xAUTO_crop_center-center_none/254959/CaminoDetail.CA.SP.RGB.200904.1120x840.webp"
+                            alt="Kiva Camino Sparkling Pear CBD Gummies">
+                    </a>
+                    <div class="lg-product-body">
+                        <span class="lg-product-tag">Kiva · Edibles</span>
+                        <div class="lg-product-name">Camino CBD Gummies</div>
+                        <div class="lg-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="lg-product-footer">
+                            <span class="lg-badge">In Stock</span>
+                            <a href="https://laxcc.com/product/kiva-camino-sparkling-pear-cbd/?retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3" class="lg-shop-btn">Shop Now</a>
+                        </div>
+                    </div>
+                    <div style="padding: 0 16px 10px; text-align: right;">
+                        <a href="https://www.kivaconfections.com/flavor/sparkling-pear" target="_blank" rel="nofollow noopener noreferrer" style="font-size: 0.6rem; color: rgba(255,255,255,0.45); text-decoration: none; letter-spacing: 0.5px;">Image © Kiva Confections</a>
                     </div>
                 </div>
             </div>
 
+        </div>
+    </section>
+
+
+    <!-- CBD Product Grid -->
+    <section class="product-grid-section">
+        <div class="product-grid-wrap">
+            <div class="product-grid-header">
+                <div class="product-grid-eyebrow">Top Sellers</div>
+                <h2 class="product-grid-title">Shop CBD Near LAX</h2>
+                <p class="product-grid-sub">Lab-tested, state-licensed CBD products available for pickup or delivery near LAX Airport.</p>
+            </div>
+
+            <div class="product-grid">
+
+                <!-- Card 1: Raw Garden 1:1 Berry Nova -->
+                <div class="pcard">
+                    <div class="pcard-img-wrap">
+                        <div class="pcard-img">
+                            <img src="https://images.dutchie.com/a237119d54af32e947cfc86416d31332?w=500&h=500&fm=webp" alt="Raw Garden 1:1 Berry Nova Refined Live Resin CBD Cartridge">
+                        </div>
+                        <span class="pcard-badge pcard-badge--topseller">Top Seller</span>
+                        <span class="pcard-badge pcard-badge--cbd" style="top: auto; bottom: 12px;">High CBD</span>
+                    </div>
+                    <div class="pcard-body">
+                        <span class="pcard-brand">Raw Garden</span>
+                        <h3 class="pcard-name">1:1 Berry Nova Live Resin™ Cart</h3>
+                        <div class="pcard-specs">
+                            <span class="pcard-spec">1g</span>
+                            <span class="pcard-spec">1:1</span>
+                        </div>
+                        <div class="pcard-footer">
+                            <span class="pcard-price">$50</span>
+                            <a href="https://laxcc.com/product/1-1-berry-nova-refined-live-resin-cbd-1-1-cartridge-54570/" class="pcard-btn">Add to Cart <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Breez Tincture Cinnamon -->
+                <div class="pcard">
+                    <div class="pcard-img-wrap">
+                        <div class="pcard-img">
+                            <img src="https://images.dutchie.com/535669344db32d1d3f5e709d78a92c31?w=500&h=500&fm=webp" alt="Breez Tincture Cinnamon CBD">
+                        </div>
+                        <span class="pcard-badge pcard-badge--topseller">Top Seller</span>
+                    </div>
+                    <div class="pcard-body">
+                        <span class="pcard-brand">BREEZ</span>
+                        <h3 class="pcard-name">Breez Cinnamon Tincture CBD</h3>
+                        <div class="pcard-specs">
+                            <span class="pcard-spec">1:1</span>
+                            <span class="pcard-spec">4.88mg CBD</span>
+                        </div>
+                        <div class="pcard-footer">
+                            <span class="pcard-price">$75</span>
+                            <a href="https://laxcc.com/product/breez-tincture-cinnamon-cbd/" class="pcard-btn">Add to Cart <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Papa & Barkley CBD Balm 15ml -->
+                <div class="pcard">
+                    <div class="pcard-img-wrap">
+                        <div class="pcard-img">
+                            <img src="https://images.dutchie.com/0ea0ff4b57cfe0906e2de4d86f0f65c3?w=500&h=500&fm=webp" alt="Papa & Barkley CBD Balm 15ml">
+                        </div>
+                        <span class="pcard-badge pcard-badge--topseller">Top Seller</span>
+                    </div>
+                    <div class="pcard-body">
+                        <span class="pcard-brand">Papa &amp; Barkley</span>
+                        <h3 class="pcard-name">Papa &amp; Barkley CBD Balm 15ml</h3>
+                        <div class="pcard-specs">
+                            <span class="pcard-spec">15ml</span>
+                            <span class="pcard-spec">Topical</span>
+                        </div>
+                        <div class="pcard-footer">
+                            <span class="pcard-price">$45</span>
+                            <a href="https://laxcc.com/product/papa-barkley-cbd-balm-15ml/" class="pcard-btn">Add to Cart <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Kiva Camino Sparkling Pear -->
+                <div class="pcard">
+                    <div class="pcard-img-wrap">
+                        <div class="pcard-img">
+                            <img src="https://images.dutchie.com/70a8865df755c989faa5b2829863b998?w=500&h=500&fm=webp" alt="Kiva Camino Sparkling Pear CBD">
+                        </div>
+                        <span class="pcard-badge pcard-badge--topseller">Top Seller</span>
+                    </div>
+                    <div class="pcard-body">
+                        <span class="pcard-brand">Camino by Kiva</span>
+                        <h3 class="pcard-name">Camino Sparkling Pear CBD</h3>
+                        <div class="pcard-specs">
+                            <span class="pcard-spec">Edible</span>
+                            <span class="pcard-spec">CBD 0.17%</span>
+                        </div>
+                        <div class="pcard-footer">
+                            <span class="pcard-price">$30</span>
+                            <a href="https://laxcc.com/product/kiva-camino-sparkling-pear-cbd/" class="pcard-btn">Add to Cart <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Papa & Barkley CBD Balm 50ml -->
+                <div class="pcard">
+                    <div class="pcard-img-wrap">
+                        <div class="pcard-img">
+                            <img src="https://images.dutchie.com/ee5afadd34b6073edf52d0b9693c7715?w=500&h=500&fm=webp" alt="Papa & Barkley CBD Balm 50ml">
+                        </div>
+                        <span class="pcard-badge pcard-badge--topseller">Top Seller</span>
+                    </div>
+                    <div class="pcard-body">
+                        <span class="pcard-brand">Papa &amp; Barkley</span>
+                        <h3 class="pcard-name">Papa &amp; Barkley CBD Balm 50ml</h3>
+                        <div class="pcard-specs">
+                            <span class="pcard-spec">50ml</span>
+                            <span class="pcard-spec">CBD 456mg</span>
+                        </div>
+                        <div class="pcard-footer">
+                            <span class="pcard-price">$100</span>
+                            <a href="https://laxcc.com/product/papa-barkley-cbd-balm-50-ml/" class="pcard-btn">Add to Cart <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Drops Blueberry 4:1 — Staff Pick -->
+                <div class="pcard pcard--featured">
+                    <div class="pcard-img-wrap">
+                        <div class="pcard-img">
+                            <img src="https://images.dutchie.com/8d8dfbe978186d06296ab4917e8bb2bb?w=500&h=500&fm=webp" alt="Drops Blueberry 4:1 50mg CBD">
+                        </div>
+                        <span class="pcard-badge pcard-badge--staff">Staff Pick</span>
+                        <span class="pcard-badge pcard-badge--cbd" style="top: auto; bottom: 12px;">High CBD</span>
+                    </div>
+                    <div class="pcard-body">
+                        <span class="pcard-brand">Drops</span>
+                        <h3 class="pcard-name">Drops Blueberry 4:1 50mg</h3>
+                        <div class="pcard-specs">
+                            <span class="pcard-spec">4:1 CBD:THC</span>
+                            <span class="pcard-spec">50mg</span>
+                        </div>
+                        <div class="pcard-footer">
+                            <span class="pcard-price">$10</span>
+                            <a href="https://laxcc.com/product/drops-blueberry-4-1-50mg/" class="pcard-btn">Add to Cart <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7: Kiva Camino Mango Serenity -->
+                <div class="pcard">
+                    <div class="pcard-img-wrap">
+                        <div class="pcard-img">
+                            <img src="https://images.dutchie.com/2b37ffb8849eb93a97b08586209e6a64?w=500&h=500&fm=webp" alt="Kiva Camino Mango Serenity CBD 1:1">
+                        </div>
+                        <span class="pcard-badge pcard-badge--topseller">Top Seller</span>
+                    </div>
+                    <div class="pcard-body">
+                        <span class="pcard-brand">Camino by Kiva</span>
+                        <h3 class="pcard-name">Camino Mango Serenity CBD 1:1</h3>
+                        <div class="pcard-specs">
+                            <span class="pcard-spec">1:1</span>
+                            <span class="pcard-spec">CBD 0.15%</span>
+                        </div>
+                        <div class="pcard-footer">
+                            <span class="pcard-price">$30</span>
+                            <a href="https://laxcc.com/product/kiva-camino-mango-serenity-cbd-1-1/" class="pcard-btn">Add to Cart <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.product-grid -->
         </div>
     </section>
 
@@ -1404,18 +1926,6 @@
     </section>
 
 
-    <!-- Product Shortcode: CBD Products -->
-    <section style="background: #fbf8f2 !important; width: 100%; padding: 60px 0; overflow: hidden;">
-        <div style="max-width: 1100px; margin: 0 auto; padding: 0 40px; text-align: center; margin-bottom: 40px;">
-            <h2 style="color: #00AFC9 !important; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 16px; letter-spacing: -0.03em; line-height: 1.1;">Shop CBD Products Near LAX</h2>
-            <p style="color: #64748b; font-size: 1.1rem; line-height: 1.7; max-width: 700px; margin: 0 auto;">Browse our full selection of lab-tested CBD products — from tinctures and edibles to topicals and capsules. Every product is licensed, tested, and available for pickup near LAX Airport.</p>
-        </div>
-        <div style="width: 100%; max-width: 100%; padding: 0;">
-            [leafbridge_specific_product_filter category="CBD" count="20"]
-        </div>
-    </section>
-
-
     <!-- Quick Comparison: CBD Formats -->
     <section class="story-section" style="background: #fbf8f2;">
         <div class="story-container" style="display: block; max-width: 1100px;">
@@ -1515,71 +2025,60 @@
 
     <!-- Sträva Craft Coffee Recommendation -->
     <section class="strava-section">
-        <div class="strava-container">
-            <div class="strava-label">Our Editors Also Recommend</div>
+        <div class="strava-content-wrap">
 
-            <div class="strava-inner">
-                <!-- Content -->
-                <div class="strava-content-col">
-                    <div class="strava-eyebrow">CBD Coffee Pick</div>
-                    <h2 class="strava-title">Sträva Craft Coffee</h2>
-                    <p class="strava-desc">
-                        CBD doesn't have to come in a tincture. Sträva Craft Coffee is a Colorado-based specialty roaster that infuses 100% Arabica beans with broad-spectrum CBD — delivering calm, focused energy without the jitters. Think of it as your morning ritual, upgraded.
-                    </p>
+            <!-- Left: Full image, natural aspect ratio, no crop -->
+            <div class="strava-img-col-new">
+                <a href="https://www.stravacraftcoffee.com/collections/all-products" target="_blank" rel="noopener noreferrer">
+                    <img src="https://www.stravacraftcoffee.com/cdn/shop/files/Strava-Coffee-Roasting-Process.jpg?v=1755620411&width=700"
+                        alt="Sträva Craft Coffee — CBD-infused specialty roast">
+                </a>
+            </div>
 
-                    <div class="strava-features">
-                        <div class="strava-feature">
-                            <div class="strava-feature-icon"><i class="fas fa-mug-hot"></i></div>
-                            <div class="strava-feature-text">
-                                <strong>CBD-Infused Specialty Roast</strong>
-                                <span>Premium small-batch coffee infused with organic CBD. Choose your strength: 100mg, 250mg, or 500mg per bag — available as whole beans, K-Cups, and Nespresso pods.</span>
-                            </div>
-                        </div>
-                        <div class="strava-feature">
-                            <div class="strava-feature-icon"><i class="fas fa-seedling"></i></div>
-                            <div class="strava-feature-text">
-                                <strong>100% Arabica, Non-GMO &amp; Sustainable</strong>
-                                <span>Sourced from sustainable farms, made with organic broad-spectrum hemp extract, CBD, CBG, and natural terpenes.</span>
-                            </div>
-                        </div>
-                        <div class="strava-feature">
-                            <div class="strava-feature-icon"><i class="fas fa-star"></i></div>
-                            <div class="strava-feature-text">
-                                <strong>As Seen in Esquire, Men's Health &amp; CBS</strong>
-                                <span>A premium player in the functional beverage space — recognized nationally for quality and innovation.</span>
-                            </div>
-                        </div>
+            <!-- Right: Content -->
+            <div class="strava-content-right" style="color:#fff;">
+                <div class="strava-eyebrow-new">Our CBD Coffee Pick</div>
+                <h2 class="strava-headline">Wake Up<br>Feeling<br>Your Best.</h2>
+                <p class="strava-subline">
+                    We're not affiliated with <a href="https://www.stravacraftcoffee.com/" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.8);text-decoration:underline;text-underline-offset:3px;">Sträva Craft Coffee</a> — but we recommend them as a great option for anyone looking for <a href="https://www.stravacraftcoffee.com/" target="_blank" rel="noopener noreferrer" style="color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px;">CBD coffee</a>. Colorado-roasted Arabica, infused with broad-spectrum hemp CBD. No tinctures. Just your morning cup, upgraded.
+                </p>
+
+                <div class="strava-doses" style="margin-top: 8px;">
+                    <span class="strava-dose-pill">4mg</span>
+                    <span class="strava-dose-pill">10mg</span>
+                    <span class="strava-dose-pill">20mg</span>
+                </div>
+                <div class="strava-dose-label" style="margin-top: 8px; margin-bottom: 24px;">CBD per serving &nbsp;·&nbsp; Beans, K-Cups &amp; Nespresso</div>
+
+                <div class="strava-stats-row" style="margin-bottom: 24px;">
+                    <div class="strava-stat">
+                        <span class="strava-stat-val">From $24.95</span>
+                        <span class="strava-stat-key">CBD Coffee</span>
                     </div>
-
-                    <a href="https://www.stravacraftcoffee.com/" target="_blank" rel="noopener noreferrer" class="strava-link">
-                        Visit Sträva Craft Coffee <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="strava-stat">
+                        <span class="strava-stat-val">Free Ship</span>
+                        <span class="strava-stat-key">Orders $65+</span>
+                    </div>
+                    <div class="strava-stat">
+                        <span class="strava-stat-val">100% Arabica</span>
+                        <span class="strava-stat-key">Non-GMO</span>
+                    </div>
                 </div>
 
-                <!-- Visual Card -->
-                <div class="strava-visual-col">
-                    <div class="strava-card">
-                        <span class="strava-card-icon">☕</span>
-                        <div class="strava-card-brand">STRÄVA</div>
-                        <div class="strava-card-sub">Craft Coffee + CBD</div>
+                <div class="strava-cta-row">
+                    <a href="https://www.stravacraftcoffee.com/collections/all-products" target="_blank" rel="noopener noreferrer" class="strava-cta-btn">
+                        Browse Products <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <span class="strava-shipping-note">
+                        <i class="fas fa-truck"></i> Free shipping on orders $65+
+                    </span>
+                </div>
 
-                        <div class="strava-strength-pills">
-                            <span class="strava-pill">100mg</span>
-                            <span class="strava-pill">250mg</span>
-                            <span class="strava-pill">500mg</span>
-                        </div>
-
-                        <p class="strava-card-quote">
-                            "Functional coffee designed for calm energy without jitters" — premium small-batch roasts available as whole beans, K-Cups, and Nespresso pods.
-                        </p>
-
-                        <div class="strava-press">
-                            <span class="strava-press-badge">CBS</span>
-                            <span class="strava-press-badge">Esquire</span>
-                            <span class="strava-press-badge">Men's Health</span>
-                            <span class="strava-press-badge">New York Magazine</span>
-                        </div>
-                    </div>
+                <div class="strava-press-row">
+                    <span class="strava-press-tag">CBS</span>
+                    <span class="strava-press-tag">Esquire</span>
+                    <span class="strava-press-tag">Men's Health</span>
+                    <span class="strava-press-tag">New York Magazine</span>
                 </div>
             </div>
         </div>
@@ -1698,7 +2197,7 @@
             <p style="font-size: 1.3rem; opacity: 0.9; margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">
                 LAXCC is Los Angeles' most convenient licensed CBD dispensary — steps from LAX Airport. Browse the full menu and order for pickup or delivery today.
             </p>
-            <a href="https://laxcc.com/shop/" class="cta-btn">
+            <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=CBD" class="cta-btn">
                 <i class="fas fa-leaf"></i> Browse Our CBD Menu
             </a>
         </div>
