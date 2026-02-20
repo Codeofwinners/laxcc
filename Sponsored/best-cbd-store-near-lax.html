@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Looking for CBD near LAX Airport? LAXCC is Los Angeles' licensed dispensary steps from LAX — carrying lab-tested CBD tinctures, edibles, topicals, and more.">
+    <title>Best CBD Store Near LAX Airport | LAXCC Licensed Dispensary</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* LAXCC CBD Guide - Editorial Layout */
+        :root {
+            --primary-teal: #00AFC9;
+            --primary-dark: #0f3a5f;
+            --primary-gradient: linear-gradient(135deg, #0f3a5f 0%, #0e6a78 60%, #1196a7 100%);
+            --accent-orange: #F89459;
+            --accent-peach: #FBD1A1;
+            --accent-green: #3daa6e;
+
+            --teal-light: rgba(0, 175, 201, 0.08);
+            --orange-light: rgba(248, 148, 89, 0.08);
+            --green-light: rgba(61, 170, 110, 0.08);
+
+            --white: #ffffff;
+            --cream: #fbf8f2;
+            --light-gray: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 16px 48px rgba(15, 58, 95, 0.12);
+            --shadow-xl: 0 24px 64px rgba(15, 58, 95, 0.16);
+
+            --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .laxcc-cbd-guide *,
+        .laxcc-cbd-guide *::before,
+        .laxcc-cbd-guide *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .laxcc-cbd-guide {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--cream);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes breathe {
+            0%   { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.1); opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(8px); }
+        }
+
+        .animate-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            background: var(--cream);
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 40px 0;
+        }
+
+        .hero-bg-anim {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 15% 25%, rgba(61, 170, 110, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(0, 175, 201, 0.12) 0%, transparent 50%);
+            filter: blur(60px);
+            z-index: 0;
+            animation: breathe 10s ease-in-out infinite alternate;
+        }
+
+        .hero-section .hero-bg-anim::after {
+            display: none;
+        }
+
+        .hero-title,
+        .hero-subtitle,
+        .hero-badge {
+            text-shadow: 0 4px 20px rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            height: 100%;
+        }
+
+        .hero-text-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero-image-column {
+            width: 100%;
+            height: 80vh;
+            background: linear-gradient(145deg, #0e6a78 0%, #00AFC9 40%, #3daa6e 100%);
+            border-radius: 40px;
+            position: relative;
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-image-column::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 30% 40%, rgba(255,255,255,0.15) 0%, transparent 60%),
+                radial-gradient(circle at 75% 70%, rgba(0,0,0,0.15) 0%, transparent 50%);
+        }
+
+        .hero-image-col-inner {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .hero-image-col-inner .col-icon {
+            font-size: 5rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .hero-image-col-inner h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+
+        .hero-image-col-inner p {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+        }
+
+        .hero-license-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 8px 16px;
+            border-radius: 100px;
+            margin-top: 24px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .hero-badge::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-green);
+        }
+
+        .hero-title {
+            font-size: clamp(3.5rem, 10vw, 9rem);
+            font-weight: 900;
+            line-height: 0.85;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-title span { display: block; }
+
+        #hero-line-1 { color: var(--primary-dark); }
+        #hero-line-2 { color: var(--primary-teal); margin-left: 8vw; }
+        #hero-line-3 { color: var(--primary-dark); margin-left: 3vw; }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-main);
+            max-width: 480px;
+            line-height: 1.6;
+            margin-left: auto;
+            margin-right: 8vw;
+            border-left: 3px solid var(--accent-green);
+            padding-left: 30px;
+        }
+
+        /* --- Story Sections --- */
+        .story-section {
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-blob {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.08;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .story-section:nth-child(even) .story-blob {
+            right: -200px;
+            top: 10%;
+            background: var(--primary-teal);
+        }
+
+        .story-section:nth-child(odd) .story-blob {
+            left: -200px;
+            bottom: 10%;
+            background: var(--accent-green);
+        }
+
+        .story-section:nth-child(even) { background: var(--white); }
+        .story-section:nth-child(odd)  { background: #fafcfd; }
+
+        .story-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .story-section:nth-child(even) .story-container { direction: rtl; }
+        .story-section:nth-child(even) .story-content { direction: ltr; }
+
+        .story-visual {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .visual-card {
+            background: transparent;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        .visual-icon-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        .visual-icon-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.2;
+            filter: blur(50px);
+        }
+
+        .visual-accent-teal .visual-icon-wrapper::after   { background: var(--primary-teal); }
+        .visual-accent-orange .visual-icon-wrapper::after { background: var(--accent-orange); }
+        .visual-accent-green .visual-icon-wrapper::after  { background: var(--accent-green); }
+        .visual-accent-dark .visual-icon-wrapper::after   { background: var(--primary-dark); }
+
+        .visual-icon {
+            width: 180px;
+            height: 180px;
+            background: transparent;
+            border: 4px solid currentColor;
+            color: inherit;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .visual-card h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+            letter-spacing: -0.02em;
+        }
+
+        .visual-tag {
+            display: block;
+            color: var(--text-muted);
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .visual-tag::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-green);
+            margin: 10px auto 0;
+        }
+
+        /* Content Side */
+        .story-content { padding: 20px 0; }
+
+        .story-number {
+            font-size: 8rem;
+            font-weight: 900;
+            color: rgba(15, 58, 95, 0.03);
+            line-height: 0.8;
+            margin-bottom: -40px;
+            margin-left: -10px;
+            position: relative;
+            z-index: 0;
+            user-select: none;
+        }
+
+        .story-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.03em;
+            line-height: 1;
+        }
+
+        .story-desc {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .feature-list li {
+            background: transparent;
+            padding: 0;
+            padding-left: 30px;
+            border-radius: 0;
+            font-weight: 600;
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-teal);
+            font-weight: 800;
+        }
+
+        .pros-cons-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            margin-top: 40px;
+            border-top: 2px solid rgba(15, 58, 95, 0.05);
+            padding-top: 30px;
+        }
+
+        .pc-box { padding: 0 20px; }
+
+        .pc-pros {
+            border-right: 2px solid rgba(15, 58, 95, 0.05);
+            padding-left: 0;
+            color: var(--primary-dark);
+        }
+
+        .pc-cons { color: var(--text-muted); }
+
+        .pc-box strong {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pc-pros strong { color: var(--primary-teal); }
+        .pc-cons strong  { color: var(--accent-orange); }
+
+        /* --- Comparison Grid --- */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            width: 100%;
+        }
+
+        .comparison-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 0;
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            box-shadow: 0 4px 24px rgba(15, 58, 95, 0.06);
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(15, 58, 95, 0.14);
+        }
+
+        .comparison-card-accent { height: 4px; width: 100%; }
+
+        .comparison-card--teal .comparison-card-accent   { background: linear-gradient(90deg, var(--primary-teal), #00d4f5); }
+        .comparison-card--green .comparison-card-accent  { background: linear-gradient(90deg, var(--accent-green), #6dca9a); }
+        .comparison-card--orange .comparison-card-accent { background: linear-gradient(90deg, var(--accent-orange), #ffb17a); }
+
+        .comparison-card-inner { padding: 40px 32px; }
+
+        .comparison-card-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+
+        .comparison-card--teal .comparison-card-icon   { background: rgba(0,175,201,0.1);  color: var(--primary-teal); }
+        .comparison-card--green .comparison-card-icon  { background: rgba(61,170,110,0.1); color: var(--accent-green); }
+        .comparison-card--orange .comparison-card-icon { background: rgba(248,148,89,0.1); color: var(--accent-orange); }
+
+        .comparison-card-type {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+            letter-spacing: -0.02em;
+        }
+
+        .comparison-card-tagline {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 32px;
+        }
+
+        .comparison-card--teal .comparison-card-tagline   { color: var(--primary-teal); }
+        .comparison-card--green .comparison-card-tagline  { color: var(--accent-green); }
+        .comparison-card--orange .comparison-card-tagline { color: var(--accent-orange); }
+
+        .comparison-features { display: flex; flex-direction: column; gap: 0; }
+
+        .comparison-feature {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .comparison-feature:not(:last-child) {
+            border-bottom: 1px solid rgba(15, 58, 95, 0.04);
+        }
+
+        .comparison-feature-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .comparison-feature-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .comparison-feature-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .comparison-card--teal .comparison-feature-dot   { background: var(--primary-teal); }
+        .comparison-card--green .comparison-feature-dot  { background: var(--accent-green); }
+        .comparison-card--orange .comparison-feature-dot { background: var(--accent-orange); }
+
+        /* --- FAQ Section --- */
+        .faq-section {
+            padding: 140px 0;
+            background: var(--white);
+            position: relative;
+        }
+
+        .faq-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+        .faq-header {
+            position: sticky;
+            top: 40px;
+        }
+
+        .faq-header h2 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary-dark);
+            line-height: 1;
+            margin-bottom: 30px;
+            letter-spacing: -0.03em;
+        }
+
+        .faq-header p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .faq-deco {
+            width: 100px;
+            height: 10px;
+            background: var(--primary-teal);
+            display: block;
+        }
+
+        .faq-list { display: flex; flex-direction: column; gap: 0; }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(15, 58, 95, 0.1);
+            padding: 40px 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .faq-item:first-child { border-top: 1px solid rgba(15, 58, 95, 0.1); }
+
+        .faq-list:hover .faq-item:not(:hover) { opacity: 0.3; }
+
+        .faq-question {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            background: none;
+            border: none;
+            text-align: left;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: var(--transition);
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-question::-webkit-details-marker { display: none; }
+
+        .faq-question:hover {
+            color: var(--primary-teal);
+            transform: translateX(10px);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            font-weight: 300;
+            transition: transform 0.4s ease;
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+
+        .faq-item[open] .faq-icon {
+            transform: rotate(45deg);
+            color: var(--accent-orange);
+        }
+
+        .faq-answer {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 90%;
+            padding-top: 20px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* --- Brand Showcase --- */
+        .brand-showcase {
+            padding: 120px 0;
+            background: var(--primary-dark) !important;
+            color: #ffffff !important;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .brand-showcase h2,
+        .brand-showcase p,
+        .brand-showcase span { color: #ffffff !important; }
+
+        .brand-showcase-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            padding: 0 24px;
+        }
+
+        .brand-showcase-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #ffffff !important;
+        }
+
+        .brand-scroll-container {
+            display: flex;
+            gap: 80px;
+            overflow-x: auto;
+            padding: 20px 40px 60px;
+            scroll-snap-type: x mandatory;
+            align-items: flex-start;
+            scrollbar-width: none;
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        }
+
+        .brand-scroll-container::-webkit-scrollbar { display: none; }
+
+        .brand-item {
+            min-width: 300px;
+            max-width: 300px;
+            background: transparent;
+            border: none;
+            padding: 0;
+            scroll-snap-align: center;
+            position: relative;
+            transition: opacity 0.3s;
+        }
+
+        .brand-scroll-container:hover .brand-item:not(:hover) { opacity: 0.5; }
+
+        .brand-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -30px;
+            top: 0;
+            height: 100%;
+            width: 1px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .brand-logo-alt {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #ffffff !important;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+            display: block;
+        }
+
+        .brand-category-tag {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.8);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .brand-desc {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8) !important;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .brand-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-orange);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .brand-btn:hover {
+            color: var(--accent-peach);
+            gap: 12px;
+        }
+
+        /* --- Strava Coffee Recommendation Section --- */
+        .strava-section {
+            padding: 120px 0;
+            background: #fafcfd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strava-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -150px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0,175,201,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .strava-section::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(61,170,110,0.07) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .strava-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .strava-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+        }
+
+        .strava-label::before {
+            content: '';
+            width: 32px;
+            height: 2px;
+            background: var(--text-muted);
+        }
+
+        .strava-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .strava-content-col {}
+
+        .strava-eyebrow {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-green);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .strava-eyebrow::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: var(--accent-green);
+        }
+
+        .strava-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary-dark);
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 30px;
+        }
+
+        .strava-desc {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .strava-features {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .strava-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .strava-feature-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--green-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-green);
+            font-size: 1rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .strava-feature-text {}
+
+        .strava-feature-text strong {
+            display: block;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 2px;
+        }
+
+        .strava-feature-text span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .strava-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary-dark);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 16px 32px;
+            border-radius: 12px;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .strava-link:hover {
+            background: transparent;
+            border-color: var(--primary-dark);
+            color: var(--primary-dark);
+            gap: 14px;
+        }
+
+        .strava-visual-col {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .strava-card {
+            background: var(--white);
+            border-radius: 32px;
+            padding: 60px 48px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strava-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-green), var(--primary-teal));
+        }
+
+        .strava-card-icon {
+            font-size: 4rem;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .strava-card-brand {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--primary-dark);
+            letter-spacing: -0.03em;
+            margin-bottom: 8px;
+        }
+
+        .strava-card-sub {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-green);
+            margin-bottom: 32px;
+        }
+
+        .strava-strength-pills {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .strava-pill {
+            background: var(--teal-light);
+            color: var(--primary-dark);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 100px;
+            border: 1px solid rgba(0,175,201,0.2);
+        }
+
+        .strava-card-quote {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-style: italic;
+            border-top: 1px solid rgba(15,58,95,0.06);
+            padding-top: 24px;
+        }
+
+        .strava-press {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .strava-press-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(15,58,95,0.1);
+            padding: 4px 12px;
+            border-radius: 4px;
+        }
+
+        /* --- Final CTA --- */
+        .final-cta {
+            text-align: center;
+            padding: 160px 24px;
+            background: var(--primary-dark) !important;
+            position: relative;
+            color: #ffffff !important;
+            overflow: hidden;
+        }
+
+        .final-cta h2 { color: #ffffff !important; }
+        .final-cta p  { color: #ffffff !important; }
+
+        .cta-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: transparent;
+            box-shadow: none;
+            border-radius: 0;
+            padding: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-btn {
+            background: var(--accent-orange) !important;
+            color: #ffffff !important;
+            padding: 18px 36px;
+            border-radius: 12px;
+            text-decoration: none !important;
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: var(--transition);
+            margin-top: 30px;
+            border: 2px solid transparent;
+            white-space: nowrap !important;
+            max-width: 90vw;
+        }
+
+        .cta-btn:hover {
+            background: transparent !important;
+            border-color: var(--accent-orange);
+            color: #ffffff !important;
+            transform: translateY(-5px);
+        }
+
+        .cta-btn:visited,
+        .cta-btn:active,
+        .cta-btn:focus {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 900px) {
+            .story-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .story-section:nth-child(even) .story-container { direction: ltr; }
+
+            .story-visual {
+                order: -1;
+                min-height: auto;
+            }
+
+            .hero-title { font-size: 2.8rem; }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding-bottom: 60px;
+            }
+
+            .hero-text-column { order: 1; }
+
+            .hero-image-column {
+                order: 2;
+                height: 50vh;
+                width: 100%;
+            }
+
+            .hero-subtitle {
+                margin-right: 0;
+                margin-left: 0;
+            }
+
+            .faq-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                padding: 0 24px;
+            }
+
+            .faq-header {
+                position: relative;
+                top: 0;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .faq-header h2 { font-size: 2.5rem; margin-bottom: 10px; }
+
+            .faq-deco { margin: 20px auto 0; }
+
+            .faq-question { font-size: 1.4rem; }
+
+            .brand-scroll-container {
+                padding: 40px 24px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+                overflow-x: visible;
+                mask-image: none !important;
+                -webkit-mask-image: none !important;
+                scroll-snap-type: none !important;
+            }
+
+            .brand-item {
+                min-width: 0;
+                max-width: 100%;
+                scroll-snap-align: none !important;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                padding-bottom: 30px;
+            }
+
+            .brand-item:nth-child(even)::after { display: none; }
+            .brand-item:last-child { border-bottom: none; }
+
+            .brand-showcase-header { margin-bottom: 24px !important; }
+            .brand-showcase-header h2 { font-size: 2rem; }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+                padding: 0;
+            }
+
+            .comparison-card {
+                background: transparent !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                overflow: visible;
+                border-bottom: 1px solid rgba(15, 58, 95, 0.08);
+            }
+
+            .comparison-card:last-child { border-bottom: none; }
+            .comparison-card:hover { transform: none !important; box-shadow: none !important; }
+            .comparison-card-accent { display: none; }
+            .comparison-card-inner { padding: 28px 0; }
+            .comparison-card-icon { display: none; }
+            .comparison-card-type { font-size: 1.3rem; margin-bottom: 2px; }
+            .comparison-card-tagline { font-size: 0.75rem; margin-bottom: 20px; }
+            .comparison-feature { padding: 10px 0; }
+            .comparison-feature-label { font-size: 0.75rem; }
+            .comparison-feature-value { font-size: 0.9rem; }
+
+            .strava-inner {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .strava-title { font-size: 2.5rem; }
+
+            .strava-card { padding: 40px 28px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="laxcc-cbd-guide">
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="hero-bg-anim"></div>
+        <div class="hero-container animate-in">
+
+            <!-- Text Column -->
+            <div class="hero-text-column">
+                <div class="hero-badge">Licensed Dispensary</div>
+                <h1 class="hero-title">
+                    <span id="hero-line-1">Best CBD</span>
+                    <span id="hero-line-2">Store</span>
+                    <span id="hero-line-3">Near LAX</span>
+                </h1>
+                <p class="hero-subtitle">
+                    <a href="https://laxcc.com" style="color: var(--primary-teal); font-weight: 700; text-decoration: none;">LAXCC</a> is Los Angeles' fully licensed cannabis dispensary — steps from LAX. Shop lab-tested CBD tinctures, edibles, topicals, and more with confidence.
+                </p>
+            </div>
+
+            <!-- Visual Column -->
+            <div class="hero-image-column">
+                <div class="hero-image-col-inner">
+                    <i class="fas fa-certificate col-icon"></i>
+                    <h3>Fully Licensed &amp; Legal</h3>
+                    <p>Every product on our shelves is state-compliant, lab-tested, and safe to purchase near LAX.</p>
+                    <div class="hero-license-badge">
+                        <i class="fas fa-shield-halved"></i>
+                        California Licensed Retailer
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Story 1: Licensed & Trusted -->
+    <section id="start-guide" class="story-section" style="background: #fbf8f2 !important;">
+        <div class="story-blob"></div>
+        <div class="story-container">
+            <div class="story-content animate-in">
+                <div class="story-number">01</div>
+                <h2 class="story-title">Licensed &amp; Trusted</h2>
+                <p class="story-desc">
+                    Not all CBD is created equal — and not all stores selling it are legal. LAXCC is a fully licensed California cannabis retailer, which means every CBD product on our shelves has been vetted, tested by a certified lab, and approved for sale under state law.
+                </p>
+                <ul class="feature-list">
+                    <li>State-licensed California cannabis retailer</li>
+                    <li>All products verified by accredited third-party labs</li>
+                    <li>Compliant with California Bureau of Cannabis Control</li>
+                    <li>Knowledgeable budtenders to guide your purchase</li>
+                </ul>
+                <div class="pros-cons-row">
+                    <div class="pc-box pc-pros">
+                        <strong><i class="fas fa-shield-halved"></i> Licensed</strong>
+                        Full transparency on potency, purity, and ingredients for every product we carry.
+                    </div>
+                    <div class="pc-box pc-cons">
+                        <strong><i class="fas fa-exclamation-circle"></i> Unlicensed Shops</strong>
+                        No testing requirements, no accountability — and potentially harmful additives.
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-visual animate-in">
+                <div class="visual-card visual-accent-teal">
+                    <div class="visual-tag">Why It Matters</div>
+                    <div class="visual-icon-wrapper">
+                        <div class="visual-icon" style="color: var(--primary-teal); border-color: var(--primary-teal);">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+                    </div>
+                    <h3>Safety First</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.9rem; line-height: 1.6;">
+                        California licensing means every gram is<br>tested, every label is accurate.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Story 2: CBD Product Range -->
+    <section class="story-section" style="background: #fbf8f2 !important;">
+        <div class="story-blob"></div>
+        <div class="story-container">
+            <div class="story-content animate-in">
+                <div class="story-number">02</div>
+                <h2 class="story-title">Every Form of CBD</h2>
+                <p class="story-desc">
+                    Whether you're looking for fast-acting sublingual drops, a long-lasting edible, or a soothing topical — LAXCC carries a curated selection of CBD formats to match your lifestyle and wellness goals.
+                </p>
+                <ul class="feature-list">
+                    <li>CBD Tinctures &amp; Oils (fast onset, precise dosing)</li>
+                    <li>CBD Edibles &amp; Gummies (long-lasting, discreet)</li>
+                    <li>CBD Topicals &amp; Balms (targeted relief)</li>
+                    <li>CBD Capsules &amp; Softgels (daily wellness routine)</li>
+                    <li>CBD Vapes &amp; Pre-Rolls (for experienced consumers)</li>
+                </ul>
+            </div>
+
+            <div class="story-visual animate-in">
+                <div class="visual-card visual-accent-green">
+                    <div class="visual-tag">Full Spectrum</div>
+                    <div class="visual-icon-wrapper">
+                        <div class="visual-icon" style="color: var(--accent-green); border-color: var(--accent-green);">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                    </div>
+                    <h3>Something for Everyone</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.9rem; line-height: 1.6;">
+                        From micro-dose tinctures to CBD-rich topicals,<br>we have what you need.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Story 3: Near LAX Convenience -->
+    <section class="story-section" style="background: #fbf8f2 !important;">
+        <div class="story-blob"></div>
+        <div class="story-container">
+            <div class="story-content animate-in">
+                <div class="story-number">03</div>
+                <h2 class="story-title">Minutes from LAX</h2>
+                <p class="story-desc">
+                    Located in Inglewood — just blocks from Los Angeles International Airport — LAXCC is the most convenient licensed CBD dispensary for travelers, airport workers, and LA locals in the South Bay area.
+                </p>
+                <ul class="feature-list">
+                    <li>Walking distance from LAX terminals</li>
+                    <li>Open 7 days a week with extended hours</li>
+                    <li>Online ordering with in-store pickup</li>
+                    <li>Delivery available in surrounding neighborhoods</li>
+                </ul>
+                <div class="pros-cons-row">
+                    <div class="pc-box pc-pros">
+                        <strong><i class="fas fa-plane"></i> Travelers</strong>
+                        Stock up on CBD before a long flight or land and restock on arrival.
+                    </div>
+                    <div class="pc-box pc-cons">
+                        <strong><i class="fas fa-map-marker-alt"></i> Locals</strong>
+                        Your neighborhood licensed CBD source — no drive required.
+                    </div>
+                </div>
+            </div>
+
+            <div class="story-visual animate-in">
+                <div class="visual-card visual-accent-dark">
+                    <div class="visual-tag">Conveniently Located</div>
+                    <div class="visual-icon-wrapper">
+                        <div class="visual-icon" style="color: var(--primary-dark); border-color: var(--primary-dark);">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                    </div>
+                    <h3>Near LAX</h3>
+                    <p style="color: var(--text-muted); margin-top: 10px; font-size: 0.9rem; line-height: 1.6;">
+                        Inglewood, California.<br>The most accessible licensed dispensary near the airport.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Product Shortcode: CBD Products -->
+    <section style="background: #fbf8f2 !important; width: 100%; padding: 60px 0; overflow: hidden;">
+        <div style="max-width: 1100px; margin: 0 auto; padding: 0 40px; text-align: center; margin-bottom: 40px;">
+            <h2 style="color: #00AFC9 !important; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 16px; letter-spacing: -0.03em; line-height: 1.1;">Shop CBD Products Near LAX</h2>
+            <p style="color: #64748b; font-size: 1.1rem; line-height: 1.7; max-width: 700px; margin: 0 auto;">Browse our full selection of lab-tested CBD products — from tinctures and edibles to topicals and capsules. Every product is licensed, tested, and available for pickup near LAX Airport.</p>
+        </div>
+        <div style="width: 100%; max-width: 100%; padding: 0;">
+            [leafbridge_specific_product_filter category="CBD" count="20"]
+        </div>
+    </section>
+
+
+    <!-- Quick Comparison: CBD Formats -->
+    <section class="story-section" style="background: #fbf8f2;">
+        <div class="story-container" style="display: block; max-width: 1100px;">
+            <div class="brand-showcase-header" style="margin-bottom: 48px;">
+                <h2 style="color: #00AFC9 !important; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 900; letter-spacing: -0.03em;">CBD Format Guide</h2>
+                <p style="color: var(--text-muted);">Choose the format that fits your routine.</p>
+            </div>
+
+            <div class="comparison-grid">
+                <!-- Tinctures -->
+                <div class="comparison-card comparison-card--teal">
+                    <div class="comparison-card-accent"></div>
+                    <div class="comparison-card-inner">
+                        <div class="comparison-card-icon"><i class="fas fa-eye-dropper"></i></div>
+                        <div class="comparison-card-type">Tinctures</div>
+                        <div class="comparison-card-tagline">Fast &amp; Precise</div>
+                        <div class="comparison-features">
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Onset Time</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> 15–45 min</span>
+                            </div>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Duration</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> 4–6 hours</span>
+                            </div>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Ease of Use</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> Very Easy</span>
+                            </div>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Best For</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> Daily Dosing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edibles -->
+                <div class="comparison-card comparison-card--green">
+                    <div class="comparison-card-accent"></div>
+                    <div class="comparison-card-inner">
+                        <div class="comparison-card-icon"><i class="fas fa-cookie-bite"></i></div>
+                        <div class="comparison-card-type">Edibles</div>
+                        <div class="comparison-card-tagline">Long-Lasting</div>
+                        <div class="comparison-features">
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Onset Time</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> 45–90 min</span>
+                            </div>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Duration</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> 6–8 hours</span>
+                            </div>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Ease of Use</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> Very Easy</span>
+                            </div>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Best For</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> Sleep &amp; Recovery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topicals -->
+                <div class="comparison-card comparison-card--orange">
+                    <div class="comparison-card-accent"></div>
+                    <div class="comparison-card-inner">
+                        <div class="comparison-card-icon"><i class="fas fa-hand-sparkles"></i></div>
+                        <div class="comparison-card-type">Topicals</div>
+                        <div class="comparison-card-tagline">Targeted Relief</div>
+                        <div class="comparison-features">
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Onset Time</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> 10–20 min</span>
+                            </div>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Duration</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> 2–4 hours</span>
+                            </div>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Ease of Use</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> Easy</span>
+                            </div>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Best For</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> Muscle &amp; Joint</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Sträva Craft Coffee Recommendation -->
+    <section class="strava-section">
+        <div class="strava-container">
+            <div class="strava-label">Our Editors Also Recommend</div>
+
+            <div class="strava-inner">
+                <!-- Content -->
+                <div class="strava-content-col">
+                    <div class="strava-eyebrow">CBD Coffee Pick</div>
+                    <h2 class="strava-title">Sträva Craft Coffee</h2>
+                    <p class="strava-desc">
+                        CBD doesn't have to come in a tincture. Sträva Craft Coffee is a Colorado-based specialty roaster that infuses 100% Arabica beans with broad-spectrum CBD — delivering calm, focused energy without the jitters. Think of it as your morning ritual, upgraded.
+                    </p>
+
+                    <div class="strava-features">
+                        <div class="strava-feature">
+                            <div class="strava-feature-icon"><i class="fas fa-mug-hot"></i></div>
+                            <div class="strava-feature-text">
+                                <strong>CBD-Infused Specialty Roast</strong>
+                                <span>Premium small-batch coffee infused with organic CBD. Choose your strength: 100mg, 250mg, or 500mg per bag — available as whole beans, K-Cups, and Nespresso pods.</span>
+                            </div>
+                        </div>
+                        <div class="strava-feature">
+                            <div class="strava-feature-icon"><i class="fas fa-seedling"></i></div>
+                            <div class="strava-feature-text">
+                                <strong>100% Arabica, Non-GMO &amp; Sustainable</strong>
+                                <span>Sourced from sustainable farms, made with organic broad-spectrum hemp extract, CBD, CBG, and natural terpenes.</span>
+                            </div>
+                        </div>
+                        <div class="strava-feature">
+                            <div class="strava-feature-icon"><i class="fas fa-star"></i></div>
+                            <div class="strava-feature-text">
+                                <strong>As Seen in Esquire, Men's Health &amp; CBS</strong>
+                                <span>A premium player in the functional beverage space — recognized nationally for quality and innovation.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://www.stravacraftcoffee.com/" target="_blank" rel="noopener noreferrer" class="strava-link">
+                        Visit Sträva Craft Coffee <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Visual Card -->
+                <div class="strava-visual-col">
+                    <div class="strava-card">
+                        <span class="strava-card-icon">☕</span>
+                        <div class="strava-card-brand">STRÄVA</div>
+                        <div class="strava-card-sub">Craft Coffee + CBD</div>
+
+                        <div class="strava-strength-pills">
+                            <span class="strava-pill">100mg</span>
+                            <span class="strava-pill">250mg</span>
+                            <span class="strava-pill">500mg</span>
+                        </div>
+
+                        <p class="strava-card-quote">
+                            "Functional coffee designed for calm energy without jitters" — premium small-batch roasts available as whole beans, K-Cups, and Nespresso pods.
+                        </p>
+
+                        <div class="strava-press">
+                            <span class="strava-press-badge">CBS</span>
+                            <span class="strava-press-badge">Esquire</span>
+                            <span class="strava-press-badge">Men's Health</span>
+                            <span class="strava-press-badge">New York Magazine</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="faq-header">
+                <h2>Frequently<br>Asked<br>Questions</h2>
+                <p>Common questions about buying CBD near LAX, answered by our team.</p>
+                <span class="faq-deco"></span>
+            </div>
+
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Is CBD legal to buy near LAX?
+                        <i class="fas fa-plus faq-icon"></i>
+                    </summary>
+                    <p class="faq-answer">
+                        Yes. California legalized both hemp-derived CBD (federally legal under the 2018 Farm Bill) and cannabis-derived CBD through its regulated dispensary system. LAXCC is a fully licensed California cannabis retailer, making every purchase legal, compliant, and traceable. Always purchase from a licensed dispensary to ensure the products are lab-tested and legitimate.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        What's the difference between CBD and THC?
+                        <i class="fas fa-plus faq-icon"></i>
+                    </summary>
+                    <p class="faq-answer">
+                        Both CBD (cannabidiol) and THC (tetrahydrocannabinol) come from the cannabis plant, but they work very differently. <strong>THC</strong> is psychoactive — it produces the "high" associated with cannabis. <strong>CBD</strong> is non-intoxicating and is commonly used for general wellness, stress support, and physical recovery without any impairment. Many LAXCC CBD products contain little to no THC.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Can I bring CBD products on a plane from LAX?
+                        <i class="fas fa-plus faq-icon"></i>
+                    </summary>
+                    <p class="faq-answer">
+                        The TSA focuses on security threats rather than cannabis searches, but current federal policy still technically prohibits cannabis — including cannabis-derived CBD — from being transported across state lines. Hemp-derived CBD products (0.3% THC or less) occupy a greyer area and are more commonly permitted. We always recommend checking the most current TSA and airline guidelines before traveling, and consulting with our budtenders on the best product options for your situation.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Does LAXCC deliver CBD near the airport?
+                        <i class="fas fa-plus faq-icon"></i>
+                    </summary>
+                    <p class="faq-answer">
+                        Yes! LAXCC offers licensed cannabis delivery to surrounding neighborhoods in the Inglewood and LAX area. You can also order online for in-store pickup — a fast option if you're passing through. Visit <a href="https://laxcc.com" style="color: var(--primary-teal); font-weight: 700;">laxcc.com</a> to check delivery availability for your address.
+                    </p>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        What CBD brands does LAXCC carry?
+                        <i class="fas fa-plus faq-icon"></i>
+                    </summary>
+                    <p class="faq-answer">
+                        We carry a rotating selection of top California CBD brands — including tincture brands, edible makers, and topical lines — all lab-tested and licensed. Our product lineup is updated regularly. Browse the live menu above or visit <a href="https://laxcc.com/shop" style="color: var(--primary-teal); font-weight: 700;">laxcc.com/shop</a> for our current CBD selection.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Brand Showcase -->
+    <section class="brand-showcase">
+        <div class="brand-showcase-header">
+            <span style="color: var(--primary-teal); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">Our Favorites</span>
+            <h2>Top CBD Brands We Carry</h2>
+            <p style="opacity: 0.7;">A curated look at the wellness brands stocked on our shelves.</p>
+        </div>
+
+        <div class="brand-scroll-container">
+            <div class="brand-item">
+                <span class="brand-logo-alt">PAPA &amp; BARKLEY</span>
+                <span class="brand-category-tag">Tinctures &amp; Topicals</span>
+                <p class="brand-desc">California's most trusted CBD wellness brand. Made with whole-plant solventless extraction for the purest full-spectrum effect.</p>
+                <a href="https://laxcc.com/shop/" class="brand-btn">Shop CBD <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="brand-item">
+                <span class="brand-logo-alt">CARE BY DESIGN</span>
+                <span class="brand-category-tag">Ratio Products</span>
+                <p class="brand-desc">Precision CBD:THC ratios — from 18:1 all the way to 1:1. Perfect for those dialing in a personalized wellness routine.</p>
+                <a href="https://laxcc.com/shop/" class="brand-btn">Shop CBD <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="brand-item">
+                <span class="brand-logo-alt">KIVA</span>
+                <span class="brand-category-tag">CBD Edibles</span>
+                <p class="brand-desc">Beautifully crafted cannabis edibles. Their CBD-forward Camino gummies are a customer favorite for calm and sleep support.</p>
+                <a href="https://laxcc.com/shop/" class="brand-btn">Shop CBD <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="brand-item">
+                <span class="brand-logo-alt">FLOW KANA</span>
+                <span class="brand-category-tag">CBD Pre-Rolls</span>
+                <p class="brand-desc">Sun-grown, small-farm sourced CBD-rich flower. For those who prefer the traditional ritual of a well-rolled pre-roll.</p>
+                <a href="https://laxcc.com/shop/" class="brand-btn">Shop CBD <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="hero-bg-anim" style="opacity: 0.3;"></div>
+        <div class="cta-box animate-in">
+            <h2 style="font-size: 3.5rem; margin-bottom: 20px; font-weight: 900;">Ready to Shop CBD Near LAX?</h2>
+            <p style="font-size: 1.3rem; opacity: 0.9; margin-top: 10px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                LAXCC is Los Angeles' most convenient licensed CBD dispensary — steps from LAX Airport. Browse the full menu and order for pickup or delivery today.
+            </p>
+            <a href="https://laxcc.com/shop/" class="cta-btn">
+                <i class="fas fa-leaf"></i> Browse Our CBD Menu
+            </a>
+        </div>
+    </section>
+
+</div><!-- /.laxcc-cbd-guide -->
+
+</body>
+
+</html>
