@@ -115,15 +115,14 @@
         }
 
         .hero-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
             position: relative;
             z-index: 2;
-            width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 0;
             align-items: stretch;
             height: 100%;
         }
@@ -134,11 +133,12 @@
             justify-content: center;
             position: relative;
             z-index: 3;
+            padding: 100px 60px 100px 80px;
         }
 
         .hero-image-column {
-            width: 100%;
-            height: 100%;
+            position: absolute;
+            inset: 0;
             background-image: url('https://kiva.sfo2.digitaloceanspaces.com/kiva/_1920xAUTO_crop_center-center_none/Kiva4920_JM_EDIT_BL-1180x1470-e270448.jpg');
             background-size: cover;
             background-position: center top;
@@ -213,11 +213,11 @@
             right: 28px;
             width: 192px;
             z-index: 10;
-            background: rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.11);
             backdrop-filter: blur(28px) saturate(200%) brightness(1.08);
             -webkit-backdrop-filter: blur(28px) saturate(200%) brightness(1.08);
             border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.38);
+            border: 1px solid rgba(255, 255, 255, 0.30);
             box-shadow:
                 0 8px 32px rgba(15, 58, 95, 0.22),
                 0 1.5px 0 0 rgba(255,255,255,0.55) inset,
@@ -525,7 +525,7 @@
         .story-title {
             font-size: 3.5rem;
             font-weight: 900;
-            color: var(--primary-dark);
+            color: var(--primary-teal);
             margin-bottom: 30px;
             position: relative;
             z-index: 1;
@@ -1451,21 +1451,30 @@
 
             .hero-container {
                 grid-template-columns: 1fr;
-                gap: 40px;
-                padding-bottom: 60px;
+                gap: 0;
+                padding-bottom: 0;
             }
 
-            .hero-text-column { order: 1; }
+            .hero-text-column {
+                order: 1;
+                padding: 60px 24px;
+            }
 
             .hero-image-wrapper {
                 order: 2;
                 width: 100%;
+                height: 60vw;
+                min-height: 300px;
+                max-height: 480px;
+                position: relative;
             }
 
             .hero-image-column {
-                height: 50vh;
-                width: 100%;
-                border-radius: 20px;
+                position: absolute;
+                inset: 0;
+                border-radius: 0;
+                height: auto;
+                width: auto;
             }
 
             .hero-subtitle {
@@ -1658,6 +1667,17 @@
     </section>
 
 
+    <!-- THC Disclosure Banner -->
+    <div id="thc-disclosure" style="background:#0f3a5f; padding: 20px 32px; display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap;">
+        <span style="color:#F89459; font-size:1.2rem; flex-shrink:0; margin-top:2px;"><i class="fas fa-circle-exclamation"></i></span>
+        <div style="flex:1; min-width:240px;">
+            <strong style="color:#fff; font-size:0.85rem; letter-spacing:0.5px; display:block; margin-bottom:4px;">Important: These CBD Products May Contain THC</strong>
+            <p style="color:rgba(255,255,255,0.7); font-size:0.8rem; line-height:1.6; margin:0;">
+                The CBD products sold at LAXCC are cannabis-derived and may contain <strong style="color:#fff;">trace to measurable amounts of THC</strong> — the compound responsible for psychoactive effects. Amounts vary by product and format. First-time users or those sensitive to THC should start with a very low dose and consult a budtender. If you want <strong style="color:#3daa6e;">zero THC</strong>, we recommend the <a href="https://www.stravacraftcoffee.com/collections/all-products" target="_blank" rel="noopener noreferrer" style="color:#3daa6e; font-weight:700; text-decoration:none;">Sträva Craft CBD Coffee</a> featured below — it's hemp-derived with no detectable THC.
+            </p>
+        </div>
+    </div>
+
     <!-- CBD Product Grid -->
     <section class="product-grid-section">
         <div class="product-grid-wrap">
@@ -1836,7 +1856,7 @@
         <div class="story-container">
             <div class="story-content animate-in">
                 <div class="story-number">01</div>
-                <h2 class="story-title">Licensed &amp; Trusted</h2>
+                <h2 class="story-title" id="story-title-1">Licensed &amp; Trusted</h2>
                 <p class="story-desc">
                     Not all CBD is created equal — and not all stores selling it are legal. LAXCC is a fully licensed California cannabis retailer, which means every CBD product on our shelves has been vetted, tested by a certified lab, and approved for sale under state law.
                 </p>
@@ -1882,7 +1902,7 @@
         <div class="story-container">
             <div class="story-content animate-in">
                 <div class="story-number">02</div>
-                <h2 class="story-title">Every Form of CBD</h2>
+                <h2 class="story-title" id="story-title-2">Every Form of CBD</h2>
                 <p class="story-desc">
                     Whether you're looking for fast-acting sublingual drops, a long-lasting edible, or a soothing topical — LAXCC carries a curated selection of CBD formats to match your lifestyle and wellness goals.
                 </p>
@@ -1919,7 +1939,7 @@
         <div class="story-container">
             <div class="story-content animate-in">
                 <div class="story-number">03</div>
-                <h2 class="story-title">Minutes from LAX</h2>
+                <h2 class="story-title" id="story-title-3">Minutes from LAX</h2>
                 <p class="story-desc">
                     Located in Inglewood — just blocks from Los Angeles International Airport — LAXCC is the most convenient licensed CBD dispensary for travelers, airport workers, and LA locals in the South Bay area.
                 </p>
@@ -2070,10 +2090,10 @@
 
             <!-- Right: Content -->
             <div class="strava-content-right" style="color:#fff;">
-                <div class="strava-eyebrow-new">Our CBD Coffee Pick</div>
+                <div class="strava-eyebrow-new">Zero THC Option · Our Pick</div>
                 <h2 class="strava-headline">Wake Up<br>Feeling<br>Your Best.</h2>
                 <p class="strava-subline">
-                    We're not affiliated with <a href="https://www.stravacraftcoffee.com/" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.8);text-decoration:underline;text-underline-offset:3px;">Sträva Craft Coffee</a> — but we recommend them as a great option for anyone looking for <a href="https://www.stravacraftcoffee.com/" target="_blank" rel="noopener noreferrer" style="color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px;">CBD coffee</a>. Colorado-roasted Arabica, infused with broad-spectrum hemp CBD. No tinctures. Just your morning cup, upgraded.
+                    Looking for <strong style="color:#3daa6e;">no THC at all?</strong> We recommend <a href="https://www.stravacraftcoffee.com/" target="_blank" rel="noopener noreferrer" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px;">Sträva Craft Coffee</a> — Colorado-roasted Arabica infused with <strong style="color:#fff;">broad-spectrum hemp CBD with no detectable THC</strong>. We're not affiliated with them, but it's the cleanest CBD option we've found for anyone who wants the benefits of CBD without any psychoactive effects.
                 </p>
 
                 <div class="strava-doses" style="margin-top: 8px;">
