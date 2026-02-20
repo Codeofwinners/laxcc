@@ -86,11 +86,7 @@
             background: var(--cream);
             position: relative;
             min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
-            padding: 40px 0;
         }
 
         .hero-bg-anim {
@@ -124,7 +120,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 0;
             align-items: stretch;
-            height: 100%;
+            min-height: 90vh;
         }
 
         .hero-text-column {
@@ -142,9 +138,6 @@
             background-image: url('https://kiva.sfo2.digitaloceanspaces.com/kiva/_1920xAUTO_crop_center-center_none/Kiva4920_JM_EDIT_BL-1180x1470-e270448.jpg');
             background-size: cover;
             background-position: center top;
-            border-radius: 40px;
-            position: relative;
-            box-shadow: var(--shadow-xl);
             display: flex;
             align-items: flex-end;
             justify-content: flex-start;
@@ -156,7 +149,6 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(to top, rgba(15,58,95,0.75) 0%, transparent 55%);
-            border-radius: 40px;
         }
 
         .hero-image-col-inner {
