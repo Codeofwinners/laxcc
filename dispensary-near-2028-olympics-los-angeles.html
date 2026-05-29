@@ -275,17 +275,23 @@
         font-weight: 900 !important;
     }
 
+    /* CALLOUT — seamless emphasis, no box/card. Larger navy statement. */
     .laxcc-oly .oly-callout {
-        background: var(--cream) !important;
-        border-radius: 14px !important;
-        padding: 20px 22px !important;
-        margin: 20px 0 !important;
-        position: relative !important;
-        box-shadow: inset 4px 0 0 var(--orange) !important;
+        margin: 26px 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
     }
-    .laxcc-oly .oly-section.alt .oly-callout { background: var(--white) !important; }
-    .laxcc-oly .oly-callout p { margin-bottom: 0 !important; }
-    .laxcc-oly .oly-callout strong { color: var(--navy) !important; }
+    .laxcc-oly .oly-callout p {
+        margin: 0 !important;
+        font-size: clamp(17px, 2.1vw, 21px) !important;
+        line-height: 1.55 !important;
+        font-weight: 600 !important;
+        color: var(--navy) !important;
+        letter-spacing: -0.01em !important;
+    }
+    .laxcc-oly .oly-callout p strong { color: var(--orange) !important; font-weight: 800 !important; }
 
     /* DISTANCE / VENUE TABLE */
     .laxcc-oly .oly-table {
@@ -361,26 +367,23 @@
     @media (min-width: 720px) {
         .laxcc-oly .oly-prod-grid { grid-template-columns: 1fr 1fr !important; }
     }
-    /* each item is its own 2-column row: icon | content */
+    /* each item is its own 2-column row: product image | content */
     .laxcc-oly .oly-prod {
         background: transparent !important;
         padding: 0 !important;
         display: grid !important;
-        grid-template-columns: 42px 1fr !important;
-        column-gap: 14px !important;
+        grid-template-columns: 72px 1fr !important;
+        column-gap: 16px !important;
         align-items: start !important;
     }
-    .laxcc-oly .oly-prod-ico {
+    .laxcc-oly .oly-prod-img {
         grid-column: 1 !important;
         grid-row: 1 / span 3 !important;
-        width: 42px !important; height: 42px !important;
-        border-radius: 50% !important;
-        background: rgba(248, 148, 89, 0.13) !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        font-size: 22px !important;
-        line-height: 1 !important;
+        width: 72px !important;
+        height: 72px !important;
+        object-fit: contain !important;
+        border-radius: 14px !important;
+        display: block !important;
     }
     .laxcc-oly .oly-prod .oly-prod-tag {
         display: block !important;
@@ -490,6 +493,25 @@
     }
     .laxcc-oly .oly-cta-location strong { color: var(--navy) !important; font-weight: 800 !important; }
 
+    /* MAP */
+    .laxcc-oly .oly-map {
+        max-width: 760px !important;
+        margin: 0 auto 24px !important;
+        border-radius: 18px !important;
+        overflow: hidden !important;
+        box-shadow: 0 14px 36px rgba(15, 58, 95, 0.16) !important;
+        line-height: 0 !important;
+    }
+    .laxcc-oly .oly-map iframe {
+        width: 100% !important;
+        height: 360px !important;
+        border: 0 !important;
+        display: block !important;
+    }
+    @media (max-width: 600px) {
+        .laxcc-oly .oly-map iframe { height: 300px !important; }
+    }
+
     /* SOURCES */
     .laxcc-oly .oly-sources {
         background: var(--white) !important;
@@ -532,19 +554,15 @@
     <!-- HERO -->
     <section class="oly-hero">
         <div class="oly-hero-img">
-            <picture>
-                <source media="(min-width: 769px)"
-                    srcset="https://laxcc.com/wp-content/uploads/2026/05/dispensary-near-2028-olympics-LA.png">
-                <img src="https://laxcc.com/wp-content/uploads/2026/05/dispensary-near-2028-olympics-Los-Angeles.png"
-                    alt="Dispensary near the 2028 Olympics in Los Angeles — LAXCC near LAX and Inglewood venues"
-                    loading="eager">
-            </picture>
+            <img src="https://laxcc.com/wp-content/uploads/2026/05/best-dispensary-near-olympics-2028.png"
+                alt="LAXCC dispensary storefront with cannabis-infused edibles, the 2028 Olympic torch and gold medal, and the Los Angeles skyline — best dispensary near the 2028 LA Olympics"
+                loading="eager">
         </div>
         <div class="oly-hero-inner">
             <div class="oly-eyebrow">LA28 Games Guide &bull; Updated May 2026</div>
             <h1>The Best Dispensary Near the <span>2028 Olympics</span> in Los Angeles</h1>
             <p>
-                The <strong>2028 Summer Olympics</strong> land in Los Angeles from <strong>July 14&ndash;30, 2028</strong> &mdash; with the Opening Ceremony, swimming, and basketball all happening in <strong>Inglewood</strong>, just minutes from LAX. If you're flying in for the Games, <strong>LAXCC</strong> at 8332 Lincoln Blvd is the closest stop for vapes, edibles, drinks, and pre-rolls to elevate your trip. Here's when, where, the cannabis rules to know, and exactly what to grab.
+                The <strong>2028 Summer Olympics</strong> land in Los Angeles from <strong>July 14&ndash;30, 2028</strong> &mdash; the biggest Games in history, with <strong>36 sports</strong> and <strong>353 medal events</strong> spread across the city. And the Inglewood venues right next to LAX host some of the marquee action: the Opening Ceremony, swimming, and basketball. If you're flying in, <strong>LAXCC</strong> at 8332 Lincoln Blvd is the closest stop for vapes, edibles, drinks, and pre-rolls to elevate your trip. Here's what's going down, when, where, the cannabis rules to know, and exactly what to grab.
             </p>
             <div class="oly-hero-actions">
                 <a href="#oly-distance" class="oly-btn-primary">How Close Is LAXCC? &darr;</a>
@@ -579,20 +597,41 @@
         </div>
     </section>
 
+    <!-- WHAT'S GOING DOWN -->
+    <section class="oly-section alt">
+        <div class="oly-section-inner">
+            <h2>What's Going Down at the 2028 LA Olympics</h2>
+            <p>
+                This isn't a one-sport show. The 2028 Games are the <strong>largest Olympics ever staged</strong> &mdash; roughly <strong>11,000 athletes</strong> from more than 200 nations competing in <strong>36 sports</strong> across <strong>353 medal events</strong> over 17 days. It's the third time Los Angeles has hosted the Summer Olympics, after 1932 and 1984, and the whole city becomes the stadium.
+            </p>
+            <p>
+                You'll see the classics &mdash; <strong>track &amp; field, swimming, gymnastics, basketball, soccer, volleyball, boxing, and tennis</strong> &mdash; plus skateboarding, surfing, and 3x3 basketball. And LA28 is adding <strong>five new sports</strong> you won't have seen at recent Games:
+            </p>
+
+            <ul>
+                <li><strong>Flag Football</strong> &mdash; the 5-on-5, non-contact format, making its Olympic debut</li>
+                <li><strong>Squash</strong> &mdash; also debuting at the Olympics for the first time ever</li>
+                <li><strong>Cricket (T20)</strong> &mdash; returning to the Games with six-team men's &amp; women's tournaments</li>
+                <li><strong>Baseball &amp; Softball</strong> &mdash; back on the program, a natural fit for LA</li>
+                <li><strong>Lacrosse (Sixes)</strong> &mdash; returning in its fast, six-a-side format</li>
+            </ul>
+
+            <div class="oly-callout">
+                <p><strong>Closest to LAX:</strong> the Inglewood cluster minutes from LAXCC hosts the Opening Ceremony (at SoFi Stadium), Olympic swimming (SoFi becomes the largest swim venue ever in Week 2), and basketball (next door at the Intuit Dome). Track &amp; field and the Closing Ceremony land at the nearby Coliseum, with gymnastics and indoor sports downtown and water sports in Long Beach. Whatever you're flying in to watch, LAXCC is on the way.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- WHEN & WHERE -->
     <section class="oly-section">
         <div class="oly-section-inner">
             <h2>When &amp; Where Are the 2028 Olympics in Los Angeles?</h2>
             <p>
-                Los Angeles hosts the <strong>Games of the XXXIV Olympiad</strong> from <strong>July 14 to July 30, 2028</strong>, with a handful of team sports kicking off two days early on July 12. The <strong>LA28 Paralympic Games</strong> follow from <strong>August 15 to August 27, 2028</strong>. It's the third time LA has hosted the Summer Olympics, after 1932 and 1984.
+                Los Angeles hosts the <strong>Games of the XXXIV Olympiad</strong> from <strong>July 14 to July 30, 2028</strong>, with a handful of team sports kicking off two days early on July 12. The <strong>LA28 Paralympic Games</strong> follow from <strong>August 15 to August 27, 2028</strong>.
             </p>
             <p>
-                Instead of building a single Olympic park, LA28 spreads events across venues the city already has &mdash; from Downtown LA and Exposition Park to Long Beach, Carson, and the coast. But the center of gravity for the Games sits right in LA's <strong>South Bay and Inglewood corridor</strong>, the neighborhoods that wrap around LAX Airport.
+                Instead of building a single Olympic park, LA28 spreads events across venues the city already has &mdash; from Downtown LA and Exposition Park to Long Beach, Carson, and the coast. But the center of gravity for the Games sits right in LA's <strong>South Bay and Inglewood corridor</strong>, the neighborhoods that wrap around LAX Airport &mdash; and around LAXCC.
             </p>
-
-            <div class="oly-callout">
-                <p><strong>The headline for visitors:</strong> The Opening Ceremony will be shared between <strong>SoFi Stadium in Inglewood</strong> and the <strong>LA Memorial Coliseum</strong>, and SoFi then converts into the largest swimming venue in Olympic history for Week 2. The <strong>Intuit Dome</strong> next door hosts basketball. Both are a short drive from LAXCC.</p>
-            </div>
 
             <h3>The Inglewood Sports Cluster &mdash; LA's Olympic Hub</h3>
             <p>
@@ -698,25 +737,25 @@
 
             <div class="oly-prod-grid">
                 <div class="oly-prod">
-                    <div class="oly-prod-ico">&#128168;</div>
+                    <img class="oly-prod-img" src="REPLACE_WITH_VAPE_IMAGE_URL" alt="Cannabis vape / disposable available at LAXCC" loading="lazy">
                     <span class="oly-prod-tag">Discreet &amp; Smoke-Free</span>
                     <h3>Vapes &amp; Disposables</h3>
                     <p>No smoke, minimal smell, pocket-sized. A distillate or live-resin vape is the easiest pick for a quick session back at the hotel &mdash; just keep it out of public spaces and the venues.</p>
                 </div>
                 <div class="oly-prod">
-                    <div class="oly-prod-ico">&#127849;</div>
+                    <img class="oly-prod-img" src="REPLACE_WITH_EDIBLE_IMAGE_URL" alt="Cannabis edible gummies available at LAXCC" loading="lazy">
                     <span class="oly-prod-tag">Zero Smoke</span>
                     <h3>Edibles &amp; Gummies</h3>
                     <p>The most travel-friendly pick &mdash; no smoke, no smell, no gear. <strong>Start with 2.5&ndash;5 mg</strong>, wait an hour before more, and cruise through a long event day comfortably.</p>
                 </div>
                 <div class="oly-prod">
-                    <div class="oly-prod-ico">&#129380;</div>
+                    <img class="oly-prod-img" src="REPLACE_WITH_DRINK_IMAGE_URL" alt="Cannabis THC drink / seltzer available at LAXCC" loading="lazy">
                     <span class="oly-prod-tag">Fast-Acting</span>
                     <h3>THC Drinks &amp; Seltzers</h3>
                     <p>The social, sessionable choice &mdash; they kick in faster than edibles and are easy to dose low. A clean alcohol alternative for the evening: no hangover, no smoke. Sip at your rental, never courtside.</p>
                 </div>
                 <div class="oly-prod">
-                    <div class="oly-prod-ico">&#128293;</div>
+                    <img class="oly-prod-img" src="REPLACE_WITH_PREROLL_IMAGE_URL" alt="Cannabis pre-roll / infused pre-roll available at LAXCC" loading="lazy">
                     <span class="oly-prod-tag">For the Lounge</span>
                     <h3>Pre-Rolls &amp; Infused Pre-Rolls</h3>
                     <p>Grab-and-go if you want to smoke &mdash; no grinding, no packing, and infused options for extra strength. Save them for a <strong>private space or a licensed lounge</strong>, since public smoking isn't legal near the venues.</p>
@@ -752,7 +791,7 @@
                 <span class="oly-faq-toggle">+</span>
             </summary>
             <div class="oly-faq-a">
-                The 2028 Summer Olympics run <strong>July 14&ndash;30, 2028</strong>, with a few team sports starting July 12. Events are spread across Greater LA, but the Opening Ceremony is shared between <strong>SoFi Stadium in Inglewood</strong> and the <strong>LA Memorial Coliseum</strong>, with swimming at SoFi and basketball at the neighboring Intuit Dome. The Paralympic Games follow August 15&ndash;27, 2028.
+                The 2028 Summer Olympics run <strong>July 14&ndash;30, 2028</strong> &mdash; the largest Games ever, with 36 sports and 353 medal events (including new sports like flag football, squash, and cricket). Events are spread across Greater LA, but the Opening Ceremony is shared between <strong>SoFi Stadium in Inglewood</strong> and the <strong>LA Memorial Coliseum</strong>, with swimming at SoFi and basketball at the neighboring Intuit Dome. The Paralympic Games follow August 15&ndash;27, 2028.
             </div>
         </details>
 
@@ -813,8 +852,16 @@
         <p>
             Five minutes from LAX, minutes from the Inglewood venues, and stocked with the vapes, edibles, drinks, and pre-rolls that travel well and keep your Games comfortable. Walk in, order pickup, curbside, or drive-thru &mdash; open daily 9 AM to 9:30 PM.
         </p>
-        <a href="https://www.google.com/maps?daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045" target="_blank" rel="nofollow noopener noreferrer" class="oly-btn-primary">
-            Directions to LAXCC &rarr;
+        <div class="oly-map">
+            <iframe
+                src="https://www.google.com/maps?q=LAXCC,+8332+Lincoln+Blvd,+Los+Angeles,+CA+90045&output=embed"
+                title="Map and directions to LAXCC — 8332 Lincoln Blvd, Los Angeles, CA 90045"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen></iframe>
+        </div>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045" target="_blank" rel="nofollow noopener noreferrer" class="oly-btn-primary">
+            Get Directions to LAXCC &rarr;
         </a>
         <div class="oly-cta-location">
             <strong>LAXCC</strong> &bull; 8332 Lincoln Blvd, Los Angeles, CA 90045 &bull; Open daily 9 AM &ndash; 9:30 PM
@@ -867,7 +914,7 @@
                     "name": "When and where are the 2028 Olympics in Los Angeles?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "The 2028 Summer Olympics run July 14-30, 2028, with a few team sports starting July 12. Events are spread across Greater LA, but the Opening Ceremony is shared between SoFi Stadium in Inglewood and the LA Memorial Coliseum, with swimming at SoFi and basketball at the neighboring Intuit Dome. The Paralympic Games follow August 15-27, 2028."
+                        "text": "The 2028 Summer Olympics run July 14-30, 2028, the largest Games ever with 36 sports and 353 medal events including new sports like flag football, squash, and cricket. Events are spread across Greater LA, but the Opening Ceremony is shared between SoFi Stadium in Inglewood and the LA Memorial Coliseum, with swimming at SoFi and basketball at the neighboring Intuit Dome. The Paralympic Games follow August 15-27, 2028."
                     }
                 },
                 {
