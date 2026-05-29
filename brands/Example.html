@@ -1,0 +1,696 @@
+<!-- SEO META — paste into Yoast/RankMath for this page -->
+<!-- Title: Shop Aether Fields Flower Near LAX Airport | LAXCC -->
+<!-- Description: Buy Aether Fields flower at LAXCC — licensed LA dispensary 5 min from LAX. Premium buds, lab-tested, taxes included. Walk in or order pickup today. -->
+
+<style>
+    /* ========================================
+       AETHER-FIELDS BRAND PAGE — LAXCC
+       Scoped to .laxcc-aether-fields
+       Elementor-safe: all rules use !important
+       ======================================== */
+
+    .laxcc-aether-fields *,
+    .laxcc-aether-fields *::before,
+    .laxcc-aether-fields *::after {
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .laxcc-aether-fields {
+        --navy: #1D508A;
+        --teal: #00AFC9;
+        --orange: #F89459;
+        --green: #7ECBB3;
+        --cream: #FBF8F2;
+        --white: #ffffff;
+        --text: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --navy-deep: #0f3a5f;
+
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        background: var(--cream) !important;
+        color: var(--text) !important;
+        line-height: 1.6 !important;
+        overflow-x: hidden !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+    }
+
+    @keyframes laxcc-aether-fields-fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* HERO — mobile-first */
+    .laxcc-aether-fields .aether-fields-hero { background: var(--cream) !important; }
+
+    .laxcc-aether-fields .aether-fields-hero-img {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #ffffff !important;
+        padding: 40px 20px !important;
+        overflow: hidden !important;
+    }
+
+    .laxcc-aether-fields .aether-fields-hero-img img {
+        max-width: 400px !important;
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+    /* Gallery photo fill mode */
+    .laxcc-aether-fields .aether-fields-hero-img-fill {
+        width: 100% !important;
+        overflow: hidden !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+
+    .laxcc-aether-fields .aether-fields-hero-img-fill img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+
+    .laxcc-aether-fields .aether-fields-hero-body {
+        max-width: 1400px !important;
+        margin: 0 auto !important;
+        padding: 32px 20px 28px !important;
+    }
+
+    .laxcc-aether-fields .aether-fields-hero-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        background: none !important;
+        border: none !important;
+        color: var(--text-muted) !important;
+        font-size: 0.65rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+        padding: 6px 14px !important;
+        border-radius: 100px !important;
+        margin-bottom: 16px !important;
+        white-space: nowrap !important;
+        width: fit-content !important;
+    }
+
+    .laxcc-aether-fields .aether-fields-hero-badge i { font-size: 0.55rem !important; }
+
+    .laxcc-aether-fields .aether-fields-hero h1 {
+        font-size: 2.4rem !important;
+        font-weight: 900 !important;
+        line-height: 1 !important;
+        letter-spacing: -0.03em !important;
+        color: var(--navy) !important;
+        margin-bottom: 16px !important;
+    }
+
+    .laxcc-aether-fields .aether-fields-hero h1 span { color: var(--orange) !important; }
+
+    .laxcc-aether-fields .aether-fields-hero-sub {
+        font-size: 0.95rem !important;
+        color: var(--text-muted) !important;
+        line-height: 1.6 !important;
+        margin-bottom: 24px !important;
+        max-width: 520px !important;
+    }
+
+    .laxcc-aether-fields .aether-fields-hero-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        margin-bottom: 28px !important;
+    }
+
+    .laxcc-aether-fields .aether-fields-hero-stats {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 12px !important;
+        border-top: 1px solid var(--border) !important;
+        padding-top: 24px !important;
+    }
+
+    .laxcc-aether-fields .aether-fields-stat-val {
+        font-size: 1.5rem !important;
+        font-weight: 900 !important;
+        color: var(--orange) !important;
+        letter-spacing: -0.03em !important;
+        line-height: 1 !important;
+        margin-bottom: 2px !important;
+    }
+
+    .laxcc-aether-fields .aether-fields-stat-lbl {
+        font-size: 0.6rem !important;
+        font-weight: 700 !important;
+        color: var(--text-muted) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    /* Buttons */
+    .laxcc-aether-fields .aether-fields-btn-primary,
+    .laxcc-aether-fields a.aether-fields-btn-primary,
+    .laxcc-aether-fields a.aether-fields-btn-primary:link,
+    .laxcc-aether-fields a.aether-fields-btn-primary:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        background: var(--orange) !important;
+        color: #fff !important;
+        font-size: 0.85rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.06em !important;
+        text-transform: uppercase !important;
+        padding: 16px 32px !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        transition: all 0.3s ease !important;
+        border: none !important;
+        cursor: pointer !important;
+    }
+
+    .laxcc-aether-fields a.aether-fields-btn-primary:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 32px rgba(248, 148, 89, 0.4) !important;
+    }
+
+    .laxcc-aether-fields .aether-fields-btn-secondary,
+    .laxcc-aether-fields a.aether-fields-btn-secondary,
+    .laxcc-aether-fields a.aether-fields-btn-secondary:link,
+    .laxcc-aether-fields a.aether-fields-btn-secondary:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        background: transparent !important;
+        color: var(--navy) !important;
+        font-size: 0.85rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.04em !important;
+        text-transform: uppercase !important;
+        padding: 16px 32px !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        border: 1px solid var(--navy) !important;
+        transition: all 0.3s ease !important;
+        cursor: pointer !important;
+    }
+
+    .laxcc-aether-fields a.aether-fields-btn-secondary:hover {
+        border-color: var(--orange) !important;
+        color: var(--orange) !important;
+        background: rgba(248, 148, 89, 0.06) !important;
+    }
+
+    /* Desktop hero */
+    @media (min-width: 769px) {
+        .laxcc-aether-fields .aether-fields-hero {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            min-height: 100vh !important;
+        }
+        .laxcc-aether-fields .aether-fields-hero-img {
+            height: 100% !important;
+            min-height: 100vh !important;
+            border-radius: 0 0 0 32px !important;
+            order: 2 !important;
+            padding: 60px 40px !important;
+        }
+        .laxcc-aether-fields .aether-fields-hero-img img { max-width: 480px !important; }
+        .laxcc-aether-fields .aether-fields-hero-img-fill {
+            height: 100% !important;
+            min-height: 100vh !important;
+            border-radius: 0 0 0 32px !important;
+            order: 2 !important;
+            padding: 0 !important;
+        }
+        .laxcc-aether-fields .aether-fields-hero-img-fill img { max-width: none !important; }
+        .laxcc-aether-fields .aether-fields-hero-body {
+            order: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            padding: 80px 60px !important;
+        }
+        .laxcc-aether-fields .aether-fields-hero h1 { font-size: clamp(2.8rem, 4vw, 4.2rem) !important; margin-bottom: 24px !important; }
+        .laxcc-aether-fields .aether-fields-hero-sub { font-size: 1.05rem !important; margin-bottom: 36px !important; }
+        .laxcc-aether-fields .aether-fields-hero-actions { flex-direction: row !important; margin-bottom: 0 !important; }
+        .laxcc-aether-fields .aether-fields-hero-stats { margin-top: 48px !important; padding-top: 32px !important; }
+        .laxcc-aether-fields .aether-fields-stat-val { font-size: 2rem !important; }
+        .laxcc-aether-fields .aether-fields-stat-lbl { font-size: 0.7rem !important; }
+    }
+
+    /* ABOUT section */
+    .laxcc-aether-fields .aether-fields-about { padding: 24px 0 0 !important; background: var(--cream) !important; }
+    .laxcc-aether-fields .aether-fields-about-container { max-width: 1400px !important; margin: 0 auto !important; padding: 0 20px !important; }
+    .laxcc-aether-fields .aether-fields-about-header { max-width: 680px !important; }
+
+    .laxcc-aether-fields .aether-fields-section-label {
+        display: inline-block !important;
+        font-size: 0.7rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 3px !important;
+        text-transform: uppercase !important;
+        color: var(--orange) !important;
+        margin-bottom: 20px !important;
+        position: relative !important;
+        padding-left: 36px !important;
+    }
+    .laxcc-aether-fields .aether-fields-section-label::before {
+        content: '' !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 50% !important;
+        width: 24px !important;
+        height: 2px !important;
+        background: var(--orange) !important;
+    }
+
+    .laxcc-aether-fields .aether-fields-about-top { display: flex !important; align-items: flex-end !important; justify-content: space-between !important; gap: 24px !important; margin-bottom: 16px !important; }
+    .laxcc-aether-fields .aether-fields-about-header h2 { font-size: clamp(2rem, 3.5vw, 3rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1.05 !important; margin-bottom: 12px !important; }
+    .laxcc-aether-fields .aether-fields-about-header p { font-size: 1rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; max-width: 480px !important; }
+
+    .laxcc-aether-fields .aether-fields-scroll-arrows { display: flex !important; gap: 8px !important; flex-shrink: 0 !important; }
+    .laxcc-aether-fields .aether-fields-scroll-arrow {
+        width: 40px !important; height: 40px !important; border-radius: 50% !important;
+        border: 1px solid var(--border) !important; background: var(--white) !important;
+        display: flex !important; align-items: center !important; justify-content: center !important;
+        cursor: pointer !important; transition: all 0.2s ease !important;
+        color: var(--text) !important; font-size: 0.8rem !important;
+    }
+    .laxcc-aether-fields .aether-fields-scroll-arrow:hover { border-color: var(--navy) !important; color: var(--navy) !important; }
+
+    .laxcc-aether-fields .aether-fields-about-track {
+        display: flex !important; gap: 20px !important; overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important; padding-bottom: 4px !important;
+    }
+    .laxcc-aether-fields .aether-fields-about-track::-webkit-scrollbar { display: none !important; }
+    .laxcc-aether-fields .aether-fields-about-slide {
+        flex: 0 0 280px !important; scroll-snap-align: start !important;
+        padding: 16px 0 0 !important; border-top: 2px solid var(--border) !important;
+        transition: border-color 0.3s ease !important;
+    }
+    .laxcc-aether-fields .aether-fields-about-slide:hover { border-color: var(--navy) !important; }
+    .laxcc-aether-fields .aether-fields-about-slide-num { font-size: 0.7rem !important; font-weight: 700 !important; color: var(--text-muted) !important; letter-spacing: 0.5px !important; margin-bottom: 12px !important; }
+    .laxcc-aether-fields .aether-fields-about-slide h3 { font-size: 1.1rem !important; font-weight: 800 !important; color: var(--text) !important; letter-spacing: -0.01em !important; margin-bottom: 8px !important; }
+    .laxcc-aether-fields .aether-fields-about-slide p { font-size: 0.85rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; }
+    @media (min-width: 769px) { .laxcc-aether-fields .aether-fields-about-slide { flex: 0 0 320px !important; } }
+
+    /* EDUCATION section */
+    .laxcc-aether-fields .aether-fields-education { padding: 24px 0 !important; background: var(--cream) !important; }
+    .laxcc-aether-fields .aether-fields-education-container { max-width: 1400px !important; margin: 0 auto !important; padding: 0 20px !important; }
+    .laxcc-aether-fields .aether-fields-education-top { display: flex !important; align-items: flex-end !important; justify-content: space-between !important; gap: 24px !important; margin-bottom: 16px !important; }
+    .laxcc-aether-fields .aether-fields-education-intro h2 { font-size: clamp(2rem, 3.5vw, 3rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1.05 !important; margin-bottom: 8px !important; }
+    .laxcc-aether-fields .aether-fields-education-intro p { font-size: 0.9rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; max-width: 480px !important; }
+    .laxcc-aether-fields .aether-fields-education-track {
+        display: flex !important; gap: 20px !important; overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+    }
+    .laxcc-aether-fields .aether-fields-education-track::-webkit-scrollbar { display: none !important; }
+    .laxcc-aether-fields .aether-fields-education-slide {
+        flex: 0 0 220px !important; scroll-snap-align: start !important;
+        padding: 16px 0 0 !important; border-top: 2px solid var(--border) !important;
+        text-align: center !important; transition: border-color 0.3s ease !important;
+    }
+    .laxcc-aether-fields .aether-fields-education-slide:hover { border-color: var(--navy) !important; }
+    .laxcc-aether-fields .aether-fields-education-num { font-size: 2.5rem !important; font-weight: 900 !important; color: var(--orange) !important; line-height: 1 !important; margin-bottom: 6px !important; }
+    .laxcc-aether-fields .aether-fields-education-name { font-size: 0.9rem !important; font-weight: 700 !important; color: var(--navy) !important; margin-bottom: 6px !important; }
+    .laxcc-aether-fields .aether-fields-education-desc { font-size: 0.8rem !important; color: var(--text-muted) !important; line-height: 1.5 !important; }
+    @media (min-width: 769px) {
+        .laxcc-aether-fields .aether-fields-education { padding: 60px 0 !important; }
+        .laxcc-aether-fields .aether-fields-education-container { padding: 0 60px !important; }
+        .laxcc-aether-fields .aether-fields-education-slide { flex: 0 0 260px !important; }
+    }
+
+    /* FAQ */
+    .laxcc-aether-fields .aether-fields-faq { padding: 140px 0 !important; background: var(--cream) !important; }
+    .laxcc-aether-fields .aether-fields-faq-container {
+        max-width: 1400px !important; margin: 0 auto !important; padding: 0 60px !important;
+        display: grid !important; grid-template-columns: 380px 1fr !important;
+        gap: 80px !important; align-items: start !important;
+    }
+    .laxcc-aether-fields .aether-fields-faq-sidebar { position: sticky !important; top: 40px !important; }
+    .laxcc-aether-fields .aether-fields-faq-sidebar h2 { font-size: 3rem !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1 !important; margin-bottom: 24px !important; }
+    .laxcc-aether-fields .aether-fields-faq-sidebar p { font-size: 1.05rem !important; color: var(--text-muted) !important; line-height: 1.7 !important; margin-bottom: 32px !important; }
+    .laxcc-aether-fields .aether-fields-faq-deco { width: 80px !important; height: 4px !important; background: var(--orange) !important; border-radius: 2px !important; }
+    .laxcc-aether-fields .aether-fields-faq-list { display: flex !important; flex-direction: column !important; }
+    .laxcc-aether-fields .aether-fields-faq-item { border-bottom: 1px solid var(--border) !important; padding: 32px 0 !important; }
+    .laxcc-aether-fields .aether-fields-faq-item:first-child { border-top: 1px solid var(--border) !important; }
+    .laxcc-aether-fields .aether-fields-faq-q {
+        font-size: 1.3rem !important; font-weight: 800 !important; color: var(--navy) !important;
+        cursor: pointer !important; display: flex !important; align-items: center !important;
+        justify-content: space-between !important; gap: 20px !important;
+        list-style: none !important; transition: color 0.3s ease !important; padding: 0 !important;
+    }
+    .laxcc-aether-fields .aether-fields-faq-q::-webkit-details-marker { display: none !important; }
+    .laxcc-aether-fields .aether-fields-faq-q:hover { color: var(--orange) !important; }
+    .laxcc-aether-fields .aether-fields-faq-q .aether-fields-faq-toggle {
+        font-size: 1.3rem !important; font-weight: 300 !important; flex-shrink: 0 !important;
+        transition: transform 0.3s ease !important; color: var(--text-muted) !important;
+    }
+    .laxcc-aether-fields .aether-fields-faq-item[open] .aether-fields-faq-toggle { transform: rotate(45deg) !important; color: var(--orange) !important; }
+    .laxcc-aether-fields .aether-fields-faq-a {
+        padding-top: 16px !important; font-size: 1rem !important; color: var(--text-muted) !important;
+        line-height: 1.7 !important; max-width: 90% !important; animation: laxcc-aether-fields-fadeUp 0.4s ease !important;
+    }
+
+    /* CTA */
+    .laxcc-aether-fields .aether-fields-cta {
+        padding: 120px 0 !important; background: var(--cream) !important;
+        text-align: center !important; position: relative !important; overflow: hidden !important;
+    }
+    .laxcc-aether-fields .aether-fields-cta::before {
+        content: '' !important; position: absolute !important; top: 50% !important; left: 50% !important;
+        transform: translate(-50%, -50%) !important; width: 600px !important; height: 600px !important;
+        background: radial-gradient(circle, rgba(248, 148, 89, 0.06) 0%, transparent 70%) !important;
+        border-radius: 50% !important; pointer-events: none !important;
+    }
+    .laxcc-aether-fields .aether-fields-cta-container { max-width: 700px !important; margin: 0 auto !important; padding: 0 40px !important; position: relative !important; z-index: 1 !important; }
+    .laxcc-aether-fields .aether-fields-cta h2 { font-size: clamp(2.5rem, 5vw, 4rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; margin-bottom: 20px !important; line-height: 1.05 !important; }
+    .laxcc-aether-fields .aether-fields-cta p { font-size: 1.1rem !important; color: var(--text-muted) !important; margin-bottom: 40px !important; line-height: 1.7 !important; }
+    .laxcc-aether-fields .aether-fields-cta-actions { display: flex !important; gap: 16px !important; justify-content: center !important; flex-wrap: wrap !important; }
+    .laxcc-aether-fields .aether-fields-cta-location { margin-top: 48px !important; padding-top: 32px !important; border-top: 1px solid rgba(29, 80, 138, 0.1) !important; }
+    .laxcc-aether-fields .aether-fields-cta-location p { font-size: 0.85rem !important; color: var(--text-muted) !important; margin-bottom: 0 !important; }
+    .laxcc-aether-fields .aether-fields-cta-location strong { color: var(--navy) !important; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .laxcc-aether-fields .aether-fields-about-container,
+        .laxcc-aether-fields .aether-fields-education-container,
+        .laxcc-aether-fields .aether-fields-faq-container { padding: 0 40px !important; }
+        .laxcc-aether-fields .aether-fields-faq-container { grid-template-columns: 1fr !important; gap: 48px !important; }
+        .laxcc-aether-fields .aether-fields-faq-sidebar { position: static !important; }
+    }
+    @media (max-width: 640px) {
+        .laxcc-aether-fields .aether-fields-education,
+        .laxcc-aether-fields .aether-fields-faq { padding: 40px 0 !important; }
+        .laxcc-aether-fields .aether-fields-about-container,
+        .laxcc-aether-fields .aether-fields-education-container,
+        .laxcc-aether-fields .aether-fields-faq-container { padding: 0 24px !important; }
+        .laxcc-aether-fields .aether-fields-faq-sidebar h2 { font-size: 2.2rem !important; }
+        .laxcc-aether-fields .aether-fields-faq-q { font-size: 1.1rem !important; }
+        .laxcc-aether-fields .aether-fields-cta { padding: 80px 0 !important; }
+    }
+
+    /* Elementor override */
+    .elementor-widget-container .laxcc-aether-fields {
+        width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+</style>
+
+<div class="laxcc-aether-fields">
+
+    <!-- HERO -->
+    <section class="aether-fields-hero">
+        <div class="aether-fields-hero-img-fill">
+            <img src="https://static.wixstatic.com/media/2064b6_2b33bd5624484056a46660b39dced93e~mv2.jpg"
+                alt="Aether Fields products available at LAXCC dispensary in Los Angeles near LAX Airport"
+                referrerpolicy="no-referrer"
+                loading="eager">
+        </div>
+
+        <div class="aether-fields-hero-body">
+            <div class="aether-fields-hero-badge">
+                <i class="fas fa-shield-halved"></i>
+                Licensed Dispensary &bull; 5 Min From LAX
+            </div>
+            <h1>Buy Aether Fields <span>Premium Flower</span> in Los Angeles</h1>
+            <p class="aether-fields-hero-sub">
+                Thoughtfully cultivated California cannabis flower. Shop Aether Fields at LAXCC — a licensed Los Angeles dispensary just 5 minutes from LAX Airport. Available in-store and for pickup.
+            </p>
+            <div class="aether-fields-hero-actions">
+                <a href="#aether-fields-live-menu" class="aether-fields-btn-primary">
+                    Shop Aether Fields <i class="fas fa-arrow-down"></i>
+                </a>
+                <a href="https://www.google.com/maps?daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045"
+                    target="_blank" rel="noopener noreferrer" class="aether-fields-btn-secondary">
+                    <i class="fas fa-location-dot"></i> Get Directions
+                </a>
+            </div>
+            <div class="aether-fields-hero-stats">
+                <div>
+                    <div class="aether-fields-stat-val">30%</div>
+                    <div class="aether-fields-stat-lbl">Up to THC</div>
+                </div>
+                <div>
+                    <div class="aether-fields-stat-val">100%</div>
+                    <div class="aether-fields-stat-lbl">Lab Tested</div>
+                </div>
+                <div>
+                    <div class="aether-fields-stat-val">CA</div>
+                    <div class="aether-fields-stat-lbl">Cultivated</div>
+                </div>
+                <div>
+                    <div class="aether-fields-stat-val">3+</div>
+                    <div class="aether-fields-stat-lbl">Strains Stocked</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+<!-- END scoped wrapper — shortcode lives OUTSIDE -->
+
+<!-- LIVE MENU -->
+<section id="aether-fields-live-menu">
+    [leafbridge_specific_product_filter brand="70175080-ebc1-4928-9e5f-5dd2f49556e0" count="20"]
+</section>
+
+<!-- Resume scoped wrapper -->
+<div class="laxcc-aether-fields">
+
+    <!-- ABOUT -->
+    <section class="aether-fields-about">
+        <div class="aether-fields-about-container">
+            <div class="aether-fields-about-top">
+                <div class="aether-fields-about-header">
+                    <span class="aether-fields-section-label">About the Brand</span>
+                    <h2>Why Aether Fields</h2>
+                    <p>Thoughtfully cultivated California cannabis flower.</p>
+                </div>
+                <div class="aether-fields-scroll-arrows">
+                    <button class="aether-fields-scroll-arrow aether-fields-about-arrow" data-dir="-1" aria-label="Previous"><i class="fas fa-arrow-left"></i></button>
+                    <button class="aether-fields-scroll-arrow aether-fields-about-arrow" data-dir="1" aria-label="Next"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="aether-fields-about-track">
+                <div class="aether-fields-about-slide">
+                    <div class="aether-fields-about-slide-num">01</div>
+                    <h3>Premium Cultivation</h3>
+                    <p>Grown with care in California using proven cultivation methods — optimized lighting, nutrients, and environmental controls for maximum trichome development and terpene expression.</p>
+                </div>
+                <div class="aether-fields-about-slide">
+                    <div class="aether-fields-about-slide-num">02</div>
+                    <h3>Flavor-Forward Strains</h3>
+                    <p>Carefully selected genetics that deliver on both flavor and potency. From fruity and sweet to earthy and gassy — every strain is chosen for a standout smoking experience.</p>
+                </div>
+                <div class="aether-fields-about-slide">
+                    <div class="aether-fields-about-slide-num">03</div>
+                    <h3>High-Potency Flower</h3>
+                    <p>Consistently testing at high THC levels with rich terpene profiles. Each batch is grown to deliver strong effects alongside bold flavor — no mids, no filler.</p>
+                </div>
+                <div class="aether-fields-about-slide">
+                    <div class="aether-fields-about-slide-num">04</div>
+                    <h3>California Grown & Licensed</h3>
+                    <p>Cultivated and distributed through California's licensed supply chain. Every gram is tracked, tested, and compliant — from seed to sale.</p>
+                </div>
+                <div class="aether-fields-about-slide">
+                    <div class="aether-fields-about-slide-num">05</div>
+                    <h3>Available at LAXCC</h3>
+                    <p>We carry Aether Fields at our dispensary near LAX Airport — walk in at 8332 Lincoln Blvd or order ahead for pickup. New products rotate in regularly, so check the live menu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="aether-fields-education">
+        <div class="aether-fields-education-container">
+            <div class="aether-fields-education-top">
+                <div class="aether-fields-education-intro">
+                    <span class="aether-fields-section-label">Know Your Product</span>
+                    <h2>What Makes Premium Cannabis Flower</h2>
+                    <p>Not all flower is created equal. Here's what separates top-shelf bud from everything else.</p>
+                </div>
+                <div class="aether-fields-scroll-arrows">
+                    <button class="aether-fields-scroll-arrow aether-fields-education-arrow" data-dir="-1" aria-label="Previous"><i class="fas fa-arrow-left"></i></button>
+                    <button class="aether-fields-scroll-arrow aether-fields-education-arrow" data-dir="1" aria-label="Next"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="aether-fields-education-track">
+                <div class="aether-fields-education-slide">
+                    <div class="aether-fields-education-num">1</div>
+                    <div class="aether-fields-education-name">Trichome Density</div>
+                    <div class="aether-fields-education-desc">More trichomes means more THC and terpenes. Premium flower is visibly frosty — that crystal coating is where the potency lives.</div>
+                </div>
+                <div class="aether-fields-education-slide">
+                    <div class="aether-fields-education-num">2</div>
+                    <div class="aether-fields-education-name">Terpene Profile</div>
+                    <div class="aether-fields-education-desc">Flavor and effects come from terpenes, not just THC percentage. Quality flower has a loud, complex nose you can smell through the bag.</div>
+                </div>
+                <div class="aether-fields-education-slide">
+                    <div class="aether-fields-education-num">3</div>
+                    <div class="aether-fields-education-name">Cure & Trim</div>
+                    <div class="aether-fields-education-desc">Proper curing preserves potency, smoothness, and flavor. A clean hand-trim with no excess leaf means a better burn.</div>
+                </div>
+                <div class="aether-fields-education-slide">
+                    <div class="aether-fields-education-num">4</div>
+                    <div class="aether-fields-education-name">Lab Testing</div>
+                    <div class="aether-fields-education-desc">Every batch is tested for THC/CBD potency, pesticides, heavy metals, mold, and residual solvents. No guesswork.</div>
+                </div>
+                <div class="aether-fields-education-slide">
+                    <div class="aether-fields-education-num">5</div>
+                    <div class="aether-fields-education-name">Proper Storage</div>
+                    <div class="aether-fields-education-desc">Airtight containers, cool temperatures, no direct light. Fresh flower smokes smoother and tastes better.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="aether-fields-faq">
+        <div class="aether-fields-faq-container">
+            <div class="aether-fields-faq-sidebar">
+                <h2>Common Questions</h2>
+                <p>Everything you need to know about buying Aether Fields at LAXCC near LAX Airport in Los Angeles.</p>
+                <div class="aether-fields-faq-deco"></div>
+            </div>
+
+            <div class="aether-fields-faq-list">
+                <details class="aether-fields-faq-item">
+                    <summary class="aether-fields-faq-q">
+                        Where can I buy Aether Fields near LAX?
+                        <span class="aether-fields-faq-toggle">+</span>
+                    </summary>
+                    <div class="aether-fields-faq-a">
+                        LAXCC is a licensed Los Angeles dispensary at 8332 Lincoln Blvd, Los Angeles, CA 90045 — just 5 minutes from LAX Airport. We carry Aether Fields flower, buds & pre-rolls. Walk in or order ahead for pickup.
+                    </div>
+                </details>
+
+                <details class="aether-fields-faq-item">
+                    <summary class="aether-fields-faq-q">
+                        What Aether Fields products does LAXCC carry?
+                        <span class="aether-fields-faq-toggle">+</span>
+                    </summary>
+                    <div class="aether-fields-faq-a">
+                        We stock a curated selection of Aether Fields flower, buds & pre-rolls. Availability rotates with new drops — check our live menu above for the most current inventory and pricing.
+                    </div>
+                </details>
+
+                <details class="aether-fields-faq-item">
+                    <summary class="aether-fields-faq-q">
+                        Is Aether Fields flower lab-tested?
+                        <span class="aether-fields-faq-toggle">+</span>
+                    </summary>
+                    <div class="aether-fields-faq-a">
+                        Yes. All Aether Fields flower sold at LAXCC is lab-tested by a licensed California testing facility. Every batch is screened for THC/CBD potency, pesticides, heavy metals, mold, and residual solvents before it hits our shelves.
+                    </div>
+                </details>
+
+                <details class="aether-fields-faq-item">
+                    <summary class="aether-fields-faq-q">
+                        How much does Aether Fields cost at LAXCC?
+                        <span class="aether-fields-faq-toggle">+</span>
+                    </summary>
+                    <div class="aether-fields-faq-a">
+                        Pricing varies by product and size — check the live menu on this page for current prices. LAXCC includes all taxes in our listed prices, so what you see is what you pay.
+                    </div>
+                </details>
+
+                <details class="aether-fields-faq-item">
+                    <summary class="aether-fields-faq-q">
+                        What are LAXCC's hours and location?
+                        <span class="aether-fields-faq-toggle">+</span>
+                    </summary>
+                    <div class="aether-fields-faq-a">
+                        LAXCC is open daily from 9:00 AM to 9:30 PM at 8332 Lincoln Blvd in Westchester, Los Angeles — 5 minutes from LAX Airport and 8 minutes from the beach. Walk-ins welcome, no appointment needed. We also offer pickup, curbside, and drive-thru options.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="aether-fields-cta">
+        <div class="aether-fields-cta-container">
+            <h2>Get Aether Fields Today at LAXCC</h2>
+            <p>
+                Walk into our licensed dispensary near LAX Airport and shop Aether Fields flower, buds & pre-rolls. All products lab-tested and ready for you.
+            </p>
+            <div class="aether-fields-cta-actions">
+                <a href="https://www.google.com/maps?daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045"
+                    target="_blank" rel="noopener noreferrer" class="aether-fields-btn-primary">
+                    <i class="fas fa-location-dot"></i> Directions to LAXCC
+                </a>
+            </div>
+            <div class="aether-fields-cta-location">
+                <p><strong>LAXCC</strong> &bull; 8332 Lincoln Blvd, Los Angeles, CA 90045 &bull; Open Daily 9AM - 9:30PM</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    (function () {
+        var ld = {
+            "@context": "https://schema.org",
+            "@type": "Store",
+            "name": "LAXCC - LAX Cannabis Club",
+            "description": "Licensed dispensary near LAX Airport carrying Aether Fields flower, buds & pre-rolls in Los Angeles.",
+            "url": "https://laxcc.com",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "8332 Lincoln Blvd",
+                "addressLocality": "Los Angeles",
+                "addressRegion": "CA",
+                "postalCode": "90045",
+                "addressCountry": "US"
+            },
+            "openingHours": "Mo-Su 09:00-21:30",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 33.9575,
+                "longitude": -118.4178
+            }
+        };
+        var s = document.createElement('script');
+        s.type = 'application/ld+json';
+        s.textContent = JSON.stringify(ld);
+        document.head.appendChild(s);
+    })();
+
+    /* Horizontal scroll arrows */
+    (function () {
+        [
+            { track: '.aether-fields-about-track', btns: '.aether-fields-about-arrow', step: 340 },
+            { track: '.aether-fields-education-track', btns: '.aether-fields-education-arrow', step: 240 }
+        ].forEach(function (cfg) {
+            var track = document.querySelector('.laxcc-aether-fields ' + cfg.track);
+            if (!track) return;
+            document.querySelectorAll('.laxcc-aether-fields ' + cfg.btns).forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var dir = parseInt(this.getAttribute('data-dir'));
+                    track.scrollBy({ left: dir * cfg.step, behavior: 'smooth' });
+                });
+            });
+        });
+    })();
+</script>

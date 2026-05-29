@@ -1,0 +1,2437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Cheapest dispensary in Los Angeles. Weed prices in California starting at $5. Cheap ounces, half oz deals, affordable weed near LAX. Best cannabis prices in LA." />
+    <title>Cheap Weed in LA | Best Weed Prices at Los Angeles Dispensary near LAX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <style>
+        :root {
+            --primary: #1D508A;
+            --secondary: #00AFC9;
+            --accent: #F89459;
+            --bg-card: #FFFFFF;
+            --bg-page: #F8F9FB;
+            --text-main: #1D508A;
+            --text-muted: #555E68;
+            --deal-bg: #E44D26;
+            --tag-strain-bg: rgba(0, 175, 201, 0.15);
+            --tag-strain-text: #008D9E;
+            --tag-potency-bg: rgba(248, 148, 89, 0.18);
+            --tag-potency-text: #B95D24;
+            --tag-default-bg: rgba(29, 80, 138, 0.12);
+            --tag-default-text: var(--primary);
+        }
+
+        html,
+        body {
+            background: var(--bg-page);
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* ================================================
+           HERO + FILTERS — MOBILE FIRST
+           ================================================ */
+        /* Hero — video on top, text below, brand palette (navy/orange/cream) */
+        .bh {
+            background: #FBF8F2; /* cream */
+            padding: 0 0 1rem;
+        }
+
+        .bh-video {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 360px;
+            object-fit: cover;
+            margin: 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .bh-text {
+            padding: 1rem 1rem 0;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .bh h1 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary); /* navy */
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin: 0 0 0.5rem;
+        }
+
+        .bh h1 em {
+            font-style: normal;
+            color: var(--accent); /* orange */
+        }
+
+        .bh-sub {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .bh-sub b,
+        .bh-sub strong {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .bh-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+
+        .bh-cta {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff !important;
+            text-decoration: none !important;
+            font-size: 0.78rem;
+            font-weight: 800;
+            padding: 0.6rem 1.25rem;
+            border-radius: 8px;
+            white-space: nowrap;
+            flex-shrink: 0;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 12px rgba(248, 148, 89, 0.25);
+        }
+
+        .bh-cta:link,
+        .bh-cta:visited {
+            color: #fff !important;
+        }
+
+        .bh-cta:hover {
+            background: var(--accent);
+            color: #fff !important;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(248, 148, 89, 0.4);
+        }
+
+        .bh-trust {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            white-space: normal;
+        }
+
+        /* Filter — grouped, labeled, sticky, brand-colored, TIGHT */
+        .bh-filters {
+            background: #FBF8F2;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            padding: 0.5rem 0.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .bh-filters .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .bh-filters .filter-label {
+            font-size: 0.6rem;
+            font-weight: 800;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            flex-shrink: 0;
+            min-width: 60px;
+        }
+        .bh-filters .filter-label i {
+            color: var(--accent);
+            font-size: 0.7rem;
+        }
+
+        .bh-filters .filter-pills {
+            display: flex;
+            gap: 4px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            flex-grow: 1;
+        }
+        .bh-filters .filter-pills::-webkit-scrollbar { display: none; }
+
+        .bh-filters button {
+            background: rgba(29, 80, 138, 0.08);
+            color: var(--primary);
+            font-size: 0.7rem;
+            font-weight: 700;
+            font-family: inherit;
+            padding: 5px 11px;
+            border-radius: 100px;
+            cursor: pointer;
+            white-space: nowrap;
+            flex-shrink: 0;
+            line-height: 1;
+            transition: all 0.15s ease;
+            border: 0;
+        }
+
+        .bh-filters button:hover {
+            background: rgba(29, 80, 138, 0.18);
+            transform: translateY(-1px);
+        }
+
+        .bh-filters button.active {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(248, 148, 89, 0.35);
+        }
+        .bh-filters button.active:hover {
+            background: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        @media (min-width: 768px) {
+            .bh {
+                padding: 2rem 2rem 1.25rem;
+                text-align: center;
+            }
+
+            .bh h1 {
+                font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .bh-sub {
+                font-size: 1rem;
+            }
+
+            .bh-row {
+                justify-content: center;
+                margin-top: 0.75rem;
+            }
+
+            .bh-cta {
+                font-size: 0.9rem;
+                padding: 0.55rem 1.75rem;
+            }
+
+            .bh-trust {
+                font-size: 0.7rem;
+            }
+
+            .bh-filters {
+                padding: 0.65rem 1rem;
+                gap: 0.5rem;
+            }
+
+            .bh-filters .filter-group {
+                gap: 0.6rem;
+            }
+
+            .bh-filters .filter-label {
+                font-size: 0.65rem;
+                min-width: 70px;
+            }
+            .bh-filters .filter-label i {
+                font-size: 0.75rem;
+            }
+
+            .bh-filters .filter-pills {
+                gap: 5px;
+                flex-wrap: wrap;
+                overflow-x: visible;
+            }
+
+            .bh-filters button {
+                font-size: 0.75rem;
+                padding: 6px 13px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .bh {
+                padding: 2.5rem 2rem 1.5rem;
+            }
+
+            .bh h1 {
+                font-size: 3.25rem;
+            }
+
+            .bh-sub {
+                font-size: 1.1rem;
+            }
+
+            .bh-cta {
+                font-size: 1rem;
+                padding: 0.6rem 2rem;
+                border-radius: 6px;
+            }
+
+            .bh-filters button {
+                font-size: 0.8rem;
+                padding: 5px 10px;
+            }
+        }
+
+        /* ================================================
+           AWARD-WINNING SEO VIBE SECTION
+           ================================================ */
+        .lax-seo-authority {
+            background: #1D508A;
+            background: radial-gradient(circle at top right, #2563ab, #1D508A 60%),
+                        radial-gradient(circle at bottom left, #153a63, #1D508A);
+            padding: 10rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Vertical Watermark */
+        .lax-seo-authority::before {
+            content: 'LAXCC BUDGET';
+            position: absolute;
+            top: 50%;
+            left: -5%;
+            transform: translateY(-50%) rotate(-90deg);
+            font-size: 12rem;
+            font-weight: 950;
+            color: rgba(255, 255, 255, 0.03);
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .seo-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 5;
+        }
+
+        .seo-vibe-header {
+            margin-bottom: 5rem;
+            position: relative;
+        }
+
+        .seo-vibe-header .accent-line {
+            width: 80px;
+            height: 6px;
+            background: var(--secondary);
+            margin: 0 auto 2rem;
+            border-radius: 3px;
+        }
+
+        .seo-container h2 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 950;
+            color: #fff !important;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: -0.04em;
+            line-height: 0.95;
+            display: inline-block;
+        }
+
+        .seo-container h2 span {
+            display: block;
+            color: var(--secondary);
+            font-size: 0.4em;
+            letter-spacing: 0.4em;
+            margin-top: 1rem;
+            font-weight: 700;
+        }
+
+        .seo-vibe-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            text-align: left;
+            margin-top: 6rem;
+        }
+
+        .seo-text-block h3 {
+            color: #fff !important;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .seo-text-block p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .seo-text-block strong {
+            color: #fff;
+            font-weight: 900;
+            border-bottom: 2px solid var(--secondary);
+        }
+
+        .seo-vibe-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .seo-vibe-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .seo-vibe-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(15px);
+        }
+
+        .seo-vibe-card .card-num {
+            font-size: 0.8rem;
+            font-weight: 900;
+            color: var(--secondary);
+            letter-spacing: 0.2em;
+        }
+
+        .seo-vibe-card .card-title {
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 1024px) {
+            .lax-seo-authority {
+                padding: 6rem 1.5rem;
+            }
+            .seo-vibe-content {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            .lax-seo-authority::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .seo-container h2 {
+                font-size: 3rem;
+            }
+            .seo-vibe-card:hover {
+                transform: translateY(-10px);
+            }
+        }
+
+
+
+
+        /* ================================================
+           PRODUCT GRID + CARDS — REBUILT FROM SCRATCH
+           Mobile: 1 col, each card is a simple vertical stack
+           Tablet: 2 col
+           Desktop: 3-4 col
+           ================================================ */
+        .product-cards-section {
+            width: 100%;
+            padding: 0 0 3rem;
+        }
+
+        .products-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            padding: 0.75rem 0.5rem 0;
+        }
+
+        /* Card: simple vertical stack */
+        /* COMPACT product card — no borders, tight padding, 2-col footer for price+button */
+        .product-card {
+            background: #fff;
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 2px 10px rgba(15, 58, 95, 0.06);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 30px rgba(15, 58, 95, 0.12);
+        }
+
+        .product-card .product-image {
+            position: relative;
+            background: #fff;
+            padding: 0.4rem;
+            text-align: center;
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .product-card .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .product-card .cultivation-badge {
+            display: none;
+        }
+
+        /* Badges — solid brand fills, no borders */
+        .product-card .deal-badge {
+            position: absolute;
+            top: 8px;
+            left: 0;
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.6rem;
+            font-weight: 800;
+            padding: 3px 8px 3px 7px;
+            border-radius: 0 5px 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            z-index: 3;
+        }
+
+        .product-card .weight-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: var(--primary);
+            color: #fff;
+            font-size: 0.6rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 5px;
+            z-index: 3;
+        }
+
+        /* Info area — tight padding, flex column */
+        .product-card .product-info {
+            padding: 0.45rem 0.65rem 0;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .product-card .product-info h2 {
+            color: var(--primary);
+            font-size: 0.95rem;
+            font-weight: 800;
+            margin: 0;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        .product-card .product-info p {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            line-height: 1.4;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Feature tags — 2-column GRID (not flex row), NO BORDERS */
+        .product-card .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+            margin: 0;
+        }
+
+        .product-card .feature-tag {
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 50px;
+            background: rgba(29, 80, 138, 0.08);
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .product-card .feature-tag.strain-sativa {
+            background: rgba(248, 148, 89, 0.15);
+            color: #B95D24;
+        }
+        .product-card .feature-tag.strain-indica {
+            background: rgba(29, 80, 138, 0.12);
+            color: var(--primary);
+        }
+        .product-card .feature-tag.strain-hybrid {
+            background: rgba(0, 175, 201, 0.15);
+            color: #008D9E;
+        }
+
+        /* Footer row — price LEFT, button RIGHT in a 2-col layout */
+        .product-card .price-block {
+            padding: 0.35rem 0.65rem 0;
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            margin-top: auto;
+        }
+
+        .product-card .price-main {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .product-card .price-unit {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .product-card .price-secondary .price-main {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .product-card .button {
+            display: block;
+            margin: 0.4rem 0.65rem 0.65rem;
+            padding: 0.5rem;
+            background: var(--accent);
+            color: #fff !important;
+            text-decoration: none !important;
+            text-align: center;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            border-radius: 7px;
+            white-space: nowrap;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .product-card .button:link,
+        .product-card .button:visited {
+            color: #fff !important;
+        }
+
+        .product-card .button:hover {
+            background: var(--accent);
+            color: #fff !important;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(248, 148, 89, 0.35);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (min-width: 480px) {
+            .products-grid {
+                gap: 0.75rem;
+                padding: 1rem 0.75rem 0;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.25rem;
+                padding: 2rem 1.5rem 0;
+            }
+        }
+
+        /* Desktop: minimum 4 cards per row */
+        @media (min-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.25rem;
+                padding: 2rem 1.5rem 0;
+            }
+        }
+
+        @media (min-width: 768px) {
+
+            .product-card .product-image {
+                min-height: 180px;
+                padding: 1.5rem;
+            }
+
+            .product-card .product-image img {
+                max-width: 150px;
+                max-height: 150px;
+            }
+
+            .product-card .product-info {
+                padding: 1rem 1rem 0.5rem;
+            }
+
+            .product-card .product-info h2 {
+                font-size: 1.1rem;
+            }
+
+            .product-card .product-info p {
+                -webkit-line-clamp: 3;
+                font-size: 0.9rem;
+            }
+
+            .product-card .features {
+                margin: 0.625rem 1rem 0;
+            }
+
+            .product-card .feature-tag {
+                font-size: 0.75rem;
+                padding: 3px 9px;
+            }
+
+            .product-card .price-block {
+                padding: 0.5rem 1rem 0;
+            }
+
+            .product-card .price-main {
+                font-size: 1.6rem;
+            }
+
+            .product-card .button {
+                font-size: 0.9rem;
+                padding: 0.65rem;
+                margin: 0.5rem 1rem 1rem;
+                border-radius: 8px;
+            }
+
+            .product-card .deal-badge {
+                top: 12px;
+                font-size: 0.7rem;
+                padding: 4px 10px 4px 8px;
+            }
+
+            .product-card .weight-badge {
+                top: 12px;
+                right: 12px;
+                font-size: 0.7rem;
+                padding: 4px 10px;
+            }
+
+            .product-card .cultivation-badge {
+                display: block;
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                font-size: 0.65rem;
+                font-weight: 600;
+                padding: 4px 10px;
+                border-radius: 5px;
+                text-transform: uppercase;
+                color: #fff;
+            }
+
+            .product-card .cultivation-badge.indoor {
+                background: #5B21B6;
+            }
+
+            .product-card .cultivation-badge.greenhouse {
+                background: #059669;
+            }
+
+            .product-card .cultivation-badge.sun-grown {
+                background: #D97706;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .products-grid {
+                max-width: 1400px;
+                gap: 1.5rem;
+                padding: 2.5rem 2rem 0;
+            }
+
+            .product-card .product-image {
+                min-height: 200px;
+            }
+
+            .product-card .product-image img {
+                max-width: 170px;
+                max-height: 170px;
+            }
+
+            .product-card .product-info h2 {
+                font-size: 1.15rem;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .products-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        /* Brands Section — mobile first */
+        .brands-section {
+            background: #fbf8f2;
+            padding: 2.5rem 0;
+        }
+
+        .brands-intro {
+            color: #111;
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-align: left;
+            margin: 0 0 2rem 0;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        .brands-intro p {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: #666;
+            font-family: 'Inter', sans-serif;
+            margin-top: 0.75rem;
+            letter-spacing: normal;
+            line-height: 1.55;
+        }
+
+        .brands-container {
+            display: block !important;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .brands-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .brand-item {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            gap: 1.5rem;
+        }
+
+        .brand-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+        }
+
+        .brand-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .brand-name {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            color: #000;
+            line-height: 1.1;
+            margin: 0;
+        }
+
+        .brand-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-description {
+            font-size: 1rem;
+            line-height: 1.65;
+            color: #333;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .brand-link {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #000;
+            text-decoration: none;
+            border-bottom: 2px solid #000;
+            padding-bottom: 2px;
+            align-self: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .brand-link:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        @media (min-width: 768px) {
+            .brands-section {
+                padding: 4rem 0;
+            }
+
+            .brands-container {
+                padding: 0 2rem;
+            }
+
+            .brands-intro {
+                font-size: 2.25rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .brands-intro p {
+                font-size: 1.1rem;
+                max-width: 800px;
+            }
+
+            .brands-grid {
+                gap: 2.5rem;
+            }
+
+            .brand-item {
+                padding: 2.5rem;
+            }
+
+            .brand-name {
+                font-size: 2.25rem;
+            }
+
+            .brand-description {
+                font-size: 1.05rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .brands-section {
+                padding: 5rem 0;
+            }
+
+            .brands-intro {
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+            }
+
+            .brands-grid {
+                gap: 3rem;
+            }
+
+            .brand-item {
+                padding: 3rem;
+            }
+
+            .brand-name {
+                font-size: 2.75rem;
+            }
+        }
+
+        /* Badges Redesigned */
+        .grow-method-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: #000;
+            color: #fff;
+        }
+
+        .grow-method-badge.indoor {
+            background: #000;
+            color: #fff;
+        }
+
+        .grow-method-badge.sun-grown {
+            background: #F89459;
+            color: #fff;
+        }
+
+        .grow-method-badge.greenhouse {
+            background: #00AFC9;
+            color: #fff;
+        }
+
+        .grow-method-badge.edibles {
+            background: #6B46C1;
+            color: #fff;
+        }
+
+        /* Cizi Feature Block */
+        .brand-item.cizi-feature {
+            background: #000;
+            color: #fff;
+            border: none;
+        }
+
+        .cizi-feature .brand-name {
+            color: #fff;
+        }
+
+        .cizi-feature .brand-description {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .cizi-feature .brand-link {
+            color: #fff;
+            border-color: #fff;
+        }
+
+        .cizi-feature .brand-link:hover {
+            opacity: 0.8;
+        }
+
+        .cizi-feature .brand-item:hover {
+            background: #000;
+        }
+
+        /* Reset hover */
+
+        /* Native IG Integration Look */
+        .ig-native-shell {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            max-width: 100%;
+            margin: 1rem 0 0;
+        }
+
+        .ig-header {
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #efefef;
+        }
+
+        .ig-profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ig-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            padding: 2px;
+        }
+
+        .ig-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            background: #000;
+            object-fit: cover;
+        }
+
+        .ig-handle {
+            font-size: 14px;
+            font-weight: 600;
+            color: #262626;
+        }
+
+        .ig-follow-btn {
+            color: #0095f6;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .ig-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: #fff;
+        }
+
+        .ig-post {
+            aspect-ratio: 1/1;
+            background: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ig-post img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .ig-post:hover img {
+            transform: scale(1.1);
+        }
+
+        .ig-actions {
+            padding: 12px;
+            display: flex;
+            gap: 16px;
+        }
+
+        .ig-actions i {
+            font-size: 24px;
+            color: #262626;
+        }
+
+        @media (min-width: 1024px) {
+            .brand-item.cizi-feature {
+                padding: 2.5rem;
+                border-radius: 16px;
+                margin: 2rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="laxcc-page">
+        <div class="bh">
+            <video class="bh-video" autoplay muted loop playsinline
+                poster="https://laxcc.com/wp-content/uploads/2024/07/laxcc-hero-poster.jpg">
+                <source src="https://laxcc.com/wp-content/uploads/2024/11/best-la-weed-deals.mp4" type="video/mp4">
+            </video>
+            <div class="bh-text">
+                <h1><em>Buy Cheap Weed</em> in Los Angeles &mdash; Best California Weed Prices Near LAX</h1>
+                <p class="bh-sub"><strong>Buy cheap weed near LAX Airport</strong> at LAXCC &mdash; the cheapest dispensary in Los Angeles. Shop <strong>cheap weed</strong>, <strong>cheap edibles</strong>, and <strong>cheap vapes</strong> starting at just $5. Walk in, order pickup, or drive-thru. Prerolls <b>$5</b> &middot; Edibles <b>$8</b> &middot; Vapes <b>$17</b> &middot; Eighths <b>$20</b> &middot; Half oz <b>$25</b> &middot; Cheap ounces starting at <b>$25</b>.</p>
+                <div class="bh-row">
+                    <a href="https://laxcc.com/deals/" class="bh-cta">Buy Cheap Weed Now</a>
+                    <span class="bh-trust">Cheapest dispensary in LA &middot; 5 min from LAX Airport &middot; Cash only</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bh-filters">
+            <div class="filter-group">
+                <span class="filter-label"><i class="fa-solid fa-tag"></i> Price</span>
+                <div class="filter-pills">
+                    <button class="active" data-filter="all" data-group="price">All Prices</button>
+                    <button data-filter="under10" data-group="price">Under $10</button>
+                    <button data-filter="under25" data-group="price">Under $25</button>
+                    <button data-filter="under35" data-group="price">Under $35</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <span class="filter-label"><i class="fa-solid fa-grid-2"></i> Category</span>
+                <div class="filter-pills">
+                    <button class="active" data-filter="all" data-group="type">All</button>
+                    <button data-filter="flower" data-group="type"><i class="fa-solid fa-cannabis"></i> Flower</button>
+                    <button data-filter="vape" data-group="type"><i class="fa-solid fa-bolt"></i> Vapes</button>
+                    <button data-filter="preroll" data-group="type"><i class="fa-solid fa-fire"></i> Prerolls</button>
+                    <button data-filter="concentrate" data-group="type"><i class="fa-solid fa-gem"></i> Dabs</button>
+                    <button data-filter="edible" data-group="type"><i class="fa-solid fa-cookie-bite"></i> Edibles</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <span class="filter-label"><i class="fa-solid fa-scale-balanced"></i> Size</span>
+                <div class="filter-pills">
+                    <button class="active" data-filter="all" data-group="weight">All Sizes</button>
+                    <button data-filter="1g" data-group="weight">1g</button>
+                    <button data-filter="eighth" data-group="weight">1/8 oz</button>
+                    <button data-filter="quarter" data-group="weight">1/4 oz</button>
+                    <button data-filter="half" data-group="weight">1/2 oz</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="product-cards-section">
+            <div class="products-grid">
+
+                <!-- LUSTY STORY OG - FLOWER -->
+                <div class="product-card" data-weight="half" data-type="flower" data-price="75">
+                    <div class="weight-badge">1/2oz</div>
+                    <div class="product-image">
+                        <img src="https://images.dutchie.com/7ebf4edba255f4914848c9596492cb56?w=400&h=400&fm=webp"
+                            alt="Lusty Story OG" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Lusty - Story OG</h2>
+                        <p>High-quality indoor flower. Potent legacy genetics in a half-ounce bag.</p>
+                        <div class="features">
+                            <span class="feature-tag">19.79% THC</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$75</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/brand/lusty/" class="button" target="_blank">SHOP</a>
+                </div>
+
+                <!-- LUSTY DOUBLE STUFFED RUNTZ -->
+                <div class="product-card" data-weight="quarter" data-type="flower" data-price="65">
+                    <div class="weight-badge">1/4oz</div>
+                    <div class="product-image">
+                        <img src="https://laxcc.com/wp-content/uploads/2026/05/lusty-weed.png"
+                            alt="Lusty Double Stuffed Runtz" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Lusty - Double Stuffed Runtz</h2>
+                        <p>Exotic hybrid cross with massive bag appeal and a heavy terpene profile.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-hybrid">Hybrid</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$65</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/brand/lusty/" class="button" target="_blank">SHOP</a>
+                </div>
+
+                <!-- LUSTY Z RUNTS -->
+                <div class="product-card" data-weight="eighth" data-type="flower" data-price="35">
+                    <div class="weight-badge">1/8oz - 1/2oz</div>
+                    <div class="product-image">
+                        <img src="https://images.dutchie.com/a04f66212397aeae9f98255a9fc6823b?w=400&h=400&fm=webp"
+                            alt="Lusty Z Runts" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Lusty - Z Runts</h2>
+                        <p>High-potency exotic hybrid available in multiple weight options.</p>
+                        <div class="features">
+                            <span class="feature-tag">25.52% THC</span>
+                            <span class="feature-tag strain-hybrid">Hybrid</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$35 – $110</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/brand/lusty/" class="button" target="_blank">SHOP</a>
+                </div>
+
+                <!-- LUSTY ICEBERG SLIM -->
+                <div class="product-card" data-weight="half" data-type="flower" data-price="75">
+                    <div class="weight-badge">1/2oz</div>
+                    <div class="product-image">
+                        <img src="https://images.dutchie.com/0a55ab6334590fb4511380d5c517d40a?w=400&h=400&fm=webp"
+                            alt="Lusty Iceberg Slim" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Lusty - Iceberg Slim</h2>
+                        <p>Clean, potent indoor flower. Smooth smoke and consistent effects.</p>
+                        <div class="features">
+                            <span class="feature-tag">20.57% THC</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$75</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/brand/lusty/" class="button" target="_blank">SHOP</a>
+                </div>
+
+                <!-- LUSTY JELLY CAKE -->
+                <div class="product-card" data-weight="quarter" data-type="flower" data-price="65">
+                    <div class="deal-badge">Staff Pick</div>
+                    <div class="weight-badge">1/4oz</div>
+                    <div class="product-image">
+                        <img src="https://images.dutchie.com/98f362d5ce095542f19ffe597bd9615d?w=400&h=400&fm=webp"
+                            alt="Lusty Jelly Cake" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Lusty - Jelly Cake</h2>
+                        <p>Sweet terpene profile and uplifting hybrid effects. A top staff recommendation.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-hybrid">Hybrid</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$65</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/brand/lusty/" class="button" target="_blank">SHOP</a>
+                </div>
+
+                <!-- LUSTY META OG -->
+                <div class="product-card" data-weight="quarter" data-type="flower" data-price="65">
+                    <div class="deal-badge">Staff Pick</div>
+                    <div class="weight-badge">1/4oz</div>
+                    <div class="product-image">
+                        <img src="https://images.dutchie.com/226a524e00004428d33e590a8de42200?w=400&h=400&fm=webp"
+                            alt="Lusty Meta OG" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Lusty - Meta OG</h2>
+                        <p>Heavy-hitting indica for deep relaxation and physical relief.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-indica">Indica</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$65</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/brand/lusty/" class="button" target="_blank">SHOP</a>
+                </div>
+
+                <!-- Punch Extracts Shatter -->
+                <div class="product-card" data-weight="1g" data-type="concentrate" data-price="21">
+                    <div class="weight-badge">1g</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge indoor">Premium Extract</div>
+                        <img src="https://images.dutchie.com/ede342e1280662e59077a8c60041c1a7"
+                            alt="Punch Extracts Premium Shatter" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Punch Extracts - Premium Shatter</h2>
+                        <p>California weed prices for dabs: $21/gram. High-purity shatter with rich terpene profiles.
+                            Cheapest dispensary concentrates in LA.</p>
+                        <div class="features">
+                            <span class="feature-tag">69-86% THC</span>
+                            <span class="feature-tag">Extract</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$21</span>
+                            <span class="price-unit">per gram</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/categories/concentrates/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=CONCENTRATES&brands=95250b1b-2549-47ee-a92e-9c53f41a30e8"
+                        class="button" target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <!-- Punch Extracts Badder -->
+                <div class="product-card" data-weight="1g" data-type="concentrate" data-price="21">
+                    <div class="weight-badge">1g</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge indoor">Premium Extract</div>
+                        <img src="https://images.dutchie.com/87eff1f2723a50e98a2956c91578393b"
+                            alt="Punch Extracts Premium Badder" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Punch Extracts - Premium Badder</h2>
+                        <p>Weed price in California for premium badder: $21/gram. Smooth, creamy, whipped to perfection.
+                            Low cost cannabis concentrates.</p>
+                        <div class="features">
+                            <span class="feature-tag">69-86% THC</span>
+                            <span class="feature-tag">Extract</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$21</span>
+                            <span class="price-unit">per gram</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/categories/concentrates/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=CONCENTRATES&brands=95250b1b-2549-47ee-a92e-9c53f41a30e8"
+                        class="button" target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <div class="product-card" data-weight="edibles" data-type="edible" data-price="3">
+                    <div class="deal-badge">Single</div>
+                    <div class="weight-badge">5mg THC</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge indoor">Tablet</div>
+                        <img src="https://images.dutchie.com/b5ae4ba772ab5c33dad9d51ccc3f73c1?w=500&h=500&fm=webp"
+                            alt="Level Protab Tablets Slumber Single" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Level Protab Tablets Slumber Single</h2>
+                        <p>A $3 single tablet for precise nighttime dosing. Each Slumber Protab has 5mg THC and 3mg CBD
+                            in a sugar-free, easy-to-swallow format.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-indica">5mg THC</span>
+                            <span class="feature-tag">3mg CBD</span>
+                            <span class="feature-tag">Sleep</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$3</span>
+                            <span class="price-unit">per tablet</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/brand/level/" class="button" target="_blank"
+                        rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <div class="product-card" data-weight="edibles" data-type="edible" data-price="3">
+                    <div class="deal-badge">Single</div>
+                    <div class="weight-badge">10mg THC</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge indoor">Tablet</div>
+                        <img src="https://images.dutchie.com/a28ff5edb11d3b65bee0ad3c0c38d05f?w=500&h=500&fm=webp"
+                            alt="Level Protab Single Tablets Energy" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Level Protab Single Tablets Energy</h2>
+                        <p>Sugar-free, gluten-free, vegan, zero-calorie energy tablets with 10mg delta-9 THC, 5mg THCv,
+                            and 3mg CBG. Scored for easy splitting and made for clean, focused energy.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-sativa">10mg THC</span>
+                            <span class="feature-tag">5mg THCv</span>
+                            <span class="feature-tag">3mg CBG</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$3</span>
+                            <span class="price-unit">per tablet</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/brand/level/" class="button" target="_blank"
+                        rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <div class="product-card" data-weight="1g" data-type="preroll" data-price="10">
+                    <div class="weight-badge">1.5g</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge indoor">Indoor</div>
+                        <img src="https://images.dutchie.com/0bc43347bde3001aefc2405cfe425b98"
+                            alt="CIZI Infused 2-Pack Prerolls" />
+                    </div>
+                    <div class="product-info">
+                        <h2>CIZI Infused 2-Pack Prerolls</h2>
+                        <p>Potent 1.5g infused preroll packs in delicious flavors like Sour Green Apple and Watermelon
+                            Mint.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-sativa">40%+ THC</span>
+                            <span class="feature-tag">Infused</span>
+                            <span class="feature-tag">2-Pack</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$10</span>
+                            <span class="price-unit">per pack</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=68c0f43b-c6cb-407f-8008-a67f43301e81"
+                        class="button" target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <div class="product-card" data-weight="quarter" data-type="flower" data-price="30">
+                    <div class="weight-badge">1/4oz (7g)</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge indoor">Indoor</div>
+                        <img src="https://images.dutchie.com/da07dae62796e3a9a07f00a9f36ab33e"
+                            alt="CIZI Premium Flower in 1/4 Ounce bags" />
+                    </div>
+                    <div class="product-info">
+                        <h2>CIZI Premium Flower Quarters</h2>
+                        <p>High-quality flower with potent THC levels. Available in popular strains like Pound Cake and
+                            Blue Martian.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-sativa">25%+ THC</span>
+                            <span class="feature-tag strain-hybrid">Multiple Strains</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$30</span>
+                            <span class="price-unit">per quarter</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=68c0f43b-c6cb-407f-8008-a67f43301e81"
+                        class="button" target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <div class="product-card" data-weight="1g" data-type="vape" data-price="17">
+                    <div class="weight-badge">1g</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge indoor">Indoor</div>
+                        <img src="https://images.dutchie.com/3310b0974bfb7af9d6985b0d83349daf"
+                            alt="CIZI High-Potency 1g Vape Cartridge" />
+                    </div>
+                    <div class="product-info">
+                        <h2>CIZI High-Potency Vape Carts</h2>
+                        <p>Cheapest THC vape carts in LA — $17 each, 85%+ THC. Best cannabis prices for carts at any
+                            California dispensary.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-sativa">85%+ THC</span>
+                            <span class="feature-tag strain-indica">Flavorful</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$17</span>
+                            <span class="price-unit">each</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=68c0f43b-c6cb-407f-8008-a67f43301e81"
+                        class="button" target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <div class="product-card" data-weight="1g" data-type="vape" data-price="17">
+                    <div class="deal-badge">Vape Deal</div>
+                    <div class="weight-badge">1g</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge indoor">Vape</div>
+                        <img src="https://images.dutchie.com/095cadce49a5e3a601d2fd254e77ed83?w=500&h=500&fm=webp"
+                            alt="CIZI 1 gram vape 89% THC" />
+                    </div>
+                    <div class="product-info">
+                        <h2>CIZI 1g Vape</h2>
+                        <p>High-potency 1 gram CIZI vape at a budget-friendly $17. Testing at 89% THC, this is one of
+                            the strongest value cart options on the menu.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-sativa">89% THC</span>
+                            <span class="feature-tag">1g</span>
+                            <span class="feature-tag">Value Vape</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$17</span>
+                            <span class="price-unit">each</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/brand/cizi/" class="button" target="_blank"
+                        rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <div class="product-card" data-weight="2g" data-type="vape" data-price="26.99">
+                    <div class="deal-badge">Low Tolerance Pick</div>
+                    <div class="weight-badge">2g</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge indoor">Hybrid</div>
+                        <img src="https://images.dutchie.com/00e736e2ab711a4119dbd3d30c0d43c8?w=500&h=500&fm=webp"
+                            alt="Happy Place AIO Kiwi Watermelon 2 gram vape" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Happy Place AIO - Kiwi Watermelon</h2>
+                        <p>Two grams for $26.99 with 61.35% THC. Kiwi Watermelon is a fruity hybrid escape and a smart
+                            budget vape for people with low tolerance or anyone newer to THC.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-hybrid">Hybrid</span>
+                            <span class="feature-tag strain-indica">61.35% THC</span>
+                            <span class="feature-tag">2g</span>
+                            <span class="feature-tag">Kiwi Watermelon</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$26.99</span>
+                            <span class="price-unit">each</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/brand/happy-place/" class="button" target="_blank"
+                        rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <div class="product-card" data-weight="2g" data-type="vape" data-price="27">
+                    <div class="deal-badge">2g Bundle</div>
+                    <div class="weight-badge">2g</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge indoor">Vape</div>
+                        <img src="https://images.dutchie.com/085416b9665b840f99d2707c784df95d?w=500&h=500&fm=webp"
+                            alt="Happy Place 2 gram vape 62% THC" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Happy Place 2g Vape</h2>
+                        <p>Another available Happy Place 2g vape at $27. The 62% THC range makes it a better fit for
+                            newer THC users and low-tolerance shoppers who want value without jumping straight to
+                            ultra-potent carts.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-indica">62% THC</span>
+                            <span class="feature-tag">2g</span>
+                            <span class="feature-tag">Low Tolerance</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$27</span>
+                            <span class="price-unit">each</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/brand/happy-place/" class="button" target="_blank"
+                        rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <div class="product-card" data-weight="edibles" data-type="edible" data-price="10">
+                    <div class="weight-badge">100mg</div>
+                    <div class="product-image">
+                        <img src="https://images.dutchie.com/ed22f6ad86a079eb4e883dd39dcb7c3d"
+                            alt="Whoa Gummies 100mg" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Whoa Gummies</h2>
+                        <p>Delicious THC gummies with 10mg per serving. Perfect for precise dosing and great flavor.</p>
+                        <div class="features">
+                            <span class="feature-tag">10mg Each</span>
+                            <span class="feature-tag">Edibles</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$10</span>
+                            <span class="price-unit">per pack</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=whoa"
+                        class="button" target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <div class="product-card" data-weight="half" data-type="flower" data-price="65">
+                    <div class="deal-badge">Half Oz Deal</div>
+                    <div class="weight-badge">1/2oz (14g)</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge sun-grown">Sun-Grown</div>
+                        <img src="https://images.dutchie.com/6cc92a3fdd76e603887a533f73942225"
+                            alt="Big Tree Premium Cannabis" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Big Tree</h2>
+                        <p>Cheap ounces for sale — half oz at $65 with 20-28% THC. Best weed prices for bulk buyers in
+                            Los Angeles.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-hybrid">Multiple Strains</span>
+                            <span class="feature-tag strain-sativa">20-28% THC</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$65</span>
+                            <span class="price-unit">per half oz</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=a6d8352d-d94e-422e-a9e3-ab1ff3ae39ef"
+                        class="button" target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <div class="product-card" data-weight="1g" data-type="preroll" data-price="5">
+                    <div class="weight-badge">1g</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge indoor">Indoor</div>
+                        <img src="https://images.dutchie.com/d5fd1f7a98e6991f4c2f0e65c82e94d4"
+                            alt="Sparkiez Indoor Preroll" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Sparkiez Indoor Prerolls</h2>
+                        <p>Premium indoor flower prerolls. Multiple strains available with potent THC levels.</p>
+                        <div class="features">
+                            <span class="feature-tag">Indoor Flower</span>
+                            <span class="feature-tag strain-sativa">19-28% THC</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$5</span>
+                            <span class="price-unit">each</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=sparkiez"
+                        class="button" target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <div class="product-card" data-weight="1g" data-type="preroll" data-price="5">
+                    <div class="deal-badge">Preroll Deal</div>
+                    <div class="weight-badge">1g</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge indoor">Hybrid</div>
+                        <img src="https://images.dutchie.com/855fc63d662051fe15aadbfd0c93ad99?w=500&h=500&fm=webp"
+                            alt="Chico Verde Preroll Gorilla Cake" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Chico Verde Preroll — Gorilla Cake</h2>
+                        <p>Budget-friendly 1g hybrid preroll from Chico Verde. Gorilla Cake tests at 26.82% THC, giving
+                            value shoppers a solid $5 smoke without giving up potency.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-hybrid">Hybrid</span>
+                            <span class="feature-tag strain-sativa">26.82% THC</span>
+                            <span class="feature-tag">Gorilla Cake</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$5</span>
+                            <span class="price-unit">each</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/shop/pre-rolls-nearby-lax-airport/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=PRE_ROLLS%2C"
+                        class="button" target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <div class="product-card" data-weight="half" data-type="preroll" data-price="50">
+                    <div class="deal-badge">Bulk Value</div>
+                    <div class="weight-badge">1/2oz (14g)</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge indoor">Indoor</div>
+                        <img src="https://images.dutchie.com/3dc143da77068c5f73903365aa16f8c1"
+                            alt="Sparkiez 14 Pre-roll Pack" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Sparkiez 14 Pre-roll Pack</h2>
+                        <p>Bulk pack of fourteen premium pre-rolls. Maximum value and convenience for regular users.</p>
+                        <div class="features">
+                            <span class="feature-tag">14 Pack</span>
+                            <span class="feature-tag">Premium</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$50</span>
+                            <span class="price-unit">per half oz</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/categories/pre_rolls/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=PRE_ROLLS&brands=d18d3fe4-3032-4f4d-b122-94c5410f8c99"
+                        class="button" target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <div class="product-card" data-weight="quarter" data-type="preroll" data-price="51.01">
+                    <div class="deal-badge">20-Pack</div>
+                    <div class="weight-badge">1/4oz</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge greenhouse">Hybrid</div>
+                        <img src="https://images.dutchie.com/6eaea0f5fd180ce0457dd525a075697a?w=500&h=500&fm=webp"
+                            alt="Pacific Stone 20 pack Slims Hybrid" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Pacific Stone 20 Pack Slims Hybrid</h2>
+                        <p>Quarter-ounce 20-pack of slim hybrid pre-rolls blending 75% 805 Glue with 25% Cereal Milk.
+                            Fresh grapefruit and floral notes with a euphoric lift and calm finish.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-hybrid">Hybrid</span>
+                            <span class="feature-tag strain-sativa">20.18% THC</span>
+                            <span class="feature-tag">20 Slims</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$51.01</span>
+                            <span class="price-unit">per 20-pack</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/product/pacific-stone-20-pack-slims-hybrid/?retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3"
+                        class="button" target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <div class="product-card" data-weight="eighth" data-type="flower" data-price="25">
+                    <div class="weight-badge">1/8oz (3.5g)</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge greenhouse">Greenhouse</div>
+                        <img src="https://images.dutchie.com/369a2eacad890e876e45eada9d40a44f"
+                            alt="Pacific Stone Premium Flower" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Pacific Stone Premium Flower</h2>
+                        <p>Cali weed prices at their best — $25 eighths. Strawberry Cough, Kush Mints, Purple Tangie and
+                            more. Affordable weed near LAX airport.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-hybrid">Multiple Strains</span>
+                            <span class="feature-tag strain-sativa">22-25% THC</span>
+                            <span class="feature-tag">CA Grown</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$25</span>
+                            <span class="price-unit">per eighth</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/categories/flower/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=FLOWER&brands=6708af15-e788-4b40-9cd5-b729167e21fd"
+                        class="button" target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <div class="product-card" data-weight="half" data-type="flower" data-price="40">
+                    <div class="deal-badge">Bulk Value</div>
+                    <div class="weight-badge">1/2oz (14g)</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge greenhouse">Greenhouse</div>
+                        <img src="https://images.dutchie.com/fff61cd5fc221d0edf03a18d8e7465a4"
+                            alt="Pacific Stone Sugar Shake" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Pacific Stone Sugar Shake</h2>
+                        <p>Half oz weed price: $40. Roll your own from California greenhouse shake. How much is a half
+                            ounce of weed at a dispensary? This cheap.</p>
+                        <div class="features">
+                            <span class="feature-tag">Roll Your Own</span>
+                            <span class="feature-tag strain-sativa">20% THC</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$40</span>
+                            <span class="price-unit">per half oz</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/categories/flower/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=FLOWER&brands=6708af15-e788-4b40-9cd5-b729167e21fd"
+                        class="button" target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <div class="product-card" data-weight="eighth" data-type="flower" data-price="20">
+                    <div class="weight-badge">1/8oz (3.5g)</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge sun-grown">Sun-Grown</div>
+                        <img src="https://images.dutchie.com/f5d5e788ff1244973ffe7e845718c82c"
+                            alt="Poppy's Micro Buds" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Poppy's Micro Buds</h2>
+                        <p>Cheapest weed in California — $20 eighths with 21-29% THC. Strains: Biscotti, Gelato, Maui
+                            Wowie, Lemon Haze, ChemDawg. Good cheap weed in LA.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-hybrid">Multiple Strains</span>
+                            <span class="feature-tag strain-sativa">21-29% THC</span>
+                            <span class="feature-tag">Micro Buds</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$20</span>
+                            <span class="price-unit">per eighth</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=poppy"
+                        class="button" target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <!-- WCC Infused Flower -->
+                <div class="product-card" data-weight="quarter" data-type="flower" data-price="55">
+                    <div class="deal-badge">Value</div>
+                    <div class="weight-badge">1/4oz (7g)</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge indoor">Indoor Infused</div>
+                        <img src="https://images.dutchie.com/12e03475514f091117347d7fd37cc861?w=500&h=500&fm=webp"
+                            alt="WCC Infused Flower Sugar Coated" />
+                    </div>
+                    <div class="product-info">
+                        <h2>WCC Infused Flower - Sugar Coated</h2>
+                        <p>Diamond-infused flower by West Coast Cure. Dosidos x Triangle Kush cross — frosty, potent,
+                            and boosted with diamonds for an elevated high.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-hybrid">Hybrid</span>
+                            <span class="feature-tag strain-sativa">33.74% THC</span>
+                            <span class="feature-tag">Diamond Infused</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$55</span>
+                            <span class="price-unit">per quarter</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/product/wcc-infused-flower-h-sugar-coated/" class="button"
+                        target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <!-- Claybourne All-in-One Vape -->
+                <div class="product-card" data-weight="1g" data-type="vape" data-price="45">
+                    <div class="weight-badge">1g</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge indoor">Disposable</div>
+                        <img src="https://images.dutchie.com/91adbb126a9e23b43cc6e514fbb135a1?w=500&h=500&fm=webp"
+                            alt="Claybourne Co. 1g all-in-one disposable vape" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Claybourne Co. All-in-One Disposable Vape</h2>
+                        <p>Claybourne's 1g all-in-one disposable vape is a convenient, ready-to-use option for shoppers
+                            who want premium cannabis oil without buying a separate battery.</p>
+                        <div class="features">
+                            <span class="feature-tag">1g</span>
+                            <span class="feature-tag strain-sativa">All-in-One</span>
+                            <span class="feature-tag">Disposable</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$45</span>
+                            <span class="price-unit">each</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/brand/claybourne-co/" class="button" target="_blank"
+                        rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <!-- Sour Fuel by LA Family Farms -->
+                <div class="product-card" data-weight="eighth" data-type="flower" data-price="30">
+                    <div class="deal-badge">Top Shelf</div>
+                    <div class="weight-badge">1/8oz (3.5g)</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge indoor">Indoor</div>
+                        <img src="https://laxcc.com/wp-content/uploads/2025/12/sour-fuel-la-family-farms.png"
+                            alt="Sour Fuel by LA Family Farms — indoor top-shelf flower at LAXCC" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Sour Fuel by LA Family Farms</h2>
+                        <p>LA-grown top-shelf indoor flower at $30 an eighth. Loud, gassy terps and dense, frosty buds — true top-shelf for budget-shelf money.</p>
+                        <div class="features">
+                            <span class="feature-tag">Top Shelf</span>
+                            <span class="feature-tag">LA Grown</span>
+                            <span class="feature-tag">Indoor</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$30</span>
+                            <span class="price-unit">per eighth</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/product/la-family-sour-fuel/"
+                        class="button" target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <!-- Aims Horticulture - Cyclone -->
+                <div class="product-card" data-weight="eighth" data-type="flower" data-price="30">
+                    <div class="deal-badge">Indoor Deal</div>
+                    <div class="weight-badge">1/8oz (3.5g)</div>
+                    <div class="product-image">
+                        <div class="cultivation-badge indoor">Indoor</div>
+                        <img src="https://images.dutchie.com/0015d9bab504dcb6f972103882b472b5?w=500&h=500&fm=webp"
+                            alt="Aims Horticulture Cyclone" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Aims Horticulture - Cyclone</h2>
+                        <p>Indoor-grown indica from Aims Horticulture at just $30 an eighth. Solid potency at 25% THC —
+                            a reliable, affordable indica for relaxation and sleep.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-indica">Indica</span>
+                            <span class="feature-tag strain-sativa">25.48% THC</span>
+                            <span class="feature-tag">Indoor</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$30</span>
+                            <span class="price-unit">per eighth</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=aims"
+                        class="button" target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <!-- Sluggers Infused Preroll -->
+                <div class="product-card" data-weight="1g" data-type="preroll" data-price="12">
+                    <div class="weight-badge">.7g</div>
+                    <div class="product-image">
+                        <img src="https://images.dutchie.com/64f4c4b99989d683f64c987a391e7a0c?w=400&h=400&fm=webp"
+                            alt="Sluggers Infused Preroll Bubble Bath" />
+                    </div>
+                    <div class="product-info">
+                        <h2>Sluggers - Bubble Bath Infused</h2>
+                        <p>Soothing hybrid infused preroll blending two rising genetics. 35% THC in a .7g stick —
+                            smooth, potent, ready to go.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-hybrid">Hybrid</span>
+                            <span class="feature-tag strain-sativa">35.47% THC</span>
+                            <span class="feature-tag">Infused</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$12</span>
+                            <span class="price-unit">each</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/brand/sluggers/" class="button" target="_blank"
+                        rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <!-- WHOA Gummies $8 -->
+                <div class="product-card" data-weight="edibles" data-type="edible" data-price="8">
+                    <div class="deal-badge">Single</div>
+                    <div class="product-image">
+                        <img src="https://images.dutchie.com/4167ca19c7670b2afc95d2212cf5b827?w=500&h=500&fm=webp"
+                            alt="WHOA Gummies - $8 each at LAXCC" />
+                    </div>
+                    <div class="product-info">
+                        <h2>WHOA Gummies — 100mg THC</h2>
+                        <p>Four flavors at just $8 each: Limon, Pineapple Con Chile, Green Apple, and Mango Con Chile.
+                            100mg THC per pack — the cheapest edibles at LAXCC.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-hybrid">Hybrid</span>
+                            <span class="feature-tag strain-sativa">100mg THC</span>
+                            <span class="feature-tag">4 Flavors</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$8</span>
+                            <span class="price-unit">per pack</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/brands/whoa" class="button" target="_blank"
+                        rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <!-- 100mg THC Gummies $12 -->
+                <div class="product-card" data-weight="edibles" data-type="edible" data-price="12">
+                    <div class="deal-badge">Gummies Deal</div>
+                    <div class="weight-badge">100mg</div>
+                    <div class="product-image">
+                        <img src="https://images.dutchie.com/75144afeffee420d609471c2ca99af3f?w=400&h=400&fm=webp"
+                            alt="100mg THC gummies for $12 at LAXCC" />
+                    </div>
+                    <div class="product-info">
+                        <h2>100mg THC Gummies</h2>
+                        <p>Budget-friendly 100mg THC gummies for $12. A simple edible pick for shoppers who want
+                            full-pack potency at an affordable price.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-hybrid">Edible</span>
+                            <span class="feature-tag strain-sativa">100mg THC</span>
+                            <span class="feature-tag">$12 Pack</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$12</span>
+                            <span class="price-unit">per pack</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/shop/thc-gummies-edibles-near-lax-airport/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=EDIBLES%2C&brands=%225f795974-685c-480e-a1ef-366cf0a5cf82%22%2C"
+                        class="button" target="_blank" rel="noopener noreferrer">SHOP</a>
+                </div>
+
+                <!-- WHOA Rosin PB Cups -->
+                <div class="product-card" data-weight="edibles" data-type="edible" data-price="22">
+                    <div class="weight-badge">100mg</div>
+                    <div class="product-image">
+                        <img src="https://images.dutchie.com/0b6e8c82520c73899f3f6d03c0e985ae?w=500&h=500&fm=webp"
+                            alt="WHOA Rosin Peanut Butter Cups" />
+                    </div>
+                    <div class="product-info">
+                        <h2>WHOA Rosin Peanut Butter Cups</h2>
+                        <p>Solventless rosin-infused peanut butter cups. 100mg THC total — premium rosin extraction in
+                            an edible format at a budget-friendly price.</p>
+                        <div class="features">
+                            <span class="feature-tag strain-hybrid">Hybrid</span>
+                            <span class="feature-tag strain-sativa">100mg THC</span>
+                            <span class="feature-tag">Rosin Infused</span>
+                        </div>
+                    </div>
+                    <div class="price-block">
+                        <div class="price-item">
+                            <span class="price-main">$22</span>
+                            <span class="price-unit">per pack</span>
+                        </div>
+                    </div>
+                    <a href="https://laxcc.com/brands/whoa" class="button" target="_blank"
+                        rel="noopener noreferrer">SHOP</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Featured Brands Section -->
+        <section class="brands-section">
+            <div class="brands-container">
+                <h2>Cheap Weed in Los Angeles & High-Authority Budget Brands</h2>
+                <p class="brands-intro">
+                    Are you searching for the <strong>best weed prices in Los Angeles</strong>? Look no further. At
+                    LAXCC, we believe <strong>cheap weed in Los Angeles</strong> shouldn't mean sacrificing quality. We
+                    are known for offering <strong>cheap edibles</strong>, <strong>affordable ounces</strong>, and the
+                    <strong>best weed deals in LA</strong> from trusted brands that deliver premium flower,
+                    concentrates, and vapes without the high markup. Located just 5 minutes from LAX Airport, our
+                    dispensary provides unmatched value for anyone looking for <strong>cheap weed near me</strong>.
+                </p>
+
+                <div class="brands-grid">
+
+                    <!-- CIZI : FEATURED BLOCK -->
+                    <div class="brand-item cizi-feature">
+                        <div class="brand-meta">
+                            <span class="grow-method-badge indoor">Featured Partner</span>
+                            <h3 class="brand-name">CIZI</h3>
+                            <a href="https://www.instagram.com/cizibrand/?hl=en" class="brand-link" target="_blank"
+                                rel="nofollow">@cizibrand</a>
+                        </div>
+
+                        <div class="brand-content">
+                            <p class="brand-description">
+                                <strong>How much does weed cost in California?</strong> CIZI makes it easy to find
+                                <strong>good cheap weed</strong> — indoor flower quarters $30,
+                                vape carts $17, infused prerolls $10. We have the <strong>best weed prices</strong> in
+                                LA from a <strong>budget weed brand</strong> that
+                                proves affordable weed doesn't mean low quality.
+                            </p>
+
+                            <!-- Native IG Integration Mock -->
+                            <div class="ig-native-shell">
+                                <div class="ig-header">
+                                    <div class="ig-profile">
+                                        <div class="ig-avatar">
+                                            <img src="https://images.dutchie.com/0bc43347bde3001aefc2405cfe425b98"
+                                                alt="Cizi Avatar">
+                                        </div>
+                                        <div style="display:flex; flex-direction:column; line-height:1.2;">
+                                            <span class="ig-handle">cizibrand</span>
+                                        </div>
+                                    </div>
+                                    <a href="https://www.instagram.com/cizibrand/?hl=en" class="ig-follow-btn"
+                                        target="_blank" rel="nofollow">Follow</a>
+                                </div>
+                                <div class="ig-grid">
+                                    <div class="ig-post">
+                                        <img src="https://images.dutchie.com/0bc43347bde3001aefc2405cfe425b98"
+                                            alt="Cizi Prerolls">
+                                    </div>
+                                    <div class="ig-post">
+                                        <img src="https://images.dutchie.com/da07dae62796e3a9a07f00a9f36ab33e"
+                                            alt="Cizi Flower">
+                                    </div>
+                                    <div class="ig-post">
+                                        <img src="https://images.dutchie.com/70dfd4a16086d987078d6a640497a22d"
+                                            alt="Cizi Vape">
+                                    </div>
+                                </div>
+                                <div class="ig-actions">
+                                    <i class="far fa-heart" style="color:#000;"></i>
+                                    <i class="far fa-comment" style="color:#000;"></i>
+                                    <i class="far fa-paper-plane" style="color:#000;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pacific Stone -->
+                    <div class="brand-item">
+                        <div class="brand-meta">
+                            <h3 class="brand-name">Pacific Stone</h3>
+                            <span class="grow-method-badge greenhouse">Greenhouse</span>
+                        </div>
+                        <div class="brand-content">
+                            <p class="brand-description">
+                                <strong>Weed prices in California</strong> don't get better than Pacific Stone — $25
+                                eighths and $40
+                                half-ounce shake with 20-25% THC. Sixth-generation Dutch greenhouse growers on 20 acres
+                                in Santa Barbara. The <strong>cheapest weed</strong> that's still premium. The best
+                                value cannabis at
+                                any <strong>cheap dispensary Los Angeles</strong>.
+                            </p>
+                            <a href="https://pacificstonebrand.com/" class="brand-link" target="_blank"
+                                rel="nofollow">Visit Pacific Stone &rarr;</a>
+
+                            <!-- Greenhouse Sourcing Image -->
+                            <figure style="margin: 2.5rem 0 0 0; width: 100%;">
+                                <img src="https://pacificstonebrand.com/wp-content/uploads/2023/11/dutch-greenhouse-in-santa-barbara-county-01-1.webp"
+                                    alt="Pacific Stone Dutch Greenhouse in Santa Barbara"
+                                    style="width: 100%; border-radius: 12px; height: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                                <figcaption
+                                    style="font-size: 0.75rem; color: #999; margin-top: 0.75rem; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase;">
+                                    Image courtesy of Pacific Stone
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <!-- Sparkiez -->
+                    <div class="brand-item">
+                        <div class="brand-meta">
+                            <h3 class="brand-name">Sparkiez</h3>
+                            <span class="grow-method-badge indoor">Premium Indoor</span>
+                        </div>
+                        <div class="brand-content">
+                            <p class="brand-description">
+                                <strong>How much is a half ounce of weed at a dispensary?</strong> Sparkiez answers that
+                                — $50 for a
+                                14-pack of indoor prerolls, or $5 each. <strong>Cheapest dispensary in Los
+                                    Angeles</strong> for
+                                premium indoor flower. Enjoy <strong>weed on a budget</strong> done right.
+                            </p>
+                            <a href="https://www.sparkiez.com/" class="brand-link" target="_blank" rel="nofollow">Visit
+                                Sparkiez &rarr;</a>
+
+                            <!-- Sparkiez Feature with Unique ID and Full Image -->
+                            <div id="sparkiez-feature-container">
+                                <figure style="margin: 2.5rem 0 0 0; width: 100%;">
+                                    <img src="https://static.wixstatic.com/media/3593b1_6ba2409dbd1941d6b7e21193b814567c~mv2.png"
+                                        alt="Sparkiez Sativa Prerolls"
+                                        style="width: 100%; height: auto; object-fit: contain; max-height: 400px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Big Tree -->
+                    <div class="brand-item">
+                        <div class="brand-meta">
+                            <h3 class="brand-name">Big Tree</h3>
+                            <span class="grow-method-badge sun-grown">Sun-Grown</span>
+                        </div>
+                        <div class="brand-content">
+                            <p class="brand-description">
+                                Looking for a <strong>half ounce of weed for sale</strong>? Big Tree half-ounce flower
+                                starts at $65 — that's legacy
+                                <strong>california weed prices</strong> at their finest. <strong>Low cost
+                                    cannabis</strong>
+                                with 20-28% THC for daily smokers who want <strong>good cheap weed</strong> without
+                                compromise.
+                            </p>
+                            <a href="https://www.bigtreeindustries.com/" class="brand-link" target="_blank"
+                                rel="nofollow">Visit Big Tree &rarr;</a>
+
+                            <figure style="margin: 2.5rem 0 0 0; width: 100%;">
+                                <img src="https://images.unsplash.com/photo-1597266028963-106cc8109625"
+                                    alt="Big Tree Sun Grown Cannabis"
+                                    style="width: 100%; border-radius: 12px; height: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                            </figure>
+                        </div>
+                    </div>
+
+                    <!-- Poppy's -->
+                    <div class="brand-item">
+                        <div class="brand-meta">
+                            <h3 class="brand-name">Poppy's</h3>
+                            <span class="grow-method-badge sun-grown">Sun-Grown</span>
+                        </div>
+                        <div class="brand-content">
+                            <p class="brand-description">
+                                <strong>Is weed cheap in California?</strong> Poppy's Micro Buds prove it — $20 eighths
+                                with 21-29% THC
+                                in strains like Gelato, OG Kush, and ChemDawg. The <strong>cheapest weed</strong> in Los
+                                Angeles. Find the <strong>best inexpensive cannabis strains</strong> here.
+                            </p>
+                            <a href="https://frootbrand.com/" class="brand-link" target="_blank" rel="nofollow">Visit
+                                Froot Brand &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Whoa -->
+                    <div class="brand-item">
+                        <div class="brand-meta">
+                            <h3 class="brand-name">Whoa</h3>
+                            <span class="grow-method-badge edibles">Edibles</span>
+                        </div>
+                        <div class="brand-content">
+                            <p class="brand-description">
+                                Cheapest edibles in California — WHOA gummies start at $8 per 100mg pack. Rosin peanut
+                                butter cups for $22. Best cannabis prices for edibles at any Los Angeles dispensary.
+                                Cheap cannabis that tastes premium.
+                            </p>
+                            <a href="https://www.whoainfused.com/" class="brand-link" target="_blank"
+                                rel="nofollow">Visit Whoa &rarr;</a>
+
+                            <figure style="margin: 2.5rem 0 0 0; width: 100%;">
+                                <img src="https://images.squarespace-cdn.com/content/v1/5aaea51885ede1bd72192ec0/ab2e2be6-cc97-4f97-ab0e-b0db8041f172/Website+graphics+%281%29.png?format=2500w"
+                                    alt="Whoa Edibles Graphics"
+                                    style="width: 100%; border-radius: 12px; height: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                            </figure>
+                        </div>
+                    </div>
+
+                    <!-- Level -->
+                    <div class="brand-item">
+                        <div class="brand-meta">
+                            <h3 class="brand-name">Level</h3>
+                            <span class="grow-method-badge edibles">Tablets</span>
+                        </div>
+                        <div class="brand-content">
+                            <p class="brand-description">
+                                Cheap edibles do not have to mean sugary gummies. Level Protab singles start at $3 with
+                                precise cannabinoid blends for sleep, energy, and easy dosing. Sugar-free, discreet, and
+                                simple to split when you want a smaller serving.
+                            </p>
+                            <a href="https://laxcc.com/brand/level/" class="brand-link" target="_blank"
+                                rel="noopener noreferrer">Shop Level &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Punch Extracts -->
+                    <div class="brand-item" style="border-bottom: 1px solid rgba(0,0,0,0.08);">
+                        <div class="brand-meta">
+                            <h3 class="brand-name">Punch Extracts</h3>
+                            <span class="grow-method-badge indoor">Concentrates</span>
+                        </div>
+                        <div class="brand-content">
+                            <p class="brand-description">
+                                California weed prices for concentrates start at $21/gram with Punch Extracts. Premium
+                                shatter and badder at the cheapest dispensary prices in Los Angeles. Cost of an ounce of
+                                weed in dabs? Way less than you'd expect.
+                            </p>
+                            <span style="font-size:0.9rem; font-weight:600;">Available In-Store</span>
+
+                            <figure style="margin: 2.5rem 0 0 0; width: 100%;">
+                                <img src="https://corberacreative.com/hosted/punchextracts/wp-content/uploads/2021/02/ExtrsliderBG_9e.jpg"
+                                    alt="Punch Extracts Concentrates"
+                                    style="width: 100%; border-radius: 12px; height: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+                                <figcaption
+                                    style="font-size: 0.75rem; color: #999; margin-top: 0.75rem; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase;">
+                                    Image courtesy of Punch Extracts
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- AWARD-WINNING SEO VIBE SECTION -->
+        <section class="lax-seo-authority">
+            <div class="seo-container">
+                
+                <div class="seo-vibe-header">
+                    <div class="accent-line"></div>
+                    <h2>LA'S PREMIER VALUE <span>DISPENSARY NEAR ME</span></h2>
+                </div>
+
+                <div class="seo-vibe-content">
+                    
+                    <div class="seo-text-block">
+                        <h3>Unmatched Excellence & Value</h3>
+                        <p>
+                            Searching for the <strong>best weed prices in Los Angeles</strong>? LAXCC is the high-authority 
+                            destination for shoppers who refuse to sacrifice quality for cost. We provide a curated selection 
+                            of <strong>affordable cannabis in California</strong>, delivering a premium experience at 
+                            unbeatable price points.
+                        </p>
+                        <p>
+                            From our proximity to LAX to our reputation as the <strong>top-rated dispensary near me</strong>, 
+                            we are committed to providing <strong>cheap edibles in Los Angeles</strong> and high-potency 
+                            vapes that set the standard for value.
+                        </p>
+                    </div>
+
+                    <div class="seo-vibe-grid">
+                        
+                        <div class="seo-vibe-card">
+                            <span class="card-num">01 / AUTHORITY</span>
+                            <span class="card-title">#1 Budget Excellence in LA</span>
+                        </div>
+
+                        <div class="seo-vibe-card">
+                            <span class="card-num">02 / EDIBLES</span>
+                            <span class="card-title">Best Value Edibles in Los Angeles</span>
+                        </div>
+
+                        <div class="seo-vibe-card">
+                            <span class="card-num">03 / SERVICE</span>
+                            <span class="card-title">Top Rated Dispensary Near Me</span>
+                        </div>
+
+                        <div class="seo-vibe-card">
+                            <span class="card-num">04 / PREROLLS</span>
+                            <span class="card-title">Affordable Prerolls & Ounce Deals</span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        (function () {
+            'use strict';
+
+            var activeFilters = { price: 'all', type: 'all', weight: 'all' };
+            var cards = document.querySelectorAll('.product-card');
+            var buttons = document.querySelectorAll('.bh-filters button');
+
+            function matchesPrice(card, filter) {
+                if (filter === 'all') return true;
+                var price = parseInt(card.getAttribute('data-price'), 10);
+                if (filter === 'under10') return price < 10;
+                if (filter === 'under25') return price < 25;
+                if (filter === 'under35') return price < 35;
+                if (filter === 'under60') return price < 60;
+                return true;
+            }
+
+            function matchesType(card, filter) {
+                if (filter === 'all') return true;
+                return card.getAttribute('data-type') === filter;
+            }
+
+            function matchesWeight(card, filter) {
+                if (filter === 'all') return true;
+                var w = card.getAttribute('data-weight');
+                if (filter === 'edibles') return w === 'edibles';
+                return w === filter;
+            }
+
+            function applyFilters() {
+                var count = 0;
+                for (var i = 0; i < cards.length; i++) {
+                    var show = matchesPrice(cards[i], activeFilters.price) &&
+                        matchesType(cards[i], activeFilters.type) &&
+                        matchesWeight(cards[i], activeFilters.weight);
+                    cards[i].style.display = show ? '' : 'none';
+                    if (show) count++;
+                }
+            }
+
+            function handleFilterClick(e) {
+                var btn = e.target.closest('button[data-filter]');
+                if (!btn) return;
+
+                var group = btn.getAttribute('data-group');
+                var value = btn.getAttribute('data-filter');
+
+                activeFilters[group] = value;
+
+                // Update active states within this group only
+                var siblings = document.querySelectorAll('.bh-filters button[data-group="' + group + '"]');
+                for (var i = 0; i < siblings.length; i++) {
+                    siblings[i].classList.remove('active');
+                }
+                btn.classList.add('active');
+
+                applyFilters();
+            }
+
+            var filterBar = document.querySelector('.bh-filters');
+            if (filterBar) {
+                filterBar.addEventListener('click', handleFilterClick);
+            }
+        })();
+    </script>
+</body>
+
+</html>
