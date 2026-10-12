@@ -1,0 +1,419 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800;900&display=swap');
+
+    #thc-modern {
+        /* --- THEME VARS: SLATE PURPLE ACCENT & LAXCC BRAND BLUE --- */
+        --ph-bg: transparent;
+        --ph-card-bg: #ffffff;
+        --ph-card-border: #e2e8f0;
+        --ph-accent: #6f4ca2;
+        --ph-accent-hover: #583385;
+        --ph-accent-light: rgba(111, 76, 162, 0.08);
+        --ph-text: #1D508A;
+        --ph-text-muted: #64748b;
+        --ph-font: 'Manrope', sans-serif;
+
+        /* Spacing */
+        --ph-spacing-sm: 8px;
+        --ph-spacing-md: 12px;
+        --ph-spacing-lg: 16px;
+        --ph-spacing-xl: 30px;
+
+        /* Border Radius */
+        --ph-radius-sm: 6px;
+        --ph-radius-md: 10px;
+        --ph-radius-lg: 16px;
+
+        /* Transitions */
+        --ph-transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        --ph-transition-fast: 0.2s ease;
+
+        /* Shadows */
+        --ph-shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+        --ph-shadow-hover: 0 20px 25px -5px rgba(111, 76, 162, 0.12), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+        font-family: var(--ph-font);
+        color: var(--ph-text);
+        padding: 40px 0;
+        position: relative;
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    #thc-modern *,
+    #thc-modern *::before,
+    #thc-modern *::after {
+        box-sizing: border-box;
+    }
+
+    /* HEADER */
+    #thc-modern .thc-header {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: var(--ph-spacing-xl);
+        width: 100%;
+    }
+
+    #thc-modern .thc-header__top {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 20px;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    #thc-modern .thc-header__titles {
+        flex: 1;
+        min-width: 260px;
+    }
+
+    /* Clean text-only super heading */
+    #thc-modern .thc-header__sup {
+        font-size: 13px;
+        font-weight: 800;
+        color: var(--ph-accent);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: 8px;
+        display: inline-block;
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 0;
+    }
+
+    #thc-modern .thc-header__title {
+        font-size: clamp(32px, 4vw, 44px);
+        font-weight: 900;
+        line-height: 0.95;
+        text-transform: uppercase;
+        margin: 0;
+        color: var(--ph-text);
+        letter-spacing: -0.02em;
+    }
+
+    #thc-modern .thc-header__title span {
+        color: var(--ph-accent);
+    }
+
+    /* Clean text-only features / specs */
+    #thc-modern .thc-specs {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 800;
+        color: var(--ph-accent);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        line-height: 1.6;
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 0;
+        align-self: flex-end;
+    }
+
+    #thc-modern .thc-specs span {
+        color: var(--ph-text-muted);
+        font-weight: 500;
+        margin: 0 8px;
+    }
+
+    /* 100% full width on desktop description */
+    #thc-modern .thc-header__desc {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--ph-text-muted);
+        line-height: 1.55;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 4px;
+    }
+
+    #thc-modern .thc-header__desc strong {
+        color: var(--ph-text);
+        font-weight: 700;
+    }
+
+    /* SHORTCODE CONTAINER */
+    #thc-modern .thc-products-section {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    /* GRID & CARD STYLES (Supporting rendered Leafbridge & custom markup) */
+    #thc-modern .thc-grid,
+    #thc-modern .jb-grid,
+    #thc-modern .hab-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-bottom: 30px;
+        align-items: start;
+    }
+
+    #thc-modern .thc-card,
+    #thc-modern .jb-card,
+    #thc-modern .hab-card {
+        background: var(--ph-card-bg);
+        border: 1px solid var(--ph-card-border);
+        border-radius: 16px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: inherit;
+        box-shadow: var(--ph-shadow-sm);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #thc-modern .thc-card:hover,
+    #thc-modern .jb-card:hover,
+    #thc-modern .hab-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--ph-shadow-hover);
+    }
+
+    #thc-modern .thc-card__image,
+    #thc-modern .jb-card__image,
+    #thc-modern .hab-card__image {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1;
+        background: #f8fafc;
+        border-radius: 10px;
+        border: 1px solid #f1f5f9;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+        overflow: hidden;
+    }
+
+    #thc-modern .thc-card__image img,
+    #thc-modern .jb-card__image img,
+    #thc-modern .hab-card__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        mix-blend-mode: multiply;
+        transition: transform 0.4s ease;
+        will-change: transform;
+    }
+
+    #thc-modern .thc-card:hover .thc-card__image img,
+    #thc-modern .jb-card:hover .jb-card__image img,
+    #thc-modern .hab-card:hover .hab-card__image img {
+        transform: scale(1.06);
+    }
+
+    #thc-modern .thc-card__badge,
+    #thc-modern .jb-card__badge,
+    #thc-modern .hab-card__badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: var(--ph-accent);
+        color: #fff;
+        font-size: 12px;
+        font-weight: 800;
+        padding: 6px 12px;
+        border-radius: 8px;
+        text-transform: uppercase;
+        z-index: 2;
+        letter-spacing: 0.03em;
+        box-shadow: 0 2px 8px rgba(111, 76, 162, 0.25);
+    }
+
+    #thc-modern .thc-card__strain,
+    #thc-modern .jb-card__strain,
+    #thc-modern .hab-card__strain {
+        font-size: 20px;
+        font-weight: 800;
+        margin: 0 0 6px 0;
+        color: var(--ph-text);
+        line-height: 1.25;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #thc-modern .thc-card__meta,
+    #thc-modern .jb-card__meta,
+    #thc-modern .hab-card__meta {
+        font-size: 15px;
+        color: var(--ph-text-muted);
+        line-height: 1.4;
+        font-weight: 600;
+        margin-bottom: var(--ph-spacing-sm);
+    }
+
+    #thc-modern .thc-card__footer,
+    #thc-modern .jb-card__footer,
+    #thc-modern .hab-card__footer {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #thc-modern .thc-card__price,
+    #thc-modern .jb-card__price,
+    #thc-modern .hab-card__price {
+        font-size: 18px;
+        font-weight: 800;
+        color: var(--ph-text);
+    }
+
+    #thc-modern .thc-card__arrow,
+    #thc-modern .jb-card__arrow,
+    #thc-modern .hab-card__arrow {
+        font-size: 20px;
+        color: var(--ph-text-muted);
+        transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    #thc-modern .thc-card:hover .thc-card__arrow,
+    #thc-modern .jb-card:hover .jb-card__arrow,
+    #thc-modern .hab-card:hover .hab-card__arrow {
+        color: var(--ph-accent);
+        transform: translateX(3px);
+    }
+
+    /* FOOTER */
+    #thc-modern .thc-footer {
+        display: flex;
+        justify-content: center;
+        margin-top: var(--ph-spacing-xl);
+        border-top: 1px solid var(--ph-card-border);
+        padding-top: var(--ph-spacing-xl);
+    }
+
+    #thc-modern .thc-footer__cta {
+        background: var(--ph-accent);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 800;
+        padding: 12px 32px;
+        border-radius: var(--ph-radius-md);
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        transition: background 0.2s ease;
+        white-space: nowrap;
+    }
+
+    #thc-modern .thc-footer__cta:hover,
+    #thc-modern .thc-footer__cta:visited,
+    #thc-modern .thc-footer__cta:active,
+    #thc-modern .thc-footer__cta:focus {
+        color: #fff !important;
+        background: var(--ph-accent-hover);
+        text-decoration: none !important;
+    }
+
+    /* RESPONSIVE - Tablet */
+    @media (min-width: 640px) {
+
+        #thc-modern .thc-grid,
+        #thc-modern .jb-grid,
+        #thc-modern .hab-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            align-items: start;
+        }
+    }
+
+    /* RESPONSIVE - Desktop */
+    @media (min-width: 1024px) {
+
+        #thc-modern .thc-grid,
+        #thc-modern .jb-grid,
+        #thc-modern .hab-grid {
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            align-items: start;
+        }
+    }
+
+    /* RESPONSIVE - Mobile */
+    @media (max-width: 768px) {
+        #thc-modern {
+            padding: 20px 0;
+        }
+
+        #thc-modern .thc-header__top {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--ph-spacing-sm);
+        }
+
+        #thc-modern .thc-specs {
+            align-self: flex-start;
+            font-size: 12px;
+        }
+
+        #thc-modern .thc-header__title {
+            font-size: 32px;
+        }
+
+        #thc-modern .thc-card,
+        #thc-modern .jb-card,
+        #thc-modern .hab-card {
+            padding: 12px;
+        }
+
+        #thc-modern .thc-card__strain,
+        #thc-modern .jb-card__strain,
+        #thc-modern .hab-card__strain {
+            font-size: 14px;
+        }
+
+        #thc-modern .thc-card__meta,
+        #thc-modern .jb-card__meta,
+        #thc-modern .hab-card__meta {
+            font-size: 13px;
+        }
+
+        #thc-modern .thc-card__price,
+        #thc-modern .jb-card__price,
+        #thc-modern .hab-card__price {
+            font-size: 16px;
+        }
+
+        #thc-modern .thc-card__badge,
+        #thc-modern .jb-card__badge,
+        #thc-modern .hab-card__badge {
+            font-size: 11px;
+            padding: 5px 10px;
+            top: 8px;
+            left: 8px;
+        }
+    }
+</style>
+
+<div id="thc-modern">
+    <div class="thc-header">
+        <div class="thc-header__top">
+            <div class="thc-header__titles">
+                <span class="thc-header__sup">Estate-Grown &bull; THC Design</span>
+                <h2 class="thc-header__title">Estate-Grown <span>INDOOR FLOWER</span></h2>
+            </div>
+            <p class="thc-specs">Single Source <span>&middot;</span> Zero PGRs <span>&middot;</span> Terpene Rich
+                <span>&middot;</span> 100% Indoor</p>
+        </div>
+        <div class="thc-header__desc">Cultivated in Los Angeles by master growers. <strong>THC Design</strong> sets
+            the California standard for single-sourced indoor flower with exceptional terpene profiles, clean burns, and zero synthetic PGRs.</div>
+    </div>
+
+    <div class="thc-products-section">
+        [leafbridge_specific_product_filter brand="61c55fcf-2d64-4e61-82e2-b730dd46826a" count="20"]
+    </div>
+</div>

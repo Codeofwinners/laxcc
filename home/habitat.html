@@ -1,0 +1,1268 @@
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Schema.org Local Business Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "LAX Cannabis Club",
+  "image": "https://laxcc.com/logo.png",
+  "@id": "https://laxcc.com",
+  "url": "https://laxcc.com",
+  "telephone": "+1-310-429-3789",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "8332 Lincoln Blvd",
+    "addressLocality": "Los Angeles",
+    "addressRegion": "CA",
+    "postalCode": "90045",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.9584,
+    "longitude": -118.4186
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "09:00",
+    "closes": "21:30"
+  },
+  "priceRange": "$$",
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {"@type": "GeoCoordinates","latitude": 33.9584,"longitude": -118.4186},
+    "geoRadius": "10000"
+  }
+}
+</script>
+
+<style>
+  /* ════════════════════════════════════════════════════════════
+     Hilton LAX page — matches sofi/culver/manhattan design system.
+     Scoped under .habitat-wrap. Embedded in Elementor/WP.
+     No JS — FAQ uses native <details>/<summary>.
+     Colors: navy #1D508A, cyan #00AFC9, orange #F89459 (CTAs).
+     ════════════════════════════════════════════════════════════ */
+  .habitat-wrap {
+    --h-bg: #fbf8f2;
+    --h-surface: #ffffff;
+    --h-navy: #1D508A;
+    --h-navy-dark: #143b6b;
+    --h-cyan: #00AFC9;
+    --h-cyan-dark: #008fa4;
+    --h-accent: #F89459;
+    --h-accent-dark: #ef8345;
+    --h-text: #0f172a;
+    --h-text-muted: #64748b;
+    --h-radius: 16px;
+    --h-radius-lg: 22px;
+    --h-shadow: 0 8px 24px -6px rgba(15, 23, 42, 0.08);
+    --h-shadow-hover: 0 14px 36px -8px rgba(15, 23, 42, 0.14);
+    --h-font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+    font-family: var(--h-font) !important;
+    background: var(--h-bg) !important;
+    color: var(--h-text) !important;
+    padding: clamp(1rem, 2.5vw, 2rem) !important;
+    line-height: 1.5 !important;
+    box-sizing: border-box !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
+  .habitat-wrap *,
+  .habitat-wrap *::before,
+  .habitat-wrap *::after { box-sizing: inherit !important; }
+  .habitat-wrap p,
+  .habitat-wrap h1,
+  .habitat-wrap h2,
+  .habitat-wrap h3,
+  .habitat-wrap h4,
+  .habitat-wrap ul,
+  .habitat-wrap ol { margin: 0; padding: 0; }
+  .habitat-wrap ul { list-style: none; }
+
+  .habitat-shell { max-width: 1400px; margin: 0 auto; }
+
+  /* ─── HERO UNIT ─── */
+  .habitat-hero-unit {
+    background: var(--h-surface);
+    border-radius: var(--h-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--h-shadow);
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: stretch;
+  }
+
+  .habitat-hero-img {
+    position: relative;
+    min-height: 100%;
+    background-image: url('https://laxcc.com/wp-content/uploads/2026/05/dispensary-near-hilton-hotel-lax.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #1a1f2b;
+  }
+
+  .habitat-hero-content {
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    display: flex;
+    align-items: center;
+  }
+
+  .habitat-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 100%;
+  }
+  .habitat-stack > * { margin: 0; }
+
+  /* Hours pill */
+  .habitat-hours {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.4rem 0.85rem 0.4rem 0.55rem;
+    background: rgba(34, 197, 94, 0.1);
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--h-text);
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    max-width: 100%;
+  }
+  .habitat-hours > * { white-space: nowrap; flex-shrink: 0; }
+  .habitat-hours .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+    flex: 0 0 8px;
+    animation: habitatPulse 2.4s ease-in-out infinite;
+  }
+  .habitat-hours .label {
+    font-size: 0.65rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: #15803d;
+  }
+  .habitat-hours .sep { width: 1px; height: 11px; background: rgba(15, 23, 42, 0.14); }
+  .habitat-hours .time { font-variant-numeric: tabular-nums; }
+  .habitat-hours .days { font-size: 0.72rem; color: var(--h-text-muted); font-weight: 500; }
+  @keyframes habitatPulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18); }
+    50%      { box-shadow: 0 0 0 7px rgba(34, 197, 94, 0.06); }
+  }
+
+  /* Eyebrow */
+  .habitat-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--h-cyan-dark);
+  }
+  .habitat-eyebrow .pin {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--h-cyan);
+  }
+
+  /* Headline */
+  .habitat-h1 {
+    font-size: clamp(1.85rem, 3.8vw, 3rem);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    color: var(--h-navy);
+    margin: 0;
+  }
+  .habitat-h1 .accent {
+    background: linear-gradient(120deg, var(--h-cyan) 0%, var(--h-navy) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .habitat-desc {
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.6;
+    color: var(--h-text-muted);
+    max-width: 56ch;
+  }
+  .habitat-desc strong { color: var(--h-text); font-weight: 700; }
+
+  /* CTA row */
+  .habitat-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.25rem;
+  }
+  .habitat-wrap a.habitat-btn,
+  .habitat-wrap a.habitat-btn:link,
+  .habitat-wrap a.habitat-btn:visited {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    padding: 0.85rem 1.35rem !important;
+    border-radius: 100px !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease !important;
+    border: none !important;
+    line-height: 1 !important;
+  }
+  .habitat-wrap a.habitat-btn--primary,
+  .habitat-wrap a.habitat-btn--primary:link,
+  .habitat-wrap a.habitat-btn--primary:visited {
+    background: var(--h-accent) !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 16px -4px rgba(248, 148, 89, 0.45) !important;
+  }
+  .habitat-wrap a.habitat-btn--primary:hover,
+  .habitat-wrap a.habitat-btn--primary:focus,
+  .habitat-wrap a.habitat-btn--primary:active {
+    background: var(--h-accent-dark) !important;
+    transform: translateY(-2px) !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 24px -4px rgba(248, 148, 89, 0.55) !important;
+  }
+  .habitat-wrap a.habitat-btn--ghost,
+  .habitat-wrap a.habitat-btn--ghost:link,
+  .habitat-wrap a.habitat-btn--ghost:visited {
+    background: transparent !important;
+    color: var(--h-text) !important;
+    box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.15) !important;
+  }
+  .habitat-wrap a.habitat-btn--ghost:hover {
+    background: rgba(15, 23, 42, 0.04) !important;
+    transform: translateY(-2px) !important;
+    color: var(--h-text) !important;
+  }
+  .habitat-btn svg { display: block; }
+
+  /* ─── TRUST STRIP ─── */
+  .habitat-trust {
+    background: var(--h-surface);
+    border-radius: var(--h-radius);
+    box-shadow: var(--h-shadow);
+    margin-top: 0.85rem;
+    padding: 1rem 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .habitat-trust-item {
+    padding: 0.4rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .habitat-trust-item + .habitat-trust-item {
+    border-left: 1px solid rgba(15, 23, 42, 0.08);
+  }
+  .habitat-trust-val {
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    font-weight: 800;
+    color: var(--h-navy);
+    letter-spacing: -0.015em;
+    line-height: 1;
+  }
+  .habitat-trust-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--h-text-muted);
+  }
+
+  /* ─── ROW WRAPPER — pairs VIP + Reviews side-by-side on desktop ─── */
+  .habitat-row {
+    margin-top: 0.85rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+  .habitat-row > a { margin-top: 0 !important; }
+
+  /* ─── VIP $0.01 PRE-ROLL BANNER ─── unique to this page */
+  .habitat-wrap a.habitat-vip,
+  .habitat-wrap a.habitat-vip:link,
+  .habitat-wrap a.habitat-vip:visited {
+    margin-top: 0.85rem;
+    background: linear-gradient(135deg, var(--h-accent) 0%, #ef8345 100%);
+    border-radius: var(--h-radius);
+    padding: 1rem 1.35rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.25rem;
+    text-decoration: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 8px 22px -6px rgba(248, 148, 89, 0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .habitat-wrap a.habitat-vip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px -6px rgba(248, 148, 89, 0.55);
+  }
+  .habitat-vip-icon {
+    width: 38px; height: 38px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+  .habitat-vip-text { display: flex; flex-direction: column; gap: 0.15rem; }
+  .habitat-vip-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.005em;
+  }
+  .habitat-vip-sub {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 500;
+  }
+  .habitat-vip-arrow {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  /* ─── GOOGLE REVIEWS ─── */
+  .habitat-wrap a.habitat-social,
+  .habitat-wrap a.habitat-social:link,
+  .habitat-wrap a.habitat-social:visited {
+    margin-top: 0.85rem;
+    background: var(--h-surface);
+    border-radius: var(--h-radius);
+    box-shadow: var(--h-shadow);
+    padding: 1.1rem 1.35rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.25rem;
+    text-decoration: none !important;
+    color: var(--h-text) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .habitat-wrap a.habitat-social:hover { transform: translateY(-2px); box-shadow: var(--h-shadow-hover); }
+  .habitat-social-google {
+    width: 44px; height: 44px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234285F4' d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z'/%3E%3Cpath fill='%2334A853' d='M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z'/%3E%3Cpath fill='%23FBBC05' d='M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z'/%3E%3Cpath fill='%23EA4335' d='M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    flex-shrink: 0;
+  }
+  .habitat-social-rating { display: flex; flex-direction: column; gap: 0.15rem; }
+  .habitat-social-stars { display: flex; align-items: center; gap: 0.4rem; }
+  .habitat-social-stars-score {
+    font-size: 1.25rem; font-weight: 800;
+    color: var(--h-text); letter-spacing: -0.01em;
+  }
+  .habitat-social-stars-icons {
+    color: #FBC02D; font-size: 1rem;
+    letter-spacing: 1px; line-height: 1;
+  }
+  .habitat-social-count {
+    font-size: 0.82rem;
+    color: var(--h-text-muted);
+    font-weight: 500;
+  }
+  .habitat-social-link {
+    color: var(--h-cyan-dark);
+    font-weight: 700;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  /* ─── MAP PREVIEW ─── */
+  .habitat-map {
+    margin-top: 0.85rem;
+    border-radius: var(--h-radius);
+    box-shadow: var(--h-shadow);
+    overflow: hidden;
+    position: relative;
+    background: var(--h-surface);
+  }
+  .habitat-map iframe {
+    width: 100%;
+    height: 320px;
+    display: block;
+    border: 0;
+    filter: grayscale(15%) contrast(1.05);
+  }
+  .habitat-map-badge {
+    position: absolute;
+    bottom: 0.85rem;
+    right: 0.85rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0.4rem 0.85rem;
+    border-radius: 100px;
+    font-weight: 800;
+    font-size: 0.82rem;
+    color: var(--h-navy);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .habitat-map-badge .habitat-map-dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--h-cyan);
+  }
+
+  /* ─── PRACTICAL GUIDE ─── */
+  .habitat-guide {
+    margin-top: 0.85rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+  .habitat-card {
+    background: var(--h-surface);
+    border-radius: var(--h-radius);
+    box-shadow: var(--h-shadow);
+    padding: clamp(1.25rem, 2.2vw, 1.75rem);
+  }
+  .habitat-card h3 {
+    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+    font-weight: 800;
+    color: var(--h-navy);
+    letter-spacing: -0.02em;
+    margin: 0.4rem 0 0.5rem;
+    line-height: 1.15;
+  }
+  .habitat-card p {
+    font-size: 0.93rem;
+    line-height: 1.6;
+    color: var(--h-text-muted);
+    margin: 0;
+  }
+  .habitat-card p strong { color: var(--h-text); font-weight: 700; }
+
+  .habitat-checklist {
+    margin: 0.75rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+  .habitat-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: var(--h-text);
+  }
+  .habitat-check {
+    flex: 0 0 18px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--h-accent);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 800;
+    margin-top: 3px;
+    line-height: 1;
+  }
+
+  /* ─── SMOKING POLICY — warning callout, unique to this page ─── */
+  .habitat-policy {
+    margin-top: 0.85rem;
+    background: var(--h-surface);
+    border-radius: var(--h-radius);
+    box-shadow: var(--h-shadow);
+    padding: clamp(1.25rem, 2.4vw, 1.85rem);
+    border-left: 4px solid #f59e0b;
+  }
+  .habitat-policy-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #b45309;
+    margin-bottom: 0.6rem;
+  }
+  .habitat-policy-label::before {
+    content: '⚠';
+    font-size: 1rem;
+    line-height: 1;
+  }
+  .habitat-policy h3 {
+    font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+    font-weight: 800;
+    color: var(--h-navy);
+    letter-spacing: -0.02em;
+    margin: 0 0 0.85rem;
+    line-height: 1.2;
+  }
+  .habitat-policy p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--h-text-muted);
+    margin: 0 0 0.85rem;
+  }
+  .habitat-policy p:last-of-type { margin-bottom: 0; }
+  .habitat-policy p strong { color: var(--h-text); font-weight: 700; }
+  .habitat-wrap a.habitat-policy-link,
+  .habitat-wrap a.habitat-policy-link:link,
+  .habitat-wrap a.habitat-policy-link:visited {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.85rem;
+    color: var(--h-cyan-dark) !important;
+    font-weight: 700;
+    font-size: 0.82rem;
+    text-decoration: none !important;
+  }
+  .habitat-wrap a.habitat-policy-link:hover { text-decoration: underline !important; }
+
+  /* ─── LIVE MENU ─── */
+  .habitat-menu {
+    margin-top: 1.75rem;
+    scroll-margin-top: 1rem;
+  }
+  .habitat-menu-intro { margin-bottom: 0.85rem; padding: 0.25rem; }
+  .habitat-menu-intro h2 {
+    font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+    font-weight: 800;
+    color: var(--h-navy);
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    margin: 0 0 0.35rem;
+  }
+  .habitat-menu-intro p {
+    font-size: 0.95rem;
+    color: var(--h-text-muted);
+    line-height: 1.55;
+    margin: 0;
+    max-width: 680px;
+  }
+
+  .habitat-cat {
+    scroll-margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .habitat-cat-head {
+    padding: 0.25rem 0.25rem 0.85rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .habitat-cat-titles { min-width: 0; }
+  .habitat-cat-head h3 {
+    font-size: clamp(1.65rem, 2.6vw, 2.1rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--h-navy);
+    line-height: 1.1;
+    margin: 0 0 0.4rem;
+  }
+  .habitat-cat-head p {
+    font-size: 0.93rem;
+    color: var(--h-text-muted);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 760px;
+  }
+  .habitat-cat-head p strong { color: var(--h-text); font-weight: 700; }
+  .habitat-wrap a.habitat-shop-all,
+  .habitat-wrap a.habitat-shop-all:link,
+  .habitat-wrap a.habitat-shop-all:visited {
+    color: var(--h-cyan-dark) !important;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none !important;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .habitat-wrap a.habitat-shop-all:hover { text-decoration: underline !important; }
+  .habitat-cat-products { min-height: 220px; background: transparent; }
+
+  /* ─── ABOUT / WHY US ─── */
+  .habitat-section { margin-top: 1.5rem; }
+  .habitat-section-head {
+    padding: 0.5rem 0.25rem 1rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .habitat-section-titles h2 {
+    font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+    font-weight: 800;
+    color: var(--h-navy);
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    margin: 0 0 0.35rem;
+  }
+  .habitat-section-titles p {
+    font-size: 0.95rem;
+    color: var(--h-text-muted);
+    line-height: 1.55;
+    margin: 0;
+    max-width: 720px;
+  }
+
+  .habitat-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+  }
+  .habitat-fact {
+    background: var(--h-surface);
+    border-radius: var(--h-radius);
+    box-shadow: var(--h-shadow);
+    padding: 1.15rem 1.25rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .habitat-fact:hover { transform: translateY(-3px); box-shadow: var(--h-shadow-hover); }
+  .habitat-fact-label {
+    font-size: 0.66rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--h-cyan-dark);
+    margin-bottom: 0.4rem;
+  }
+  .habitat-fact-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--h-navy);
+    margin: 0 0 0.3rem;
+    letter-spacing: -0.01em;
+  }
+  .habitat-fact-body {
+    font-size: 0.86rem;
+    color: var(--h-text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ─── FAQ (native <details>) ─── */
+  .habitat-faq {
+    margin-top: 1.5rem;
+    background: var(--h-surface);
+    border-radius: var(--h-radius);
+    box-shadow: var(--h-shadow);
+    padding: clamp(1.25rem, 2.2vw, 1.75rem);
+  }
+  .habitat-faq h2 {
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    font-weight: 800;
+    color: var(--h-navy);
+    letter-spacing: -0.022em;
+    margin: 0 0 0.85rem;
+  }
+  .habitat-faq details {
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    padding: 0;
+  }
+  .habitat-faq details:last-of-type { border-bottom: 1px solid rgba(15, 23, 42, 0.08); }
+  .habitat-faq summary {
+    list-style: none;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--h-text);
+    line-height: 1.35;
+    transition: color 0.18s ease;
+  }
+  .habitat-faq summary::-webkit-details-marker { display: none; }
+  .habitat-faq summary::after {
+    content: '+';
+    flex-shrink: 0;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: rgba(0, 175, 201, 0.1);
+    color: var(--h-cyan-dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .habitat-faq details[open] summary::after {
+    content: '−';
+    background: var(--h-cyan);
+    color: #ffffff;
+  }
+  .habitat-faq summary:hover { color: var(--h-cyan-dark); }
+  .habitat-faq details > p {
+    padding: 0 0 1rem;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--h-text-muted);
+    margin: 0;
+  }
+  .habitat-faq details > p strong { color: var(--h-text); font-weight: 700; }
+
+  /* ─── FINAL CTA ─── */
+  .habitat-final {
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, var(--h-navy) 0%, var(--h-navy-dark) 100%);
+    border-radius: var(--h-radius-lg);
+    padding: clamp(1.75rem, 3.5vw, 2.75rem);
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .habitat-final::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(600px 400px at 90% 20%, rgba(0, 175, 201, 0.25), transparent 60%),
+      radial-gradient(500px 350px at 10% 90%, rgba(248, 148, 89, 0.15), transparent 60%);
+    pointer-events: none;
+  }
+  .habitat-final-text { position: relative; z-index: 1; }
+  .habitat-final-text .habitat-eyebrow { color: var(--h-cyan); margin-bottom: 0.75rem; }
+  .habitat-final-text .habitat-eyebrow .pin { background: var(--h-cyan); }
+  .habitat-final h2 {
+    font-size: clamp(1.65rem, 3vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    margin: 0 0 0.65rem;
+    color: #ffffff;
+  }
+  .habitat-final p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 50ch;
+  }
+  .habitat-final-cta { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 0.6rem; }
+  .habitat-final-cta .habitat-btn { width: 100%; justify-content: center; }
+  .habitat-wrap .habitat-final-cta a.habitat-btn--ghost,
+  .habitat-wrap .habitat-final-cta a.habitat-btn--ghost:link,
+  .habitat-wrap .habitat-final-cta a.habitat-btn--ghost:visited {
+    background: transparent !important;
+    color: #ffffff !important;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35) !important;
+  }
+  .habitat-wrap .habitat-final-cta a.habitat-btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+  }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 968px) {
+    .habitat-wrap { padding: 0.85rem !important; }
+
+    .habitat-hero-unit { grid-template-columns: 1fr; }
+    .habitat-hero-img { height: clamp(200px, 30vh, 280px); }
+    .habitat-hero-content { padding: 1.25rem 1.1rem; }
+    .habitat-hours {
+      font-size: 0.76rem;
+      gap: 0.45rem;
+      padding: 0.38rem 0.75rem 0.38rem 0.5rem;
+    }
+    .habitat-hours .label { font-size: 0.6rem; letter-spacing: 0.12em; }
+    .habitat-hours .days { font-size: 0.68rem; }
+
+    .habitat-trust {
+      grid-template-columns: 1fr;
+      padding: 0.5rem 0.75rem;
+    }
+    .habitat-trust-item + .habitat-trust-item {
+      border-left: none;
+      border-top: 1px solid rgba(15, 23, 42, 0.07);
+    }
+    .habitat-trust-item {
+      padding: 0.85rem 0.5rem;
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .habitat-row {
+      grid-template-columns: 1fr;
+      gap: 0.7rem;
+    }
+    .habitat-wrap a.habitat-social,
+    .habitat-wrap a.habitat-social:link,
+    .habitat-wrap a.habitat-social:visited,
+    .habitat-wrap a.habitat-vip,
+    .habitat-wrap a.habitat-vip:link,
+    .habitat-wrap a.habitat-vip:visited {
+      grid-template-columns: auto 1fr auto;
+      gap: 0.85rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .habitat-social-link { display: none; }
+
+    .habitat-map iframe { height: 240px; }
+
+    .habitat-guide { grid-template-columns: 1fr; }
+    .habitat-facts { grid-template-columns: 1fr; }
+
+    .habitat-final { grid-template-columns: 1fr; gap: 1.25rem; }
+    .habitat-final-cta { width: 100%; }
+  }
+
+  @media (max-width: 380px) {
+    .habitat-hours .days { display: none; }
+  }
+</style>
+
+<div class="habitat-wrap">
+  <div class="habitat-shell">
+
+    <!-- ─── HERO UNIT ─── -->
+    <section class="habitat-hero-unit">
+      <div class="habitat-hero-img" role="img" aria-label="LAX Cannabis Club — the closest dispensary to Hilton LA Airport"></div>
+      <div class="habitat-hero-content">
+        <div class="habitat-stack">
+          <span class="habitat-hours" aria-label="Store hours">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="label">Open</span>
+            <span class="sep" aria-hidden="true"></span>
+            <span class="time">9:00 AM – 9:30 PM</span>
+            <span class="days">· Every day</span>
+          </span>
+
+          <span class="habitat-eyebrow"><span class="pin" aria-hidden="true"></span>Westchester · 8–10 min from Hilton LAX</span>
+
+          <h1 class="habitat-h1">
+            Dispensary <span class="accent">Near Hilton LA Airport</span>
+          </h1>
+
+          <p class="habitat-desc">
+            LA's top-rated cannabis dispensary — just <strong>3 miles south of Hilton LAX</strong> on Lincoln Blvd,
+            an 8–10 minute drive from the hotel lobby. Shop 70+ brands across <strong>flower, vapes, edibles,
+            pre-rolls &amp; concentrates</strong>. Order online for express pickup.
+          </p>
+
+          <div class="habitat-cta-row">
+            <a class="habitat-btn habitat-btn--primary" href="#habitat-menu">
+              Shop Now
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+              </svg>
+            </a>
+            <a class="habitat-btn habitat-btn--primary" href="https://www.google.com/maps/dir/Hilton+Los+Angeles+Airport,+5711+W+Century+Blvd,+Los+Angeles,+CA+90045/LAX+Cannabis+Club,+8332+Lincoln+Blvd,+Los+Angeles,+CA+90045" target="_blank" rel="noopener">
+              Get Directions
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a class="habitat-btn habitat-btn--ghost" href="tel:+13104293789">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              (310) 429-3789
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── TRUST STRIP ─── -->
+    <div class="habitat-trust" role="list">
+      <div class="habitat-trust-item" role="listitem">
+        <span class="habitat-trust-val">3 mi</span>
+        <span class="habitat-trust-label">From Hilton LAX</span>
+      </div>
+      <div class="habitat-trust-item" role="listitem">
+        <span class="habitat-trust-val">8–10 min</span>
+        <span class="habitat-trust-label">Drive time</span>
+      </div>
+      <div class="habitat-trust-item" role="listitem">
+        <span class="habitat-trust-val">700+</span>
+        <span class="habitat-trust-label">Products · 70+ brands</span>
+      </div>
+    </div>
+
+    <!-- ─── VIP + REVIEWS — side-by-side on desktop, stacked on mobile ─── -->
+    <div class="habitat-row">
+      <a class="habitat-vip"
+         href="https://lab.alpineiq.com/join/c/2748/4715"
+         target="_blank" rel="noopener nofollow"
+         aria-label="Join VIP and get a $0.01 pre-roll">
+        <span class="habitat-vip-icon" aria-hidden="true">🎁</span>
+        <span class="habitat-vip-text">
+          <span class="habitat-vip-title">Get a $0.01 pre-roll on your first visit</span>
+          <span class="habitat-vip-sub">Join our free VIP program · daily deals, member-only pricing</span>
+        </span>
+        <span class="habitat-vip-arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a class="habitat-social"
+         href="https://www.google.com/search?q=LAXCC+reviews"
+         target="_blank" rel="noopener nofollow"
+         aria-label="See LAXCC's 4.9-star Google reviews">
+        <span class="habitat-social-google" aria-hidden="true"></span>
+        <span class="habitat-social-rating">
+          <span class="habitat-social-stars">
+            <span class="habitat-social-stars-score">4.9</span>
+            <span class="habitat-social-stars-icons" aria-hidden="true">★★★★★</span>
+          </span>
+          <span class="habitat-social-count">3,000+ verified Google reviews · LA's top-rated dispensary</span>
+        </span>
+        <span class="habitat-social-link">Read reviews →</span>
+      </a>
+    </div>
+
+    <!-- ─── MAP PREVIEW ─── -->
+    <div class="habitat-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d26477.5!2d-118.40941622089842!3d33.9485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x80c2b48a3c5f9c91%3A0x0!2sHilton%20Los%20Angeles%20Airport%2C%205711%20W%20Century%20Blvd%2C%20Los%20Angeles%2C%20CA%2090045!3m2!1d33.9460833!2d-118.3855556!4m5!1s0x80c2b0eb4a3785d1%3A0xc86f05119335d417!2s8332%20Lincoln%20Blvd%2C%20Los%20Angeles%2C%20CA%2090045!3m2!1d33.96194!2d-118.42083!5e0!3m2!1sen!2sus!4v1714423950970!5m2!1sen!2sus"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Driving route from Hilton LA Airport to LAX Cannabis Club"></iframe>
+      <span class="habitat-map-badge" aria-hidden="true">
+        <span class="habitat-map-dot"></span>
+        8–10 min · 3 mi from Hilton
+      </span>
+    </div>
+
+    <!-- ─── PRACTICAL GUIDE ─── -->
+    <div class="habitat-guide">
+      <div class="habitat-card">
+        <span class="habitat-eyebrow"><span class="pin"></span>The route</span>
+        <h3>Head south on Lincoln Blvd</h3>
+        <p>
+          Out of the Hilton lobby, jump on Century Blvd west to Lincoln, then <strong>head south
+          on Lincoln Blvd</strong> for about 3 miles — you'll see us on the right. No freeway, no
+          parking nightmare.
+        </p>
+        <ul class="habitat-checklist">
+          <li>
+            <span class="habitat-check" aria-hidden="true">✓</span>
+            <span><strong>Order ahead online</strong> — your bag is ready when you pull up</span>
+          </li>
+          <li>
+            <span class="habitat-check" aria-hidden="true">✓</span>
+            <span><strong>Free parking on Lincoln Blvd</strong> — in and out in 5 minutes</span>
+          </li>
+          <li>
+            <span class="habitat-check" aria-hidden="true">✓</span>
+            <span><strong>Tax-included pricing</strong> — sticker price is what you pay</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="habitat-card">
+        <span class="habitat-eyebrow"><span class="pin"></span>Hotel guests</span>
+        <h3>Out-of-towners welcome</h3>
+        <p>
+          California allows <strong>21+ recreational</strong> or <strong>18+ with a valid medical
+          cannabis card</strong> to purchase. No residency required — out-of-state &amp; international IDs accepted.
+        </p>
+        <ul class="habitat-checklist">
+          <li>
+            <span class="habitat-check" aria-hidden="true">✓</span>
+            <span><strong>21+ recreational, or 18+ with a valid medical card</strong> — passport, license, or military ID</span>
+          </li>
+          <li>
+            <span class="habitat-check" aria-hidden="true">✓</span>
+            <span><strong>Veterans discount</strong> — 10% off with valid military ID</span>
+          </li>
+          <li>
+            <span class="habitat-check" aria-hidden="true">✓</span>
+            <span><strong>Cash &amp; debit</strong> accepted — ATM on site</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ─── SMOKING POLICY — warning callout ─── -->
+    <section class="habitat-policy" aria-label="Hilton LAX smoking policy">
+      <span class="habitat-policy-label">Know before you go</span>
+      <h3>Hilton LAX is 100% non-smoking</h3>
+      <p>
+        The Hilton Los Angeles Airport <strong>does not allow smoking in rooms</strong> — the property is
+        100% non-smoking and strictly enforces this policy. Smoking in a room (or near windows, bathrooms,
+        or hallways) triggers a <strong>deep-cleaning fee of up to $250</strong>.
+      </p>
+      <p>
+        <strong>For cannabis specifically:</strong> California prohibits public consumption — and most
+        hotels (Hilton included) prohibit it entirely on property, even in outdoor smoking areas. Per the
+        <strong>California Department of Cannabis Control</strong>, consumption is limited to private
+        residences or licensed lounges.
+      </p>
+      <p>
+        <strong>Best advice:</strong> Don't smoke at the Hilton. Edibles, tinctures, or transdermal patches
+        are the smoke-free options that keep you compliant. If you want to consume, look at a licensed
+        cannabis consumption lounge in Hawthorne or West Hollywood — staff at LAXCC can point you to one.
+      </p>
+      <a class="habitat-policy-link"
+         href="https://www.cannabis.ca.gov/consumers/whats-legal/"
+         target="_blank" rel="noopener">
+        Read the official California cannabis rules
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/>
+          <line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+    </section>
+
+    <!-- ─── LIVE MENU ─── -->
+    <section id="habitat-menu" class="habitat-menu" aria-label="LAXCC live menu near Hilton LAX">
+      <header class="habitat-menu-intro">
+        <h2>Shop the menu — pickup in 30 minutes</h2>
+        <p>
+          Live inventory from our LA shop, 8–10 minutes from Hilton LA Airport. Order ahead so it's ready
+          when you roll in — flower, pre-rolls, vapes, edibles, and concentrates from California's top brands.
+        </p>
+      </header>
+
+      <section id="habitat-flower" class="habitat-cat">
+        <header class="habitat-cat-head">
+          <div class="habitat-cat-titles">
+            <h3>Premium Cannabis Flower Near Hilton LAX</h3>
+            <p>
+              <strong>Top-shelf indoor flower</strong>, exotic hybrids, and high-THC sativas from LA's
+              most respected growers — ranked by potency. The closest premium flower menu to Century Blvd
+              hotels and the LAX terminals, with same-day express pickup.
+            </p>
+          </div>
+          <a class="habitat-shop-all" href="https://laxcc.com/categories/flower/">Shop all →</a>
+        </header>
+        <div class="habitat-cat-products">
+          [leafbridge_specific_product_filter category="FLOWER" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+
+      <section id="habitat-prerolls" class="habitat-cat">
+        <header class="habitat-cat-head">
+          <div class="habitat-cat-titles">
+            <h3>Pre-Rolls &amp; Infused Joints Near Hilton LAX</h3>
+            <p>
+              <strong>Pre-rolls, infused blunts, hash-rolled joints, and multi-pack tins</strong> —
+              singles, two-packs, or 5-pack tins. New VIP members get a <strong>$0.01 pre-roll</strong>
+              on their first visit. Pickup-ready in minutes.
+            </p>
+          </div>
+          <a class="habitat-shop-all" href="https://laxcc.com/categories/pre-rolls/">Shop all →</a>
+        </header>
+        <div class="habitat-cat-products">
+          [leafbridge_specific_product_filter category="PRE_ROLLS" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+
+      <section id="habitat-vapes" class="habitat-cat">
+        <header class="habitat-cat-head">
+          <div class="habitat-cat-titles">
+            <h3>Premium Vaporizers Near Hilton LAX</h3>
+            <p>
+              <strong>Live resin cartridges, all-in-one disposables, distillate carts, and 510-thread
+              hardware</strong> — pocketable and discreet, perfect for travelers. Low-tolerance friendly
+              AIO disposables for first-timers.
+            </p>
+          </div>
+          <a class="habitat-shop-all" href="https://laxcc.com/categories/vaporizers/">Shop all →</a>
+        </header>
+        <div class="habitat-cat-products">
+          [leafbridge_specific_product_filter category="VAPORIZERS" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+
+      <section id="habitat-edibles" class="habitat-cat">
+        <header class="habitat-cat-head">
+          <div class="habitat-cat-titles">
+            <h3>Cannabis Edibles &amp; Gummies Near Hilton LAX</h3>
+            <p>
+              <strong>Microdose gummies, chocolates, mints, and infused beverages</strong> from
+              California's top edible brands. <strong>The smoke-free option for non-smoking hotel rooms</strong>
+              — precision-dosed 2.5–10mg singles for a daytime ride, or 100mg multi-packs for experienced consumers.
+            </p>
+          </div>
+          <a class="habitat-shop-all" href="https://laxcc.com/categories/edibles/">Shop all →</a>
+        </header>
+        <div class="habitat-cat-products">
+          [leafbridge_specific_product_filter category="EDIBLES" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+
+      <section id="habitat-concentrates" class="habitat-cat">
+        <header class="habitat-cat-head">
+          <div class="habitat-cat-titles">
+            <h3>Cannabis Concentrates Near Hilton LAX</h3>
+            <p>
+              Connoisseur-grade extracts — <strong>solventless live rosin, hydrocarbon live resin,
+              diamonds, sauce, cold-cure badder, and shatter</strong>. Built for dab rigs and e-rigs.
+              The finest concentrate selection in the LAX / Westchester corridor.
+            </p>
+          </div>
+          <a class="habitat-shop-all" href="https://laxcc.com/categories/concentrates/">Shop all →</a>
+        </header>
+        <div class="habitat-cat-products">
+          [leafbridge_specific_product_filter category="CONCENTRATES" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+    </section>
+
+    <!-- ─── WHO WE SERVE ─── -->
+    <section class="habitat-section">
+      <header class="habitat-section-head">
+        <div class="habitat-section-titles">
+          <h2>The closest dispensary to LAX hotels</h2>
+          <p>
+            Serving travelers, flight crews, and West LA locals — 3 miles south of Century Blvd's hotel
+            corridor and a quick drive from anywhere on the Westside.
+          </p>
+        </div>
+      </header>
+
+      <div class="habitat-facts">
+        <article class="habitat-fact">
+          <div class="habitat-fact-label">Century Blvd hotels</div>
+          <h3 class="habitat-fact-title">Hilton LAX</h3>
+          <p class="habitat-fact-body">5711 W Century Blvd — 3 miles north of LAXCC. 8–10 minute direct drive down Lincoln Blvd.</p>
+        </article>
+        <article class="habitat-fact">
+          <div class="habitat-fact-label">Other LAX hotels</div>
+          <h3 class="habitat-fact-title">Marriott · Sheraton · Hyatt</h3>
+          <p class="habitat-fact-body">LAX Marriott, Sheraton Gateway, Hyatt Regency LAX, Westin LAX — all clustered on Century Blvd, all 8–12 min from LAXCC.</p>
+        </article>
+        <article class="habitat-fact">
+          <div class="habitat-fact-label">Local neighborhoods</div>
+          <h3 class="habitat-fact-title">Westchester &amp; Playa</h3>
+          <p class="habitat-fact-body">Westchester, Playa del Rey, Playa Vista — we're the local dispensary for the LAX-adjacent residential pocket.</p>
+        </article>
+        <article class="habitat-fact">
+          <div class="habitat-fact-label">South Bay</div>
+          <h3 class="habitat-fact-title">El Segundo &amp; MB</h3>
+          <p class="habitat-fact-body">El Segundo, Manhattan Beach, Hermosa — quick straight shot up Sepulveda to LAXCC.</p>
+        </article>
+        <article class="habitat-fact">
+          <div class="habitat-fact-label">VIP program</div>
+          <h3 class="habitat-fact-title">$0.01 pre-roll</h3>
+          <p class="habitat-fact-body">Free VIP signup unlocks a $0.01 pre-roll on your first visit, plus member-only daily deals.</p>
+        </article>
+        <article class="habitat-fact">
+          <div class="habitat-fact-label">Budget</div>
+          <h3 class="habitat-fact-title">From $100/oz</h3>
+          <p class="habitat-fact-body">Budget-friendly options starting at $100/oz, tax-included. Daily rotating specials across every category.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ─── FAQ ─── -->
+    <section class="habitat-faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked</h2>
+
+      <details>
+        <summary>How far is LAXCC from Hilton LA Airport?</summary>
+        <p>
+          About <strong>3 miles south</strong> — an 8–10 minute direct drive down Lincoln Blvd. No freeway needed.
+          We're at 8332 Lincoln Blvd, Los Angeles, CA 90045.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I smoke cannabis in my Hilton room?</summary>
+        <p>
+          <strong>No.</strong> The Hilton LAX is 100% non-smoking and strictly enforced — there's a deep-cleaning
+          fee of up to $250 for smoking in a room. Edibles, tinctures, and transdermal patches are the smoke-free
+          options that keep you compliant.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I order ahead before I land at LAX?</summary>
+        <p>
+          <strong>Yes.</strong> Browse the menu online and place your order from the plane or your Uber — it'll
+          be bagged and ready when you arrive. Average pickup ~30 minutes after order.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do I need to be a California resident to shop?</summary>
+        <p>
+          <strong>No.</strong> California allows any adult 21+ (or 18+ with a valid medical cannabis card)
+          to purchase. International and out-of-state IDs are accepted — passport, driver's license, or military.
+        </p>
+      </details>
+
+      <details>
+        <summary>What's the $0.01 pre-roll offer?</summary>
+        <p>
+          Free VIP signup unlocks a <strong>$0.01 pre-roll on your first visit</strong>, plus member-only
+          daily deals and rotating specials. Takes 30 seconds at <a href="https://lab.alpineiq.com/join/c/2748/4715" target="_blank" rel="noopener" style="color: #008fa4; font-weight: 700;">our VIP signup page</a>.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do you offer a veterans discount?</summary>
+        <p>
+          <strong>Yes — 10% off</strong> with valid military ID, every day. Stacks with VIP member pricing.
+        </p>
+      </details>
+    </section>
+
+    <!-- ─── FINAL CTA ─── -->
+    <section class="habitat-final">
+      <div class="habitat-final-text">
+        <span class="habitat-eyebrow"><span class="pin" aria-hidden="true"></span>Staying at the Hilton?</span>
+        <h2>Order ahead. Pull up. Back to the hotel in 20 minutes.</h2>
+        <p>
+          Browse the live menu, place your order in 60 seconds, and pick up on your way from the
+          terminal or the lobby. Open every day, 9 AM – 9:30 PM.
+        </p>
+      </div>
+      <div class="habitat-final-cta">
+        <a class="habitat-btn habitat-btn--primary" href="https://lab.alpineiq.com/join/c/2748/4715" target="_blank" rel="noopener">
+          Get $0.01 pre-roll
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a class="habitat-btn habitat-btn--ghost" href="https://www.google.com/maps/dir/Hilton+Los+Angeles+Airport,+5711+W+Century+Blvd,+Los+Angeles,+CA+90045/LAX+Cannabis+Club,+8332+Lincoln+Blvd,+Los+Angeles,+CA+90045" target="_blank" rel="noopener">
+          Get directions
+        </a>
+      </div>
+    </section>
+
+  </div>
+</div>

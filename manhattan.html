@@ -1,0 +1,1072 @@
+<!-- SEO META — paste into Yoast/RankMath for this page -->
+<!-- Title: Dispensary Near Manhattan Beach | LAXCC — Closest Licensed Shop -->
+<!-- Description: No dispensaries in Manhattan Beach? LAXCC is the closest licensed dispensary — just 5 miles away on Lincoln Blvd. Premium cannabis, 100+ brands, open daily 9 AM – 9:30 PM. -->
+<meta name="description"
+      content="No dispensaries in Manhattan Beach? LAXCC is the closest licensed dispensary — 12 min away on Lincoln Blvd. 100+ brands, daily deals, express pickup. Open daily 9 AM – 9:30 PM.">
+
+<style>
+  /* ════════════════════════════════════════════════════════════
+     Manhattan Beach page — matches sofi/culver design system.
+     Scoped under .manhattan-wrap. Embedded in Elementor/WP, so
+     uses !important on overridable rules. No JS — FAQ uses
+     native <details>/<summary>.
+     Colors: navy #1D508A, cyan #00AFC9, orange #F89459 (CTAs).
+     ════════════════════════════════════════════════════════════ */
+  .manhattan-wrap {
+    --m-bg: #fbf8f2;
+    --m-surface: #ffffff;
+    --m-navy: #1D508A;
+    --m-navy-dark: #143b6b;
+    --m-cyan: #00AFC9;
+    --m-cyan-dark: #008fa4;
+    --m-accent: #F89459;
+    --m-accent-dark: #ef8345;
+    --m-text: #0f172a;
+    --m-text-muted: #64748b;
+    --m-radius: 16px;
+    --m-radius-lg: 22px;
+    --m-shadow: 0 8px 24px -6px rgba(15, 23, 42, 0.08);
+    --m-shadow-hover: 0 14px 36px -8px rgba(15, 23, 42, 0.14);
+    --m-font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+    font-family: var(--m-font) !important;
+    background: var(--m-bg) !important;
+    color: var(--m-text) !important;
+    padding: clamp(1rem, 2.5vw, 2rem) !important;
+    line-height: 1.5 !important;
+    box-sizing: border-box !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
+  .manhattan-wrap *,
+  .manhattan-wrap *::before,
+  .manhattan-wrap *::after { box-sizing: inherit !important; }
+  .manhattan-wrap p,
+  .manhattan-wrap h1,
+  .manhattan-wrap h2,
+  .manhattan-wrap h3,
+  .manhattan-wrap h4,
+  .manhattan-wrap ul,
+  .manhattan-wrap ol { margin: 0; padding: 0; }
+  .manhattan-wrap ul { list-style: none; }
+
+  .manhattan-shell { max-width: 1400px; margin: 0 auto; }
+
+  /* ─── HERO UNIT ─── image left, content right (no overlay) */
+  .manhattan-hero-unit {
+    background: var(--m-surface);
+    border-radius: var(--m-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--m-shadow);
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: stretch;
+  }
+
+  .manhattan-hero-img {
+    position: relative;
+    min-height: 100%;
+    background-image: url('https://laxcc.com/wp-content/uploads/2025/06/best-cannabis-store-Los-Angeles-scaled.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #1a1f2b;
+  }
+
+  .manhattan-hero-content {
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    display: flex;
+    align-items: center;
+  }
+
+  .manhattan-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 100%;
+  }
+  .manhattan-stack > * { margin: 0; }
+
+  /* Hours pill */
+  .manhattan-hours {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.4rem 0.85rem 0.4rem 0.55rem;
+    background: rgba(34, 197, 94, 0.1);
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--m-text);
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    max-width: 100%;
+  }
+  .manhattan-hours > * { white-space: nowrap; flex-shrink: 0; }
+  .manhattan-hours .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+    flex: 0 0 8px;
+    animation: manhattanPulse 2.4s ease-in-out infinite;
+  }
+  .manhattan-hours .label {
+    font-size: 0.65rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: #15803d;
+  }
+  .manhattan-hours .sep { width: 1px; height: 11px; background: rgba(15, 23, 42, 0.14); }
+  .manhattan-hours .time { font-variant-numeric: tabular-nums; }
+  .manhattan-hours .days { font-size: 0.72rem; color: var(--m-text-muted); font-weight: 500; }
+  @keyframes manhattanPulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18); }
+    50%      { box-shadow: 0 0 0 7px rgba(34, 197, 94, 0.06); }
+  }
+
+  /* Eyebrow */
+  .manhattan-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--m-cyan-dark);
+  }
+  .manhattan-eyebrow .pin {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--m-cyan);
+  }
+
+  /* Headline */
+  .manhattan-h1 {
+    font-size: clamp(1.85rem, 3.8vw, 3rem);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    color: var(--m-navy);
+    margin: 0;
+  }
+  .manhattan-h1 .accent {
+    background: linear-gradient(120deg, var(--m-cyan) 0%, var(--m-navy) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .manhattan-desc {
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.6;
+    color: var(--m-text-muted);
+    max-width: 56ch;
+  }
+  .manhattan-desc strong { color: var(--m-text); font-weight: 700; }
+
+  /* CTA row */
+  .manhattan-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.25rem;
+  }
+  .manhattan-wrap a.manhattan-btn,
+  .manhattan-wrap a.manhattan-btn:link,
+  .manhattan-wrap a.manhattan-btn:visited {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    padding: 0.85rem 1.35rem !important;
+    border-radius: 100px !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease !important;
+    border: none !important;
+    line-height: 1 !important;
+  }
+  .manhattan-wrap a.manhattan-btn--primary,
+  .manhattan-wrap a.manhattan-btn--primary:link,
+  .manhattan-wrap a.manhattan-btn--primary:visited {
+    background: var(--m-accent) !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 16px -4px rgba(248, 148, 89, 0.45) !important;
+  }
+  .manhattan-wrap a.manhattan-btn--primary:hover,
+  .manhattan-wrap a.manhattan-btn--primary:focus,
+  .manhattan-wrap a.manhattan-btn--primary:active {
+    background: var(--m-accent-dark) !important;
+    transform: translateY(-2px) !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 24px -4px rgba(248, 148, 89, 0.55) !important;
+  }
+  .manhattan-wrap a.manhattan-btn--ghost,
+  .manhattan-wrap a.manhattan-btn--ghost:link,
+  .manhattan-wrap a.manhattan-btn--ghost:visited {
+    background: transparent !important;
+    color: var(--m-text) !important;
+    box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.15) !important;
+  }
+  .manhattan-wrap a.manhattan-btn--ghost:hover {
+    background: rgba(15, 23, 42, 0.04) !important;
+    transform: translateY(-2px) !important;
+    color: var(--m-text) !important;
+  }
+  .manhattan-btn svg { display: block; }
+
+  /* ─── TRUST STRIP ─── */
+  .manhattan-trust {
+    background: var(--m-surface);
+    border-radius: var(--m-radius);
+    box-shadow: var(--m-shadow);
+    margin-top: 0.85rem;
+    padding: 1rem 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .manhattan-trust-item {
+    padding: 0.4rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .manhattan-trust-item + .manhattan-trust-item {
+    border-left: 1px solid rgba(15, 23, 42, 0.08);
+  }
+  .manhattan-trust-val {
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    font-weight: 800;
+    color: var(--m-navy);
+    letter-spacing: -0.015em;
+    line-height: 1;
+  }
+  .manhattan-trust-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--m-text-muted);
+  }
+
+  /* ─── GOOGLE REVIEWS ─── */
+  .manhattan-wrap a.manhattan-social,
+  .manhattan-wrap a.manhattan-social:link,
+  .manhattan-wrap a.manhattan-social:visited {
+    margin-top: 0.85rem;
+    background: var(--m-surface);
+    border-radius: var(--m-radius);
+    box-shadow: var(--m-shadow);
+    padding: 1.1rem 1.35rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.25rem;
+    text-decoration: none !important;
+    color: var(--m-text) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .manhattan-wrap a.manhattan-social:hover { transform: translateY(-2px); box-shadow: var(--m-shadow-hover); }
+  .manhattan-social-google {
+    width: 44px; height: 44px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234285F4' d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z'/%3E%3Cpath fill='%2334A853' d='M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z'/%3E%3Cpath fill='%23FBBC05' d='M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z'/%3E%3Cpath fill='%23EA4335' d='M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    flex-shrink: 0;
+  }
+  .manhattan-social-rating { display: flex; flex-direction: column; gap: 0.15rem; }
+  .manhattan-social-stars { display: flex; align-items: center; gap: 0.4rem; }
+  .manhattan-social-stars-score {
+    font-size: 1.25rem; font-weight: 800;
+    color: var(--m-text); letter-spacing: -0.01em;
+  }
+  .manhattan-social-stars-icons {
+    color: #FBC02D; font-size: 1rem;
+    letter-spacing: 1px; line-height: 1;
+  }
+  .manhattan-social-count {
+    font-size: 0.82rem;
+    color: var(--m-text-muted);
+    font-weight: 500;
+  }
+  .manhattan-social-link {
+    color: var(--m-cyan-dark);
+    font-weight: 700;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  /* ─── MAP PREVIEW ─── */
+  .manhattan-map {
+    margin-top: 0.85rem;
+    border-radius: var(--m-radius);
+    box-shadow: var(--m-shadow);
+    overflow: hidden;
+    position: relative;
+    background: var(--m-surface);
+  }
+  .manhattan-map iframe {
+    width: 100%;
+    height: 320px;
+    display: block;
+    border: 0;
+    filter: grayscale(15%) contrast(1.05);
+  }
+  .manhattan-map-badge {
+    position: absolute;
+    bottom: 0.85rem;
+    right: 0.85rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0.4rem 0.85rem;
+    border-radius: 100px;
+    font-weight: 800;
+    font-size: 0.82rem;
+    color: var(--m-navy);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .manhattan-map-badge .manhattan-map-dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--m-cyan);
+  }
+
+  /* ─── PRACTICAL GUIDE ─── */
+  .manhattan-guide {
+    margin-top: 0.85rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+  .manhattan-card {
+    background: var(--m-surface);
+    border-radius: var(--m-radius);
+    box-shadow: var(--m-shadow);
+    padding: clamp(1.25rem, 2.2vw, 1.75rem);
+  }
+  .manhattan-card h3 {
+    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+    font-weight: 800;
+    color: var(--m-navy);
+    letter-spacing: -0.02em;
+    margin: 0.4rem 0 0.5rem;
+    line-height: 1.15;
+  }
+  .manhattan-card p {
+    font-size: 0.93rem;
+    line-height: 1.6;
+    color: var(--m-text-muted);
+    margin: 0;
+  }
+  .manhattan-card p strong { color: var(--m-text); font-weight: 700; }
+
+  .manhattan-checklist {
+    margin: 0.75rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+  .manhattan-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: var(--m-text);
+  }
+  .manhattan-check {
+    flex: 0 0 18px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--m-accent);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 800;
+    margin-top: 3px;
+    line-height: 1;
+  }
+
+  /* ─── LIVE MENU ─── */
+  .manhattan-menu {
+    margin-top: 1.75rem;
+    scroll-margin-top: 1rem;
+  }
+  .manhattan-menu-intro { margin-bottom: 0.85rem; padding: 0.25rem; }
+  .manhattan-menu-intro h2 {
+    font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+    font-weight: 800;
+    color: var(--m-navy);
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    margin: 0 0 0.35rem;
+  }
+  .manhattan-menu-intro p {
+    font-size: 0.95rem;
+    color: var(--m-text-muted);
+    line-height: 1.55;
+    margin: 0;
+    max-width: 680px;
+  }
+
+  .manhattan-cat {
+    scroll-margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .manhattan-cat-head {
+    padding: 0.25rem 0.25rem 0.85rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .manhattan-cat-titles { min-width: 0; }
+  .manhattan-cat-head h3 {
+    font-size: clamp(1.65rem, 2.6vw, 2.1rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--m-navy);
+    line-height: 1.1;
+    margin: 0 0 0.4rem;
+  }
+  .manhattan-cat-head p {
+    font-size: 0.93rem;
+    color: var(--m-text-muted);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 760px;
+  }
+  .manhattan-cat-head p strong { color: var(--m-text); font-weight: 700; }
+  .manhattan-wrap a.manhattan-shop-all,
+  .manhattan-wrap a.manhattan-shop-all:link,
+  .manhattan-wrap a.manhattan-shop-all:visited {
+    color: var(--m-cyan-dark) !important;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none !important;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .manhattan-wrap a.manhattan-shop-all:hover { text-decoration: underline !important; }
+  .manhattan-cat-products { min-height: 220px; background: transparent; }
+
+  /* ─── ABOUT MANHATTAN ─── */
+  .manhattan-section { margin-top: 1.5rem; }
+  .manhattan-section-head {
+    padding: 0.5rem 0.25rem 1rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .manhattan-section-titles h2 {
+    font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+    font-weight: 800;
+    color: var(--m-navy);
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    margin: 0 0 0.35rem;
+  }
+  .manhattan-section-titles p {
+    font-size: 0.95rem;
+    color: var(--m-text-muted);
+    line-height: 1.55;
+    margin: 0;
+    max-width: 720px;
+  }
+
+  .manhattan-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+  }
+  .manhattan-fact {
+    background: var(--m-surface);
+    border-radius: var(--m-radius);
+    box-shadow: var(--m-shadow);
+    padding: 1.15rem 1.25rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .manhattan-fact:hover { transform: translateY(-3px); box-shadow: var(--m-shadow-hover); }
+  .manhattan-fact-label {
+    font-size: 0.66rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--m-cyan-dark);
+    margin-bottom: 0.4rem;
+  }
+  .manhattan-fact-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--m-navy);
+    margin: 0 0 0.3rem;
+    letter-spacing: -0.01em;
+  }
+  .manhattan-fact-body {
+    font-size: 0.86rem;
+    color: var(--m-text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ─── FAQ (native <details>, no JS) ─── */
+  .manhattan-faq {
+    margin-top: 1.5rem;
+    background: var(--m-surface);
+    border-radius: var(--m-radius);
+    box-shadow: var(--m-shadow);
+    padding: clamp(1.25rem, 2.2vw, 1.75rem);
+  }
+  .manhattan-faq h2 {
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    font-weight: 800;
+    color: var(--m-navy);
+    letter-spacing: -0.022em;
+    margin: 0 0 0.85rem;
+  }
+  .manhattan-faq details {
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    padding: 0;
+  }
+  .manhattan-faq details:last-of-type {
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+  .manhattan-faq summary {
+    list-style: none;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--m-text);
+    line-height: 1.35;
+    transition: color 0.18s ease;
+  }
+  .manhattan-faq summary::-webkit-details-marker { display: none; }
+  .manhattan-faq summary::after {
+    content: '+';
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(0, 175, 201, 0.1);
+    color: var(--m-cyan-dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .manhattan-faq details[open] summary::after {
+    content: '−';
+    background: var(--m-cyan);
+    color: #ffffff;
+  }
+  .manhattan-faq summary:hover { color: var(--m-cyan-dark); }
+  .manhattan-faq details > p {
+    padding: 0 0 1rem;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--m-text-muted);
+    margin: 0;
+  }
+  .manhattan-faq details > p strong { color: var(--m-text); font-weight: 700; }
+
+  /* ─── FINAL CTA ─── */
+  .manhattan-final {
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, var(--m-navy) 0%, var(--m-navy-dark) 100%);
+    border-radius: var(--m-radius-lg);
+    padding: clamp(1.75rem, 3.5vw, 2.75rem);
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .manhattan-final::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(600px 400px at 90% 20%, rgba(0, 175, 201, 0.25), transparent 60%),
+      radial-gradient(500px 350px at 10% 90%, rgba(248, 148, 89, 0.15), transparent 60%);
+    pointer-events: none;
+  }
+  .manhattan-final-text { position: relative; z-index: 1; }
+  .manhattan-final-text .manhattan-eyebrow { color: var(--m-cyan); margin-bottom: 0.75rem; }
+  .manhattan-final-text .manhattan-eyebrow .pin { background: var(--m-cyan); }
+  .manhattan-final h2 {
+    font-size: clamp(1.65rem, 3vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    margin: 0 0 0.65rem;
+    color: #ffffff;
+  }
+  .manhattan-final p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 50ch;
+  }
+  .manhattan-final-cta { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 0.6rem; }
+  .manhattan-final-cta .manhattan-btn { width: 100%; justify-content: center; }
+  .manhattan-wrap .manhattan-final-cta a.manhattan-btn--ghost,
+  .manhattan-wrap .manhattan-final-cta a.manhattan-btn--ghost:link,
+  .manhattan-wrap .manhattan-final-cta a.manhattan-btn--ghost:visited {
+    background: transparent !important;
+    color: #ffffff !important;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35) !important;
+  }
+  .manhattan-wrap .manhattan-final-cta a.manhattan-btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+  }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 968px) {
+    .manhattan-wrap { padding: 0.85rem !important; }
+
+    .manhattan-hero-unit { grid-template-columns: 1fr; }
+    .manhattan-hero-img { height: clamp(200px, 30vh, 280px); }
+    .manhattan-hero-content { padding: 1.25rem 1.1rem; }
+    .manhattan-hours {
+      font-size: 0.76rem;
+      gap: 0.45rem;
+      padding: 0.38rem 0.75rem 0.38rem 0.5rem;
+    }
+    .manhattan-hours .label { font-size: 0.6rem; letter-spacing: 0.12em; }
+    .manhattan-hours .days { font-size: 0.68rem; }
+
+    .manhattan-trust {
+      grid-template-columns: 1fr;
+      padding: 0.5rem 0.75rem;
+    }
+    .manhattan-trust-item + .manhattan-trust-item {
+      border-left: none;
+      border-top: 1px solid rgba(15, 23, 42, 0.07);
+    }
+    .manhattan-trust-item {
+      padding: 0.85rem 0.5rem;
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .manhattan-wrap a.manhattan-social,
+    .manhattan-wrap a.manhattan-social:link,
+    .manhattan-wrap a.manhattan-social:visited {
+      grid-template-columns: auto 1fr;
+      gap: 0.85rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .manhattan-social-link { display: none; }
+
+    .manhattan-map iframe { height: 240px; }
+
+    .manhattan-guide { grid-template-columns: 1fr; }
+    .manhattan-facts { grid-template-columns: 1fr; }
+
+    .manhattan-final { grid-template-columns: 1fr; gap: 1.25rem; }
+    .manhattan-final-cta { width: 100%; }
+  }
+
+  @media (max-width: 380px) {
+    .manhattan-hours .days { display: none; }
+  }
+</style>
+
+<div class="manhattan-wrap">
+  <div class="manhattan-shell">
+
+    <!-- ─── HERO UNIT ─── -->
+    <section class="manhattan-hero-unit">
+      <div class="manhattan-hero-img" role="img" aria-label="LAX Cannabis Club — the closest licensed dispensary to Manhattan Beach"></div>
+      <div class="manhattan-hero-content">
+        <div class="manhattan-stack">
+          <span class="manhattan-hours" aria-label="Store hours">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="label">Open</span>
+            <span class="sep" aria-hidden="true"></span>
+            <span class="time">9:00 AM – 9:30 PM</span>
+            <span class="days">· Every day</span>
+          </span>
+
+          <span class="manhattan-eyebrow"><span class="pin" aria-hidden="true"></span>South Bay · 12 min from MB Pier</span>
+
+          <h1 class="manhattan-h1">
+            Dispensary <span class="accent">Near Manhattan Beach</span>
+          </h1>
+
+          <p class="manhattan-desc">
+            Manhattan Beach <strong>doesn't permit cannabis dispensaries</strong> within city limits.
+            LAXCC is the <strong>closest licensed shop</strong> — just <strong>5 miles north, 12–15
+            minutes up Sepulveda</strong>. Shop 100+ brands across flower, vapes, edibles, pre-rolls &amp;
+            concentrates. Order online for express pickup.
+          </p>
+
+          <div class="manhattan-cta-row">
+            <a class="manhattan-btn manhattan-btn--primary" href="#manhattan-menu">
+              Shop Now
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+              </svg>
+            </a>
+            <a class="manhattan-btn manhattan-btn--primary" href="https://www.google.com/maps/dir/?api=1&destination=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045" target="_blank" rel="noopener">
+              Get Directions
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a class="manhattan-btn manhattan-btn--ghost" href="tel:+13104293789">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              (310) 429-3789
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── TRUST STRIP ─── -->
+    <div class="manhattan-trust" role="list">
+      <div class="manhattan-trust-item" role="listitem">
+        <span class="manhattan-trust-val">~5 mi</span>
+        <span class="manhattan-trust-label">From Manhattan Beach</span>
+      </div>
+      <div class="manhattan-trust-item" role="listitem">
+        <span class="manhattan-trust-val">12–15 min</span>
+        <span class="manhattan-trust-label">Drive via Sepulveda</span>
+      </div>
+      <div class="manhattan-trust-item" role="listitem">
+        <span class="manhattan-trust-val">100+</span>
+        <span class="manhattan-trust-label">Brands · lab-tested</span>
+      </div>
+    </div>
+
+    <!-- ─── GOOGLE REVIEWS ─── -->
+    <a class="manhattan-social"
+       href="https://www.google.com/search?q=LAXCC+reviews"
+       target="_blank" rel="noopener nofollow"
+       aria-label="See LAXCC's 4.9-star Google reviews">
+      <span class="manhattan-social-google" aria-hidden="true"></span>
+      <span class="manhattan-social-rating">
+        <span class="manhattan-social-stars">
+          <span class="manhattan-social-stars-score">4.9</span>
+          <span class="manhattan-social-stars-icons" aria-hidden="true">★★★★★</span>
+        </span>
+        <span class="manhattan-social-count">3,000+ verified Google reviews · LA's top-rated dispensary</span>
+      </span>
+      <span class="manhattan-social-link">Read reviews →</span>
+    </a>
+
+    <!-- ─── MAP PREVIEW ─── -->
+    <div class="manhattan-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d26486.6!2d-118.41941622089842!3d33.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x80c2b3a3b4d3c123%3A0x0!2sManhattan%20Beach%20Pier%2C%20Manhattan%20Beach%2C%20CA!3m2!1d33.8847778!2d-118.4108333!4m5!1s0x80c2b0eb4a3785d1%3A0xc86f05119335d417!2s8332%20Lincoln%20Blvd%2C%20Los%20Angeles%2C%20CA%2090045!3m2!1d33.96194!2d-118.42083!5e0!3m2!1sen!2sus!4v1714423950970!5m2!1sen!2sus"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Driving route from Manhattan Beach to LAX Cannabis Club"></iframe>
+      <span class="manhattan-map-badge" aria-hidden="true">
+        <span class="manhattan-map-dot"></span>
+        12 min · 5 mi from MB
+      </span>
+    </div>
+
+    <!-- ─── PRACTICAL GUIDE ─── -->
+    <div class="manhattan-guide">
+      <div class="manhattan-card">
+        <span class="manhattan-eyebrow"><span class="pin"></span>The route</span>
+        <h3>Straight up Sepulveda — no freeway</h3>
+        <p>
+          Head <strong>north on Sepulveda Blvd</strong>, turn <strong>left on Lincoln</strong> — done.
+          You're at LAXCC in 12–15 minutes from Downtown Manhattan Beach or the MB Pier.
+        </p>
+        <ul class="manhattan-checklist">
+          <li>
+            <span class="manhattan-check" aria-hidden="true">✓</span>
+            <span><strong>Order ahead online</strong> — your bag is ready when you pull up</span>
+          </li>
+          <li>
+            <span class="manhattan-check" aria-hidden="true">✓</span>
+            <span><strong>Free parking on Lincoln Blvd</strong> — in and out in minutes</span>
+          </li>
+          <li>
+            <span class="manhattan-check" aria-hidden="true">✓</span>
+            <span><strong>Taxes included</strong> in the sticker price — no checkout surprises</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="manhattan-card">
+        <span class="manhattan-eyebrow"><span class="pin"></span>Visiting LA?</span>
+        <h3>Out-of-towners welcome</h3>
+        <p>
+          California allows <strong>21+ recreational</strong> or <strong>18+ with a valid medical
+          cannabis card</strong> to purchase. No residency required — international &amp; out-of-state IDs accepted.
+        </p>
+        <ul class="manhattan-checklist">
+          <li>
+            <span class="manhattan-check" aria-hidden="true">✓</span>
+            <span><strong>21+ recreational, or 18+ with a valid medical card</strong> — passport, license, or military ID</span>
+          </li>
+          <li>
+            <span class="manhattan-check" aria-hidden="true">✓</span>
+            <span><strong>Private consumption only</strong> — not on the beach, Strand, pier, or in vehicles</span>
+          </li>
+          <li>
+            <span class="manhattan-check" aria-hidden="true">✓</span>
+            <span><strong>Cash &amp; debit</strong> accepted — ATM on site</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ─── LIVE MENU ─── -->
+    <section id="manhattan-menu" class="manhattan-menu" aria-label="LAXCC live menu near Manhattan Beach">
+      <header class="manhattan-menu-intro">
+        <h2>Shop the menu — pickup in 30 minutes</h2>
+        <p>
+          Live inventory from our LA shop, 12–15 minutes from Manhattan Beach. Order ahead so it's ready
+          when you arrive — flower, pre-rolls, vapes, edibles, and concentrates from California's top brands.
+        </p>
+      </header>
+
+      <section id="manhattan-flower" class="manhattan-cat">
+        <header class="manhattan-cat-head">
+          <div class="manhattan-cat-titles">
+            <h3>Premium Cannabis Flower Near Manhattan Beach</h3>
+            <p>
+              <strong>Top-shelf indoor flower</strong>, exotic hybrids, and high-THC sativas from LA's
+              most respected growers — ranked by potency. The closest premium flower menu to Manhattan
+              Beach, Hermosa, El Segundo &amp; the South Bay, with same-day express pickup.
+            </p>
+          </div>
+          <a class="manhattan-shop-all" href="https://laxcc.com/categories/flower/">Shop all →</a>
+        </header>
+        <div class="manhattan-cat-products">
+          [leafbridge_specific_product_filter category="FLOWER" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+
+      <section id="manhattan-prerolls" class="manhattan-cat">
+        <header class="manhattan-cat-head">
+          <div class="manhattan-cat-titles">
+            <h3>Top-Rated Pre-Rolls Near Manhattan Beach</h3>
+            <p>
+              <strong>Pre-rolls, infused blunts, hash-rolled joints, and multi-pack tins</strong> —
+              singles for a beach day, two-packs for a Strand sunset, or 5-pack tins to share at a
+              backyard hang. Pickup-ready in minutes.
+            </p>
+          </div>
+          <a class="manhattan-shop-all" href="https://laxcc.com/categories/pre-rolls/">Shop all →</a>
+        </header>
+        <div class="manhattan-cat-products">
+          [leafbridge_specific_product_filter category="PRE_ROLLS" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+
+      <section id="manhattan-vapes" class="manhattan-cat">
+        <header class="manhattan-cat-head">
+          <div class="manhattan-cat-titles">
+            <h3>Premium Vaporizers Near Manhattan Beach</h3>
+            <p>
+              <strong>Live resin cartridges, all-in-one disposables, distillate carts, and 510-thread
+              hardware</strong> — pocketable and discreet, perfect for a quick break or a weekend stay.
+              Low-tolerance friendly options available.
+            </p>
+          </div>
+          <a class="manhattan-shop-all" href="https://laxcc.com/categories/vaporizers/">Shop all →</a>
+        </header>
+        <div class="manhattan-cat-products">
+          [leafbridge_specific_product_filter category="VAPORIZERS" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+
+      <section id="manhattan-edibles" class="manhattan-cat">
+        <header class="manhattan-cat-head">
+          <div class="manhattan-cat-titles">
+            <h3>Cannabis Edibles &amp; Gummies Near Manhattan Beach</h3>
+            <p>
+              <strong>Microdose gummies, chocolates, mints, and infused beverages</strong> from
+              California's top edible brands. Precision-dosed 2.5–10mg singles for a daytime ride, or
+              100mg multi-packs for experienced consumers. The most discreet option for MB residents
+              and beach-town visitors.
+            </p>
+          </div>
+          <a class="manhattan-shop-all" href="https://laxcc.com/categories/edibles/">Shop all →</a>
+        </header>
+        <div class="manhattan-cat-products">
+          [leafbridge_specific_product_filter category="EDIBLES" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+
+      <section id="manhattan-concentrates" class="manhattan-cat">
+        <header class="manhattan-cat-head">
+          <div class="manhattan-cat-titles">
+            <h3>Cannabis Concentrates Near Manhattan Beach</h3>
+            <p>
+              Connoisseur-grade extracts — <strong>solventless live rosin, hydrocarbon live resin,
+              diamonds, sauce, cold-cure badder, and shatter</strong>. Built for dab rigs and e-rigs.
+              The finest concentrate selection in the South Bay corridor.
+            </p>
+          </div>
+          <a class="manhattan-shop-all" href="https://laxcc.com/categories/concentrates/">Shop all →</a>
+        </header>
+        <div class="manhattan-cat-products">
+          [leafbridge_specific_product_filter category="CONCENTRATES" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+    </section>
+
+    <!-- ─── ABOUT MANHATTAN BEACH ─── -->
+    <section class="manhattan-section">
+      <header class="manhattan-section-head">
+        <div class="manhattan-section-titles">
+          <h2>Discover Manhattan Beach</h2>
+          <p>
+            One of LA's cleanest, most upscale coastal cities — known for the pier, The Strand,
+            elite volleyball, and a downtown that feels like a small beach town inside a metropolis.
+            More polished than Hermosa, more lively than El Segundo.
+          </p>
+        </div>
+      </header>
+
+      <div class="manhattan-facts">
+        <article class="manhattan-fact">
+          <div class="manhattan-fact-label">Landmark</div>
+          <h3 class="manhattan-fact-title">Manhattan Beach Pier</h3>
+          <p class="manhattan-fact-body">The 900-foot pier at the end of MB Blvd — sweeping ocean views, year-round fishing, and the Roundhouse Aquarium at the end.</p>
+        </article>
+        <article class="manhattan-fact">
+          <div class="manhattan-fact-label">Iconic</div>
+          <h3 class="manhattan-fact-title">The Strand</h3>
+          <p class="manhattan-fact-body">World-famous paved path along the sand — walk, bike, or skate past multi-million dollar beachfront homes from Manhattan to Hermosa.</p>
+        </article>
+        <article class="manhattan-fact">
+          <div class="manhattan-fact-label">Downtown</div>
+          <h3 class="manhattan-fact-title">Downtown MB</h3>
+          <p class="manhattan-fact-body">Walkable, upscale, and packed with boutiques, award-winning restaurants, and coffee shops — cleaner than Venice, less touristy than Santa Monica.</p>
+        </article>
+        <article class="manhattan-fact">
+          <div class="manhattan-fact-label">Architecture</div>
+          <h3 class="manhattan-fact-title">MB Library</h3>
+          <p class="manhattan-fact-body">A modern architectural gem with floor-to-ceiling ocean views — a quiet spot to recharge with a different angle on the South Bay coast.</p>
+        </article>
+        <article class="manhattan-fact">
+          <div class="manhattan-fact-label">Culture</div>
+          <h3 class="manhattan-fact-title">Beach Volleyball</h3>
+          <p class="manhattan-fact-body">The home of pro beach volleyball — AVP courts year-round at the pier, plus the Manhattan Beach Open every August.</p>
+        </article>
+        <article class="manhattan-fact">
+          <div class="manhattan-fact-label">Nearby</div>
+          <h3 class="manhattan-fact-title">El Porto &amp; LAX</h3>
+          <p class="manhattan-fact-body">El Porto for the surf crowd just north, LAX a quick 8-minute drive — Manhattan Beach is the South Bay's polished gateway.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ─── FAQ (CSS-only with <details>) ─── -->
+    <section class="manhattan-faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked</h2>
+
+      <details>
+        <summary>Are there any dispensaries in Manhattan Beach?</summary>
+        <p>
+          <strong>No.</strong> Manhattan Beach does not permit cannabis retail within city limits.
+          The closest licensed dispensary is LAXCC, about 5 miles north at 8332 Lincoln Blvd,
+          Los Angeles, CA 90045.
+        </p>
+      </details>
+
+      <details>
+        <summary>What's the closest dispensary to Manhattan Beach?</summary>
+        <p>
+          LAXCC is the closest licensed dispensary to Manhattan Beach — roughly <strong>12–15 minutes
+          north via Sepulveda Blvd</strong>. We're open daily 9 AM – 9:30 PM and carry 100+ cannabis brands.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I order ahead for quick pickup?</summary>
+        <p>
+          <strong>Yes.</strong> Browse our full menu online, place your order, and it'll be ready when
+          you arrive. This is the fastest way to shop if you're driving up from MB and want to be in
+          and out in a few minutes.
+        </p>
+      </details>
+
+      <details>
+        <summary>How far is LAXCC from the Manhattan Beach Pier?</summary>
+        <p>
+          We're approximately <strong>5 miles north</strong> of the Manhattan Beach Pier — a direct
+          12–15 minute drive via Sepulveda and Lincoln. Most convenient stop for visitors coming from
+          downtown MB or the Strand.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do I need to be a California resident to shop?</summary>
+        <p>
+          <strong>No residency required.</strong> California allows any adult 21+ (or 18+ with a valid
+          medical cannabis card) to purchase. Out-of-state and international IDs are accepted —
+          passport, driver's license, or military.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is parking easy at LAXCC?</summary>
+        <p>
+          Yes. Free parking on Lincoln Blvd right outside the shop. Pull up, grab your pre-ordered bag,
+          and you're back on the road in minutes — no freeway, no traffic from MB.
+        </p>
+      </details>
+    </section>
+
+    <!-- ─── FINAL CTA ─── -->
+    <section class="manhattan-final">
+      <div class="manhattan-final-text">
+        <span class="manhattan-eyebrow"><span class="pin" aria-hidden="true"></span>Heading north from MB?</span>
+        <h2>Order ahead. Skip the wait. Back to the beach.</h2>
+        <p>
+          Browse the live menu, place your order in 60 seconds, and pick up on your way home from
+          Manhattan Beach. Open every day, 9 AM – 9:30 PM.
+        </p>
+      </div>
+      <div class="manhattan-final-cta">
+        <a class="manhattan-btn manhattan-btn--primary" href="https://laxcc.com/shop/?retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3">
+          Shop the menu
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a class="manhattan-btn manhattan-btn--ghost" href="https://www.google.com/maps/dir/?api=1&destination=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045" target="_blank" rel="noopener">
+          Get directions
+        </a>
+      </div>
+    </section>
+
+  </div>
+</div>

@@ -1,0 +1,132 @@
+<style>
+#lxd{font-family:'Manrope',sans-serif;max-width:900px;margin:0 auto;padding:3rem 1.5rem;color:#1D3A2B;line-height:1.6;font-size:17px}
+#lxd *{box-sizing:border-box}
+#lxd h1{font-size:clamp(28px,5vw,42px);font-weight:900;line-height:1.1;color:#1D508A;margin:0 0 .75rem;letter-spacing:-.02em}
+#lxd .lxd_sub{font-size:1rem;color:#64748b;margin-bottom:.5rem;font-weight:500}
+#lxd .lxd_meta{font-size:.8rem;color:#F89459;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2rem;padding-bottom:2rem;border-bottom:2px solid #00AFC9}
+#lxd h2{font-size:clamp(22px,4vw,30px);font-weight:800;color:#1D508A;margin:2.5rem 0 1rem;border-left:6px solid #00AFC9;padding-left:1rem}
+#lxd p{margin-bottom:1.25rem}
+#lxd a{color:#00AFC9;text-decoration:none;font-weight:600}
+#lxd a:hover{color:#1D508A;text-decoration:underline}
+
+#lxd .lxd_stat_row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2rem 0}
+#lxd .lxd_stat{background:#fff;border-radius:12px;padding:1.25rem;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+#lxd .lxd_stat_num{font-size:clamp(28px,5vw,40px);font-weight:900;color:#00AFC9;line-height:1}
+#lxd .lxd_stat_lbl{font-size:.75rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-top:6px}
+
+#lxd .lxd_rank{background:#fff;border-radius:12px;overflow:hidden;margin:2rem 0;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+#lxd .lxd_rank_item{display:flex;align-items:center;gap:14px;padding:14px 18px;border-bottom:1px solid #f1f5f9}
+#lxd .lxd_rank_item:last-child{border-bottom:none}
+#lxd .lxd_rank_pos{font-size:1.1rem;font-weight:900;color:#1D508A;min-width:28px;text-align:center;flex-shrink:0}
+#lxd .lxd_rank_bar{flex:1;min-width:0}
+#lxd .lxd_rank_name{font-size:.95rem;font-weight:800;color:#1D508A;margin-bottom:2px}
+#lxd .lxd_rank_name a{color:#1D508A}
+#lxd .lxd_rank_name a:hover{color:#00AFC9}
+#lxd .lxd_rank_why{font-size:.8rem;color:#64748b;line-height:1.4}
+#lxd .lxd_rank_pct{font-size:1.25rem;font-weight:900;color:#00AFC9;flex-shrink:0;min-width:48px;text-align:right}
+
+#lxd .lxd_quote{background:#fff;border-left:6px solid #00AFC9;padding:1.25rem 1.5rem;margin:2rem 0;border-radius:0 12px 12px 0;font-style:italic;color:#1D508A;box-shadow:0 2px 8px rgba(0,0,0,.03)}
+
+#lxd .lxd_grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2rem 0}
+#lxd .lxd_grid_item{background:#fff;border-radius:12px;padding:1.25rem;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+#lxd .lxd_grid_item .lxd_icon{font-size:1.5rem;margin-bottom:8px}
+#lxd .lxd_grid_item h3{font-size:1rem;font-weight:800;color:#1D508A;margin:0 0 6px}
+#lxd .lxd_grid_item p{font-size:.85rem;color:#64748b;margin:0;line-height:1.5}
+
+#lxd .lxd_row{display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.25rem;border-bottom:1px solid rgba(0,0,0,.04);background:#fff}
+#lxd .lxd_row:first-of-type{border-radius:12px 12px 0 0}
+#lxd .lxd_row:last-of-type{border-radius:0 0 12px 12px;border-bottom:none}
+#lxd .lxd_row i{color:#00AFC9;font-size:1rem;margin-top:3px;min-width:18px}
+#lxd .lxd_row strong{color:#1D508A}
+#lxd .lxd_row span{color:#64748b;font-size:.9rem}
+
+#lxd .lxd_cta{background:#fff;padding:2.5rem;border-radius:16px;text-align:center;margin-top:3rem;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+#lxd .lxd_cta h2{border-left:none;padding-left:0;text-align:center;margin-top:0}
+#lxd .lxd_cta p{color:#64748b}
+#lxd .lxd_btn,#lxd a.lxd_btn,#lxd a.lxd_btn:link,#lxd a.lxd_btn:visited{display:inline-block;background:#F89459 !important;color:#fff !important;padding:.875rem 2rem;border-radius:8px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;text-decoration:none !important;white-space:nowrap;margin-top:1rem;transition:transform .2s}
+#lxd a.lxd_btn:hover{transform:translateY(-2px)}
+
+#lxd .lxd_footer{margin-top:2.5rem;padding:1.5rem;background:#fff;border-radius:12px;text-align:center;font-size:.85rem;color:#64748b;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+#lxd .lxd_footer a{font-weight:600}
+
+@media(max-width:768px){
+#lxd{padding:2rem 1rem;font-size:16px}
+#lxd .lxd_stat_row{grid-template-columns:repeat(3,1fr);gap:.5rem}
+#lxd .lxd_stat{padding:1rem .75rem}
+#lxd .lxd_stat_num{font-size:24px}
+#lxd .lxd_grid{grid-template-columns:1fr}
+#lxd .lxd_cta{padding:1.5rem 1rem}
+}
+</style>
+
+<div id="lxd">
+<div class="lxd_meta">May 25, 2025 &bull; By the LAXCC Team</div>
+<h1>What LAX Travelers &amp; LA Locals Are Really Buying at Our Dispensary</h1>
+<p class="lxd_sub">Based on a full year of sales data (mid-2024 through early 2025). Here's what customers at the closest licensed dispensary to LAX Airport are actually buying.</p>
+
+<p>As the closest licensed dispensary to Los Angeles International Airport, we see an incredibly diverse mix of customers — jet-setting travelers, busy LA locals, and everyone in between. After analyzing our sales data from the past year, one trend stands out above everything else:</p>
+
+<div class="lxd_stat_row">
+<div class="lxd_stat"><div class="lxd_stat_num">34%</div><div class="lxd_stat_lbl">Vaporizers</div></div>
+<div class="lxd_stat"><div class="lxd_stat_num">28%</div><div class="lxd_stat_lbl">Flower</div></div>
+<div class="lxd_stat"><div class="lxd_stat_num">15%</div><div class="lxd_stat_lbl">Edibles</div></div>
+</div>
+
+<p>Vaporizers have officially taken the crown as our #1 product category. But the full picture tells us even more about how people consume cannabis in 2025.</p>
+
+<h2>The Full Sales Breakdown</h2>
+
+<div class="lxd_rank">
+<div class="lxd_rank_item"><div class="lxd_rank_pos">1</div><div class="lxd_rank_bar"><div class="lxd_rank_name"><a href="https://laxcc.com/categories/vaporizers/?pagination=1&sort=NAME_ASC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=VAPORIZERS" target="_blank">Vaporizers</a></div><div class="lxd_rank_why">Discreet, portable, perfect for travelers</div></div><div class="lxd_rank_pct">34%</div></div>
+<div class="lxd_rank_item"><div class="lxd_rank_pos">2</div><div class="lxd_rank_bar"><div class="lxd_rank_name"><a href="https://laxcc.com/categories/flower/?pagination=1&sort=NAME_ASC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=FLOWER" target="_blank">Flower</a></div><div class="lxd_rank_why">Classic never goes out of style</div></div><div class="lxd_rank_pct">28%</div></div>
+<div class="lxd_rank_item"><div class="lxd_rank_pos">3</div><div class="lxd_rank_bar"><div class="lxd_rank_name"><a href="https://laxcc.com/categories/edibles/?pagination=1&sort=NAME_ASC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=EDIBLES" target="_blank">Edibles</a></div><div class="lxd_rank_why">Discreet dosing, no smoking required</div></div><div class="lxd_rank_pct">15%</div></div>
+<div class="lxd_rank_item"><div class="lxd_rank_pos">4</div><div class="lxd_rank_bar"><div class="lxd_rank_name"><a href="https://laxcc.com/categories/pre_rolls/?pagination=1&sort=NAME_ASC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=PRE_ROLLS" target="_blank">Pre-Rolls</a></div><div class="lxd_rank_why">Zero prep, grab and go</div></div><div class="lxd_rank_pct">13%</div></div>
+<div class="lxd_rank_item"><div class="lxd_rank_pos">5</div><div class="lxd_rank_bar"><div class="lxd_rank_name"><a href="https://laxcc.com/categories/concentrates/?pagination=1&sort=NAME_ASC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=CONCENTRATES" target="_blank">Concentrates</a></div><div class="lxd_rank_why">Maximum potency for experienced consumers</div></div><div class="lxd_rank_pct">6%</div></div>
+</div>
+<p style="font-size:.85rem;color:#94a3b8;text-align:center;font-style:italic;">Remaining 4% includes tinctures, topicals, beverages, and specialty products.</p>
+
+<h2>What Our Store Manager Is Seeing</h2>
+
+<p>We sat down with Store Manager Mikey Kush to get his take on what brands are resonating with customers right now.</p>
+
+<div class="lxd_row" style="border-radius:12px 12px 0 0;">
+<i class="fas fa-leaf"></i>
+<div><strong>Flower</strong><br><span>"Kush Co remains a top choice for flower. <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=dac8b98e-084d-417f-b812-d534c9cf4e88" target="_blank">Teds Budz</a>, a social equity, minority-owned brand, also captures significant attention with their exclusive exotic drops."</span></div>
+</div>
+<div class="lxd_row">
+<i class="fas fa-cookie-bite"></i>
+<div><strong>Edibles</strong><br><span>"Good Tides edibles are favored for their excellent taste and consistent effects."</span></div>
+</div>
+<div class="lxd_row">
+<i class="fas fa-wind"></i>
+<div><strong>Vapes</strong><br><span>"<a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=4f1e6e20-5ab7-409e-901a-262f4c9ec830" target="_blank">Plug &amp; Play</a> is recognized for its potent delivery system, wide array of premium flavors, and sought-after exclusive collaborations."</span></div>
+</div>
+<div class="lxd_row" style="border-radius:0 0 12px 12px;">
+<i class="fas fa-joint"></i>
+<div><strong>Pre-Rolls</strong><br><span>"<a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d021fa69-07e1-4213-aa06-07655ec9d001" target="_blank">Royal Blunts</a> leverages partnerships with top brands, including 'Nothing but Fire' competition winners."</span></div>
+</div>
+
+<h2>Why This Data Matters</h2>
+
+<div class="lxd_grid">
+<div class="lxd_grid_item"><div class="lxd_icon">✈️</div><h3>The Travel Factor</h3><p>Our LAX proximity gives us a unique window into what products have broad appeal across travelers and locals alike.</p></div>
+<div class="lxd_grid_item"><div class="lxd_icon">⚡</div><h3>Convenience Wins</h3><p>Vapes and pre-rolls dominating tells us consumers value portability — zero prep, ready to go.</p></div>
+<div class="lxd_grid_item"><div class="lxd_icon">🏆</div><h3>Quality Holds</h3><p>Flower at 28% proves that when you offer premium quality, the classics never die.</p></div>
+</div>
+
+<h2>What This Means for Your Next Visit</h2>
+
+<p>We use these insights to stock exactly what you want. Whether you're a local who stops by regularly or passing through LAX, our budtenders are always ready to help you find the right product — vape, flower, or anything in between.</p>
+
+<div class="lxd_cta">
+<h2>See What Everyone's Buying</h2>
+<p>Visit the best dispensary near LAX. Open daily 9 AM - 9:30 PM.</p>
+<a href="https://laxcc.com/shop/" class="lxd_btn" target="_blank">Browse the Menu</a>
+</div>
+
+<div class="lxd_footer">
+<p><strong>LAX Cannabis Club</strong><br>
+8332 Lincoln Blvd, Los Angeles, CA 90045 &bull; <a href="tel:+13104293789">(310) 429-3789</a><br>
+<a href="https://laxcc.com">laxcc.com</a> &bull; <a href="https://www.instagram.com/la.laxcc" target="_blank">@la.laxcc</a></p>
+</div>
+</div>

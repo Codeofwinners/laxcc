@@ -1,0 +1,16 @@
+Subject: Repeated 500 Errors in Elementor Causing Workflow Disruption
+
+Hello Nick,
+
+I’m reaching out again regarding another 500 error in Elementor.
+
+Everything was working properly, and then the issue happened again. It is becoming very time-consuming to repeatedly rebuild work when this occurs. The inability to reliably restore a previously working version in Elementor is also a major inconvenience.
+
+I’ve worked with many other clients on Elementor across different hosting providers, and in more than 15 years I have never experienced this level of instability. It is extremely frustrating to be in the middle of a workflow and have progress stopped by the same issue over and over.
+
+At this point, I’d really appreciate a permanent fix. If this is related to PHP memory, server configuration, or another hosting-level issue, please investigate and resolve it. From what I can see, this is a server-side problem resulting in a 500 error.
+
+Please look into this as soon as possible. If this continues, I will need to recommend that we switch hosting providers and migrate to a platform that does not have these issues.
+
+Thank you,
+[Your Name]

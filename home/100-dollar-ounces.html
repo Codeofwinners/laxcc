@@ -1,0 +1,224 @@
+<!-- LAXCC — $100 Ounces flower brand section (mirrors home/cali-creamery.html structure/style) -->
+<!-- Shortcode filters FLOWER for brand a6d8352d-d94e-422e-a9e3-ab1ff3ae39ef. Add the brand name to the eyebrow/title if you want it named. -->
+<style>
+    #oz-deal-scope {
+        --cc-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --cc-bg: #fbf8f2;
+        --cc-text: #1d508a;
+        --cc-text-muted: #64748b;
+        --cc-accent: #F89459;
+
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow: visible;
+        padding: clamp(24px, 3vw, 44px) clamp(14px, 2vw, 28px);
+        background: var(--cc-bg);
+        font-family: var(--cc-font);
+        color: var(--cc-text);
+        position: relative;
+    }
+
+    #oz-deal-scope *,
+    #oz-deal-scope *::before,
+    #oz-deal-scope *::after {
+        box-sizing: border-box;
+    }
+
+    #oz-deal-scope .cc-header {
+        position: relative;
+        margin-bottom: clamp(18px, 2vw, 28px);
+        width: 100%;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        text-align: left;
+    }
+
+    #oz-deal-scope .cc-header__sup {
+        font-size: 11px;
+        font-weight: 700;
+        color: #1D508A;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-self: start;
+        border: 1px solid #1D508A;
+        padding: 4px 12px;
+        border-radius: 999px;
+        background: rgba(29, 80, 138, 0.05);
+        width: fit-content;
+    }
+
+    #oz-deal-scope .cc-header__title {
+        font-size: clamp(34px, 5vw, 72px) !important;
+        font-weight: 800 !important;
+        line-height: 0.92 !important;
+        text-transform: uppercase !important;
+        margin: 0 !important;
+        letter-spacing: -0.04em !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 10px !important;
+        flex-wrap: wrap !important;
+        color: #111111 !important;
+    }
+
+    #oz-deal-scope .cc-title-link {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        text-decoration: none !important;
+    }
+
+    #oz-deal-scope a.cc-title-link:link,
+    #oz-deal-scope a.cc-title-link:visited,
+    #oz-deal-scope a.cc-title-link:hover {
+        text-decoration: none !important;
+    }
+
+    #oz-deal-scope .cc-price {
+        color: #F89459 !important;
+        -webkit-text-fill-color: #F89459 !important;
+        display: inline-block !important;
+    }
+
+    #oz-deal-scope .cc-text-gradient {
+        color: #111111 !important;
+        -webkit-text-fill-color: #111111 !important;
+        display: inline-block !important;
+    }
+
+    #oz-deal-scope .cc-new-badge {
+        background: #ef4444;
+        color: #fff;
+        font-size: 0.23em;
+        font-weight: 800;
+        line-height: 1;
+        padding: 8px 12px;
+        border-radius: 999px;
+        -webkit-text-fill-color: white !important;
+        color: white !important;
+        letter-spacing: 0.08em;
+        position: relative;
+        top: -2px;
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.28);
+        animation: cc-pulse-badge 2s infinite;
+        white-space: nowrap;
+    }
+
+    @keyframes cc-pulse-badge {
+        0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.55); }
+        70% { transform: scale(1.04); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+        100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+    }
+
+    #oz-deal-scope .cc-header__desc {
+        font-size: clamp(14px, 1.2vw, 18px);
+        color: var(--cc-text-muted);
+        max-width: 1100px;
+        margin: 0;
+        line-height: 1.45;
+    }
+    #oz-deal-scope .cc-header__desc strong { color: #1D508A; }
+
+    #oz-deal-scope .cc-deals {
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 8px 22px;
+        margin: 2px 0 0;
+        font-size: clamp(20px, 2.4vw, 30px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: #111111;
+        line-height: 1;
+    }
+    #oz-deal-scope .cc-deals .cc-price {
+        color: #F89459 !important;
+        -webkit-text-fill-color: #F89459 !important;
+    }
+    #oz-deal-scope .cc-deals span.cc-dot { color: var(--cc-text-muted); font-weight: 700; }
+
+    #oz-deal-scope .cc-products-section {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 767px) {
+        #oz-deal-scope {
+            padding: 20px 12px 24px;
+        }
+
+        #oz-deal-scope .cc-header {
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        #oz-deal-scope .cc-header__sup {
+            font-size: 10px;
+            padding: 4px 10px;
+        }
+
+        #oz-deal-scope .cc-header__title {
+            font-size: clamp(30px, 10vw, 46px) !important;
+            gap: 8px !important;
+            line-height: 0.95 !important;
+        }
+
+        #oz-deal-scope .cc-new-badge {
+            font-size: 0.26em;
+            padding: 7px 10px;
+            top: 0;
+        }
+
+        #oz-deal-scope .cc-header__desc {
+            font-size: 14px;
+            line-height: 1.42;
+            max-width: 100%;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1100px) {
+        #oz-deal-scope .cc-header__desc {
+            max-width: 900px;
+        }
+    }
+</style>
+
+<div id="oz-deal-scope">
+    <header class="cc-header">
+        <span class="cc-header__sup">Big Tree &middot; Flower</span>
+
+        <h2 class="cc-header__title">
+            <span class="cc-text-gradient">BIG TREE</span>
+            <span class="cc-new-badge">GOING FAST</span>
+        </h2>
+
+        <p class="cc-deals">
+            <span><span class="cc-price">$100</span> Ounce</span>
+            <span class="cc-dot">&bull;</span>
+            <span><span class="cc-price">$65</span> Half Ounce</span>
+            <span class="cc-dot">&bull;</span>
+            <span><span class="cc-price">$25</span> Half-Oz Shake</span>
+        </p>
+
+        <p class="cc-header__desc">
+            <strong>Big Tree</strong> stacks up as one of the best ounce deals near LAX — full ounces of quality California flower for <strong>$100</strong>, half ounces for <strong>$65</strong>, and half-ounce shake for just <strong>$25</strong>. Perfect for stocking up and rolling all week &mdash; <strong>roll some fatties for less</strong>. These move quick and <strong>sell out fast</strong>, so grab yours while they're in stock at LAX Cannabis Club.
+        </p>
+    </header>
+
+    <div class="cc-products-section">
+        [leafbridge_specific_product_filter category="FLOWER" brand="a6d8352d-d94e-422e-a9e3-ab1ff3ae39ef" count="20"]
+    </div>
+</div>

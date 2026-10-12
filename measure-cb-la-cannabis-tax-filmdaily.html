@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LA Voters Just Taxed the City's Illegal Weed Shops: What Measure CB Means for Your Next Dispensary Run</title>
+  <meta name="description" content="LA voters passed Measure CB by 72%, applying the city's cannabis taxes to unlicensed weed shops for the first time. Here's what changed — and how licensed dispensaries like LAXCC near LAX already play by the rules.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="LA Voters Just Taxed the City's Illegal Weed Shops — What Measure CB Means">
+  <meta property="og:description" content="Measure CB passed by a landslide. We break down what it does, who pays, and why licensed shops like LAXCC have been paying all along.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Newsreader:ital,opsz,wght@0,16..72,500;0,16..72,700;1,16..72,500&display=swap" rel="stylesheet">
+  <style>
+    /* ════════════════════════════════════════════════════════════
+       Sponsored editorial — Film Daily house voice.
+       Self-contained + scoped under .fd-article so nothing leaks
+       into the host page's stylesheet.
+       ════════════════════════════════════════════════════════════ */
+    .fd-article {
+      --fd-ink: #14131a;
+      --fd-muted: #5d5b66;
+      --fd-faint: #8b8995;
+      --fd-line: #e7e5e0;
+      --fd-paper: #ffffff;
+      --fd-wash: #f7f6f3;
+      --fd-accent: #e0103a;            /* Film Daily red */
+      --fd-accent-dark: #b50d2f;
+      --fd-link: #c20f33;
+      --fd-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      --fd-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+
+      font-family: var(--fd-sans);
+      color: var(--fd-ink);
+      background: var(--fd-paper);
+      line-height: 1.6;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      padding: clamp(1rem, 3vw, 2rem) 0;
+    }
+    .fd-article *, .fd-article *::before, .fd-article *::after { box-sizing: inherit; }
+
+    .fd-wrap { max-width: 720px; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 1.5rem); }
+
+    /* ─── Kicker / sponsored flag ─── */
+    .fd-flags { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.1rem; }
+    .fd-kicker {
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--fd-accent);
+    }
+    .fd-sponsored {
+      font-size: 0.62rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase;
+      color: var(--fd-faint); border: 1px solid var(--fd-line); border-radius: 4px; padding: 0.25rem 0.5rem;
+    }
+
+    /* ─── Headline + dek ─── */
+    .fd-h1 {
+      font-family: var(--fd-serif);
+      font-size: clamp(1.95rem, 5.2vw, 3.1rem); font-weight: 700; line-height: 1.08;
+      letter-spacing: -0.012em; color: var(--fd-ink); margin: 0 0 1rem;
+    }
+    .fd-dek {
+      font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.5; color: var(--fd-muted);
+      font-weight: 500; margin: 0 0 1.5rem;
+    }
+
+    /* ─── Byline ─── */
+    .fd-byline {
+      display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap;
+      padding: 0.9rem 0; border-top: 1px solid var(--fd-line); border-bottom: 1px solid var(--fd-line);
+      font-size: 0.85rem; color: var(--fd-muted);
+    }
+    .fd-byline .au { font-weight: 700; color: var(--fd-ink); }
+    .fd-byline .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--fd-faint); }
+
+    /* ─── Hero figure ─── */
+    .fd-figure { margin: 1.75rem 0; }
+    .fd-figure img { display: block; width: 100%; height: auto; border-radius: 8px; background: var(--fd-wash); }
+    .fd-figure figcaption {
+      font-size: 0.8rem; color: var(--fd-faint); line-height: 1.5; margin-top: 0.6rem;
+      padding-left: 0.85rem; border-left: 2px solid var(--fd-accent);
+    }
+
+    /* ─── Body copy ─── */
+    .fd-body { font-family: var(--fd-serif); font-size: 1.18rem; line-height: 1.72; color: #25232c; }
+    .fd-body p { margin: 0 0 1.35rem; }
+    .fd-body .lead::first-letter {
+      float: left; font-weight: 700; font-size: 3.4rem; line-height: 0.78;
+      padding: 0.3rem 0.6rem 0 0; color: var(--fd-accent);
+    }
+    .fd-body a { color: var(--fd-link); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
+    .fd-body a:hover { text-decoration-thickness: 2px; }
+    .fd-body strong { font-weight: 700; color: var(--fd-ink); }
+
+    .fd-h2 {
+      font-family: var(--fd-sans);
+      font-size: clamp(1.3rem, 3vw, 1.7rem); font-weight: 800; letter-spacing: -0.015em;
+      color: var(--fd-ink); line-height: 1.15; margin: 2.4rem 0 1rem;
+    }
+
+    /* ─── Stat band ─── */
+    .fd-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+      margin: 1.9rem 0; border-top: 2px solid var(--fd-ink); border-bottom: 2px solid var(--fd-ink);
+    }
+    .fd-stat { padding: 1.1rem 0.75rem; text-align: center; font-family: var(--fd-sans); }
+    .fd-stat + .fd-stat { border-left: 1px solid var(--fd-line); }
+    .fd-stat b { display: block; font-size: clamp(1.5rem, 4vw, 2.1rem); font-weight: 800; color: var(--fd-accent); letter-spacing: -0.02em; line-height: 1; }
+    .fd-stat span { display: block; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fd-muted); margin-top: 0.5rem; line-height: 1.3; }
+
+    /* ─── Pull quote ─── */
+    .fd-pull {
+      font-family: var(--fd-serif); margin: 2.2rem 0; padding: 0 0 0 1.4rem;
+      border-left: 4px solid var(--fd-accent);
+    }
+    .fd-pull p { font-size: clamp(1.35rem, 3.4vw, 1.7rem); font-weight: 500; font-style: italic; line-height: 1.32; color: var(--fd-ink); margin: 0 0 0.8rem; }
+    .fd-pull cite { font-family: var(--fd-sans); font-style: normal; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.02em; color: var(--fd-muted); text-transform: uppercase; }
+
+    /* ─── Partner / CTA block ─── */
+    .fd-cta {
+      font-family: var(--fd-sans); margin: 2.4rem 0; padding: 1.75rem;
+      background: var(--fd-wash); border-radius: 12px;
+    }
+    .fd-cta .tag { font-size: 0.66rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; color: var(--fd-faint); }
+    .fd-cta h3 { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.01em; color: var(--fd-ink); margin: 0.5rem 0 0.5rem; line-height: 1.2; }
+    .fd-cta p { font-size: 0.97rem; line-height: 1.6; color: var(--fd-muted); margin: 0 0 1.1rem; }
+    .fd-cta p a { color: var(--fd-link); font-weight: 600; }
+    .fd-btn, .fd-btn:link, .fd-btn:visited {
+      display: inline-flex; align-items: center; gap: 0.5rem; white-space: nowrap;
+      background: var(--fd-accent); color: #fff !important; text-decoration: none;
+      font-weight: 700; font-size: 0.92rem; padding: 0.8rem 1.4rem; border-radius: 100px;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .fd-btn:hover { background: var(--fd-accent-dark); transform: translateY(-1px); color: #fff !important; }
+
+    /* ─── Sources ─── */
+    .fd-sources {
+      font-family: var(--fd-sans); margin: 2.4rem 0 0; padding-top: 1.25rem; border-top: 1px solid var(--fd-line);
+    }
+    .fd-sources h4 { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fd-faint); margin: 0 0 0.7rem; }
+    .fd-sources ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.4rem; }
+    .fd-sources li { font-size: 0.86rem; line-height: 1.45; }
+    .fd-sources a { color: var(--fd-link); font-weight: 600; text-decoration: none; }
+    .fd-sources a:hover { text-decoration: underline; }
+
+    /* ─── Disclosure ─── */
+    .fd-disclosure {
+      font-family: var(--fd-sans); margin: 1.5rem 0 0; padding: 1rem 1.15rem;
+      background: var(--fd-wash); border-radius: 8px;
+      font-size: 0.78rem; line-height: 1.55; color: var(--fd-faint);
+    }
+    .fd-disclosure strong { color: var(--fd-muted); font-weight: 700; }
+
+    @media (max-width: 520px) {
+      .fd-body { font-size: 1.1rem; }
+      .fd-cta { padding: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <article class="fd-article">
+    <div class="fd-wrap">
+
+      <!-- Kicker + sponsored flag -->
+      <div class="fd-flags">
+        <span class="fd-kicker">News · Cannabis · Los Angeles</span>
+        <span class="fd-sponsored">Sponsored</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="fd-h1">LA Just Voted to Tax the City's Illegal Weed Shops — Here's What Measure CB Actually Does</h1>
+      <p class="fd-dek">Angelenos passed it by a landslide. The catch? The licensed dispensaries you already shop at have been paying these taxes the whole time.</p>
+
+      <!-- Byline -->
+      <div class="fd-byline">
+        <span class="au">Film Daily Staff</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>June 13, 2026</span>
+        <span class="dot" aria-hidden="true"></span>
+        <span>5 min read</span>
+      </div>
+
+      <!-- Hero -->
+      <figure class="fd-figure">
+        <img src="measure-cb-results.webp" alt="Los Angeles City municipal election results for Measure CB: 72.02% Yes (567,583 votes) versus 27.98% No (220,470 votes).">
+        <figcaption>Measure CB cleared with roughly <strong>72% of the vote</strong> in the June 2026 city primary. Source: Los Angeles City Clerk results via NBC Los Angeles.</figcaption>
+      </figure>
+
+      <!-- Body -->
+      <div class="fd-body">
+        <p class="lead">If you've ever wondered why the corner "dispensary" with the neon cross and no menu online could undercut a real, licensed shop on price — congratulations, Los Angeles voters just wondered the same thing out loud, at the ballot box. On June 2026's primary ballot, the city approved <strong>Measure CB</strong> (Proposition CB), a measure that finally drags unlicensed, illegal weed shops into the same tax bracket that licensed retailers have been living in for years.</p>
+
+        <p>And it wasn't close. The measure sailed through with around <strong>72% voting yes</strong> — roughly <strong>567,000 ballots</strong> in favor against about 220,000 opposed, per the latest count posted by the <a href="https://www.nbclosangeles.com/news/local/la-voters-approve-higher-taxes-on-unlicensed-cannabis-shops-ravel-sites-unlicensed-cannabis-shops/3903575/" target="_blank" rel="noopener noreferrer">city's official results</a>. In a primary where voters actually rejected a separate hotel-tax hike, the weed-shop measure was the easy yes.</p>
+
+        <h2 class="fd-h2">So what does Measure CB actually do?</h2>
+        <p>Here's the plot twist most headlines bury: <strong>Measure CB does not create a new tax.</strong> It takes the cannabis business taxes Los Angeles <em>already</em> charges licensed operators and applies them to the unlicensed shops that have been dodging them entirely.</p>
+        <p>Translation: the illegal storefronts that have been selling untested product tax-free now owe the same rates as everyone else.</p>
+
+        <div class="fd-stats" role="list">
+          <div class="fd-stat" role="listitem"><b>10%</b><span>Tax on retail cannabis sales</span></div>
+          <div class="fd-stat" role="listitem"><b>5%</b><span>On medical cannabis</span></div>
+          <div class="fd-stat" role="listitem"><b>2%</b><span>On cultivation</span></div>
+        </div>
+
+        <p>City analysts estimate Measure CB could pull in somewhere between <strong>$30 million and $35 million a year</strong> if the rates are actually collected — money earmarked for the general fund as LA stares down a tight budget and a packed events calendar. The change is expected to take effect in <strong>summer 2026</strong>, once the election is certified.</p>
+
+        <h2 class="fd-h2">Licensed vs. unlicensed: the gap that mattered</h2>
+        <p>This is the part that hits home for anyone who actually buys legal weed in LA. A <strong>licensed</strong> dispensary plays an expensive game: state and city licensing, mandatory lab testing on every batch, seed-to-sale tracking, security requirements, and yes — that stack of cannabis business taxes on top of state excise and sales tax. All of it shows up on your receipt.</p>
+        <p>An <strong>unlicensed</strong> shop skipped most of that. No testing, no tracking, and until now, no city cannabis tax. That's how a back-alley operation could flash lower prices: it was quietly externalizing every cost a legitimate business absorbs. Measure CB doesn't shut those shops down on its own — but it removes the tax advantage that helped them undercut the legal market.</p>
+
+        <h2 class="fd-h2">How a licensed shop like LAXCC has been playing it</h2>
+        <p>To see what "playing by the rules" looks like in practice, consider a licensed operator like <a href="https://laxcc.com" target="_blank" rel="noopener noreferrer">LAX Cannabis Club (LAXCC)</a>, a dispensary near LAX Airport that's been collecting and remitting these exact taxes since it opened its doors. For shops like it, Measure CB isn't a new bill — it's the rest of the field finally getting the same invoice.</p>
+
+        <div class="fd-pull">
+          <p>"We've paid every dollar of cannabis tax since day one — that's just the cost of running a licensed, lab-tested shop. Measure CB means the operators cutting corners finally play by the same rules we do. We're all for it."</p>
+          <cite>— A spokesperson for LAX Cannabis Club (LAXCC)</cite>
+        </div>
+
+        <p>It's a telling reaction. The businesses you'd expect to grumble about a tax measure are the ones cheering it on — because for licensed retailers, the issue was never the tax. It was watching illegal competitors skip it.</p>
+
+        <h2 class="fd-h2">The catch: will the city actually enforce it?</h2>
+        <p>Here's where the optimism gets a reality check. As reporters noted, <strong>it's not obvious how the city will track down hundreds of unlicensed shops and force them to pay.</strong> An illegal storefront that already ignores licensing and testing law isn't likely to voluntarily file a tax return.</p>
+        <p>That's the open question hanging over Measure CB's projected millions: collection. Even critics who worried the measure could "normalize" illegal operators agree the enforcement mechanics are the whole ballgame. Pass the tax, sure — but the revenue only materializes if the city can make non-compliant shops pay up.</p>
+
+        <h2 class="fd-h2">What it means for you, the shopper</h2>
+        <p>For everyday buyers, the takeaway is simpler than the policy. The easiest way to know your money isn't funding an untested, off-the-books operation is to buy from a <strong>licensed</strong> dispensary — the kind that's been paying these taxes (and testing its product) all along.</p>
+        <p>If you're flying in or out of LA, that can be as simple as stopping at a licensed shop near the airport. Measure CB just made the playing field a little more honest — and rewarded the businesses that were already on it.</p>
+
+        <!-- Partner CTA -->
+        <div class="fd-cta">
+          <span class="tag">Partner Spotlight</span>
+          <h3>Shopping legal near LAX?</h3>
+          <p><a href="https://laxcc.com" target="_blank" rel="noopener noreferrer">LAX Cannabis Club (LAXCC)</a> is a licensed, lab-tested dispensary minutes from LAX Airport — same taxes, same rules, real receipts. Browse the menu and order ahead for pickup.</p>
+          <a class="fd-btn" href="https://laxcc.com" target="_blank" rel="noopener noreferrer">
+            Visit LAXCC.com
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Sources -->
+      <div class="fd-sources">
+        <h4>Sources</h4>
+        <ul>
+          <li><a href="https://www.nbclosangeles.com/news/local/la-voters-approve-higher-taxes-on-unlicensed-cannabis-shops-ravel-sites-unlicensed-cannabis-shops/3903575/" target="_blank" rel="noopener noreferrer">NBC Los Angeles — LA voters approve higher taxes on unlicensed cannabis shops & travel sites</a></li>
+          <li><a href="https://laist.com/news/politics/voter-guides/2026-election-california-primary-los-angeles-measure-cb" target="_blank" rel="noopener noreferrer">LAist — Measure CB: what you need to know about the tax on unlicensed cannabis businesses</a></li>
+          <li><a href="https://ballotpedia.org/Los_Angeles,_California,_Measure_CB,_Apply_Marijuana_Tax_to_Unlicensed_Marijuana_Businesses_Measure_(June_2026)" target="_blank" rel="noopener noreferrer">Ballotpedia — Los Angeles Measure CB (June 2026)</a></li>
+        </ul>
+      </div>
+
+      <!-- Sponsored disclosure -->
+      <p class="fd-disclosure">
+        <strong>Disclosure:</strong> This is sponsored content produced in partnership with LAX Cannabis Club (LAXCC). Film Daily may receive compensation for this article and for links to the sponsor. Vote totals and tax figures reflect reporting available at publication and unofficial results that may change as the count is certified; confirm details with the Los Angeles City Clerk and the sources above. Cannabis is for adults 21+ (or 18+ with a valid medical recommendation). Please consume responsibly.
+      </p>
+
+    </div>
+  </article>
+</body>
+</html>

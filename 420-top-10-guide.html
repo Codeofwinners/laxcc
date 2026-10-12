@@ -1,0 +1,1036 @@
+<!-- ============================================================
+  LAXCC &mdash; 4/20 Top 10 Guide
+  Target: tourists / newcomers visiting LAX (5 min from airport)
+  Elementor-safe: HTML + CSS only (no <script>), scoped to
+  .laxcc-420-guide so nothing leaks into the WP theme.
+============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   SCOPE &mdash; everything lives under .laxcc-420-guide
+============================================================ */
+.laxcc-420-guide,
+.laxcc-420-guide *,
+.laxcc-420-guide *::before,
+.laxcc-420-guide *::after { box-sizing: border-box; }
+
+.laxcc-420-guide {
+  --cream: #fbf8f2;
+  --ink: #1a1a1a;
+  --ink-2: #3b3b3b;
+  --muted: #6b6b6b;
+  --line: rgba(26,26,26,.08);
+  --orange: #F89459;
+  --orange-dk: #e67a3d;
+  --green: #3f7d4c;
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.laxcc-420-guide img { max-width: 100%; height: auto; display: block; }
+
+.laxcc-420-guide a { color: inherit; text-decoration: none; }
+
+/* Headings */
+.laxcc-420-guide h1,
+.laxcc-420-guide h2,
+.laxcc-420-guide h3,
+.laxcc-420-guide .display {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+/* Container */
+.laxcc-420-guide .wrap {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ============================================================
+   BUTTONS &mdash; orange only, white text forced
+============================================================ */
+.laxcc-420-guide a.btn,
+.laxcc-420-guide .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 22px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1;
+  border-radius: 999px;
+  white-space: nowrap;
+  background: var(--orange);
+  color: #fff !important;
+  border: none;
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease;
+}
+.laxcc-420-guide a.btn:link,
+.laxcc-420-guide a.btn:visited,
+.laxcc-420-guide a.btn:hover,
+.laxcc-420-guide a.btn:active { color: #fff !important; }
+.laxcc-420-guide a.btn:hover,
+.laxcc-420-guide .btn:hover { background: var(--orange-dk); transform: translateY(-1px); }
+
+.laxcc-420-guide a.btn-ghost {
+  background: transparent;
+  color: var(--ink) !important;
+  border: 1px solid var(--ink);
+}
+.laxcc-420-guide a.btn-ghost:link,
+.laxcc-420-guide a.btn-ghost:visited,
+.laxcc-420-guide a.btn-ghost:hover { color: var(--ink) !important; }
+.laxcc-420-guide a.btn-ghost:hover { background: var(--ink); color: #fff !important; }
+
+/* ============================================================
+   HERO
+============================================================ */
+.laxcc-420-guide .hero {
+  padding: 56px 0 40px;
+  position: relative;
+}
+
+.laxcc-420-guide .hero .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--orange-dk);
+  margin-bottom: 18px;
+}
+.laxcc-420-guide .hero .eyebrow .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--orange);
+}
+
+.laxcc-420-guide .hero h1 {
+  font-size: clamp(38px, 8vw, 72px);
+  margin-bottom: 16px;
+}
+.laxcc-420-guide .hero h1 .accent {
+  color: #00AFC9;
+  font-style: italic;
+}
+
+.laxcc-420-guide .hero .lede {
+  font-size: clamp(16px, 2.2vw, 19px);
+  color: var(--ink-2);
+  max-width: 620px;
+  margin-bottom: 24px;
+}
+
+.laxcc-420-guide .hero .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+.laxcc-420-guide .hero .meta span { display: inline-flex; align-items: center; gap: 6px; }
+
+.laxcc-420-guide .hero .cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ============================================================
+   NEW-TO-CANNABIS PRIMER STRIP
+============================================================ */
+.laxcc-420-guide .primer {
+  padding: 28px 0 40px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.laxcc-420-guide .primer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.laxcc-420-guide .primer-head h2 {
+  font-size: clamp(24px, 4vw, 32px);
+  margin-bottom: 8px;
+}
+.laxcc-420-guide .primer-head p {
+  color: var(--ink-2);
+  font-size: 15px;
+  max-width: 540px;
+}
+
+.laxcc-420-guide .primer-tips {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.laxcc-420-guide .tip {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+.laxcc-420-guide .tip-num {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--orange);
+  line-height: 1;
+  padding-top: 2px;
+}
+.laxcc-420-guide .tip h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  letter-spacing: 0;
+}
+.laxcc-420-guide .tip p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   COUNTDOWN LIST &mdash; 10 &rarr; 1
+============================================================ */
+.laxcc-420-guide .countdown {
+  padding: 56px 0 24px;
+}
+.laxcc-420-guide .countdown-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.laxcc-420-guide .countdown-head .eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--orange-dk);
+  margin-bottom: 10px;
+}
+.laxcc-420-guide .countdown-head h2 {
+  font-size: clamp(30px, 5vw, 46px);
+  margin-bottom: 10px;
+}
+.laxcc-420-guide .countdown-head p {
+  font-size: 15px;
+  color: var(--ink-2);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* The rank entry */
+.laxcc-420-guide .rank {
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+  position: relative;
+}
+.laxcc-420-guide .rank:first-of-type { border-top: none; }
+
+.laxcc-420-guide .rank-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Visual column */
+.laxcc-420-guide .rank-media {
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.laxcc-420-guide .rank-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 24px;
+}
+/* Modifier: image fills the container edge-to-edge (for lifestyle photos) */
+.laxcc-420-guide .rank-media.media-fill img {
+  object-fit: cover;
+  padding: 0;
+}
+.laxcc-420-guide .rank-media.placeholder {
+  background: #fff;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Rank #10 &mdash; accent background */
+.laxcc-420-guide .rank-media.media-accent {
+  background: #1D508A;
+}
+.laxcc-420-guide .rank-media.media-accent .rank-badge::before {
+  color: rgba(255,255,255,.65);
+  opacity: 1;
+}
+
+/* Big rank badge in corner of media */
+.laxcc-420-guide .rank-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(44px, 10vw, 72px);
+  line-height: 1;
+  color: var(--orange);
+  text-shadow: 0 2px 20px rgba(0,0,0,.05);
+  pointer-events: none;
+}
+.laxcc-420-guide .rank-badge::before {
+  content: "#";
+  font-size: 0.45em;
+  font-style: normal;
+  vertical-align: top;
+  margin-right: 2px;
+  color: var(--ink);
+  opacity: .55;
+}
+
+/* Info column */
+.laxcc-420-guide .rank-info .eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.laxcc-420-guide .rank-info h3 {
+  font-size: clamp(26px, 4.5vw, 38px);
+  margin-bottom: 6px;
+}
+.laxcc-420-guide .rank-info .tagline {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--orange-dk);
+  margin-bottom: 14px;
+}
+.laxcc-420-guide .rank-info p {
+  font-size: 15px;
+  color: var(--ink-2);
+  margin-bottom: 16px;
+}
+
+.laxcc-420-guide .spec-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.laxcc-420-guide .spec-pills span {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(26,26,26,.05);
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.laxcc-420-guide .rank-why {
+  background: rgba(248, 148, 89, 0.08);
+  border-left: 3px solid var(--orange);
+  padding: 12px 14px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 20px;
+}
+.laxcc-420-guide .rank-why strong {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--orange-dk);
+  margin-bottom: 4px;
+}
+.laxcc-420-guide .rank-why p {
+  font-size: 14px;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.laxcc-420-guide .rank-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Live product grid (shortcode output) below each rank */
+.laxcc-420-guide .rank-shop {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px dashed var(--line);
+}
+.laxcc-420-guide .rank-shop-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+/* Kill the WP theme's default blue-underline links inside the shortcode.
+   The Leafbridge widget has its own card/button styles — we just need to
+   suppress the global `a { color: blue; text-decoration: underline; }`. */
+.laxcc-420-guide .rank-shop a,
+.laxcc-420-guide .rank-shop a:link,
+.laxcc-420-guide .rank-shop a:visited,
+.laxcc-420-guide .rank-shop a:hover,
+.laxcc-420-guide .rank-shop a:active {
+  color: inherit !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  border-bottom: none !important;
+}
+.laxcc-420-guide .rank-shop img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================================
+   CLOSING CTA
+============================================================ */
+.laxcc-420-guide .closing {
+  margin-top: 40px;
+  padding: 56px 24px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 24px;
+  text-align: center;
+}
+.laxcc-420-guide .closing h2 {
+  color: #fff;
+  font-size: clamp(28px, 5vw, 42px);
+  margin-bottom: 12px;
+}
+.laxcc-420-guide .closing p {
+  color: rgba(255,255,255,.78);
+  font-size: 16px;
+  max-width: 540px;
+  margin: 0 auto 24px;
+}
+.laxcc-420-guide .closing .cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.laxcc-420-guide .closing a.btn-ghost {
+  color: #fff !important;
+  border-color: rgba(255,255,255,.4);
+}
+.laxcc-420-guide .closing a.btn-ghost:hover {
+  background: #fff;
+  color: var(--ink) !important;
+}
+.laxcc-420-guide .closing .addr {
+  margin-top: 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,.55);
+}
+
+/* Section padding bottom for the whole page */
+.laxcc-420-guide .guide-end { padding-bottom: 56px; }
+
+/* ============================================================
+   DESKTOP &mdash; alternating image/text rows, tighter grid
+============================================================ */
+@media (min-width: 860px) {
+
+  .laxcc-420-guide .hero { padding: 88px 0 64px; }
+
+  .laxcc-420-guide .primer { padding: 40px 0 56px; }
+  .laxcc-420-guide .primer-grid {
+    grid-template-columns: 1fr 1.4fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .laxcc-420-guide .primer-tips {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 32px;
+  }
+
+  .laxcc-420-guide .countdown { padding: 80px 0 32px; }
+
+  .laxcc-420-guide .rank { padding: 64px 0; }
+
+  .laxcc-420-guide .rank-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+  /* Alternate: odd ranks image-right, even ranks image-left (desktop only) */
+  .laxcc-420-guide .rank.alt .rank-grid {
+    direction: rtl;
+  }
+  .laxcc-420-guide .rank.alt .rank-grid > * {
+    direction: ltr;
+  }
+
+  .laxcc-420-guide .rank-media { aspect-ratio: 1 / 1; }
+
+  .laxcc-420-guide .closing { padding: 72px 40px; }
+}
+</style>
+
+<section class="laxcc-420-guide">
+
+  <!-- ========== HERO ========== -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow"><span class="dot"></span> The 4/20 Guide &middot; LAXCC Los Angeles</div>
+      <h1>The <span class="accent">4/20 Guide</span>: Top 10 Cannabis Products to Celebrate Near LAX</h1>
+      <p class="lede">
+        Welcome to your <strong>4/20 guide</strong> for Los Angeles &mdash; a no-fluff countdown of the Top 10 cannabis brands and products to celebrate <strong>420</strong> at LAX Cannabis Club. Whether you just landed at LAX, you're visiting LA for the first time, or you're a local planning the perfect 4/20, this guide covers the best pre-rolls, vapes, flower, edibles, and live resin we carry &mdash; ranked from #10 up to our #1 best seller. All products are California-licensed, lab-tested, and available for walk-in or pickup at <strong>8332 Lincoln Blvd, just 5 minutes from LAX Airport</strong>.
+      </p>
+      <div class="meta">
+        <span>&#9992;&#65039; 5 min from LAX</span>
+        <span>&#127958;&#65039; 8 min from the beach</span>
+        <span>&#9989; Licensed California dispensary</span>
+        <span>&#127381; Newcomer-friendly staff</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn" href="https://laxcc.com/shop/">Shop the Menu</a>
+        <a class="btn-ghost btn" href="https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTINCAEQLhivARjHARiABDIGCAIQRRg8MgYIAxBFGDwyBggEEEUYPDIGCAUQRRhBMgYIBhBFGEEyBggHEEUYQdIBBzgzNWowajSoAgOwAgHxBaVggvBTuigJ&um=1&ie=UTF-8&fb=1&gl=us&sa=X&geocode=KcV7PbKUsMKAMRV9PE_uQ_xU&daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045">Get Directions</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== NEW-USER PRIMER ========== -->
+  <section class="primer">
+    <div class="wrap">
+      <div class="primer-grid">
+        <div class="primer-head">
+          <h2>4/20 Guide for First-Timers: Read This First</h2>
+          <p>
+            New to cannabis or never set foot in a dispensary? No stress. These six tips are the intro to our <strong>4/20 guide</strong> &mdash; everything a tourist or first-time buyer needs to celebrate 420 in Los Angeles without second-guessing.
+          </p>
+        </div>
+        <div class="primer-tips">
+          <div class="tip">
+            <div class="tip-num">01</div>
+            <div>
+              <h4>Bring a Valid ID</h4>
+              <p>21+ with any government-issued ID. Out-of-state and foreign IDs both work.</p>
+            </div>
+          </div>
+          <div class="tip">
+            <div class="tip-num">02</div>
+            <div>
+              <h4>Cash is King</h4>
+              <p>We're cash-only. There's an ATM on-site if you forget.</p>
+            </div>
+          </div>
+          <div class="tip">
+            <div class="tip-num">03</div>
+            <div>
+              <h4>Start Low, Go Slow</h4>
+              <p>If you've never tried cannabis, ask our budtenders for a low-dose option.</p>
+            </div>
+          </div>
+          <div class="tip">
+            <div class="tip-num">04</div>
+            <div>
+              <h4>Don't Fly With It</h4>
+              <p>Federal law &mdash; what you buy stays in California. Enjoy it on your trip.</p>
+            </div>
+          </div>
+          <div class="tip">
+            <div class="tip-num">05</div>
+            <div>
+              <h4>Ask Anything</h4>
+              <p>Our team loves helping first-timers. No dumb questions, ever.</p>
+            </div>
+          </div>
+          <div class="tip">
+            <div class="tip-num">06</div>
+            <div>
+              <h4>Open 9 AM &ndash; 9:30 PM</h4>
+              <p>Walk in or order ahead for pickup. Early flights welcome.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COUNTDOWN ========== -->
+  <section class="countdown">
+    <div class="wrap">
+      <div class="countdown-head">
+        <span class="eyebrow">The 4/20 Countdown</span>
+        <h2>4/20 Guide: Top 10 Cannabis Brands for Celebrating in LA</h2>
+        <p>Our <strong>420 guide</strong> picks: the 10 best cannabis brands at LAXCC for celebrating 4/20 near LAX Airport. Every pick is California-licensed and lab-tested, with notes on who the product is for, what it costs, and why it earned its place on our 4/20 list. Counting down from #10 to our #1 best seller.</p>
+      </div>
+
+      <!-- ========== #10 &mdash; SLUGGERS ========== -->
+      <article class="rank">
+        <div class="rank-grid">
+          <div class="rank-media media-accent">
+            <span class="rank-badge">10</span>
+            <img src="https://sluggers.com/cdn/shop/files/JUICED_5-PACKS_DEFOLT.png?v=1769422916&width=1200" alt="Sluggers 5-Pack Infused Pre-Rolls at LAXCC">
+          </div>
+          <div class="rank-info">
+            <div class="eyebrow">Rank #10 &middot; Quad-Infused Pre-Rolls</div>
+            <h3>Sluggers</h3>
+            <div class="tagline">The hardest-hitting joint on our shelf</div>
+            <p>
+              Sluggers JUICED 5-Packs are <strong>quad-infused</strong>: premium flower, solventless hash, THCA diamonds, high terpene extract, and then rolled in kief. Each pack is five heavy-hitters sealed in an airtight rainbow holographic tin with mylar to keep them fresh &mdash; plus an exclusive collectible card inside every pack. This is California cannabis flexing.
+            </p>
+
+            <div class="spec-pills">
+              <span>Quad-Infused</span>
+              <span>Flower + Hash + Diamonds</span>
+              <span>High Terpene Extract</span>
+              <span>Kief-Rolled</span>
+              <span>Holo Tin + Mylar Seal</span>
+              <span>Collectible Card</span>
+            </div>
+
+            <div class="rank-why">
+              <strong>Who it's for</strong>
+              <p>High-tolerance smokers who want the strongest preroll California is putting out. If you burn daily at home, this is the one to pick up while you're in LA. First-timers or light smokers &mdash; skip to the entries higher up the list.</p>
+            </div>
+
+            <div class="rank-cta">
+              <a class="btn" href="https://laxcc.com/brand/sluggers/">Shop Sluggers</a>
+              <a class="btn btn-ghost" href="https://laxcc.com/shop/">Full Menu</a>
+            </div>
+          </div>
+        </div>
+        <section class="rank-shop">
+          <h4 class="rank-shop-title">Live Sluggers Menu at LAXCC</h4>
+          [leafbridge_specific_product_filter brand="8a36b114-ab9f-4fbd-a2c9-5d33e4a7a656" count="20"]
+        </section>
+      </article>
+
+      <!-- ========== #9 &mdash; DROPS ========== -->
+      <article class="rank alt">
+        <div class="rank-grid">
+          <div class="rank-media">
+            <span class="rank-badge">9</span>
+            <img src="https://images.dutchie.com/2e72a7f1410bafacaf6770799ff4c442?w=500&h=500&fm=webp" alt="Drops Live Rosin at LAXCC">
+          </div>
+          <div class="rank-info">
+            <div class="eyebrow">Rank #9 &middot; Live Rosin</div>
+            <h3>Drops</h3>
+            <div class="tagline">Solventless live rosin &mdash; the purest form of California cannabis</div>
+            <p>
+              Drops makes <strong>live rosin</strong> &mdash; a solventless concentrate pressed from fresh-frozen flower using nothing but heat and pressure. No butane, no CO2, no chemicals ever touch the plant. Because the flower is flash-frozen right after harvest and never dried, the full terpene profile survives the extraction. That's why rosin tastes like the living plant itself &mdash; fruit, gas, citrus, flowers &mdash; instead of the flat "weed" taste of most concentrates.
+            </p>
+
+            <div class="spec-pills">
+              <span>Live Rosin</span>
+              <span>Solventless</span>
+              <span>Fresh-Frozen Flower</span>
+              <span>Heat + Pressure Only</span>
+              <span>Full-Terpene</span>
+              <span>Lab Tested</span>
+            </div>
+
+            <div class="rank-why">
+              <strong>Who it's for</strong>
+              <p>Flavor chasers and dab heads who want to taste the terpenes, not cover them up. Live rosin is the top shelf of the concentrate world &mdash; premium, potent, and expensive for a reason. If you've only ever smoked flower and want to see what California can actually do, this is the tier to try.</p>
+            </div>
+
+            <div class="rank-cta">
+              <a class="btn" href="https://laxcc.com/brand/drops/">Shop Drops</a>
+              <a class="btn btn-ghost" href="https://laxcc.com/shop/">Full Menu</a>
+            </div>
+          </div>
+        </div>
+        <section class="rank-shop">
+          <h4 class="rank-shop-title">Live Drops Menu at LAXCC</h4>
+          [leafbridge_specific_product_filter brand="edb40dc1-9b3c-43a6-8dc8-dc3aa37b1c4e" count="20"]
+        </section>
+      </article>
+
+      <!-- ========== #8 &mdash; FROOT ========== -->
+      <article class="rank">
+        <div class="rank-grid">
+          <div class="rank-media">
+            <span class="rank-badge">8</span>
+            <img src="https://images.dutchie.com/cb479390dec2fe575a409406b4cbb428?w=500&h=500&fm=webp" alt="Froot Lucky Crispy Rosin Rice Bars 100mg at LAXCC">
+          </div>
+          <div class="rank-info">
+            <div class="eyebrow">Rank #8 &middot; Rosin-Infused Edibles</div>
+            <h3>Froot &mdash; Lucky Crispy Rice Bars</h3>
+            <div class="tagline">Rosin-infused rice crispies &mdash; the grown-up version of the lunchbox classic</div>
+            <p>
+              Froot's Lucky Crispy Rice Bars take the classic crispy rice-marshmallow treat and infuse it with <strong>live rosin</strong> instead of distillate. That means full-spectrum, solventless cannabis baked right into the bar &mdash; the same premium extract that runs $60+ as a gram of concentrate. Each pack has 5 individually wrapped bars at 20mg THC each (100mg total), so the dose is portioned for you.
+            </p>
+
+            <div class="spec-pills">
+              <span>100mg Total</span>
+              <span>20mg Per Bar</span>
+              <span>5 Bars Per Pack</span>
+              <span>Rosin-Infused</span>
+              <span>Solventless</span>
+              <span>Hybrid</span>
+              <span>Individually Wrapped</span>
+            </div>
+
+            <div class="rank-why">
+              <strong>Who it's for</strong>
+              <p>Anyone who wants an edible that isn't a gummy &mdash; and anyone who appreciates that rosin-infused edibles hit differently than distillate ones. <strong>Heads up for newcomers:</strong> 20mg is a moderate-to-strong dose. If this is one of your first edibles, cut a bar in half (10mg) and wait a full 90 minutes before eating more. Perfect for the hotel room, a beach day, or a 4/20 dessert.</p>
+            </div>
+
+            <div class="rank-cta">
+              <a class="btn" href="https://laxcc.com/product/lucky-crispy-rice-bars-100mg/?retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3">Shop Froot Rice Bars</a>
+              <a class="btn btn-ghost" href="https://laxcc.com/shop/">Full Menu</a>
+            </div>
+          </div>
+        </div>
+        <section class="rank-shop">
+          <h4 class="rank-shop-title">Live Froot Menu at LAXCC</h4>
+          [leafbridge_specific_product_filter brand="5f795974-685c-480e-a1ef-366cf0a5cf82" count="20"]
+        </section>
+      </article>
+
+      <!-- ========== #7 &mdash; BLOOM ========== -->
+      <article class="rank alt">
+        <div class="rank-grid">
+          <div class="rank-media">
+            <span class="rank-badge">7</span>
+            <img src="https://thebloombrands.com/wp-content/uploads/2026/02/20251027_Bloom_Rosinv2-2-1-1024x666.jpg" alt="Bloom vape disposables and cartridges at LAXCC">
+          </div>
+          <div class="rank-info">
+            <div class="eyebrow">Rank #7 &middot; Vape Disposables &amp; Carts</div>
+            <h3>Bloom</h3>
+            <div class="tagline">Award-winning vapes &mdash; live resin or distillate, disposable or cart</div>
+            <p>
+              Bloom is one of California's most awarded vape brands, and for good reason: no fillers, no cutting agents, no vitamin E acetate &mdash; just clean cannabis oil in ceramic-coil hardware that actually hits right. At LAXCC you get <strong>both lanes</strong>: live resin AIO disposables ($45) for full-spectrum strain-true flavor, and classic distillate carts/AIOs (from $30) when you just want a clean high at the lowest cost per puff.
+            </p>
+
+            <div class="spec-pills">
+              <span>Live Resin + Distillate</span>
+              <span>AIO Disposables + 1g Carts</span>
+              <span>Up to 90%+ THC</span>
+              <span>Ceramic Coils</span>
+              <span>No Fillers / No Vit E</span>
+              <span>Strain-Specific Terps</span>
+            </div>
+
+            <div class="rank-why">
+              <strong>Who it's for</strong>
+              <p>The easiest format for anyone visiting LA. No rolling, no smell, no gear &mdash; pull it out, hit it, pocket it. <strong>New to cannabis?</strong> Grab a classic distillate AIO and take one small puff, then wait 10 minutes before going again. <strong>Know what you like?</strong> The Bloom Live line (Slurricane, Face Off OG) will taste like the actual strain, not sugar-water. Just remember: what you buy stays in California &mdash; don't try to fly with it.</p>
+            </div>
+
+            <div class="rank-cta">
+              <a class="btn" href="https://laxcc.com/brand/bloom/">Shop Bloom</a>
+              <a class="btn btn-ghost" href="https://laxcc.com/shop/">Full Menu</a>
+            </div>
+          </div>
+        </div>
+        <section class="rank-shop">
+          <h4 class="rank-shop-title">Live Bloom Menu at LAXCC</h4>
+          [leafbridge_specific_product_filter brand="1d682d79-2ceb-45dc-826a-0c702cc68f42" count="20"]
+        </section>
+      </article>
+
+      <!-- ========== #6 &mdash; XOTX ========== -->
+      <article class="rank">
+        <div class="rank-grid">
+          <div class="rank-media">
+            <span class="rank-badge">6</span>
+            <img src="https://images.dutchie.com/332f18541693953eb78a8eb171760865" alt="Xotx exotic flower quarter ounce at LAXCC">
+          </div>
+          <div class="rank-info">
+            <div class="eyebrow">Rank #6 &middot; Exotic Flower</div>
+            <h3>Xotx</h3>
+            <div class="tagline">California exotic flower &mdash; the real stuff, in quarter-ounce jars</div>
+            <p>
+              Xotx is a flower brand built around <strong>exotic California genetics</strong> &mdash; the loud, frosty, dessert-and-fruit strains this state is famous for. Bubble Gum Runtz, Warheads, Maraschino Lemon Pop: the kind of flavor-forward bud that tests up to 30% THC with terpenes you can smell through the jar. Sold in 1/4oz (7g) sizes from $60&ndash;$65, which is honest pricing for top-shelf exotics.
+            </p>
+
+            <div class="spec-pills">
+              <span>Exotic Flower</span>
+              <span>Up to 30% THC</span>
+              <span>1/4oz Jars</span>
+              <span>Loud Terpene Profile</span>
+              <span>California Cultivated</span>
+              <span>Lab Tested</span>
+            </div>
+
+            <div class="rank-why">
+              <strong>Who it's for</strong>
+              <p>Flower purists who want to experience the California exotic scene, not a vape or a gummy. This is the stuff you can't legally buy back home in most states. <strong>Heads up:</strong> you'll need a grinder and papers (or a pipe) &mdash; if you didn't pack gear, grab a Raw kit at the counter or ask us about pre-rolls instead. A quarter is a generous share size for a 4/20 session with 2&ndash;4 people.</p>
+            </div>
+
+            <div class="rank-cta">
+              <a class="btn" href="https://laxcc.com/brand/xotx/">Shop Xotx</a>
+              <a class="btn btn-ghost" href="https://laxcc.com/shop/">Full Menu</a>
+            </div>
+          </div>
+        </div>
+        <section class="rank-shop">
+          <h4 class="rank-shop-title">Live Xotx Menu at LAXCC</h4>
+          [leafbridge_specific_product_filter brand="f2a5ef2d-dc99-4511-9c6e-3f274f438092" count="20"]
+        </section>
+      </article>
+
+      <!-- ========== #5 &mdash; PLUG PLAY ========== -->
+      <article class="rank alt">
+        <div class="rank-grid">
+          <div class="rank-media media-fill">
+            <span class="rank-badge">5</span>
+            <img src="https://laxcc.com/wp-content/uploads/2024/12/plug-play-battery-vape.jpg" alt="Plug Play magnetic pod vape battery at LAXCC">
+          </div>
+          <div class="rank-info">
+            <div class="eyebrow">Rank #5 &middot; Magnetic Pod Vapes</div>
+            <h3>Plug Play</h3>
+            <div class="tagline">Iconic magnetic pods &mdash; the California vape you've seen on every LA rooftop</div>
+            <p>
+              Plug Play invented the <strong>magnetic pod system</strong> that defined California vapes: a flat, pocket-sized "Play" battery ($21.95&ndash;$22) that snaps together with any 1g Plug pod. The menu is huge &mdash; <strong>Plug Exotics</strong> (Guava Burst, White Runtz), <strong>Plug DNA</strong> (Grease Monkey 86%, Limoncello 85%), plus classics like Blue Dream, Super Lemon Haze, and Durban Delight &mdash; all at a flat $54.99 per 1g pod.
+            </p>
+
+            <div class="spec-pills">
+              <span>Magnetic Pod System</span>
+              <span>1g Pods @ $54.99</span>
+              <span>Up to 86%+ THC</span>
+              <span>17+ Strains</span>
+              <span>Plug Exotics + DNA Lines</span>
+              <span>AIO Disposable Option</span>
+              <span>No Fillers / No Vit E</span>
+            </div>
+
+            <div class="rank-why">
+              <strong>Who it's for</strong>
+              <p>Anyone who'll be in LA long enough to swap between a few strains. Buy one $22 Play battery, then rotate pods &mdash; it's cheaper per flavor than repeatedly buying disposables. <strong>Tourist tip:</strong> the battery is sold separately, so either grab one at the counter or ask for the <em>PlugPlay AIO</em> (all-in-one disposable) if you only want a single product. Design-wise, these are probably the most recognizable vapes in California &mdash; yes, it's a flex.</p>
+            </div>
+
+            <div class="rank-cta">
+              <a class="btn" href="https://laxcc.com/brand/plug-play/">Shop Plug Play</a>
+              <a class="btn btn-ghost" href="https://laxcc.com/shop/">Full Menu</a>
+            </div>
+          </div>
+        </div>
+        <section class="rank-shop">
+          <h4 class="rank-shop-title">Live Plug Play Menu at LAXCC</h4>
+          [leafbridge_specific_product_filter brand="4f1e6e20-5ab7-409e-901a-262f4c9ec830" count="20"]
+        </section>
+      </article>
+
+      <!-- ========== #4 &mdash; KINGPEN ========== -->
+      <article class="rank">
+        <div class="rank-grid">
+          <div class="rank-media">
+            <span class="rank-badge">4</span>
+            <img src="https://images.dutchie.com/bec18d5ec7753ad537e6283bcf2623b8?w=500&h=500&fm=webp" alt="Kingpen vape cartridges at LAXCC">
+          </div>
+          <div class="rank-info">
+            <div class="eyebrow">Rank #4 &middot; OG California Vape Carts</div>
+            <h3>Kingpen</h3>
+            <div class="tagline">The original California vape brand &mdash; now with live rosin carts too</div>
+            <p>
+              Kingpen is a <strong>California OG</strong> &mdash; one of the first legal vape brands in the state and still one of the most awarded. At LAXCC you get two tiers on the same shelf: <strong>Kingpen Originals</strong> ($50.99, 1g) &mdash; classic strain-specific distillate like Bubba Kush, Grapefruit Romulan, Durban Poison, and Granddaddy Purple testing up to <strong>92% THC</strong> &mdash; and the newer <strong>Kingpen Solventless</strong> ($66, 1g) which puts actual live rosin into a 510-thread cart. Solventless rosin carts under $70 is rare.
+            </p>
+
+            <div class="spec-pills">
+              <span>1g 510-Thread Carts</span>
+              <span>Originals $50.99</span>
+              <span>Solventless $66</span>
+              <span>Up to 92% THC</span>
+              <span>Heritage CA Brand</span>
+              <span>Strain-Specific Terps</span>
+              <span>No Fillers / No Vit E</span>
+            </div>
+
+            <div class="rank-why">
+              <strong>Who it's for</strong>
+              <p>Anyone who already owns a <strong>510-thread battery</strong> (the standard screw-on vape battery) &mdash; these carts work with what you have. Strain purists love the Originals lineup because the terpene profiles match the strain names. If you want the top-shelf flavor experience, go Solventless; if you want the strongest hit per dollar, go Originals. No 510 battery? Grab one at the counter for around $15&ndash;$20.</p>
+            </div>
+
+            <div class="rank-cta">
+              <a class="btn" href="https://laxcc.com/brand/kingpen/">Shop Kingpen</a>
+              <a class="btn btn-ghost" href="https://laxcc.com/shop/">Full Menu</a>
+            </div>
+          </div>
+        </div>
+        <section class="rank-shop">
+          <h4 class="rank-shop-title">Live Kingpen Menu at LAXCC</h4>
+          [leafbridge_specific_product_filter brand="ac1d9691-a426-4401-bc8a-cf0186dad693" count="20"]
+        </section>
+      </article>
+
+      <!-- ========== #3 &mdash; PLANTA ========== -->
+      <article class="rank alt">
+        <div class="rank-grid">
+          <div class="rank-media">
+            <span class="rank-badge">3</span>
+            <img src="https://images.dutchie.com/9965fc703c4b732faed502ecc0972843" alt="Planta premium California flower eighth at LAXCC">
+          </div>
+          <div class="rank-info">
+            <div class="eyebrow">Rank #3 &middot; Clean Premium Flower</div>
+            <h3>Planta</h3>
+            <div class="tagline">Small-batch California flower &mdash; curated, not chased</div>
+            <p>
+              Planta is the quiet premium pick on the flower shelf. Instead of chasing the loudest novelty genetics, they nail the <strong>modern A-list classics</strong>: Biscotti, Gelonade, Zoap, and their signature CC strain &mdash; sold as 1/8oz jars at $70, testing in the <strong>22&ndash;26% THC range</strong> (which is right where great flower actually lives &mdash; ultra-high THC numbers usually mean less terpene, flatter flavor). For a no-commitment try, their Coffin Candy is a single gram at just $15.01.
+            </p>
+
+            <div class="spec-pills">
+              <span>1/8oz Jars @ $70</span>
+              <span>1g Singles @ $15</span>
+              <span>22&ndash;26% THC</span>
+              <span>Biscotti / Zoap / Gelonade</span>
+              <span>Clean Cultivation</span>
+              <span>Small-Batch CA</span>
+            </div>
+
+            <div class="rank-why">
+              <strong>Who it's for</strong>
+              <p>Flower smokers who care about flavor, terpene expression, and smooth burn &mdash; not just chasing the highest THC number on the label. <strong>Tourist move:</strong> grab the $15 Coffin Candy gram to test the cultivation quality before dropping $70 on an eighth. Perfect if you brought your own papers/pipe or want to build a pre-roll with a buddy during your 4/20 session.</p>
+            </div>
+
+            <div class="rank-cta">
+              <a class="btn" href="https://laxcc.com/brand/planta/">Shop Planta</a>
+              <a class="btn btn-ghost" href="https://laxcc.com/shop/">Full Menu</a>
+            </div>
+          </div>
+        </div>
+        <section class="rank-shop">
+          <h4 class="rank-shop-title">Live Planta Menu at LAXCC</h4>
+          [leafbridge_specific_product_filter brand="9a5deac8-f3bb-49b4-a532-df7452c69210" count="20"]
+        </section>
+      </article>
+
+      <!-- ========== #2 &mdash; RAW GARDEN ========== -->
+      <article class="rank">
+        <div class="rank-grid">
+          <div class="rank-media">
+            <span class="rank-badge">2</span>
+            <img src="https://images.dutchie.com/4d2984ea92c37475d6d7d8fdaaffe060?w=500&h=500&fm=webp" alt="Raw Garden new AIO live resin disposable at LAXCC">
+          </div>
+          <div class="rank-info">
+            <div class="eyebrow">Rank #2 &middot; Live Resin AIO Disposables</div>
+            <h3>Raw Garden</h3>
+            <div class="tagline">California's #1 concentrate brand &mdash; now with an AIO that no other vape can touch</div>
+            <p>
+              Raw Garden is <strong>California's best-selling cannabis concentrate brand</strong>, and there's a reason: every product is <strong>single-source live resin</strong> made from fresh-frozen flower pressed at one farm, from one harvest, captured at peak terpene potency. Their <strong>new all-in-one disposables</strong> are in a different league than anything else on the vape shelf. Airflow engineered for <strong>effortless, massive clouds</strong>, flavor retention that tastes like you just pressed the flower yourself, and zero cart-battery fumbling &mdash; just open, inhale, done. If you've been underwhelmed by disposables before, this is the one that changes your mind.
+            </p>
+
+            <div class="spec-pills">
+              <span>NEW AIO Disposable</span>
+              <span>Single-Source Live Resin</span>
+              <span>Fresh-Frozen Flower</span>
+              <span>#1 Brand in California</span>
+              <span>Massive Cloud Output</span>
+              <span>Peak Terpene Retention</span>
+              <span>No Battery Needed</span>
+            </div>
+
+            <div class="rank-why">
+              <strong>Who it's for</strong>
+              <p><strong>Literally everyone visiting LA for 4/20.</strong> The AIO format is the easiest cannabis product to use &mdash; no battery, no cart to screw on, no grinder, no lighter. Pull it out, hit it, pocket it. The flavor is next-level because live resin captures terpenes that regular distillate carts lose. <strong>First-timer?</strong> Take one small puff and wait 10 minutes before another. <strong>Experienced?</strong> You'll notice the airflow difference immediately. Just remember: what you buy stays in California &mdash; don't try to fly with it home.</p>
+            </div>
+
+            <div class="rank-cta">
+              <a class="btn" href="https://laxcc.com/brand/raw-garden/">Shop Raw Garden</a>
+              <a class="btn btn-ghost" href="https://laxcc.com/shop/">Full Menu</a>
+            </div>
+          </div>
+        </div>
+        <section class="rank-shop">
+          <h4 class="rank-shop-title">Live Raw Garden Menu at LAXCC</h4>
+          [leafbridge_specific_product_filter brand="bbdf26e3-c442-4346-898a-9dc657ff3acb" count="20"]
+        </section>
+      </article>
+
+      <!-- ========== #1 &mdash; KOA CANNABIS CO. ========== -->
+      <article class="rank alt">
+        <div class="rank-grid">
+          <div class="rank-media media-fill">
+            <span class="rank-badge">1</span>
+            <img src="https://static.wixstatic.com/media/027796_a338fa38427545dd9971b5302953f8fb~mv2.jpg/v1/fill/w_1524,h_903,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/027796_a338fa38427545dd9971b5302953f8fb~mv2.jpg" alt="Koa Cannabis Co. infused pre-rolls at LAXCC">
+          </div>
+          <div class="rank-info">
+            <div class="eyebrow">Rank #1 &middot; LAXCC Best Seller &middot; Infused Pre-Rolls</div>
+            <h3>Koa Cannabis Co.</h3>
+            <div class="tagline">Our #1 selling pre-roll &mdash; 10 infused joints for $45, and we can't keep them in stock</div>
+            <p>
+              This is the top of the list for one simple reason: <strong>Koa is LAXCC's #1 selling pre-roll brand and frequently sells out.</strong> The value is unbeatable &mdash; <strong>$45 for a 10-pack of infused prerolls</strong> testing at <strong>37%+ THC</strong>. That's $4.50 per joint for some of the highest-potency prerolls in California, with stacked strain crosses like <em>Lemon Cherry Gelato X Pink Runtz</em>, <em>GDP X Northern Lights</em>, and <em>Lemon Haze X Sour Diesel</em>. Grown with "aloha spirit" and California sun &mdash; small batch, hand-curated, no filler. If we have them on the shelf when you walk in, don't sleep on it.
+            </p>
+
+            <div class="spec-pills">
+              <span>10-Pack Infused Prerolls @ $45</span>
+              <span>Doubles @ $12 (.7g)</span>
+              <span>37%+ THC</span>
+              <span>Stacked Strain Crosses</span>
+              <span>$4.50 Per Joint</span>
+              <span>LAXCC Best Seller</span>
+              <span>Frequently Sold Out</span>
+            </div>
+
+            <div class="rank-why">
+              <strong>Who it's for</strong>
+              <p><strong>Travel groups:</strong> a 10-pack is one joint a day for a long weekend, or a handful each for a session with the crew. <strong>Value hunters:</strong> $4.50 per 37%-THC infused preroll is the best value math on the menu &mdash; nothing else comes close. <strong>High-tolerance smokers:</strong> one of these hits harder than most flower joints twice the price. <strong>Newcomers:</strong> skip the 10-pack, grab a <em>Doubles</em> 2-pack at $12 and only smoke a third of a joint to start &mdash; wait 15 minutes before you keep going. <strong>Scarcity heads-up:</strong> these genuinely sell out. If they're in stock when you visit, this is the one not to overthink.</p>
+            </div>
+
+            <div class="rank-cta">
+              <a class="btn" href="https://laxcc.com/brand/koa-cannabis-co/">Shop Koa</a>
+              <a class="btn btn-ghost" href="https://laxcc.com/shop/">Full Menu</a>
+            </div>
+          </div>
+        </div>
+        <section class="rank-shop">
+          <h4 class="rank-shop-title">Live Koa Menu at LAXCC</h4>
+          [leafbridge_specific_product_filter brand="d829ed6a-6842-4fb6-8cb6-43cc5867b1c0" count="20"]
+        </section>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ========== CLOSING CTA ========== -->
+  <section class="guide-end">
+    <div class="wrap">
+      <div class="closing">
+        <h2>Celebrate 4/20 Near LAX &mdash; LAXCC Is Your 420 HQ</h2>
+        <p>That's our 4/20 guide. Walk into LAX Cannabis Club 5 minutes from LAX Airport and our team will help you pick the right product for your 420 celebration &mdash; whether you're a first-timer, a tourist, or a daily smoker. Licensed, lab-tested, and open every day of the year including 4/20.</p>
+        <div class="cta-row">
+          <a class="btn" href="https://laxcc.com/shop/">Shop the Menu</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTINCAEQLhivARjHARiABDIGCAIQRRg8MgYIAxBFGDwyBggEEEUYPDIGCAUQRRhBMgYIBhBFGEEyBggHEEUYQdIBBzgzNWowajSoAgOwAgHxBaVggvBTuigJ&um=1&ie=UTF-8&fb=1&gl=us&sa=X&geocode=KcV7PbKUsMKAMRV9PE_uQ_xU&daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045">Get Directions</a>
+        </div>
+        <div class="addr">LAXCC &middot; 8332 Lincoln Blvd, Los Angeles, CA 90045 &middot; Open Daily 9 AM &ndash; 9:30 PM</div>
+      </div>
+    </div>
+  </section>
+
+</section>

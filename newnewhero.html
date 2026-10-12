@@ -1,0 +1,229 @@
+<!-- ============================================================
+  LAXCC &mdash; Sour Fuel Weekend Special Component
+  Aesthetics: High-Impact, Minimalist, Responsive
+  Background: #fbf8f2
+============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    .sour-fuel-special-wrapper {
+        --bg-color: #fbf8f2;
+        --accent-orange: #F89459;
+        --accent-mint: #7ECBB3;
+        --text-dark: #1d1d1f;
+        --text-muted: #86868b;
+        --price-green: #10B981;
+        --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+        background-color: var(--bg-color) !important;
+        padding: 30px 0 10px !important;
+        /* Very slim bottom padding */
+        margin-bottom: 0 !important;
+        font-family: var(--font-main) !important;
+        color: var(--text-dark) !important;
+        width: 100% !important;
+        display: block !important;
+    }
+
+    .sour-fuel-special-wrapper .container {
+        max-width: 1000px;
+        /* Slimmer container */
+        margin: 0 auto !important;
+        padding: 0 20px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        /* Closer together */
+        gap: 30px !important;
+    }
+
+    .sour-fuel-special-wrapper .image-side {
+        flex: 0 1 400px !important;
+        /* Fixed-ish width to prevent stretching */
+        line-height: 0 !important;
+    }
+
+    .sour-fuel-special-wrapper .image-side img {
+        width: 100% !important;
+        height: auto !important;
+        filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.06)) !important;
+        display: block !important;
+        transform: scale(1.2) !important;
+        transform-origin: center !important;
+    }
+
+    .sour-fuel-special-wrapper .text-side {
+        flex: 0 1 500px !important;
+        text-align: left !important;
+    }
+
+    .sour-fuel-special-wrapper .badge {
+        background: var(--accent-mint) !important;
+        color: #fff !important;
+        padding: 4px 12px !important;
+        border-radius: 4px !important;
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+        margin-bottom: 12px !important;
+        display: inline-block !important;
+    }
+
+    .sour-fuel-special-wrapper h2 {
+        font-size: clamp(1.8rem, 3.5vw, 3rem) !important;
+        font-weight: 800 !important;
+        color: var(--text-dark) !important;
+        line-height: 1.1 !important;
+        margin-bottom: 12px !important;
+        letter-spacing: -0.02em !important;
+    }
+
+    .sour-fuel-special-wrapper p {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
+        color: #424245 !important;
+        margin-bottom: 20px !important;
+    }
+
+    .sour-fuel-special-wrapper .price-wrap {
+        display: flex !important;
+        align-items: baseline !important;
+        gap: 15px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .sour-fuel-special-wrapper .new-price {
+        font-size: 2rem !important;
+        font-weight: 800 !important;
+        color: var(--price-green) !important;
+        line-height: 1 !important;
+    }
+
+    .sour-fuel-special-wrapper .old-price {
+        font-size: 1.25rem !important;
+        text-decoration: line-through !important;
+        color: var(--text-muted) !important;
+    }
+
+    .sour-fuel-special-wrapper .cta-btn {
+        display: inline-block !important;
+        background: var(--accent-orange) !important;
+        color: #fff !important;
+        padding: 12px 28px !important;
+        /* Slimmer button */
+        border-radius: 6px !important;
+        /* Slightly rounded, not pill */
+        font-weight: 700 !important;
+        font-size: 0.95rem !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        transition: transform 0.2s ease !important;
+    }
+
+    .sour-fuel-special-wrapper .cta-btn:hover {
+        transform: translateY(-2px) !important;
+    }
+
+    .sour-fuel-special-wrapper .reddit-review {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 7px !important;
+        margin-left: 16px !important;
+        font-size: 0.875rem !important;
+        font-weight: 600 !important;
+        color: var(--text-muted) !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        transition: color 0.2s ease !important;
+    }
+
+    .sour-fuel-special-wrapper .reddit-review:hover {
+        color: var(--text-dark) !important;
+    }
+
+    .sour-fuel-special-wrapper .reddit-review i {
+        color: #FF4500 !important;
+        font-size: 1.15rem !important;
+    }
+
+    @media (max-width: 860px) {
+        .sour-fuel-special-wrapper .reddit-review {
+            display: flex !important;
+            justify-content: center !important;
+            margin-left: 0 !important;
+            margin-top: 14px !important;
+        }
+    }
+
+    @media (max-width: 860px) {
+        .sour-fuel-special-wrapper {
+            padding: 20px 0 !important;
+        }
+
+        .sour-fuel-special-wrapper .container {
+            flex-direction: column !important;
+            text-align: center !important;
+            padding: 0 20px !important;
+            gap: 20px !important;
+        }
+
+        .sour-fuel-special-wrapper .image-side,
+        .sour-fuel-special-wrapper .text-side {
+            flex: none !important;
+            /* Fix for 'huge empty space' below image */
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+
+        .sour-fuel-special-wrapper .image-side {
+            margin-bottom: 0 !important;
+        }
+
+        .sour-fuel-special-wrapper .text-side {
+            text-align: center !important;
+        }
+
+        .sour-fuel-special-wrapper .price-wrap {
+            justify-content: center !important;
+        }
+
+        .sour-fuel-special-wrapper h2 {
+            font-size: 2rem !important;
+        }
+    }
+</style>
+
+<div class="sour-fuel-special-wrapper">
+    <div class="container">
+        <!-- Image Side -->
+        <div class="image-side">
+            <img src="https://laxcc.com/wp-content/uploads/2025/12/sour-fuel-la-family-farms.png"
+                alt="Sour Fuel by LA Family Farms">
+        </div>
+
+        <!-- Text Side -->
+        <div class="text-side">
+            <span class="badge">LA Dispensary Special</span>
+            <h2>Sour Fuel by LA Family Farms</h2>
+            <p>
+                Experience the raw power of Sour Fuel. <strong>Small-batch indoor grown in Los Angeles.</strong> Top-shelf
+                craft cannabis &mdash; <strong>over 50% off</strong> while it lasts. Limited quantities available.
+            </p>
+            <div class="price-wrap">
+                <span class="new-price">$29.99</span>
+                <span class="old-price">$70.00</span>
+            </div>
+            <a href="https://laxcc.com/product/la-family-sour-fuel/" class="cta-btn">Claim This Deal &mdash; $29.99</a>
+            <a href="https://www.reddit.com/r/THCaFlower/comments/1rfx13k/la_family_farms_sour_fuel/"
+                class="reddit-review" target="_blank" rel="nofollow noopener">
+                <i class="fa-brands fa-reddit"></i> Read the review on Reddit
+            </a>
+        </div>
+    </div>
+</div>

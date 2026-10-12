@@ -1,0 +1,310 @@
+<!-- LAXCC — Best Weed Prices in Los Angeles (homepage row) -->
+<!-- Horizontal scroll row, same style as Daily-Deals. Top 10 cheap picks + View All. -->
+<style>
+    #laxcc_best_prices {
+        --bp-card-bg: #ffffff;
+        --bp-accent: #1D508A;
+        --bp-text: #0f172a;
+        --bp-text-muted: #475569;
+        --bp-border: #e5e9ef;
+        --bp-font: 'Manrope', sans-serif;
+        font-family: var(--bp-font) !important;
+        color: var(--bp-text) !important;
+        padding: 20px 0 40px !important;
+        width: 100% !important;
+        max-width: 1500px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+
+    #laxcc_best_prices *, #laxcc_best_prices *::before, #laxcc_best_prices *::after { box-sizing: border-box !important; }
+
+    #laxcc_best_prices .bp_header {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        margin-bottom: 18px !important;
+        padding: 0 12px !important;
+        gap: 12px !important;
+        flex-wrap: wrap !important;
+    }
+
+    #laxcc_best_prices .bp_sup {
+        font-size: clamp(22px, 3.2vw, 30px) !important;
+        font-weight: 900 !important;
+        color: var(--bp-accent) !important;
+        text-transform: uppercase !important;
+        letter-spacing: -0.01em !important;
+        line-height: 1.1 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        margin: 0 !important;
+    }
+    #laxcc_best_prices .bp_sub {
+        font-size: clamp(13px, 1.4vw, 15px) !important;
+        font-weight: 600 !important;
+        color: var(--bp-text-muted) !important;
+        margin: 6px 0 0 !important;
+    }
+
+    #laxcc_best_prices .bp_head_cta,
+    #laxcc_best_prices a.bp_head_cta:link,
+    #laxcc_best_prices a.bp_head_cta:visited {
+        font-size: 12px !important;
+        font-weight: 800 !important;
+        color: #F89459 !important;
+        text-decoration: none !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.06em !important;
+        white-space: nowrap !important;
+    }
+    #laxcc_best_prices a.bp_head_cta:hover { opacity: 0.8 !important; }
+
+    #laxcc_best_prices .bp_grid {
+        display: flex !important;
+        gap: 14px !important;
+        margin-bottom: 24px !important;
+        overflow-x: auto !important;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 4px 8px 14px !important;
+        cursor: grab;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(15, 23, 42, 0.45) transparent;
+    }
+    #laxcc_best_prices .bp_grid:active { cursor: grabbing; }
+    #laxcc_best_prices .bp_grid::-webkit-scrollbar { height: 6px; }
+    #laxcc_best_prices .bp_grid::-webkit-scrollbar-track { background: transparent; }
+    #laxcc_best_prices .bp_grid::-webkit-scrollbar-thumb { background: rgba(15, 23, 42, 0.45); border-radius: 10px; }
+    #laxcc_best_prices .bp_grid::-webkit-scrollbar-thumb:hover { background: var(--bp-accent); }
+
+    #laxcc_best_prices .bp_grid_wrap { position: relative !important; }
+
+    #laxcc_best_prices .bp_arrow {
+        position: absolute !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 10 !important;
+        width: 40px !important; height: 40px !important;
+        border-radius: 50% !important;
+        border: none !important;
+        background: rgba(255,255,255,0.95) !important;
+        backdrop-filter: blur(8px) !important; -webkit-backdrop-filter: blur(8px) !important;
+        color: var(--bp-text) !important;
+        cursor: pointer !important;
+        display: flex !important; align-items: center !important; justify-content: center !important;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.1) !important;
+        transition: all 0.2s ease !important;
+        padding: 0 !important;
+    }
+    #laxcc_best_prices .bp_arrow:hover { background: var(--bp-text) !important; color: #fff !important; }
+    #laxcc_best_prices .bp_arrow--left { left: -8px !important; }
+    #laxcc_best_prices .bp_arrow--right { right: -8px !important; }
+    #laxcc_best_prices .bp_arrow.bp_arrow--hidden { opacity: 0 !important; pointer-events: none !important; }
+
+    #laxcc_best_prices .bp_card {
+        background: var(--bp-card-bg) !important;
+        border: none !important;
+        border-radius: 16px !important;
+        padding: 14px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        text-decoration: none !important;
+        color: inherit !important;
+        transition: transform 0.3s cubic-bezier(0.25,0.8,0.25,1), box-shadow 0.3s ease !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+        min-width: 190px !important; max-width: 190px !important;
+        flex-shrink: 0 !important;
+    }
+    #laxcc_best_prices .bp_card:hover { transform: translateY(-6px) !important; box-shadow: 0 16px 32px -8px rgba(0,0,0,0.12) !important; }
+
+    #laxcc_best_prices .bp_img_box {
+        position: relative !important;
+        width: 100% !important;
+        aspect-ratio: 1 !important;
+        background: #f5f7f6 !important;
+        border-radius: 12px !important;
+        padding: 12px !important;
+        display: flex !important; align-items: center !important; justify-content: center !important;
+        margin-bottom: 10px !important;
+        overflow: hidden !important;
+    }
+    #laxcc_best_prices .bp_img_box img {
+        width: 100% !important; height: 100% !important;
+        object-fit: contain !important;
+        mix-blend-mode: multiply;
+        transition: transform 0.4s ease !important;
+    }
+    #laxcc_best_prices .bp_card:hover .bp_img_box img { transform: scale(1.08) !important; }
+
+    #laxcc_best_prices .bp_badge {
+        position: absolute !important;
+        top: 8px !important; left: 8px !important;
+        color: #fff !important;
+        font-size: 11px !important;
+        font-weight: 900 !important;
+        padding: 5px 10px !important;
+        border-radius: 6px !important;
+        text-transform: uppercase !important;
+        z-index: 2 !important;
+        letter-spacing: 0.04em !important;
+        white-space: nowrap !important;
+        background: #F89459 !important;
+    }
+    #laxcc_best_prices .bp_badge.bp_badge--bogo { background: #7ECBB3 !important; }
+
+    #laxcc_best_prices .bp_title {
+        font-size: 15px !important;
+        font-weight: 800 !important;
+        margin: 0 0 4px 0 !important;
+        color: var(--bp-text) !important;
+        line-height: 1.2 !important;
+    }
+    #laxcc_best_prices .bp_deal {
+        font-size: 13px !important;
+        color: var(--bp-text-muted) !important;
+        line-height: 1.35 !important;
+        font-weight: 600 !important;
+    }
+    #laxcc_best_prices .bp_price {
+        margin-top: 6px !important;
+        font-size: 17px !important;
+        font-weight: 900 !important;
+        color: var(--bp-accent) !important;
+    }
+
+    #laxcc_best_prices .bp_footer { display: flex !important; justify-content: center !important; margin-top: 20px !important; }
+    #laxcc_best_prices .bp_cta,
+    #laxcc_best_prices a.bp_cta:link,
+    #laxcc_best_prices a.bp_cta:visited,
+    #laxcc_best_prices a.bp_cta:hover {
+        background: #F89459 !important;
+        color: #fff !important;
+        font-size: 14px !important;
+        font-weight: 800 !important;
+        padding: 14px 36px !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.06em !important;
+        white-space: nowrap !important;
+        transition: transform 0.2s ease !important;
+    }
+    #laxcc_best_prices .bp_cta:hover { transform: translateY(-2px) !important; }
+
+    @media (max-width: 768px) {
+        #laxcc_best_prices { padding: 12px 0 24px !important; }
+        #laxcc_best_prices .bp_header { padding: 0 16px !important; margin-bottom: 12px !important; }
+        #laxcc_best_prices .bp_grid { gap: 10px !important; padding: 4px 16px 12px !important; }
+        #laxcc_best_prices .bp_card { min-width: 150px !important; max-width: 150px !important; padding: 10px !important; border-radius: 12px !important; }
+        #laxcc_best_prices .bp_img_box { border-radius: 8px !important; padding: 8px !important; margin-bottom: 8px !important; }
+        #laxcc_best_prices .bp_badge { font-size: 10px !important; padding: 4px 8px !important; }
+        #laxcc_best_prices .bp_title { font-size: 13px !important; }
+        #laxcc_best_prices .bp_deal { font-size: 11px !important; }
+        #laxcc_best_prices .bp_price { font-size: 15px !important; }
+        #laxcc_best_prices .bp_arrow { display: none !important; }
+    }
+</style>
+
+<div id="laxcc_best_prices">
+    <div class="bp_header">
+        <div>
+            <h2 class="bp_sup">💸 Best Weed Prices in Los Angeles</h2>
+            <p class="bp_sub">Top 10 cheapest picks at LAXCC — 5 min from LAX Airport</p>
+        </div>
+        <a href="https://laxcc.com/best-cheap-weed-prices-la/" class="bp_head_cta">View All &rarr;</a>
+    </div>
+
+    <div class="bp_grid_wrap">
+        <button class="bp_arrow bp_arrow--left" id="bp_arrow_left" aria-label="Scroll left">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+        <div class="bp_grid" id="bp_grid">
+            <a class="bp_card" href="https://laxcc.com/brand/level/" target="_blank" rel="nofollow noopener">
+                <div class="bp_img_box"><span class="bp_badge">$3</span><img src="https://images.dutchie.com/b5ae4ba772ab5c33dad9d51ccc3f73c1?w=500&h=500&fm=webp" alt="Level Protab Slumber tablet" loading="lazy"></div>
+                <div class="bp_title">Level Protab</div><div class="bp_deal">Single 5mg sleep tablet</div><div class="bp_price">$3</div>
+            </a>
+            <a class="bp_card" href="https://laxcc.com/brand/grasshoppers/" target="_blank" rel="nofollow noopener">
+                <div class="bp_img_box"><span class="bp_badge">$5</span><img src="https://images.dutchie.com/54b4b0d90b3e22a25699716c7ccdfe31?w=500&h=500&fm=webp" alt="Grasshoppers 1g top-shelf preroll" loading="lazy"></div>
+                <div class="bp_title">Grasshoppers</div><div class="bp_deal">1g top-shelf preroll</div><div class="bp_price">$5</div>
+            </a>
+            <a class="bp_card" href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=cizi" target="_blank" rel="nofollow noopener">
+                <div class="bp_img_box"><span class="bp_badge">$5</span><img src="https://images.dutchie.com/c30a2e1c7320ffc7a028ff87ff6abb26?w=500&h=500&fm=webp" alt="CIZI 1g indoor preroll" loading="lazy"></div>
+                <div class="bp_title">CIZI</div><div class="bp_deal">1g indoor preroll</div><div class="bp_price">$5</div>
+            </a>
+            <a class="bp_card" href="https://laxcc.com/brand/royal-blunts/" target="_blank" rel="nofollow noopener">
+                <div class="bp_img_box"><span class="bp_badge">$5</span><img src="https://images.dutchie.com/255af3fb8dc165c7065bca637d3265dc?w=500&h=500&fm=webp" alt="Royal Blunts 1g preroll" loading="lazy"></div>
+                <div class="bp_title">Royal Blunts</div><div class="bp_deal">1g preroll</div><div class="bp_price">$5</div>
+            </a>
+            <a class="bp_card" href="https://laxcc.com/brand/micro-greenz/" target="_blank" rel="nofollow noopener">
+                <div class="bp_img_box"><span class="bp_badge">$5</span><img src="https://images.dutchie.com/4c80e2b4eebf00112149fcf5b5bc5577?w=500&h=500&fm=webp" alt="Micro Greenz 1g preroll" loading="lazy"></div>
+                <div class="bp_title">Micro Greenz</div><div class="bp_deal">1g preroll</div><div class="bp_price">$5</div>
+            </a>
+            <a class="bp_card" href="https://laxcc.com/brand/aims-horticulture/" target="_blank" rel="nofollow noopener">
+                <div class="bp_img_box"><span class="bp_badge">$5</span><img src="https://images.dutchie.com/f0b823805a03d996cc20e7a10c3fbfea?w=500&h=500&fm=webp" alt="Aims 1.1g top-shelf preroll" loading="lazy"></div>
+                <div class="bp_title">Aims</div><div class="bp_deal">1.1g top-shelf preroll</div><div class="bp_price">$5</div>
+            </a>
+            <a class="bp_card" href="https://laxcc.com/brand/manzanita-naturals/" target="_blank" rel="nofollow noopener">
+                <div class="bp_img_box"><span class="bp_badge">$6</span><img src="https://images.dutchie.com/e799f22a5c4f37a3ff0e876afc532b00?w=500&h=500&fm=webp" alt="Manzanita Naturals The Fizz Strawberry sparkling water 10mg THC" loading="lazy"></div>
+                <div class="bp_title">Manzanita Fizz</div><div class="bp_deal">Strawberry sparkling water · 10mg</div><div class="bp_price">$6</div>
+            </a>
+            <a class="bp_card" href="https://laxcc.com/brand/whoa/" target="_blank" rel="nofollow noopener">
+                <div class="bp_img_box"><span class="bp_badge">$8</span><img src="https://images.dutchie.com/4167ca19c7670b2afc95d2212cf5b827?w=500&h=500&fm=webp" alt="WHOA 100mg THC gummies" loading="lazy"></div>
+                <div class="bp_title">WHOA Gummies</div><div class="bp_deal">100mg THC · 4 flavors</div><div class="bp_price">$8</div>
+            </a>
+            <a class="bp_card" href="https://laxcc.com/brand/drops/" target="_blank" rel="nofollow noopener">
+                <div class="bp_img_box"><span class="bp_badge">$10</span><img src="https://images.dutchie.com/024d3a9cd7d3c38a5e0b9b5e7c39e5d2?w=500&h=500&fm=webp" alt="Drops 100mg THC gummies" loading="lazy"></div>
+                <div class="bp_title">Drops</div><div class="bp_deal">100mg THC gummies</div><div class="bp_price">$10</div>
+            </a>
+            <a class="bp_card" href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=cizi" target="_blank" rel="nofollow noopener">
+                <div class="bp_img_box"><span class="bp_badge">$10</span><img src="https://images.dutchie.com/0bc43347bde3001aefc2405cfe425b98?w=500&h=500&fm=webp" alt="CIZI infused 2-pack prerolls" loading="lazy"></div>
+                <div class="bp_title">CIZI Infused</div><div class="bp_deal">2-pack infused prerolls</div><div class="bp_price">$10</div>
+            </a>
+            <a class="bp_card" href="https://laxcc.com/brand/sluggers/" target="_blank" rel="nofollow noopener">
+                <div class="bp_img_box"><span class="bp_badge">$12</span><img src="https://images.dutchie.com/c8bfd727c52e812749a207a820a9f03a?w=500&h=500&fm=webp" alt="Sluggers Fire OG .7g infused preroll" loading="lazy"></div>
+                <div class="bp_title">Sluggers Fire OG</div><div class="bp_deal">.7g infused preroll · 37.89% THC</div><div class="bp_price">$12</div>
+            </a>
+            <a class="bp_card" href="https://laxcc.com/shop/thc-carts-disposable-vapes-near-lax/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=VAPORIZERS%2C&brands=%2268c0f43b-c6cb-407f-8008-a67f43301e81%22%2C" target="_blank" rel="nofollow noopener">
+                <div class="bp_img_box"><span class="bp_badge">$17</span><img src="https://images.dutchie.com/095cadce49a5e3a601d2fd254e77ed83?w=500&h=500&fm=webp" alt="CIZI Cherry Runtz 1g indica cart" loading="lazy"></div>
+                <div class="bp_title">CIZI Cherry Runtz</div><div class="bp_deal">1g indica cart · 89.03% THC</div><div class="bp_price">$17</div>
+            </a>
+        </div>
+
+        <button class="bp_arrow bp_arrow--right" id="bp_arrow_right" aria-label="Scroll right">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+    </div>
+
+    <div class="bp_footer">
+        <a href="https://laxcc.com/best-cheap-weed-prices-la/" class="bp_cta" target="_blank">View All Best Prices</a>
+    </div>
+</div>
+
+<script>
+(function(){
+    var t=document.getElementById('bp_grid');
+    if(!t)return;
+
+    var isDown=false,startX,scrollLeft,dragged=false;
+    t.addEventListener('mousedown',function(e){isDown=true;dragged=false;t.style.scrollBehavior='auto';startX=e.pageX-t.offsetLeft;scrollLeft=t.scrollLeft;});
+    t.addEventListener('mouseleave',function(){isDown=false;t.style.scrollBehavior='smooth';});
+    t.addEventListener('mouseup',function(){isDown=false;t.style.scrollBehavior='smooth';});
+    t.addEventListener('mousemove',function(e){if(!isDown)return;e.preventDefault();var x=e.pageX-t.offsetLeft;var walk=(x-startX)*1.5;t.scrollLeft=scrollLeft-walk;if(Math.abs(x-startX)>5)dragged=true;});
+    t.addEventListener('click',function(e){if(dragged){e.preventDefault();dragged=false;}},true);
+
+    var arrowL=document.getElementById('bp_arrow_left');
+    var arrowR=document.getElementById('bp_arrow_right');
+    var scrollAmt=440;
+    function updateArrows(){
+        if(!arrowL||!arrowR)return;
+        arrowL.classList.toggle('bp_arrow--hidden',t.scrollLeft<=4);
+        arrowR.classList.toggle('bp_arrow--hidden',t.scrollLeft>=t.scrollWidth-t.clientWidth-4);
+    }
+    if(arrowL)arrowL.addEventListener('click',function(){t.scrollBy({left:-scrollAmt,behavior:'smooth'});});
+    if(arrowR)arrowR.addEventListener('click',function(){t.scrollBy({left:scrollAmt,behavior:'smooth'});});
+    t.addEventListener('scroll',updateArrows);
+    updateArrows();
+})();
+</script>

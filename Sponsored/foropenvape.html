@@ -56,14 +56,16 @@
         }
 
 
-        * {
+        .laxcc-pen-guide *,
+        .laxcc-pen-guide *::before,
+        .laxcc-pen-guide *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
 
-        body {
+        .laxcc-pen-guide {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: var(--cream);
             color: var(--text-main);
@@ -615,68 +617,144 @@
         }
 
 
-        /* --- Comparison Table: Seamless (No Card) --- */
-        .comparison-table-wrapper {
-            background: transparent;
-            border-radius: 0;
-            padding: 0;
-            box-shadow: none;
-            border: none;
-            backdrop-filter: none;
-            -webkit-backdrop-filter: none;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            /* Hide scrollbar Firefox */
-        }
-
-
-        .comparison-table-wrapper::-webkit-scrollbar {
-            display: none;
-            /* Hide scrollbar Chrome/Safari */
-        }
-
-
-        table {
+        /* --- Quick Comparison: Modern Column Cards --- */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
             width: 100%;
-            min-width: 600px;
-            border-collapse: collapse;
         }
 
-
-        th {
-            text-align: left;
-            padding: 15px 10px;
-            /* Tighter padding */
-            font-weight: 800;
-            color: var(--primary-dark);
-            border-bottom: 2px solid var(--primary-dark);
-            font-size: 1.2rem;
-            background: transparent !important;
+        .comparison-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 0;
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            box-shadow: 0 4px 24px rgba(15, 58, 95, 0.06);
+            position: relative;
         }
 
-
-        td {
-            padding: 20px 10px;
-            border-bottom: 1px solid rgba(15, 58, 95, 0.1);
-            color: var(--text-main);
-            font-size: 1.1rem;
-            background: transparent !important;
+        .comparison-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(15, 58, 95, 0.14);
         }
 
-
-        tr:last-child td {
-            border-bottom: none;
+        .comparison-card-accent {
+            height: 4px;
+            width: 100%;
         }
 
+        .comparison-card--teal .comparison-card-accent {
+            background: linear-gradient(90deg, var(--primary-teal), #00d4f5);
+        }
 
-        tr:hover td {
-            background: transparent !important;
+        .comparison-card--orange .comparison-card-accent {
+            background: linear-gradient(90deg, var(--accent-orange), #ffb17a);
+        }
+
+        .comparison-card--dark .comparison-card-accent {
+            background: linear-gradient(90deg, var(--primary-dark), #1a5a8a);
+        }
+
+        .comparison-card-inner {
+            padding: 40px 32px;
+        }
+
+        .comparison-card-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+
+        .comparison-card--teal .comparison-card-icon {
+            background: rgba(0, 175, 201, 0.1);
             color: var(--primary-teal);
         }
 
+        .comparison-card--orange .comparison-card-icon {
+            background: rgba(248, 148, 89, 0.1);
+            color: var(--accent-orange);
+        }
 
-        /* Highlight specific columns if needed, or just let hover do work */
+        .comparison-card--dark .comparison-card-icon {
+            background: rgba(15, 58, 95, 0.08);
+            color: var(--primary-dark);
+        }
+
+        .comparison-card-type {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+            letter-spacing: -0.02em;
+        }
+
+        .comparison-card-tagline {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 32px;
+        }
+
+        .comparison-card--teal .comparison-card-tagline { color: var(--primary-teal); }
+        .comparison-card--orange .comparison-card-tagline { color: var(--accent-orange); }
+        .comparison-card--dark .comparison-card-tagline { color: var(--primary-dark); }
+
+        .comparison-features {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .comparison-feature {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .comparison-feature:not(:last-child) {
+            border-bottom: 1px solid rgba(15, 58, 95, 0.04);
+        }
+
+        .comparison-feature-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .comparison-feature-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .comparison-feature-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .comparison-card--teal .comparison-feature-dot { background: var(--primary-teal); }
+        .comparison-card--orange .comparison-feature-dot { background: var(--accent-orange); }
+        .comparison-card--dark .comparison-feature-dot { background: var(--primary-dark); }
+
+        #laxcc-comparison-title {
+            color: #00AFC9 !important;
+        }
 
 
         /* --- FAQ Section: "Editorial Clarity" --- */
@@ -809,12 +887,16 @@
         /* --- Brand Strip (Seamless) --- */
         .brand-showcase {
             padding: 120px 0;
-            background: var(--primary-dark);
-            color: var(--white);
+            background: var(--primary-dark) !important;
+            color: #ffffff !important;
             overflow: hidden;
             position: relative;
+        }
 
-
+        .brand-showcase h2,
+        .brand-showcase p,
+        .brand-showcase span {
+            color: #ffffff !important;
         }
 
 
@@ -830,6 +912,7 @@
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 16px;
+            color: #ffffff !important;
         }
 
 
@@ -890,10 +973,13 @@
         .brand-logo-alt {
             font-size: 2.2rem;
             font-weight: 900;
-            color: var(--white);
-            /* White text for contrast on dark bg */
+            color: #ffffff !important;
             margin-bottom: 10px;
             letter-spacing: -1px;
+        }
+
+        .brand-desc {
+            color: rgba(255, 255, 255, 0.8) !important;
         }
 
 
@@ -957,10 +1043,18 @@
         .final-cta {
             text-align: center;
             padding: 160px 24px;
-            background: var(--primary-dark);
+            background: var(--primary-dark) !important;
             position: relative;
-            color: var(--white);
+            color: #ffffff !important;
             overflow: hidden;
+        }
+
+        .final-cta h2 {
+            color: #ffffff !important;
+        }
+
+        .final-cta p {
+            color: #ffffff !important;
         }
 
 
@@ -977,26 +1071,37 @@
 
 
         .cta-btn {
-            background: var(--accent-orange);
-            color: var(--white);
-            padding: 20px 48px;
-            border-radius: 50px;
-            text-decoration: none;
+            background: var(--accent-orange) !important;
+            color: #ffffff !important;
+            padding: 18px 36px;
+            border-radius: 12px;
+            text-decoration: none !important;
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            justify-content: center;
+            gap: 10px;
             transition: var(--transition);
             margin-top: 30px;
             border: 2px solid transparent;
+            white-space: nowrap !important;
+            max-width: 90vw;
         }
 
 
         .cta-btn:hover {
-            background: transparent;
+            background: transparent !important;
             border-color: var(--accent-orange);
+            color: #ffffff !important;
             transform: translateY(-5px);
+        }
+
+        .cta-btn:visited,
+        .cta-btn:active,
+        .cta-btn:focus {
+            color: #ffffff !important;
+            text-decoration: none !important;
         }
 
 
@@ -1048,6 +1153,10 @@
                 height: 50vh;
                 /* Shorter image on mobile */
                 width: 100%;
+            }
+
+            .hero-scroll-btn {
+                display: none !important;
             }
 
 
@@ -1115,161 +1224,86 @@
                 border-bottom: none;
             }
 
-            /* Feature-First Comparison Mobile */
-            .comparison-container {
-                display: flex;
-                flex-direction: column;
-                gap: 40px;
-                padding: 0 24px;
+            /* Comparison section container - tighten for mobile */
+            .story-section .story-container[style*="max-width: 1100px"] {
+                padding: 0 20px;
             }
 
-            .feature-group {
-                text-align: center;
-                background: var(--white);
-                border-radius: 24px;
-                padding: 30px 20px;
-                box-shadow: var(--shadow-sm);
-                border: 1px solid rgba(15, 58, 95, 0.05);
+            .brand-showcase-header {
+                margin-bottom: 24px !important;
             }
 
-            .feature-title {
-                color: var(--primary-teal);
-                font-size: 1rem;
-                font-weight: 900;
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                margin-bottom: 25px;
-                display: block;
+            .brand-showcase-header h2 {
+                font-size: 2rem;
             }
 
-            .feature-grid {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
+            /* Comparison - Mobile: flat editorial list, no cards */
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+                padding: 0;
             }
 
-            .pen-row {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding-bottom: 12px;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            .comparison-card {
+                background: transparent !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                overflow: visible;
+                border-bottom: 1px solid rgba(15, 58, 95, 0.08);
             }
 
-            .pen-row:last-child {
+            .comparison-card:last-child {
                 border-bottom: none;
-                padding-bottom: 0;
             }
 
-            .pen-label {
-                font-weight: 700;
-                color: var(--primary-dark);
-                font-size: 0.95rem;
+            .comparison-card:hover {
+                transform: none !important;
+                box-shadow: none !important;
             }
 
-            .pen-val {
-                color: var(--text-muted);
-                font-size: 0.95rem;
-                text-align: right;
-            }
-
-            /* Hide Desktop Table on Mobile */
-            .comparison-table-desktop {
-                display: none;
-            }
-        }
-
-        /* Desktop specific styles */
-        @media (min-width: 901px) {
-            .comparison-mobile-view {
+            .comparison-card-accent {
                 display: none;
             }
 
-            .comparison-table-wrapper table {
-                width: 100%;
-                border-collapse: separate;
-                border-spacing: 0 15px;
-                /* Increase spacing for card effect */
+            .comparison-card-inner {
+                padding: 28px 0;
             }
 
-            .comparison-table-wrapper th {
-                padding: 20px;
-                text-align: left;
-                font-weight: 800;
-                color: var(--primary-dark);
-                border-bottom: none;
-                /* Remove border for cleaner look */
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
+            .comparison-card-icon {
+                display: none;
+            }
+
+            .comparison-card-type {
+                font-size: 1.3rem;
+                margin-bottom: 2px;
+            }
+
+            .comparison-card-tagline {
+                font-size: 0.75rem;
+                margin-bottom: 20px;
+            }
+
+            .comparison-feature {
+                padding: 10px 0;
+            }
+
+            .comparison-feature-label {
+                font-size: 0.75rem;
+            }
+
+            .comparison-feature-value {
                 font-size: 0.9rem;
             }
-
-            /* Make rows look like cards */
-            .comparison-table-wrapper tbody tr {
-                transition: transform 0.2s ease, box-shadow 0.2s ease;
-                background: var(--white);
-                /* Ensure row has background for shadow */
-                border-radius: 16px;
-                /* Rounded corners for the row */
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-                /* Stronger default shadow */
-            }
-
-            .comparison-table-wrapper tbody tr:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-                /* Stronger lift effect */
-            }
-
-            .comparison-table-wrapper td {
-                padding: 24px 20px;
-                background: var(--white);
-                border-top: 1px solid rgba(15, 58, 95, 0.08);
-                border-bottom: 1px solid rgba(15, 58, 95, 0.08);
-                color: var(--text-dark);
-                font-size: 1rem;
-                vertical-align: middle;
-            }
-
-            /* First cell (Feature) styling */
-            .comparison-table-wrapper tr td:first-child {
-                border-left: 1px solid rgba(15, 58, 95, 0.08);
-                border-radius: 16px 0 0 16px;
-                font-weight: 800;
-                color: var(--primary-teal);
-                background: var(--white);
-            }
-
-            /* Last cell styling */
-            .comparison-table-wrapper tr td:last-child {
-                border-right: 1px solid rgba(15, 58, 95, 0.08);
-                border-radius: 0 16px 16px 0;
-            }
-
-            /* Apply shadow to the cells to mimic row shadow since pure TR shadow is tricky with separate collapse */
-            .comparison-table-wrapper td {
-                /* Remove individual cell shadow, rely on row shadow/filter if possible,
-                   but since drop-shadow on TR works best: */
-            }
-
-            /* Use drop-shadow filter on the row for true 'card' look including spacing */
-            .comparison-table-wrapper tbody tr {
-                box-shadow: none;
-                /* Reset box-shadow */
-                filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.06));
-            }
-
-            .comparison-table-wrapper tbody tr:hover {
-                box-shadow: none;
-                filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.1));
-            }
         }
+
+        /* Desktop specific styles - no old table overrides needed */
     </style>
 </head>
 
 
 <body>
 
+<div class="laxcc-pen-guide">
 
     <!-- Hero: Vapor & Void -->
     <section class="hero-section">
@@ -1290,9 +1324,6 @@
                             style="color: var(--primary-teal); text-decoration: none;">Dab</a></strong>, and
                     <strong>Wax</strong> pens for the modern connoisseur.
                 </p>
-                <a href="#start-guide" class="hero-scroll-btn">
-                    <i class="fas fa-arrow-down"></i>
-                </a>
             </div>
 
 
@@ -1303,7 +1334,7 @@
 
 
     <!-- Story Section 1: Vape Pen -->
-    <section id="start-guide" class="story-section">
+    <section id="start-guide" class="story-section" style="background: #fbf8f2 !important;">
         <div class="story-blob"></div>
         <div class="story-container">
             <div class="story-content animate-in">
@@ -1360,8 +1391,20 @@
     </section>
 
 
+    <!-- Product Shortcode: 510 Batteries -->
+    <section style="background: #fbf8f2 !important; width: 100%; padding: 60px 0; overflow: hidden;">
+        <div style="max-width: 1100px; margin: 0 auto; padding: 0 40px; text-align: center; margin-bottom: 40px;">
+            <h2 id="laxcc-batteries-title" style="color: #00AFC9 !important; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 900; margin-bottom: 16px; letter-spacing: -0.03em; line-height: 1.1;">Shop Vape Pen Batteries Near LAX</h2>
+            <p style="color: #64748b; font-size: 1.1rem; line-height: 1.7; max-width: 700px; margin: 0 auto;">Browse our full selection of vape pen batteries — from universal 510 thread batteries for any cartridge to brand-specific pod batteries built for 710 Labs, Stiiizy, and Plug Play.</p>
+        </div>
+        <div style="width: 100%; max-width: 100%; padding: 0;">
+            [leafbridge_specific_product_filter category="ACCESSORIES" sub_category="BATTERIES" count="20"]
+        </div>
+    </section>
+
+
     <!-- Story Section 2: Dab Pen -->
-    <section class="story-section">
+    <section class="story-section" style="background: #fbf8f2 !important;">
         <div class="story-blob"></div>
         <div class="story-container">
             <div class="story-content animate-in">
@@ -1413,7 +1456,7 @@
 
 
     <!-- Story Section 3: Wax Pen -->
-    <section class="story-section">
+    <section class="story-section" style="background: #fbf8f2 !important;">
         <div class="story-blob"></div>
         <div class="story-container">
             <div class="story-content animate-in">
@@ -1464,167 +1507,91 @@
     </section>
 
 
-    <!-- Quick Comparison Table (Glassmorphism) -->
-    <section class="story-section" style="background: var(--cream);">
-        <div class="story-container" style="display: block; max-width: 1000px;">
-            <div class="brand-showcase-header" style="margin-bottom: 40px;">
-                <h2 style="color: var(--primary-dark);">Quick Comparison</h2>
+    <!-- Quick Comparison: Modern Cards -->
+    <section class="story-section" style="background: #fbf8f2;">
+        <div class="story-container" style="display: block; max-width: 1100px;">
+            <div class="brand-showcase-header" style="margin-bottom: 48px;">
+                <h2 id="laxcc-comparison-title" style="color: #00AFC9 !important;">Quick Comparison</h2>
                 <p style="color: var(--text-muted);">At a glance differences to help you decide.</p>
             </div>
 
-
-            <!-- Desktop Table (Hidden on Mobile) -->
-            <!-- Desktop Table (Hidden on Mobile) -->
-            <div class="comparison-table-wrapper comparison-table-desktop">
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="color: var(--primary-teal); width: 20%;"><i class="fas fa-list-ul"
-                                    style="margin-right: 8px;"></i>Feature</th>
-                            <th style="width: 26%;"><i class="fas fa-pen-fancy"
-                                    style="color: var(--primary-dark); margin-right: 8px;"></i>Vape Pen</th>
-                            <th style="width: 26%;"><i class="fas fa-prescription-bottle"
-                                    style="color: var(--accent-orange); margin-right: 8px;"></i>Dab Pen</th>
-                            <th style="width: 26%;"><i class="fas fa-cube"
-                                    style="color: var(--primary-dark); margin-right: 8px;"></i>Wax Pen</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><i class="fas fa-bullseye"
-                                    style="color: var(--accent-orange); margin-right: 8px;"></i>Best For</td>
-                            <td><i class="fas fa-clock"
-                                    style="color: var(--primary-teal); margin-right: 8px;"></i>Convenience</td>
-                            <td><i class="fas fa-fire-alt"
-                                    style="color: var(--accent-orange); margin-right: 8px;"></i>Potency</td>
-                            <td><i class="fas fa-cannabis"
-                                    style="color: var(--primary-dark); margin-right: 8px;"></i>Flavor</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fas fa-flask"
-                                    style="color: var(--accent-orange); margin-right: 8px;"></i>Material</td>
-                            <td><i class="fas fa-tint" style="color: var(--primary-teal); margin-right: 8px;"></i>Oil /
-                                Distillate</td>
-                            <td><i class="fas fa-gem"
-                                    style="color: var(--accent-orange); margin-right: 8px;"></i>Concentrates</td>
-                            <td><i class="fas fa-cube" style="color: var(--primary-dark); margin-right: 8px;"></i>Waxy
-                                Extracts</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fas fa-thumbs-up"
-                                    style="color: var(--accent-orange); margin-right: 8px;"></i>Ease of Use</td>
-                            <td><i class="fas fa-smile" style="color: var(--primary-teal); margin-right: 8px;"></i>Very
-                                Easy</td>
-                            <td><i class="fas fa-balance-scale"
-                                    style="color: var(--accent-orange); margin-right: 8px;"></i>Moderate</td>
-                            <td><i class="fas fa-balance-scale"
-                                    style="color: var(--primary-dark); margin-right: 8px;"></i>Moderate</td>
-                        </tr>
-                        <tr>
-                            <td><i class="fas fa-tools"
-                                    style="color: var(--accent-orange); margin-right: 8px;"></i>Maintenance</td>
-                            <td><i class="fas fa-check" style="color: var(--primary-teal); margin-right: 8px;"></i>Low /
-                                None</td>
-                            <td><i class="fas fa-broom" style="color: var(--accent-orange); margin-right: 8px;"></i>High
-                                (Cleaning)</td>
-                            <td><i class="fas fa-wrench"
-                                    style="color: var(--primary-dark); margin-right: 8px;"></i>Medium</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Mobile Feature-First View -->
-            <div class="comparison-mobile-view">
-                <div class="comparison-container">
-                    <!-- Feature: Best For -->
-                    <div class="feature-group">
-                        <span class="feature-title"><i class="fas fa-bullseye"
-                                style="color: var(--accent-orange); margin-right: 8px;"></i>Best For</span>
-                        <div class="feature-grid">
-                            <div class="pen-row">
-                                <span class="pen-label">Vape Pen</span>
-                                <span class="pen-val"><i class="fas fa-clock"
-                                        style="color: var(--primary-teal); margin-right: 5px;"></i> Convenience</span>
+            <div class="comparison-grid">
+                <!-- Vape Pen Card -->
+                <div class="comparison-card comparison-card--teal">
+                    <div class="comparison-card-accent"></div>
+                    <div class="comparison-card-inner">
+                        <div class="comparison-card-type">Vape Pen</div>
+                        <div class="comparison-card-tagline">Built for Convenience</div>
+                        <div class="comparison-features">
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Best For</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> Convenience</span>
                             </div>
-                            <div class="pen-row">
-                                <span class="pen-label">Dab Pen</span>
-                                <span class="pen-val"><i class="fas fa-fire-alt"
-                                        style="color: var(--accent-orange); margin-right: 5px;"></i> Potency</span>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Material</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> Oil / Distillate</span>
                             </div>
-                            <div class="pen-row">
-                                <span class="pen-label">Wax Pen</span>
-                                <span class="pen-val"><i class="fas fa-cannabis"
-                                        style="color: var(--primary-dark); margin-right: 5px;"></i> Flavor</span>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Ease of Use</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> Very Easy</span>
+                            </div>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Maintenance</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> Low / None</span>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Feature: Material -->
-                    <div class="feature-group">
-                        <span class="feature-title"><i class="fas fa-flask"
-                                style="color: var(--accent-orange); margin-right: 8px;"></i>Material</span>
-                        <div class="feature-grid">
-                            <div class="pen-row">
-                                <span class="pen-label">Vape Pen</span>
-                                <span class="pen-val"><i class="fas fa-tint"
-                                        style="color: var(--primary-teal); margin-right: 5px;"></i> Oil</span>
+                <!-- Dab Pen Card -->
+                <div class="comparison-card comparison-card--orange">
+                    <div class="comparison-card-accent"></div>
+                    <div class="comparison-card-inner">
+                        <div class="comparison-card-type">Dab Pen</div>
+                        <div class="comparison-card-tagline">Maximum Potency</div>
+                        <div class="comparison-features">
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Best For</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> Potency</span>
                             </div>
-                            <div class="pen-row">
-                                <span class="pen-label">Dab Pen</span>
-                                <span class="pen-val"><i class="fas fa-gem"
-                                        style="color: var(--accent-orange); margin-right: 5px;"></i> Concentrates</span>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Material</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> Concentrates</span>
                             </div>
-                            <div class="pen-row">
-                                <span class="pen-label">Wax Pen</span>
-                                <span class="pen-val"><i class="fas fa-cube"
-                                        style="color: var(--primary-dark); margin-right: 5px;"></i> Extracts</span>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Ease of Use</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> Moderate</span>
+                            </div>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Maintenance</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> High (Cleaning)</span>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Feature: Ease of Use -->
-                    <div class="feature-group">
-                        <span class="feature-title"><i class="fas fa-thumbs-up"
-                                style="color: var(--accent-orange); margin-right: 8px;"></i>Ease of Use</span>
-                        <div class="feature-grid">
-                            <div class="pen-row">
-                                <span class="pen-label">Vape Pen</span>
-                                <span class="pen-val"><i class="fas fa-smile"
-                                        style="color: var(--primary-teal); margin-right: 5px;"></i> Very Easy</span>
+                <!-- Wax Pen Card -->
+                <div class="comparison-card comparison-card--dark">
+                    <div class="comparison-card-accent"></div>
+                    <div class="comparison-card-inner">
+                        <div class="comparison-card-type">Wax Pen</div>
+                        <div class="comparison-card-tagline">Flavor Forward</div>
+                        <div class="comparison-features">
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Best For</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> Flavor</span>
                             </div>
-                            <div class="pen-row">
-                                <span class="pen-label">Dab Pen</span>
-                                <span class="pen-val"><i class="fas fa-balance-scale"
-                                        style="color: var(--accent-orange); margin-right: 5px;"></i> Moderate</span>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Material</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> Waxy Extracts</span>
                             </div>
-                            <div class="pen-row">
-                                <span class="pen-label">Wax Pen</span>
-                                <span class="pen-val"><i class="fas fa-balance-scale"
-                                        style="color: var(--primary-dark); margin-right: 5px;"></i> Moderate</span>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Ease of Use</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> Moderate</span>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Feature: Maintenance -->
-                    <div class="feature-group">
-                        <span class="feature-title"><i class="fas fa-tools"
-                                style="color: var(--accent-orange); margin-right: 8px;"></i>Maintenance</span>
-                        <div class="feature-grid">
-                            <div class="pen-row">
-                                <span class="pen-label">Vape Pen</span>
-                                <span class="pen-val"><i class="fas fa-check"
-                                        style="color: var(--primary-teal); margin-right: 5px;"></i> None</span>
-                            </div>
-                            <div class="pen-row">
-                                <span class="pen-label">Dab Pen</span>
-                                <span class="pen-val"><i class="fas fa-broom"
-                                        style="color: var(--accent-orange); margin-right: 5px;"></i> High</span>
-                            </div>
-                            <div class="pen-row">
-                                <span class="pen-label">Wax Pen</span>
-                                <span class="pen-val"><i class="fas fa-wrench"
-                                        style="color: var(--primary-dark); margin-right: 5px;"></i> Medium</span>
+                            <div class="comparison-feature">
+                                <span class="comparison-feature-label">Maintenance</span>
+                                <span class="comparison-feature-value"><span class="comparison-feature-dot"></span> Medium</span>
                             </div>
                         </div>
                     </div>
@@ -1745,16 +1712,6 @@
             </div>
 
 
-            <!-- Brand 4 -->
-            <div class="brand-item">
-                <span class="brand-logo-alt">O.PEN</span>
-                <span class="brand-category-tag">510 Thread</span>
-                <p class="brand-desc">Reliable 510 batteries with variable voltage. A classic choice for universal
-                    carts.</p>
-                <a href="https://laxcc.com/shop/brand/open" class="brand-btn">Shop O.pen <i
-                        class="fas fa-arrow-right"></i></a>
-            </div>
-
 
             <!-- Brand 5 -->
             <div class="brand-item">
@@ -1784,12 +1741,13 @@
                 Whether you want the convenience of a vape pen or the power of a dab pen, we've got the best
                 selection in Los Angeles.
             </p>
-            <a href="https://laxcc.com/shop/" class="cta-btn">
+            <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=battery" class="cta-btn">
                 <i class="fas fa-shopping-bag"></i> Show Me the Menu
             </a>
         </div>
     </section>
 
+</div><!-- /.laxcc-pen-guide -->
 
 </body>
 

@@ -1,0 +1,37 @@
+LAXCC Nearby Area Pages — SEO Meta for WordPress/Yoast
+======================================================
+
+1. WESTCHESTER
+   Slug: /dispensary-near-westchester/
+   Title: Dispensary in Westchester LA | LAXCC on Lincoln Blvd
+   Chars: 52
+   Description: LAXCC is Westchester's local dispensary on Lincoln Blvd. 100+ cannabis brands, daily deals, open 9AM–9:30PM daily. Walk in or order pickup.
+   Chars: 148
+
+2. EL SEGUNDO
+   Slug: /dispensary-near-el-segundo/
+   Title: Dispensary Near El Segundo | LAXCC – 8 Min Away
+   Chars: 50
+   Description: Closest licensed dispensary to El Segundo CA. LAXCC is 3 miles north on Lincoln Blvd — 100+ brands, daily deals, open 9AM–9:30PM. Cash only.
+   Chars: 152
+
+3. LENNOX
+   Slug: /dispensary-near-lennox/
+   Title: Dispensary Near Lennox CA | LAXCC – Licensed Shop
+   Chars: 52
+   Description: LAXCC is the nearest licensed dispensary to Lennox. Cannabis from $10, daily deals, 100+ brands at 8332 Lincoln Blvd LA. Open 9AM–9:30PM daily.
+   Chars: 151
+
+4. MANHATTAN BEACH
+   Slug: /dispensary-near-manhattan-beach/
+   Title: Dispensary Near Manhattan Beach | LAXCC – 12 Min
+   Chars: 52
+   Description: No dispensaries in Manhattan Beach. LAXCC is the closest licensed shop — 12 min via Sepulveda. 100+ brands, daily deals. Open 9AM–9:30PM.
+   Chars: 150
+
+5. HAWTHORNE
+   Slug: /dispensary-near-hawthorne/
+   Title: Dispensary Near Hawthorne CA | LAXCC on the 405
+   Chars: 50
+   Description: LAXCC is the closest licensed dispensary to Hawthorne CA. Flower from $19.99, vapes from $10, daily deals. 8332 Lincoln Blvd. Open 9AM–9:30PM.
+   Chars: 152

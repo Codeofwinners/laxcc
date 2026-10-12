@@ -1,0 +1,783 @@
+<style>
+    /* --- 🔮 LAXCC FOOTER CORE STYLES 🔮 --- */
+    :root {
+        --lax-blue-dark: #17407A;
+        --lax-blue-light: #4FB3D9;
+        --lax-orange: #FEFAE0;
+        --lax-bg: #050810;
+        --lax-surface: rgba(28, 47, 71, 0.5);
+        --lax-border: rgba(254, 250, 224, 0.2);
+        --lax-text: #FFFFFF;
+        --lax-text-muted: rgba(255, 255, 255, 0.7);
+        --lax-text-accent: #FEFAE0;
+        --lax-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    }
+
+    .elementor-widget-container .lax-footer {
+        background: var(--lax-bg);
+        color: var(--lax-text);
+        font-family: var(--lax-font);
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* --- 🌌 ANIMATED AURORA BACKGROUND 🌌 --- */
+    .lax-footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 10% 20%, var(--lax-blue-dark), transparent 50%),
+            radial-gradient(circle at 80% 30%, var(--lax-blue-light), transparent 50%),
+            radial-gradient(circle at 50% 90%, var(--lax-orange), transparent 50%);
+        filter: blur(90px);
+        opacity: 0.3;
+        animation: lax-aurora-breathe 25s linear infinite;
+        will-change: transform;
+    }
+
+    @keyframes lax-aurora-breathe {
+
+        0%,
+        100% {
+            transform: scale(1) rotate(0deg);
+        }
+
+        50% {
+            transform: scale(1.3) rotate(15deg);
+        }
+    }
+
+    /* --- 💎 CORE LAYOUT & GLASSMORPHISM 💎 --- */
+    .lax-main {
+        position: relative;
+        z-index: 2;
+        padding: 40px 15px 20px;
+        display: grid;
+        gap: 35px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .lax-brand,
+    .lax-visitor-info,
+    .lax-links-wrapper,
+    .lax-bottom {
+        animation: lax-fade-in-up 0.8s ease-out both;
+    }
+
+    @keyframes lax-fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* --- 1. BRAND SECTION --- */
+    .lax-brand {
+        text-align: center;
+    }
+
+    .lax-logo-wrapper {
+        display: inline-block;
+        padding: 12px;
+        background: none;
+        border: none;
+        border-radius: 20px;
+        backdrop-filter: none;
+        margin-bottom: 15px;
+        perspective: 800px;
+    }
+
+    .lax-logo {
+        height: 40px;
+        display: block;
+    }
+
+    .lax-tagline {
+        color: var(--lax-text-accent);
+        font-size: 1rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        margin: 0;
+    }
+
+    /* --- 2. VISITOR INFO SECTION (NEW) --- */
+    .lax-visitor-info {
+        display: grid;
+        gap: 20px;
+        animation-delay: 0.1s;
+    }
+
+    .lax-contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .lax-contact-card {
+        background: var(--lax-surface);
+        border: none;
+        border-radius: 8px;
+        padding: 10px 12px;
+        text-align: left;
+        backdrop-filter: blur(12px);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .lax-contact-card:hover {
+        transform: translateY(-2px);
+    }
+
+    .lax-contact-card i {
+        font-size: 0.9rem;
+        color: var(--lax-text-accent);
+        margin-bottom: 0;
+        display: block;
+        width: 15px;
+        text-align: center;
+    }
+
+    .lax-contact-card div {
+        font-size: 0.75rem;
+        color: var(--lax-text-muted);
+        line-height: 1.2;
+        font-weight: 500;
+    }
+
+    .lax-contact-card a {
+        font-weight: 500;
+        font-size: 0.85rem;
+        color: var(--lax-text);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .lax-contact-card a:hover {
+        color: var(--lax-orange);
+    }
+
+    .lax-info-card {
+        background: var(--lax-surface);
+        border: none;
+        border-radius: 12px;
+        padding: 20px;
+        backdrop-filter: blur(12px);
+    }
+
+    .lax-info-card h3 {
+        font-size: 1.1rem;
+        color: var(--lax-text-accent);
+        margin: 0 0 15px;
+    }
+
+    .lax-info-grid {
+        display: grid;
+        gap: 12px;
+    }
+
+    .lax-info-item {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        color: var(--lax-text-muted);
+    }
+
+    .lax-info-item strong {
+        color: var(--lax-text);
+    }
+
+    .lax-info-item .lax-cash {
+        color: #5cb85c;
+        font-weight: bold;
+    }
+
+    .lax-info-item .lax-license {
+        font-size: 0.75rem;
+        opacity: 0.8;
+    }
+
+    .lax-apps {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .lax-apps a {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        color: var(--lax-text);
+        font-weight: 600;
+        font-size: 0.85rem;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .lax-apps a:hover {
+        background: var(--lax-orange);
+        color: var(--lax-bg);
+    }
+
+    /* --- 3. LINKS SECTIONS --- */
+    .lax-links-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        animation-delay: 0.2s;
+    }
+
+    .lax-links-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--lax-text-accent);
+        margin: 0 0 12px 0;
+        padding-bottom: 5px;
+        border-bottom: none;
+    }
+
+    .lax-links-body {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 4px;
+    }
+
+    .lax-links-body a {
+        color: var(--lax-text-muted);
+        text-decoration: none;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 10px;
+        border-radius: 8px;
+        transition: color 0.2s, background 0.2s, transform 0.2s;
+    }
+
+    .lax-links-body a:hover {
+        color: var(--lax-text);
+        background: var(--lax-surface);
+        transform: translateX(5px);
+    }
+
+    .lax-links-body a i {
+        color: var(--lax-blue-light);
+        width: 15px;
+        text-align: center;
+    }
+
+    .lax-nearby-column {
+        animation-delay: 0.3s;
+    }
+
+    .lax-location-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .lax-location-grid a {
+        background: rgba(79, 179, 217, 0.15);
+        color: var(--lax-orange);
+        border: none;
+        padding: 8px 14px;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+    }
+
+    .lax-location-grid a:hover {
+        background: var(--lax-blue-light);
+        color: var(--lax-bg);
+    }
+
+    .lax-beach-guide {
+        display: block;
+        margin-top: 15px;
+        text-align: center;
+        color: var(--lax-orange);
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    /* --- 4. BOTTOM BAR --- */
+    .lax-bottom {
+        padding: 25px 0 0;
+        margin-top: 15px;
+        text-align: center;
+        border-top: none;
+        animation-delay: 0.4s;
+    }
+
+    .lax-copyright {
+        color: var(--lax-text-muted);
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+    }
+
+    .lax-copyright .lax-year {
+        color: var(--lax-text-accent);
+        font-weight: 600;
+    }
+
+    .lax-social-links {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    .lax-social-link {
+        color: var(--lax-text-muted);
+        font-size: 1.4rem;
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .lax-social-link:hover {
+        color: var(--lax-text);
+        transform: translateY(-5px) scale(1.2);
+    }
+
+    .lax-legal-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .lax-legal-links a {
+        color: var(--lax-text-muted);
+        text-decoration: none;
+        font-size: 0.75rem;
+        transition: color 0.2s;
+    }
+
+    .lax-legal-links a:hover {
+        color: var(--lax-orange);
+    }
+
+    /* --- 5. LOCAL SEO BLOCK --- */
+    .lax-seo-block {
+        padding: 40px 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        text-align: center;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .lax-seo-text {
+        font-size: 0.65rem;
+        line-height: 2;
+        color: rgba(255, 255, 255, 0.15);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 500;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    /* --- 📱 MOBILE FOOTER FIX 📱 --- */
+    @media (max-width: 1023px) {
+
+        /* Modern 2025 viewport fix using dynamic units */
+        .elementor-widget-container .lax-footer {
+            min-height: 100dvh;
+            /* Dynamic viewport height */
+            min-height: 100vh;
+            /* Fallback for older browsers */
+            min-height: -webkit-fill-available;
+            /* WebKit fix */
+            padding-bottom: 30px !important;
+            margin-bottom: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        .lax-footer {
+            min-height: 100dvh;
+            /* Dynamic viewport height */
+            min-height: 100vh;
+            /* Fallback for older browsers */
+            min-height: -webkit-fill-available;
+            /* WebKit fix */
+            padding-bottom: 30px !important;
+            margin-bottom: 0 !important;
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        .lax-main {
+            padding: 40px 15px 30px !important;
+            flex: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+        }
+
+        .lax-bottom {
+            padding: 25px 0 30px !important;
+            margin-top: auto !important;
+            margin-bottom: 0 !important;
+            flex-shrink: 0 !important;
+        }
+
+        .lax-legal-links {
+            padding-bottom: 15px !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* Ensure background extends full height with modern units */
+        .lax-footer::before {
+            min-height: 100dvh;
+            /* Dynamic viewport height */
+            min-height: 100vh;
+            /* Fallback for older browsers */
+            min-height: -webkit-fill-available;
+            /* WebKit fix */
+        }
+
+        /* Elementor specific overrides */
+        .elementor-section,
+        .elementor-column,
+        .elementor-widget {
+            margin-bottom: 0 !important;
+        }
+
+        /* Force container to fill space */
+        .elementor-widget-container {
+            height: auto !important;
+            min-height: inherit !important;
+        }
+    }
+
+    /* --- 💻 DESKTOP OVERRIDES 💻 --- */
+    @media (min-width: 1024px) {
+        .lax-main {
+            grid-template-columns: 1.2fr 1fr 1fr 1fr;
+            grid-template-areas:
+                "brand nav company nearby"
+                "info  info  info  info"
+                "bottom bottom bottom bottom";
+            padding: 60px 30px;
+        }
+
+        .lax-brand {
+            grid-area: brand;
+            text-align: left;
+            align-self: start;
+        }
+
+        .lax-links-wrapper {
+            grid-area: nav;
+            display: block;
+        }
+
+        /* Becomes a container for the first column */
+        .lax-company-column {
+            grid-area: company;
+        }
+
+        .lax-nearby-column {
+            grid-area: nearby;
+        }
+
+        .lax-visitor-info {
+            grid-area: info;
+            grid-template-columns: minmax(220px, 1fr) minmax(200px, 0.9fr) minmax(300px, 1.5fr);
+            grid-template-areas: "contacts member legal";
+            gap: 30px;
+            align-items: start !important;
+        }
+
+        /* Stack the 4 contact cards on their own rows, left side */
+        .lax-contact-grid {
+            grid-area: contacts;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .lax-visitor-info .lax-member-badge {
+            grid-area: member;
+            align-self: start;
+            margin-top: 0;
+        }
+
+        .lax-info-card {
+            grid-area: legal;
+        }
+
+        .lax-bottom {
+            grid-area: bottom;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .lax-copyright,
+        .lax-social-links,
+        .lax-legal-links {
+            margin-bottom: 0;
+        }
+
+        .lax-social-links {
+            order: 2;
+        }
+
+        .lax-legal-links {
+            order: 3;
+        }
+
+        .lax-brand,
+        .lax-visitor-info,
+        .lax-links-wrapper,
+        .lax-bottom,
+        .lax-company-column,
+        .lax-nearby-column {
+            animation: none;
+        }
+    }
+
+    /* --- 🏅 CHAMBER MEMBERSHIP BADGE 🏅 --- */
+    .lax-member-badge {
+        margin-top: 16px;
+        max-width: 220px;
+        font-size: 0.8rem;
+        line-height: 1.35;
+        letter-spacing: 0.04em;
+    }
+
+    /* Inherit the footer's light text — no card, no background */
+    .lax-member-badge,
+    .lax-member-badge a {
+        color: var(--lax-text-muted) !important;
+        text-decoration: none !important;
+    }
+
+    /* Recolor the chamber logo to white so it reads on the dark footer */
+    .lax-member-badge img {
+        max-width: 190px !important;
+        height: auto !important;
+        margin: 8px 0 0 !important;
+        display: block !important;
+        filter: brightness(0) invert(1);
+        opacity: 0.9;
+    }
+</style>
+
+<div class="elementor-widget-container">
+    <footer class="lax-footer" role="contentinfo">
+        <div class="lax-main">
+
+            <div class="lax-brand">
+                <a href="https://laxcc.com/" class="lax-logo-wrapper" aria-label="LAX CC Home">
+                    <img src="https://laxcc.com/wp-content/uploads/2023/07/Logov1_white-300x94.png"
+                        alt="LAX Cannabis Club" class="lax-logo" loading="lazy">
+                </a>
+                <p class="lax-tagline">🏆 Best LA Dispensary</p>
+            </div>
+
+            <div class="lax-visitor-info">
+                <div class="lax-contact-grid">
+                    <div class="lax-contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>8332 Lincoln Blvd, Los Angeles, CA 90045</div>
+                    </div>
+                    <div class="lax-contact-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <div><a href="tel:+13104293789">(310) 429-3789</a></div>
+                    </div>
+                    <div class="lax-contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <div><a href="mailto:info@laxcc.com">Email Us</a></div>
+                    </div>
+                    <div class="lax-contact-card">
+                        <i class="fas fa-clock"></i>
+                        <div>9 AM – 9:30 PM Daily</div>
+                    </div>
+                </div>
+                <div class="lax-info-card">
+                    <h3>Legal, Rewards & Apps</h3>
+                    <div class="lax-info-grid">
+                        <div class="lax-info-item"><strong>Ages:</strong> 18+ (Medical Rec) / 21+ (ID)</div>
+                        <div class="lax-info-item"><strong>Payment:</strong> <span class="lax-cash">💵 CASH ONLY</span>
+                        </div>
+                        <div class="lax-info-item"><strong>Rewards:</strong> <a
+                                href="https://laxcc.com/best-cannabis-club-in-la/" style="color:var(--lax-orange);">Join
+                                for Free!</a></div>
+                        <div class="lax-info-item lax-license"><a href="https://search.cannabis.ca.gov/"
+                                target="_blank" rel="noopener noreferrer"
+                                style="color:inherit;text-decoration:none;text-underline-offset:3px;">📜 LIC#
+                                C10-0000141-LIC — Verified Active</a></div>
+                        <div class="lax-info-item lax-license"><a href="https://www.cannabis.ca.gov/consumers/whats-legal"
+                                target="_blank" rel="noopener noreferrer"
+                                style="color:inherit;text-decoration:none;text-underline-offset:3px;">⚖️ What's Legal in California?</a></div>
+                    </div>
+                    <div class="lax-apps">
+                        <a href="https://apps.apple.com/us/app/lax-cc/id6464416194" target="_blank" rel="nofollow"><i
+                                class="fab fa-apple"></i> iOS App</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.laxcc.wallet" target="_blank"
+                            rel="nofollow"><i class="fab fa-google-play"></i> Android App</a>
+                    </div>
+                </div>
+
+                <div class="lax-member-badge">
+                    <div id="mni-membership-639181772700167888"></div>
+                </div>
+                <script src="https://laxcoastal.chambermaster.com/Content/Script/Member.js" type="text/javascript" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1"></script>
+                <script type="text/javascript" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1">
+                    (function () {
+                        var tries = 0;
+                        function initLaxMemberBadge() {
+                            if (typeof MNI === 'undefined' || !MNI.Widgets || !MNI.Widgets.Member) {
+                                // Member.js may be async/deferred by a cache plugin — wait for it.
+                                if (tries++ < 100) { setTimeout(initLaxMemberBadge, 200); }
+                                return;
+                            }
+                            new MNI.Widgets.Member("mni-membership-639181772700167888", { member: 8593, styleTemplate: "#@id{text-align:left;position:relative}#@id .mn-widget-member-name{display:none}#@id .mn-widget-member-logo{max-width:190px;margin:8px 0 0}" }).create();
+                            markLaxBadgeNofollow();
+                        }
+                        // The widget injects its chamber link via AJAX — force rel="nofollow" once it renders.
+                        function markLaxBadgeNofollow() {
+                            var nf = 0;
+                            (function apply() {
+                                var box = document.getElementById('mni-membership-639181772700167888');
+                                var links = box ? box.getElementsByTagName('a') : [];
+                                if (links.length) {
+                                    for (var i = 0; i < links.length; i++) {
+                                        links[i].setAttribute('rel', 'nofollow noopener');
+                                        links[i].setAttribute('target', '_blank');
+                                        links[i].setAttribute('href', 'https://business.laxcoastal.com/list/member/lax-cc-8593');
+                                    }
+                                } else if (nf++ < 50) {
+                                    setTimeout(apply, 200);
+                                }
+                            })();
+                        }
+                        initLaxMemberBadge();
+                    })();
+                </script>
+            </div>
+
+            <div class="lax-links-wrapper">
+                <div class="lax-links-column">
+                    <h3 class="lax-links-title">Navigation</h3>
+                    <ul class="lax-links-body">
+                        <li><a href="https://laxcc.com/deals/"><i
+                                    class="fas fa-tags"></i>Deals</a></li>
+                        <li><a href="https://laxcc.com/best-los-angeles-dispensary-menu/"><i
+                                    class="fas fa-list"></i>Menu</a></li>
+                        <li><a href="https://laxcc.com/recreational-medical-weed-dispensary-los-angeles/"><i
+                                    class="fas fa-cannabis"></i>Recreational &amp; Medical</a></li>
+                        <li><a href="https://laxcc.com/best-cannabis-brands-in-los-angeles/"><i
+                                    class="fas fa-star"></i>Brands</a></li>
+                        <li><a href="https://laxcc.com/dispensary-gallery/"><i class="fas fa-images"></i>Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lax-links-column">
+                    <h3 class="lax-links-title">&nbsp;</h3>
+                    <ul class="lax-links-body">
+                        <li><a href="https://laxcc.com/blog/"><i class="fas fa-blog"></i>Blog</a></li>
+                        <li><a href="https://laxcc.com/how-to-buy-weed-as-a-tourist-in-la-2025-guide/"><i class="fas fa-plane"></i>Tourist Guide</a></li>
+                        <li><a href="https://laxcc.com/careers/"><i class="fas fa-briefcase"></i>Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lax-links-column lax-company-column">
+                <h3 class="lax-links-title">Company</h3>
+                <ul class="lax-links-body">
+                    <li><a href="https://laxcc.com/contact-us/"><i class="fas fa-comments"></i>Contact</a></li>
+                    <li><a href="https://laxcc.com/frequently-asked-questions/"><i
+                                class="fas fa-question-circle"></i>FAQ</a></li>
+                    <li><a href="https://laxcc.com/privacy-policy/"><i class="fas fa-shield-alt"></i>Privacy Policy</a>
+                    </li>
+                    <li><a href="https://laxcc.com/terms-of-service/"><i class="fas fa-file-contract"></i>Terms of
+                            Service</a></li>
+                </ul>
+            </div>
+
+            <div class="lax-links-column lax-nearby-column">
+                <h3 class="lax-links-title">Nearby Areas</h3>
+                <div class="lax-location-grid">
+                    <a href="https://laxcc.com/venice-beach-dispensary/">Venice Beach</a>
+                    <a href="https://laxcc.com/best-dispensary-near-santa-monica/">Santa Monica</a>
+                    <a href="https://laxcc.com/sofi-stadium-dispensary/">SoFi Stadium</a>
+                    <a href="https://laxcc.com/culver-city-dispensary/">Culver City</a>
+                    <a href="https://laxcc.com/best-inglewood-dispensary/">Inglewood</a>
+                    <a href="https://laxcc.com/best-dispensary-near-marina-del-rey/">Marina del Rey</a>
+                    <a href="https://laxcc.com/dispensary-playa-del-rey-beach/">Playa del Rey</a>
+                    <a href="https://laxcc.com/top-11-la-beaches-guide-best-dispensary-nearby/">Dockweiler</a>
+                    <a href="https://laxcc.com/weed-dispensary-near-hilton-los-angeles-airport">Hilton LAX</a>
+                    <a href="https://laxcc.com/best-dispensary-near-playa-vista/">Playa Vista</a>
+                    <a href="https://laxcc.com/dispensary-near-westchester/">Westchester</a>
+                    <a href="https://laxcc.com/dispensary-near-el-segundo/">El Segundo</a>
+                    <a href="https://laxcc.com/dispensary-near-lennox/">Lennox</a>
+                    <a href="https://laxcc.com/dispensary-near-manhattan-beach/">Manhattan Beach</a>
+                    <a href="https://laxcc.com/dispensary-near-hawthorne/">Hawthorne</a>
+                </div>
+                <a href="https://laxcc.com/top-11-la-beaches-guide-best-dispensary-nearby/" class="lax-beach-guide">📍
+                    Complete Beach Guide</a>
+            </div>
+
+            <div class="lax-bottom">
+                <p class="lax-copyright">&copy; <span class="lax-year">2025</span> LAX CC • All Rights Reserved</p>
+                <div class="lax-legal-links">
+                    <a href="https://www.cannabis.ca.gov/consumers/whats-legal" target="_blank" rel="noopener noreferrer" style="text-decoration:none !important;">What's Legal in California?</a>
+                </div>
+                <div class="lax-social-links">
+                    <a href="https://www.instagram.com/la.laxcc/" class="lax-social-link" aria-label="Instagram"
+                        target="_blank" rel="nofollow"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/LAXAIRPORTDISPENSARY" class="lax-social-link"
+                        aria-label="Facebook" target="_blank" rel="nofollow"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/laxcc420" class="lax-social-link" aria-label="X/Twitter" target="_blank"
+                        rel="nofollow"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.tiktok.com/@laxcc420" class="lax-social-link" aria-label="TikTok"
+                        target="_blank" rel="nofollow"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@laxcc420" class="lax-social-link" aria-label="YouTube"
+                        target="_blank" rel="nofollow"><i class="fab fa-youtube"></i></a>
+                    <a href="https://linktr.ee/laxcc" class="lax-social-link" aria-label="Linktree" target="_blank"
+                        rel="nofollow"><i class="fas fa-link"></i></a>
+                    <a href="https://weedmaps.com/dispensaries/laxcc-lax-playa-del-rey-el-segundo"
+                        class="lax-social-link" aria-label="Weedmaps" target="_blank" rel="nofollow"><i
+                            class="fas fa-leaf"></i></a>
+                    <a href="https://www.yelp.com/biz/lax-cc-los-angeles-5" class="lax-social-link" aria-label="Yelp"
+                        target="_blank" rel="nofollow"><i class="fab fa-yelp"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- LOCAL SEO AUTHORITY BLOCK - FULL WIDTH BOTTOM ROW -->
+        <div class="lax-seo-block">
+            <p class="lax-seo-text">
+                LAX Cannabis Club is a licensed premier cannabis dispensary serving the Westside of Los Angeles.
+                Located in the Westchester neighborhood, we are the closest dispensary to LAX Airport, Playa Vista,
+                El Segundo, Marina Del Rey, and the South Bay. Our high-end clinical facility offers over 750+
+                laboratory-tested products including top-shelf flower, edibles, vapes, and concentrates.
+                We provide safe, legal access to premium cannabis for adult-use (21+) and medical patients (18+).
+                Visit us for daily weed deals and industry-leading customer service.
+            </p>
+        </div>
+    </footer>
+</div>

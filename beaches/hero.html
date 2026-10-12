@@ -1,0 +1,557 @@
+<div id="laxccBeachMapWidget" class="laxcc-map-widget">
+  <div class="laxcc-map-header">
+    <h1>🌴 Top 11 Best Los Angeles Beaches 2026 Guide by LAXCC Dispensary 🏖️</h1>
+    <span class="laxcc-map-stamp">Updated April 2026</span>
+  </div>
+
+  <div class="laxcc-map-layout">
+    <aside class="laxcc-sidebar">
+      <div class="laxcc-sidebar-header">
+        <strong>Nearby Locations</strong>
+        <span>Showing top spots near LAX</span>
+      </div>
+
+      <div id="laxccPlacesList" class="laxcc-places-list"></div>
+    </aside>
+
+    <div class="laxcc-map-area">
+      <div id="laxccGoogleMap"></div>
+
+      <div id="laxccMapLoading" class="laxcc-loading">
+        <div class="laxcc-spinner"></div>
+        <p>Loading map...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #laxccBeachMapWidget,
+  #laxccBeachMapWidget * {
+    box-sizing: border-box;
+  }
+
+  #laxccBeachMapWidget {
+    width: 100%;
+    height: 700px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: #f5f5f5;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  }
+
+  .laxcc-map-header {
+    background: linear-gradient(135deg, #00afc9 0%, #1d508a 100%);
+    padding: 14px 18px;
+    color: #fff;
+    text-align: center;
+  }
+
+  .laxcc-map-header h1,
+  .laxcc-map-header h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .laxcc-map-stamp {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .laxcc-map-layout {
+    display: flex;
+    height: calc(100% - 56px);
+    min-height: 0;
+  }
+
+  .laxcc-sidebar {
+    width: 390px;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .laxcc-sidebar-header {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .laxcc-sidebar-header strong {
+    display: block;
+    color: #1d508a;
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+
+  .laxcc-sidebar-header span {
+    color: #666;
+    font-size: 14px;
+  }
+
+  .laxcc-places-list {
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .laxcc-map-area {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+  }
+
+  #laxccGoogleMap {
+    width: 100%;
+    height: 100%;
+  }
+
+  .laxcc-location {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    background: #fff;
+    transition: background 0.2s ease;
+  }
+
+  .laxcc-location:hover,
+  .laxcc-location.active {
+    background: #f3fbfd;
+  }
+
+  .laxcc-location-thumb {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.01em;
+  }
+
+  .laxcc-thumb-dispensary { background: #00AFC9; }
+  .laxcc-thumb-beach { background: #1D508A; }
+
+  .laxcc-location-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .laxcc-location-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 5px;
+  }
+
+  .laxcc-location-name {
+    color: #222;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .laxcc-badge {
+    white-space: nowrap;
+    font-size: 12px;
+    border-radius: 999px;
+    padding: 4px 8px;
+    font-weight: 700;
+  }
+
+  .laxcc-badge.dispensary {
+    background: #e0f7fa;
+    color: #006064;
+  }
+
+  .laxcc-badge.beach {
+    background: #e3f2fd;
+    color: #0d47a1;
+  }
+
+  .laxcc-desc {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.35;
+    margin: 0 0 10px;
+  }
+
+  .laxcc-directions {
+    display: inline-block;
+    background: #f89459;
+    color: #fff !important;
+    text-decoration: none !important;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .laxcc-directions:hover {
+    background: #e67d42;
+    color: #fff !important;
+  }
+
+  .laxcc-loading {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background: rgba(255,255,255,0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .laxcc-loading p {
+    margin: 8px 0 0;
+    color: #333;
+    font-size: 14px;
+  }
+
+  .laxcc-spinner {
+    width: 42px;
+    height: 42px;
+    border: 4px solid #eee;
+    border-top-color: #00afc9;
+    border-radius: 50%;
+    animation: laxccSpin 1s linear infinite;
+  }
+
+  @keyframes laxccSpin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  #laxccBeachMapWidget [class*="gm-err"] { display: none !important; }
+
+  @media (max-width: 768px) {
+    #laxccBeachMapWidget {
+      height: auto !important;
+      min-height: 0 !important;
+      border-radius: 0;
+      overflow: visible !important;
+    }
+
+    .laxcc-map-header h1,
+    .laxcc-map-header h2 {
+      font-size: 17px;
+    }
+
+    .laxcc-map-layout {
+      display: flex;
+      flex-direction: column;
+      height: auto !important;
+      min-height: 0 !important;
+    }
+
+    .laxcc-map-area {
+      order: 1;
+      flex: none;
+      width: 100%;
+      height: 360px;
+      min-height: 360px;
+    }
+
+    .laxcc-sidebar {
+      order: 2;
+      width: 100%;
+      border-right: 0;
+      border-top: 1px solid #ddd;
+      max-height: none;
+      margin-top: -30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .laxcc-places-list {
+      overflow: visible;
+    }
+
+    .laxcc-location {
+      padding: 14px;
+    }
+
+    .laxcc-location-thumb {
+      width: 68px;
+      height: 68px;
+    }
+
+    .laxcc-location-name {
+      font-size: 15px;
+    }
+
+    .laxcc-desc {
+      font-size: 13px;
+    }
+  }
+</style>
+
+<script>
+(function () {
+  const API_KEY = "AIzaSyBR3knBCX7iGSmTh6DR-mG9eajwjb5K6GM";
+
+  const DATA = [
+    {
+      name: "LAX Cannabis Club",
+      type: "dispensary",
+      desc: "The closest dispensary to every beach on this list. Stop in for THC pills, single-dose soft gels, vape carts, or edibles before heading to the coast — the smoke-free way to enjoy LA's beaches without breaking public-smoking rules.",
+      lat: 33.961922,
+      lng: -118.420722,
+      mapsLink: "https://www.google.com/maps/search/?api=1&query=LAX+Cannabis+Club"
+    },
+    {
+      name: "Dockweiler Beach",
+      type: "beach",
+      desc: "Famous for fire rings and plane spotting from directly under the LAX flight path. One of the only LA beaches that allows public bonfires at first-come fire rings — sunsets here are legendary. Pair with a 10mg ABX or BREEZ 20mg tablet for low-key, smoke-free vibes around the fire.",
+      lat: 33.9305304,
+      lng: -118.4356632,
+      mapsLink: "https://www.google.com/maps/search/?api=1&query=Dockweiler+Beach"
+    },
+    {
+      name: "El Segundo Beach",
+      type: "beach",
+      desc: "Quiet, less crowded beach right alongside the Marvin Braude bike trail. Locals come for morning surf and afternoon strand walks. ABX 1:1 THC:THCV soft gels are clear-headed for daytime active use — no drowsy edible-style heaviness.",
+      lat: 33.9164,
+      lng: -118.4225,
+      mapsLink: "https://www.google.com/maps/search/?api=1&query=El+Segundo+Beach"
+    },
+    {
+      name: "Playa del Rey Beach",
+      type: "beach",
+      desc: "Laid-back beach-town vibe just south of Marina del Rey. Wide open sand, great for kite-flying and long walks. A single THC pill is the most discreet pick — no smell, no smoke, no equipment to pack.",
+      lat: 33.9575,
+      lng: -118.4487,
+      mapsLink: "https://www.google.com/maps/search/?api=1&query=Playa+del+Rey+Beach"
+    },
+    {
+      name: "Marina del Rey",
+      type: "beach",
+      desc: "Largest man-made small-craft harbor in the U.S. Walk Burton Chace Park, rent a kayak or SUP at Mother's Beach, or grab dinner at Fisherman's Village. A live-resin disposable vape is quick and odor-light before heading out on the water.",
+      lat: 33.9803,
+      lng: -118.4517,
+      mapsLink: "https://www.google.com/maps/search/?api=1&query=Marina+del+Rey"
+    },
+    {
+      name: "Venice Beach",
+      type: "beach",
+      desc: "Iconic boardwalk, Muscle Beach, the skate park, and the street performers. Plan 2–3 hours minimum — there's a lot of ground to cover from the canals to the ocean. A 25mg Level Protab carries the long walk; a low-dose edible if you'll stay through sunset.",
+      lat: 33.985,
+      lng: -118.4695,
+      mapsLink: "https://www.google.com/maps/search/?api=1&query=Venice+Beach"
+    },
+    {
+      name: "Hermosa Beach",
+      type: "beach",
+      desc: "Vibrant beach scene with full-time volleyball courts and a lively pier strip. Active crowd, lots of pickup beach games. Pair with a BREEZ 20mg microdose tablet rather than something heavy — you'll want to stay sharp for the volleyball.",
+      lat: 33.8622,
+      lng: -118.4004,
+      mapsLink: "https://www.google.com/maps/search/?api=1&query=Hermosa+Beach"
+    },
+    {
+      name: "Manhattan Beach",
+      type: "beach",
+      desc: "Upscale beach with a beautiful pier and the boutique shops along Manhattan Beach Blvd. Walk the Strand, brunch downtown, then back to the sand. Discreet THC pills or low-dose edibles fit the quieter, classier crowd here.",
+      lat: 33.8847,
+      lng: -118.4109,
+      mapsLink: "https://www.google.com/maps/search/?api=1&query=Manhattan+Beach"
+    },
+    {
+      name: "Redondo Beach",
+      type: "beach",
+      desc: "Horseshoe pier and fresh seafood spots like Quality Seafood and Tony's. Great for an afternoon out or a sunset oyster session on the pier. THC pills carry zero smell, which makes them ideal for sit-down restaurant dining.",
+      lat: 33.8358,
+      lng: -118.3888,
+      mapsLink: "https://www.google.com/maps/search/?api=1&query=Redondo+Beach"
+    },
+    {
+      name: "Torrance Beach",
+      type: "beach",
+      desc: "Cleaner, scenic beach at the southern start of the 22-mile Strand bike path — the longest paved beach path in the U.S. Great for long rides north toward Santa Monica. ABX 1:1 THC:THCV is clear-headed for cardio days; skip anything heavy.",
+      lat: 33.804917,
+      lng: -118.399229,
+      mapsLink: "https://www.google.com/maps/search/?api=1&query=Torrance+Beach"
+    },
+    {
+      name: "Santa Monica Pier",
+      type: "beach",
+      desc: "World-famous pier with the Pacific Park amusement park, the original Route 66 endpoint, and the ferris wheel that lights up after dark. Edibles take 30–60 minutes to kick in — perfect timing for a slow walk down the pier into golden hour.",
+      lat: 34.0082821,
+      lng: -118.4987585,
+      mapsLink: "https://www.google.com/maps/search/?api=1&query=Santa+Monica+Pier"
+    },
+    {
+      name: "Will Rogers State Beach",
+      type: "beach",
+      desc: "Wide sandy beach with full lifeguard coverage, quieter than Santa Monica and great for swimming. Family-friendly Pacific Palisades coastline. A small-dose pill or low-mg disposable vape is the most discreet pick on a calm crowd-free beach.",
+      lat: 34.0350564,
+      lng: -118.5366589,
+      mapsLink: "https://www.google.com/maps/search/?api=1&query=Will+Rogers+State+Beach"
+    }
+  ];
+
+  let map;
+  let markers = [];
+  let infoWindow;
+
+  function renderList() {
+    const list = document.getElementById("laxccPlacesList");
+    if (!list) return;
+
+    list.innerHTML = DATA.map((loc, index) => {
+      return `
+        <div class="laxcc-location" data-index="${index}" id="laxcc-location-${index}">
+          <div class="laxcc-location-thumb laxcc-thumb-${loc.type}">${index + 1}</div>
+          <div class="laxcc-location-content">
+            <div class="laxcc-location-top">
+              <div class="laxcc-location-name">${loc.name}</div>
+              <span class="laxcc-badge ${loc.type}">
+                ${loc.type === "dispensary" ? "Dispensary" : "Beach"}
+              </span>
+            </div>
+            <p class="laxcc-desc">${loc.desc}</p>
+            <a class="laxcc-directions" href="${loc.mapsLink}" target="_blank" rel="noopener">
+              Directions
+            </a>
+          </div>
+        </div>
+      `;
+    }).join("");
+
+    list.querySelectorAll(".laxcc-location").forEach(item => {
+      item.addEventListener("click", function (e) {
+        if (e.target.tagName.toLowerCase() === "a") return;
+        selectLocation(Number(this.dataset.index));
+      });
+    });
+  }
+
+  window.initLaxccBeachMap = function () {
+    const mapEl = document.getElementById("laxccGoogleMap");
+    const loadingEl = document.getElementById("laxccMapLoading");
+
+    if (!mapEl || !window.google || !google.maps) return;
+
+    map = new google.maps.Map(mapEl, {
+      center: { lat: 33.961922, lng: -118.420722 },
+      zoom: 11,
+      mapTypeControl: false,
+      fullscreenControl: true,
+      streetViewControl: true,
+      gestureHandling: "cooperative"
+    });
+
+    infoWindow = new google.maps.InfoWindow();
+
+    const bounds = new google.maps.LatLngBounds();
+
+    DATA.forEach((loc, index) => {
+      const marker = new google.maps.Marker({
+        position: { lat: loc.lat, lng: loc.lng },
+        map,
+        title: (index + 1) + ". " + loc.name,
+        label: {
+          text: String(index + 1),
+          color: "#ffffff",
+          fontSize: "12px",
+          fontWeight: "700"
+        },
+        icon: {
+          path: google.maps.SymbolPath.CIRCLE,
+          fillColor: loc.type === "dispensary" ? "#00AFC9" : "#1D508A",
+          fillOpacity: 1,
+          strokeColor: "#ffffff",
+          strokeWeight: 2,
+          scale: loc.type === "dispensary" ? 14 : 12
+        }
+      });
+
+      marker.addListener("click", function () {
+        selectLocation(index);
+      });
+
+      markers[index] = marker;
+      bounds.extend(marker.getPosition());
+    });
+
+    map.fitBounds(bounds);
+
+    renderList();
+
+    if (loadingEl) {
+      loadingEl.style.display = "none";
+    }
+
+    const first = document.getElementById("laxcc-location-0");
+    if (first) first.classList.add("active");
+  };
+
+  function selectLocation(index) {
+    const loc = DATA[index];
+    const marker = markers[index];
+
+    if (!map || !marker) return;
+
+    map.panTo({ lat: loc.lat, lng: loc.lng });
+    map.setZoom(14);
+
+    infoWindow.setContent(`
+      <div style="padding:8px;max-width:220px;">
+        <strong>${loc.name}</strong><br>
+        <span style="font-size:13px;color:#555;">${loc.desc}</span><br><br>
+        <a href="${loc.mapsLink}" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+    `);
+
+    infoWindow.open(map, marker);
+
+    document.querySelectorAll("#laxccBeachMapWidget .laxcc-location").forEach(el => {
+      el.classList.remove("active");
+    });
+
+    const active = document.getElementById("laxcc-location-" + index);
+    if (active) {
+      active.classList.add("active");
+      active.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+  }
+
+  function loadGoogleMapsScript() {
+    if (window.google && window.google.maps) {
+      window.initLaxccBeachMap();
+      return;
+    }
+
+    if (document.getElementById("laxccGoogleMapsScript")) return;
+
+    const script = document.createElement("script");
+    script.id = "laxccGoogleMapsScript";
+    script.src = "https://maps.googleapis.com/maps/api/js?key=" + API_KEY + "&callback=initLaxccBeachMap";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  renderList();
+  loadGoogleMapsScript();
+})();
+</script>

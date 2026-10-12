@@ -1,0 +1,975 @@
+<style>
+    /* ===== LAXCC EDIBLES GUIDE — ELEMENTOR SAFE ===== */
+    #laxcc-edibles-guide-2025 {
+        --primary: #06B6D4;
+        --accent-teal: #00AFC9;
+        --accent-cyan: #0891B2;
+        --accent-orange: #F89459;
+        --accent-green: #3daa6e;
+        --primary-dark: #0f3a5f;
+        --text-dark: #0f172a;
+        --text-muted: #64748b;
+        --bg-cream: #FBF8F2;
+        --bg-light: #f8f6f5;
+        --white: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    #laxcc-edibles-guide-2025 *,
+    #laxcc-edibles-guide-2025 *::before,
+    #laxcc-edibles-guide-2025 *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* ===== SECTION WRAPPER ===== */
+    #laxcc-edibles-guide-2025 .leg-section {
+        width: 100%;
+        background-color: var(--bg-cream);
+        padding: 2.5rem 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-section {
+            padding: 4rem 2rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        #laxcc-edibles-guide-2025 .leg-section {
+            padding: 5rem 3rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /* ===== SEO HERO INTRO ===== */
+    #laxcc-edibles-guide-2025 .leg-hero {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-hero {
+            margin-bottom: 4rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-eyebrow {
+        color: var(--accent-cyan);
+        font-size: 0.6875rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-eyebrow {
+            font-size: 0.75rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 h1.leg-h1 {
+        font-size: 1.75rem;
+        font-weight: 900;
+        color: var(--text-dark);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 h1.leg-h1 {
+            font-size: 2.75rem;
+            margin-bottom: 1.25rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        #laxcc-edibles-guide-2025 h1.leg-h1 {
+            font-size: 3.25rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-h1 span {
+        color: var(--accent-cyan);
+    }
+
+    #laxcc-edibles-guide-2025 .leg-subtitle {
+        font-size: 0.9375rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        max-width: 660px;
+        margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-subtitle {
+            font-size: 1.0625rem;
+        }
+    }
+
+    /* ===== CATEGORY CARDS GRID ===== */
+    #laxcc-edibles-guide-2025 .leg-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    @media (min-width: 600px) {
+        #laxcc-edibles-guide-2025 .leg-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 960px) {
+        #laxcc-edibles-guide-2025 .leg-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-card {
+        background: var(--white);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        transition: all 0.25s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #laxcc-edibles-guide-2025 .leg-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--accent-cyan);
+        opacity: 0;
+        transition: opacity 0.25s ease;
+    }
+
+    #laxcc-edibles-guide-2025 .leg-card:hover {
+        border-color: rgba(8, 145, 178, 0.2);
+        box-shadow: 0 8px 24px rgba(8, 145, 178, 0.08);
+        transform: translateY(-3px);
+    }
+
+    #laxcc-edibles-guide-2025 .leg-card:hover::before {
+        opacity: 1;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-card {
+            padding: 2rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-card-icon {
+        font-size: 1.75rem;
+        margin-bottom: 0.75rem;
+        display: block;
+    }
+
+    #laxcc-edibles-guide-2025 h3.leg-card-title {
+        font-size: 1.0625rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 h3.leg-card-title {
+            font-size: 1.1875rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-card-desc {
+        font-size: 0.8125rem;
+        color: var(--text-muted);
+        line-height: 1.55;
+        margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-card-desc {
+            font-size: 0.875rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-card-brands {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.375rem;
+    }
+
+    #laxcc-edibles-guide-2025 .leg-tag {
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: var(--accent-cyan);
+        background: rgba(8, 145, 178, 0.07);
+        padding: 0.25rem 0.625rem;
+        border-radius: 9999px;
+        white-space: nowrap;
+        letter-spacing: 0.02em;
+    }
+
+    /* ===== SHOP CTA BUTTON ===== */
+    #laxcc-edibles-guide-2025 a.leg-cta,
+    #laxcc-edibles-guide-2025 a.leg-cta:link,
+    #laxcc-edibles-guide-2025 a.leg-cta:visited {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--accent-cyan);
+        color: #fff !important;
+        text-decoration: none !important;
+        font-size: 0.875rem;
+        font-weight: 700;
+        padding: 0.75rem 1.75rem;
+        border-radius: 9999px;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+        letter-spacing: 0.02em;
+    }
+
+    #laxcc-edibles-guide-2025 a.leg-cta:hover {
+        background: var(--primary-dark);
+        color: #fff !important;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(15, 58, 95, 0.2);
+    }
+
+    #laxcc-edibles-guide-2025 .leg-cta-arrow {
+        font-size: 1rem;
+        transition: transform 0.2s ease;
+    }
+
+    #laxcc-edibles-guide-2025 a.leg-cta:hover .leg-cta-arrow {
+        transform: translateX(3px);
+    }
+
+    /* ===== WHY LAXCC TWO-COL ===== */
+    #laxcc-edibles-guide-2025 .leg-why-section {
+        background-color: var(--bg-cream);
+        padding: 2.5rem 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-why-section {
+            padding: 4rem 2rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        #laxcc-edibles-guide-2025 .leg-why-section {
+            padding: 5rem 3rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-why-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-why-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 h2.leg-h2 {
+        font-size: 1.375rem;
+        font-weight: 900;
+        color: var(--text-dark);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 h2.leg-h2 {
+            font-size: 2rem;
+            margin-bottom: 1.25rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        #laxcc-edibles-guide-2025 h2.leg-h2 {
+            font-size: 2.25rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-h2 span {
+        color: var(--accent-cyan);
+    }
+
+    #laxcc-edibles-guide-2025 .leg-why-text {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        line-height: 1.65;
+        margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-why-text {
+            font-size: 0.9375rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-features {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #laxcc-edibles-guide-2025 .leg-feature {
+        display: flex;
+        gap: 0.75rem;
+        align-items: flex-start;
+    }
+
+    #laxcc-edibles-guide-2025 .leg-feature-icon {
+        flex-shrink: 0;
+        width: 2.25rem;
+        height: 2.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(8, 145, 178, 0.08);
+        border-radius: 0.5rem;
+        font-size: 1rem;
+    }
+
+    #laxcc-edibles-guide-2025 .leg-feature-content h4 {
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 0.1875rem;
+    }
+
+    #laxcc-edibles-guide-2025 .leg-feature-content p {
+        font-size: 0.8125rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+    }
+
+    /* ===== DEALS BANNER ===== */
+    #laxcc-edibles-guide-2025 .leg-deals {
+        background: var(--primary-dark);
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-deals {
+            padding: 2rem;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-deals-text h3 {
+        font-size: 1.125rem;
+        font-weight: 800;
+        color: var(--white);
+        margin-bottom: 0.25rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-deals-text h3 {
+            font-size: 1.25rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-deals-text p {
+        font-size: 0.8125rem;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.5;
+    }
+
+    #laxcc-edibles-guide-2025 a.leg-cta-orange,
+    #laxcc-edibles-guide-2025 a.leg-cta-orange:link,
+    #laxcc-edibles-guide-2025 a.leg-cta-orange:visited {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--accent-orange);
+        color: #fff !important;
+        text-decoration: none !important;
+        font-size: 0.875rem;
+        font-weight: 700;
+        padding: 0.75rem 1.75rem;
+        border-radius: 9999px;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+    }
+
+    #laxcc-edibles-guide-2025 a.leg-cta-orange:hover {
+        background: #e07e40;
+        color: #fff !important;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(248, 148, 89, 0.25);
+    }
+
+    /* ===== FAQ SECTION ===== */
+    #laxcc-edibles-guide-2025 .leg-faq-section {
+        background-color: var(--bg-cream);
+        padding: 2.5rem 1.25rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-faq-section {
+            padding: 4rem 2rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        #laxcc-edibles-guide-2025 .leg-faq-section {
+            padding: 5rem 3rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-faq-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-faq-header {
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-faq-list {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    #laxcc-edibles-guide-2025 .leg-faq-item {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    #laxcc-edibles-guide-2025 .leg-faq-item:first-child {
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    #laxcc-edibles-guide-2025 .leg-faq-q {
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        text-align: left;
+        gap: 1rem;
+    }
+
+    #laxcc-edibles-guide-2025 .leg-faq-q h3 {
+        font-size: 0.9375rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        line-height: 1.3;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-faq-q h3 {
+            font-size: 1.0625rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-faq-toggle {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent-cyan);
+        font-size: 1.25rem;
+        font-weight: 300;
+        transition: transform 0.3s ease;
+    }
+
+    #laxcc-edibles-guide-2025 .leg-faq-item.open .leg-faq-toggle {
+        transform: rotate(45deg);
+    }
+
+    #laxcc-edibles-guide-2025 .leg-faq-a {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    #laxcc-edibles-guide-2025 .leg-faq-item.open .leg-faq-a {
+        max-height: 300px;
+        padding-bottom: 1rem;
+    }
+
+    #laxcc-edibles-guide-2025 .leg-faq-a p {
+        font-size: 0.8125rem;
+        color: var(--text-muted);
+        line-height: 1.65;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-faq-a p {
+            font-size: 0.875rem;
+        }
+    }
+
+    /* ===== FINAL CTA ===== */
+    #laxcc-edibles-guide-2025 .leg-final-cta {
+        background: var(--primary-dark);
+        padding: 2.5rem 1.25rem;
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-final-cta {
+            padding: 4rem 2rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-final-cta h2 {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--white);
+        margin-bottom: 0.5rem;
+        line-height: 1.1;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-final-cta h2 {
+            font-size: 2.25rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-final-cta p {
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+    }
+
+    #laxcc-edibles-guide-2025 .leg-final-cta .leg-address {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.5);
+        margin-top: 1.25rem;
+        letter-spacing: 0.05em;
+    }
+
+    /* ===== TOP 10 BANNER ===== */
+    #laxcc-edibles-guide-2025 .leg-top10-banner {
+        background: linear-gradient(135deg, #0f3a5f 0%, #0e5a68 50%, #0891B2 100%);
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-top10-banner {
+            padding: 1.75rem 2rem;
+            gap: 1.25rem;
+        }
+    }
+
+    /* Shimmer sweep */
+    #laxcc-edibles-guide-2025 .leg-top10-banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+        animation: leg-shimmer 4s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    @keyframes leg-shimmer {
+        0%   { left: -60%; }
+        50%  { left: 100%; }
+        100% { left: 100%; }
+    }
+
+    /* Trophy icon */
+    #laxcc-edibles-guide-2025 .leg-trophy {
+        flex-shrink: 0;
+        font-size: 2rem;
+        line-height: 1;
+        animation: leg-trophy-pulse 2s ease-in-out infinite alternate;
+        filter: drop-shadow(0 0 8px rgba(248, 200, 40, 0.5));
+    }
+
+    @keyframes leg-trophy-pulse {
+        0%   { transform: scale(1) rotate(-2deg); filter: drop-shadow(0 0 8px rgba(248, 200, 40, 0.4)); }
+        100% { transform: scale(1.08) rotate(2deg); filter: drop-shadow(0 0 14px rgba(248, 200, 40, 0.7)); }
+    }
+
+    /* Banner text */
+    #laxcc-edibles-guide-2025 .leg-top10-text {
+        flex: 1;
+        min-width: 0;
+    }
+
+    #laxcc-edibles-guide-2025 .leg-top10-text h3 {
+        font-size: 1rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 0.25rem;
+        line-height: 1.2;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-top10-text h3 {
+            font-size: 1.125rem;
+        }
+    }
+
+    #laxcc-edibles-guide-2025 .leg-top10-text p {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.45;
+    }
+
+    @media (min-width: 768px) {
+        #laxcc-edibles-guide-2025 .leg-top10-text p {
+            font-size: 0.8125rem;
+        }
+    }
+
+    /* Banner CTA */
+    #laxcc-edibles-guide-2025 a.leg-top10-cta,
+    #laxcc-edibles-guide-2025 a.leg-top10-cta:link,
+    #laxcc-edibles-guide-2025 a.leg-top10-cta:visited {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+        background: var(--accent-orange);
+        color: #fff !important;
+        text-decoration: none !important;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        padding: 0.625rem 1.25rem;
+        border-radius: 9999px;
+        white-space: nowrap;
+        transition: all 0.25s ease;
+        flex-shrink: 0;
+        box-shadow: 0 4px 16px rgba(248, 148, 89, 0.3);
+    }
+
+    #laxcc-edibles-guide-2025 a.leg-top10-cta:hover {
+        background: #e07e40;
+        color: #fff !important;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 24px rgba(248, 148, 89, 0.45);
+    }
+</style>
+
+<div id="laxcc-edibles-guide-2025">
+
+    <!-- ===== SEO HERO INTRO ===== -->
+    <section class="leg-section">
+        <div class="leg-container">
+            <div class="leg-hero">
+                <p class="leg-eyebrow">Licensed Los Angeles Dispensary</p>
+                <h1 class="leg-h1">THC Edibles, Gummies &amp; <span>Cannabis Drinks Near LAX</span></h1>
+                <p class="leg-subtitle">LAXCC is the best dispensary for edibles in Los Angeles — THC gummies, chocolates, cookies, mints, cannabis drinks, and top-rated edible brands from California. Every product is Category 4 tested, precisely dosed, and ready for pickup at our dispensary on Lincoln Blvd.</p>
+            </div>
+
+            <!-- ===== PRODUCT CATEGORY CARDS ===== -->
+            <div class="leg-grid">
+
+                <!-- Card 1: THC Gummies -->
+                <div class="leg-card">
+                    <span class="leg-card-icon">&#x1F36C;</span>
+                    <h3 class="leg-card-title">THC Gummies</h3>
+                    <p class="leg-card-desc">The best THC gummies in Los Angeles — top-rated California edible brands, precisely dosed in 10-packs with indica, sativa, and hybrid options. Smokiez sour chews from $22, Kanha nano gummies from $26, Camino effect-focused formulas at $29.99, and Lost Farm live rosin gummies at $29.99. Best Wyld gummies in stock too.</p>
+                    <div class="leg-card-brands">
+                        <span class="leg-tag">Smokiez</span>
+                        <span class="leg-tag">Kanha</span>
+                        <span class="leg-tag">Camino</span>
+                        <span class="leg-tag">Lost Farm</span>
+                        <span class="leg-tag">Wyld</span>
+                        <span class="leg-tag">Good Tide</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Chocolates & Baked Goods -->
+                <div class="leg-card">
+                    <span class="leg-card-icon">&#x1F36B;</span>
+                    <h3 class="leg-card-title">Chocolates &amp; Baked Goods</h3>
+                    <p class="leg-card-desc">Premium THC chocolates and cannabis-infused treats. Kiva milk chocolate bars at $35, Emerald Sky peanut butter cups from $25, Big Pete's cookies in 10-packs at $29.99, and Emerald Sky Groove Bars at $29.99. Breakable squares for easy micro-dosing.</p>
+                    <div class="leg-card-brands">
+                        <span class="leg-tag">Kiva</span>
+                        <span class="leg-tag">Emerald Sky</span>
+                        <span class="leg-tag">Big Pete's</span>
+                        <span class="leg-tag">Kiva Terra Bites</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: THC Beverages -->
+                <div class="leg-card">
+                    <span class="leg-card-icon">&#x1F964;</span>
+                    <h3 class="leg-card-title">THC Drinks &amp; Shots</h3>
+                    <p class="leg-card-desc">Fast-acting cannabis beverages — nano-emulsion technology means onset in 15–30 minutes instead of hours. St. Ides 100mg High Tea shots at just $11, CQ 2oz shots from $14.99, and Drops 100mg from $10. The perfect alcohol alternative.</p>
+                    <div class="leg-card-brands">
+                        <span class="leg-tag">St. Ides $11</span>
+                        <span class="leg-tag">CQ $14.99</span>
+                        <span class="leg-tag">Drops $10</span>
+                        <span class="leg-tag">Good Tide $29.99</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Budget Edibles -->
+                <div class="leg-card">
+                    <span class="leg-card-icon">&#x1F4B0;</span>
+                    <h3 class="leg-card-title">Best Edibles Under $15</h3>
+                    <p class="leg-card-desc">The strongest dispensary edibles at the best prices in California. Drops 100mg gummy shots at $10 in Lime and Strawberry, St. Ides High Tea Lemonade at $11, and CQ 2oz cannabis shots from $14.99 in Strawberry Lemonade, Lemonade, Wildberry Guava, and Berry Lime.</p>
+                    <div class="leg-card-brands">
+                        <span class="leg-tag">Drops $10</span>
+                        <span class="leg-tag">St. Ides $11</span>
+                        <span class="leg-tag">CQ $14.99</span>
+                    </div>
+                </div>
+
+                <!-- Card 5: Mints & Low-Dose -->
+                <div class="leg-card">
+                    <span class="leg-card-icon">&#x1F343;</span>
+                    <h3 class="leg-card-title">Mints &amp; Micro-Dose Edibles</h3>
+                    <p class="leg-card-desc">Discreet, precisely dosed cannabis mints and low-dose options for beginners or daytime use. Breez Royal Mints at $27 in Hybrid and Sativa, Kiva Petra Moroccan Mint at $29.99, and Breez Berry Daytime 100mg at $29.99. Start low, go slow.</p>
+                    <div class="leg-card-brands">
+                        <span class="leg-tag">Breez Mints</span>
+                        <span class="leg-tag">Petra by Kiva</span>
+                        <span class="leg-tag">Breez Daytime</span>
+                    </div>
+                </div>
+
+                <!-- Card 6: CBN & Balanced -->
+                <div class="leg-card">
+                    <span class="leg-card-icon">&#x1F319;</span>
+                    <h3 class="leg-card-title">CBN, CBD &amp; Balanced Edibles</h3>
+                    <p class="leg-card-desc">Top cannabis edibles beyond straight THC — CBD gummies in Los Angeles and CBN sleep formulas. Highatus Pomberry with 100mg THC + 20mg CBN for sleep ($19.99), Camino Balance Orchard Peach with equal CBD:THC ($29.99), and Kanha 2:1:1 FX Love gummies ($29.99). Designed for specific needs.</p>
+                    <div class="leg-card-brands">
+                        <span class="leg-tag">Highatus CBN</span>
+                        <span class="leg-tag">Camino Balance</span>
+                        <span class="leg-tag">Kanha FX</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center;">
+                <a href="https://laxcc.com/categories/edibles/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=EDIBLES" class="leg-cta">Shop All Edibles <span class="leg-cta-arrow">&#x2192;</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY LAXCC FOR EDIBLES ===== -->
+    <section class="leg-why-section">
+        <div class="leg-container">
+            <div class="leg-why-grid">
+
+                <!-- Left Column: Content -->
+                <div>
+                    <p class="leg-eyebrow">Why Shop With Us</p>
+                    <h2 class="leg-h2">Best Dispensary for <span>Edibles in Los Angeles</span></h2>
+                    <p class="leg-why-text">LAXCC is the top-rated dispensary for edibles in California — carrying the best cannabis edibles, strongest dispensary gummies, and most reliable Category 4 tested edibles in Los Angeles. From $10 THC shots to $35 premium Kiva chocolate bars, we stock the best edible brands from California's licensed supply chain. Located at 8332 Lincoln Blvd, 5 minutes from LAX airport. Walk in, browse the shelf, and find the best THC edibles for any occasion.</p>
+
+                    <div class="leg-features">
+                        <div class="leg-feature">
+                            <div class="leg-feature-icon">&#x1F3DB;</div>
+                            <div class="leg-feature-content">
+                                <h4>Licensed &amp; Category 4 Tested</h4>
+                                <p>Every edible is sourced through legal California supply chains with full Category 4 lab testing for potency, pesticides, and contaminants. The most reliable tested edibles in California — precise dosing you can trust.</p>
+                            </div>
+                        </div>
+                        <div class="leg-feature">
+                            <div class="leg-feature-icon">&#x1F36D;</div>
+                            <div class="leg-feature-content">
+                                <h4>15+ Edible Brands In Stock</h4>
+                                <p>Smokiez, Kanha, Kiva, Camino, Lost Farm, Wyld, Big Pete's, Emerald Sky, Breez, Petra, St. Ides, CQ, Drops, Good Tide, Highatus, and more. New drops weekly.</p>
+                            </div>
+                        </div>
+                        <div class="leg-feature">
+                            <div class="leg-feature-icon">&#x1F4CD;</div>
+                            <div class="leg-feature-content">
+                                <h4>5 Minutes From LAX Airport</h4>
+                                <p>8332 Lincoln Blvd, Los Angeles, CA 90045. Close to Venice Beach, Marina del Rey, Playa Vista, Culver City, and Inglewood. Open 7 days a week, 9 AM – 9:30 PM.</p>
+                            </div>
+                        </div>
+                        <div class="leg-feature">
+                            <div class="leg-feature-icon">&#x2714;</div>
+                            <div class="leg-feature-content">
+                                <h4>Best Edibles at Every Level</h4>
+                                <p>First time? Try Petra mints or Breez low-dose. Want the best pot edibles for value? Drops and St. Ides under $15. Need sleep? Highatus CBN. Looking for the strongest edibles in California? 100mg gummies and extreme edible shots.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Deals + Price Guide -->
+                <div>
+                    <div class="leg-deals">
+                        <div class="leg-deals-text">
+                            <h3>&#x1F525; Today's Edible Deals</h3>
+                            <p>Check our daily deals for discounted gummies, chocolate bundles, and brand promos. New deals drop every day — stop by or order online for pickup.</p>
+                        </div>
+                        <a href="https://laxcc.com/deals/" class="leg-cta-orange">See Deals <span>&#x2192;</span></a>
+                    </div>
+
+                    <!-- Price snapshot -->
+                    <div class="leg-deals" style="margin-top: 1rem; background: rgba(8, 145, 178, 0.06); border: 1px solid rgba(8, 145, 178, 0.12);">
+                        <div class="leg-deals-text">
+                            <h3 style="color: var(--text-dark);">Quick Price Guide</h3>
+                            <p style="color: var(--text-muted);">THC Shots from $10 (Drops) &bull; Cannabis Lemonade from $11 (St. Ides) &bull; 2oz Shots from $14.99 (CQ) &bull; CBN Gummies from $19.99 (Highatus) &bull; Sour Gummies from $22 (Smokiez) &bull; PB Cups from $25 (Emerald Sky) &bull; Nano Gummies from $26 (Kanha) &bull; Live Rosin Gummies from $29.99 (Lost Farm) &bull; Chocolate Bars from $35 (Kiva)</p>
+                        </div>
+                    </div>
+
+                    <!-- Dosing guide callout -->
+                    <div class="leg-deals" style="margin-top: 1rem; background: rgba(8, 145, 178, 0.06); border: 1px solid rgba(8, 145, 178, 0.12);">
+                        <div class="leg-deals-text">
+                            <h3 style="color: var(--text-dark);">Edible Dosing 101</h3>
+                            <p style="color: var(--text-muted);">New to edibles? Start with 2.5–5mg THC and wait at least 2 hours before taking more. Petra mints (2.5mg each) and Breez Royal Mints are great for beginners. Nano-infused products like Kanha Nano gummies and THC beverages kick in faster — usually 15–30 minutes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Top 10 Edibles banner -->
+                    <div class="leg-top10-banner">
+                        <span class="leg-trophy">&#x1F3C6;</span>
+                        <div class="leg-top10-text">
+                            <h3>Top 10 THC Edibles &amp; Gummies in Los Angeles</h3>
+                            <p>Our ranked guide to the best edibles from California's top-rated dispensary brands — Kiva, Kanha, Camino, Lost Farm, Wyld, and more.</p>
+                        </div>
+                        <a href="https://laxcc.com/top-10-thc-edibles-gummies-in-los-angeles/" class="leg-top10-cta">Read List <span>&#x2192;</span></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="leg-faq-section">
+        <div class="leg-container">
+            <div class="leg-faq-header">
+                <p class="leg-eyebrow">Frequently Asked Questions</p>
+                <h2 class="leg-h2">Buying Edibles at <span>LAXCC</span></h2>
+            </div>
+
+            <div class="leg-faq-list">
+
+                <div class="leg-faq-item">
+                    <button class="leg-faq-q" type="button">
+                        <h3>Where can I buy the best THC edibles in Los Angeles?</h3>
+                        <span class="leg-faq-toggle">+</span>
+                    </button>
+                    <div class="leg-faq-a">
+                        <p>LAXCC is a licensed Los Angeles dispensary at 8332 Lincoln Blvd — rated as the best dispensary for edibles near LAX. We carry the top-rated THC gummies, best cannabis edibles, chocolates, cookies, mints, and beverages from 15+ California edible brands including Smokiez, Kanha, Kiva, Camino, Lost Farm, Wyld, Big Pete's, St. Ides, and more. Walk in or order online for pickup.</p>
+                    </div>
+                </div>
+
+                <div class="leg-faq-item">
+                    <button class="leg-faq-q" type="button">
+                        <h3>What are the best edibles from a dispensary under $15?</h3>
+                        <span class="leg-faq-toggle">+</span>
+                    </button>
+                    <div class="leg-faq-a">
+                        <p>The best dispensary edibles for value start at $10 for Drops 100mg gummy shots in Lime and Strawberry. St. Ides 100mg High Tea Lemonade is $11. CQ 2oz cannabis shots are $14.99–$15.01 in four flavors — Strawberry Lemonade, Lemonade, Wildberry Guava, and Berry Lime. All are 100mg THC total — the strongest edibles at the best price in California.</p>
+                    </div>
+                </div>
+
+                <div class="leg-faq-item">
+                    <button class="leg-faq-q" type="button">
+                        <h3>What are the strongest edibles at your dispensary?</h3>
+                        <span class="leg-faq-toggle">+</span>
+                    </button>
+                    <div class="leg-faq-a">
+                        <p>Our strongest dispensary edibles are 100mg THC products — the California legal max per package. For strong edibles in California, try St. Ides 100mg shots ($11), Drops 100mg ($10), or CQ 100mg shots ($14.99) for fast-acting potency. For the best weed edibles in gummy form, Lost Farm live rosin gummies and Kanha Nano both deliver 100mg per pack with top-tier extraction quality.</p>
+                    </div>
+                </div>
+
+                <div class="leg-faq-item">
+                    <button class="leg-faq-q" type="button">
+                        <h3>What are the best edible brands and gummies in California?</h3>
+                        <span class="leg-faq-toggle">+</span>
+                    </button>
+                    <div class="leg-faq-a">
+                        <p>The top cannabis edible brands we carry include Kiva (best THC chocolate in California), Kanha (top-rated nano gummies), Camino (best effect-focused formulas), Lost Farm (best live rosin gummies), Wyld (America's #1 selling edible — best Wyld gummies in stock), Smokiez (best sour gummies), and Big Pete's (best cannabis cookies). All Category 4 lab-tested California edibles.</p>
+                    </div>
+                </div>
+
+                <div class="leg-faq-item">
+                    <button class="leg-faq-q" type="button">
+                        <h3>What are LAXCC's hours and is it cash only?</h3>
+                        <span class="leg-faq-toggle">+</span>
+                    </button>
+                    <div class="leg-faq-a">
+                        <p>LAXCC is open 7 days a week, 9:00 AM to 9:30 PM. We are cash only — there is an ATM on-site. Located at 8332 Lincoln Blvd, Los Angeles, CA 90045. Call <a href="tel:+13104293789" style="color: var(--accent-cyan); text-decoration: underline;">(310) 429-3789</a> with any questions. Ages 21+ with valid ID, or 18+ with a medical recommendation.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="leg-final-cta">
+        <div class="leg-container">
+            <h2>Shop THC Edibles at LAXCC</h2>
+            <p>Gummies, chocolates, drinks, mints, and cookies — all lab-tested, all precisely dosed, all on the shelf.</p>
+            <a href="https://laxcc.com/categories/edibles/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=EDIBLES" class="leg-cta">Browse the Full Menu <span class="leg-cta-arrow">&#x2192;</span></a>
+            <p class="leg-address">8332 Lincoln Blvd, Los Angeles, CA 90045 &nbsp;&#x2022;&nbsp; (310) 429-3789 &nbsp;&#x2022;&nbsp; Cash Only &nbsp;&#x2022;&nbsp; 9 AM – 9:30 PM Daily</p>
+        </div>
+    </section>
+
+</div>
+
+<script>
+(function() {
+    'use strict';
+
+    var guide = document.getElementById('laxcc-edibles-guide-2025');
+    if (!guide) return;
+
+    function handleFaqToggle(e) {
+        var btn = e.target.closest('.leg-faq-q');
+        if (!btn) return;
+        var item = btn.closest('.leg-faq-item');
+        if (!item) return;
+        item.classList.toggle('open');
+    }
+
+    guide.addEventListener('click', handleFaqToggle);
+})();
+</script>

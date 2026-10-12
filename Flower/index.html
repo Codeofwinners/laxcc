@@ -1,0 +1,1455 @@
+<!-- ============================================================
+     LAX CANNABIS CLUB — FLOWER BRANDS COLLECTION STRIP (ELEMENTOR SAFE)
+     Target Page: FLOWER category collection page
+     - Layout: Strictly 2 rows (top & bottom) with smooth horizontal scroll
+     - Fully responsive for mobile touch swipe and desktop navigation
+     - Static HTML, no JavaScript, 100% WordPress/Elementor WAF safe
+     ============================================================ -->
+
+<section id="laxcc-flower-brands-strip" class="vbs-section">
+    <div class="vbs-container">
+
+        <!-- HEADER TOOLBAR -->
+        <div class="vbs-header">
+            <div class="vbs-header-left">
+                <span class="vbs-kicker">Shop By Brand &bull; Live Inventory</span>
+                <h2 class="vbs-title">Top Weed &amp; Cannabis Flower Brands in Los Angeles</h2>
+                <p class="vbs-subtitle">Swipe or scroll to browse California's top indoor flower, bulk ounces &amp;
+                    top-shelf eighths in stock at our Los Angeles dispensary near LAX.</p>
+            </div>
+            <div class="vbs-header-controls">
+                <button type="button" class="vbs-arrow-btn vbs-arrow-prev" id="fbs-prev" aria-label="Scroll left"
+                    disabled>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        style="display:block!important;width:20px!important;height:20px!important;stroke:#17407A!important;fill:none!important;pointer-events:none!important;">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button type="button" class="vbs-arrow-btn vbs-arrow-next" id="fbs-next" aria-label="Scroll right">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        style="display:block!important;width:20px!important;height:20px!important;stroke:#17407A!important;fill:none!important;pointer-events:none!important;">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 2-ROW HORIZONTAL SCROLL CONTAINER -->
+        <div class="vbs-scroll-track" id="vbs-scroll-track">
+            <div class="vbs-grid" id="vbs-grid">
+                <a class="vbs-card active" href="#laxcc-flower-live-results" data-filter="all" aria-pressed="true"><span
+                        class="vbf-name">All Brands</span></a>
+                <a class="vbs-card" href="#laxcc-flower-live-results" data-filter="brand:top-shelf-cultivation"><span
+                        class="vbf-dot"></span><span class="vbf-name">Top Shelf Cultivation</span><span
+                        class="vbf-count">14</span></a>
+                <a class="vbs-card" href="#laxcc-flower-live-results" data-filter="brand:cannabiotix"><span
+                        class="vbf-dot"></span><span class="vbf-name">Cannabiotix</span><span
+                        class="vbf-count">12</span></a>
+                <a class="vbs-card" href="#laxcc-flower-live-results" data-filter="brand:tedz-budz"><span
+                        class="vbf-dot"></span><span class="vbf-name">Tedz Budz</span><span
+                        class="vbf-count">8</span></a>
+                <a class="vbs-card" href="#laxcc-flower-live-results" data-filter="brand:nameless-genetics"><span
+                        class="vbf-dot"></span><span class="vbf-name">Nameless Genetics</span><span
+                        class="vbf-count">7</span></a>
+                <a class="vbs-card" href="#laxcc-flower-live-results" data-filter="brand:jungle-boys"><span
+                        class="vbf-dot"></span><span class="vbf-name">Jungle Boys</span><span
+                        class="vbf-count">11</span></a>
+                <a class="vbs-card" href="#laxcc-flower-live-results" data-filter="brand:la-family-farms"><span
+                        class="vbf-dot"></span><span class="vbf-name">LA Family Farms</span><span
+                        class="vbf-count">9</span></a>
+                <a class="vbs-card" href="#laxcc-flower-live-results" data-filter="brand:west-coast-cure"><span
+                        class="vbf-dot"></span><span class="vbf-name">West Coast Cure</span><span
+                        class="vbf-count">16</span></a>
+                <a class="vbs-card" href="#laxcc-flower-live-results" data-filter="brand:claybourne-co"><span
+                        class="vbf-dot"></span><span class="vbf-name">Claybourne Co.</span><span
+                        class="vbf-count">10</span></a>
+                <a class="vbs-card" href="#laxcc-flower-live-results" data-filter="brand:thc-design"><span
+                        class="vbf-dot"></span><span class="vbf-name">THC Design</span><span
+                        class="vbf-count">6</span></a>
+                <a class="vbs-card" href="#laxcc-flower-live-results" data-filter="brand:delighted"><span
+                        class="vbf-dot"></span><span class="vbf-name">Delighted</span><span
+                        class="vbf-count">8</span></a>
+                <a class="vbs-card" href="#laxcc-flower-live-results" data-filter="brand:kush-company"><span
+                        class="vbf-dot"></span><span class="vbf-name">Kush Company</span><span
+                        class="vbf-count">7</span></a>
+                <a class="vbs-card" href="#laxcc-flower-live-results" data-filter="brand:green-dawg"><span
+                        class="vbf-dot"></span><span class="vbf-name">Green Dawg</span><span
+                        class="vbf-count">5</span></a>
+                <a class="vbs-card" href="#laxcc-flower-live-results" data-filter="brand:ember-valley"><span
+                        class="vbf-dot"></span><span class="vbf-name">Ember Valley</span><span
+                        class="vbf-count">6</span></a>
+                <a class="vbs-card" href="#laxcc-flower-live-results" data-filter="brand:maven"><span
+                        class="vbf-dot"></span><span class="vbf-name">Maven</span><span class="vbf-count">9</span></a>
+                <a class="vbs-card" href="#laxcc-flower-live-results" data-filter="brand:big-tree"><span
+                        class="vbf-dot"></span><span class="vbf-name">Big Tree</span><span
+                        class="vbf-count">8</span></a>
+                <a class="vbs-card" href="#laxcc-flower-live-results" data-filter="brand:pacific-stone"><span
+                        class="vbf-dot"></span><span class="vbf-name">Pacific Stone</span><span
+                        class="vbf-count">11</span></a>
+            </div>
+        </div>
+
+        <!-- MOBILE SWIPE HINT -->
+        <div class="vbs-scroll-hint">
+            <span>&larr; Swipe to explore live flower brands &rarr;</span>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    /* ============================================================
+       STYLES FOR LAXCC VAPE BRANDS STRIP
+       Scoped to #laxcc-flower-brands-strip for 100% Elementor safety
+       ============================================================ */
+    #laxcc-flower-brands-strip {
+        --vbs-navy-deep: #17407A;
+        --vbs-navy: #1D508A;
+        --vbs-orange: #F89459;
+        --vbs-orange-hover: #e57b3d;
+        --vbs-cream: #FBF8F2;
+        --vbs-white: #ffffff;
+        --vbs-border: rgba(23, 64, 122, 0.12);
+        --vbs-border-hover: #17407A;
+        --vbs-text-dark: #0f172a;
+        --vbs-text-muted: #64748b;
+        --vbs-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        --vbs-shadow-hover: 0 8px 22px rgba(23, 64, 122, 0.12);
+        --vbs-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        --vbs-font-serif: 'Playfair Display', Georgia, serif;
+
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0 auto;
+        padding: 1.25rem 1rem 0.75rem;
+        background: var(--vbs-cream);
+        font-family: var(--vbs-font-sans);
+        color: var(--vbs-text-dark);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    #laxcc-flower-brands-strip *,
+    #laxcc-flower-brands-strip *::before,
+    #laxcc-flower-brands-strip *::after {
+        box-sizing: border-box;
+    }
+
+    #laxcc-flower-brands-strip .vbs-container {
+        max-width: 1360px;
+        margin: 0 auto;
+    }
+
+    /* HEADER */
+    #laxcc-flower-brands-strip .vbs-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 1.25rem;
+        padding: 0 0.25rem;
+    }
+
+    #laxcc-flower-brands-strip .vbs-kicker {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--vbs-navy);
+        margin-bottom: 0.25rem;
+    }
+
+    #laxcc-flower-brands-strip .vbs-title {
+        font-family: var(--vbs-font-serif);
+        font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+        font-weight: 800;
+        color: var(--vbs-navy-deep);
+        margin: 0 0 0.25rem 0;
+        line-height: 1.2;
+    }
+
+    #laxcc-flower-brands-strip .vbs-subtitle {
+        font-size: 0.875rem;
+        color: var(--vbs-text-muted);
+        margin: 0;
+        max-width: 600px;
+    }
+
+    /* DESKTOP SCROLL ARROWS */
+    #laxcc-flower-brands-strip .vbs-header-controls {
+        display: flex !important;
+        gap: 8px !important;
+        flex-shrink: 0 !important;
+        align-items: center !important;
+    }
+
+    #laxcc-flower-brands-strip .vbs-arrow-btn {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        max-width: 40px !important;
+        min-height: 40px !important;
+        max-height: 40px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 50% !important;
+        background: #ffffff !important;
+        border: 2px solid var(--vbs-navy-deep) !important;
+        color: var(--vbs-navy-deep) !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+        box-shadow: 0 2px 8px rgba(23, 64, 122, 0.12) !important;
+        line-height: 1 !important;
+        outline: none !important;
+        box-sizing: border-box !important;
+        flex-shrink: 0 !important;
+        appearance: none !important;
+        -webkit-appearance: none !important;
+    }
+
+    #laxcc-flower-brands-strip .vbs-arrow-btn svg {
+        width: 20px !important;
+        height: 20px !important;
+        min-width: 20px !important;
+        min-height: 20px !important;
+        max-width: 20px !important;
+        max-height: 20px !important;
+        display: block !important;
+        stroke: var(--vbs-navy-deep) !important;
+        stroke-width: 3 !important;
+        fill: none !important;
+        pointer-events: none !important;
+        flex-shrink: 0 !important;
+        margin: 0 auto !important;
+    }
+
+    #laxcc-flower-brands-strip .vbs-arrow-btn:hover:not(:disabled) {
+        background: var(--vbs-navy-deep) !important;
+        color: #ffffff !important;
+        border-color: var(--vbs-navy-deep) !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 5px 14px rgba(23, 64, 122, 0.25) !important;
+    }
+
+    #laxcc-flower-brands-strip .vbs-arrow-btn:hover:not(:disabled) svg {
+        stroke: #ffffff !important;
+    }
+
+    #laxcc-flower-brands-strip .vbs-arrow-btn:disabled {
+        opacity: 0.25 !important;
+        cursor: not-allowed !important;
+        border-color: rgba(23, 64, 122, 0.2) !important;
+        box-shadow: none !important;
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-flower-brands-strip .vbs-header-controls {
+            display: none !important;
+        }
+    }
+
+    /* ============================================================
+       2-ROW HORIZONTAL SCROLL TRACK
+       - Strictly 2 rows (top & bottom)
+       - Auto-fills columns horizontally
+       ============================================================ */
+    #laxcc-flower-brands-strip .vbs-scroll-track {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        padding-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(23, 64, 122, 0.25) transparent;
+    }
+
+    #laxcc-flower-brands-strip .vbs-scroll-track::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    #laxcc-flower-brands-strip .vbs-scroll-track::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.04);
+        border-radius: 9999px;
+    }
+
+    #laxcc-flower-brands-strip .vbs-scroll-track::-webkit-scrollbar-thumb {
+        background: rgba(23, 64, 122, 0.25);
+        border-radius: 9999px;
+    }
+
+    #laxcc-flower-brands-strip .vbs-scroll-track::-webkit-scrollbar-thumb:hover {
+        background: var(--vbs-navy-deep);
+    }
+
+    #laxcc-flower-brands-strip .vbs-grid {
+        display: grid;
+        grid-template-rows: repeat(2, 34px);
+        /* STRICTLY 2 ROWS OF COMPACT CHIPS */
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+        gap: 8px;
+        width: max-content;
+        padding: 4px 2px;
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-flower-brands-strip .vbs-grid {
+            grid-template-rows: repeat(2, 32px);
+            gap: 6px;
+        }
+
+        #laxcc-flower-brands-strip {
+            padding: 1.25rem 0.75rem 1rem;
+        }
+    }
+
+    /* COMPACT BRAND PILL CHIPS (PATTERNED DIRECTLY AFTER VAPE-BATTERY.HTML) */
+    #laxcc-flower-brands-strip .vbs-card {
+        display: inline-flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        width: auto !important;
+        min-width: max-content;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        box-sizing: border-box !important;
+        height: 34px !important;
+        min-height: 0 !important;
+        padding: 0 13px !important;
+        margin: 0;
+        border: 1px solid rgba(23, 64, 122, 0.16);
+        border-radius: 6px;
+        background: #ffffff;
+        color: #17407A !important;
+        font: normal 700 12px/1.2 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        text-transform: none !important;
+        letter-spacing: normal !important;
+        white-space: nowrap;
+        text-decoration: none !important;
+        cursor: pointer;
+        outline: none !important;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+        transition: all 0.16s ease;
+        flex-shrink: 0;
+    }
+
+    #laxcc-flower-brands-strip .vbs-card:hover,
+    #laxcc-flower-brands-strip .vbs-card:focus-visible {
+        border-color: #F89459;
+        color: #F89459 !important;
+        transform: translateY(-1px);
+    }
+
+    #laxcc-flower-brands-strip .vbs-card.active {
+        background: #F89459 !important;
+        border-color: #F89459 !important;
+        color: #ffffff !important;
+        box-shadow: 0 2px 6px rgba(248, 148, 89, 0.25);
+    }
+
+    #laxcc-flower-brands-strip .vbf-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #F89459;
+        flex-shrink: 0;
+    }
+
+    #laxcc-flower-brands-strip .vbs-card.active .vbf-dot {
+        background: #ffffff;
+    }
+
+    #laxcc-flower-brands-strip .vbf-name {
+        display: block !important;
+        flex: 0 0 auto;
+        margin: 0 !important;
+        padding: 0 !important;
+        font: normal 700 12px/1.2 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        text-transform: none !important;
+        letter-spacing: normal !important;
+        white-space: nowrap !important;
+        color: inherit;
+    }
+
+    #laxcc-flower-brands-strip .vbf-count {
+        display: inline-flex !important;
+        flex: 0 0 auto;
+        align-items: center !important;
+        justify-content: center !important;
+        min-width: 18px;
+        height: 18px !important;
+        margin: 0 !important;
+        padding: 0 5px !important;
+        border-radius: 4px;
+        background: rgba(23, 64, 122, 0.08);
+        color: #17407A;
+        font: normal 800 10.5px/1 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        text-transform: none !important;
+        letter-spacing: normal !important;
+        white-space: nowrap !important;
+    }
+
+    #laxcc-flower-brands-strip .vbs-card.active .vbf-count {
+        background: rgba(255, 255, 255, 0.28);
+        color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-flower-brands-strip .vbs-card {
+            height: 32px !important;
+            padding: 0 11px !important;
+            font-size: 11.5px !important;
+        }
+
+        #laxcc-flower-brands-strip .vbf-name {
+            font-size: 11.5px !important;
+        }
+
+        #laxcc-flower-brands-strip .vbf-count {
+            min-width: 16px;
+            height: 16px !important;
+            font-size: 10px !important;
+        }
+    }
+
+    /* The WordPress live-inventory script replaces the initial brand pills. */
+    #laxcc-flower-brands-strip .vbs-card .vbs-card-logo-wrap {
+        display: none !important;
+    }
+
+    #laxcc-flower-brands-strip .vbs-card .vbs-card-body {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 6px !important;
+        width: auto !important;
+        min-width: 0 !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #laxcc-flower-brands-strip .vbs-card .vbs-card-name {
+        display: block !important;
+        flex: 0 0 auto !important;
+        position: static !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font: normal 700 12px/1.2 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        text-transform: none !important;
+        letter-spacing: normal !important;
+        white-space: nowrap !important;
+        color: inherit !important;
+    }
+
+    #laxcc-flower-brands-strip .vbs-card .vbs-card-count {
+        display: block !important;
+        flex: 0 0 auto !important;
+        position: static !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font: normal 600 10px/1.2 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        text-transform: none !important;
+        letter-spacing: normal !important;
+        white-space: nowrap !important;
+        color: inherit !important;
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-flower-brands-strip .vbs-card .vbs-card-name {
+            font-size: 11.5px !important;
+        }
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-card[hidden],
+    #laxcc-flower-live-results .laxcc-prod-card[data-flower-filter-excluded="true"] {
+        display: none !important;
+    }
+
+    /* MOBILE SWIPE HINT */
+    #laxcc-flower-brands-strip .vbs-scroll-hint {
+        display: none;
+        text-align: center;
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--vbs-text-muted);
+        margin-top: 0.25rem;
+    }
+
+    /* ── DEDICATED FLOWER PRICE FILTERS BAR (ABOVE PRODUCTS) ── */
+    #laxcc-flower-filters-strip {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 1360px;
+        margin: 1.5rem auto 1rem;
+        padding: 0 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    #laxcc-flower-filters-strip .laxcc-flower-filters-wrapper {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        gap: 8px;
+    }
+
+    #laxcc-flower-filters-strip .laxcc-flower-filters-track {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
+        flex: 1;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        white-space: nowrap;
+        padding: 4px 0 8px;
+    }
+
+    #laxcc-flower-filters-strip .laxcc-flower-filters-track::-webkit-scrollbar {
+        display: none;
+    }
+
+    #laxcc-flower-filters-strip .laxcc-flower-filter-pill {
+        background: transparent !important;
+        color: #17407A !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        border-radius: 0;
+        padding: 4px 6px;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.2;
+        cursor: pointer;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        text-decoration: none !important;
+        transition: all 0.2s ease;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        flex-shrink: 0;
+        opacity: 0.8;
+        position: relative;
+    }
+
+    #laxcc-flower-filters-strip .laxcc-flower-filter-pill:hover,
+    #laxcc-flower-filters-strip .laxcc-flower-filter-pill.active {
+        opacity: 1;
+        color: #F89459 !important;
+        transform: translateY(-1px);
+    }
+
+    #laxcc-flower-filters-strip .laxcc-flower-filter-pill::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 6px;
+        right: 6px;
+        height: 2px;
+        background: #F89459;
+        border-radius: 2px;
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
+    }
+
+    #laxcc-flower-filters-strip .laxcc-flower-filter-pill:hover::after,
+    #laxcc-flower-filters-strip .laxcc-flower-filter-pill.active::after {
+        transform: scaleX(1);
+    }
+
+    /* MINIMALISTIC SCROLL ARROW (NON-OVERLAPPING) */
+    #laxcc-flower-filters-strip .laxcc-filters-scroll-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        border-radius: 50%;
+        background: #ffffff;
+        border: 1.5px solid rgba(23, 64, 122, 0.2);
+        color: #17407A;
+        box-shadow: 0 2px 6px rgba(23, 64, 122, 0.08);
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        flex-shrink: 0;
+        transition: all 0.2s ease;
+        outline: none;
+    }
+
+    #laxcc-flower-filters-strip .laxcc-filters-scroll-arrow:hover {
+        background: #17407A;
+        color: #ffffff;
+        border-color: #17407A;
+        transform: scale(1.05);
+    }
+
+    #laxcc-flower-filters-strip .laxcc-filters-scroll-arrow svg {
+        width: 14px;
+        height: 14px;
+        stroke: currentColor;
+        pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-flower-filters-strip {
+            margin: 1rem auto 0.75rem;
+            padding: 0 0.75rem;
+        }
+
+        #laxcc-flower-filters-strip .laxcc-flower-filters-track {
+            gap: 10px;
+        }
+
+        #laxcc-flower-filters-strip .laxcc-flower-filter-pill {
+            font-size: 12px;
+            padding: 3px 4px;
+        }
+
+        #laxcc-flower-filters-strip .laxcc-filters-scroll-arrow {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+        }
+
+        #laxcc-flower-filters-strip .laxcc-filters-scroll-arrow svg {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    /* ── LIVE FLOWER PRODUCTS GRID ── */
+    #laxcc-flower-live-results {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 1360px;
+        margin: 1rem auto 2.5rem;
+        padding: 0 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* SLEEK & RESPONSIVE HEADER BANNER */
+    #laxcc-flower-live-results .laxcc-sort-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    #laxcc-flower-live-results .laxcc-sort-label {
+        color: #17407A;
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap;
+    }
+
+    #laxcc-flower-live-results .laxcc-sort-select {
+        width: min(100%, 245px);
+        height: 36px;
+        margin: 0;
+        padding: 0 34px 0 11px;
+        border: 1px solid rgba(23, 64, 122, 0.22);
+        border-radius: 8px;
+        background-color: #ffffff;
+        color: #17407A;
+        font: 700 12px/1.2 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        cursor: pointer;
+        box-shadow: 0 2px 7px rgba(23, 64, 122, 0.06);
+    }
+
+    #laxcc-flower-live-results .laxcc-sort-select:focus-visible {
+        outline: 3px solid rgba(0, 175, 201, 0.25);
+        outline-offset: 2px;
+        border-color: #00AFC9;
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-flower-live-results .laxcc-sort-toolbar {
+            align-items: stretch;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 8px;
+        }
+
+        #laxcc-flower-live-results .laxcc-sort-select {
+            width: 100%;
+        }
+    }
+
+    #laxcc-flower-live-results .laxcc-grid-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 8px 14px;
+        background: #f7fafc;
+        border: 1px solid rgba(23, 64, 122, 0.1);
+        border-radius: 12px;
+        margin-bottom: 1.25rem;
+        box-sizing: border-box;
+    }
+
+    #laxcc-flower-live-results .laxcc-grid-header-left {
+        display: flex;
+        align-items: center;
+        gap: 8px 12px;
+        flex-wrap: wrap;
+        min-width: 0;
+    }
+
+    #laxcc-flower-live-results .laxcc-grid-badge {
+        background: rgba(248, 148, 89, 0.15);
+        color: #e06c28;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap !important;
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+        line-height: 1.2;
+    }
+
+    #laxcc-flower-live-results .laxcc-grid-count {
+        font-size: 12px;
+        font-weight: 600;
+        color: #64748b;
+        white-space: nowrap !important;
+        line-height: 1.2;
+    }
+
+    #laxcc-flower-live-results .laxcc-grid-clear-btn {
+        background: #ffffff;
+        border: 1px solid rgba(23, 64, 122, 0.2);
+        color: #17407A;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 5px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        white-space: nowrap !important;
+        flex-shrink: 0;
+        line-height: 1.2;
+        transition: all 0.2s ease;
+    }
+
+    #laxcc-flower-live-results .laxcc-grid-clear-btn:hover {
+        background: #17407A;
+        color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-flower-live-results {
+            padding: 0 0.75rem;
+            margin: 0.75rem auto 2rem;
+        }
+
+        #laxcc-flower-live-results .laxcc-grid-header {
+            padding: 6px 10px;
+            gap: 6px;
+            margin-bottom: 0.85rem;
+        }
+
+        #laxcc-flower-live-results .laxcc-grid-header-left {
+            gap: 4px 8px;
+        }
+
+        #laxcc-flower-live-results .laxcc-grid-badge {
+            font-size: 11px;
+            padding: 3px 8px;
+        }
+
+        #laxcc-flower-live-results .laxcc-grid-count {
+            font-size: 11px;
+        }
+
+        #laxcc-flower-live-results .laxcc-grid-clear-btn {
+            font-size: 10px;
+            padding: 4px 8px;
+        }
+    }
+
+    #laxcc-flower-live-results .laxcc-products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 18px;
+    }
+
+    #laxcc-flower-brands-strip .laxcc-live-status,
+    #laxcc-flower-live-results .laxcc-live-status {
+        grid-column: 1 / -1;
+        width: 100%;
+        padding: 24px;
+        border: 1px dashed rgba(23, 64, 122, 0.2);
+        border-radius: 12px;
+        background: #f8fafc;
+        color: #64748b;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-card {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 14px;
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none !important;
+        color: inherit !important;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(23, 64, 122, 0.12);
+        border-color: rgba(248, 148, 89, 0.4);
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-img-wrap {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 10px;
+        background: #f8fafc;
+        overflow: hidden;
+        margin-bottom: 12px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-card:hover .laxcc-prod-img {
+        transform: scale(1.04);
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-strain {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+        padding: 3px 8px;
+        border-radius: 6px;
+        letter-spacing: 0.04em;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(4px);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        color: #17407A;
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-potency-badge {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        font-size: 10px;
+        font-weight: 800;
+        padding: 3px 7px;
+        border-radius: 6px;
+        background: rgba(23, 64, 122, 0.88);
+        color: #ffffff;
+        letter-spacing: 0.02em;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-brand {
+        font-size: 11px;
+        font-weight: 800;
+        color: #00AFC9;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 4px;
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-name {
+        font-size: 14px;
+        font-weight: 700;
+        color: #17407A;
+        line-height: 1.3;
+        margin: 0 0 6px 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: 36px;
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-potency-line {
+        font-size: 11px;
+        font-weight: 700;
+        color: #64748b;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-thc-pill {
+        background: rgba(248, 148, 89, 0.12);
+        color: #e06c28;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 800;
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-weight-pill {
+        background: rgba(23, 64, 122, 0.1);
+        color: #17407A;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 800;
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-cbd-pill {
+        background: rgba(0, 175, 201, 0.12);
+        color: #00879c;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 800;
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-footer {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-price {
+        font-size: 16px;
+        font-weight: 800;
+        color: #17407A;
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-price-orig {
+        font-size: 11px;
+        color: #8e8e93;
+        text-decoration: line-through;
+        margin-left: 4px;
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-order-btn {
+        background: #F89459;
+        color: #ffffff !important;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    #laxcc-flower-live-results .laxcc-prod-order-btn:hover {
+        background: #e06c28;
+        transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-flower-live-results .laxcc-products-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        #laxcc-flower-live-results .laxcc-prod-card {
+            padding: 10px;
+        }
+
+        #laxcc-flower-live-results .laxcc-prod-name {
+            font-size: 12px;
+            min-height: 32px;
+        }
+
+        #laxcc-flower-live-results .laxcc-prod-price {
+            font-size: 14px;
+        }
+
+        #laxcc-flower-live-results .laxcc-prod-order-btn {
+            font-size: 10px;
+            padding: 4px 8px;
+        }
+    }
+</style>
+
+<!-- DEDICATED FLOWER PRICE FILTERS (ABOVE PRODUCTS) -->
+<div id="laxcc-flower-filters-strip" class="laxcc-flower-filters-container">
+    <div class="laxcc-flower-filters-wrapper">
+        <div class="laxcc-flower-filters-track" id="laxcc-flower-filters-track" role="group"
+            aria-label="Flower Price Filters">
+            <button type="button" class="laxcc-flower-filter-pill active">🌸 All Flower</button>
+            <button type="button" class="laxcc-flower-filter-pill" data-price="20">🌸 Flower Under $20</button>
+            <button type="button" class="laxcc-flower-filter-pill" data-price="30">🌸 Flower Under $30</button>
+            <button type="button" class="laxcc-flower-filter-pill" data-price="40">🌸 Flower Under $40</button>
+            <button type="button" class="laxcc-flower-filter-pill" data-price="50">🌸 Flower Under $50</button>
+            <button type="button" class="laxcc-flower-filter-pill" data-price="60">🌸 Flower Under $60</button>
+        </div>
+        <button type="button" class="laxcc-filters-scroll-arrow" aria-label="Scroll Flower filters right">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<!-- DYNAMIC LIVE FLOWER RESULTS CONTAINER -->
+<div id="laxcc-flower-live-results">
+    <div class="laxcc-sort-toolbar">
+        <label class="laxcc-sort-label" for="laxcc-flower-sort">Sort products</label>
+        <select class="laxcc-sort-select" id="laxcc-flower-sort" aria-label="Sort Flower products">
+            <option value="default">Default order</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="thc-percent-asc">THC %: Low to High</option>
+            <option value="thc-percent-desc">THC %: High to Low</option>
+        </select>
+    </div>
+    <div class="laxcc-grid-header">
+        <div class="laxcc-grid-header-left">
+            <span class="laxcc-grid-badge" id="laxcc-flower-badge">🌸 All Flower</span>
+            <span class="laxcc-grid-count" id="laxcc-flower-count">Checking live inventory&hellip;</span>
+        </div>
+        <button type="button" class="laxcc-grid-clear-btn" id="laxcc-flower-clear" style="display: none;">✕ View
+            All</button>
+    </div>
+    <div class="laxcc-products-grid">
+        <div class="laxcc-live-status">Checking live inventory&hellip;</div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        'use strict';
+
+        var filters = document.getElementById('laxcc-flower-filters-strip');
+        var results = document.getElementById('laxcc-flower-live-results');
+        if (!results) return;
+
+        var priceButtons = filters ? Array.prototype.slice.call(filters.querySelectorAll('.laxcc-flower-filter-pill')) : [];
+        var grid = results.querySelector('.laxcc-products-grid');
+        var brandGrid = document.getElementById('vbs-grid');
+        var cards = [];
+        var badge = document.getElementById('laxcc-flower-badge');
+        var count = document.getElementById('laxcc-flower-count');
+        var clearBtn = document.getElementById('laxcc-flower-clear');
+        var sort = document.getElementById('laxcc-flower-sort');
+        var currentFilter = 'all';
+        var currentFilterLabel = 'All Flower';
+        var lastLoadedAt = 0;
+        var loadingPromise = null;
+
+        var DUTCHIE_ENDPOINT = 'https://plus.dutchie.com/plus/2021-07/graphql';
+        var DUTCHIE_PUBLIC_TOKEN = 'public-eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJBUEktQ0xJRU5UIiwiZXhwIjozMzI0MTMzMzI5OCwiaWF0IjoxNjg0NDI0NDk4LCJpc3MiOiJodHRwczovL2R1dGNoaWUuY29tIiwianRpIjoiNjI0ZjYzMjItZDE3Mi00OTIwLTkzZmItNTA1ZGEzMmY2ZWU2IiwiZW50ZXJwcmlzZV9pZCI6ImI0NTg3NDIzLTZkYjYtNDgxMi1iMDlkLWVlYjM4M2Y0YmYzOCIsInV1aWQiOiJhMjhkMzZiNy00ZDJmLTQ4YTUtODhhNC1kZWI0NWUxMzYxOWUifQ.8jKBV95mBDuXJzxZeUajF_5Mv17xt3B9Iwc-w-zVWdo';
+        var RETAILER_ID = '6ed054f8-19a5-4991-b562-c4df2a287ae3';
+        var PAGE_SIZE = 100;
+        var MAX_PRODUCTS = 500;
+        var REFRESH_MS = 5 * 60 * 1000;
+
+        // Brand scroll track & arrows
+        var track = document.getElementById('vbs-scroll-track');
+        var prevBtn = document.getElementById('fbs-prev');
+        var nextBtn = document.getElementById('fbs-next');
+        if (track && prevBtn && nextBtn) {
+            function updateArrows() {
+                prevBtn.disabled = track.scrollLeft <= 4;
+                nextBtn.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+            }
+            prevBtn.addEventListener('click', function () {
+                track.scrollBy({ left: -320, behavior: 'smooth' });
+            });
+            nextBtn.addEventListener('click', function () {
+                track.scrollBy({ left: 320, behavior: 'smooth' });
+            });
+            track.addEventListener('scroll', updateArrows);
+            updateArrows();
+        }
+
+        // Filter track arrow
+        var filterTrack = document.getElementById('laxcc-flower-filters-track');
+        var filterArrow = filters ? filters.querySelector('.laxcc-filters-scroll-arrow') : null;
+        if (filterTrack && filterArrow) {
+            filterArrow.addEventListener('click', function () {
+                filterTrack.scrollBy({ left: 200, behavior: 'smooth' });
+            });
+        }
+
+        function escapeHtml(value) {
+            return String(value === null || value === undefined ? '' : value)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function isNumber(value) {
+            return typeof value === 'number' && isFinite(value);
+        }
+
+        function priceForVariant(variant) {
+            if (isNumber(variant.specialPriceRec) && variant.specialPriceRec >= 0) return variant.specialPriceRec;
+            if (isNumber(variant.priceRec) && variant.priceRec >= 0) return variant.priceRec;
+            if (isNumber(variant.specialPriceMed) && variant.specialPriceMed >= 0) return variant.specialPriceMed;
+            return isNumber(variant.priceMed) && variant.priceMed >= 0 ? variant.priceMed : null;
+        }
+
+        function normalizeProduct(product) {
+            if (!product || !product.id || !product.name || !product.slug) return null;
+
+            var variants = Array.isArray(product.variants) ? product.variants.filter(function (variant) {
+                return !isNumber(variant.quantity) || variant.quantity > 0;
+            }) : [];
+            if (!variants.length) return null;
+
+            var priced = variants.map(function (variant) {
+                return { variant: variant, price: priceForVariant(variant) };
+            }).filter(function (item) { return item.price !== null; });
+            if (!priced.length) return null;
+            priced.sort(function (a, b) { return a.price - b.price; });
+
+            var options = [];
+            variants.forEach(function (variant) {
+                var option = typeof variant.option === 'string' ? variant.option.trim() : '';
+                if (option && options.indexOf(option) === -1) options.push(option);
+            });
+            var quantity = variants.reduce(function (sum, variant) {
+                return sum + (isNumber(variant.quantity) && variant.quantity > 0 ? variant.quantity : 0);
+            }, 0);
+
+            var name = product.name;
+            var thcText = product.potencyThc && product.potencyThc.formatted ? product.potencyThc.formatted : '';
+            var thcMatch = String(thcText).match(/\d+(?:\.\d+)?/);
+            var image = product.images && product.images[0] && typeof product.images[0].url === 'string' ? product.images[0].url : '';
+
+            return {
+                id: product.id,
+                name: name,
+                slug: product.slug,
+                brand: product.brand && product.brand.name ? product.brand.name : '',
+                brandKey: product.brand && product.brand.name ? product.brand.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') : 'other',
+                image: image,
+                strain: product.strainType && product.strainType !== 'NOT_APPLICABLE' ? product.strainType.replace(/_/g, ' ') : '',
+                thc: thcText,
+                thcValue: thcMatch ? Number(thcMatch[0]) : 0,
+                cbd: product.potencyCbd && product.potencyCbd.formatted ? product.potencyCbd.formatted : '',
+                options: options,
+                price: priced[0].price,
+                quantity: quantity
+            };
+        }
+
+        function fetchDutchiePage(offset, accumulated, expectedCount) {
+            var query = [
+                'query LaxccFlowerProducts($retailerId: ID!, $filter: MenuFilter, $pagination: Pagination) {',
+                'menu(retailerId: $retailerId, filter: $filter, pagination: $pagination) {',
+                'productsCount products { id name slug category strainType images { url } brand { name } potencyThc { formatted } potencyCbd { formatted }',
+                'variants { id option quantity priceRec priceMed specialPriceRec specialPriceMed }',
+                '} } }'
+            ].join(' ');
+
+            return fetch(DUTCHIE_ENDPOINT, {
+                method: 'POST',
+                cache: 'no-store',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + DUTCHIE_PUBLIC_TOKEN
+                },
+                body: JSON.stringify({
+                    query: query,
+                    variables: {
+                        retailerId: RETAILER_ID,
+                        filter: { category: 'Flower' },
+                        pagination: { limit: PAGE_SIZE, offset: offset }
+                    }
+                })
+            }).then(function (response) {
+                if (!response.ok) throw new Error('Dutchie HTTP ' + response.status);
+                return response.json();
+            }).then(function (payload) {
+                if (payload.errors && payload.errors.length) throw new Error(payload.errors[0].message || 'Dutchie GraphQL error');
+                var menu = payload.data && payload.data.menu;
+                if (!menu || !Array.isArray(menu.products)) throw new Error('Dutchie menu data missing');
+
+                var total = expectedCount === null ? menu.productsCount : expectedCount;
+                if (!isNumber(total)) total = accumulated.length + menu.products.length;
+                if (total > MAX_PRODUCTS) throw new Error('Dutchie result exceeds safe product cap');
+
+                var combined = accumulated.concat(menu.products);
+                if (combined.length >= total) return combined.slice(0, total);
+                if (!menu.products.length) throw new Error('Dutchie returned an incomplete product list');
+                return fetchDutchiePage(offset + menu.products.length, combined, total);
+            });
+        }
+
+        function productCard(product, index) {
+            var href = 'https://laxcc.com/shop/?retailer_id=' + RETAILER_ID + '&products_search=' + encodeURIComponent(product.name);
+            var image = product.image
+                ? '<img class="laxcc-prod-img" src="' + escapeHtml(product.image) + '" alt="' + escapeHtml(product.name) + '" loading="lazy" width="240" height="240">'
+                : '<div class="laxcc-prod-no-img">🌸</div>';
+            var strain = product.strain ? '<span class="laxcc-prod-strain">' + escapeHtml(product.strain) + '</span>' : '';
+            var thc = product.thc ? '<span class="laxcc-prod-potency-badge">' + escapeHtml(product.thc) + ' THC</span>' : '';
+            var brand = product.brand ? '<span class="laxcc-prod-brand">' + escapeHtml(product.brand) + '</span>' : '';
+            var weight = product.options && product.options.length ? '<span class="laxcc-prod-weight-pill">' + escapeHtml(product.options[0]) + '</span>' : '<span class="laxcc-prod-weight-pill">Flower</span>';
+            var cbd = product.cbd ? '<span class="laxcc-prod-cbd-pill">' + escapeHtml(product.cbd) + ' CBD</span>' : '';
+
+            return '<a class="laxcc-prod-card" href="' + href + '" target="_blank" rel="noopener" data-price="' + product.price + '" data-thc="' + product.thcValue + '" data-brand="' + escapeHtml(product.brandKey) + '" data-units="' + (product.quantity || 1) + '" data-laxcc-original-index="' + index + '">' +
+                '<div class="laxcc-prod-img-wrap">' + image + strain + thc + '</div>' + brand +
+                '<h3 class="laxcc-prod-name">' + escapeHtml(product.name) + '</h3>' +
+                '<div class="laxcc-prod-potency-line">' + weight + cbd + '</div>' +
+                '<div class="laxcc-prod-footer"><div class="laxcc-prod-price">$' + Number(product.price).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '</div>' +
+                '<span class="laxcc-prod-order-btn">Order &rarr;</span></div></a>';
+        }
+
+        function renderBrands(products) {
+            if (!brandGrid) return;
+            var groups = {};
+            products.forEach(function (product) {
+                var brand = product.brand || 'Other';
+                groups[brand] = (groups[brand] || 0) + 1;
+            });
+
+            var sortedBrands = Object.keys(groups).sort(function (a, b) {
+                return groups[b] - groups[a];
+            });
+
+            var html = '<a class="vbs-card ' + (currentFilter === 'all' ? 'active' : '') + '" href="#laxcc-flower-live-results" data-filter="all" aria-pressed="' + (currentFilter === 'all') + '"><span class="vbf-name">All Brands</span></a>';
+
+            html += sortedBrands.map(function (brand) {
+                var total = groups[brand];
+                var key = brand.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                var isActive = currentFilter === ('brand:' + key);
+                return '<a class="vbs-card ' + (isActive ? 'active' : '') + '" href="#laxcc-flower-live-results" data-filter="brand:' + escapeHtml(key) + '" aria-pressed="' + isActive + '">' +
+                    '<span class="vbf-dot"></span>' +
+                    '<span class="vbf-name">' + escapeHtml(brand) + '</span>' +
+                    '<span class="vbf-count">' + total + '</span>' +
+                    '</a>';
+            }).join('');
+
+            brandGrid.innerHTML = html;
+            bindBrandClicks();
+        }
+
+        function bindBrandClicks() {
+            if (!brandGrid || brandGrid.dataset.flowerFilterBound) return;
+            brandGrid.dataset.flowerFilterBound = 'true';
+            brandGrid.addEventListener('click', function (event) {
+                    var bCard = event.target.closest('.vbs-card');
+                    if (!bCard || !brandGrid.contains(bCard)) return;
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+                    var name = bCard.querySelector('.vbf-name, .vbs-card-name');
+                    var brandText = bCard.getAttribute('data-live-brand') || (name ? name.textContent.trim() : 'All Brands');
+                    var filterVal = bCard.getAttribute('data-filter') || ('brand:' + brandKey(brandText));
+                    brandGrid.querySelectorAll('.vbs-card').forEach(function (c) {
+                        c.classList.remove('active');
+                        c.setAttribute('aria-pressed', 'false');
+                    });
+                    bCard.classList.add('active');
+                    bCard.setAttribute('aria-pressed', 'true');
+                    priceButtons.forEach(function (btn) {
+                        btn.classList.remove('active');
+                    });
+                    applyFilter(filterVal, brandText);
+                    results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, true);
+        }
+
+        function brandKey(value) {
+            return String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        }
+
+        function matches(card, filter) {
+            var price = Number(card.dataset.price);
+            var brandName = card.querySelector('.laxcc-prod-brand');
+            var brand = brandKey(card.dataset.brand || (brandName ? brandName.textContent.trim() : 'Other'));
+
+            if (filter === 'price-20') return price <= 20;
+            if (filter === 'price-30') return price <= 30;
+            if (filter === 'price-40') return price <= 40;
+            if (filter === 'price-50') return price <= 50;
+            if (filter === 'price-60') return price <= 60;
+            if (filter && filter.indexOf('brand:') === 0) {
+                var target = filter.substring(6);
+                return brand === target;
+            }
+            return true;
+        }
+
+        function applyFilter(filter, label) {
+            cards = Array.prototype.slice.call(grid.querySelectorAll('.laxcc-prod-card'));
+            var visible = 0;
+            var units = 0;
+            currentFilter = filter;
+            currentFilterLabel = label;
+            cards.forEach(function (card) {
+                var show = matches(card, filter);
+                // The site-wide category engine rewrites `hidden` and display.
+                // Keep our selection separately so its reset cannot reveal excluded brands.
+                card.setAttribute('data-flower-filter-excluded', show ? 'false' : 'true');
+                card.hidden = !show;
+                if (show) card.style.removeProperty('display');
+                if (show) {
+                    visible += 1;
+                    units += Number(card.dataset.units) || 0;
+                }
+            });
+
+            if (badge) badge.textContent = label;
+            if (count) count.textContent = visible + (visible === 1 ? ' product' : ' products') + ' \u2022 ' + units + (units === 1 ? ' unit' : ' units') + ' \u2022 Live Inventory';
+            if (clearBtn) clearBtn.style.display = filter === 'all' ? 'none' : 'inline-flex';
+        }
+
+        function applySort() {
+            if (!sort) return;
+            cards = Array.prototype.slice.call(grid.querySelectorAll('.laxcc-prod-card'));
+            var mode = sort.value;
+            var sorted = cards.slice().sort(function (a, b) {
+                if (mode === 'price-asc') return Number(a.dataset.price) - Number(b.dataset.price);
+                if (mode === 'price-desc') return Number(b.dataset.price) - Number(a.dataset.price);
+                if (mode === 'thc-percent-asc') return Number(a.dataset.thc) - Number(b.dataset.thc);
+                if (mode === 'thc-percent-desc') return Number(b.dataset.thc) - Number(a.dataset.thc);
+                return Number(a.dataset.laxccOriginalIndex) - Number(b.dataset.laxccOriginalIndex);
+            });
+            sorted.forEach(function (card) { grid.appendChild(card); });
+        }
+
+        function publishProducts(products) {
+            var normalized = products.map(normalizeProduct).filter(Boolean);
+            normalized.sort(function (a, b) {
+                return a.price - b.price || a.name.localeCompare(b.name);
+            });
+            if (normalized.length) {
+                grid.innerHTML = normalized.map(productCard).join('');
+            } else {
+                grid.innerHTML = '<div class="laxcc-live-status">No flower products are currently in stock. Please check back soon.</div>';
+            }
+            cards = Array.prototype.slice.call(grid.querySelectorAll('.laxcc-prod-card'));
+            renderBrands(normalized);
+            results.setAttribute('data-laxcc-api-status', 'live');
+            results.removeAttribute('aria-busy');
+            lastLoadedAt = Date.now();
+            applySort();
+            applyFilter(currentFilter, currentFilterLabel);
+        }
+
+        function showInventoryUnavailable(error) {
+            grid.innerHTML = '<div class="laxcc-live-status">Live flower inventory is temporarily unavailable. Please use the online menu to confirm current stock.</div>';
+            cards = [];
+            if (count) count.textContent = 'Live inventory temporarily unavailable';
+            results.setAttribute('data-laxcc-api-status', 'unavailable');
+            results.removeAttribute('aria-busy');
+            if (window.console && console.warn) console.warn('[LAXCC] Dutchie flower inventory refresh failed.', error);
+        }
+
+        function refreshInventory() {
+            if (loadingPromise) return loadingPromise;
+            results.setAttribute('aria-busy', 'true');
+            if (count) count.textContent = 'Refreshing live inventory\u2026';
+            loadingPromise = fetchDutchiePage(0, [], null).then(function (products) {
+                publishProducts(products);
+                return true;
+            }).catch(function (error) {
+                showInventoryUnavailable(error);
+                return false;
+            }).then(function (result) {
+                loadingPromise = null;
+                return result;
+            });
+            return loadingPromise;
+        }
+
+        // Initial brand cards click binding for pre-rendered pills
+        bindBrandClicks();
+
+        // Keep the selection when WordPress replaces the live product cards.
+        if (window.MutationObserver) {
+            new MutationObserver(function () {
+                applyFilter(currentFilter, currentFilterLabel);
+            }).observe(grid, { childList: true });
+        }
+
+        // Price filter pill click binding
+        priceButtons.forEach(function (button) {
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                var filterKey = button.dataset.price ? ('price-' + button.dataset.price) : 'all';
+                priceButtons.forEach(function (b) { b.classList.remove('active'); });
+                button.classList.add('active');
+
+                // Clear active from brand pills when price filter selected
+                if (brandGrid) {
+                    var brandCards = brandGrid.querySelectorAll('.vbs-card');
+                    brandCards.forEach(function (c) {
+                        c.classList.toggle('active', c.getAttribute('data-filter') === 'all');
+                    });
+                }
+                applyFilter(filterKey, button.textContent.trim());
+            }, true);
+        });
+
+        if (clearBtn) {
+            clearBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                priceButtons.forEach(function (b, idx) { b.classList.toggle('active', idx === 0); });
+                if (brandGrid) {
+                    var brandCards = brandGrid.querySelectorAll('.vbs-card');
+                    brandCards.forEach(function (c) {
+                        c.classList.toggle('active', c.getAttribute('data-filter') === 'all');
+                    });
+                }
+                applyFilter('all', '🌸 All Flower');
+            }, true);
+        }
+
+        if (sort) {
+            sort.addEventListener('change', function () {
+                applySort();
+            });
+        }
+
+        window.setInterval(function () {
+            if (!document.hidden && Date.now() - lastLoadedAt >= REFRESH_MS) refreshInventory();
+        }, 60 * 1000);
+        document.addEventListener('visibilitychange', function () {
+            if (!document.hidden && Date.now() - lastLoadedAt >= REFRESH_MS) refreshInventory();
+        });
+
+        refreshInventory();
+    }());
+</script>

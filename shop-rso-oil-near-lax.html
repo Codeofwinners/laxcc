@@ -1,0 +1,558 @@
+<!-- ============================================================
+  LAXCC &mdash; Emerald Bay Extracts RSO Spotlight
+  Aesthetics: Premium, Clinical-Grade, Authoritative
+  Scoped: .laxcc-brand-spotlight
+============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;1,9..144,900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ============================================================
+   DESIGN TOKENS & SCOPE
+============================================================ */
+.laxcc-brand-spotlight,
+.laxcc-brand-spotlight *,
+.laxcc-brand-spotlight *::before,
+.laxcc-brand-spotlight *::after { box-sizing: border-box; }
+
+.laxcc-brand-spotlight {
+  --emerald: #10B981;
+  --emerald-dk: #065F46;
+  --slate: #27332F;
+  --slate-lt: #3D4F4A;
+  --cream: #FBF8F2;
+  --gold: #D4AF37;
+  --ink: #1A1A1A;
+  --muted: #6B7280;
+  --white: #FFFFFF;
+  
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--slate);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.laxcc-brand-spotlight h1,
+.laxcc-brand-spotlight h2,
+.laxcc-brand-spotlight h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  color: var(--slate);
+}
+
+.laxcc-brand-spotlight p {
+  font-size: 18px;
+  margin-bottom: 1.5rem;
+  color: var(--slate);
+}
+
+.laxcc-brand-spotlight .container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================================
+   HERO SECTION
+============================================================ */
+.laxcc-brand-spotlight .hero {
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.laxcc-brand-spotlight .hero-bg {
+  width: 100%;
+}
+
+.laxcc-brand-spotlight .hero-bg img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.laxcc-brand-spotlight .hero-intro {
+  padding: 80px 0 60px;
+  background: var(--white);
+  text-align: center;
+}
+
+.laxcc-brand-spotlight .hero-intro .container {
+  max-width: 900px;
+}
+
+.laxcc-brand-spotlight .eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--emerald);
+  margin-bottom: 20px;
+}
+
+.laxcc-brand-spotlight .hero-intro h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  color: var(--slate);
+  margin-bottom: 24px;
+}
+
+.laxcc-brand-spotlight .hero-intro .lede {
+  font-size: clamp(18px, 2vw, 22px);
+  color: var(--slate-lt);
+  margin-bottom: 32px;
+  font-weight: 400;
+}
+
+.laxcc-brand-spotlight .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--emerald);
+  color: var(--white) !important;
+  padding: 16px 32px;
+  border-radius: 4px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* REMOVE ALL HOVER EFFECTS */
+.laxcc-brand-spotlight .btn-primary:hover,
+.laxcc-brand-spotlight a:hover {
+  background: var(--emerald) !important;
+  color: var(--white) !important;
+  transform: none !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
+}
+
+.laxcc-brand-spotlight a {
+  transition: none !important;
+  color: inherit;
+}
+
+/* ============================================================
+   BRAND STORY / NURSE FOUNDED
+============================================================ */
+.laxcc-brand-spotlight .story-section {
+  padding: 100px 0;
+  background: var(--cream);
+}
+
+.laxcc-brand-spotlight .story-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .laxcc-brand-spotlight .story-grid {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+
+.laxcc-brand-spotlight .story-image {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  background: var(--white);
+  line-height: 0;
+}
+
+.laxcc-brand-spotlight .story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.laxcc-brand-spotlight .image-credit {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: right;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* LEVITATION ANIMATION */
+@keyframes levitate {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+.laxcc-brand-spotlight .levitate {
+  animation: levitate 4s ease-in-out infinite;
+}
+
+.laxcc-brand-spotlight .quote-box {
+  border-left: 4px solid var(--emerald);
+  padding-left: 24px;
+  margin: 32px 0;
+  font-style: italic;
+  color: var(--slate);
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+}
+
+/* ============================================================
+   THE RSO LEGACY
+============================================================ */
+.laxcc-brand-spotlight .rso-legacy {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.laxcc-brand-spotlight .legacy-head {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.laxcc-brand-spotlight .legacy-head h2 { font-size: 48px; margin-bottom: 20px; }
+
+.laxcc-brand-spotlight .feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.laxcc-brand-spotlight .feature-card {
+  background: var(--cream);
+  padding: 40px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.laxcc-brand-spotlight .feature-card:hover { transform: translateY(-8px); }
+
+.laxcc-brand-spotlight .feature-card i {
+  font-size: 32px;
+  color: var(--emerald);
+  margin-bottom: 20px;
+}
+
+.laxcc-brand-spotlight .feature-card h3 { font-size: 24px; margin-bottom: 16px; }
+
+/* ============================================================
+   PRODUCT SPOTLIGHT
+============================================================ */
+.laxcc-brand-spotlight .product-spotlight {
+  padding: 100px 0;
+  background: var(--cream);
+  color: var(--slate);
+}
+
+.laxcc-brand-spotlight .product-spotlight h2 { 
+  color: var(--slate); 
+  text-align: center; 
+  font-size: 48px; 
+  margin-bottom: 60px; 
+}
+
+.laxcc-brand-spotlight .product-spotlight p {
+  color: var(--slate) !important;
+}
+
+.laxcc-brand-spotlight .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+}
+
+.laxcc-brand-spotlight .product-card {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 4px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  text-align: center;
+}
+
+.laxcc-brand-spotlight .product-card img {
+  width: 100%; 
+  border-radius: 2px; 
+  margin-bottom: 24px;
+  filter: grayscale(10%) contrast(1.05);
+}
+
+.laxcc-brand-spotlight .product-card h4 {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: var(--slate);
+}
+
+.laxcc-brand-spotlight .product-tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--emerald);
+  color: var(--emerald-dk);
+  padding: 4px 12px;
+  border-radius: 100px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/* ============================================================
+   COMPASSION PROGRAM
+============================================================ */
+.laxcc-brand-spotlight .compassion {
+  padding: 80px 0;
+  background: var(--emerald);
+  color: var(--white);
+  text-align: center;
+}
+
+.laxcc-brand-spotlight .compassion h2 { color: var(--white) !important; font-size: 42px; margin-bottom: 20px; }
+.laxcc-brand-spotlight .compassion p { color: var(--white) !important; max-width: 700px; margin: 0 auto 32px; font-size: 20px; }
+
+/* ============================================================
+   SHOP SECTION
+============================================================ */
+.laxcc-brand-spotlight .shop-section {
+  padding: 100px 0;
+}
+
+.laxcc-brand-spotlight .shop-head { text-align: center; margin-bottom: 40px; }
+
+/* ============================================================
+   FOOTER / COMPLIANCE
+============================================================ */
+.laxcc-brand-spotlight .compliance {
+  padding: 40px 0;
+  background: var(--cream);
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.laxcc-brand-spotlight .shop-top {
+  padding: 60px 0;
+  text-align: center;
+  background: var(--white);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.laxcc-brand-spotlight .shop-top h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: var(--slate);
+}
+
+/* ============================================================
+   EXTREME MOBILE SPACING RESET (AGGRESSIVE)
+============================================================ */
+@media (max-width: 768px) {
+  /* High specificity targeting to override global theme styles */
+  body .laxcc-brand-spotlight section,
+  body .laxcc-brand-spotlight div,
+  body .laxcc-brand-spotlight .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  body .laxcc-brand-spotlight .hero-intro { padding: 20px 0 !important; }
+  body .laxcc-brand-spotlight .shop-top { padding: 10px 0 !important; }
+  body .laxcc-brand-spotlight .story-section { padding: 20px 0 !important; }
+  body .laxcc-brand-spotlight .product-spotlight { padding: 20px 0 !important; }
+  
+  /* Target shortcode spacing leakage */
+  body .laxcc-brand-spotlight .shop-top [class*="leafbridge"],
+  body .laxcc-brand-spotlight .shop-section [class*="leafbridge"] {
+    margin-top: 10px !important;
+    padding-top: 0 !important;
+  }
+
+  body .laxcc-brand-spotlight h1 { font-size: 28px !important; margin: 0 0 10px 0 !important; line-height: 1.1 !important; }
+  body .laxcc-brand-spotlight h2 { font-size: 24px !important; margin: 0 0 10px 0 !important; line-height: 1.1 !important; }
+  body .laxcc-brand-spotlight p { font-size: 15px !important; margin: 0 0 12px 0 !important; line-height: 1.4 !important; }
+  
+  body .laxcc-brand-spotlight .btn-primary {
+    margin-top: 10px !important;
+    padding: 12px 24px !important;
+  }
+}
+
+</style>
+
+<div class="laxcc-brand-spotlight">
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-bg">
+      <picture>
+        <source srcset="https://laxcc.com/wp-content/uploads/2026/05/shop-rso-oil-los-angeles.png" media="(max-width: 768px)">
+        <img src="https://laxcc.com/wp-content/uploads/2026/05/RSO-oil-near-lax.png" alt="Emerald Bay Extracts RSO Syringe">
+      </picture>
+    </div>
+  </section>
+
+  <!-- ========== HERO INTRO ========== -->
+  <section class="hero-intro">
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Product Drop &middot; Now at LAXCC</span>
+        <h1>Clinical Precision Meets Whole Plant Wellness</h1>
+        <p class="lede">Introducing Emerald Bay Extracts RSO: The nurse-founded, triple-lab tested standard for full-spectrum cannabinoid science in Southern California.</p>
+        <a href="https://laxcc.com/shop/" class="btn-primary">Shop Emerald Bay RSO <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SHOP TOP ========== -->
+  <section class="shop-top">
+    <div class="container">
+      <h2>Shop Emerald Bay Extracts Near LAX</h2>
+      <p>Browse our current live inventory of full-spectrum RSO syringes, available for pickup just 5 minutes from the airport.</p>
+      [leafbridge_specific_product_filter brand="0057a600-eb4b-46f6-b4ce-f5e0284bf2d3" count="20"]
+    </div>
+  </section>
+
+  <!-- ========== THE STORY ========== -->
+  <section class="story-section">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-image-wrap">
+          <div class="story-image" id="founders-image">
+            <img src="https://eadn-wc02-12800396.nxedge.io/wp-content/uploads/2026/03/SLEP-Syringe.jpg" alt="Emerald Bay Extracts Slēp Syringe" class="levitate">
+          </div>
+          <p class="image-credit">Image courtesy of Emerald Bay Extracts &copy; 2026</p>
+        </div>
+        <div class="story-text">
+          <span class="eyebrow" style="color:var(--slate-lt);">The Founders Story</span>
+          <h2>A Modern Approach to Cannabinoid Education</h2>
+          <p>Founded by Casey, a Stanford-trained oncology nurse, Emerald Bay Extracts was born from a direct observation in a clinical setting. Casey recognized that many individuals were seeking out full-spectrum options for their personal wellness routines, but often lacked access to clear, evidence-based guidance and consistent product standards.</p>
+          <div class="quote-box">
+            "Patients needed clinical-grade cannabis products and real medical guidance. Emerald Bay was born to bridge that gap."
+          </div>
+          <p>Today, Emerald Bay operates out of Nevada City, California, maintaining the same rigorous standards found in healthcare: precision dosing, strain-specific integrity, and unparalleled transparency.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== THE RSO LEGACY ========== -->
+  <section class="rso-legacy">
+    <div class="container">
+      <div class="legacy-head">
+        <h2>What is RSO?</h2>
+        <p>Rick Simpson Oil (RSO) is a foundational full-spectrum extract that preserves the complete profile of the cannabis plant. Unlike distillate, which isolates THC, RSO retains the essential cannabinoids, terpenes, and flavonoids that work together in the "Entourage Effect."</p>
+      </div>
+      
+      <div class="feature-cards">
+        <div class="feature-card">
+          <i class="fas fa-microscope"></i>
+          <h3>Triple Lab Tested</h3>
+          <p>Every single batch is independently tested three times to ensure zero pesticides and absolute potency accuracy.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-leaf"></i>
+          <h3>Full-Spectrum Integrity</h3>
+          <p>We use the whole plant to provide a balanced experience that honors the natural chemistry of the cannabis flower.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-heartbeat"></i>
+          <h3>Strain-Specific</h3>
+          <p>We don't just label products as "Indica" or "Sativa." We preserve the specific terpene profiles of legacy strains.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRODUCT SPOTLIGHT ========== -->
+  <section class="product-spotlight">
+    <div class="container">
+      <h2>Strain-Specific Syringes</h2>
+      <div class="product-grid">
+        <!-- Zoap -->
+        <div class="product-card">
+          <span class="product-tag">Hybrid</span>
+          <img src="https://eadn-wc02-12800396.nxedge.io/wp-content/uploads/2024/03/Emerald-Extracts-NP-12-of-102-768x768.jpg" alt="Zoap RSO">
+          <h4>Zoap</h4>
+          <p>A versatile cross of Rainbow Sherbet and Zoap OG. Designed for functional daytime calm and euphoric mood support.</p>
+        </div>
+        <!-- Gelato 41 -->
+        <div class="product-card">
+          <span class="product-tag">Indica-Leaning</span>
+          <img src="https://eadn-wc02-12800396.nxedge.io/wp-content/uploads/2024/03/Emerald-Extracts-NP-12-of-102-768x768.jpg" alt="Gelato 41 RSO">
+          <h4>Gelato 41</h4>
+          <p>One of the most potent phenotypes available. Recognized for its deep terpene profile and grounding physical comfort.</p>
+        </div>
+        <!-- Slēp -->
+        <div class="product-card">
+          <span class="product-tag">Specialty Blend</span>
+          <img src="https://eadn-wc02-12800396.nxedge.io/wp-content/uploads/2026/03/SLEP-Syringe-768x960.jpg" alt="Slēp RSO">
+          <h4>Slēp</h4>
+          <p>A precision-formulated blend of CBN + THC + CBD. Optimized for evening rituals and deep restorative wellness.</p>
+        </div>
+        <!-- Valentine X -->
+        <div class="product-card">
+          <span class="product-tag">High CBD</span>
+          <img src="https://eadn-wc02-12800396.nxedge.io/wp-content/uploads/2024/03/Emerald-Extracts-NP-26-of-102-scaled.jpg" alt="Valentine X RSO">
+          <h4>Valentine X</h4>
+          <p>A 25:1 CBD to THC ratio. Perfect for those seeking the full benefits of RSO with minimal psychoactivity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMPASSION ========== -->
+  <section class="compassion">
+    <div class="container">
+      <h2>The Compassion Program</h2>
+      <p>Emerald Bay Extracts provides RSO free of charge to pediatric cancer patients who have exhausted conventional options. No applications, no bureaucracy—just a commitment to putting patients over profit.</p>
+      <a href="https://www.emeraldbayextracts.com/compassion-program/" class="btn-primary" style="background:var(--slate);">Learn More About Their Mission</a>
+    </div>
+  </section>
+
+  <!-- ========== SHOP ========== -->
+  <section class="shop-section">
+    <div class="container">
+      <div class="shop-head">
+        <h2>Live Emerald Bay Inventory at LAXCC</h2>
+        <p>Fresh drops and legacy favorites available 5 minutes from LAX Airport.</p>
+      </div>
+      [leafbridge_specific_product_filter brand="0057a600-eb4b-46f6-b4ce-f5e0284bf2d3" count="20"]
+    </div>
+  </section>
+
+  <!-- ========== COMPLIANCE ========== -->
+  <footer class="compliance">
+    <div class="container">
+      <p><strong>Disclaimer:</strong> This product is intended for use only by adults 21 years of age or older. Keep out of reach of children. Cannabis can impair concentration, coordination, and judgment. Do not operate a vehicle or machinery under the influence of cannabis. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+      <p>&copy; 2026 LAX Cannabis Club &middot; 8332 Lincoln Blvd, Los Angeles, CA 90045 &middot; Licensed California Dispensary</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+/**
+ * Optional JS to enhance levitation or handle intersection
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  const img = document.querySelector('#founders-image img');
+  if (img) {
+    // Ensuring smooth animation timing
+    img.style.animationDuration = '5s'; 
+  }
+});
+</script>

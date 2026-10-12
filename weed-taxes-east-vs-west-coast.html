@@ -1,0 +1,520 @@
+<div class="pot-blog-tax">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Roboto+Slab:wght@500;700&display=swap');
+
+        /* POTENCY BRAND TOKENS */
+        .pot-blog-tax {
+            --plum: #79235B;
+            --plum-deep: #5b1844;
+            --plum-2: #8C2B5A;
+            --cream: #FFFAF1;
+            --cream-2: #f6e8da;
+            --paper: #fffdf8;
+            --blue: #006FB1;
+            --peach: #FFBC7D;
+            --navy: #283555;
+            --ink: #311022;
+            --ink-soft: #6a4d5e;
+            --line: #e7d3c6;
+            --leaf: #2f7d4f;
+
+            --display: "Yeseva One", Georgia, "Times New Roman", serif;
+            --body: "Montserrat", system-ui, sans-serif;
+            --slab: "Roboto Slab", Georgia, serif;
+
+            font-family: var(--body);
+            color: var(--ink);
+            background: none;
+            line-height: 1.65;
+            margin: 0 auto;
+            max-width: 880px;
+            padding: 4rem 1.5rem;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        .pot-blog-tax *,
+        .pot-blog-tax *::before,
+        .pot-blog-tax *::after { box-sizing: inherit; }
+
+        /* HERO IMAGE — full-bleed 100vw, square corners, flush to top */
+        .pot-blog-tax .pot-hero-desktop,
+        .pot-blog-tax .pot-hero-mobile {
+            width: 100vw;
+            max-width: 100vw;
+            height: auto;
+            border-radius: 0;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            margin-top: -4rem;
+            margin-bottom: 3rem;
+        }
+
+        /* desktop shows landscape image; mobile (vertical) hidden */
+        .pot-blog-tax .pot-hero-desktop { display: block; }
+        .pot-blog-tax .pot-hero-mobile { display: none; }
+
+        /* HEADER */
+        .pot-blog-tax .pot-header {
+            text-align: left;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 2rem;
+        }
+
+        .pot-blog-tax .pot-meta {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--plum);
+            margin-bottom: 1.1rem;
+            font-weight: 700;
+        }
+
+        .pot-blog-tax .pot-title {
+            font-family: var(--display);
+            font-size: clamp(34px, 5.2vw, 52px);
+            font-weight: 400;
+            line-height: 1.08;
+            color: var(--plum);
+            margin: 0 0 1.4rem;
+        }
+
+        .pot-blog-tax .pot-lede {
+            font-size: 1.18rem;
+            color: var(--ink-soft);
+            margin: 0;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .pot-blog-tax .pot-author {
+            margin-top: 1.4rem;
+            font-weight: 600;
+            color: var(--plum);
+            font-size: 0.95rem;
+        }
+
+        /* BODY TYPOGRAPHY */
+        .pot-blog-tax .pot-body h2 {
+            font-family: var(--display);
+            font-size: clamp(26px, 3.6vw, 34px);
+            font-weight: 400;
+            margin: 3.25rem 0 1.4rem;
+            color: var(--plum);
+            line-height: 1.15;
+        }
+
+        .pot-blog-tax .pot-body h3 {
+            font-family: var(--slab);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 2rem 0 0.9rem;
+            color: var(--navy);
+        }
+
+        .pot-blog-tax .pot-body p { margin: 0 0 1.4rem; }
+
+        .pot-blog-tax .pot-body a {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(0, 111, 177, 0.35);
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .pot-blog-tax .pot-body a:hover {
+            color: var(--plum);
+            border-color: var(--plum);
+        }
+
+        .pot-blog-tax .pot-body strong { color: var(--ink); font-weight: 700; }
+
+        /* STAT STRIP — minimalist, hairline dividers only */
+        .pot-blog-tax .pot-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin: 3.25rem 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .pot-blog-tax .pot-stat {
+            padding: 1.9rem 0.75rem;
+            text-align: center;
+            border-left: 1px solid var(--line);
+        }
+
+        .pot-blog-tax .pot-stat:first-child { border-left: none; }
+
+        .pot-blog-tax .pot-stat-num {
+            font-family: var(--slab);
+            font-size: 2.7rem;
+            font-weight: 700;
+            color: var(--plum);
+            line-height: 1;
+            margin-bottom: 0.6rem;
+        }
+
+        .pot-blog-tax .pot-stat-label {
+            font-size: 0.66rem;
+            color: var(--ink-soft);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            line-height: 1.45;
+        }
+
+        /* PULL-QUOTE CALLOUT — thin accent rule, no box */
+        .pot-blog-tax .pot-callout {
+            border-left: 2px solid var(--peach);
+            padding: 0.4rem 0 0.4rem 1.75rem;
+            margin: 2.75rem 0;
+            font-family: var(--display);
+            font-size: 1.5rem;
+            line-height: 1.35;
+            color: var(--plum);
+        }
+
+        /* TAX GRID — 2-up luxe cells, no lines/boxes */
+        .pot-blog-tax .pot-tax-section { margin: 3.25rem 0; }
+        .pot-blog-tax .pot-tax-section + .pot-tax-section { margin-top: 3.5rem; }
+
+        .pot-blog-tax .pot-grid-label {
+            font-family: var(--body);
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.26em;
+            color: var(--plum-2);
+            margin: 0 0 1.6rem;
+        }
+
+        .pot-blog-tax .pot-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.1rem 3rem;
+        }
+
+        .pot-blog-tax .pot-cell .pot-place {
+            font-family: var(--display);
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--plum);
+            line-height: 1.1;
+            margin-bottom: 0.65rem;
+        }
+
+        .pot-blog-tax .pot-cell .pot-place small {
+            display: inline;
+            font-family: var(--body);
+            font-style: italic;
+            font-weight: 500;
+            font-size: 0.78rem;
+            color: var(--ink-soft);
+            margin-left: 0.4rem;
+        }
+
+        .pot-blog-tax .pot-lead {
+            display: block;
+            font-family: var(--slab);
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--plum);
+            line-height: 1;
+            letter-spacing: -0.01em;
+        }
+
+        .pot-blog-tax .pot-rest {
+            display: block;
+            font-size: 0.82rem;
+            color: var(--ink-soft);
+            margin-top: 7px;
+            line-height: 1.45;
+        }
+
+        .pot-blog-tax .pot-table-footnote {
+            font-size: 0.82rem;
+            color: var(--ink-soft);
+            margin: 1.5rem 0 2.5rem;
+            font-style: italic;
+        }
+
+        /* WEST-COAST READER CALLOUT (the LAXCC backlink box) */
+        .pot-blog-tax .pot-westbox {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: var(--paper);
+            padding: 1.6rem 1.75rem;
+            margin: 2.75rem 0;
+        }
+
+        .pot-blog-tax .pot-westbox h3 {
+            margin: 0 0 0.5rem;
+            font-family: var(--slab);
+            font-size: 1.05rem;
+            color: var(--plum);
+        }
+
+        .pot-blog-tax .pot-westbox p { margin: 0; font-size: 0.98rem; color: var(--ink-soft); }
+
+        /* DIVIDER */
+        .pot-blog-tax .pot-divider {
+            height: 1px;
+            background: var(--line);
+            border: none;
+            margin: 3.5rem 0;
+        }
+
+        /* SOURCES */
+        .pot-blog-tax .pot-sources { font-size: 0.88rem; color: var(--ink-soft); }
+        .pot-blog-tax .pot-sources h3 { font-family: var(--slab); color: var(--navy); font-size: 1.05rem; margin: 0 0 0.9rem; }
+        .pot-blog-tax .pot-sources ul { list-style: none; padding-left: 0; margin: 0; }
+        .pot-blog-tax .pot-sources li { margin-bottom: 0.5rem; }
+
+        /* CTA */
+        .pot-blog-tax .pot-cta {
+            text-align: center;
+            margin-top: 3.5rem;
+            padding: 3rem 1rem;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .pot-blog-tax .pot-cta h2 {
+            font-family: var(--display);
+            font-weight: 400;
+            color: var(--plum);
+            margin: 0 0 0.75rem;
+            font-size: clamp(26px, 4vw, 34px);
+        }
+
+        .pot-blog-tax .pot-cta p { color: var(--ink-soft); margin: 0 auto 1.6rem; max-width: 540px; }
+
+        .pot-blog-tax .pot-btn-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        .pot-blog-tax a.pot-btn,
+        .pot-blog-tax a.pot-btn:link,
+        .pot-blog-tax a.pot-btn:visited {
+            display: inline-block;
+            background: var(--plum);
+            color: #ffffff !important;
+            padding: 0.95rem 2.2rem;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            letter-spacing: 0.03em;
+            text-decoration: none !important;
+            border: none;
+            white-space: nowrap;
+            transition: transform 0.25s, background 0.25s;
+        }
+
+        .pot-blog-tax a.pot-btn:hover { transform: translateY(-2px); background: var(--plum-deep); }
+
+        .pot-blog-tax a.pot-btn-ghost,
+        .pot-blog-tax a.pot-btn-ghost:link,
+        .pot-blog-tax a.pot-btn-ghost:visited {
+            display: inline-block;
+            background: transparent;
+            color: var(--plum) !important;
+            padding: 0.95rem 2.2rem;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            letter-spacing: 0.03em;
+            text-decoration: none !important;
+            border: 1px solid var(--plum);
+            white-space: nowrap;
+            transition: transform 0.25s, background 0.25s, color 0.25s;
+        }
+
+        .pot-blog-tax a.pot-btn-ghost:hover { transform: translateY(-2px); background: var(--plum); color: #ffffff !important; }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .pot-blog-tax { padding: 2.5rem 0; font-size: 17px; }
+            .pot-blog-tax .pot-stat { padding: 1.35rem 0.4rem; }
+            .pot-blog-tax .pot-stat-num { font-size: 1.7rem; margin-bottom: 0.5rem; }
+            .pot-blog-tax .pot-stat-label { font-size: 0.56rem; letter-spacing: 0.08em; }
+            .pot-blog-tax .pot-callout { font-size: 1.3rem; }
+            .pot-blog-tax .pot-cell .pot-place { font-size: 1.18rem; }
+            .pot-blog-tax .pot-lead { font-size: 1.35rem; }
+            .pot-blog-tax .pot-hero-desktop { display: none; }
+            .pot-blog-tax .pot-hero-mobile { display: block; margin-top: -2.5rem; }
+        }
+
+        @media (max-width: 540px) {
+            .pot-blog-tax .pot-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+        }
+    </style>
+
+    <!-- META: Title (60 chars): Weed Taxes in the USA: East Coast vs. West Coast (2026) -->
+    <!-- META: Description (155 chars): How much tax do you really pay on legal weed? We break down cannabis tax rates coast to coast — why the West Coast is the heaviest, and what it means at checkout. -->
+    <!-- SLUG: /weed-taxes-east-coast-vs-west-coast -->
+    <!-- NOTE: contains do-follow backlinks to laxcc.com (reciprocal SEO) — keep them follow, no nofollow -->
+
+    <!-- HERO image — full-bleed; desktop (landscape) + mobile (vertical) swap -->
+    <img src="https://getpotency.com/wp-content/uploads/2026/06/weed-taxes-east-coast-vs-west-coast-2026.jpg" alt="Weed taxes in the USA — East Coast vs West Coast cannabis tax comparison 2026" class="pot-hero-desktop">
+    <img src="https://getpotency.com/wp-content/uploads/2026/06/weed-taxes-east-coast-vs-west-coast.jpg" alt="Weed taxes in the USA — East Coast vs West Coast cannabis tax comparison 2026" class="pot-hero-mobile">
+
+    <header class="pot-header">
+        <div class="pot-meta">June 25, 2026 &bull; Cannabis &amp; Policy</div>
+        <h1 class="pot-title">Weed Taxes in the USA: East Coast vs. West Coast</h1>
+        <p class="pot-lede">The shelf price is only half the story. The other half is tax &mdash; and it swings wildly depending on which coast you're standing on.</p>
+        <div class="pot-author">By Potency &bull; Pittsfield, MA</div>
+    </header>
+
+    <div class="pot-body">
+
+        <p>Ask anyone where legal weed is cheapest and they'll point west &mdash; California, with its glut of supply and famously low wholesale prices. But there's a catch hiding under every West Coast menu: <strong>tax</strong>. Once you add it all up, some of the lowest-cost markets in America turn into some of the most expensive at the register, while a handful of East Coast states quietly hand shoppers a better deal. We pulled the numbers coast to coast to see where your cannabis dollar actually goes.</p>
+
+        <div class="pot-stats">
+            <div class="pot-stat">
+                <div class="pot-stat-num">37%</div>
+                <div class="pot-stat-label">Washington excise &mdash; highest in the U.S.</div>
+            </div>
+            <div class="pot-stat">
+                <div class="pot-stat-num">~34.5%</div>
+                <div class="pot-stat-label">Los Angeles all-in cannabis tax</div>
+            </div>
+            <div class="pot-stat">
+                <div class="pot-stat-num">13%</div>
+                <div class="pot-stat-label">New York &mdash; among the lowest legal rates</div>
+            </div>
+        </div>
+
+        <h2>How Cannabis Taxes Actually Stack Up</h2>
+
+        <p>There's no single "weed tax." What you pay at checkout is usually three layers stacked together, and every state mixes them differently:</p>
+
+        <ul>
+            <li><strong>Excise tax</strong> &mdash; a cannabis-specific tax, charged as a percentage of price (or, in some states, by weight or THC potency).</li>
+            <li><strong>State &amp; local sales tax</strong> &mdash; the same general sales tax you pay on other goods, layered on top.</li>
+            <li><strong>Local cannabis tax</strong> &mdash; an extra cut many cities and towns add on their own, which is why two shops in the same state can ring up different totals.</li>
+        </ul>
+
+        <p>Because that third layer is local, the combined total is sometimes a range rather than a single number. But every figure below is a real, current statutory rate &mdash; each state's tax authority is linked in the sources at the bottom.</p>
+
+        <div class="pot-tax-section">
+            <div class="pot-grid-label">West Coast &amp; West</div>
+            <div class="pot-grid">
+                <div class="pot-cell">
+                    <div class="pot-place">Washington</div>
+                    <span class="pot-lead">37%</span>
+                    <span class="pot-rest">cannabis excise + state &amp; local sales tax</span>
+                </div>
+                <div class="pot-cell">
+                    <div class="pot-place">California <small>Los Angeles</small></div>
+                    <span class="pot-lead">15%</span>
+                    <span class="pot-rest">excise + sales + LA local up to 10% &middot; &asymp;34.5% all-in</span>
+                </div>
+                <div class="pot-cell">
+                    <div class="pot-place">Oregon</div>
+                    <span class="pot-lead">17%</span>
+                    <span class="pot-rest">state + up to 3% local &middot; no sales tax</span>
+                </div>
+                <div class="pot-cell">
+                    <div class="pot-place">Nevada</div>
+                    <span class="pot-lead">10%</span>
+                    <span class="pot-rest">retail excise + ~8.25% sales tax</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="pot-tax-section">
+            <div class="pot-grid-label">East Coast</div>
+            <div class="pot-grid">
+                <div class="pot-cell">
+                    <div class="pot-place">Massachusetts <small>Pittsfield</small></div>
+                    <span class="pot-lead">10.75%</span>
+                    <span class="pot-rest">excise + 6.25% sales + up to 3% local</span>
+                </div>
+                <div class="pot-cell">
+                    <div class="pot-place">Rhode Island</div>
+                    <span class="pot-lead">20%</span>
+                    <span class="pot-rest">10% excise + 7% sales + 3% local</span>
+                </div>
+                <div class="pot-cell">
+                    <div class="pot-place">Connecticut</div>
+                    <span class="pot-lead">THC tax</span>
+                    <span class="pot-rest">potency-based + 6.35% sales + 3% municipal</span>
+                </div>
+                <div class="pot-cell">
+                    <div class="pot-place">New York</div>
+                    <span class="pot-lead">13%</span>
+                    <span class="pot-rest">9% state + 4% local excise</span>
+                </div>
+                <div class="pot-cell">
+                    <div class="pot-place">New Jersey</div>
+                    <span class="pot-lead">6.625%</span>
+                    <span class="pot-rest">sales + up to 2% local &middot; + cultivator SEEF</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="pot-table-footnote">Rates current as of 2026 per each state's tax authority (sources below). Local-option taxes vary within the caps shown.</p>
+
+        <div class="pot-callout">
+            The pattern is hard to miss: the heaviest cannabis taxes in America sit on the West Coast &mdash; and the East Coast generally comes in lighter.
+        </div>
+
+        <h2>The West Coast: Cheap Weed, Heavy Taxes</h2>
+
+        <p><strong>Washington</strong> tops the entire country. Its <strong>37% cannabis excise tax</strong> &mdash; the highest cannabis-specific rate in the nation &mdash; sits on top of regular state and local sales tax. That excise alone turns a $10 gram into roughly $15 at the register, before sales tax is even added.</p>
+
+        <p><strong>California's</strong> cannabis excise tax is <strong>15%</strong> &mdash; held there through 2028 after state lawmakers reversed a planned increase to 19% in 2025. But add state and district sales tax, plus the local cannabis tax that Los Angeles layers on, and the all-in burden in LA reaches roughly 34.5% &mdash; among the heaviest in the country. It's the great irony of West Coast weed: chronic oversupply has pushed California's wholesale flower to among the lowest prices in the country, but the tax stack claws much of that savings back at checkout.</p>
+
+        <p>Smart West Coast shops have adapted by absorbing tax into the sticker price. A licensed <a href="https://laxcc.com/" rel="noopener noreferrer">Los Angeles dispensary</a> like LAX Cannabis Club lists its menu <em>tax-included</em> &mdash; the $15 eighth on the shelf is genuinely $15 out the door &mdash; so customers aren't blindsided by a 30%-plus jump at the counter. It's a clever response to one of the highest tax environments in the country.</p>
+
+        <div class="pot-westbox">
+            <h3>Shopping out west?</h3>
+            <p>If you're in Southern California, it's worth checking a tax-included menu so you know your real total before you go. LAX Cannabis Club is one of the most popular dispensaries in LA &mdash; right next to LAX airport, a short drive from <a href="https://laxcc.com/venice-beach-dispensary/" rel="noopener noreferrer">Venice Beach</a> and minutes from the Santa Monica Pier &mdash; where the price you see is the price you pay. <a href="https://laxcc.com/shop/" rel="noopener noreferrer">Browse their menu</a>.</p>
+        </div>
+
+        <h2>The East Coast: Generally a Lighter Touch</h2>
+
+        <p>Newer East Coast markets largely chose more modest tax structures &mdash; partly to compete with neighboring states and partly to undercut the illicit market. <strong>New York</strong> keeps it simple at 13% (a 9% state plus 4% local excise, after the state scrapped its complicated THC-potency tax in 2024). <strong>New Jersey</strong> is lighter still: a 6.625% sales tax plus an optional local tax of up to 2%. <strong>Massachusetts</strong> runs a 10.75% excise plus 6.25% sales tax plus up to 3% local &mdash; landing at 17&ndash;20% depending on the town, which is why a Pittsfield shopper keeps more of a low shelf price than a Los Angeles one does.</p>
+
+        <p>The East Coast isn't uniformly cheap &mdash; <strong>Rhode Island</strong> is a flat 20% (10% cannabis excise + 7% sales + 3% local), and <strong>Connecticut</strong> layers a THC-potency tax on top of 6.35% sales and a 3% municipal tax, which can run higher on strong products. But as a region, the Northeast's legal markets are taxed noticeably lighter than the West Coast's heavy hitters.</p>
+
+        <h2>Why Is the West Coast Taxed So Much More?</h2>
+
+        <p>Two reasons. First, <strong>timing</strong>: West Coast states legalized early, when high taxes were seen as a way to fund regulation and prove the new industry could pay its way. Those rates got baked in and rarely come down. East Coast states legalized later, watched California's tax-driven price problems, and set lower rates on purpose.</p>
+
+        <p>Second, <strong>local layering</strong>: California and Washington both let cities add their own cannabis taxes on top of the state's, and dense metros like Los Angeles use that room to the fullest. The result is a tax stack that can rival the price of the product itself.</p>
+
+        <h2>What It Means for Your Wallet</h2>
+
+        <p>The takeaway for shoppers anywhere is simple: <strong>compare totals, not shelf prices, and always check whether a menu includes tax.</strong> A "$25 eighth" pre-tax in a 20% market and a "$25 eighth" tax-included are two very different deals. Out west, where rates run highest, that distinction matters most &mdash; which is exactly why tax-included menus have caught on at shops like LAX Cannabis Club in Los Angeles.</p>
+
+        <p>Wherever you shop, knowing your coast's tax math turns a confusing menu into an easy comparison &mdash; and keeps more of your money where it belongs.</p>
+
+        <div class="pot-divider"></div>
+
+        <div class="pot-sources">
+            <h3>Official Sources</h3>
+            <p style="margin:0 0 0.9rem;">Every rate above comes directly from the relevant state tax authority:</p>
+            <ul>
+                <li><strong>Washington (37% excise):</strong> <a href="https://dor.wa.gov/taxes-rates/taxes-due-cannabis" rel="nofollow noopener noreferrer" target="_blank">WA Dept. of Revenue &mdash; Taxes due on cannabis</a></li>
+                <li><strong>California (15% excise):</strong> <a href="https://cdtfa.ca.gov/industry/cannabis/" rel="nofollow noopener noreferrer" target="_blank">CDTFA &mdash; Tax Guide for Cannabis Businesses</a></li>
+                <li><strong>Oregon (17% + local):</strong> <a href="https://www.oregon.gov/dor/programs/businesses/pages/marijuana.aspx" rel="nofollow noopener noreferrer" target="_blank">Oregon Dept. of Revenue &mdash; Marijuana</a></li>
+                <li><strong>Nevada (10% retail excise):</strong> <a href="https://tax.nv.gov/faqs/cannabis-tax-faqs/" rel="nofollow noopener noreferrer" target="_blank">Nevada Dept. of Taxation &mdash; Cannabis Tax FAQs</a></li>
+                <li><strong>Massachusetts (10.75% + 6.25% + up to 3%):</strong> <a href="https://masscannabiscontrol.com/taxes-and-fees/" rel="nofollow noopener noreferrer" target="_blank">MA Cannabis Control Commission &mdash; Taxes &amp; Fees</a></li>
+                <li><strong>Rhode Island (10% + 7% + 3%):</strong> <a href="https://tax.ri.gov/tax-sections/sales-excise-taxes/adult-use-cannabis-tax" rel="nofollow noopener noreferrer" target="_blank">RI Division of Taxation &mdash; Adult Use Cannabis Tax</a></li>
+                <li><strong>Connecticut (THC-potency + sales + municipal):</strong> <a href="https://portal.ct.gov/drs/taxes/cannabis/cannabis-tax" rel="nofollow noopener noreferrer" target="_blank">CT Dept. of Revenue Services &mdash; Cannabis Tax</a></li>
+                <li><strong>New York (9% + 4% excise):</strong> <a href="https://www.tax.ny.gov/bus/auc/" rel="nofollow noopener noreferrer" target="_blank">NYS Dept. of Taxation &mdash; Adult-use cannabis products tax</a></li>
+                <li><strong>New Jersey (6.625% + local + SEEF):</strong> <a href="https://www.nj.gov/treasury/taxation/cannabis/recreational/index.shtml" rel="nofollow noopener noreferrer" target="_blank">NJ Division of Taxation &mdash; Recreational Cannabis</a></li>
+            </ul>
+        </div>
+
+        <div class="pot-cta">
+            <h2>Skip the Tax Math &mdash; Shop Potency</h2>
+            <p>Potency is a licensed recreational dispensary in Pittsfield, MA, with one of the deepest menus in the Berkshires and everyday deli deals. Massachusetts' lighter tax means more of your dollar stays in your cart.</p>
+            <div class="pot-btn-row">
+                <a href="https://getpotency.com/shop/" class="pot-btn" rel="noopener noreferrer">Browse the Menu</a>
+                <a href="https://getpotency.com/specials/" class="pot-btn-ghost" rel="noopener noreferrer">See Today's Deals</a>
+            </div>
+        </div>
+    </div>
+</div>

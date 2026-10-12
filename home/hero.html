@@ -1,390 +1,212 @@
+<!-- ELEMENTOR-SAFE: no JavaScript at all, CSS + HTML only.
+     Do NOT reintroduce JS here — the WAF returns 403 when the widget is saved.
+
+     ONE set of markup, two behaviours:
+       TOUCH  (<=768px) — .lux-track is a native scroll-snap carousel. Each card
+                          holds its own image, brand, CTA, copy and specs, so a
+                          swipe moves all of it together. No script required.
+       DESKTOP (>=769px) — .lux-track and .lux-card use `display: contents`, so the
+                          cards dissolve and their parts become grid items of
+                          .lux-deck. All six stack in the same grid areas and the
+                          hidden radios crossfade between them, exactly as before.
+     Because the card wrapper disappears on desktop, the layout there is identical
+     to the pre-swipe version — media on top, [thumbs | copy] beneath it. -->
+
 <style>
-    /* ===== TRULY MOBILE FIRST CSS ===== */
-    /* Scoped Variables */
-    #laxcc-hero-2025 {
-        --dark-bg: #1D508A;
-        --brand-orange: #F89459;
-        --glass-bg: rgba(0, 0, 0, 0.3);
-        --glass-border: rgba(255, 255, 255, 0.15);
-        --blur: 20px;
+    /* ── PREMIUM CREAM SYSTEM ── */
+    #lux-slider-system {
+        box-sizing: border-box !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 5px 0 !important;
+        background: #FCF9F2 !important;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        border-radius: 0 !important;
+        overflow: hidden !important;
+        position: relative !important;
     }
 
-    /* Global Reset to hide scrollbars */
-    :host,
-    :root {
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+    #lux-slider-system *,
+    #lux-slider-system *::before,
+    #lux-slider-system *::after {
+        box-sizing: border-box !important;
     }
 
-    ::-webkit-scrollbar {
+    /* Hidden state radios — direct children, BEFORE .lux-deck, so the `~`
+       selectors below can reach every card.
+
+       position:fixed (NOT absolute) on purpose. Clicking an arrow/thumb label
+       focuses its radio, and the browser scrolls a newly focused control into
+       view. Absolute put the radios at the very top of the slider, so every
+       click yanked the page upward on desktop. Pinned mid-viewport they are
+       always already visible, so focus triggers no scroll at all. Fixed does
+       not change DOM order, so the `~` sibling selectors still match. */
+    #lux-slider-system .lux-radio {
+        position: fixed !important;
+        top: 50% !important;
+        left: 0 !important;
+        width: 1px !important;
+        height: 1px !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        appearance: none !important;
+        -webkit-appearance: none !important;
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       TOUCH BASE — swipe carousel
+       ══════════════════════════════════════════════════════════════════ */
+    #lux-slider-system .lux-deck {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        width: 100% !important;
+    }
+
+    #lux-slider-system .lux-track {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        scroll-snap-type: x mandatory !important;
+        scroll-behavior: smooth !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+        overscroll-behavior-x: contain !important;
+        /* keeps a swipe past the last card from triggering browser back-nav */
+    }
+
+    #lux-slider-system .lux-track::-webkit-scrollbar {
         display: none !important;
     }
 
-    #laxcc-hero-2025 {
-        margin: 0;
-        padding: 0;
-        background: #1D508A;
-        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-        overflow: hidden;
-        /* Prevent any internal overflow from showing */
-        position: relative;
-        width: 100%;
-        max-height: 1080px;
-    }
-
-    #laxcc-hero-2025 .hero-content-inner {
-        position: relative;
-        z-index: 5;
-        width: 100%;
-        max-width: 1920px;
-        margin: 0 auto;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        /* Mobile default */
-    }
-
-    /* STAGE */
-    #laxcc-hero-2025 .hero-mobile-first {
-        position: relative;
-        width: 100%;
-        min-height: 100dvh;
-        /* Dynamic viewport height with fallback */
-        overflow: visible;
-        position: relative;
-        padding-bottom: 90px;
-        /* Space for the floating dock */
-    }
-
-    /* BACKGROUND VIDEO */
-    #laxcc-hero-2025 .hero-bg {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-    }
-
-    #laxcc-hero-2025 .hero-bg::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: rgba(29, 80, 138, 0.4);
-        z-index: 1;
-    }
-
-    #laxcc-hero-2025 .hero-bg video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.5;
-        /* Visible but not overwhelming */
-    }
-
-    #laxcc-hero-2025 .hero-bg::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to top, #1D508A 10%, transparent 60%);
-        z-index: 1;
-    }
-
-    /* MASSIVE BACKGROUND TEXT (Fixed position) */
-    #laxcc-hero-2025 .hero-text-layer {
-        position: absolute;
-        top: 12%;
-        /* Moved down slightly to clear header */
-        left: 0;
-        width: 100%;
-        text-align: center;
-        z-index: 1;
-        pointer-events: none;
-        padding: 0 20px;
-    }
-
-    #laxcc-hero-2025 .hero-text-layer h1 {
-        font-size: 9.5vw;
-        line-height: 1.1;
-        margin: 0 auto;
-        font-weight: 800;
-        color: rgba(255, 255, 255, 0.05);
-        /* Subtle watermark effect */
-        letter-spacing: -0.02em;
-        text-transform: uppercase;
-        max-width: 90%;
-    }
-
-    #laxcc-hero-2025 .hero-text-layer p {
-        font-size: 0.9rem;
-        color: var(--brand-orange);
-        text-transform: uppercase;
-        letter-spacing: 0.2em;
-        margin-bottom: 1rem;
-        font-weight: 700;
-    }
-
-    /* SCROLL DECK CONTAINER */
-    #laxcc-hero-2025 .deck-container {
-        position: relative;
-        z-index: 10;
-        width: 100%;
-        /* The deck height determines card size - Reduced for better proportions */
-        height: 48vh;
-        display: flex;
-        align-items: center;
-        /* Scroll Logic */
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding: 0 7.5vw;
-        /* Centers the first card (100 - 85 = 15 / 2 = 7.5) */
-        gap: 1.25rem;
-        /* Hide scrollbars */
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        position: relative;
-    }
-
-    #laxcc-hero-2025 .deck-container::-webkit-scrollbar {
-        display: none;
-    }
-
-    /* SLIDER WRAPPER */
-    #laxcc-hero-2025 .slider-wrapper {
-        position: relative;
-        z-index: 10;
-        width: 100%;
-        display: flex;
-        align-items: center;
-    }
-
-    /* SCROLL ARROWS (Shadcn inspired) */
-    #laxcc-hero-2025 .scroll-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 30;
-        transition: all 0.2s ease;
-        padding: 0;
-        outline: none;
-    }
-
-    #laxcc-hero-2025 .scroll-arrow:hover {
-        background: rgba(255, 255, 255, 0.15);
-        border-color: rgba(255, 255, 255, 0.3);
-        transform: translateY(-50%) scale(1.05);
-    }
-
-    #laxcc-hero-2025 .scroll-arrow:active {
-        transform: translateY(-50%) scale(0.95);
-    }
-
-    #laxcc-hero-2025 .scroll-arrow--prev {
-        left: 5px;
-    }
-
-    #laxcc-hero-2025 .scroll-arrow--next {
-        right: 5px;
-    }
-
-    #laxcc-hero-2025 .scroll-arrow svg {
-        width: 20px;
-        height: 20px;
-        opacity: 0.8;
-    }
-
-    @media (max-width: 768px) {
-        #laxcc-hero-2025 .scroll-arrow {
-            width: 38px;
-            height: 38px;
-            background: rgba(29, 80, 138, 0.4);
-            /* Brand blue with transparency */
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        #laxcc-hero-2025 .scroll-arrow--prev {
-            left: 10px;
-        }
-
-        #laxcc-hero-2025 .scroll-arrow--next {
-            right: 10px;
-        }
-    }
-
-    /* THE CARDS (Big & Tall) */
-    #laxcc-hero-2025 .deck-card {
-        flex: 0 0 85vw;
-        /* 85% of screen width */
-        height: 100%;
-        scroll-snap-align: center;
-        scroll-snap-stop: always;
-        /* Glass Style */
-        background: var(--glass-bg);
-        backdrop-filter: blur(var(--blur));
-        -webkit-backdrop-filter: blur(var(--blur));
-        border-radius: 28px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        text-decoration: none;
-        /* Fix for border-radius rendering glitches during transforms */
-        isolation: isolate;
-        -webkit-mask-image: -webkit-radial-gradient(white, black);
-        mask-image: radial-gradient(white, black);
-        backface-visibility: hidden;
-        transform: translateZ(0);
-    }
-
-    /* Image takes up most of the card */
-    #laxcc-hero-2025 .deck-card__media {
-        flex: 1;
-        /* Fills available space */
-        width: 100%;
-        position: relative;
-    }
-
-    #laxcc-hero-2025 .deck-card__media img,
-    #laxcc-hero-2025 .deck-card__media video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* BRAND SPECIFIC CARD BACKGROUNDS */
-    #laxcc-hero-2025 .deck-card--time-machine {
-        background: radial-gradient(circle at 18% 20%, rgba(34, 211, 238, 0.28), transparent 38%),
-            linear-gradient(135deg, #0b1f34, #1f6feb, #22c55e);
-    }
-
-    #laxcc-hero-2025 .deck-card--stiiizy {
-        background: radial-gradient(circle at 82% 8%, rgba(255, 255, 255, 0.16), transparent 42%),
-            linear-gradient(135deg, #0f172a, #2f3e52, #06b6d4);
-    }
-
-    #laxcc-hero-2025 .deck-card--banana-fruz {
-        background: radial-gradient(circle at 20% 20%, rgba(254, 240, 138, 0.3), transparent 40%),
-            linear-gradient(135deg, #fde047, #eab308, #84cc16);
-    }
-
-    #laxcc-hero-2025 .deck-card--mango-fruz {
-        background: radial-gradient(circle at 80% 20%, rgba(251, 146, 60, 0.3), transparent 40%),
-            linear-gradient(135deg, #fb923c, #f97316, #ea580c);
-    }
-
-    #laxcc-hero-2025 .deck-card--live-rosin-gummies {
-        background: linear-gradient(135deg, #fde047 0%, #facc15 50%, #eab308 100%) !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        position: relative;
-        overflow: hidden;
-    }
-
-    #laxcc-hero-2025 .deck-card--live-rosin-gummies::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background:
-            radial-gradient(circle, transparent 10px, #fef9c3 11px, #fef9c3 12px, transparent 13px);
-        background-size: 40px 40px;
-        opacity: 0.5;
-        z-index: 1;
-    }
-
-    #laxcc-hero-2025 .deck-card--live-rosin-gummies .deck-card__media {
-        position: relative;
-        z-index: 2;
-    }
-
-    #laxcc-hero-2025 .deck-card--live-rosin-gummies .deck-card__media img {
-        object-fit: contain !important;
-    }
-
-    @media (max-width: 768px) {
-        #laxcc-hero-2025 .deck-card--live-rosin-gummies .deck-card__media img {
-            transform: translateY(-40px);
-        }
-    }
-
-    #laxcc-hero-2025 .deck-card.deck-card--tangie-frosting {
-        background:
-            url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20Z' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E"),
-            linear-gradient(165deg, #391d68 0%, #4a2785 50%, #5c31a2 100%) !important;
-    }
-
-    #laxcc-hero-2025 .deck-card.deck-card--tangie-frosting .deck-card__media {
+    #lux-slider-system .lux-card {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        scroll-snap-align: start !important;
+        scroll-snap-stop: always !important;
         display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 0.5rem !important;
-        overflow: visible !important;
+        flex-direction: column !important;
+        scroll-margin: 0 !important;
     }
 
-    #laxcc-hero-2025 .deck-card.deck-card--tangie-frosting .tangie-circle-wrap {
-        width: 85% !important;
-        aspect-ratio: 1 / 1 !important;
-        border-radius: 50% !important;
-        border: 1px solid rgba(255, 255, 255, 0.4) !important;
-        box-shadow:
-            inset 0 0 20px rgba(255, 255, 255, 0.2),
-            0 15px 40px rgba(0, 0, 0, 0.25),
-            0 0 0 4px rgba(255, 255, 255, 0.1) !important;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
-        animation: tangie-float 4s ease-in-out infinite !important;
-        margin: 0 auto !important;
+    /* ── MEDIA (the art + everything overlaid on it) ── */
+    #lux-slider-system .lux-media {
+        position: relative !important;
+        width: 100% !important;
+        height: 62vh !important;
+        max-height: 460px !important;
+        min-height: 320px !important;
         overflow: hidden !important;
-        position: relative;
+        background: #F4F1EA !important;
     }
 
-    /* Mylar Sheen - Glossy Overlay */
-    #laxcc-hero-2025 .deck-card.deck-card--tangie-frosting .tangie-circle-wrap::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border-radius: 50%;
-        background:
-            radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 20%),
-            linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 40%, rgba(255, 255, 255, 0.1) 100%),
-            url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
-        z-index: 10;
-        mix-blend-mode: overlay;
-        pointer-events: none;
+    #lux-slider-system .lux-shot {
+        position: absolute !important;
+        inset: 0 !important;
+        display: block !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+        z-index: 5 !important;
     }
 
-    /* Mylar Reflection Highlight */
-    #laxcc-hero-2025 .deck-card.deck-card--tangie-frosting .tangie-circle-wrap::before {
-        content: '';
-        position: absolute;
-        top: 5%;
-        left: 10%;
-        width: 40%;
-        height: 20%;
-        background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), transparent);
-        border-radius: 50%;
-        filter: blur(5px);
-        z-index: 11;
-        opacity: 0.7;
-    }
-
-    #laxcc-hero-2025 .deck-card.deck-card--tangie-frosting .tangie-circle-wrap img {
+    /* IMAGE FILLING — 100% UNDISTURBED */
+    #lux-slider-system .lux-shot picture,
+    #lux-slider-system .lux-shot img,
+    #lux-slider-system .lux-shot video {
+        display: block !important;
         width: 100% !important;
         height: 100% !important;
         object-fit: cover !important;
-        transform: scale(1.2) !important;
+        object-position: center !important;
+        border: none !important;
+        outline: none !important;
     }
 
-    @keyframes tangie-float {
+    #lux-slider-system .lux-shot picture img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    #lux-slider-system .lux-shot.lux-shot-top img,
+    #lux-slider-system .lux-shot.lux-shot-top picture img,
+    #lux-slider-system .lux-thumb.lux-thumb-top img {
+        object-position: top center !important;
+    }
+
+    /* Product jar backdrop with a slow floating effect */
+    #lux-slider-system .lux-shot.lux-cbx {
+        background:
+            radial-gradient(72% 62% at 50% 16%, rgba(74, 138, 92, 0.55) 0%, rgba(74, 138, 92, 0) 60%),
+            linear-gradient(160deg, #16321f 0%, #0f2818 46%, #0a1d12 100%) !important;
+    }
+
+    /* Cizi — epic cosmic gradient; transparent PNG packs float with their drop-shadow */
+    #lux-slider-system .lux-shot.lux-cizi {
+        background:
+            radial-gradient(58% 55% at 20% 16%, rgba(255, 110, 196, 0.55) 0%, rgba(255, 110, 196, 0) 60%),
+            radial-gradient(66% 64% at 86% 88%, rgba(96, 130, 255, 0.55) 0%, rgba(96, 130, 255, 0) 58%),
+            radial-gradient(85% 75% at 52% 48%, rgba(150, 80, 220, 0.42) 0%, rgba(150, 80, 220, 0) 72%),
+            linear-gradient(150deg, #2a0f4a 0%, #3a1566 42%, #190a36 100%) !important;
+    }
+
+
+    #lux-slider-system .lux-shot.lux-cizi .cbx-nug {
+        max-width: 30% !important;
+        max-height: 88% !important;
+    }
+
+    #lux-slider-system .lux-shot.lux-cbx .cbx-stage {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        padding: 3% !important;
+        overflow: hidden !important;
+    }
+
+    #lux-slider-system .lux-shot.lux-cbx .cbx-track {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: clamp(4px, 1.8vw, 26px) !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    #lux-slider-system .lux-shot.lux-cbx .cbx-nug {
+        width: auto !important;
+        height: auto !important;
+        max-width: 23% !important;
+        max-height: 84% !important;
+        object-fit: contain !important;
+        filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.5)) !important;
+        animation: cbx-bounce 3.6s ease-in-out infinite !important;
+        will-change: transform !important;
+    }
+
+    #lux-slider-system .lux-shot.lux-cbx .cbx-nug:nth-child(2) {
+        animation-delay: -0.9s !important;
+    }
+
+    #lux-slider-system .lux-shot.lux-cbx .cbx-nug:nth-child(3) {
+        animation-delay: -1.8s !important;
+    }
+
+    #lux-slider-system .lux-shot.lux-cbx .cbx-nug:nth-child(4) {
+        animation-delay: -2.7s !important;
+    }
+
+    @keyframes cbx-bounce {
 
         0%,
         100% {
@@ -392,377 +214,1381 @@
         }
 
         50% {
-            transform: translateY(-12px);
+            transform: translateY(-22px);
         }
     }
 
-    #laxcc-hero-2025 .deck-card--time-machine img,
-    #laxcc-hero-2025 .deck-card--stiiizy img {
-        width: 90%;
-        height: 90%;
-        object-fit: contain;
-        margin: auto;
-    }
+    @keyframes cbx-track {
 
-    /* Content at bottom of card */
-    #laxcc-hero-2025 .deck-card__content {
-        padding: 1.25rem;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-    }
-
-    #laxcc-hero-2025 .deck-card__title {
-        color: white;
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin: 0 0 0.3rem 0;
-        line-height: 1.1;
-    }
-
-    #laxcc-hero-2025 .deck-card__subtitle {
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 0.95rem;
-        margin: 0;
-    }
-
-    /* Price Badge */
-    #laxcc-hero-2025 .deck-card__badge {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        background: #F89459;
-        color: #fff;
-        font-weight: 700;
-        padding: 0.4rem 0.8rem;
-        border-radius: 100px;
-        font-size: 0.85rem;
-        z-index: 20;
-        box-shadow: 0 4px 12px rgba(29, 80, 138, 0.3);
-    }
-
-    /* BOTTOM DOCK */
-    #laxcc-hero-2025 .floating-dock {
-        position: relative;
-        /* Changed from absolute to prevent overlap */
-        bottom: auto;
-        left: auto;
-        transform: none;
-        width: max-content;
-        margin: 20px auto 0 auto;
-        /* Add spacing from cards */
-        background: rgba(29, 80, 138, 0.9);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 6px;
-        z-index: 50;
-        box-shadow: 0 20px 40px rgba(29, 80, 138, 0.6);
-    }
-
-    #laxcc-hero-2025 .dock-btn {
-        background: var(--brand-orange);
-        color: #fff;
-        text-decoration: none;
-        font-weight: 600;
-        padding: 12px 24px;
-        border-radius: 100px;
-        font-size: 0.95rem;
-    }
-
-    /* ===== MOBILE FIX: STOP TEXT OVERLAPPING CARDS (NO VISUAL RESTYLE) ===== */
-    /* Make the hero text take real space on mobile so the slider starts below it */
-    @media (max-width: 1023px) {
-        #laxcc-hero-2025 .hero-mobile-first {
-            justify-content: flex-start;
-            /* was flex-end */
+        0%,
+        18% {
+            transform: translateX(0%);
         }
 
-        #laxcc-hero-2025 .hero-text-layer {
-            position: relative;
-            /* was absolute */
-            top: auto;
-            left: auto;
-            z-index: 10;
+        27%,
+        45% {
+            transform: translateX(-100%);
+        }
+
+        55%,
+        73% {
+            transform: translateX(-200%);
+        }
+
+        82%,
+        100% {
+            transform: translateX(-300%);
         }
     }
 
-    /* ===== DESKTOP OVERRIDE (Media Query) ===== */
-    @media (min-width: 1024px) {
-        #laxcc-hero-2025 .hero-mobile-first {
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem 0 1rem 0;
-            min-height: min(100dvh, 1080px);
-            height: auto;
-            overflow: visible;
+    @keyframes cbx-track3 {
+
+        0%,
+        24% {
+            transform: translateX(0%);
         }
 
-        #laxcc-hero-2025 .hero-content-inner {
-            justify-content: center;
+        38%,
+        62% {
+            transform: translateX(-100%);
         }
 
-        #laxcc-hero-2025 .hero-text-layer {
-            position: relative;
-            top: auto;
-            transform: none;
-            margin-bottom: 1rem;
-            z-index: 1;
+        76%,
+        100% {
+            transform: translateX(-200%);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        #lux-slider-system .lux-shot.lux-cbx .cbx-nug {
+            animation: none !important;
+        }
+    }
+
+    /* MOBILE — product filmstrip: stage is the fixed viewport, the inner track
+       slides one full jar at a time. A jar is ALWAYS rendered (worst case: jar 1). */
+    @media (max-width: 768px) {
+        #lux-slider-system .lux-shot.lux-cbx .cbx-stage {
+            display: block !important;
+            position: relative !important;
+            width: 100% !important;
+            height: 100% !important;
+            padding: 0 !important;
+            overflow: hidden !important;
         }
 
-        #laxcc-hero-2025 .hero-text-layer h1 {
-            font-size: min(6vw, 115px);
-            line-height: 1;
-            max-width: 95%;
+        #lux-slider-system .lux-shot.lux-cbx .cbx-track {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            gap: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            animation: cbx-track 14s ease-in-out infinite alternate !important;
+            will-change: transform !important;
         }
 
-        #laxcc-hero-2025 .hero-text-layer p {
-            font-size: 1rem;
+        #lux-slider-system .lux-shot.lux-cbx .cbx-nug {
+            flex: 0 0 100% !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            height: 86% !important;
+            max-height: 86% !important;
+            object-fit: contain !important;
+            opacity: 1 !important;
+            animation: none !important;
         }
 
-        #laxcc-hero-2025 .slider-wrapper {
-            max-width: 1600px;
-            margin: 0 auto;
+        #lux-slider-system .lux-shot.lux-cizi .cbx-track {
+            animation-name: cbx-track3 !important;
+        }
+    }
+
+    @media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+        #lux-slider-system .lux-shot.lux-cbx .cbx-track {
+            animation: none !important;
+        }
+    }
+
+    /* ── SCRIM — desktop only, where the brand text sits on the art ── */
+    #lux-slider-system .lux-scrim {
+        display: none !important;
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 12 !important;
+        pointer-events: none !important;
+        background: linear-gradient(to top,
+                rgba(10, 12, 16, 0.82) 0%,
+                rgba(10, 12, 16, 0.55) 24%,
+                rgba(10, 12, 16, 0.12) 48%,
+                rgba(10, 12, 16, 0) 66%) !important;
+    }
+
+    /* ── BRAND — below the art on touch, overlaid on it from 769px ── */
+    #lux-slider-system .lux-brand-panel {
+        text-align: left !important;
+        padding: 12px 14px 0 !important;
+    }
+
+    #lux-slider-system .lux-badge {
+        display: block !important;
+        background: none !important;
+        border: none !important;
+        color: #0a7d8f !important;
+        padding: 0 !important;
+        font-size: 11px !important;
+        font-weight: 800 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.14em !important;
+        margin: 0 0 3px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    #lux-slider-system .lux-name {
+        font-size: clamp(34px, 11vw, 54px) !important;
+        font-weight: 900 !important;
+        color: #1a1a1a !important;
+        margin: 0 !important;
+        text-transform: uppercase !important;
+        line-height: 0.88 !important;
+        letter-spacing: -0.035em !important;
+    }
+
+    #lux-slider-system .lux-subtitle {
+        font-size: clamp(16px, 4.6vw, 22px) !important;
+        color: #F89459 !important;
+        font-weight: 700 !important;
+        line-height: 1.15 !important;
+        margin: 5px 0 0 !important;
+    }
+
+    /* ── CTA — pinned on the art ── */
+    #lux-slider-system .lux-cta-wrap {
+        display: grid !important;
+        justify-items: center !important;
+        position: absolute !important;
+        left: 14px !important;
+        right: 14px !important;
+        bottom: 14px !important;
+        z-index: 19 !important;
+    }
+
+    #lux-slider-system a.lux-cta,
+    #lux-slider-system a.lux-cta:link,
+    #lux-slider-system a.lux-cta:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #F89459 !important;
+        color: #fff !important;
+        width: auto !important;
+        padding: 10px 22px !important;
+        border-radius: 100px !important;
+        text-decoration: none !important;
+        font-weight: 800 !important;
+        font-size: 12px !important;
+        letter-spacing: 0.07em !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important;
+        transition: 0.2s !important;
+        cursor: pointer !important;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28) !important;
+    }
+
+    #lux-slider-system a.lux-cta:hover {
+        color: #fff !important;
+        transform: translateY(-3px) !important;
+    }
+
+    /* ── COPY + SPEC STRIP ── */
+    #lux-slider-system .lux-info-panel {
+        min-width: 0 !important;
+        padding: 8px 14px 0 !important;
+        text-align: left !important;
+    }
+
+    #lux-slider-system .lux-desc {
+        font-size: 14px !important;
+        color: #57534c !important;
+        line-height: 1.35 !important;
+        margin: 0 !important;
+        max-width: none !important;
+    }
+
+    #lux-slider-system .lux-desc a {
+        color: #1D508A !important;
+        font-weight: 700 !important;
+        text-decoration: underline !important;
+        text-underline-offset: 2px !important;
+    }
+
+    #lux-slider-system .lux-desc a:hover {
+        color: #F89459 !important;
+    }
+
+    /* Touch — all 4 specs stay on ONE row as a swipe track, so the thumbnails
+       don't get pushed down. The 4th peeks at the edge to signal the swipe. */
+    #lux-slider-system .lux-facts {
+        list-style: none !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: flex-start !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        scroll-snap-type: x proximity !important;
+        scroll-padding-left: 14px !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+        overscroll-behavior-x: contain !important;
+        /* stops a spec-strip swipe from also dragging the card carousel */
+        margin: 11px -14px 0 !important;
+        padding: 0 14px 1px !important;
+    }
+
+    #lux-slider-system .lux-facts::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    #lux-slider-system .lux-facts li {
+        list-style: none !important;
+        display: flex !important;
+        flex: 0 0 auto !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        scroll-snap-align: start !important;
+        gap: 4px !important;
+        margin: 0 !important;
+        padding: 2px 13px !important;
+        min-width: 0 !important;
+        text-align: left !important;
+        box-shadow: inset 1px 0 0 rgba(26, 26, 26, 0.12) !important;
+    }
+
+    #lux-slider-system .lux-facts li:first-child {
+        box-shadow: none !important;
+        padding-left: 0 !important;
+    }
+
+    #lux-slider-system .lux-facts li::before,
+    #lux-slider-system .lux-facts li::marker {
+        content: none !important;
+    }
+
+    #lux-slider-system .lux-fact-head {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        min-width: 0 !important;
+    }
+
+    #lux-slider-system .lux-fact-label {
+        font-size: 9.5px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.13em !important;
+        text-transform: uppercase !important;
+        color: #9a948b !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+    }
+
+    #lux-slider-system .lux-fact-val {
+        display: block !important;
+        font-size: 13.5px !important;
+        font-weight: 800 !important;
+        color: #1a1a1a !important;
+        letter-spacing: -0.01em !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+    }
+
+    #lux-slider-system .lux-facts svg {
+        width: 14px !important;
+        height: 14px !important;
+        flex: 0 0 14px !important;
+        fill: none !important;
+        stroke: #F89459 !important;
+        stroke-width: 2 !important;
+        stroke-linecap: round !important;
+        stroke-linejoin: round !important;
+    }
+
+    /* ── DOCK — 1 Row horizontal scroll track on mobile ── */
+    #lux-slider-system #lux-hero-dock {
+        display: flex !important;
+        justify-content: flex-start !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        scroll-snap-type: x proximity !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+        overscroll-behavior-x: contain !important;
+        gap: 8px !important;
+        margin: 6px 0 0 !important;
+        padding: 4px 14px 8px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    #lux-slider-system #lux-hero-dock::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    /* Portrait tiles, 3:4, square corners — roughly 3x the old 44px chips. */
+    #lux-slider-system .lux-thumb {
+        position: relative !important;
+        display: block !important;
+        width: 88px !important;
+        height: 118px !important;
+        border-radius: 0 !important;
+        overflow: hidden !important;
+        cursor: pointer !important;
+        border-style: solid !important;
+        border-width: 2px !important;
+        border-color: transparent;
+        opacity: 0.5;
+        transform: translateY(0);
+        transition: opacity 0.3s ease, border-color 0.3s ease, transform 0.3s ease !important;
+        background: #fff !important;
+        flex: 0 0 auto !important;
+        flex-shrink: 0 !important;
+        scroll-snap-align: start !important;
+    }
+
+    #lux-slider-system .lux-thumb img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+
+
+
+    /* Two controls per thumb, one per mode: the label checks a radio (desktop
+       crossfade), the anchor scrolls the track to that card (touch). */
+    #lux-slider-system .lux-pick {
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 2 !important;
+        display: block !important;
+        cursor: pointer !important;
+        text-decoration: none !important;
+    }
+
+    #lux-slider-system .lux-pick-wide {
+        display: none !important;
+    }
+
+    /* On touch every thumb reads as available — scroll position can't be
+       tracked without JS, so no single one is marked active. */
+    @media (max-width: 768px) {
+        #lux-slider-system .lux-thumb {
+            opacity: 0.9;
         }
 
-        #laxcc-hero-2025 .scroll-arrow--prev {
-            left: -60px;
+        #lux-slider-system .lux-nav {
+            display: none !important;
+        }
+    }
+
+    /* ── FULL-BLEED ON PHONES ── */
+    @media (max-width: 768px) {
+        #lux-slider-system {
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+        }
+    }
+
+    @media (max-width: 400px) {
+        #lux-slider-system .lux-media {
+            height: 56vh !important;
+            min-height: 290px !important;
         }
 
-        #laxcc-hero-2025 .scroll-arrow--next {
-            right: -60px;
+        #lux-slider-system .lux-thumb {
+            width: 78px !important;
+            height: 104px !important;
+        }
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       DESKTOP / TABLET >=769px — cards dissolve, crossfade deck returns
+       ══════════════════════════════════════════════════════════════════ */
+    @media (min-width: 769px) {
+
+        /* The wrappers vanish: every .lux-media and .lux-info-panel becomes a
+           direct grid item of .lux-deck, so all six stack in the same areas. */
+        #lux-slider-system .lux-track,
+        #lux-slider-system .lux-card {
+            display: contents !important;
         }
 
-        #laxcc-hero-2025 .deck-container {
-            height: 580px;
-            padding: 0;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            justify-content: flex-start;
-            gap: 1.5rem;
+        #lux-slider-system .lux-deck {
+            display: grid !important;
+            grid-template-areas: "media" "info" "dock" !important;
+            grid-template-columns: 1fr !important;
+            row-gap: 10px !important;
         }
 
-        #laxcc-hero-2025 .deck-card {
-            flex: 0 0 400px;
-            transition: transform 0.3s ease;
-            will-change: transform;
+        #lux-slider-system .lux-media {
+            grid-area: media !important;
+            height: 620px !important;
+            max-height: none !important;
+            border-radius: 0 !important;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08) !important;
         }
 
-
-        #laxcc-hero-2025 .floating-dock {
-            position: absolute;
-            bottom: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            margin: 0;
+        #lux-slider-system .lux-info-panel {
+            grid-area: info !important;
+            padding: 0 10px !important;
+            text-align: center !important;
         }
+
+        #lux-slider-system #lux-hero-dock {
+            grid-area: dock !important;
+            display: flex !important;
+            justify-content: center !important;
+            flex-wrap: nowrap !important;
+            overflow-x: visible !important;
+            gap: 7px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        #lux-slider-system .lux-thumb {
+            width: clamp(72px, 6.2vw, 108px) !important;
+            height: auto !important;
+            aspect-ratio: 3 / 4 !important;
+        }
+
+        /* swap which control is live */
+        #lux-slider-system .lux-pick-wide {
+            display: block !important;
+        }
+
+        #lux-slider-system .lux-pick-touch {
+            display: none !important;
+        }
+
+        #lux-slider-system .lux-scrim {
+            display: block !important;
+        }
+
+        /* Brand goes back on the art, bottom-left */
+        #lux-slider-system .lux-brand-panel {
+            grid-area: media !important;
+            align-self: end !important;
+            z-index: 16 !important;
+            text-align: left !important;
+            padding: 0 46px 38px !important;
+            pointer-events: none !important;
+        }
+
+        #lux-slider-system .lux-badge {
+            color: #F89459 !important;
+            font-size: 12px !important;
+            letter-spacing: 0.16em !important;
+            margin-bottom: 8px !important;
+            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55) !important;
+        }
+
+        #lux-slider-system .lux-name {
+            font-size: clamp(46px, 5.2vw, 78px) !important;
+            color: #ffffff !important;
+            line-height: 0.86 !important;
+            max-width: 68% !important;
+            text-shadow: 0 2px 26px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        #lux-slider-system .lux-subtitle {
+            font-size: clamp(19px, 1.6vw, 26px) !important;
+            color: rgba(255, 255, 255, 0.93) !important;
+            font-weight: 600 !important;
+            max-width: 62% !important;
+            margin-top: 10px !important;
+            text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6) !important;
+        }
+
+        /* CTA back to bottom-right, full size */
+        #lux-slider-system .lux-cta-wrap {
+            left: auto !important;
+            right: 46px !important;
+            bottom: 40px !important;
+            width: auto !important;
+            justify-items: end !important;
+        }
+
+        #lux-slider-system a.lux-cta,
+        #lux-slider-system a.lux-cta:link,
+        #lux-slider-system a.lux-cta:visited {
+            padding: 16px 44px !important;
+            border-radius: 12px !important;
+            font-size: 15px !important;
+            letter-spacing: normal !important;
+            box-shadow: 0 8px 25px rgba(248, 148, 89, 0.2) !important;
+        }
+
+        #lux-slider-system a.lux-cta:hover {
+            box-shadow: 0 12px 35px rgba(248, 148, 89, 0.3) !important;
+        }
+
+        /* Specs become the fixed 4-column grid again — one row, no scrolling */
+        #lux-slider-system .lux-desc {
+            font-size: 14.5px !important;
+            line-height: 1.4 !important;
+        }
+
+        #lux-slider-system .lux-facts {
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr) !important;
+            overflow: visible !important;
+            max-width: 900px !important;
+            margin: 11px auto 0 !important;
+            padding: 0 !important;
+        }
+
+        #lux-slider-system .lux-facts li {
+            padding: 2px 14px !important;
+            scroll-snap-align: none !important;
+        }
+
+        #lux-slider-system .lux-facts li:first-child {
+            padding-left: 14px !important;
+        }
+
+        #lux-slider-system .lux-facts li:nth-child(4n+1) {
+            box-shadow: none !important;
+            padding-left: 0 !important;
+        }
+
+        #lux-slider-system .lux-fact-val {
+            font-size: 14.5px !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            width: 100% !important;
+        }
+    }
+
+    /* Narrow tablets — 4 columns in ~600px, so ease the type down */
+    @media (min-width: 769px) and (max-width: 900px) {
+        #lux-slider-system .lux-fact-val {
+            font-size: 13px !important;
+        }
+
+        #lux-slider-system .lux-facts li {
+            padding: 2px 11px !important;
+        }
+    }
+
+    /* ── >=1200px — the 2-across bar: thumbs | copy, exactly as before ── */
+    @media (min-width: 1200px) {
+        #lux-slider-system .lux-deck {
+            grid-template-areas: "media media" "dock info" !important;
+            grid-template-columns: auto 1fr !important;
+            column-gap: 32px !important;
+            align-items: center !important;
+        }
+
+        #lux-slider-system .lux-info-panel {
+            text-align: left !important;
+        }
+
+        #lux-slider-system .lux-facts {
+            max-width: none !important;
+            margin: 11px 0 0 !important;
+        }
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
+       CROSSFADE — desktop only. Media carries brand/CTA/arrows inside it,
+       so only two groups per card need animating.
+       ══════════════════════════════════════════════════════════════════ */
+    @keyframes lux-fade {
+        0% {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        1.2% {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        13.1% {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        14.286% {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    @keyframes lux-thumb-cycle {
+        0% {
+            opacity: 0.5;
+            border-color: transparent;
+            transform: translateY(0);
+        }
+
+        1.2% {
+            opacity: 1;
+            border-color: #F89459;
+            transform: translateY(-3px);
+        }
+
+        13.1% {
+            opacity: 1;
+            border-color: #F89459;
+            transform: translateY(-3px);
+        }
+
+        14.286% {
+            opacity: 0.5;
+            border-color: transparent;
+            transform: translateY(0);
+        }
+
+        100% {
+            opacity: 0.5;
+            border-color: transparent;
+            transform: translateY(0);
+        }
+    }
+
+    @media (min-width: 769px) {
+
+        /* opacity/visibility carry NO !important — an !important declaration
+           outranks a running animation, which would pin every card invisible.
+           Longhands only — the `animation` shorthand would reset the delays. */
+        #lux-slider-system .lux-card>.lux-media,
+        #lux-slider-system .lux-card>.lux-brand-panel,
+        #lux-slider-system .lux-card>.lux-info-panel {
+            opacity: 0;
+            visibility: hidden;
+            animation-name: lux-fade !important;
+            animation-duration: 42s !important;
+            animation-timing-function: linear !important;
+            animation-iteration-count: infinite !important;
+        }
+
+        #lux-slider-system .lux-card:nth-child(1)>.lux-media,
+        #lux-slider-system .lux-card:nth-child(1)>.lux-brand-panel,
+        #lux-slider-system .lux-card:nth-child(1)>.lux-info-panel,
+        #lux-slider-system .lux-thumb:nth-child(1) {
+            animation-delay: 0s !important;
+        }
+
+        #lux-slider-system .lux-card:nth-child(2)>.lux-media,
+        #lux-slider-system .lux-card:nth-child(2)>.lux-brand-panel,
+        #lux-slider-system .lux-card:nth-child(2)>.lux-info-panel,
+        #lux-slider-system .lux-thumb:nth-child(2) {
+            animation-delay: 6s !important;
+        }
+
+        #lux-slider-system .lux-card:nth-child(3)>.lux-media,
+        #lux-slider-system .lux-card:nth-child(3)>.lux-brand-panel,
+        #lux-slider-system .lux-card:nth-child(3)>.lux-info-panel,
+        #lux-slider-system .lux-thumb:nth-child(3) {
+            animation-delay: 12s !important;
+        }
+
+        #lux-slider-system .lux-card:nth-child(4)>.lux-media,
+        #lux-slider-system .lux-card:nth-child(4)>.lux-brand-panel,
+        #lux-slider-system .lux-card:nth-child(4)>.lux-info-panel,
+        #lux-slider-system .lux-thumb:nth-child(4) {
+            animation-delay: 18s !important;
+        }
+
+        #lux-slider-system .lux-card:nth-child(5)>.lux-media,
+        #lux-slider-system .lux-card:nth-child(5)>.lux-brand-panel,
+        #lux-slider-system .lux-card:nth-child(5)>.lux-info-panel,
+        #lux-slider-system .lux-thumb:nth-child(5) {
+            animation-delay: 24s !important;
+        }
+
+        #lux-slider-system .lux-card:nth-child(6)>.lux-media,
+        #lux-slider-system .lux-card:nth-child(6)>.lux-brand-panel,
+        #lux-slider-system .lux-card:nth-child(6)>.lux-info-panel,
+        #lux-slider-system .lux-thumb:nth-child(6) {
+            animation-delay: 30s !important;
+        }
+
+        #lux-slider-system .lux-card:nth-child(7)>.lux-media,
+        #lux-slider-system .lux-card:nth-child(7)>.lux-brand-panel,
+        #lux-slider-system .lux-card:nth-child(7)>.lux-info-panel,
+        #lux-slider-system .lux-thumb:nth-child(7) {
+            animation-delay: 36s !important;
+        }
+
+        #lux-slider-system .lux-thumb {
+            animation-name: lux-thumb-cycle !important;
+            animation-duration: 42s !important;
+            animation-timing-function: linear !important;
+            animation-iteration-count: infinite !important;
+        }
+
+        /* ANY thumb/arrow picked -> kill autoplay and hold.
+           Anchored at #lux-slider-system and mirroring the base child path so
+           these always outrank it. */
+        #lux-slider-system .lux-radio:checked~.lux-deck .lux-card>.lux-media,
+        #lux-slider-system .lux-radio:checked~.lux-deck .lux-card>.lux-brand-panel,
+        #lux-slider-system .lux-radio:checked~.lux-deck .lux-card>.lux-info-panel {
+            animation-name: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+
+        #lux-slider-system .lux-radio:checked~.lux-deck #lux-hero-dock .lux-thumb {
+            animation-name: none !important;
+            opacity: 0.5 !important;
+            border-color: transparent !important;
+            transform: translateY(0) !important;
+        }
+
+        /* ...then reveal the chosen index. One more ID than the reset above. */
+        #lux-slider-system #lux-r1:checked~.lux-deck .lux-card:nth-child(1)>.lux-media,
+        #lux-slider-system #lux-r1:checked~.lux-deck .lux-card:nth-child(1)>.lux-brand-panel,
+        #lux-slider-system #lux-r1:checked~.lux-deck .lux-card:nth-child(1)>.lux-info-panel,
+        #lux-slider-system #lux-r2:checked~.lux-deck .lux-card:nth-child(2)>.lux-media,
+        #lux-slider-system #lux-r2:checked~.lux-deck .lux-card:nth-child(2)>.lux-brand-panel,
+        #lux-slider-system #lux-r2:checked~.lux-deck .lux-card:nth-child(2)>.lux-info-panel,
+        #lux-slider-system #lux-r3:checked~.lux-deck .lux-card:nth-child(3)>.lux-media,
+        #lux-slider-system #lux-r3:checked~.lux-deck .lux-card:nth-child(3)>.lux-brand-panel,
+        #lux-slider-system #lux-r3:checked~.lux-deck .lux-card:nth-child(3)>.lux-info-panel,
+        #lux-slider-system #lux-r4:checked~.lux-deck .lux-card:nth-child(4)>.lux-media,
+        #lux-slider-system #lux-r4:checked~.lux-deck .lux-card:nth-child(4)>.lux-brand-panel,
+        #lux-slider-system #lux-r4:checked~.lux-deck .lux-card:nth-child(4)>.lux-info-panel,
+        #lux-slider-system #lux-r5:checked~.lux-deck .lux-card:nth-child(5)>.lux-media,
+        #lux-slider-system #lux-r5:checked~.lux-deck .lux-card:nth-child(5)>.lux-brand-panel,
+        #lux-slider-system #lux-r5:checked~.lux-deck .lux-card:nth-child(5)>.lux-info-panel,
+        #lux-slider-system #lux-r6:checked~.lux-deck .lux-card:nth-child(6)>.lux-media,
+        #lux-slider-system #lux-r6:checked~.lux-deck .lux-card:nth-child(6)>.lux-brand-panel,
+        #lux-slider-system #lux-r6:checked~.lux-deck .lux-card:nth-child(6)>.lux-info-panel,
+        #lux-slider-system #lux-r7:checked~.lux-deck .lux-card:nth-child(7)>.lux-media,
+        #lux-slider-system #lux-r7:checked~.lux-deck .lux-card:nth-child(7)>.lux-brand-panel,
+        #lux-slider-system #lux-r7:checked~.lux-deck .lux-card:nth-child(7)>.lux-info-panel {
+            opacity: 1 !important;
+            visibility: visible !important;
+            z-index: 10 !important;
+        }
+
+        #lux-slider-system #lux-r1:checked~.lux-deck #lux-hero-dock .lux-thumb:nth-child(1),
+        #lux-slider-system #lux-r2:checked~.lux-deck #lux-hero-dock .lux-thumb:nth-child(2),
+        #lux-slider-system #lux-r3:checked~.lux-deck #lux-hero-dock .lux-thumb:nth-child(3),
+        #lux-slider-system #lux-r4:checked~.lux-deck #lux-hero-dock .lux-thumb:nth-child(4),
+        #lux-slider-system #lux-r5:checked~.lux-deck #lux-hero-dock .lux-thumb:nth-child(5),
+        #lux-slider-system #lux-r6:checked~.lux-deck #lux-hero-dock .lux-thumb:nth-child(6),
+        #lux-slider-system #lux-r7:checked~.lux-deck #lux-hero-dock .lux-thumb:nth-child(7) {
+            opacity: 1 !important;
+            border-color: #F89459 !important;
+            transform: translateY(-3px) !important;
+        }
+    }
+
+    /* ── ARROWS — one pair per card, targeting its neighbours ── */
+    #lux-slider-system .lux-nav {
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 20 !important;
+        pointer-events: none !important;
+    }
+
+    #lux-slider-system .lux-arrow {
+        position: absolute !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 46px !important;
+        height: 46px !important;
+        background: transparent !important;
+        border: none !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        pointer-events: auto !important;
+        opacity: 0 !important;
+        transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    #lux-slider-system .lux-media:hover .lux-arrow {
+        opacity: 0.92 !important;
+    }
+
+    #lux-slider-system .lux-arrow-prev {
+        left: 10px !important;
+    }
+
+    #lux-slider-system .lux-arrow-next {
+        right: 10px !important;
+    }
+
+    #lux-slider-system .lux-arrow svg {
+        width: 30px !important;
+        height: 30px !important;
+        fill: none !important;
+        stroke: #ffffff !important;
+        stroke-width: 1.6 !important;
+        stroke-linecap: round !important;
+        stroke-linejoin: round !important;
+        filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.5)) !important;
+        transition: stroke 0.25s ease !important;
+    }
+
+    #lux-slider-system .lux-media:hover .lux-arrow:hover {
+        opacity: 1 !important;
+        transform: translateY(-50%) scale(1.14) !important;
+    }
+
+    #lux-slider-system .lux-arrow:hover svg {
+        stroke: #F89459 !important;
+    }
+
+    /* Elementor override — width:100% of parent column (NOT 100vw breakout) */
+    .elementor-widget-container #lux-slider-system {
+        width: 100% !important;
     }
 </style>
 
-<div id="laxcc-hero-2025">
-    <section class="hero-mobile-first">
-        <div class="hero-bg">
-            <video autoplay muted playsinline loop>
-                <source src="https://laxcc.com/wp-content/uploads/2025/05/Best-La-Dispensary-2025.webm"
-                    type="video/webm">
-            </video>
-        </div>
+<div id="lux-slider-system">
 
-        <div class="hero-content-inner">
-            <div class="hero-text-layer">
-                <p>LAXCC Airport Premium Cannabis</p>
-                <h1 style="display: none;">Los Angeles' Highest-Rated Dispensary Near LAX Airport</h1>
-                <h1 class="watermark-h1" aria-hidden="true">Los Angeles' Highest-Rated Dispensary
-                    Near LAX Airport</h1>
-                <p class="hero-seo-text"
-                    style="color: rgba(255, 255, 255, 0.6); font-size: 1rem; max-width: 850px; margin: 0.5rem auto; text-transform: none; letter-spacing: normal; line-height: 1.4;">
-                    Los Angeles' premier dispensary near LAX. Shop 750+ products from top brands with fast online
-                    ordering
-                    and instant pickup.
-                </p>
-            </div>
+    <!-- Desktop slide state. On touch the deck is a native scroll-snap track, so
+         swiping drives it instead and these are simply not used. -->
+    <input class="lux-radio" type="radio" name="lux-slide" id="lux-r1" aria-label="STIIIZY Pods">
+    <input class="lux-radio" type="radio" name="lux-slide" id="lux-r2" aria-label="KOA THC Gummies">
+    <input class="lux-radio" type="radio" name="lux-slide" id="lux-r3" aria-label="Selfies BOGO Pre-Rolls">
+    <input class="lux-radio" type="radio" name="lux-slide" id="lux-r4" aria-label="Kyles">
+    <input class="lux-radio" type="radio" name="lux-slide" id="lux-r5" aria-label="Delighted">
+    <input class="lux-radio" type="radio" name="lux-slide" id="lux-r6" aria-label="Infused Pre-Rolls">
+    <input class="lux-radio" type="radio" name="lux-slide" id="lux-r7" aria-label="THC Drinks">
 
-            <div class="slider-wrapper">
-                <button class="scroll-arrow scroll-arrow--prev" aria-label="Previous slide">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="m15 18-6-6 6-6" />
-                    </svg>
-                </button>
+    <div class="lux-deck">
 
-                <div class="deck-container" id="hero-slider">
+        <div class="lux-track">
 
-                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=thc+design&brands=61c55fcf-2d64-4e61-82e2-b730dd46826a"
-                        class="deck-card deck-card--tangie-frosting">
-                        <div class="deck-card__badge">$15 1g</div>
-                        <div class="deck-card__media">
-                            <div class="tangie-circle-wrap">
-                                <img src="https://thcdesign.com/wp-content/uploads/2025/08/THCD_BUD_BERRY_BONDS-scaled.jpg"
-                                    alt="THC Design S Tangie Frosting - Top Shelf Sativa Near LAX">
-                            </div>
-                        </div>
-                        <div class="deck-card__content">
-                            <h3 class="deck-card__title">S Tangie Frosting</h3>
-                            <p class="deck-card__subtitle">THC Design • 28.4% THC • Sativa</p>
-                        </div>
+            <!-- 1 · STIIIZY Pods BOGO -->
+            <section class="lux-card" id="lux-c1">
+
+                <div class="lux-media">
+                    <a class="lux-shot" href="https://laxcc.com/brand/stiiizy/" rel="noopener">
+                        <picture>
+                            <source media="(max-width: 768px)"
+                                srcset="https://laxcc.com/wp-content/uploads/2026/09/best-stiiizy-pod-deals-LA.png">
+                            <img src="https://laxcc.com/wp-content/uploads/2026/09/best-stiiizy-deals-los-angeles-scaled.jpg"
+                                alt="STIIIZY THC Pods buy one get one deal $36-$40 distillate and live resin in Los Angeles">
+                        </picture>
                     </a>
 
-                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=drops&brands=edb40dc1-9b3c-43a6-8dc8-dc3aa37b1c4e" class="deck-card deck-card--live-rosin-gummies">
-                        <div class="deck-card__badge">$10 ea</div>
-                        <div class="deck-card__media">
-                            <img src="https://laxcc.com/wp-content/uploads/2026/01/live-rosin-gummies-near-lax-1.png"
-                                alt="Live Rosin Gummies Near LAX">
-                        </div>
-                        <div class="deck-card__content">
-                            <h3 class="deck-card__title">Live Rosin Gummies</h3>
-                            <p class="deck-card__subtitle">Lemon, Watermelon, Orange, Raspberry</p>
-                        </div>
-                    </a>
+                    <div class="lux-scrim"></div>
 
-                    <a href="https://laxcc.com/product/shop-cannabis-lax_seed-junky-flower-banana-fruz/"
-                        class="deck-card deck-card--banana-fruz">
-                        <div class="deck-card__badge">$40 1/8oz</div>
-                        <div class="deck-card__media">
-                            <img src="https://res.cloudinary.com/dcwq74lfg/image/upload/fl_lossy,f_auto/v1757436112/brand/Seed%20Junky/product/9c781f9c67dded79631f4c8f50c14240.png"
-                                alt="Banana Fruz">
-                        </div>
-                        <div class="deck-card__content">
-                            <h3 class="deck-card__title">Banana Fruz</h3>
-                            <p class="deck-card__subtitle">Seed Junky Flower</p>
-                        </div>
-                    </a>
+                    <div class="lux-cta-wrap">
+                        <a class="lux-cta" href="https://laxcc.com/brand/stiiizy/">Shop STIIIZY</a>
+                    </div>
 
-                    <a href="https://laxcc.com/product/shop-cannabis-lax_seed-junky-mango-fruz-3-5/"
-                        class="deck-card deck-card--mango-fruz">
-                        <div class="deck-card__badge">$40 1/8oz</div>
-                        <div class="deck-card__media">
-                            <img src="https://res.cloudinary.com/dcwq74lfg/image/upload/fl_lossy,f_auto/v1758708667/brand/Seed%20Junky%20Flower/product/15dc4779b9753da00b65b8e9736f9a93.png"
-                                alt="Mango Fruz">
-                        </div>
-                        <div class="deck-card__content">
-                            <h3 class="deck-card__title">Mango Fruz</h3>
-                            <p class="deck-card__subtitle">Seed Junky Flower</p>
-                        </div>
-                    </a>
-
-                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=cc54b2b6-dacf-49bf-88d7-cda128fddca5"
-                        class="deck-card">
-                        <div class="deck-card__badge">$49.99 1/8oz</div>
-                        <div class="deck-card__media">
-                            <img src="https://images.dutchie.com/332f18541693953eb78a8eb171760865" alt="Clone Goddess">
-                        </div>
-                        <div class="deck-card__content">
-                            <h3 class="deck-card__title">Clone Goddess</h3>
-                            <p class="deck-card__subtitle">H Sherblato Runtz</p>
-                        </div>
-                    </a>
-
-
-                    <a href="https://laxcc.com/raw-garden-vape-near-lax/" class="deck-card">
-                        <div class="deck-card__badge">Live Resin</div>
-                        <div class="deck-card__media">
-                            <video autoplay muted playsinline loop style="object-fit:cover; width:100%; height:100%;">
-                                <source
-                                    src="https://laxcc.com/wp-content/uploads/2025/12/buy-raw-garden-sprout-near-lax.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="deck-card__content">
-                            <h3 class="deck-card__title">Raw Garden</h3>
-                            <p class="deck-card__subtitle">Refined Live Resin Vapes</p>
-                        </div>
-                    </a>
-
-                    <a href="https://laxcc.com/categories/vaporizers/?brands=1cebe6f5-bab2-4f15-a50a-9730fee79de4"
-                        class="deck-card deck-card--stiiizy">
-                        <div class="deck-card__badge">Top Seller</div>
-                        <div class="deck-card__media" style="display:flex;">
-                            <img src="https://www.stiiizy.com/cdn/shop/files/IL_AIO_POD_FAMILY_SHOTS_1200x.png?v=1692232410"
-                                alt="Stiiizy">
-                        </div>
-                        <div class="deck-card__content"
-                            style="background:linear-gradient(to top, rgba(29, 80, 138, 0.8), transparent);">
-                            <h3 class="deck-card__title">Stiiizy Pods</h3>
-                            <p class="deck-card__subtitle">Starting at $20</p>
-                        </div>
-                    </a>
-
-                    <a href="https://laxcc.com/shop/?products_search=Time%20Machine"
-                        class="deck-card deck-card--time-machine">
-                        <div class="deck-card__badge">$55 1/2oz</div>
-                        <div class="deck-card__media" style="display:flex;">
-                            <img src="https://timemachinebrand.com/wp-content/uploads/2025/04/TM_3.5G_Nug_s_CLM.png"
-                                alt="Time Machine">
-                        </div>
-                        <div class="deck-card__content">
-                            <h3 class="deck-card__title">Time Machine</h3>
-                            <p class="deck-card__subtitle">Hydroponic Greenhouse Flower</p>
-                        </div>
-                    </a>
-
-                    <a href="https://laxcc.com/categories/vaporizers/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=1d682d79-2ceb-45dc-826a-0c702cc68f42"
-                        class="deck-card" style="background:#1e293b;">
-                        <div class="deck-card__badge">$30-$42</div>
-                        <div class="deck-card__media">
-                            <img src="https://thebloombrands.com/wp-content/uploads/2023/08/Bloom-Which-Surf-Is-Right-For-You-004.jpg"
-                                alt="Bloom" style="object-fit: cover;">
-                        </div>
-                        <div class="deck-card__content">
-                            <h3 class="deck-card__title">Bloom</h3>
-                            <p class="deck-card__subtitle">Live and Classic Vapes</p>
-                        </div>
-                    </a>
-
-
+                    <div class="lux-nav">
+                        <label class="lux-arrow lux-arrow-prev" for="lux-r7" aria-label="Previous slide"><svg
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M15 5l-7 7 7 7" />
+                            </svg></label>
+                        <label class="lux-arrow lux-arrow-next" for="lux-r2" aria-label="Next slide"><svg
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 5l7 7-7 7" />
+                            </svg></label>
+                    </div>
                 </div>
 
-                <button class="scroll-arrow scroll-arrow--next" aria-label="Next slide">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="m9 18 6-6-6-6" />
-                    </svg>
-                </button>
-            </div>
+                <div class="lux-brand-panel">
+                    <span class="lux-badge">Buy One, Get One &middot; $36&ndash;$40</span>
+                    <h2 class="lux-name">STIIIZY</h2>
+                    <p class="lux-subtitle">THC Pods &mdash; Distillate &amp; Live Resin</p>
+                </div>
 
-            <div class="floating-dock">
-                <a href="https://laxcc.com/shop" class="dock-btn">Shop Menu</a>
+                <div class="lux-info-panel">
+                    <p class="lux-desc">Buy one, get one deal on STIIIZY pods &mdash; premium distillate and live resin pods from 81% to 89% THC for $36 to $40.</p>
+                    <ul class="lux-facts">
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="8.8" />
+                                    <path d="M12 7.2V12l3.2 2" />
+                                </svg><span class="lux-fact-label">Deal</span></span><span class="lux-fact-val">Buy one, get one</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 2.5v19" />
+                                    <path
+                                        d="M16.8 6.6C16.8 4.9 14.7 3.9 12 3.9S7.2 5 7.2 7.1s2.1 3 4.8 3.6 4.8 1.5 4.8 3.6-2.1 3.4-4.8 3.4-4.8-1.2-4.8-2.9" />
+                                </svg><span class="lux-fact-label">Price</span></span><span class="lux-fact-val">$36&ndash;$40</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M13.2 2.2 4.6 13.6h6.2l-.9 8.2 9.4-11.6h-6.4l.3-8Z" />
+                                </svg><span class="lux-fact-label">Potency</span></span><span class="lux-fact-val">81&ndash;89% THC</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M5.2 18.8c-1-8 4.6-13.4 15.2-13.4.6 9.2-4.6 14.2-11.6 14.2-1.9 0-3.6-.8-3.6-.8Z" />
+                                    <path d="M3.6 21.2c2.2-5.4 6.4-9.2 11.2-11.8" />
+                                </svg><span class="lux-fact-label">Type</span></span><span class="lux-fact-val">Distillate &middot; Live Resin</span></li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <!-- 2 · KOA THC Gummies BOGO -->
+            <section class="lux-card" id="lux-c2">
+
+                <div class="lux-media">
+                    <a class="lux-shot" href="https://laxcc.com/brand/koa-cannabis-co/" rel="noopener">
+                        <picture>
+                            <source media="(max-width: 768px)"
+                                srcset="https://laxcc.com/wp-content/uploads/2026/09/BOGO-THC-Gummies-Los-Angeles-scaled.jpg">
+                            <img src="https://laxcc.com/wp-content/uploads/2026/09/BOGO_THC_Gummies-LA_Dispensary-scaled.jpg"
+                                alt="KOA THC Gummies Buy One Get One $15 Deal with Tax Included near LAX">
+                        </picture>
+                    </a>
+
+                    <div class="lux-scrim"></div>
+
+                    <div class="lux-cta-wrap">
+                        <a class="lux-cta" href="https://laxcc.com/brand/koa-cannabis-co/">Shop KOA</a>
+                    </div>
+
+                    <div class="lux-nav">
+                        <label class="lux-arrow lux-arrow-prev" for="lux-r1" aria-label="Previous slide"><svg
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M15 5l-7 7 7 7" />
+                            </svg></label>
+                        <label class="lux-arrow lux-arrow-next" for="lux-r3" aria-label="Next slide"><svg
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 5l7 7-7 7" />
+                            </svg></label>
+                    </div>
+                </div>
+
+                <div class="lux-brand-panel">
+                    <span class="lux-badge">Buy One, Get One &middot; $15 Tax Included</span>
+                    <h2 class="lux-name">KOA</h2>
+                    <p class="lux-subtitle">THC Gummies &middot; BOGO $15 Tax Included</p>
+                </div>
+
+                <div class="lux-info-panel">
+                    <p class="lux-desc">KOA THC Gummies buy one, get one deal &mdash; get premium THC gummies for just $15 with tax included in the price.</p>
+                    <ul class="lux-facts">
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 2.5v19" />
+                                    <path
+                                        d="M16.8 6.6C16.8 4.9 14.7 3.9 12 3.9S7.2 5 7.2 7.1s2.1 3 4.8 3.6 4.8 1.5 4.8 3.6-2.1 3.4-4.8 3.4-4.8-1.2-4.8-2.9" />
+                                </svg><span class="lux-fact-label">Price</span></span><span class="lux-fact-val">$15 &middot; Tax Included</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="8.8" />
+                                    <path d="M12 7.2V12l3.2 2" />
+                                </svg><span class="lux-fact-label">Deal</span></span><span class="lux-fact-val">Buy one, get one</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M13.2 2.2 4.6 13.6h6.2l-.9 8.2 9.4-11.6h-6.4l.3-8Z" />
+                                </svg><span class="lux-fact-label">Type</span></span><span class="lux-fact-val">THC Gummies</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="m12 3.2 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3.2Z" />
+                                </svg><span class="lux-fact-label">Brand</span></span><span class="lux-fact-val">KOA</span></li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <!-- 3 · Selfies BOGO 2-Packs -->
+            <section class="lux-card" id="lux-c3">
+
+                <div class="lux-media">
+                    <a class="lux-shot lux-shot-top" href="https://laxcc.com/brand/selfies/" rel="noopener">
+                        <picture>
+                            <source media="(max-width: 768px)"
+                                srcset="https://selfiesbyheshies.com/cdn/shop/files/Selfies-by-Heshies3481_1.jpg?v=1741208020&width=2000">
+                            <img src="https://selfiesbyheshies.com/cdn/shop/files/Selfies-by-Heshies3481_1.jpg?v=1741208020&width=2000"
+                                alt="Selfies by Heshies buy one get one 2-pack mini pre-rolls deal $8 to $12 tax included">
+                        </picture>
+                    </a>
+
+                    <div class="lux-scrim"></div>
+
+                    <div class="lux-cta-wrap">
+                        <a class="lux-cta" href="https://laxcc.com/brand/selfies/">Shop Selfies</a>
+                    </div>
+
+                    <div class="lux-nav">
+                        <label class="lux-arrow lux-arrow-prev" for="lux-r2" aria-label="Previous slide"><svg
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M15 5l-7 7 7 7" />
+                            </svg></label>
+                        <label class="lux-arrow lux-arrow-next" for="lux-r4" aria-label="Next slide"><svg
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 5l7 7-7 7" />
+                            </svg></label>
+                    </div>
+                </div>
+
+                <div class="lux-brand-panel">
+                    <span class="lux-badge">Buy One, Get One &middot; $8&ndash;$12 Tax Included</span>
+                    <h2 class="lux-name">Selfies</h2>
+                    <p class="lux-subtitle">BOGO 2-Packs &mdash; Regular &amp; Infused</p>
+                </div>
+
+                <div class="lux-info-panel">
+                    <p class="lux-desc">Buy one, get one on Selfies 2-pack mini pre-rolls &mdash; regular flower and live resin infused, 0.5g half-gram packs, 20&ndash;37% THC, $8 to $12 tax included.</p>
+                    <ul class="lux-facts">
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="8.8" />
+                                    <path d="M12 7.2V12l3.2 2" />
+                                </svg><span class="lux-fact-label">Deal</span></span><span class="lux-fact-val">BOGO &middot; 2-Packs</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 2.5v19" />
+                                    <path
+                                        d="M16.8 6.6C16.8 4.9 14.7 3.9 12 3.9S7.2 5 7.2 7.1s2.1 3 4.8 3.6 4.8 1.5 4.8 3.6-2.1 3.4-4.8 3.4-4.8-1.2-4.8-2.9" />
+                                </svg><span class="lux-fact-label">Price</span></span><span class="lux-fact-val">$8&ndash;$12 &middot; Tax Inc</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M13.2 2.2 4.6 13.6h6.2l-.9 8.2 9.4-11.6h-6.4l.3-8Z" />
+                                </svg><span class="lux-fact-label">Potency</span></span><span class="lux-fact-val">20&ndash;37% THC</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 3.5v17M7.5 20.5h9M4.5 7.5h15" />
+                                    <path d="M4.5 7.5 1.8 13.6a2.9 2.9 0 0 0 5.4 0Z" />
+                                    <path d="M19.5 7.5l-2.7 6.1a2.9 2.9 0 0 0 5.4 0Z" />
+                                </svg><span class="lux-fact-label">Size</span></span><span class="lux-fact-val">0.5g &middot; Half Gram</span></li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <!-- 4 · Kyles BOGO eighths -->
+            <section class="lux-card" id="lux-c4">
+
+                <div class="lux-media">
+                    <a class="lux-shot" href="https://laxcc.com/brand/kyles/" rel="noopener">
+                        <picture>
+                            <source media="(max-width: 768px)"
+                                srcset="https://laxcc.com/wp-content/uploads/2026/08/best-purple-weed-deal-near-lax-airport.png">
+                            <img src="https://laxcc.com/wp-content/uploads/2026/08/BOGO-Weed-Deal-Los-Angeles-dispensary.png"
+                                alt="Kyles buy one get one indoor top-shelf eighth deal near LAX">
+                        </picture>
+                    </a>
+
+                    <div class="lux-scrim"></div>
+
+                    <div class="lux-cta-wrap">
+                        <a class="lux-cta" href="https://laxcc.com/brand/kyles/">Shop Kyles</a>
+                    </div>
+
+                    <div class="lux-nav">
+                        <label class="lux-arrow lux-arrow-prev" for="lux-r3" aria-label="Previous slide"><svg
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M15 5l-7 7 7 7" />
+                            </svg></label>
+                        <label class="lux-arrow lux-arrow-next" for="lux-r5" aria-label="Next slide"><svg
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 5l7 7-7 7" />
+                            </svg></label>
+                    </div>
+                </div>
+
+                <div class="lux-brand-panel">
+                    <span class="lux-badge">Buy One, Get One &middot; Limited Time</span>
+                    <h2 class="lux-name">Kyles</h2>
+                    <p class="lux-subtitle">Indoor Top-Shelf 3.5g Eighths</p>
+                </div>
+
+                <div class="lux-info-panel">
+                    <p class="lux-desc">Buy one, get one on qualifying Kyles eighths &mdash; indoor-grown, top-shelf
+                        flower in 3.5g eighths for a limited time.</p>
+                    <ul class="lux-facts">
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 2.5v19" />
+                                    <path
+                                        d="M16.8 6.6C16.8 4.9 14.7 3.9 12 3.9S7.2 5 7.2 7.1s2.1 3 4.8 3.6 4.8 1.5 4.8 3.6-2.1 3.4-4.8 3.4-4.8-1.2-4.8-2.9" />
+                                </svg><span class="lux-fact-label">Deal</span></span><span class="lux-fact-val">Buy one,
+                                get one</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 3.5v17M7.5 20.5h9M4.5 7.5h15" />
+                                    <path d="M4.5 7.5 1.8 13.6a2.9 2.9 0 0 0 5.4 0Z" />
+                                    <path d="M19.5 7.5l-2.7 6.1a2.9 2.9 0 0 0 5.4 0Z" />
+                                </svg><span class="lux-fact-label">Size</span></span><span class="lux-fact-val">3.5
+                                grams</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M5.2 18.8c-1-8 4.6-13.4 15.2-13.4.6 9.2-4.6 14.2-11.6 14.2-1.9 0-3.6-.8-3.6-.8Z" />
+                                    <path d="M3.6 21.2c2.2-5.4 6.4-9.2 11.2-11.8" />
+                                </svg><span class="lux-fact-label">Grade</span></span><span class="lux-fact-val">Indoor
+                                grown, top shelf</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="8.8" />
+                                    <path d="M12 7.2V12l3.2 2" />
+                                </svg><span class="lux-fact-label">Availability</span></span><span
+                                class="lux-fact-val">Limited
+                                time &middot; Qualifying eighths</span></li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <!-- 5 · Delighted -->
+            <section class="lux-card" id="lux-c5">
+
+                <div class="lux-media">
+                    <a class="lux-shot" href="https://laxcc.com/brand/delighted/" rel="noopener">
+                        <picture>
+                            <!-- Mobile keeps the taller crop; desktop uses the wide art -->
+                            <source media="(max-width: 768px)"
+                                srcset="https://laxcc.com/wp-content/uploads/2026/08/best-weed-nearby-lax-airport-scaled.png">
+                            <img src="https://laxcc.com/wp-content/uploads/2026/08/best-weed-near-lax-airport.png"
+                                alt="Delighted Alien Kush indoor top-shelf eighth for $40 near LAX airport">
+                        </picture>
+                    </a>
+
+                    <div class="lux-scrim"></div>
+
+                    <div class="lux-cta-wrap">
+                        <a class="lux-cta" href="https://laxcc.com/brand/delighted/">Shop Delighted</a>
+                    </div>
+
+                    <div class="lux-nav">
+                        <label class="lux-arrow lux-arrow-prev" for="lux-r4" aria-label="Previous slide"><svg
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M15 5l-7 7 7 7" />
+                            </svg></label>
+                        <label class="lux-arrow lux-arrow-next" for="lux-r6" aria-label="Next slide"><svg
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 5l7 7-7 7" />
+                            </svg></label>
+                    </div>
+                </div>
+
+                <div class="lux-brand-panel">
+                    <span class="lux-badge">Indoor Eighth for $40</span>
+                    <h2 class="lux-name">Delighted</h2>
+                    <p class="lux-subtitle">Alien Kush &mdash; Indoor Top Shelf</p>
+                </div>
+
+                <div class="lux-info-panel">
+                    <p class="lux-desc">Delighted Alien Kush &mdash; indoor top-shelf dank, a full 3.5g eighth for $40.
+                    </p>
+                    <ul class="lux-facts">
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 2.5v19" />
+                                    <path
+                                        d="M16.8 6.6C16.8 4.9 14.7 3.9 12 3.9S7.2 5 7.2 7.1s2.1 3 4.8 3.6 4.8 1.5 4.8 3.6-2.1 3.4-4.8 3.4-4.8-1.2-4.8-2.9" />
+                                </svg><span class="lux-fact-label">Price</span></span><span class="lux-fact-val">$40
+                                eighth</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 3.5v17M7.5 20.5h9M4.5 7.5h15" />
+                                    <path d="M4.5 7.5 1.8 13.6a2.9 2.9 0 0 0 5.4 0Z" />
+                                    <path d="M19.5 7.5l-2.7 6.1a2.9 2.9 0 0 0 5.4 0Z" />
+                                </svg><span class="lux-fact-label">Size</span></span><span class="lux-fact-val">3.5
+                                grams</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M5.2 18.8c-1-8 4.6-13.4 15.2-13.4.6 9.2-4.6 14.2-11.6 14.2-1.9 0-3.6-.8-3.6-.8Z" />
+                                    <path d="M3.6 21.2c2.2-5.4 6.4-9.2 11.2-11.8" />
+                                </svg><span class="lux-fact-label">Grade</span></span><span class="lux-fact-val">Indoor
+                                top shelf</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="m12 3.2 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3.2Z" />
+                                </svg><span class="lux-fact-label">Strain</span></span><span class="lux-fact-val">Alien
+                                Kush</span></li>
+                    </ul>
+                </div>
+
+            </section>
+            <!-- 6 · Infused Pre-Rolls -->
+            <section class="lux-card" id="lux-c6">
+
+                <div class="lux-media">
+                    <a class="lux-shot" href="https://laxcc.com/top-10-strongest-infused-prerolls-la/" rel="noopener">
+                        <img src="https://laxcc.com/wp-content/uploads/2026/08/best-infused-prerolls-and-weed-near-lax.png"
+                            alt="Best infused pre-rolls and weed near LAX — the 12 strongest in Los Angeles, up to 57% THC">
+                    </a>
+
+                    <div class="lux-scrim"></div>
+
+                    <div class="lux-cta-wrap">
+                        <a class="lux-cta" href="https://laxcc.com/top-10-strongest-infused-prerolls-la/">See the Top
+                            12</a>
+                    </div>
+
+                    <div class="lux-nav">
+                        <label class="lux-arrow lux-arrow-prev" for="lux-r5" aria-label="Previous slide"><svg
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M15 5l-7 7 7 7" />
+                            </svg></label>
+                        <label class="lux-arrow lux-arrow-next" for="lux-r7" aria-label="Next slide"><svg
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 5l7 7-7 7" />
+                            </svg></label>
+                    </div>
+                </div>
+
+                <div class="lux-brand-panel">
+                    <span class="lux-badge">Up to 57% THC</span>
+                    <h2 class="lux-name">Infused Pre-Rolls</h2>
+                    <p class="lux-subtitle">The 12 Strongest in Los Angeles</p>
+                </div>
+
+                <div class="lux-info-panel">
+                    <p class="lux-desc">Every infused pre-roll we carry, ranked by lab-tested THC &mdash; weakest to
+                        strongest.</p>
+                    <ul class="lux-facts">
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M13.2 2.2 4.6 13.6h6.2l-.9 8.2 9.4-11.6h-6.4l.3-8Z" />
+                                </svg><span class="lux-fact-label">Potency</span></span><span
+                                class="lux-fact-val">27&ndash;57% THC</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="m12 3.2 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3.2Z" />
+                                </svg><span class="lux-fact-label">Ranked</span></span><span class="lux-fact-val">12
+                                brands</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 2.5v19" />
+                                    <path
+                                        d="M16.8 6.6C16.8 4.9 14.7 3.9 12 3.9S7.2 5 7.2 7.1s2.1 3 4.8 3.6 4.8 1.5 4.8 3.6-2.1 3.4-4.8 3.4-4.8-1.2-4.8-2.9" />
+                                </svg><span class="lux-fact-label">From</span></span><span
+                                class="lux-fact-val">$15.99</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M5.2 18.8c-1-8 4.6-13.4 15.2-13.4.6 9.2-4.6 14.2-11.6 14.2-1.9 0-3.6-.8-3.6-.8Z" />
+                                    <path d="M3.6 21.2c2.2-5.4 6.4-9.2 11.2-11.8" />
+                                </svg><span class="lux-fact-label">Infused</span></span><span class="lux-fact-val">Live
+                                resin &middot; hash</span></li>
+                    </ul>
+                </div>
+
+            </section>
+            <!-- 7 · THC Drinks -->
+            <section class="lux-card" id="lux-c7">
+
+                <div class="lux-media">
+                    <a class="lux-shot" href="https://laxcc.com/buy-thc-drinks-near-lax-airport/" rel="noopener">
+                        <img src="https://laxcc.com/wp-content/uploads/2025/02/Uncle-Arnies03.jpg"
+                            alt="100mg THC drinks — CQ, St. Ides, Uncle Arnie's">
+                    </a>
+
+                    <div class="lux-scrim"></div>
+
+                    <div class="lux-cta-wrap">
+                        <a class="lux-cta" href="https://laxcc.com/buy-thc-drinks-near-lax-airport/">Shop THC Drinks</a>
+                    </div>
+
+                    <div class="lux-nav">
+                        <label class="lux-arrow lux-arrow-prev" for="lux-r6" aria-label="Previous slide"><svg
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M15 5l-7 7 7 7" />
+                            </svg></label>
+                        <label class="lux-arrow lux-arrow-next" for="lux-r1" aria-label="Next slide"><svg
+                                viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M9 5l7 7-7 7" />
+                            </svg></label>
+                    </div>
+                </div>
+
+                <div class="lux-brand-panel">
+                    <span class="lux-badge">100mg THC Drinks from $10</span>
+                    <h2 class="lux-name">THC Drinks</h2>
+                    <p class="lux-subtitle">Refreshing Cannabis Beverages</p>
+                </div>
+
+                <div class="lux-info-panel">
+                    <p class="lux-desc">Cannabis sodas, lemonades and root beer that actually taste good.</p>
+                    <ul class="lux-facts">
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M9.6 2.8h4.8v3l2 2.6V20a1.4 1.4 0 0 1-1.4 1.4H9a1.4 1.4 0 0 1-1.4-1.4V8.4l2-2.6v-3Z" />
+                                    <path d="M7.6 12.6h8.8" />
+                                </svg><span class="lux-fact-label">Dose</span></span><span class="lux-fact-val">100mg
+                                bottle</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 2.5v19" />
+                                    <path
+                                        d="M16.8 6.6C16.8 4.9 14.7 3.9 12 3.9S7.2 5 7.2 7.1s2.1 3 4.8 3.6 4.8 1.5 4.8 3.6-2.1 3.4-4.8 3.4-4.8-1.2-4.8-2.9" />
+                                </svg><span class="lux-fact-label">Price</span></span><span class="lux-fact-val">From
+                                $10</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M13.2 2.2 4.6 13.6h6.2l-.9 8.2 9.4-11.6h-6.4l.3-8Z" />
+                                </svg><span class="lux-fact-label">Onset</span></span><span
+                                class="lux-fact-val">Fast-acting</span></li>
+                        <li><span class="lux-fact-head"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M5.2 18.8c-1-8 4.6-13.4 15.2-13.4.6 9.2-4.6 14.2-11.6 14.2-1.9 0-3.6-.8-3.6-.8Z" />
+                                    <path d="M3.6 21.2c2.2-5.4 6.4-9.2 11.2-11.8" />
+                                </svg><span class="lux-fact-label">Brands</span></span><span class="lux-fact-val">CQ
+                                &middot; St. Ides</span></li>
+                    </ul>
+                </div>
+
+            </section>
+
+        </div>
+
+        <div id="lux-hero-dock">
+            <div class="lux-thumb">
+                <img src="https://laxcc.com/wp-content/uploads/2026/09/best-stiiizy-pod-deals-LA.png"
+                    alt="STIIIZY THC Pods Buy One Get One Deal">
+                <label class="lux-pick lux-pick-wide" for="lux-r1"
+                    aria-label="Show STIIIZY THC Pods BOGO deal"></label>
+                <a class="lux-pick lux-pick-touch" href="#lux-c1"
+                    aria-label="Show STIIIZY THC Pods BOGO deal"></a>
+            </div>
+            <div class="lux-thumb">
+                <img src="https://laxcc.com/wp-content/uploads/2026/09/BOGO-THC-Gummies-Los-Angeles-scaled.jpg"
+                    alt="KOA THC Gummies Buy One Get One $15 Deal">
+                <label class="lux-pick lux-pick-wide" for="lux-r2"
+                    aria-label="Show KOA THC Gummies BOGO $15 deal"></label>
+                <a class="lux-pick lux-pick-touch" href="#lux-c2"
+                    aria-label="Show KOA THC Gummies BOGO $15 deal"></a>
+            </div>
+            <div class="lux-thumb lux-thumb-top">
+                <img src="https://selfiesbyheshies.com/cdn/shop/files/Selfies-by-Heshies3481_1.jpg?v=1741208020&width=2000"
+                    alt="Selfies by Heshies BOGO 2-Pack Pre-Rolls Deal">
+                <label class="lux-pick lux-pick-wide" for="lux-r3"
+                    aria-label="Show Selfies BOGO 2-pack pre-rolls deal"></label>
+                <a class="lux-pick lux-pick-touch" href="#lux-c3"
+                    aria-label="Show Selfies BOGO 2-pack pre-rolls deal"></a>
+            </div>
+            <div class="lux-thumb">
+                <img src="https://laxcc.com/wp-content/uploads/2026/08/BOGO-Weed-Deal-Los-Angeles-dispensary.png"
+                    alt="Kyles buy one get one indoor top-shelf eighth deal near LAX">
+                <label class="lux-pick lux-pick-wide" for="lux-r4"
+                    aria-label="Show Kyles buy one get one indoor top-shelf eighth deal"></label>
+                <a class="lux-pick lux-pick-touch" href="#lux-c4"
+                    aria-label="Show Kyles buy one get one indoor top-shelf eighth deal"></a>
+            </div>
+            <div class="lux-thumb">
+                <img src="https://laxcc.com/wp-content/uploads/2026/08/best-weed-near-lax-airport.png"
+                    alt="Delighted Alien Kush indoor top-shelf eighth for $40">
+                <label class="lux-pick lux-pick-wide" for="lux-r5"
+                    aria-label="Show Delighted Alien Kush indoor top-shelf eighth for $40"></label>
+                <a class="lux-pick lux-pick-touch" href="#lux-c5"
+                    aria-label="Show Delighted Alien Kush indoor top-shelf eighth for $40"></a>
+            </div>
+            <div class="lux-thumb">
+                <img src="https://laxcc.com/wp-content/uploads/2026/08/best-infused-prerolls-and-weed-near-lax.png"
+                    alt="The 12 strongest infused pre-rolls in Los Angeles">
+                <label class="lux-pick lux-pick-wide" for="lux-r6"
+                    aria-label="Show the 12 strongest infused pre-rolls in Los Angeles"></label>
+                <a class="lux-pick lux-pick-touch" href="#lux-c6"
+                    aria-label="Show the 12 strongest infused pre-rolls in Los Angeles"></a>
+            </div>
+            <div class="lux-thumb">
+                <img src="https://laxcc.com/wp-content/uploads/2025/02/Uncle-Arnies03.jpg"
+                    alt="THC Drinks">
+                <label class="lux-pick lux-pick-wide" for="lux-r7" aria-label="Show THC Drinks"></label>
+                <a class="lux-pick lux-pick-touch" href="#lux-c7" aria-label="Show THC Drinks"></a>
             </div>
         </div>
-    </section>
+
+    </div>
+
 </div>
-
-<script>
-    document.addEventListener('click', function (e) {
-        // Event Delegation: Check if click is on an arrow or inside it
-        const prevBtn = e.target.closest('#laxcc-hero-2025 .scroll-arrow--prev');
-        const nextBtn = e.target.closest('#laxcc-hero-2025 .scroll-arrow--next');
-
-        if (!prevBtn && !nextBtn) return;
-
-        // Find the slider within the same container
-        const wrapper = document.getElementById('laxcc-hero-2025');
-        const slider = wrapper ? wrapper.querySelector('.deck-container') : null;
-
-        if (!slider) return;
-
-        e.preventDefault();
-
-        // Calculate scroll amount
-        const card = slider.querySelector('.deck-card');
-        const gap = 16;
-        const amount = (card ? card.offsetWidth : 300) + gap;
-
-        if (prevBtn) {
-            slider.scrollBy({ left: -amount, behavior: 'smooth' });
-        } else if (nextBtn) {
-            slider.scrollBy({ left: amount, behavior: 'smooth' });
-        }
-    });
-</script>
-

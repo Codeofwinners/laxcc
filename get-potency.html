@@ -1,0 +1,487 @@
+<!-- ============================================================
+POTENCY — Recreational / Pittsfield landing
+Elementor-ready: paste into an HTML widget.
+No <!doctype><span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start"></span>/<html>/<head>/<body>/<script> — all CSS is
+scoped under #pot-lp so it won't touch the rest of the site.
+SEO meta + JSON-LD schema belong in your SEO plugin, not here.
+============================================================ -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Roboto+Slab:wght@500;700&display=swap');</p>
+<p>#pot-lp{<br />
+  --plum:#79235B; --plum-deep:#5b1844; --plum-2:#8C2B5A;<br />
+  --cream:#FFFAF1; --cream-2:#f6e8da; --paper:#fffdf8;<br />
+  --blue:#006FB1; --peach:#FFBC7D; --navy:#283555;<br />
+  --ink:#311022; --ink-soft:#6a4d5e; --line:#e7d3c6; --leaf:#2f7d4f;<br />
+  --shadow:24px 24px 0 -8px rgba(121,35,91,.12);<br />
+  --maxw:1200px;<br />
+  --display:"Yeseva One", Georgia, "Times New Roman", serif;<br />
+  --body:"Montserrat", system-ui, sans-serif;<br />
+  --slab:"Roboto Slab", Georgia, serif;<br />
+  position:relative; isolation:isolate; scroll-behavior:smooth;<br />
+  margin:0; font-family:var(--body); color:var(--ink);<br />
+  background:var(--cream); line-height:1.6;<br />
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;<br />
+}<br />
+#pot-lp *,#pot-lp *::before,#pot-lp *::after{box-sizing:border-box}</p>
+<p>/* paper grain + gradient wash, scoped behind content */<br />
+#pot-lp::before{<br />
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.5;<br />
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");<br />
+}<br />
+#pot-lp::after{<br />
+  content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;<br />
+  background:<br />
+    radial-gradient(60vw 50vh at 85% -5%, rgba(255,188,125,.20), transparent 60%),<br />
+    radial-gradient(50vw 40vh at -5% 20%, rgba(0,111,177,.10), transparent 60%),<br />
+    var(--cream);<br />
+}</p>
+<p>#pot-lp img{max-width:100%;display:block}<br />
+#pot-lp a{color:inherit;text-decoration:none}<br />
+#pot-lp h1,#pot-lp h2,#pot-lp h3{font-family:var(--display);font-weight:400;line-height:1.05;margin:0;color:var(--plum);letter-spacing:-.01em}</p>
+<p>#pot-lp .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(18px,4vw,40px)}<br />
+#pot-lp .eyebrow{font-family:var(--body);font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);display:inline-flex;gap:10px;align-items:center}<br />
+#pot-lp .eyebrow::before{content:"";width:26px;height:2px;background:var(--peach)}</p>
+<p>/* ---- buttons ---- */<br />
+#pot-lp .btn{--bg:var(--plum);--fg:#ffffff;display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-weight:700;font-size:14px;letter-spacing:.02em;background:var(--bg);color:var(--fg);padding:15px 26px;border-radius:999px;border:2px solid var(--bg);cursor:pointer;box-shadow:0 10px 24px -12px rgba(121,35,91,.6)}<br />
+#pot-lp .btn svg{width:17px;height:17px}<br />
+#pot-lp .btn--ghost{--bg:transparent;--fg:var(--plum);border-color:var(--plum);box-shadow:none}<br />
+#pot-lp .btn--cream{--bg:var(--cream);--fg:var(--plum)}<br />
+#pot-lp .btn--line{--bg:transparent;--fg:var(--cream);border-color:var(--peach);box-shadow:none;letter-spacing:.06em}<br />
+#pot-lp .btn--blue{--bg:var(--blue);--fg:#fff}<br />
+#pot-lp #pot-btn-1,#pot-lp #pot-btn-2,#pot-lp #pot-btn-3,#pot-lp #pot-btn-4,#pot-lp #pot-btn-5,#pot-lp #pot-btn-6,#pot-lp #pot-btn-7,#pot-lp #pot-btn-8,#pot-lp #pot-btn-9{color:var(--fg)!important;padding:15px 28px!important;text-decoration:none!important}<br />
+#pot-lp #pot-btn-1,#pot-lp #pot-btn-2{padding:14px 18px!important}</p>
+<p>/* HERO */<br />
+#pot-lp .hero{position:relative;padding-bottom:clamp(30px,5vw,60px)}<br />
+#pot-lp .hero-banner{position:relative;margin:0;width:100%;overflow:hidden}<br />
+#pot-lp .hero-banner img{width:100%;height:clamp(320px,52vw,620px);object-fit:cover;display:block}<br />
+#pot-lp .hero-banner::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 45%,rgba(40,12,28,.62))}<br />
+#pot-lp .hero-cap{position:absolute;z-index:2;left:clamp(20px,5vw,56px);bottom:clamp(22px,4vw,40px);color:var(--cream)}<br />
+#pot-lp .hero-cap .rule{display:block;width:48px;height:1px;background:rgba(255,250,241,.75);margin-bottom:15px}<br />
+#pot-lp .hero-cap .k{display:block;font-family:var(--body);font-weight:700;letter-spacing:.34em;font-size:11px;text-transform:uppercase;opacity:.82}<br />
+#pot-lp .hero-cap .t{display:block;font-family:var(--display);font-size:clamp(1.15rem,2.1vw,1.65rem);margin-top:8px;letter-spacing:.01em}<br />
+#pot-lp .hero-body{padding-top:clamp(24px,3.5vw,40px)}<br />
+#pot-lp .crumbs{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:clamp(16px,2.5vw,26px);font-family:var(--body);font-weight:600;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft)}<br />
+#pot-lp .crumbs a{color:var(--plum)}<br />
+#pot-lp .crumbs a:hover{text-decoration:underline}<br />
+#pot-lp .crumbs .sep{color:var(--line);font-weight:400}<br />
+#pot-lp .crumbs [aria-current]{color:var(--ink-soft)}<br />
+#pot-lp .hero-body .eyebrow{margin-bottom:14px}<br />
+#pot-lp .hero h1{font-size:clamp(2.6rem,6.4vw,5rem);line-height:1.02}<br />
+#pot-lp .hero h1 .em{color:var(--blue);font-style:italic}<br />
+#pot-lp .hero-lead{font-size:clamp(1.08rem,1.6vw,1.32rem);max-width:none;margin:24px 0 32px;color:var(--ink-soft);line-height:1.62}<br />
+#pot-lp .hero-cta{display:flex;flex-wrap:wrap;gap:14px}</p>
+<p>/* NAP BAR */<br />
+#pot-lp .napbar{margin-top:clamp(40px,5vw,68px)}<br />
+#pot-lp .napbar-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(22px,3.4vw,52px)}<br />
+#pot-lp .nap{display:flex;gap:14px;align-items:flex-start;position:relative}<br />
+#pot-lp .nap+.nap::before{content:"";position:absolute;left:calc(-1 * clamp(11px,1.7vw,26px));top:4px;bottom:4px;width:1px;background:var(--line)}<br />
+#pot-lp .nap svg{width:26px;height:26px;color:var(--plum);flex:none;margin-top:1px}<br />
+#pot-lp .nap h3{font-family:var(--body);font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}<br />
+#pot-lp .nap p,#pot-lp .nap address{margin:0;font-style:normal;font-size:15px;font-weight:600;color:var(--ink);line-height:1.5}<br />
+#pot-lp .nap a:hover{color:var(--plum);text-decoration:underline}</p>
+<p>/* SECTION shell */<br />
+#pot-lp .section{padding-block:clamp(48px,8vw,96px)}<br />
+#pot-lp .section-head{max-width:62ch}<br />
+#pot-lp .section-head h2{font-size:clamp(1.9rem,4vw,3rem);margin:14px 0 0}<br />
+#pot-lp .section-head p{color:var(--ink-soft);font-size:1.05rem;margin-top:16px}</p>
+<p>#pot-lp .copy p{color:var(--ink-soft);font-size:1.06rem}<br />
+#pot-lp .landmarks{display:flex;flex-direction:column;gap:10px;margin:22px 0 28px}<br />
+#pot-lp .landmarks span{font-size:14px;font-weight:600;letter-spacing:.01em;color:var(--ink)}<br />
+#pot-lp .map-frame{position:relative;width:100%;margin:clamp(30px,4vw,52px) 0 0;overflow:hidden}<br />
+#pot-lp .map-frame iframe{display:block;width:100%;height:clamp(360px,42vw,520px);border:0;filter:saturate(.9) contrast(1.02)}<br />
+#pot-lp .map-pin{position:absolute;top:14px;left:14px;background:var(--plum);color:var(--cream);font-weight:700;font-size:12px;letter-spacing:.04em;padding:9px 14px;border-radius:10px;display:flex;gap:8px;align-items:center}<br />
+#pot-lp .map-pin svg{width:14px;height:14px}</p>
+<p>/* WHY US */<br />
+#pot-lp .reel{position:relative;background:linear-gradient(180deg,var(--plum),var(--plum-deep));color:var(--cream);padding-block:clamp(48px,7vw,96px);margin:0 0 clamp(20px,4vw,40px);overflow:hidden}<br />
+#pot-lp .sec-map{padding-bottom:0}<br />
+#pot-lp .reel .glow{position:absolute;width:50vw;height:50vw;right:-15%;top:-25%;border-radius:50%;background:radial-gradient(circle,rgba(255,188,125,.30),transparent 60%);pointer-events:none}<br />
+#pot-lp .reel-head{position:relative;margin-bottom:clamp(26px,3.5vw,40px)}<br />
+#pot-lp .reel-head .eyebrow{color:var(--peach);margin-bottom:16px}<br />
+#pot-lp .reel-head h2{color:var(--cream);font-size:clamp(2rem,4.6vw,3.4rem)}<br />
+#pot-lp .reel-banner{position:relative;width:100%;margin:0 0 clamp(30px,4vw,48px);overflow:hidden}<br />
+#pot-lp .reel-banner img{width:100%;height:clamp(280px,44vw,560px);object-fit:cover;display:block}<br />
+#pot-lp .reel-intro{position:relative;color:#f3ddec;margin:0 0 clamp(34px,4.5vw,52px);font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.6}<br />
+#pot-lp .points{position:relative;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(30px,4vw,54px) clamp(44px,6vw,100px)}<br />
+#pot-lp .point{display:flex;gap:clamp(16px,1.6vw,24px);align-items:flex-start}<br />
+#pot-lp .point .pn{font-family:var(--display);font-size:clamp(2rem,3.2vw,2.9rem);color:var(--peach);line-height:.85;flex:none}<br />
+#pot-lp .point h3{font-family:var(--display);font-weight:400;font-size:clamp(1.3rem,1.9vw,1.65rem);color:var(--cream);margin:0 0 8px;letter-spacing:0}<br />
+#pot-lp .point p{margin:0;color:#ead0e0;font-size:1.02rem;line-height:1.62}<br />
+#pot-lp .reel-foot{position:relative;margin-top:clamp(36px,4.5vw,56px);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}<br />
+#pot-lp .reel-foot p{margin:0;color:#f3ddec;font-size:clamp(1.02rem,1.4vw,1.18rem)}<br />
+#pot-lp .reel-foot p b{color:#fff}</p>
+<p>/* FIRST TIME */<br />
+#pot-lp .firsttime{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,4vw,60px);align-items:center}<br />
+#pot-lp .steps{display:grid;gap:16px}<br />
+#pot-lp .step{display:flex;gap:18px;background:var(--paper);border-radius:16px;padding:22px 24px;box-shadow:0 14px 30px -24px rgba(49,16,34,.45)}<br />
+#pot-lp .step .num{font-family:var(--display);font-size:1.7rem;color:var(--peach);line-height:1;flex:none;width:38px}<br />
+#pot-lp .step h3{font-family:var(--body);font-weight:800;font-size:1rem;color:var(--plum);margin-bottom:4px}<br />
+#pot-lp .step p{margin:0;font-size:14px;color:var(--ink-soft)}<br />
+#pot-lp .firsttime .aside{background:linear-gradient(160deg,var(--navy),#1b2440);color:#fff;border-radius:22px;padding:clamp(26px,3vw,40px)}<br />
+#pot-lp .firsttime .aside .eyebrow{color:var(--peach)}<br />
+#pot-lp .firsttime .aside h2{color:#fff;font-size:clamp(1.6rem,3vw,2.3rem);margin:12px 0 14px}<br />
+#pot-lp .firsttime .aside p{color:#cdd5e6;margin:0 0 22px}</p>
+<p>/* FAQ */<br />
+#pot-lp .faq{display:grid;gap:14px;margin-top:36px}<br />
+#pot-lp .faq details{background:var(--paper);border-radius:14px;overflow:hidden;box-shadow:0 10px 26px -22px rgba(49,16,34,.5);transition:box-shadow .2s ease}<br />
+#pot-lp .faq details[open]{box-shadow:0 22px 40px -26px rgba(121,35,91,.45)}<br />
+#pot-lp .faq summary{list-style:none;cursor:pointer;padding:20px 24px;display:flex;gap:16px;align-items:center;font-family:var(--body);font-weight:700;font-size:1.05rem;color:var(--plum-deep)}<br />
+#pot-lp .faq summary::-webkit-details-marker{display:none}<br />
+#pot-lp .faq summary .q{flex:none;font-family:var(--slab);color:var(--blue);font-size:14px;font-weight:700}<br />
+#pot-lp .faq summary .plus{margin-left:auto;flex:none;width:24px;height:24px;position:relative;transition:transform .25s ease}<br />
+#pot-lp .faq summary .plus::before,#pot-lp .faq summary .plus::after{content:"";position:absolute;inset:0;margin:auto;background:var(--plum);border-radius:2px}<br />
+#pot-lp .faq summary .plus::before{width:14px;height:2px}<br />
+#pot-lp .faq summary .plus::after{width:2px;height:14px}<br />
+#pot-lp .faq details[open] summary .plus{transform:rotate(135deg)}<br />
+#pot-lp .faq .a{padding:0 24px 22px 60px;color:var(--ink-soft);font-size:15px}<br />
+#pot-lp .faq .a p{margin:0 0 12px}<br />
+#pot-lp .faq .a table{width:100%;border-collapse:collapse;margin:4px 0 2px;font-size:14px}<br />
+#pot-lp .faq .a th{text-align:left;padding:8px 12px;color:var(--blue);font-weight:800;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid var(--line)}<br />
+#pot-lp .faq .a td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}<br />
+#pot-lp .faq .a td:first-child{font-weight:700;color:var(--plum);width:32%}<br />
+#pot-lp .faq .a tr:last-child td{border-bottom:0}<br />
+#pot-lp .faq-sources{margin:24px 0 0;font-size:13px;color:var(--ink-soft);line-height:1.7;max-width:none}<br />
+#pot-lp .faq-sources strong{color:var(--ink)}<br />
+#pot-lp .faq-sources a{color:var(--plum);text-decoration:underline}</p>
+<p>/* CLUB CTA band */<br />
+#pot-lp .club{position:relative;margin-block:clamp(20px,3vw,30px);border-radius:28px;overflow:hidden;background:radial-gradient(120% 140% at 10% 0,var(--plum-2),var(--plum-deep));color:var(--cream);padding:clamp(34px,5vw,64px);display:grid;grid-template-columns:1.4fr .9fr;gap:30px;align-items:center}<br />
+#pot-lp .club::after{content:"";position:absolute;right:-40px;bottom:-60px;width:280px;height:280px;border-radius:50%;background:repeating-radial-gradient(circle,rgba(255,188,125,.18) 0 2px,transparent 2px 14px);opacity:.6}<br />
+#pot-lp .club .eyebrow{color:var(--peach)}<br />
+#pot-lp .club h2{color:var(--cream);font-size:clamp(1.7rem,3.4vw,2.6rem);margin:12px 0 12px}<br />
+#pot-lp .club p{margin:0;color:#f3ddec;max-width:50ch}<br />
+#pot-lp .club .act{position:relative;z-index:1;text-align:right}<br />
+#pot-lp .club .act .label{display:block;font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--peach);margin-bottom:6px}<br />
+#pot-lp .club .act .big{font-family:var(--display);font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:18px;line-height:1}</p>
+<p>/* CONTACT */<br />
+#pot-lp .contact h2{font-size:clamp(1.8rem,3.6vw,2.7rem);margin-top:12px}<br />
+#pot-lp .rows{margin:26px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px 36px}<br />
+#pot-lp .crow{display:flex;gap:14px;align-items:flex-start}<br />
+#pot-lp .crow svg{width:22px;height:22px;color:var(--plum);flex:none;margin-top:3px}<br />
+#pot-lp .crow .lbl{font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:3px}<br />
+#pot-lp .crow address,#pot-lp .crow p{margin:0;font-style:normal;font-weight:600;color:var(--ink);font-size:15.5px}<br />
+#pot-lp .crow a:hover{color:var(--plum);text-decoration:underline}<br />
+#pot-lp .contact-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}<br />
+#pot-lp #contact{padding-bottom:0}<br />
+#pot-lp .contact-photo{width:100%;margin:clamp(34px,5vw,60px) 0 0}<br />
+#pot-lp .contact-photo img{width:100%;height:auto;display:block}</p>
+<p>/* reveal — CSS-only fade-in (no JS, safe if animations are off) */<br />
+#pot-lp .reveal{animation:pot-fade .7s both}<br />
+@keyframes pot-fade{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}</p>
+<p>/* RESPONSIVE */<br />
+@media(max-width:960px){<br />
+  #pot-lp .firsttime{grid-template-columns:1fr}<br />
+  #pot-lp .napbar-inner{grid-template-columns:1fr 1fr}<br />
+  #pot-lp .club{grid-template-columns:1fr}<br />
+  #pot-lp .club .act{text-align:left}<br />
+  #pot-lp .firsttime .aside{order:-1}<br />
+}<br />
+@media(max-width:680px){<br />
+  #pot-lp .points{grid-template-columns:1fr}<br />
+}<br />
+@media(max-width:560px){<br />
+  #pot-lp .napbar-inner{grid-template-columns:1fr 1fr;gap:26px 18px}<br />
+  #pot-lp .nap+.nap::before{display:none}<br />
+  #pot-lp .nap{flex-direction:column;gap:8px}<br />
+  #pot-lp .nap svg{width:22px;height:22px}<br />
+  #pot-lp .hero-banner img{height:78vh;min-height:420px}<br />
+  #pot-lp .hero-cta{flex-wrap:nowrap;gap:10px}<br />
+  #pot-lp .hero-cta .btn{flex:1 1 0;min-width:0;justify-content:center;font-size:12.5px;gap:7px;text-align:center}<br />
+  #pot-lp #pot-btn-1,#pot-lp #pot-btn-2{padding:13px 14px!important}<br />
+  #pot-lp .hero-cta .btn svg{display:none}<br />
+  #pot-lp .faq .a{padding-left:24px}<br />
+  #pot-lp .faq .a td:first-child{width:42%}<br />
+}<br />
+@media (prefers-reduced-motion:reduce){<br />
+  #pot-lp .reveal{animation:none}<br />
+  #pot-lp .btn{transition:none}<br />
+}<br />
+</style>
+<div id="pot-lp">
+
+<!-- ===================== HERO ===================== -->
+
+<section class="hero">
+<figure class="hero-banner reveal"><img src="https://getpotency.com/wp-content/uploads/2025/09/Dispensary-Pittsfield.jpg" alt="Inside Potency recreational cannabis dispensary in Pittsfield, MA 01201 — sales counter, living green wall, glass display cases and exposed brick" /><figcaption class="hero-cap">
+<span class="k">Potency Dispensary</span>
+<span class="t">Pittsfield, MA 01201</span></figcaption></figure>
+<div class="wrap hero-body"><nav class="crumbs reveal" aria-label="Breadcrumb"><a href="https://getpotency.com/">Home</a>
+<span class="sep">/</span>
+<a href="https://getpotency.com/recreational/">Recreational</a>
+<span class="sep">/</span>
+<span aria-current="page">Cannabis Dispensary Near Pittsfield, MA 01201</span></nav><span class="eyebrow reveal">Berkshire County · Adult Use · 21+</span>
+<h1 class="reveal">Recreational Cannabis Dispensary <span class="em">Near Pittsfield,</span> MA 01201</h1>
+<p class="hero-lead reveal">Potency is a deli-style cannabis dispensary in Pittsfield, MA — a curated, frequently-refreshed menu of exclusive flower, edibles, vapes, concentrates and topicals, served by people who actually know the shelf.</p>
+
+<div class="hero-cta reveal"><a id="pot-btn-1" class="btn" href="https://getpotency.com/shop/?pagination=1&amp;sort=POPULAR_DESC&amp;retailer_id=e5f2b13b-e17c-4bcf-b213-3c233d80ab4b&amp;menu_type=RECREATIONAL&amp;collection_type=PICKUP">
+Shop the online menu
+
+</a>
+<a id="pot-btn-2" class="btn btn--ghost" href="https://www.google.com/maps/place/Potency:+Pittsfield+Recreational+Cannabis+Dispensary+MA/@42.4540858,-73.2178566,17z">
+
+Get directions
+</a></div>
+</div>
+</section><!-- ===================== NAP BAR ===================== -->
+
+<section class="napbar wrap" aria-label="Visit information">
+<div class="napbar-inner reveal">
+<div class="nap">
+<div>
+<h3>Location</h3>
+<address>1450 East Street, Suite 1
+Pittsfield, MA 01201</address></div>
+</div>
+<div class="nap">
+<div>
+<h3>Hours</h3>
+Mon–Sat 8am–10pm
+Sun 8am–9pm
+
+</div>
+</div>
+<div class="nap">
+<div>
+<h3>Call / Pre-order</h3>
+<a href="tel:+14134640503">(413) 464-0503</a>
+
+</div>
+</div>
+<div class="nap">
+<div>
+<h3>Email</h3>
+<a href="mailto:info@getpotency.com">info@getpotency.com</a>
+
+</div>
+</div>
+</div>
+</section><!-- ===================== NEAR PITTSFIELD + MAP ===================== -->
+
+<section class="section sec-map">
+<div class="wrap">
+<div class="copy reveal"><span class="eyebrow">Recreational cannabis near Pittsfield, MA</span>
+<h2 style="font-size: clamp(1.9rem,4vw,2.8rem); margin: 14px 0 18px;">Premium products, two minutes off East Street</h2>
+Looking for premium Potency products and a reputable dispensary close to Pittsfield? Potency is located at <strong>1450 East Street, Suite 1 in Pittsfield, MA</strong>, with on-site parking and easy access from East Street and Merrill Road.
+<div class="landmarks">↗ Easy access from East St &amp; Merrill Rd
+↗ Free on-site parking</div>
+<div class="hero-cta"><a id="pot-btn-3" class="btn btn--blue" href="https://www.google.com/maps/place/Potency:+Pittsfield+Recreational+Cannabis+Dispensary+MA/@42.4540858,-73.2178566,17z">Get directions</a>
+<a id="pot-btn-4" class="btn btn--ghost" href="https://getpotency.com/shop/?pagination=1&amp;sort=POPULAR_DESC&amp;retailer_id=e5f2b13b-e17c-4bcf-b213-3c233d80ab4b&amp;menu_type=RECREATIONAL&amp;collection_type=PICKUP">Browse the menu</a></div>
+</div>
+</div>
+<figure class="map-frame reveal"><span class="map-pin">
+
+Potency · Pittsfield
+</span>
+<iframe style="border: 0;" title="Map to Potency dispensary at 1450 East Street, Suite 1, Pittsfield, MA 01201" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.7568338263736!2d-73.21770372388579!3d42.45418967118439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e74f5729b31aab%3A0xdc12ac725b40c7b7!2sPotency%3A%20Pittsfield%20Recreational%20Cannabis%20Dispensary%20MA!5e0!3m2!1sen!2sus!4v1781168687636!5m2!1sen!2sus" allowfullscreen="allowfullscreen"></iframe></figure>
+</section><!-- ===================== WHY US ===================== -->
+
+<section id="why" class="reel reveal">
+<div class="wrap reel-head"><span class="eyebrow">Why drive to Potency</span>
+<h2>What Makes Our Dispensary the Best in Pittsfield?</h2>
+</div>
+<figure class="reel-banner"><img src="https://getpotency.com/wp-content/uploads/2025/07/IMG_8030.jpg" alt="Product shelves at Potency dispensary in Pittsfield, MA — flower, edibles and concentrates displayed on wood shelving against exposed brick" /></figure>
+<div class="wrap">
+<p class="reel-intro">Maybe there's a dispensary closer to home — so why make the drive to us? Because the menu, the selection, and the service make it worth it.</p>
+
+<ol class="points">
+ 	<li class="point"><span class="pn">01</span>
+<div>
+<h3>A curated, ever-changing shelf</h3>
+Our menu is refreshed constantly and always stocked with the finest cultivars and products in the Berkshires — never a stale shelf.
+
+</div></li>
+ 	<li class="point"><span class="pn">02</span>
+<div>
+<h3>Exclusive flower strains</h3>
+Deli-style jars of small-batch flower you won't find on every corner — hand-picked and graded for potency and nose.
+
+</div></li>
+ 	<li class="point"><span class="pn">03</span>
+<div>
+<h3>Infused foods &amp; drinks</h3>
+Delectable infused edibles and beverages, dosed clearly so you always know exactly what you're getting.
+
+</div></li>
+ 	<li class="point"><span class="pn">04</span>
+<div>
+<h3>Tinctures, oils &amp; concentrates</h3>
+Cannabis tinctures, oils and extracts for every preference and tolerance — plus the essential accessories to use them.
+
+</div></li>
+ 	<li class="point"><span class="pn">05</span>
+<div>
+<h3>Hands-on budtenders</h3>
+We're enthusiastic, hands-on, and stocked with one of the largest cannabis selections in Massachusetts — questions always welcome.
+
+</div></li>
+ 	<li class="point"><span class="pn">06</span>
+<div>
+<h3>Pre-order &amp; pickup</h3>
+Order ahead online and walk past the queue. Wellness topicals, too — give us a call with any questions before you come in.
+
+</div></li>
+</ol>
+<div class="reel-foot">
+
+<b>Bottom line:</b> a curated menu, the biggest selection around, and people who care. That's the Berkshire Effect.
+
+<a id="pot-btn-5" class="btn btn--cream" href="https://getpotency.com/shop/?pagination=1&amp;sort=POPULAR_DESC&amp;retailer_id=e5f2b13b-e17c-4bcf-b213-3c233d80ab4b&amp;menu_type=RECREATIONAL&amp;collection_type=PICKUP">Start your pre-order</a>
+
+</div>
+</div>
+</section><!-- ===================== FIRST TIME ===================== -->
+
+<section class="section">
+<div class="wrap firsttime">
+<div class="aside reveal"><span class="eyebrow">Good to know</span>
+<h2>First time at a Massachusetts dispensary?</h2>
+A few quick things to bring so checkout is smooth and fast. We accept Cash, Debit, Dutchie Pay (Pay by Bank) and CanPay — and there's an ATM in-store if you need it (a fee applies).
+
+<a id="pot-btn-6" class="btn btn--line" href="tel:+14134640503">Call us: (413) 464-0503</a>
+
+</div>
+<div class="steps reveal">
+<div class="step"><span class="num">01</span>
+<div>
+<h3>Bring a valid photo ID</h3>
+A government-issued ID proving you're 21+ is required to enter and purchase.
+
+</div>
+</div>
+<div class="step"><span class="num">02</span>
+<div>
+<h3>Payment options</h3>
+We accept Cash, Debit, Dutchie Pay (Pay by Bank) and CanPay. An in-store ATM is available if needed (fee applies).
+
+</div>
+</div>
+<div class="step"><span class="num">03</span>
+<div>
+<h3>Pre-order to skip the line</h3>
+Build your cart on our online menu before you arrive and pick up without the wait.
+
+</div>
+</div>
+</div>
+</div>
+</section><!-- ===================== FAQ ===================== -->
+
+<section id="faq" class="section">
+<div class="wrap">
+<div class="section-head reveal"><span class="eyebrow">Massachusetts cannabis law · FAQ</span>
+<h2>Cannabis FAQ for Cannabis Dispensary Customers</h2>
+Quick answers to the questions our Pittsfield customers ask most — what's legal, how much you can buy and carry, and how to stay compliant in Massachusetts.
+
+</div>
+<div class="faq reveal"><details open=""><summary><span class="q">Q</span> Is recreational cannabis legal near Pittsfield, MA?</summary>
+<div class="a">Yes. Cannabis is legal throughout Massachusetts — including Pittsfield — for adults 21 and over. You'll need a valid government-issued photo ID to enter and to purchase.</div>
+</details><details><summary><span class="q">Q</span> How old do I have to be, and what ID do I need?</summary>
+<div class="a">You must be 21 or older. Accepted ID includes a state-issued driver's license with a photo, a U.S. identification card, a military ID, or an ID card issued by any Canadian province.</div>
+</details><details><summary><span class="q">Q</span> How much cannabis can I buy, carry, and keep in Massachusetts?</summary>
+<div class="a">
+
+As of 2026, Massachusetts raised the adult possession limit from 1 ounce to <strong>2 ounces</strong>. Here's what's allowed for adults 21+:
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Legal limit / rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Carry in public</td>
+<td>Up to <strong>2 ounces</strong> of marijuana (21+)</td>
+</tr>
+<tr>
+<td>At home</td>
+<td>Up to <strong>10 ounces</strong> in your primary residence, plus cannabis grown from your legal plants</td>
+</tr>
+<tr>
+<td>Home storage</td>
+<td>More than 2 ounces at home should be locked up</td>
+</tr>
+<tr>
+<td>Growing</td>
+<td>Up to <strong>6 plants per adult</strong>, max <strong>12 per household</strong></td>
+</tr>
+<tr>
+<td>Gifting</td>
+<td>Adults 21+ may give up to 2 ounces to another adult 21+ — no payment, no public advertising</td>
+</tr>
+<tr>
+<td>In a vehicle</td>
+<td>No open container in the passenger area; keep it sealed, ideally in the trunk or a locked glovebox</td>
+</tr>
+<tr>
+<td>Across state lines</td>
+<td>Illegal — even if the other state has legal cannabis</td>
+</tr>
+</tbody>
+</table>
+</div>
+</details><details><summary><span class="q">Q</span> Where can I legally use cannabis?</summary>
+<div class="a">Not in public. It's illegal to smoke, vape, or eat cannabis in public spaces, and you can't use it while driving. Keep product sealed in the vehicle, and never mail it or carry it across state lines.</div>
+</details><details><summary><span class="q">Q</span> What are the penalties for breaking these rules?</summary>
+<div class="a">Public consumption is a civil penalty of up to <strong>$100</strong>. An open container in a vehicle can be up to <strong>$500</strong>. Giving cannabis to someone under 21 can carry a fine of up to <strong>$2,000</strong>, up to <strong>1 year</strong> imprisonment, or both.</div>
+</details><details><summary><span class="q">Q</span> Do you offer online pre-order and pickup?</summary>
+<div class="a">Yes — browse our recreational menu online, place a pickup pre-order, and skip the line when you arrive at 1450 East Street, Suite 1 in Pittsfield.</div>
+</details></div>
+<p class="faq-sources reveal"><strong>General information only — not legal advice.</strong> Sources:
+<a href="https://masscannabiscontrol.com/know-the-laws/" target="_blank" rel="nofollow noopener">Massachusetts Cannabis Control Commission — Know the Laws</a>,
+<a href="https://malegislature.gov/Laws/SessionLaws/Acts/2026/Chapter65" target="_blank" rel="nofollow noopener">Acts of 2026, Chapter 65</a>, and
+<a href="https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXV/Chapter94g/Section13" target="_blank" rel="nofollow noopener">M.G.L. c.94G §13</a>.</p>
+
+</div>
+</section><!-- ===================== CLUB / LOYALTY ===================== -->
+
+<section class="wrap">
+<div class="club reveal">
+<div><span class="eyebrow">Join the club</span>
+<h2>Stay Potent. The Berkshire Effect.</h2>
+Be the first to know about featured product drops and personalized bundles around Pittsfield. Members get exclusive events, weekly new-product emails, and special announcements.
+
+</div>
+<div class="act"><span class="label">Sign up for our</span>
+<span class="big">Loyalty Program</span>
+<a id="pot-btn-7" class="btn btn--cream" href="https://menu.getpotency.com/stores/enterprise/potency/signup">Sign up now</a></div>
+</div>
+</section><!-- ===================== CONTACT ===================== -->
+
+<section id="contact" class="section">
+<div class="wrap contact">
+<div class="contact-info reveal"><span class="eyebrow">Visit us</span>
+<h2>Potency Pittsfield Dispensary</h2>
+<div class="rows">
+<div class="crow">
+<div>
+<div class="lbl">Address</div>
+<address>1450 East Street, Suite 1, Pittsfield, MA 01201</address></div>
+</div>
+<div class="crow">
+<div>
+<div class="lbl">Hours</div>
+Mon–Sat 8am–10pm · Sun 8am–9pm
+
+</div>
+</div>
+<div class="crow">
+<div>
+<div class="lbl">Phone</div>
+<a href="tel:+14134640503">(413) 464-0503</a>
+
+</div>
+</div>
+<div class="crow">
+<div>
+<div class="lbl">Email</div>
+<a href="mailto:info@getpotency.com">info@getpotency.com</a>
+
+</div>
+</div>
+</div>
+<div class="contact-cta"><a id="pot-btn-8" class="btn" href="https://getpotency.com/shop/?pagination=1&amp;sort=POPULAR_DESC&amp;retailer_id=e5f2b13b-e17c-4bcf-b213-3c233d80ab4b&amp;menu_type=RECREATIONAL&amp;collection_type=PICKUP">Online menu</a>
+<a id="pot-btn-9" class="btn btn--ghost" href="https://www.google.com/maps/place/Potency:+Pittsfield+Recreational+Cannabis+Dispensary+MA/@42.4540858,-73.2178566,17z">Get directions</a></div>
+</div>
+</div>
+<figure class="contact-photo reveal"><img src="https://getpotency.com/wp-content/uploads/2025/09/Dispensary-near-Pittsfield.jpg" alt="Potency cannabis dispensary storefront at 1450 East Street, Suite 1, Pittsfield, MA 01201" /></figure>
+</section></div>

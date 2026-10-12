@@ -1,0 +1,744 @@
+<style>
+    /* ===== LAXCC THC PILLS GUIDE — ELEMENTOR SAFE ===== */
+    #laxcc-thc-pills-2025 {
+        --accent-cyan: #0891B2;
+        --accent-teal: #00AFC9;
+        --accent-orange: #F89459;
+        --primary-dark: #0f3a5f;
+        --text-dark: #0f172a;
+        --text-muted: #64748b;
+        --bg-cream: #FBF8F2;
+        --white: #ffffff;
+        --border: rgba(0,0,0,0.06);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: var(--bg-cream);
+    }
+
+    #laxcc-thc-pills-2025 *,
+    #laxcc-thc-pills-2025 *::before,
+    #laxcc-thc-pills-2025 *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* ===== LAYOUT ===== */
+    #laxcc-thc-pills-2025 .tp-section {
+        width: 100%;
+        padding: 2.5rem 1.25rem;
+    }
+    @media (min-width: 768px) { #laxcc-thc-pills-2025 .tp-section { padding: 4rem 2rem; } }
+    @media (min-width: 1024px) { #laxcc-thc-pills-2025 .tp-section { padding: 5rem 3rem; } }
+
+    #laxcc-thc-pills-2025 .tp-wrap {
+        max-width: 860px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    #laxcc-thc-pills-2025 .tp-eyebrow {
+        color: var(--accent-cyan);
+        font-size: 0.6875rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+    }
+    @media (min-width: 768px) { #laxcc-thc-pills-2025 .tp-eyebrow { font-size: 0.75rem; } }
+
+    #laxcc-thc-pills-2025 h2.tp-h1 {
+        font-size: 1.75rem;
+        font-weight: 900;
+        color: var(--text-dark);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        margin-bottom: 1rem;
+    }
+    @media (min-width: 768px) { #laxcc-thc-pills-2025 h2.tp-h1 { font-size: 2.5rem; } }
+    @media (min-width: 1024px) { #laxcc-thc-pills-2025 h2.tp-h1 { font-size: 3rem; } }
+
+    #laxcc-thc-pills-2025 .tp-h1 span { color: var(--accent-cyan); }
+
+    #laxcc-thc-pills-2025 h2.tp-h2 {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+        margin-bottom: 0.75rem;
+    }
+    @media (min-width: 768px) { #laxcc-thc-pills-2025 h2.tp-h2 { font-size: 1.625rem; } }
+
+    #laxcc-thc-pills-2025 .tp-h2 span { color: var(--accent-cyan); }
+
+    #laxcc-thc-pills-2025 .tp-body {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+    @media (min-width: 768px) { #laxcc-thc-pills-2025 .tp-body { font-size: 0.9375rem; } }
+
+    /* ===== HERO ===== */
+    #laxcc-thc-pills-2025 .tp-hero {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    @media (min-width: 768px) { #laxcc-thc-pills-2025 .tp-hero { margin-bottom: 3.5rem; } }
+
+    #laxcc-thc-pills-2025 .tp-hero .tp-body {
+        max-width: 620px;
+        margin: 0 auto;
+    }
+
+    /* Hero video — sits between the H2 and the body copy */
+    #laxcc-thc-pills-2025 .tp-hero-video {
+        display: block;
+        width: 100%;
+        max-width: 720px;
+        margin: 1.25rem auto 1.75rem;
+        border-radius: 16px;
+        box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.15);
+        background: #000;
+    }
+    @media (min-width: 768px) {
+        #laxcc-thc-pills-2025 .tp-hero-video {
+            margin: 1.75rem auto 2rem;
+            border-radius: 20px;
+        }
+    }
+
+    /* ===== DIVIDER ===== */
+    #laxcc-thc-pills-2025 .tp-divider {
+        width: 48px;
+        height: 3px;
+        background: var(--accent-cyan);
+        border: none;
+        margin: 2.5rem auto;
+        border-radius: 2px;
+    }
+
+    /* ===== PRODUCT ROWS ===== */
+    #laxcc-thc-pills-2025 .tp-product {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--border);
+        align-items: start;
+    }
+    @media (min-width: 640px) {
+        #laxcc-thc-pills-2025 .tp-product {
+            grid-template-columns: 80px 1fr auto;
+            gap: 1.25rem;
+            align-items: center;
+        }
+    }
+
+    #laxcc-thc-pills-2025 .tp-product:first-child {
+        border-top: 1px solid var(--border);
+    }
+
+    /* Product image — small thumbnail */
+    #laxcc-thc-pills-2025 .tp-thumb {
+        width: 64px;
+        height: 64px;
+        border-radius: 0.5rem;
+        object-fit: contain;
+        background: var(--white);
+        border: 1px solid var(--border);
+        display: none;
+    }
+    @media (min-width: 640px) {
+        #laxcc-thc-pills-2025 .tp-thumb {
+            display: block;
+            width: 72px;
+            height: 72px;
+        }
+    }
+
+    /* Product info */
+    #laxcc-thc-pills-2025 .tp-product-info { min-width: 0; }
+
+    #laxcc-thc-pills-2025 .tp-product-brand {
+        font-size: 0.6875rem;
+        font-weight: 700;
+        color: var(--accent-cyan);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 0.125rem;
+    }
+
+    #laxcc-thc-pills-2025 .tp-product-name {
+        font-size: 0.9375rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        line-height: 1.25;
+        margin-bottom: 0.25rem;
+    }
+    @media (min-width: 768px) { #laxcc-thc-pills-2025 .tp-product-name { font-size: 1rem; } }
+
+    #laxcc-thc-pills-2025 .tp-product-meta {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+    }
+
+    #laxcc-thc-pills-2025 .tp-product-meta strong {
+        color: var(--text-dark);
+        font-weight: 600;
+    }
+
+    /* Product price + CTA */
+    #laxcc-thc-pills-2025 .tp-product-action {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-top: 0.75rem;
+    }
+    @media (min-width: 640px) {
+        #laxcc-thc-pills-2025 .tp-product-action {
+            margin-top: 0;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.375rem;
+        }
+    }
+
+    #laxcc-thc-pills-2025 .tp-price {
+        font-size: 1.125rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        white-space: nowrap;
+    }
+
+    #laxcc-thc-pills-2025 a.tp-shop,
+    #laxcc-thc-pills-2025 a.tp-shop:link,
+    #laxcc-thc-pills-2025 a.tp-shop:visited {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--accent-cyan) !important;
+        text-decoration: none !important;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+        transition: color 0.2s ease;
+    }
+
+    #laxcc-thc-pills-2025 a.tp-shop:hover {
+        color: var(--primary-dark) !important;
+    }
+
+    /* ===== EDUCATION BLOCKS ===== */
+    #laxcc-thc-pills-2025 .tp-learn {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-top: 2.5rem;
+    }
+    @media (min-width: 640px) {
+        #laxcc-thc-pills-2025 .tp-learn {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    #laxcc-thc-pills-2025 .tp-learn-item {
+        border-left: 3px solid var(--accent-cyan);
+        padding-left: 1rem;
+    }
+
+    #laxcc-thc-pills-2025 .tp-learn-item h3 {
+        font-size: 0.8125rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 0.25rem;
+    }
+
+    #laxcc-thc-pills-2025 .tp-learn-item p {
+        font-size: 0.8125rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+    }
+
+    /* ===== COMPARISON STRIP ===== */
+    #laxcc-thc-pills-2025 .tp-compare {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 2rem 0;
+    }
+
+    #laxcc-thc-pills-2025 .tp-compare table {
+        width: 100%;
+        min-width: 580px;
+        border-collapse: collapse;
+        font-size: 0.8125rem;
+    }
+
+    #laxcc-thc-pills-2025 .tp-compare th {
+        text-align: left;
+        font-size: 0.6875rem;
+        font-weight: 700;
+        color: var(--accent-cyan);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.625rem 0.75rem;
+        border-bottom: 2px solid var(--accent-cyan);
+        white-space: nowrap;
+    }
+
+    #laxcc-thc-pills-2025 .tp-compare td {
+        padding: 0.625rem 0.75rem;
+        border-bottom: 1px solid var(--border);
+        color: var(--text-dark);
+        font-weight: 500;
+        vertical-align: middle;
+    }
+
+    #laxcc-thc-pills-2025 .tp-compare tr:last-child td {
+        border-bottom: none;
+    }
+
+    #laxcc-thc-pills-2025 .tp-compare .tp-muted {
+        color: var(--text-muted);
+        font-weight: 400;
+    }
+
+    /* ===== FAQ ===== */
+    #laxcc-thc-pills-2025 .tp-faq-item {
+        border-bottom: 1px solid var(--border);
+    }
+
+    #laxcc-thc-pills-2025 .tp-faq-item:first-child {
+        border-top: 1px solid var(--border);
+    }
+
+    #laxcc-thc-pills-2025 .tp-faq-q {
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        text-align: left;
+        gap: 1rem;
+    }
+
+    #laxcc-thc-pills-2025 .tp-faq-q h3 {
+        font-size: 0.9375rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        line-height: 1.3;
+    }
+
+    #laxcc-thc-pills-2025 .tp-faq-toggle {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent-cyan);
+        font-size: 1.25rem;
+        font-weight: 300;
+        transition: transform 0.3s ease;
+    }
+
+    #laxcc-thc-pills-2025 .tp-faq-item.open .tp-faq-toggle {
+        transform: rotate(45deg);
+    }
+
+    #laxcc-thc-pills-2025 .tp-faq-a {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    #laxcc-thc-pills-2025 .tp-faq-item.open .tp-faq-a {
+        max-height: 300px;
+        padding-bottom: 1rem;
+    }
+
+    #laxcc-thc-pills-2025 .tp-faq-a p {
+        font-size: 0.8125rem;
+        color: var(--text-muted);
+        line-height: 1.65;
+    }
+    @media (min-width: 768px) { #laxcc-thc-pills-2025 .tp-faq-a p { font-size: 0.875rem; } }
+
+    /* ===== FINAL CTA ===== */
+    #laxcc-thc-pills-2025 .tp-cta-section {
+        background: var(--primary-dark);
+        padding: 2.5rem 1.25rem;
+        text-align: center;
+    }
+    @media (min-width: 768px) { #laxcc-thc-pills-2025 .tp-cta-section { padding: 3.5rem 2rem; } }
+
+    #laxcc-thc-pills-2025 .tp-cta-section h2 {
+        font-size: 1.375rem;
+        font-weight: 900;
+        color: var(--white);
+        margin-bottom: 0.375rem;
+    }
+    @media (min-width: 768px) { #laxcc-thc-pills-2025 .tp-cta-section h2 { font-size: 1.75rem; } }
+
+    #laxcc-thc-pills-2025 .tp-cta-section p {
+        font-size: 0.8125rem;
+        color: rgba(255,255,255,0.65);
+        margin-bottom: 1.25rem;
+    }
+
+    #laxcc-thc-pills-2025 a.tp-cta-btn,
+    #laxcc-thc-pills-2025 a.tp-cta-btn:link,
+    #laxcc-thc-pills-2025 a.tp-cta-btn:visited {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--accent-cyan);
+        color: #fff !important;
+        text-decoration: none !important;
+        font-size: 0.875rem;
+        font-weight: 700;
+        padding: 0.75rem 1.75rem;
+        border-radius: 9999px;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+    }
+
+    #laxcc-thc-pills-2025 a.tp-cta-btn:hover {
+        background: var(--accent-teal);
+        color: #fff !important;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,175,201,0.25);
+    }
+
+    #laxcc-thc-pills-2025 .tp-cta-section .tp-address {
+        font-size: 0.75rem;
+        color: rgba(255,255,255,0.4);
+        margin-top: 1rem;
+        letter-spacing: 0.03em;
+    }
+</style>
+
+<div id="laxcc-thc-pills-2025">
+
+    <!-- ===== HERO ===== -->
+    <section class="tp-section" style="background: var(--bg-cream);">
+        <div class="tp-wrap">
+            <div class="tp-hero">
+                <p class="tp-eyebrow">THC Pills Dispensary &bull; Los Angeles, California</p>
+                <h2 class="tp-h1">Best THC Pills &amp; <span>Cannabis Tablets for Sale</span></h2>
+                <video class="tp-hero-video" controls preload="metadata" playsinline>
+                    <source src="https://laxcc.com/wp-content/uploads/2026/04/best-thc-pills-for-sale-LA.mp4" type="video/mp4">
+                </video>
+                <p class="tp-body">No sugar, no smoke, no guesswork. THC pills and marijuana pills deliver precise milligram dosing in a format your body already knows — swallow, absorb, feel. Whether you're looking for weed pills, THC capsules, or enhanced cannabis tablets, they're the most predictable way to consume cannabis. Favored by medical patients and experienced users in California who want consistent, long-lasting effects without calories or additives.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY PILLS — EDUCATION ===== -->
+    <section class="tp-section" style="background: var(--bg-cream);">
+        <div class="tp-wrap">
+            <h2 class="tp-h2">Why Choose <span>Weed Pills</span> Over Edibles?</h2>
+            <p class="tp-body" style="margin-bottom: 0;">Traditional edibles taste great but come with sugar, calories, and variable onset times. THC pills and cannabis pills bypass all of that. They dissolve consistently, deliver a precise dose every time, and contain zero unnecessary ingredients. If you live in California and use marijuana pills daily for pain, sleep, or anxiety, THC tablets are the most reliable format at any dispensary.</p>
+
+            <div class="tp-learn">
+                <div class="tp-learn-item">
+                    <h3>Precise THC Tablets — 10mg to 200mg</h3>
+                    <p>Every THC tablet is manufactured to an exact milligram count. 10mg (ABX, Level Slumber), 20mg (BREEZ), 25mg (Level Protab), 45.6mg (Papa &amp; Barkley), 50mg (THE TABLET), 100mg (Emerald Bay), 200mg (ABX 200). No guessing, no breaking gummies apart.</p>
+                </div>
+                <div class="tp-learn-item">
+                    <h3>Zero Sugar &amp; Clean Cannabis Pills</h3>
+                    <p>The best THC capsules contain only cannabis extract and a carrier oil. No corn syrup, no gelatin, no artificial flavors. Enhanced cannabis tablets built for health-conscious users.</p>
+                </div>
+                <div class="tp-learn-item">
+                    <h3>Long-Lasting Marijuana Pill Effects</h3>
+                    <p>Oral absorption through the digestive tract produces effects that typically last 4–8 hours — significantly longer than vaping or smoking. That's why cannabis pills are preferred for all-day relief.</p>
+                </div>
+                <div class="tp-learn-item">
+                    <h3>Discreet &amp; Portable</h3>
+                    <p>A bottle of weed pills looks like any supplement. No smell, no preparation, no equipment. THC capsules go anywhere without drawing attention.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tp-section" style="background: var(--bg-cream);">
+        <div class="tp-wrap">
+
+            <hr class="tp-divider">
+
+            <!-- ===== PRODUCT LIST ===== -->
+            <h2 class="tp-h2">THC Pill Brands <span>for Sale</span></h2>
+            <p class="tp-body" style="margin-bottom: 1.5rem;">Every THC pill brand at our dispensary is lab-tested and sourced through California's licensed supply chain. These are the best THC tablets and cannabis capsules for sale right now — organized by potency.</p>
+
+            <!-- Level (Protab + Slumber) -->
+            <div class="tp-product">
+                <img class="tp-thumb" src="https://images.dutchie.com/c8ecd67fff8e44848c16c480d1c05561" alt="Level Protab tablets" loading="lazy">
+                <div class="tp-product-info">
+                    <p class="tp-product-brand">Level</p>
+                    <p class="tp-product-name">Protab Tablets &mdash; Slumber, Hybrid, Indica &amp; Sativa</p>
+                    <p class="tp-product-meta"><strong>Slumber</strong> 10mg THC + 5mg CBN + 3mg CBG sleep formula ($23 / 10-pack, $2.98 single) &middot; <strong>Protab</strong> 25mg THC per tablet, Hybrid / Indica / Sativa ($40 / 10-pack) &middot; Pharmaceutical-grade, scored for splitting, sugar-free, vegan</p>
+                </div>
+                <div class="tp-product-action">
+                    <span class="tp-price">from $2.98</span>
+                    <a href="https://laxcc.com/brand/level/" class="tp-shop" target="_blank" rel="noopener">SHOP LEVEL &#x2192;</a>
+                </div>
+            </div>
+
+            <!-- ABX (1:1 THCV, Sleepy Time, 100mg, 200mg) -->
+            <div class="tp-product">
+                <img class="tp-thumb" src="https://images.dutchie.com/baf68259b4b77642e7cdb76530ee34c1?w=500&h=500&fm=webp" alt="ABX (AbsoluteXtracts) Single Soft Gels lineup" loading="lazy">
+                <div class="tp-product-info">
+                    <p class="tp-product-brand">ABX (AbsoluteXtracts)</p>
+                    <p class="tp-product-name">Single Soft Gels &mdash; Whole-Plant California Cannabis</p>
+                    <p class="tp-product-meta"><strong>1:1 THC:THCV</strong> ($7, clear-headed daytime, appetite-balancing) &middot; <strong>Sleepy Time</strong> ($7, bedtime formula) &middot; <strong>100mg Hybrid</strong> ($9.98, single high-dose) &middot; <strong>200mg Hybrid</strong> ($17.99, the heaviest single-dose THC pill on the menu) &middot; Vegan, gluten-free</p>
+                </div>
+                <div class="tp-product-action">
+                    <span class="tp-price">from $7</span>
+                    <a href="https://laxcc.com/brand/absolutextracts/" class="tp-shop" target="_blank" rel="noopener">SHOP ABX &#x2192;</a>
+                </div>
+            </div>
+
+            <!-- BREEZ -->
+            <div class="tp-product">
+                <img class="tp-thumb" src="https://images.dutchie.com/a0545b41dd1a30d73e842f3f823ca6f5?w=500&h=500&fm=webp" alt="BREEZ Tablets Hybrid &amp; Indica" loading="lazy">
+                <div class="tp-product-info">
+                    <p class="tp-product-brand">BREEZ</p>
+                    <p class="tp-product-name">Tablets &mdash; Hybrid &amp; Indica</p>
+                    <p class="tp-product-meta"><strong>20mg per tablet</strong> &middot; 50 tablets per container (1,000mg total) &middot; Strain-specific (Hybrid for daytime, Indica for wind-down) &middot; Sugar-free micro-dose &middot; Stack two for 40mg, split for 10mg</p>
+                </div>
+                <div class="tp-product-action">
+                    <span class="tp-price">$80</span>
+                    <a href="https://laxcc.com/brand/breez/" class="tp-shop" target="_blank" rel="noopener">SHOP BREEZ &#x2192;</a>
+                </div>
+            </div>
+
+            <!-- Papa & Barkley -->
+            <div class="tp-product">
+                <img class="tp-thumb" src="https://images.dutchie.com/eca1a698e0fec9e0cfa6204fbf466850?w=500&h=500&fm=webp" alt="Papa &amp; Barkley THC Capsules" loading="lazy">
+                <div class="tp-product-info">
+                    <p class="tp-product-brand">Papa &amp; Barkley</p>
+                    <p class="tp-product-name">THC Relief Capsules &mdash; Full Spectrum</p>
+                    <p class="tp-product-meta"><strong>45.6mg per capsule</strong> &middot; 1,000mg total per bottle &middot; Solventless extraction &middot; Sugar-free, gluten-free &middot; Built for daily medical use</p>
+                </div>
+                <div class="tp-product-action">
+                    <span class="tp-price">$90</span>
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=papa" class="tp-shop" target="_blank" rel="noopener">SHOP P&amp;B &#x2192;</a>
+                </div>
+            </div>
+
+            <!-- THE TABLET -->
+            <div class="tp-product">
+                <img class="tp-thumb" src="https://images.dutchie.com/1c3371bc723f23be0b6c3a178a22c6ad" alt="THE TABLET Sativa" loading="lazy">
+                <div class="tp-product-info">
+                    <p class="tp-product-brand">THE TABLET</p>
+                    <p class="tp-product-name">Clean Cannabis Tablets &mdash; Sativa &amp; Indica</p>
+                    <p class="tp-product-meta"><strong>50mg per tablet</strong> &middot; 20-pack (1,000mg total) &middot; Zero sugar, zero additives, zero artificial ingredients &middot; The cleanest formula on shelf</p>
+                </div>
+                <div class="tp-product-action">
+                    <span class="tp-price">$70</span>
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=tablet" class="tp-shop" target="_blank" rel="noopener">SHOP TABLET &#x2192;</a>
+                </div>
+            </div>
+
+            <!-- Emerald Bay Extracts -->
+            <div class="tp-product">
+                <img class="tp-thumb" src="https://images.dutchie.com/12e1aa0e171f611181a268d9d4260da3" alt="Emerald Bay Extracts Tablet" loading="lazy">
+                <div class="tp-product-info">
+                    <p class="tp-product-brand">Emerald Bay Extracts</p>
+                    <p class="tp-product-name">Cadillac Rainbows Hybrid &amp; Purple Punch Indica</p>
+                    <p class="tp-product-meta"><strong>100mg per tablet</strong> &middot; Triple-tested &middot; Strain-specific (Cadillac Rainbows hybrid, Purple Punch indica) &middot; Founded by a Stanford nurse</p>
+                </div>
+                <div class="tp-product-action">
+                    <span class="tp-price">$60</span>
+                    <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=emerald" class="tp-shop" target="_blank" rel="noopener">SHOP EBE &#x2192;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COMPARISON TABLE ===== -->
+    <section class="tp-section" style="background: var(--bg-cream);">
+        <div class="tp-wrap">
+            <h2 class="tp-h2">THC Tablet Brands <span>Compared</span></h2>
+
+            <div class="tp-compare">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Brand</th>
+                            <th>Dose</th>
+                            <th>Types</th>
+                            <th>Price</th>
+                            <th>Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Level</td>
+                            <td>10mg–25mg</td>
+                            <td>Slumber sleep, Protab Hybrid/Indica/Sativa</td>
+                            <td>from $2.98</td>
+                            <td class="tp-muted">New users, sleep, beginners</td>
+                        </tr>
+                        <tr>
+                            <td>ABX (AbsoluteXtracts)</td>
+                            <td>1:1 THCV &ndash; 200mg</td>
+                            <td>Single Soft Gels: 1:1 THCV, Sleepy Time, 100mg, 200mg</td>
+                            <td>from $7</td>
+                            <td class="tp-muted">THCV daytime, single-dose flexibility</td>
+                        </tr>
+                        <tr>
+                            <td>BREEZ</td>
+                            <td>20mg &times; 50ct</td>
+                            <td>Hybrid, Indica</td>
+                            <td>$80</td>
+                            <td class="tp-muted">Strain-specific micro-dose</td>
+                        </tr>
+                        <tr>
+                            <td>Papa &amp; Barkley</td>
+                            <td>45.6mg</td>
+                            <td>Full Spectrum capsules</td>
+                            <td>$90</td>
+                            <td class="tp-muted">Medical, daily relief</td>
+                        </tr>
+                        <tr>
+                            <td>THE TABLET</td>
+                            <td>50mg</td>
+                            <td>Sativa, Indica</td>
+                            <td>$70</td>
+                            <td class="tp-muted">Health-conscious, clean formula</td>
+                        </tr>
+                        <tr>
+                            <td>Emerald Bay Extracts</td>
+                            <td>100mg</td>
+                            <td>Cadillac Rainbows hybrid, Purple Punch indica</td>
+                            <td>$60</td>
+                            <td class="tp-muted">High tolerance, strain-specific</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="tp-divider">
+
+            <!-- ===== HOW TO CHOOSE ===== -->
+            <h2 class="tp-h2">How to Choose the <span>Best THC Pills</span></h2>
+
+            <div class="tp-learn" style="margin-top: 1rem;">
+                <div class="tp-learn-item">
+                    <h3>New to weed pills?</h3>
+                    <p>Start gentle — Level Protab Slumber at 10mg THC + CBN ($2.98 single) or ABX 1:1 THC:THCV Single Soft Gel at $7 for a clear-headed daytime introduction. THCV pairs with THC to balance appetite and reduce drowsiness.</p>
+                </div>
+                <div class="tp-learn-item">
+                    <h3>Strain-specific micro-dose?</h3>
+                    <p>BREEZ Tablets are the only strain-specific THC pill on our shelf — 20mg per tablet, 50 tablets per container (1,000mg total) at $80. Stack two for a 40mg dose, split for 10mg. Hybrid for daytime, Indica for wind-down.</p>
+                </div>
+                <div class="tp-learn-item">
+                    <h3>Best THC capsules for daily use?</h3>
+                    <p>Papa &amp; Barkley's full-spectrum cannabis capsules at 45.6mg use solventless extraction — the best THC capsules for the entourage effect. 1,000mg per bottle at $90 is strong value for daily marijuana pill users.</p>
+                </div>
+                <div class="tp-learn-item">
+                    <h3>The Tablet THC pills — clean formula</h3>
+                    <p>THE TABLET is your move — the cleanest THC pill brand on the California market. 50mg cannabis tablets with zero sugar, zero artificial ingredients, 20-pack (1,000mg total) for $70.</p>
+                </div>
+                <div class="tp-learn-item">
+                    <h3>Maximum potency enhanced cannabis tablets?</h3>
+                    <p>For the heaviest single-dose pill on our shelf: ABX Single Soft Gel <strong>200mg THC</strong> ($17.99) — one gel, one dose, California whole-plant extraction. Step down to ABX 100mg single ($9.98) or Emerald Bay 100mg ($60) for strain-specific Hybrid &amp; Indica options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="tp-section" style="background: var(--bg-cream);">
+        <div class="tp-wrap">
+            <p class="tp-eyebrow" style="text-align: center;">FAQ</p>
+            <h2 class="tp-h2" style="text-align: center;">Buying THC Pills &amp; <span>Cannabis Tablets</span></h2>
+
+            <div style="margin-top: 1.5rem;">
+                <div class="tp-faq-item">
+                    <button class="tp-faq-q" type="button">
+                        <h3>Where can I buy THC pills for sale in California?</h3>
+                        <span class="tp-faq-toggle">+</span>
+                    </button>
+                    <div class="tp-faq-a">
+                        <p>LAXCC is a licensed THC pills dispensary at 8332 Lincoln Blvd, Los Angeles, CA 90045. We carry weed pills for sale from six trusted THC pill brands: Level Protab, ABX (AbsoluteXtracts), BREEZ, Papa &amp; Barkley, THE TABLET, and Emerald Bay Extracts. If you live in California, walk in or order online for pickup. Open 9 AM–9:30 PM daily. Call <a href="tel:+13104293789" style="color: var(--accent-cyan); text-decoration: underline;">(310) 429-3789</a> for availability.</p>
+                    </div>
+                </div>
+
+                <div class="tp-faq-item">
+                    <button class="tp-faq-q" type="button">
+                        <h3>What are the best THC pill brands?</h3>
+                        <span class="tp-faq-toggle">+</span>
+                    </button>
+                    <div class="tp-faq-a">
+                        <p>The best THC tablet brands we carry: ABX (AbsoluteXtracts) Single Soft Gels — 1:1 THC:THCV ($7), Sleepy Time ($7), 100mg ($9.98), and 200mg ($17.99); BREEZ strain-specific tablets at 20mg (50 per container, $80); Level Protab (pharmaceutical-grade THC tablets 25mg, $40); Papa &amp; Barkley (best THC capsules for medical use, 45.6mg, $90); THE TABLET (the cleanest cannabis pills — zero sugar, 50mg, $70); and Emerald Bay Extracts (enhanced cannabis tablets at 100mg, $60). All are top-rated weed pills brands in California.</p>
+                    </div>
+                </div>
+
+                <div class="tp-faq-item">
+                    <button class="tp-faq-q" type="button">
+                        <h3>What is THE TABLET THC pills?</h3>
+                        <span class="tp-faq-toggle">+</span>
+                    </button>
+                    <div class="tp-faq-a">
+                        <p>THE TABLET is a THC pill brand focused on clean cannabis tablets — zero sugar, zero additives, zero artificial ingredients. Each marijuana pill contains 50mg THC. The 20-pack (1,000mg total) sells for $70, making it one of the best values for THC pills in California. Available in Sativa and Indica at our dispensary.</p>
+                    </div>
+                </div>
+
+                <div class="tp-faq-item">
+                    <button class="tp-faq-q" type="button">
+                        <h3>Are THC capsules for sale stronger than gummies?</h3>
+                        <span class="tp-faq-toggle">+</span>
+                    </button>
+                    <div class="tp-faq-a">
+                        <p>Milligram for milligram, THC capsules and gummies deliver the same THC. The difference is consistency — cannabis pills are manufactured to tighter tolerances, so a 25mg THC tablet is reliably 25mg. Weed pills also absorb more predictably since there's no sugar or fat content affecting digestion. For the best THC pills experience, start with 25mg and wait 2 hours.</p>
+                    </div>
+                </div>
+
+                <div class="tp-faq-item">
+                    <button class="tp-faq-q" type="button">
+                        <h3>Which marijuana pills are best for sleep?</h3>
+                        <span class="tp-faq-toggle">+</span>
+                    </button>
+                    <div class="tp-faq-a">
+                        <p>The best THC tablet for sleep is the new Level Protab Slumber — 10mg THC + 5mg CBN + 3mg CBG, specifically formulated for rest ($23 for a 10-pack, $2.98 single). For higher doses: Level Protab Indica (THC tablets 25mg, $40), THE TABLET Indica (50mg cannabis pills, $70), or Emerald Bay Purple Punch (100mg enhanced cannabis tablets, $60). All are indica weed pills designed for nighttime relaxation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="tp-cta-section">
+        <div class="tp-wrap">
+            <h2>THC Pills &amp; Cannabis Tablets for Sale</h2>
+            <p>Best THC pill brands in California — 10mg to 200mg. Weed pills, THC capsules, enhanced cannabis tablets, BREEZ strain-specific micro-dose. All lab-tested, all on the shelf.</p>
+            <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=tablet" class="tp-cta-btn">Browse THC Pills <span>&#x2192;</span></a>
+            <p class="tp-address">8332 Lincoln Blvd, Los Angeles, CA 90045 &nbsp;&#x2022;&nbsp; (310) 429-3789 &nbsp;&#x2022;&nbsp; Cash Only &nbsp;&#x2022;&nbsp; 9 AM – 9:30 PM Daily</p>
+        </div>
+    </section>
+
+</div>
+
+<script>
+(function() {
+    'use strict';
+
+    var guide = document.getElementById('laxcc-thc-pills-2025');
+    if (!guide) return;
+
+    function handleFaqToggle(e) {
+        var btn = e.target.closest('.tp-faq-q');
+        if (!btn) return;
+        var item = btn.closest('.tp-faq-item');
+        if (!item) return;
+        item.classList.toggle('open');
+    }
+
+    guide.addEventListener('click', handleFaqToggle);
+})();
+</script>

@@ -1,0 +1,409 @@
+/* ============================================================
+   LAXCC Age Gate — Frontend
+   ============================================================ */
+
+html.laxcc-ag-locked,
+body.laxcc-ag-locked {
+    overflow: hidden !important;
+    height: 100vh !important;
+}
+
+#laxcc-age-gate-root {
+    position: fixed !important;
+    inset: 0 !important;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 2147483647 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    opacity: 0;
+    transition: opacity 0.5s ease !important;
+    background: #000;
+}
+
+#laxcc-age-gate-root.laxcc-ag-visible { opacity: 1; }
+
+#laxcc-age-gate-root * {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+    line-height: 1.5;
+}
+
+/* Background layer */
+#laxcc-age-gate-root .laxcc-ag-background {
+    position: absolute; inset: 0; z-index: 0;
+    pointer-events: none;
+}
+#laxcc-age-gate-root .laxcc-ag-background img,
+#laxcc-age-gate-root .laxcc-ag-background video {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transform: scale(1.05);
+}
+#laxcc-age-gate-root .laxcc-ag-background-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, var(--laxcc-ag-overlay, 0.65));
+    pointer-events: none;
+}
+
+/* Content */
+#laxcc-age-gate-root .laxcc-ag-content {
+    position: relative; z-index: 10;
+    width: 100%; max-width: 600px;
+    padding: 20px;
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center;
+}
+
+#laxcc-age-gate-root .laxcc-ag-logo {
+    width: auto !important; height: 65px !important;
+    margin-bottom: 35px !important;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+    display: block;
+}
+
+#laxcc-age-gate-root .laxcc-ag-headline {
+    color: #ffffff !important;
+    font-size: 46px !important;
+    font-weight: 900 !important;
+    margin-bottom: 12px !important;
+    line-height: 1.1 !important;
+    text-transform: uppercase !important;
+    letter-spacing: -1.5px !important;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+#laxcc-age-gate-root .laxcc-ag-subtext {
+    color: rgba(255,255,255,0.9) !important;
+    font-size: 17px !important;
+    font-weight: 400 !important;
+    margin-bottom: 40px !important;
+    max-width: 360px !important;
+}
+
+/* Buttons */
+#laxcc-age-gate-root .laxcc-ag-btn-primary {
+    display: block !important;
+    width: 100% !important; max-width: 320px !important;
+    background: var(--laxcc-ag-brand, #00AFC9) !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 20px !important;
+    border-radius: 50px !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    cursor: pointer !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+    margin-bottom: 16px !important;
+    text-decoration: none !important;
+    font-family: inherit !important;
+}
+#laxcc-age-gate-root .laxcc-ag-btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.55) !important;
+}
+
+#laxcc-age-gate-root .laxcc-ag-btn-secondary {
+    display: block !important;
+    width: 100% !important; max-width: 320px !important;
+    background: transparent !important;
+    border: 2px solid rgba(255,255,255,0.3) !important;
+    color: #ffffff !important;
+    padding: 18px !important;
+    border-radius: 50px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    text-decoration: none !important;
+    font-family: inherit !important;
+}
+#laxcc-age-gate-root .laxcc-ag-btn-secondary:hover {
+    border-color: #ffffff !important;
+    background: rgba(255,255,255,0.1) !important;
+}
+
+@media (max-width: 480px) {
+    #laxcc-age-gate-root .laxcc-ag-headline { font-size: 36px !important; }
+    #laxcc-age-gate-root .laxcc-ag-logo { height: 55px !important; }
+    #laxcc-age-gate-root .laxcc-ag-btn-primary { padding: 18px !important; font-size: 16px !important; }
+    #laxcc-age-gate-root .laxcc-ag-btn-secondary { padding: 16px !important; font-size: 14px !important; }
+}
+
+
+/* ====================================================================
+   CELEBRATION — Template: 4/20 Editorial
+   Background photo + aurora + sweeping beams + confetti + serif type
+   ==================================================================== */
+
+#laxcc-age-gate-root .laxcc-ag-celebrate {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 50 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
+    background: #050810 !important;
+    opacity: 0 !important;
+    transition: opacity 0.45s ease !important;
+}
+#laxcc-age-gate-root .laxcc-ag-celebrate.laxcc-ag-show { opacity: 1 !important; }
+
+/* Background photo with Ken Burns drift */
+#laxcc-age-gate-root .laxcc-ag-cb-photo {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    background-image: var(--laxcc-ag-celebration-bg, none) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    transform: scale(1.05) !important;
+    animation: laxcc-ag-photo-drift 18s ease-in-out infinite alternate !important;
+}
+#laxcc-age-gate-root .laxcc-ag-cb-photo::after {
+    content: '' !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background:
+        linear-gradient(180deg, rgba(5, 8, 16, 0.55) 0%, rgba(5, 8, 16, 0.85) 100%),
+        radial-gradient(ellipse at center, rgba(5, 8, 16, 0.30) 30%, rgba(5, 8, 16, 0.85) 100%) !important;
+}
+@keyframes laxcc-ag-photo-drift {
+    0%   { transform: scale(1.05) translate3d(0, 0, 0); }
+    100% { transform: scale(1.10) translate3d(-20px, -10px, 0); }
+}
+
+/* Aurora glow layer */
+#laxcc-age-gate-root .laxcc-ag-cb-aurora {
+    position: absolute !important;
+    inset: -25% !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+    background:
+        radial-gradient(closest-side at 18% 28%, rgba(0, 175, 201, 0.40) 0%, transparent 65%),
+        radial-gradient(closest-side at 82% 72%, rgba(126, 203, 179, 0.28) 0%, transparent 65%),
+        radial-gradient(closest-side at 88% 14%, rgba(29, 80, 138, 0.50) 0%, transparent 65%),
+        radial-gradient(closest-side at 12% 86%, rgba(29, 80, 138, 0.35) 0%, transparent 65%) !important;
+    filter: blur(60px) !important;
+    mix-blend-mode: screen !important;
+    animation: laxcc-ag-aurora 14s ease-in-out infinite alternate !important;
+}
+@keyframes laxcc-ag-aurora {
+    0%   { transform: translate3d(0, 0, 0)        scale(1)    rotate(0deg); }
+    50%  { transform: translate3d(-50px, 50px, 0) scale(1.10) rotate(4deg); }
+    100% { transform: translate3d(60px, -40px, 0) scale(1.06) rotate(-3deg); }
+}
+
+/* Diagonal light beams */
+#laxcc-age-gate-root .laxcc-ag-cb-beam {
+    position: absolute !important;
+    width: 220% !important;
+    height: 60px !important;
+    left: -50% !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(0, 175, 201, 0.25) 35%,
+        rgba(126, 203, 179, 0.45) 50%,
+        rgba(0, 175, 201, 0.25) 65%,
+        transparent 100%) !important;
+    filter: blur(18px) !important;
+    transform-origin: center !important;
+}
+#laxcc-age-gate-root .laxcc-ag-cb-beam.b1 { top: 18% !important; transform: rotate(-18deg); animation: laxcc-ag-beam1 9s ease-in-out infinite !important; }
+#laxcc-age-gate-root .laxcc-ag-cb-beam.b2 { top: 72% !important; transform: rotate(12deg);  animation: laxcc-ag-beam2 11s ease-in-out infinite !important; }
+@keyframes laxcc-ag-beam1 {
+    0%, 100% { opacity: 0.4; transform: rotate(-18deg) translateX(-8%); }
+    50%      { opacity: 0.9; transform: rotate(-15deg) translateX(8%); }
+}
+@keyframes laxcc-ag-beam2 {
+    0%, 100% { opacity: 0.3; transform: rotate(12deg) translateX(8%); }
+    50%      { opacity: 0.8; transform: rotate(15deg) translateX(-8%); }
+}
+
+/* Vignette */
+#laxcc-age-gate-root .laxcc-ag-cb-vignette {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+    background: radial-gradient(ellipse at center, transparent 45%, rgba(5, 8, 16, 0.85) 100%) !important;
+}
+
+/* Confetti */
+#laxcc-age-gate-root .laxcc-ag-cb-confetti-layer {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 4 !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
+}
+#laxcc-age-gate-root .laxcc-ag-cb-confetti {
+    position: absolute !important;
+    top: -30px !important;
+    will-change: transform, opacity !important;
+    animation-name: laxcc-ag-confetti-fall !important;
+    animation-timing-function: linear !important;
+    animation-iteration-count: infinite !important;
+    border-radius: 1px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+@keyframes laxcc-ag-confetti-fall {
+    0%   { transform: translate3d(0, -10vh, 0) rotate(0deg);   opacity: 0; }
+    8%   { opacity: 1; }
+    92%  { opacity: 1; }
+    100% { transform: translate3d(60px, 110vh, 0) rotate(900deg); opacity: 0; }
+}
+
+/* Content */
+#laxcc-age-gate-root .laxcc-ag-cb-content {
+    position: relative !important;
+    z-index: 6 !important;
+    text-align: center !important;
+    padding: 32px !important;
+    max-width: 1100px !important;
+}
+
+#laxcc-age-gate-root .laxcc-ag-cb-happy {
+    display: block !important;
+    font-family: 'Fraunces', 'Times New Roman', serif !important;
+    font-weight: 500 !important;
+    font-style: italic !important;
+    font-size: clamp(48px, 9vw, 110px) !important;
+    line-height: 1 !important;
+    letter-spacing: -0.01em !important;
+    color: #ffffff !important;
+    margin: 0 0 8px 0 !important;
+}
+
+#laxcc-age-gate-root .laxcc-ag-cb-hero {
+    font-family: 'Fraunces', 'Times New Roman', serif !important;
+    font-weight: 900 !important;
+    font-style: italic !important;
+    font-optical-sizing: auto !important;
+    font-variation-settings: "opsz" 144 !important;
+    font-size: clamp(140px, 24vw, 320px) !important;
+    line-height: 0.85 !important;
+    letter-spacing: -0.04em !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+}
+#laxcc-age-gate-root .laxcc-ag-cb-hero .laxcc-ag-cb-slash {
+    font-style: italic !important;
+    font-weight: 400 !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+    margin: 0 0.04em !important;
+}
+@keyframes laxcc-ag-hero-rise {
+    from { opacity: 0; transform: translateY(34px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+#laxcc-age-gate-root .laxcc-ag-cb-headline {
+    font-family: 'Fraunces', serif !important;
+    font-weight: 500 !important;
+    font-style: italic !important;
+    font-size: clamp(28px, 4.4vw, 56px) !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.15 !important;
+    margin: 28px 0 0 !important;
+    color: #ffffff !important;
+}
+#laxcc-age-gate-root .laxcc-ag-cb-headline em {
+    font-style: italic !important;
+    font-weight: 700 !important;
+    color: #7ECBB3 !important;
+}
+
+#laxcc-age-gate-root .laxcc-ag-cb-tagline {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-size: clamp(13px, 1.4vw, 16px) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.22em !important;
+    text-transform: uppercase !important;
+    color: rgba(255, 255, 255, 0.55) !important;
+    margin: 32px 0 0 !important;
+}
+#laxcc-age-gate-root .laxcc-ag-cb-tagline .dot {
+    display: inline-block !important;
+    margin: 0 14px !important;
+    color: #7ECBB3 !important;
+    transform: translateY(-2px) !important;
+}
+
+@keyframes laxcc-ag-fade-up {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+#laxcc-age-gate-root .laxcc-ag-cb-mark {
+    position: absolute !important;
+    bottom: 28px !important;
+    right: 32px !important;
+    z-index: 7 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.32em !important;
+    color: rgba(255, 255, 255, 0.55) !important;
+    text-transform: uppercase !important;
+}
+#laxcc-age-gate-root .laxcc-ag-cb-mark::before {
+    content: '' !important;
+    display: inline-block !important;
+    width: 20px !important;
+    height: 1px !important;
+    background: #00AFC9 !important;
+    vertical-align: middle !important;
+    margin-right: 10px !important;
+}
+
+#laxcc-age-gate-root .laxcc-ag-cb-hairline {
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 70px !important;
+    transform: translateX(-50%) !important;
+    width: 80px !important;
+    height: 1px !important;
+    background: linear-gradient(90deg, transparent, #00AFC9, transparent) !important;
+    z-index: 5 !important;
+}
+
+@media (max-width: 640px) {
+    #laxcc-age-gate-root .laxcc-ag-cb-headline { margin-top: 18px !important; }
+    #laxcc-age-gate-root .laxcc-ag-cb-tagline { margin-top: 22px !important; letter-spacing: 0.16em !important; }
+    #laxcc-age-gate-root .laxcc-ag-cb-tagline .dot { margin: 0 8px !important; }
+    #laxcc-age-gate-root .laxcc-ag-cb-mark { bottom: 18px !important; right: 18px !important; }
+    #laxcc-age-gate-root .laxcc-ag-cb-hairline { bottom: 56px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #laxcc-age-gate-root .laxcc-ag-cb-photo,
+    #laxcc-age-gate-root .laxcc-ag-cb-aurora,
+    #laxcc-age-gate-root .laxcc-ag-cb-beam,
+    #laxcc-age-gate-root .laxcc-ag-cb-confetti {
+        animation: none !important;
+    }
+    #laxcc-age-gate-root .laxcc-ag-cb-happy,
+    #laxcc-age-gate-root .laxcc-ag-cb-hero,
+    #laxcc-age-gate-root .laxcc-ag-cb-headline,
+    #laxcc-age-gate-root .laxcc-ag-cb-tagline,
+    #laxcc-age-gate-root .laxcc-ag-cb-mark,
+    #laxcc-age-gate-root .laxcc-ag-cb-hairline {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

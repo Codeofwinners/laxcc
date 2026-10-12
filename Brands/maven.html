@@ -1,0 +1,652 @@
+<!-- SEO META — paste into Yoast/RankMath for this page -->
+<!-- Title: Buy Maven Genetics Flower | LAXCC Los Angeles Dispensary -->
+<!-- Description: Buy Maven Genetics flower at LAXCC — licensed LA dispensary 5 min from LAX. Premium buds, lab-tested, taxes included. Walk in or order pickup today. -->
+<meta name="description" content="Buy Maven Genetics flower at LAXCC — licensed LA dispensary 5 min from LAX. Premium buds, lab-tested, taxes included. Walk in or order pickup today.">
+
+<style>
+    /* ========================================
+       MAVEN BRAND PAGE — LAXCC
+       Scoped to .laxcc-maven
+       Elementor-safe: all rules use !important
+       ======================================== */
+
+    .laxcc-maven *,
+    .laxcc-maven *::before,
+    .laxcc-maven *::after {
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .laxcc-maven {
+        --navy: #1D508A;
+        --teal: #00AFC9;
+        --orange: #F89459;
+        --green: #7ECBB3;
+        --cream: #FBF8F2;
+        --white: #ffffff;
+        --text: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --navy-deep: #0f3a5f;
+
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        background: var(--cream) !important;
+        color: var(--text) !important;
+        line-height: 1.6 !important;
+        overflow-x: hidden !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+    }
+
+    @keyframes laxcc-maven-fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* HERO — mobile-first */
+    .laxcc-maven .maven-hero { background: var(--cream) !important; }
+
+    .laxcc-maven .maven-hero-img {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #ffffff !important;
+        padding: 40px 20px !important;
+        overflow: hidden !important;
+    }
+
+    .laxcc-maven .maven-hero-img img {
+        max-width: 400px !important;
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+    /* Gallery photo fill mode */
+    .laxcc-maven .maven-hero-img-fill {
+        width: 100% !important;
+        overflow: hidden !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+
+    .laxcc-maven .maven-hero-img-fill img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+
+    .laxcc-maven .maven-hero-body {
+        max-width: 1400px !important;
+        margin: 0 auto !important;
+        padding: 32px 20px 28px !important;
+    }
+
+    .laxcc-maven .maven-hero-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        background: none !important;
+        border: none !important;
+        color: var(--text-muted) !important;
+        font-size: 0.65rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+        padding: 6px 14px !important;
+        border-radius: 100px !important;
+        margin-bottom: 16px !important;
+        white-space: nowrap !important;
+        width: fit-content !important;
+    }
+
+    .laxcc-maven .maven-hero-badge i { font-size: 0.55rem !important; }
+
+    .laxcc-maven .maven-hero h1 {
+        font-size: 2.4rem !important;
+        font-weight: 900 !important;
+        line-height: 1 !important;
+        letter-spacing: -0.03em !important;
+        color: var(--navy) !important;
+        margin-bottom: 16px !important;
+    }
+
+    .laxcc-maven .maven-hero h1 span { color: var(--orange) !important; }
+
+    .laxcc-maven .maven-hero-sub {
+        font-size: 0.95rem !important;
+        color: var(--text-muted) !important;
+        line-height: 1.6 !important;
+        margin-bottom: 24px !important;
+        max-width: 520px !important;
+    }
+
+    .laxcc-maven .maven-hero-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        margin-bottom: 28px !important;
+    }
+
+    .laxcc-maven .maven-hero-stats {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 12px !important;
+        border-top: 1px solid var(--border) !important;
+        padding-top: 24px !important;
+    }
+
+    .laxcc-maven .maven-stat-val {
+        font-size: 1.5rem !important;
+        font-weight: 900 !important;
+        color: var(--orange) !important;
+        letter-spacing: -0.03em !important;
+        line-height: 1 !important;
+        margin-bottom: 2px !important;
+    }
+
+    .laxcc-maven .maven-stat-lbl {
+        font-size: 0.6rem !important;
+        font-weight: 700 !important;
+        color: var(--text-muted) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    /* Buttons */
+    .laxcc-maven .maven-btn-primary,
+    .laxcc-maven a.maven-btn-primary,
+    .laxcc-maven a.maven-btn-primary:link,
+    .laxcc-maven a.maven-btn-primary:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        background: var(--orange) !important;
+        color: #fff !important;
+        font-size: 0.85rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.06em !important;
+        text-transform: uppercase !important;
+        padding: 16px 32px !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        transition: all 0.3s ease !important;
+        border: none !important;
+        cursor: pointer !important;
+    }
+
+    .laxcc-maven a.maven-btn-primary:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 32px rgba(248, 148, 89, 0.4) !important;
+    }
+
+    .laxcc-maven .maven-btn-secondary,
+    .laxcc-maven a.maven-btn-secondary,
+    .laxcc-maven a.maven-btn-secondary:link,
+    .laxcc-maven a.maven-btn-secondary:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        background: transparent !important;
+        color: var(--navy) !important;
+        font-size: 0.85rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.04em !important;
+        text-transform: uppercase !important;
+        padding: 16px 32px !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        border: 1px solid var(--navy) !important;
+        transition: all 0.3s ease !important;
+        cursor: pointer !important;
+    }
+
+    .laxcc-maven a.maven-btn-secondary:hover {
+        border-color: var(--orange) !important;
+        color: var(--orange) !important;
+        background: rgba(248, 148, 89, 0.06) !important;
+    }
+
+    /* Desktop hero */
+    @media (min-width: 769px) {
+        .laxcc-maven .maven-hero {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            min-height: 100vh !important;
+        }
+        .laxcc-maven .maven-hero-img {
+            height: 100% !important;
+            min-height: 100vh !important;
+            border-radius: 0 0 0 32px !important;
+            order: 2 !important;
+            padding: 60px 40px !important;
+        }
+        .laxcc-maven .maven-hero-img img { max-width: 480px !important; }
+        .laxcc-maven .maven-hero-img-fill {
+            height: 100% !important;
+            min-height: 100vh !important;
+            border-radius: 0 0 0 32px !important;
+            order: 2 !important;
+            padding: 0 !important;
+        }
+        .laxcc-maven .maven-hero-img-fill img { max-width: none !important; }
+        .laxcc-maven .maven-hero-body {
+            order: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            padding: 80px 60px !important;
+        }
+        .laxcc-maven .maven-hero h1 { font-size: clamp(2.8rem, 4vw, 4.2rem) !important; margin-bottom: 24px !important; }
+        .laxcc-maven .maven-hero-sub { font-size: 1.05rem !important; margin-bottom: 36px !important; }
+        .laxcc-maven .maven-hero-actions { flex-direction: row !important; margin-bottom: 0 !important; }
+        .laxcc-maven .maven-hero-stats { margin-top: 48px !important; padding-top: 32px !important; }
+        .laxcc-maven .maven-stat-val { font-size: 2rem !important; }
+        .laxcc-maven .maven-stat-lbl { font-size: 0.7rem !important; }
+    }
+
+    /* ABOUT section */
+    .laxcc-maven .maven-about { padding: 24px 0 0 !important; background: var(--cream) !important; }
+    .laxcc-maven .maven-about-container { max-width: 1400px !important; margin: 0 auto !important; padding: 0 20px !important; }
+    .laxcc-maven .maven-about-header { max-width: 680px !important; }
+
+    .laxcc-maven .maven-section-label {
+        display: inline-block !important;
+        font-size: 0.7rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 3px !important;
+        text-transform: uppercase !important;
+        color: var(--orange) !important;
+        margin-bottom: 20px !important;
+        position: relative !important;
+        padding-left: 36px !important;
+    }
+    .laxcc-maven .maven-section-label::before {
+        content: '' !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 50% !important;
+        width: 24px !important;
+        height: 2px !important;
+        background: var(--orange) !important;
+    }
+
+    .laxcc-maven .maven-about-top { display: flex !important; align-items: flex-end !important; justify-content: space-between !important; gap: 24px !important; margin-bottom: 16px !important; }
+    .laxcc-maven .maven-about-header h2 { font-size: clamp(2rem, 3.5vw, 3rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1.05 !important; margin-bottom: 12px !important; }
+    .laxcc-maven .maven-about-header p { font-size: 1rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; max-width: 480px !important; }
+
+    .laxcc-maven .maven-scroll-arrows { display: flex !important; gap: 8px !important; flex-shrink: 0 !important; }
+    .laxcc-maven .maven-scroll-arrow {
+        width: 40px !important; height: 40px !important; border-radius: 50% !important;
+        border: 1px solid var(--border) !important; background: var(--white) !important;
+        display: flex !important; align-items: center !important; justify-content: center !important;
+        cursor: pointer !important; transition: all 0.2s ease !important;
+        color: var(--text) !important; font-size: 0.8rem !important;
+    }
+    .laxcc-maven .maven-scroll-arrow:hover { border-color: var(--navy) !important; color: var(--navy) !important; }
+
+    .laxcc-maven .maven-about-track {
+        display: flex !important; gap: 20px !important; overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important; padding-bottom: 4px !important;
+    }
+    .laxcc-maven .maven-about-track::-webkit-scrollbar { display: none !important; }
+    .laxcc-maven .maven-about-slide {
+        flex: 0 0 280px !important; scroll-snap-align: start !important;
+        padding: 16px 0 0 !important; border-top: 2px solid var(--border) !important;
+        transition: border-color 0.3s ease !important;
+    }
+    .laxcc-maven .maven-about-slide:hover { border-color: var(--navy) !important; }
+    .laxcc-maven .maven-about-slide-num { font-size: 0.7rem !important; font-weight: 700 !important; color: var(--text-muted) !important; letter-spacing: 0.5px !important; margin-bottom: 12px !important; }
+    .laxcc-maven .maven-about-slide h3 { font-size: 1.1rem !important; font-weight: 800 !important; color: var(--text) !important; letter-spacing: -0.01em !important; margin-bottom: 8px !important; }
+    .laxcc-maven .maven-about-slide p { font-size: 0.85rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; }
+    @media (min-width: 769px) { .laxcc-maven .maven-about-slide { flex: 0 0 320px !important; } }
+
+    /* EDUCATION section */
+    .laxcc-maven .maven-education { padding: 24px 0 !important; background: var(--cream) !important; }
+    .laxcc-maven .maven-education-container { max-width: 1400px !important; margin: 0 auto !important; padding: 0 20px !important; }
+    .laxcc-maven .maven-education-top { display: flex !important; align-items: flex-end !important; justify-content: space-between !important; gap: 24px !important; margin-bottom: 16px !important; }
+    .laxcc-maven .maven-education-intro h2 { font-size: clamp(2rem, 3.5vw, 3rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1.05 !important; margin-bottom: 8px !important; }
+    .laxcc-maven .maven-education-intro p { font-size: 0.9rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; max-width: 480px !important; }
+    .laxcc-maven .maven-education-track {
+        display: flex !important; gap: 20px !important; overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+    }
+    .laxcc-maven .maven-education-track::-webkit-scrollbar { display: none !important; }
+    .laxcc-maven .maven-education-slide {
+        flex: 0 0 220px !important; scroll-snap-align: start !important;
+        padding: 16px 0 0 !important; border-top: 2px solid var(--border) !important;
+        text-align: center !important; transition: border-color 0.3s ease !important;
+    }
+    .laxcc-maven .maven-education-slide:hover { border-color: var(--navy) !important; }
+    .laxcc-maven .maven-education-num { font-size: 2.5rem !important; font-weight: 900 !important; color: var(--orange) !important; line-height: 1 !important; margin-bottom: 6px !important; }
+    .laxcc-maven .maven-education-name { font-size: 0.9rem !important; font-weight: 700 !important; color: var(--navy) !important; margin-bottom: 6px !important; }
+    .laxcc-maven .maven-education-desc { font-size: 0.8rem !important; color: var(--text-muted) !important; line-height: 1.5 !important; }
+    @media (min-width: 769px) {
+        .laxcc-maven .maven-education { padding: 60px 0 !important; }
+        .laxcc-maven .maven-education-container { padding: 0 60px !important; }
+        .laxcc-maven .maven-education-slide { flex: 0 0 260px !important; }
+    }
+
+    /* FAQ */
+    .laxcc-maven .maven-faq { padding: 140px 0 !important; background: var(--cream) !important; }
+    .laxcc-maven .maven-faq-container {
+        max-width: 1400px !important; margin: 0 auto !important; padding: 0 60px !important;
+        display: grid !important; grid-template-columns: 380px 1fr !important;
+        gap: 80px !important; align-items: start !important;
+    }
+    .laxcc-maven .maven-faq-sidebar { position: sticky !important; top: 40px !important; }
+    .laxcc-maven .maven-faq-sidebar h2 { font-size: 3rem !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1 !important; margin-bottom: 24px !important; }
+    .laxcc-maven .maven-faq-sidebar p { font-size: 1.05rem !important; color: var(--text-muted) !important; line-height: 1.7 !important; margin-bottom: 32px !important; }
+    .laxcc-maven .maven-faq-deco { width: 80px !important; height: 4px !important; background: var(--orange) !important; border-radius: 2px !important; }
+    .laxcc-maven .maven-faq-list { display: flex !important; flex-direction: column !important; }
+    .laxcc-maven .maven-faq-item { border-bottom: 1px solid var(--border) !important; padding: 32px 0 !important; }
+    .laxcc-maven .maven-faq-item:first-child { border-top: 1px solid var(--border) !important; }
+    .laxcc-maven .maven-faq-q {
+        font-size: 1.3rem !important; font-weight: 800 !important; color: var(--navy) !important;
+        cursor: pointer !important; display: flex !important; align-items: center !important;
+        justify-content: space-between !important; gap: 20px !important;
+        list-style: none !important; transition: color 0.3s ease !important; padding: 0 !important;
+    }
+    .laxcc-maven .maven-faq-q::-webkit-details-marker { display: none !important; }
+    .laxcc-maven .maven-faq-q:hover { color: var(--orange) !important; }
+    .laxcc-maven .maven-faq-q .maven-faq-toggle {
+        font-size: 1.3rem !important; font-weight: 300 !important; flex-shrink: 0 !important;
+        transition: transform 0.3s ease !important; color: var(--text-muted) !important;
+    }
+    .laxcc-maven .maven-faq-item[open] .maven-faq-toggle { transform: rotate(45deg) !important; color: var(--orange) !important; }
+    .laxcc-maven .maven-faq-a {
+        padding-top: 16px !important; font-size: 1rem !important; color: var(--text-muted) !important;
+        line-height: 1.7 !important; max-width: 90% !important; animation: laxcc-maven-fadeUp 0.4s ease !important;
+    }
+
+    /* CTA */
+    .laxcc-maven .maven-cta {
+        padding: 120px 0 !important; background: var(--cream) !important;
+        text-align: center !important; position: relative !important; overflow: hidden !important;
+    }
+    .laxcc-maven .maven-cta::before {
+        content: '' !important; position: absolute !important; top: 50% !important; left: 50% !important;
+        transform: translate(-50%, -50%) !important; width: 600px !important; height: 600px !important;
+        background: radial-gradient(circle, rgba(248, 148, 89, 0.06) 0%, transparent 70%) !important;
+        border-radius: 50% !important; pointer-events: none !important;
+    }
+    .laxcc-maven .maven-cta-container { max-width: 700px !important; margin: 0 auto !important; padding: 0 40px !important; position: relative !important; z-index: 1 !important; }
+    .laxcc-maven .maven-cta h2 { font-size: clamp(2.5rem, 5vw, 4rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; margin-bottom: 20px !important; line-height: 1.05 !important; }
+    .laxcc-maven .maven-cta p { font-size: 1.1rem !important; color: var(--text-muted) !important; margin-bottom: 40px !important; line-height: 1.7 !important; }
+    .laxcc-maven .maven-cta-actions { display: flex !important; gap: 16px !important; justify-content: center !important; flex-wrap: wrap !important; }
+    .laxcc-maven .maven-cta-location { margin-top: 48px !important; padding-top: 32px !important; border-top: 1px solid rgba(29, 80, 138, 0.1) !important; }
+    .laxcc-maven .maven-cta-location p { font-size: 0.85rem !important; color: var(--text-muted) !important; margin-bottom: 0 !important; }
+    .laxcc-maven .maven-cta-location strong { color: var(--navy) !important; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .laxcc-maven .maven-about-container,
+        .laxcc-maven .maven-education-container,
+        .laxcc-maven .maven-faq-container { padding: 0 40px !important; }
+        .laxcc-maven .maven-faq-container { grid-template-columns: 1fr !important; gap: 48px !important; }
+        .laxcc-maven .maven-faq-sidebar { position: static !important; }
+    }
+    @media (max-width: 640px) {
+        .laxcc-maven .maven-education,
+        .laxcc-maven .maven-faq { padding: 40px 0 !important; }
+        .laxcc-maven .maven-about-container,
+        .laxcc-maven .maven-education-container,
+        .laxcc-maven .maven-faq-container { padding: 0 24px !important; }
+        .laxcc-maven .maven-faq-sidebar h2 { font-size: 2.2rem !important; }
+        .laxcc-maven .maven-faq-q { font-size: 1.1rem !important; }
+        .laxcc-maven .maven-cta { padding: 80px 0 !important; }
+    }
+
+    /* Elementor override */
+    .elementor-widget-container .laxcc-maven {
+        width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+</style>
+
+<div class="laxcc-maven">
+
+    <!-- HERO -->
+    <section class="maven-hero">
+        <div class="maven-hero-img-fill">
+            <img src="https://images.squarespace-cdn.com/content/v1/5b5f6f6e89c1721e0f3192ce/7cd5cfe1-51d3-425f-86fc-ab07a363de17/2.png?format=2500w"
+                alt="Maven Genetics flower available at LAXCC dispensary in Los Angeles near LAX Airport"
+                loading="eager">
+        </div>
+
+        <div class="maven-hero-body">
+            <div class="maven-hero-badge">
+                <i class="fas fa-shield-halved"></i>
+                Licensed Dispensary &bull; 5 Min From LAX
+            </div>
+            <h1>Buy Maven Genetics <span>Premium Flower</span> in Los Angeles</h1>
+            <p class="maven-hero-sub">
+                Premium cannabis flower from one of California's top cultivators. Shop Maven Genetics at LAXCC — a licensed Los Angeles dispensary just 5 minutes from LAX Airport. Available in-store and for pickup.
+            </p>
+            <div class="maven-hero-actions">
+                <a href="#maven-live-menu" class="maven-btn-primary">
+                    Shop Maven <i class="fas fa-arrow-down"></i>
+                </a>
+                <a href="https://www.google.com/maps?daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045"
+                    target="_blank" rel="noopener noreferrer" class="maven-btn-secondary">
+                    <i class="fas fa-location-dot"></i> Get Directions
+                </a>
+            </div>
+            <div class="maven-hero-stats">
+                <div>
+                    <div class="maven-stat-val">30%+</div>
+                    <div class="maven-stat-lbl">Up to THC</div>
+                </div>
+                <div>
+                    <div class="maven-stat-val">100%</div>
+                    <div class="maven-stat-lbl">Lab Tested</div>
+                </div>
+                <div>
+                    <div class="maven-stat-val">CA</div>
+                    <div class="maven-stat-lbl">Cultivated</div>
+                </div>
+                <div>
+                    <div class="maven-stat-val">5+</div>
+                    <div class="maven-stat-lbl">Products Stocked</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+<!-- END scoped wrapper — shortcode lives OUTSIDE -->
+
+<!-- LIVE MENU -->
+<section id="maven-live-menu">
+    [leafbridge_specific_product_filter brand="7876adfb-2fed-4b1c-a219-dffb04d8e42f" count="20"]
+</section>
+
+<!-- Resume scoped wrapper -->
+<div class="laxcc-maven">
+
+    <!-- ABOUT -->
+    <section class="maven-about">
+        <div class="maven-about-container">
+            <div class="maven-about-top">
+                <div class="maven-about-header">
+                    <span class="maven-section-label">About the Brand</span>
+                    <h2>Why Maven Genetics</h2>
+                    <p>Premium cannabis flower from one of California's top cultivators.</p>
+                </div>
+                <div class="maven-scroll-arrows">
+                    <button class="maven-scroll-arrow maven-about-arrow" data-dir="-1" aria-label="Previous"><i class="fas fa-arrow-left"></i></button>
+                    <button class="maven-scroll-arrow maven-about-arrow" data-dir="1" aria-label="Next"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="maven-about-track">
+                <div class="maven-about-slide">
+                    <div class="maven-about-slide-num">01</div>
+                    <h3>Top-Shelf Genetics</h3>
+                    <p>Maven Genetics is known for breeding and cultivating elite strains with exceptional flavor profiles and high potency — a staple in California's cannabis scene.</p>
+                </div>
+                <div class="maven-about-slide">
+                    <div class="maven-about-slide-num">02</div>
+                    <h3>Indoor Grown</h3>
+                    <p>Cultivated in controlled indoor environments for maximum trichome development, consistent quality, and the kind of bag appeal that speaks for itself.</p>
+                </div>
+                <div class="maven-about-slide">
+                    <div class="maven-about-slide-num">03</div>
+                    <h3>Exotic Strains</h3>
+                    <p>From fruity to gassy, Maven Genetics drops unique cultivars you won't find everywhere. Each strain is hand-selected for flavor, effects, and potency.</p>
+                </div>
+                <div class="maven-about-slide">
+                    <div class="maven-about-slide-num">04</div>
+                    <h3>Lab Tested</h3>
+                    <p>Every batch is tested for potency, pesticides, and contaminants. What's on the label is what's in the jar — no guessing.</p>
+                </div>
+                <div class="maven-about-slide">
+                    <div class="maven-about-slide-num">05</div>
+                    <h3>Available at LAXCC</h3>
+                    <p>We carry Maven at our dispensary near LAX Airport — walk in at 8332 Lincoln Blvd or order ahead for pickup. New products rotate in regularly, so check the live menu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="maven-faq">
+        <div class="maven-faq-container">
+            <div class="maven-faq-sidebar">
+                <h2>Common Questions</h2>
+                <p>Everything you need to know about buying Maven at LAXCC near LAX Airport in Los Angeles.</p>
+                <div class="maven-faq-deco"></div>
+            </div>
+
+            <div class="maven-faq-list">
+                <details class="maven-faq-item">
+                    <summary class="maven-faq-q">
+                        Where can I buy Maven Genetics near LAX?
+                        <span class="maven-faq-toggle">+</span>
+                    </summary>
+                    <div class="maven-faq-a">
+                        LAXCC is a licensed Los Angeles dispensary at 8332 Lincoln Blvd, Los Angeles, CA 90045 — just 5 minutes from LAX Airport. We carry Maven Genetics premium flower. Walk in or order ahead for pickup.
+                    </div>
+                </details>
+
+                <details class="maven-faq-item">
+                    <summary class="maven-faq-q">
+                        What Maven Genetics strains does LAXCC carry?
+                        <span class="maven-faq-toggle">+</span>
+                    </summary>
+                    <div class="maven-faq-a">
+                        We stock a curated selection of Maven Genetics flower strains. Availability rotates with new drops — check our live menu above for the most current inventory and pricing.
+                    </div>
+                </details>
+
+                <details class="maven-faq-item">
+                    <summary class="maven-faq-q">
+                        Is Maven Genetics flower lab-tested?
+                        <span class="maven-faq-toggle">+</span>
+                    </summary>
+                    <div class="maven-faq-a">
+                        Yes. Every Maven Genetics batch is lab-tested for potency, pesticides, and contaminants before hitting our shelves. LAXCC only carries licensed, compliant products.
+                    </div>
+                </details>
+
+                <details class="maven-faq-item">
+                    <summary class="maven-faq-q">
+                        How much does Maven Genetics flower cost at LAXCC?
+                        <span class="maven-faq-toggle">+</span>
+                    </summary>
+                    <div class="maven-faq-a">
+                        Pricing varies by product and size — check the live menu on this page for current prices. LAXCC includes all taxes in our listed prices, so what you see is what you pay.
+                    </div>
+                </details>
+
+                <details class="maven-faq-item">
+                    <summary class="maven-faq-q">
+                        What are LAXCC's hours and location?
+                        <span class="maven-faq-toggle">+</span>
+                    </summary>
+                    <div class="maven-faq-a">
+                        LAXCC is open daily from 9:00 AM to 9:30 PM at 8332 Lincoln Blvd in Westchester, Los Angeles — 5 minutes from LAX Airport and 8 minutes from the beach. Walk-ins welcome, no appointment needed. We also offer pickup, curbside, and drive-thru options.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="maven-cta">
+        <div class="maven-cta-container">
+            <h2>Get Maven Genetics Today at LAXCC</h2>
+            <p>
+                Walk into our licensed dispensary near LAX Airport and shop Maven Genetics premium flower. All products lab-tested and ready for you.
+            </p>
+            <div class="maven-cta-actions">
+                <a href="https://www.google.com/maps?daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045"
+                    target="_blank" rel="noopener noreferrer" class="maven-btn-primary">
+                    <i class="fas fa-location-dot"></i> Directions to LAXCC
+                </a>
+            </div>
+            <div class="maven-cta-location">
+                <p><strong>LAXCC</strong> &bull; 8332 Lincoln Blvd, Los Angeles, CA 90045 &bull; Open Daily 9AM - 9:30PM</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    (function () {
+        var ld = {
+            "@context": "https://schema.org",
+            "@type": "Store",
+            "name": "LAXCC - LAX Cannabis Club",
+            "description": "Licensed dispensary near LAX Airport carrying Maven Genetics premium flower in Los Angeles.",
+            "url": "https://laxcc.com",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "8332 Lincoln Blvd",
+                "addressLocality": "Los Angeles",
+                "addressRegion": "CA",
+                "postalCode": "90045",
+                "addressCountry": "US"
+            },
+            "openingHours": "Mo-Su 09:00-21:30",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 33.9575,
+                "longitude": -118.4178
+            }
+        };
+        var s = document.createElement('script');
+        s.type = 'application/ld+json';
+        s.textContent = JSON.stringify(ld);
+        document.head.appendChild(s);
+    })();
+
+    /* Horizontal scroll arrows */
+    (function () {
+        [
+            { track: '.maven-about-track', btns: '.maven-about-arrow', step: 340 }
+        ].forEach(function (cfg) {
+            var track = document.querySelector('.laxcc-maven ' + cfg.track);
+            if (!track) return;
+            document.querySelectorAll('.laxcc-maven ' + cfg.btns).forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var dir = parseInt(this.getAttribute('data-dir'));
+                    track.scrollBy({ left: dir * cfg.step, behavior: 'smooth' });
+                });
+            });
+        });
+    })();
+</script>

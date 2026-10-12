@@ -1,0 +1,768 @@
+<div class="laxcc-east-vs-west">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Maven+Pro:wght@400..900&display=swap');
+
+        /* BRAND DESIGN TOKENS */
+        .laxcc-east-vs-west {
+            --primary-teal: #00AFC9;
+            --primary-dark: #0f3a5f;
+            --accent-orange: #F89459;
+            --accent-green: #3daa6e;
+            --cream: #fbf8f2;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --white: #ffffff;
+
+            font-family: 'Maven Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            background: none;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 900px;
+            padding: 4rem 1.5rem;
+            box-sizing: border-box;
+            font-size: 19px;
+        }
+
+        .laxcc-east-vs-west *,
+        .laxcc-east-vs-west *::before,
+        .laxcc-east-vs-west *::after {
+            box-sizing: inherit;
+        }
+
+        /* TYPOGRAPHY */
+        .laxcc-east-vs-west .laxcc-blog-header {
+            text-align: left;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--primary-teal);
+            padding-bottom: 2rem;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-meta {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-title {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            text-transform: none;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-author-line {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-content h2 {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+            border-left: 6px solid var(--primary-teal);
+            padding-left: 1rem;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-content h3 {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-content ul,
+        .laxcc-east-vs-west .laxcc-blog-content ol {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-content a {
+            color: var(--primary-teal);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-content a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        /* IMAGES */
+        .laxcc-east-vs-west .laxcc-blog-featured-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(15, 58, 95, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        /* FULL-BLEED HERO — breaks out of the 900px column to span the full viewport width,
+           pulled up to cancel the container's top padding so it sits flush at the very top. */
+        .laxcc-east-vs-west .laxcc-hero-full {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            margin-top: -4rem;
+            margin-bottom: 3rem;
+        }
+
+        /* both images: plain full width, natural height, square corners, no shadow.
+           NOTE: do NOT set display here — that would override the show/hide rules below. */
+        .laxcc-east-vs-west .laxcc-hero-full img {
+            width: 100%;
+            height: auto;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        /* DESKTOP: show desktop image only, hide mobile image */
+        .laxcc-east-vs-west .laxcc-hero-full .laxcc-hero-desktop { display: block; }
+        .laxcc-east-vs-west .laxcc-hero-full .laxcc-hero-mobile { display: none; }
+
+        @media (max-width: 768px) {
+            .laxcc-east-vs-west .laxcc-hero-full { margin-top: -2rem; }
+            /* MOBILE: show mobile image only, hide desktop image */
+            .laxcc-east-vs-west .laxcc-hero-full .laxcc-hero-desktop { display: none; }
+            .laxcc-east-vs-west .laxcc-hero-full .laxcc-hero-mobile { display: block; }
+        }
+
+        /* LEDE */
+        .laxcc-east-vs-west .laxcc-blog-lede {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        /* HEADLINE CALLOUT — minimalist pull-quote, no box/shadow, thin accent rule */
+        .laxcc-east-vs-west .laxcc-headline-callout {
+            background: none;
+            border: none;
+            border-left: 2px solid var(--accent-green);
+            border-radius: 0;
+            padding: 0.4rem 0 0.4rem 1.75rem;
+            margin: 3rem 0;
+            box-shadow: none;
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 1.55rem;
+            line-height: 1.35;
+            color: var(--primary-dark);
+        }
+
+        .laxcc-east-vs-west .laxcc-headline-callout strong {
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        /* STAT STRIP — minimalist, no boxes/shadows, hairline dividers only */
+        .laxcc-east-vs-west .laxcc-blog-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            margin: 3.5rem 0;
+            border-top: 1px solid #e7e2d6;
+            border-bottom: 1px solid #e7e2d6;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-stat-card {
+            background: none;
+            border: none;
+            border-left: 1px solid #e7e2d6;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 1.9rem 0.75rem;
+            text-align: center;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-stat-card:first-child { border-left: none; }
+
+        .laxcc-east-vs-west .laxcc-blog-stat-number {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 2.9rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1;
+            letter-spacing: -0.01em;
+            margin-bottom: 0.65rem;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-stat-label {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            line-height: 1.45;
+        }
+
+        /* COMPARISON TABLE — minimalist: no outer box, no shadow, hairline rules only */
+        .laxcc-east-vs-west .laxcc-table-wrap {
+            margin: 2.5rem 0;
+            border-radius: 0;
+            overflow: visible;
+            background: none;
+            box-shadow: none;
+            border: none;
+        }
+
+        .laxcc-east-vs-west .laxcc-compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.97rem;
+        }
+
+        /* header row: open, just a thin baseline rule */
+        .laxcc-east-vs-west .laxcc-compare-table thead th {
+            text-align: left;
+            padding: 0 1.25rem 0.9rem;
+            background: none;
+            border-bottom: 1px solid #e7e2d6;
+            vertical-align: bottom;
+        }
+
+        .laxcc-east-vs-west .laxcc-compare-table thead th.laxcc-col-type {
+            font-family: 'Maven Pro', sans-serif;
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: var(--text-muted);
+        }
+
+        .laxcc-east-vs-west .laxcc-th-name {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .laxcc-east-vs-west .laxcc-th-name::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .laxcc-east-vs-west .laxcc-col-la .laxcc-th-name { color: var(--primary-teal); }
+        .laxcc-east-vs-west .laxcc-col-la .laxcc-th-name::before { background: var(--primary-teal); }
+        .laxcc-east-vs-west .laxcc-col-ma .laxcc-th-name { color: var(--accent-green); }
+        .laxcc-east-vs-west .laxcc-col-ma .laxcc-th-name::before { background: var(--accent-green); }
+
+        .laxcc-east-vs-west .laxcc-th-tag {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        /* no column tints — the teal/green dot labels carry the distinction */
+        .laxcc-east-vs-west .laxcc-compare-table tbody td {
+            padding: 1.1rem 1.25rem;
+            border-top: 1px solid #f1ede4;
+            vertical-align: top;
+        }
+
+        .laxcc-east-vs-west .laxcc-compare-table .laxcc-row-label {
+            font-weight: 700;
+            color: var(--primary-dark);
+            font-size: 1rem;
+        }
+
+        .laxcc-east-vs-west .laxcc-price {
+            font-weight: 700;
+            color: var(--text-main);
+            font-size: 1.02rem;
+        }
+
+        .laxcc-east-vs-west .laxcc-cell-note {
+            display: block;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-top: 3px;
+            line-height: 1.35;
+        }
+
+        .laxcc-east-vs-west .laxcc-table-footnote {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: -1rem 0 2.5rem;
+            font-style: italic;
+        }
+
+        /* MOBILE: each row becomes a stacked card */
+        @media (max-width: 640px) {
+            .laxcc-east-vs-west .laxcc-table-wrap {
+                background: none;
+                border: none;
+                box-shadow: none;
+                overflow: visible;
+            }
+            .laxcc-east-vs-west .laxcc-compare-table { font-size: 1rem; }
+            .laxcc-east-vs-west .laxcc-compare-table thead {
+                position: absolute;
+                width: 1px; height: 1px;
+                padding: 0; margin: -1px;
+                overflow: hidden; clip: rect(0 0 0 0);
+                white-space: nowrap; border: 0;
+            }
+            .laxcc-east-vs-west .laxcc-compare-table,
+            .laxcc-east-vs-west .laxcc-compare-table tbody { display: block; width: 100%; }
+
+            /* each row = a card; the two prices share a 2-column grid under the header.
+               minimalist: no border, no shadow — separated by whitespace + the header band */
+            .laxcc-east-vs-west .laxcc-compare-table tr {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                background: none;
+                border: none;
+                border-radius: 0;
+                box-shadow: none;
+                margin-bottom: 1.75rem;
+                overflow: hidden;
+            }
+            .laxcc-east-vs-west .laxcc-compare-table td {
+                display: block;
+                border: none !important;
+                background: none !important;
+                padding: 0.85rem 1.25rem;
+            }
+            .laxcc-east-vs-west .laxcc-compare-table td.laxcc-row-label {
+                grid-column: 1 / -1;
+                background: var(--primary-dark) !important;
+                color: var(--white);
+                padding: 0.9rem 1.25rem;
+                border-radius: 10px;
+                margin-bottom: 0.75rem;
+            }
+            .laxcc-east-vs-west .laxcc-compare-table td.laxcc-row-label .laxcc-cell-note { color: rgba(255, 255, 255, 0.72); }
+
+            .laxcc-east-vs-west .laxcc-compare-table td.laxcc-c-ma { border-left: 1px solid #e7e2d6 !important; }
+            .laxcc-east-vs-west .laxcc-compare-table td.laxcc-c-la::before,
+            .laxcc-east-vs-west .laxcc-compare-table td.laxcc-c-ma::before {
+                content: attr(data-label);
+                display: block;
+                font-size: 0.68rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                margin-bottom: 5px;
+            }
+            .laxcc-east-vs-west .laxcc-compare-table td.laxcc-c-la::before { color: var(--primary-teal); }
+            .laxcc-east-vs-west .laxcc-compare-table td.laxcc-c-ma::before { color: var(--accent-green); }
+            .laxcc-east-vs-west .laxcc-cell-body { text-align: left; }
+            .laxcc-east-vs-west .laxcc-cell-body .laxcc-cell-note { margin-top: 2px; }
+        }
+
+        /* INFO / DEAL BOXES — minimalist, hairline border, no shadow */
+        .laxcc-east-vs-west .laxcc-blog-info-box {
+            background-color: var(--white);
+            color: var(--text-main);
+            padding: 0;
+            border-radius: 14px;
+            margin: 2.5rem 0;
+            border: 1px solid #ece7dc;
+            box-shadow: none;
+            overflow: hidden;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-info-box h3 {
+            color: var(--primary-dark) !important;
+            margin: 0 !important;
+            padding: 1.4rem 1.75rem;
+            font-size: 1.15rem;
+            letter-spacing: 0.01em;
+            border-bottom: 1px solid #f1ede4;
+        }
+
+        .laxcc-east-vs-west .laxcc-deal-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.1rem 2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .laxcc-east-vs-west .laxcc-deal-row:last-child { border-bottom: none; }
+
+        .laxcc-east-vs-west .laxcc-deal-row i {
+            font-size: 1.1rem;
+            margin-top: 3px;
+            min-width: 20px;
+        }
+
+        .laxcc-east-vs-west .laxcc-deal-row .laxcc-deal-sub {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-info-box a { color: var(--primary-teal) !important; }
+        .laxcc-east-vs-west .laxcc-blog-info-box a:hover { color: var(--primary-dark) !important; }
+
+        /* TAX TWIST BOX — minimalist, thin accent rule, no heavy box */
+        .laxcc-east-vs-west .laxcc-tax-box {
+            background: none;
+            border: none;
+            border-left: 2px solid var(--accent-orange);
+            border-radius: 0;
+            padding: 0.4rem 0 0.4rem 1.75rem;
+            margin: 2.5rem 0;
+            box-shadow: none;
+        }
+
+        .laxcc-east-vs-west .laxcc-tax-box h3 {
+            margin-top: 0 !important;
+            color: var(--primary-dark) !important;
+        }
+
+        .laxcc-east-vs-west .laxcc-tax-box strong { color: var(--primary-dark); }
+
+        /* DIVIDER */
+        .laxcc-east-vs-west .laxcc-blog-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-teal), transparent);
+            margin: 4rem 0;
+            opacity: 0.3;
+        }
+
+        /* SOURCES */
+        .laxcc-east-vs-west .laxcc-blog-sources {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid #e2e8f0;
+            padding-top: 2rem;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-sources ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-sources li { margin-bottom: 0.5rem; }
+
+        /* CTA SECTION — minimalist, framed by hairline rules instead of a heavy card */
+        .laxcc-east-vs-west .laxcc-blog-cta {
+            background: none;
+            padding: 3rem 1rem;
+            border-radius: 0;
+            text-align: center;
+            color: var(--text-main);
+            margin-top: 4rem;
+            border-top: 1px solid #e7e2d6;
+            border-bottom: 1px solid #e7e2d6;
+            box-shadow: none;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-cta h2 {
+            color: var(--primary-dark) !important;
+            margin-top: 0;
+            border-left: none;
+            padding-left: 0;
+            text-align: center;
+            font-family: 'Archivo Narrow', sans-serif;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-cta p { color: var(--text-muted); }
+
+        .laxcc-east-vs-west .laxcc-blog-btn,
+        .laxcc-east-vs-west .laxcc-blog-btn:link,
+        .laxcc-east-vs-west .laxcc-blog-btn:visited {
+            display: inline-block;
+            background-color: #F89459 !important;
+            color: #ffffff !important;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none !important;
+            margin-top: 0;
+            white-space: nowrap;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-btn:hover {
+            transform: translateY(-3px);
+            background-color: #e07a3a !important;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-btn-teal,
+        .laxcc-east-vs-west .laxcc-blog-btn-teal:link,
+        .laxcc-east-vs-west .laxcc-blog-btn-teal:visited {
+            display: inline-block;
+            background-color: var(--primary-teal) !important;
+            color: #ffffff !important;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none !important;
+            margin-top: 0;
+            white-space: nowrap;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .laxcc-east-vs-west .laxcc-blog-btn-teal:hover {
+            transform: translateY(-3px);
+            background-color: #0095ab !important;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .laxcc-east-vs-west { padding: 2rem 1rem; font-size: 17px; }
+            .laxcc-east-vs-west .laxcc-blog-title { font-size: 32px; }
+            .laxcc-east-vs-west .laxcc-blog-cta { padding: 2rem 1rem; }
+            .laxcc-east-vs-west .laxcc-blog-stat-card { padding: 1.35rem 0.4rem; }
+            .laxcc-east-vs-west .laxcc-blog-stat-number { font-size: 1.65rem; margin-bottom: 0.5rem; }
+            .laxcc-east-vs-west .laxcc-blog-stat-label { font-size: 0.58rem; letter-spacing: 0.08em; }
+            .laxcc-east-vs-west .laxcc-deal-row { padding: 1rem 1.25rem; }
+            .laxcc-east-vs-west .laxcc-blog-info-box h3,
+            .laxcc-east-vs-west .laxcc-tax-box,
+            .laxcc-east-vs-west .laxcc-headline-callout { padding-left: 1.25rem; padding-right: 1.25rem; }
+        }
+    </style>
+
+    <!-- META: Title (60 chars): East Coast vs. West Coast Weed Prices: LA vs. Massachusetts (2026) -->
+    <!-- META: Description (155 chars): We compared real Los Angeles cannabis prices against a Massachusetts dispensary. Flower, vapes, edibles, and the tax difference — here's who actually pays less. -->
+    <!-- SLUG: /east-coast-vs-west-coast-weed-prices -->
+
+    <!-- FULL-BLEED VERTICAL HERO at the very top (desktop + mobile swap), everything flows below -->
+    <div class="laxcc-hero-full">
+        <img src="https://laxcc.com/wp-content/uploads/2026/06/west-coast-vs-east-coast-weed-prices.png" alt="East Coast vs West Coast weed prices compared — Los Angeles vs Massachusetts cannabis costs" class="laxcc-hero-desktop">
+        <img src="https://laxcc.com/wp-content/uploads/2026/06/west-coast-vs-east-coast-weed-prices-2026.png" alt="East Coast vs West Coast weed prices compared — Los Angeles vs Massachusetts cannabis costs" class="laxcc-hero-mobile">
+    </div>
+
+    <header class="laxcc-blog-header">
+        <div class="laxcc-blog-meta">June 25, 2026 &bull; Cannabis Prices &amp; Market</div>
+        <h1 class="laxcc-blog-title">East Coast vs. West Coast Weed Prices: How LA and Massachusetts Really Stack Up</h1>
+        <p class="laxcc-blog-lede">We pulled our own LA shelf prices and lined them up against a real Massachusetts dispensary. The answer surprised us.</p>
+        <div class="laxcc-blog-author-line" style="margin-top:1.25rem;">
+            <span>By LAX Cannabis Club</span>
+        </div>
+    </header>
+
+    <div class="laxcc-blog-content">
+
+        <p>The East Coast&ndash;West Coast rivalry runs deep, but we wanted to settle one corner of it with actual numbers: who really pays less for weed? We pulled our own Los Angeles shelf prices and lined them up against a well-regarded <a href="https://getpotency.com/" target="_blank" rel="noopener noreferrer">Massachusetts dispensary</a> &mdash; Potency, a recreational shop out in Pittsfield &mdash; to see how a mature California market compares to one of the East Coast's original legal states. The answer surprised us.</p>
+
+        <h2>The Headline: The Two Coasts Have Basically Converged</h2>
+
+        <p>For years the assumption was simple: California is cheap, the East Coast is expensive. That's no longer true. Massachusetts prices have collapsed roughly 70% since the market launched, with the average ounce hitting record lows near $114 by the end of 2025 and budget flower now landing in the same range you'd see out west. California, meanwhile, has bottomed out around $62 an ounce on a wholesale-derived basis &mdash; the cheapest in the country &mdash; thanks to chronic oversupply.</p>
+
+        <div class="laxcc-blog-stat-grid">
+            <div class="laxcc-blog-stat-card">
+                <div class="laxcc-blog-stat-number">~70%</div>
+                <div class="laxcc-blog-stat-label">MA price drop since launch</div>
+            </div>
+            <div class="laxcc-blog-stat-card">
+                <div class="laxcc-blog-stat-number">$114</div>
+                <div class="laxcc-blog-stat-label">Avg. MA ounce, late 2025</div>
+            </div>
+            <div class="laxcc-blog-stat-card">
+                <div class="laxcc-blog-stat-number">$62</div>
+                <div class="laxcc-blog-stat-label">CA ounce — cheapest in U.S.</div>
+            </div>
+        </div>
+
+        <div class="laxcc-headline-callout">
+            So instead of a blowout, what we found was a <strong>near tie at the register</strong>, with each coast winning a few categories. Here's the breakdown.
+        </div>
+
+        <h2>Flower: Closer Than You'd Think (When You Compare Like for Like)</h2>
+
+        <p>The trick with flower is to compare the same grade &mdash; shake and pre-ground trim are a different product than whole bud, and mixing them up makes any comparison meaningless. Here's the honest, grade-matched breakdown:</p>
+
+        <div class="laxcc-table-wrap">
+            <table class="laxcc-compare-table">
+                <thead>
+                    <tr>
+                        <th class="laxcc-col-type">Flower type</th>
+                        <th class="laxcc-col-la"><span class="laxcc-th-name">LAXCC</span><span class="laxcc-th-tag">Los Angeles &middot; taxes in</span></th>
+                        <th class="laxcc-col-ma"><span class="laxcc-th-name">Potency</span><span class="laxcc-th-tag">Pittsfield, MA &middot; pre-tax</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="laxcc-row-label">Budget eighth <span class="laxcc-cell-note">3.5g</span></td>
+                        <td class="laxcc-c-la" data-label="LAXCC"><div class="laxcc-cell-body"><span class="laxcc-price">$15.01</span></div></td>
+                        <td class="laxcc-c-ma" data-label="Potency"><div class="laxcc-cell-body"><span class="laxcc-price">from $15</span><span class="laxcc-cell-note">deep $15&ndash;$20 selection</span></div></td>
+                    </tr>
+                    <tr>
+                        <td class="laxcc-row-label">Top-shelf eighth <span class="laxcc-cell-note">3.5g</span></td>
+                        <td class="laxcc-c-la" data-label="LAXCC"><div class="laxcc-cell-body"><span class="laxcc-price">$60&ndash;$80</span></div></td>
+                        <td class="laxcc-c-ma" data-label="Potency"><div class="laxcc-cell-body"><span class="laxcc-price">$30&ndash;$50</span></div></td>
+                    </tr>
+                    <tr>
+                        <td class="laxcc-row-label">Quarter <span class="laxcc-cell-note">7g, value tier</span></td>
+                        <td class="laxcc-c-la" data-label="LAXCC"><div class="laxcc-cell-body"><span class="laxcc-price">from $29.99</span></div></td>
+                        <td class="laxcc-c-ma" data-label="Potency"><div class="laxcc-cell-body"><span class="laxcc-price">from $16</span><span class="laxcc-cell-note">pre-ground</span></div></td>
+                    </tr>
+                    <tr>
+                        <td class="laxcc-row-label">Shake <span class="laxcc-cell-note">rolling / cooking</span></td>
+                        <td class="laxcc-c-la" data-label="LAXCC"><div class="laxcc-cell-body"><span class="laxcc-price">from $25</span><span class="laxcc-cell-note">&frac12;oz, limited stock</span></div></td>
+                        <td class="laxcc-c-ma" data-label="Potency"><div class="laxcc-cell-body"><span class="laxcc-price">from $20</span><span class="laxcc-cell-note">7g</span></div></td>
+                    </tr>
+                    <tr>
+                        <td class="laxcc-row-label">Value whole-flower ounce <span class="laxcc-cell-note">28g</span></td>
+                        <td class="laxcc-c-la" data-label="LAXCC"><div class="laxcc-cell-body"><span class="laxcc-price">$100</span><span class="laxcc-cell-note">greenhouse, 24&ndash;27% THC</span></div></td>
+                        <td class="laxcc-c-ma" data-label="Potency"><div class="laxcc-cell-body"><span class="laxcc-price">~$80</span><span class="laxcc-cell-note">lowest whole bud</span></div></td>
+                    </tr>
+                    <tr>
+                        <td class="laxcc-row-label">Premium whole-flower ounce</td>
+                        <td class="laxcc-c-la" data-label="LAXCC"><div class="laxcc-cell-body"><span class="laxcc-price">~$110&ndash;$130</span><span class="laxcc-cell-note">indoor smalls / branded</span></div></td>
+                        <td class="laxcc-c-ma" data-label="Potency"><div class="laxcc-cell-body"><span class="laxcc-price">$131&ndash;$175</span><span class="laxcc-cell-note">deli-style</span></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="laxcc-table-footnote">Note: LAXCC prices are taxes-included; the Pittsfield prices are pre-tax &mdash; add roughly 17&ndash;20% MA tax to compare at the register.</p>
+
+        <p>Budget eighths start at the same place &mdash; $15 out east, $15.01 at LAXCC &mdash; but the Pittsfield shop stacks a deep roster of strains right at that $15 floor, with most of the value tier landing between $15 and $20. The bigger gap is at the top: its top-shelf eighths run $30&ndash;$50, while LA's premium and top-shelf flower sits at $60&ndash;$80 (THC Design, Kush Company, Cannabiotix). Even after adding MA tax, that high end comes in well under LA's. The same holds on quarters &mdash; the East Coast value 7g starts at $16 against roughly $30 for LA's cheapest quarter.</p>
+
+        <p>On shake (the trim used for rolling and cooking), the Pittsfield shop actually has the edge. Its shake starts at just $20 for 7 grams and runs a deep, consistently stocked lineup all the way up to $55&ndash;$60 for a full shake-trim ounce. LA shake tends to show up as occasional loss-leaders &mdash; Big Tree's runs about $25 a half-ounce when it's in stock, and it isn't always on the live menu. For a reliably available budget option, the East Coast shop is the deeper bench.</p>
+
+        <p>On whole-flower ounces, it's a near tie: LAXCC's $100 greenhouse ounce is full, tax-included bud at 24&ndash;27% THC, while the cheapest East Coast whole-bud ounce is around $80 before tax (roughly $95 out the door). Climb into premium and those deli-style ounces ($131&ndash;$175) run a bit higher than LA's indoor smalls and branded half-ounces &mdash; though that's partly the price of weigh-to-order, top-shelf flower.</p>
+
+        <h2>Vapes, Pre-Rolls, and Edibles</h2>
+
+        <p>The non-flower categories are a dead heat, which is the real headline once you pull the live menus.</p>
+
+        <p>Vape carts are nearly identical: about $14&ndash;$78 at LAXCC (taxes in) and $16&ndash;$70 in Pittsfield (pre-tax), with mainstream 1g carts clustering in the $20&ndash;$50 band on both coasts. Pre-rolls line up just as closely &mdash; singles from $5 in LA and $4 back east, with multipacks topping out around $60 either way.</p>
+
+        <p>Edibles surprised us most: they're essentially even. A 100mg gummy pack starts around $8 at both shops and climbs to roughly $30&ndash;$35 at the top, and LA's budget bench of single soft-gels and low-dose drinks even dips to $5. Whatever's in the cart &mdash; carts, joints, or gummies &mdash; the two menus land within a few dollars of each other before tax. You can see the full spread for yourself on their <a href="https://getpotency.com/shop/" target="_blank" rel="noopener noreferrer">online menu</a>.</p>
+
+        <h2>Deals and Specials: Both Shops Go Hard</h2>
+
+        <p>Neither store leans on shelf price alone &mdash; promotions are where the real savings live, and the two take opposite approaches.</p>
+
+        <div class="laxcc-blog-info-box">
+            <h3><i class="fas fa-store" style="color:var(--accent-green); margin-right:8px;"></i> Potency &mdash; Always-On "Deli Deals"</h3>
+            <div class="laxcc-deal-row">
+                <i class="fas fa-cannabis" style="color:var(--accent-green);"></i>
+                <div><strong>$10 eighth</strong> <span class="laxcc-deal-sub">with a $50 spend</span></div>
+            </div>
+            <div class="laxcc-deal-row">
+                <i class="fas fa-fire" style="color:var(--accent-green);"></i>
+                <div><strong>$1 pre-rolls</strong> &amp; buy-2-save bundles on premium eighths and ounces</div>
+            </div>
+            <div class="laxcc-deal-row">
+                <i class="fas fa-percent" style="color:var(--accent-green);"></i>
+                <div><strong>10% off</strong> <span class="laxcc-deal-sub">when you grab 10+ eighths or 20+ joints</span></div>
+            </div>
+            <div class="laxcc-deal-row">
+                <i class="fas fa-layer-group" style="color:var(--accent-green);"></i>
+                <div><strong>Multi-buy concentrates</strong> <span class="laxcc-deal-sub">like Crude Boys 3 for $50, plus edible &amp; disposable-vape multipacks</span></div>
+            </div>
+            <div class="laxcc-deal-row">
+                <i class="fas fa-tags" style="color:var(--accent-green);"></i>
+                <div><strong>Standing "$20 or less" section</strong> <span class="laxcc-deal-sub">stacked on top of a VIP newsletter program &mdash; value you can count on any day</span></div>
+            </div>
+        </div>
+
+        <div class="laxcc-blog-info-box">
+            <h3><i class="fas fa-bolt" style="color:var(--primary-teal); margin-right:8px;"></i> LAXCC &mdash; Rotating Daily Drops</h3>
+            <div class="laxcc-deal-row">
+                <i class="fas fa-calendar-day" style="color:var(--primary-teal);"></i>
+                <div><strong>Fresh BOGO &amp; buy-2-get-1 deals</strong> <span class="laxcc-deal-sub">a new brand lineup for every day of the week</span></div>
+            </div>
+            <div class="laxcc-deal-row">
+                <i class="fas fa-star" style="color:var(--primary-teal);"></i>
+                <div><strong>Everyday staples</strong> <span class="laxcc-deal-sub">Big Pete's BOGO and a 710 Labs pod-and-battery offer</span></div>
+            </div>
+            <div class="laxcc-deal-row">
+                <i class="fas fa-cannabis" style="color:var(--primary-teal);"></i>
+                <div><strong>Headline $100 ounce</strong> &amp; <strong>$25 shake</strong></div>
+            </div>
+            <div class="laxcc-deal-row">
+                <i class="fas fa-gift" style="color:var(--primary-teal);"></i>
+                <div><strong>$0.01 new-member pre-roll</strong> <span class="laxcc-deal-sub">plus a free points-based loyalty club</span></div>
+            </div>
+            <div class="laxcc-deal-row">
+                <i class="fas fa-medal" style="color:var(--primary-teal);"></i>
+                <div><strong>10% off for veterans</strong></div>
+            </div>
+        </div>
+
+        <p>The bottom line: the Pittsfield shop rewards the everyday shopper with consistent standing discounts, while LAXCC rewards the deal-hunter who times a visit to the right day. Either way, checking the specials page before you go is the smart move &mdash; here's <a href="https://getpotency.com/specials/" target="_blank" rel="noopener noreferrer">Potency's</a>.</p>
+
+        <h2>The Tax Twist (This Is the Real Story)</h2>
+
+        <p>Here's the catch that shelf prices hide: taxes. Los Angeles stacks one of the heaviest cannabis tax burdens in the country &mdash; about 34.5% all-in once you combine the 15% state excise, state and district sales tax, and LA's local cannabis tax. Massachusetts caps out far lower, at roughly 17&ndash;20% depending on the town (10.75% excise, 6.25% sales, up to 3% local).</p>
+
+        <div class="laxcc-tax-box">
+            <h3><i class="fas fa-receipt" style="color:var(--accent-orange); margin-right:8px;"></i> What that means at checkout</h3>
+            <p style="margin-bottom:0;">We list our menu prices <strong>taxes-included</strong>, so a $15 eighth on our shelf is genuinely $15 out the door. Massachusetts menus, including theirs, show <strong>pre-tax</strong> prices, so a $15 eighth there becomes roughly $18 at the register. Apples to apples, the two are within a few dollars &mdash; but a Massachusetts shopper does keep more of California's headline tax advantage from getting eaten back at checkout.</p>
+        </div>
+
+        <h2>Why the Two Coasts Price So Differently</h2>
+
+        <p>The convergence isn't a coincidence; it's two oversupplied markets meeting in the middle from opposite directions.</p>
+
+        <p><strong>California has a structural glut.</strong> Outdoor wholesale flower has fallen to around $300 a pound, and an illicit market estimated at roughly 60% of all sales keeps constant downward pressure on legal prices. California is cheap because it has to be.</p>
+
+        <p><strong>Massachusetts got there later and faster.</strong> As a higher-cost Northeast market with tighter licensing, prices stayed high for years &mdash; then cultivation capacity ballooned past 4.5 million square feet and wholesale flower crashed 60&ndash;70%. The pressure got so intense that regulators voted in 2026 to freeze new cultivation licenses to stabilize the sector. In short: California is permanently cheap by oversupply, and Massachusetts fell hard from a higher starting point and nearly caught up.</p>
+
+        <h2>So Who Actually Wins?</h2>
+
+        <p>Honestly? Both coasts win &mdash; it just depends on what's in your cart. The old stereotype that the East Coast can't match California on quality is flat-out wrong: the Pittsfield shop alone carries north of 151 brands, with a genuinely deep top-shelf bench and exotic indoor flower that goes toe-to-toe with anything out west. California has its own legendary craft roster, but this isn't a quality blowout in either direction &mdash; both menus are loaded.</p>
+
+        <p>On price, the two are remarkably close, with the East Coast right there or ahead in a few spots: its top-shelf eighths ($30&ndash;$50) undercut LA's ($60&ndash;$80), and its value quarters start at $16 against ~$30 in LA. Vapes, pre-rolls, and edibles run neck-and-neck &mdash; both shops start 100mg gummies around $8, pre-rolls around $4&ndash;$5, and carts in the teens. On whole-flower ounces it's essentially a draw once tax is factored in. The blowout most people expect &mdash; on price or on selection &mdash; simply isn't there anymore.</p>
+
+        <p>The bigger takeaway for shoppers anywhere: don't assume your coast is cheaper, and always check whether a menu price includes tax before you compare. A "$25 eighth" can mean very different things depending on which side of the country &mdash; and which shop &mdash; you're standing in. If you're ever out in the Berkshires, it's worth seeing how an East Coast menu stacks up against your local spot. The rivalry's still alive; the price gap mostly isn't.</p>
+
+        <div class="laxcc-blog-divider"></div>
+
+        <div class="laxcc-blog-sources">
+            <h3>Sources &amp; Data Basis</h3>
+            <ul>
+                <li>All flower, vape, pre-roll, and edible prices pulled live June 2026 from each shop's own Dutchie menu &mdash; <a href="https://getpotency.com/" target="_blank" rel="noopener noreferrer">Potency (getpotency.com)</a>, pre-tax, and <a href="https://laxcc.com/">LAXCC (laxcc.com)</a>, taxes included.</li>
+                <li>MA market and tax figures: <a href="https://masscannabiscontrol.com/" target="_blank" rel="noopener noreferrer">Massachusetts Cannabis Control Commission (CCC)</a> and 2025&ndash;2026 market reporting.</li>
+                <li>CA market and tax figures: <a href="https://cannabis.ca.gov/" target="_blank" rel="noopener noreferrer">California Department of Cannabis Control (DCC)</a> and 2025&ndash;2026 reporting.</li>
+                <li>The LAXCC-taxes-included vs. MA-pre-tax distinction is handled explicitly throughout for fairness.</li>
+            </ul>
+        </div>
+
+        <div class="laxcc-blog-cta">
+            <h2>See LA's Side of the Comparison</h2>
+            <p>LAX Cannabis Club is a fully licensed dispensary near LAX with a $100 ounce, $25 shake, and fresh daily BOGO drops. Prices on our menu are taxes-included &mdash; the number you see is the number you pay. Open daily 9 AM &ndash; 9:30 PM.</p>
+            <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1.5rem;">
+                <a href="https://laxcc.com/shop/" class="laxcc-blog-btn">Browse the Menu</a>
+                <a href="https://laxcc.com/deals/" class="laxcc-blog-btn-teal">See Today's Deals</a>
+            </div>
+        </div>
+    </div>
+</div>

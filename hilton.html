@@ -1,0 +1,868 @@
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Schema.org Local Business Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "LAX Cannabis Club",
+  "image": "https://laxcc.com/logo.png",
+  "@id": "https://laxcc.com",
+  "url": "https://laxcc.com",
+  "telephone": "+1-310-429-3789",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "8332 Lincoln Blvd",
+    "addressLocality": "Los Angeles",
+    "addressRegion": "CA",
+    "postalCode": "90045",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.9584,
+    "longitude": -118.4186
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "09:00",
+    "closes": "21:30"
+  },
+  "priceRange": "$$",
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 33.9584,
+      "longitude": -118.4186
+    },
+    "geoRadius": "10000"
+  }
+}
+</script>
+
+<style>
+    /* CSS Variables & Reset */
+    #laxcc-hilton-page {
+        --primary-color: #00AFC9;
+        --accent-color: #F89459;
+        --dark: #1a1a1a;
+        --text-dark: #2d2d2d;
+        --text-muted: #666666;
+        --light-bg: #fbf8f2;
+        --white: #ffffff;
+        --success: #10b981;
+        --radius: 12px;
+        --radius-lg: 16px;
+        --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+        --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+        --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    #laxcc-hilton-page * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #laxcc-hilton-page {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        color: var(--text-dark);
+        background: var(--white);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Hilton Brand Color - Context Aware */
+    #laxcc-hilton-page .hilton-brand {
+        color: var(--dark) !important;
+        font-weight: 800 !important;
+    }
+
+    #laxcc-hilton-page .hl-hero .hilton-brand {
+        color: #ffffff !important;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    /* Fix all link states to prevent default blue colors */
+    #laxcc-hilton-page .location-card a,
+    #laxcc-hilton-page .info-list a {
+        color: var(--primary-color) !important;
+    }
+
+    #laxcc-hilton-page .location-card a:hover,
+    #laxcc-hilton-page .location-card a:focus,
+    #laxcc-hilton-page .location-card a:active,
+    #laxcc-hilton-page .info-list a:hover,
+    #laxcc-hilton-page .info-list a:focus,
+    #laxcc-hilton-page .info-list a:active {
+        opacity: 0.8;
+        text-decoration: underline !important;
+        color: var(--primary-color) !important;
+    }
+
+    #laxcc-hilton-page .hero-description a {
+        color: var(--white) !important;
+    }
+
+    #laxcc-hilton-page .hero-description a:hover,
+    #laxcc-hilton-page .hero-description a:focus,
+    #laxcc-hilton-page .hero-description a:active {
+        opacity: 0.9;
+        text-decoration: underline !important;
+        color: var(--white) !important;
+    }
+
+    /* Mobile-First Container */
+    #laxcc-hilton-page .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    #laxcc-hilton-page .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: clamp(12px, 2.2vw, 14px);
+            font-weight: 700;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+    #laxcc-hilton-page .hero-badge-icon {
+            width: 18px;
+            height: 18px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+        }
+
+    #laxcc-hilton-page h1 {
+            font-size: clamp(40px, 7vw, 52px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            color: var(--white) !important;
+        }
+
+    #laxcc-hilton-page .hero-subtitle {
+            font-size: clamp(16px, 2.8vw, 22px);
+            font-weight: 600;
+            margin-bottom: 12px;
+            opacity: 0.95;
+            color: var(--white) !important;
+        }
+
+    #laxcc-hilton-page .hero-description {
+            font-size: clamp(14px, 2.3vw, 17px);
+            opacity: 0.9;
+            margin-bottom: 24px;
+            line-height: 1.6;
+            color: var(--white) !important;
+            padding: 0 16px;
+        }
+
+        /* CTA Buttons */
+    #laxcc-hilton-page .cta-group {
+            display: flex;
+            flex-direction: row;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            padding: 0 16px;
+        }
+
+    #laxcc-hilton-page .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 14px 16px;
+        font-size: clamp(12px, 2.3vw, 15px);
+        font-weight: 700;
+        text-decoration: none !important;
+        border-radius: var(--radius);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+        flex: 1;
+        min-width: 140px;
+        max-width: 280px;
+        white-space: nowrap;
+        background: #F89459 !important;
+        color: #ffffff !important;
+    }
+
+    #laxcc-hilton-page .btn:hover,
+    #laxcc-hilton-page .btn:focus,
+    #laxcc-hilton-page .btn:active {
+        background: #e67d42 !important;
+        color: #ffffff !important;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    #laxcc-hilton-page .btn:visited {
+        color: #ffffff !important;
+    }
+
+    #laxcc-hilton-page .btn:visited {
+        color: #ffffff !important;
+    }
+
+    /* Quick Stats */
+    #laxcc-hilton-page .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 24px;
+            padding: 0 16px;
+        }
+
+    #laxcc-hilton-page .stat-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            padding: 20px 12px;
+            border-radius: var(--radius);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+    #laxcc-hilton-page .stat-number {
+            font-size: clamp(20px, 4vw, 28px);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+    #laxcc-hilton-page .stat-label {
+            font-size: clamp(10px, 1.8vw, 12px);
+            opacity: 0.9;
+            font-weight: 500;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+
+        /* Location Section */
+    #laxcc-hilton-page .location-section {
+            padding: 50px 0;
+            background: var(--light-bg);
+        }
+
+    #laxcc-hilton-page .section-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+    #laxcc-hilton-page .section-title {
+            font-size: clamp(32px, 6vw, 52px);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+    #laxcc-hilton-page .section-subtitle {
+            font-size: clamp(14px, 2.3vw, 18px);
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+    #laxcc-hilton-page .location-journey {
+        max-width: 800px;
+        margin: 40px auto;
+        position: relative;
+    }
+
+    #laxcc-hilton-page .journey-point {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        position: relative;
+        z-index: 2;
+    }
+
+    #laxcc-hilton-page .journey-marker {
+        width: 14px;
+        height: 14px;
+        background: var(--accent-color);
+        border-radius: 50%;
+        margin-top: 10px;
+        flex-shrink: 0;
+    }
+
+    #laxcc-hilton-page .journey-point.journey-start .journey-marker {
+        background: var(--dark);
+    }
+
+    #laxcc-hilton-page .journey-content h3 {
+        font-size: 22px;
+        font-weight: 900;
+        margin-bottom: 4px;
+        letter-spacing: -0.02em;
+    }
+
+    #laxcc-hilton-page .journey-address {
+        font-size: 16px;
+        color: var(--text-muted);
+    }
+
+    #laxcc-hilton-page .journey-path {
+        margin: 4px 0 4px 6px;
+        padding-left: 32px;
+        border-left: 2px dashed #dddddd;
+        position: relative;
+    }
+
+    #laxcc-hilton-page .path-details {
+        padding: 24px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #laxcc-hilton-page .path-text {
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--accent-color);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    #laxcc-hilton-page .journey-phone {
+        display: block;
+        margin-top: 12px;
+        font-weight: 800;
+        color: var(--dark);
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    /* Features Section - Premium Minimalist */
+    #laxcc-hilton-page .features-section {
+        padding: 100px 0;
+        background: #ffffff;
+    }
+
+    #laxcc-hilton-page .features-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 60px;
+    }
+
+    @media (min-width: 1024px) {
+        #laxcc-hilton-page .features-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    #laxcc-hilton-page .feature-item {
+        position: relative;
+        padding-left: 24px;
+    }
+
+    #laxcc-hilton-page .feature-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: var(--accent-color);
+    }
+
+    #laxcc-hilton-page .feature-item h3 {
+        font-size: 20px;
+        font-weight: 900;
+        margin-bottom: 12px;
+        letter-spacing: -0.01em;
+    }
+
+    #laxcc-hilton-page .feature-item p {
+        font-size: 16px;
+        color: var(--text-muted);
+        line-height: 1.7;
+    }
+
+    #laxcc-hilton-page .directions-section {
+        padding: 80px 0;
+        background: #fbf8f2;
+    }
+
+    #laxcc-hilton-page .direction-method {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 48px;
+        padding-bottom: 48px;
+        border-bottom: 1px solid #eeeeee;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #laxcc-hilton-page .direction-method:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    #laxcc-hilton-page .direction-method h3 {
+        font-size: 22px;
+        font-weight: 900;
+        color: var(--dark);
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+    }
+
+    #laxcc-hilton-page .direction-method p {
+        font-size: 16px;
+        color: var(--text-muted);
+        line-height: 1.8;
+    }
+
+    #laxcc-hilton-page .direction-method strong {
+        color: var(--dark);
+        font-weight: 700;
+    }
+
+    /* Info Section - Premium Minimalist */
+    #laxcc-hilton-page .info-section {
+        padding: 100px 0;
+        background: var(--white);
+    }
+
+    #laxcc-hilton-page .info-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 60px;
+    }
+
+    @media (min-width: 1024px) {
+        #laxcc-hilton-page .info-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    #laxcc-hilton-page .info-card {
+        position: relative;
+        padding-left: 24px;
+        background: transparent !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+    }
+
+    #laxcc-hilton-page .info-card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: var(--accent-color);
+    }
+
+    #laxcc-hilton-page .info-card h3 {
+        font-size: 22px;
+        font-weight: 900;
+        margin-bottom: 24px;
+        letter-spacing: -0.02em;
+        color: var(--dark) !important;
+    }
+
+    #laxcc-hilton-page .info-list {
+        list-style: none;
+    }
+
+    #laxcc-hilton-page .info-list li {
+        padding: 12px 0;
+        border-bottom: 1px solid #f3f4f6;
+        color: var(--text-muted);
+        font-size: 15px;
+    }
+
+    /* Accessibility */
+    #laxcc-hilton-page .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+    }
+
+    /* Footer CTA - Modern Minimalist */
+    #laxcc-hilton-page .footer-cta {
+        padding: 100px 0;
+        background: #fbf8f2;
+        text-align: center;
+        border-top: 1px solid #eeeeee;
+    }
+
+    #laxcc-hilton-page .footer-cta h2 {
+        font-size: clamp(32px, 5vw, 48px);
+        font-weight: 900;
+        margin-bottom: 24px;
+        color: var(--dark) !important;
+        letter-spacing: -0.02em;
+    }
+
+    #laxcc-hilton-page .footer-cta p {
+        font-size: 18px;
+        color: var(--text-muted);
+        max-width: 700px;
+        margin: 0 auto 40px;
+        line-height: 1.7;
+    }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+</style>
+
+<div id="laxcc-hilton-page">
+    <!-- Hero Content Section -->
+    <section class="hl-hero"
+        style="background: linear-gradient(135deg, var(--primary-color) 0%, #0891a8 100%); padding: 40px 0 50px; color: var(--white); position: relative; z-index: 10;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <div class="hero-badge">
+                    <span>Best <span class="hilton-brand">LAX Dispensary</span> for Hotel Guests</span>
+                </div>
+
+                <h1>Best Dispensary Near <span class="hilton-brand">Hilton LA Airport</span></h1>
+
+                <img src="https://laxcc.com/wp-content/uploads/2025/11/weed-near-hilton-airport-hotel-LA.png"
+                    alt="Best lax dispensary near Hilton LA Airport"
+                    style="max-width: 320px; width: 100%; height: auto; margin: 20px auto; display: block;">
+
+                <p class="hero-subtitle">8-10 Minutes Away • 3 Miles South</p>
+
+                <p class="hero-description">
+                    Searching for an <strong>LAX dispensary</strong>? LAXCC is the top-rated cannabis shop near <strong>Century Blvd</strong> and the <strong>Hilton LA Airport</strong>. Open 9am-9:30pm daily.
+                </p>
+
+                <div class="cta-group">
+                    <a href="https://lab.alpineiq.com/join/c/2748/4715" target="_blank" rel="noopener"
+                        class="btn">
+                        Get $0.01 Pre-Roll
+                    </a>
+                    <a href="tel:+13104293789" class="btn">
+                        Call (310) 429-3789
+                    </a>
+                </div>
+
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">8-10 min</span>
+                        <span class="stat-label">Drive Time from <span class="hilton-brand">Hilton</span></span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">70+</span>
+                        <span class="stat-label">Premium Brands</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">700+</span>
+                        <span class="stat-label">Products Available</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">9am-9:30pm</span>
+                        <span class="stat-label">Open Daily</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Details -->
+    <section class="location-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Finding Us is Simple</h2>
+                <p class="section-subtitle">A quick, direct route from the Hilton lobby to premium California cannabis.</p>
+            </div>
+
+            <div class="location-journey">
+                <div class="journey-point journey-start">
+                    <div class="journey-marker"></div>
+                    <div class="journey-content">
+                        <h3><span class="hilton-brand">Hilton Los Angeles Airport</span></h3>
+                        <p class="journey-address">5711 W Century Blvd, Los Angeles, CA 90045</p>
+                    </div>
+                </div>
+
+                <div class="journey-path">
+                    <div class="path-details">
+                        <span class="path-text">Head South on Lincoln Blvd</span>
+                        <span class="path-text">8-10 Minute Drive</span>
+                        <span class="path-text">3 Miles Total</span>
+                    </div>
+                </div>
+
+                <div class="journey-point journey-end">
+                    <div class="journey-marker"></div>
+                    <div class="journey-content">
+                        <h3>LAX Cannabis Club</h3>
+                        <p class="journey-address">8332 Lincoln Blvd, Los Angeles, CA 90045</p>
+                        <a href="tel:+13104293789" class="journey-phone">Direct Line: (310) 429-3789</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://www.google.com/maps/dir/Hilton+Los+Angeles+Airport,+5711+W+Century+Blvd,+Los+Angeles,+CA+90045/LAX+Cannabis+Club,+8332+Lincoln+Blvd,+Los+Angeles,+CA+90045"
+                    target="_blank" rel="noopener" class="btn" style="display: inline-flex;">
+                    Get Directions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why LAXCC Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The LAXCC Difference</h2>
+                <p class="section-subtitle">Premium California cannabis and world-class service near Century Blvd.</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Curated Menu</h3>
+                    <ul class="info-list">
+                        <li>Indoor craft flower from top growers</li>
+                        <li>Live resin & solventless concentrates</li>
+                        <li>Award-winning vape cartridges</li>
+                        <li>Artisan edibles & beverages</li>
+                        <li>CBD, CBN, and THC options</li>
+                        <li>Essential accessories and supplies</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>Premium Benefits</h3>
+                    <ul class="info-list">
+                        <li><a href="https://lab.alpineiq.com/join/c/2748/4715" target="_blank" rel="noopener" style="color: var(--accent-color); font-weight: 800;">Join our VIP program</a> for a $0.01 pre-roll</li>
+                        <li>Daily rotating specials and deals</li>
+                        <li>Budget-friendly options starting at $100/oz</li>
+                        <li>Veterans discount (10% off)</li>
+                        <li>Seamless online ordering</li>
+                        <li>Tax-included pricing on all products</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="serving-travelers-box"
+                style="margin-top: 60px; text-align: center; padding: 40px; background: #fbf8f2; border-left: 4px solid var(--accent-color); box-shadow: none;">
+                <h3 style="font-size: 28px; font-weight: 900; color: var(--dark); margin-bottom: 16px;">
+                    Serving Travelers & Locals Near:
+                </h3>
+                <p style="color: var(--text-muted); font-size: 16px; line-height: 1.8;">
+                    <strong>Hotels:</strong> <span class="hilton-brand">Hilton LA Airport</span>, LAX Marriott, Sheraton
+                    Gateway, Hyatt Regency LAX, Westin LAX<br>
+                    <strong>Areas:</strong> Westchester, Playa del Rey, El Segundo, Manhattan Beach, Marina del Rey<br>
+                    <strong>Landmarks:</strong> LAX Airport, Dockweiler Beach, Los Angeles Airport area
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="footer-cta">
+        <div class="container">
+            <h2 id="footer-cta-heading">Visit LA's Best Dispensary Near <span class="hilton-brand">Hilton LA Airport</span> Today</h2>
+            <p>
+                Quick access from <span class="hilton-brand">Hilton Los Angeles Airport</span>. 70+ premium brands. 700+
+                products. Expert service. Open daily 9am-9:30pm.
+            </p>
+            <div class="cta-group">
+                <a href="https://lab.alpineiq.com/join/c/2748/4715" target="_blank" rel="noopener"
+                    class="btn">
+                    Get $0.01 Pre-Roll
+                </a>
+                <a href="tel:+13104293789" class="btn">
+                    Call (310) 429-3789
+                </a>
+                <a href="https://www.google.com/maps/dir/Hilton+Los+Angeles+Airport,+5711+W+Century+Blvd,+Los+Angeles,+CA+90045/LAX+Cannabis+Club,+8332+Lincoln+Blvd,+Los+Angeles,+CA+90045"
+                    target="_blank" rel="noopener" class="btn">
+                    Get Directions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smoking Policy Section -->
+    <section class="info-section" style="background: var(--white); padding-bottom: 80px;">
+        <div class="container">
+            <div class="policy-box">
+                <div class="policy-title">
+                    Know Before You Go: Smoking Policies
+                </div>
+                <div class="policy-text">
+                    <p style="margin-bottom: 16px;">
+                        The <strong>Hilton Los Angeles Airport near LAX does not allow smoking in rooms.</strong> The
+                        hotel is <strong>100% non-smoking</strong> and strictly enforces this policy. If you are caught
+                        smoking in a non-smoking room, the hotel charges a deep-cleaning fee of <strong>up to
+                            $250</strong>. This applies to all areas including bathrooms, windows, and hallways.
+                    </p>
+                    <p style="margin-bottom: 16px;">
+                        <strong>For cannabis specifically:</strong> Do not assume that designated outdoor smoking areas
+                        allow for cannabis consumption. Per the <strong>California Department of Cannabis
+                            Control</strong>, most hotels prohibit cannabis use entirely on their premises.
+                    </p>
+                    <p>
+                        <strong>Best Advice:</strong> Do not smoke weed inside your room or anywhere on the Hilton
+                        property. To stay compliant and avoid heavy fines, we recommend visiting a licensed <strong>cannabis
+                        consumption lounge</strong> in the nearby Hawthorne or Inglewood areas for a legal and safe
+                        experience.
+                    </p>
+                    <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid #eeeeee;">
+                        <a href="https://www.cannabis.ca.gov/consumers/whats-legal/" target="_blank" rel="noopener"
+                            style="font-size: 14px; color: var(--accent-color); text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+                            Learn More: Official California Cannabis Laws
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="policy-footer">
+                    *Please check with the Hilton front desk for current designated outdoor tobacco smoking areas.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        #laxcc-hilton-page .policy-box {
+            margin-top: 48px !important;
+            background: #ffffff !important;
+            padding: 40px !important;
+            text-align: left !important;
+            position: relative !important;
+        }
+
+        #laxcc-hilton-page .policy-box::before {
+            content: "" !important;
+            position: absolute !important;
+            left: 0 !important;
+            top: 0 !important;
+            bottom: 0 !important;
+            width: 4px !important;
+            background: var(--accent-color) !important;
+        }
+
+        #laxcc-hilton-page .policy-title {
+            font-size: 26px !important;
+            font-weight: 900 !important;
+            color: var(--dark) !important;
+            margin-bottom: 24px !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 12px !important;
+            letter-spacing: -0.02em !important;
+        }
+
+        #laxcc-hilton-page .policy-text {
+            font-size: 17px !important;
+            color: var(--text-muted) !important;
+            line-height: 1.8 !important;
+        }
+
+        #laxcc-hilton-page .policy-text strong {
+            color: var(--dark) !important;
+            font-weight: 700 !important;
+        }
+
+        #laxcc-hilton-page .policy-footer {
+            margin-top: 32px !important;
+            padding-top: 20px !important;
+            border-top: 1px solid #eeeeee !important;
+            font-size: 14px !important;
+            color: var(--text-muted) !important;
+            font-style: italic !important;
+        }
+    </style>
+
+    <!-- SEO Content -->
+    <section style="padding: 60px 0; background: #fbf8f2;">
+        <div class="container">
+            <div
+                style="max-width: 800px; margin: 0 auto; padding: 0 16px; color: var(--text-muted); font-size: 15px; line-height: 1.8;">
+                <h2
+                    style="color: var(--dark); font-size: clamp(24px, 5vw, 32px); font-weight: 800; margin-bottom: 20px;">
+                    Best Dispensary Near <span class="hilton-brand">Hilton Los Angeles Airport</span>
+                </h2>
+                <p style="margin-bottom: 16px;">
+                    Looking for a <strong>dispensary near <span class="hilton-brand">Hilton LA Airport</span></strong>?
+                    LAX Cannabis Club is the premier cannabis dispensary serving travelers and guests staying at <span
+                        class="hilton-brand">Hilton Los Angeles Airport</span>. Located just 3 miles south at 8332
+                    Lincoln Blvd, we're an easy 8-10 minute drive from the hotel.
+                </p>
+                <p style="margin-bottom: 16px;">
+                    Whether you're searching for "<strong>weed near <span class="hilton-brand">Hilton
+                            LAX</span></strong>", "<strong>cannabis near LAX Airport</strong>", or "<strong>dispensary
+                        near me</strong>" while staying in the area, LAX Cannabis Club offers the best selection of
+                    premium California cannabis products. We carry over 70 top brands and 700+ products including
+                    flower, vapes, edibles, concentrates, and more.
+                </p>
+                <p style="margin-bottom: 0;">
+                    Our <strong>recreational dispensary</strong> serves both medical and recreational customers with
+                    tax-included pricing, daily deals, and a free loyalty program. We're conveniently located near LAX
+                    Airport, making us the go-to <strong>marijuana dispensary</strong> for travelers staying at <span
+                        class="hilton-brand">Hilton LA Airport</span>, LAX Marriott, Sheraton Gateway, and other Century
+                    Blvd hotels.
+                </p>
+            </div>
+        </div>
+    </section>
+</div>

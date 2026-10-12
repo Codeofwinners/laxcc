@@ -1,0 +1,189 @@
+<style>
+    #cali-creamery-scope {
+        --cc-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --cc-bg: #fbf8f2;
+        --cc-text: #1d508a;
+        --cc-text-muted: #64748b;
+        --cc-accent: #F89459;
+
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow: visible;
+        padding: clamp(24px, 3vw, 44px) clamp(14px, 2vw, 28px);
+        background: var(--cc-bg);
+        font-family: var(--cc-font);
+        color: var(--cc-text);
+        position: relative;
+    }
+
+    #cali-creamery-scope *,
+    #cali-creamery-scope *::before,
+    #cali-creamery-scope *::after {
+        box-sizing: border-box;
+    }
+
+    #cali-creamery-scope .cc-header {
+        position: relative;
+        margin-bottom: clamp(18px, 2vw, 28px);
+        width: 100%;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        text-align: left;
+    }
+
+    #cali-creamery-scope .cc-header__sup {
+        font-size: 11px;
+        font-weight: 700;
+        color: #1D508A;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-self: start;
+        border: 1px solid #1D508A;
+        padding: 4px 12px;
+        border-radius: 999px;
+        background: rgba(29, 80, 138, 0.05);
+        width: fit-content;
+    }
+
+    #cali-creamery-scope .cc-header__title {
+        font-size: clamp(34px, 5vw, 72px) !important;
+        font-weight: 800 !important;
+        line-height: 0.92 !important;
+        text-transform: uppercase !important;
+        margin: 0 !important;
+        letter-spacing: -0.04em !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 10px !important;
+        flex-wrap: wrap !important;
+        color: #111111 !important;
+    }
+
+    #cali-creamery-scope .cc-title-link {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        text-decoration: none !important;
+    }
+
+    #cali-creamery-scope a.cc-title-link:link,
+    #cali-creamery-scope a.cc-title-link:visited,
+    #cali-creamery-scope a.cc-title-link:hover {
+        text-decoration: none !important;
+    }
+
+    #cali-creamery-scope .cc-text-gradient {
+        color: #111111 !important;
+        -webkit-text-fill-color: #111111 !important;
+        display: inline-block !important;
+    }
+
+    #cali-creamery-scope .cc-new-badge {
+        background: #ef4444;
+        color: #fff;
+        font-size: 0.23em;
+        font-weight: 800;
+        line-height: 1;
+        padding: 8px 12px;
+        border-radius: 999px;
+        -webkit-text-fill-color: white !important;
+        color: white !important;
+        letter-spacing: 0.08em;
+        position: relative;
+        top: -2px;
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.28);
+        animation: cc-pulse-badge 2s infinite;
+    }
+
+    @keyframes cc-pulse-badge {
+        0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.55); }
+        70% { transform: scale(1.04); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+        100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+    }
+
+    #cali-creamery-scope .cc-header__desc {
+        font-size: clamp(14px, 1.2vw, 18px);
+        color: var(--cc-text-muted);
+        max-width: 1100px;
+        margin: 0;
+        line-height: 1.45;
+    }
+
+    #cali-creamery-scope .cc-products-section {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 767px) {
+        #cali-creamery-scope {
+            padding: 20px 12px 24px;
+        }
+
+        #cali-creamery-scope .cc-header {
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        #cali-creamery-scope .cc-header__sup {
+            font-size: 10px;
+            padding: 4px 10px;
+        }
+
+        #cali-creamery-scope .cc-header__title {
+            font-size: clamp(30px, 10vw, 46px) !important;
+            gap: 8px !important;
+            line-height: 0.95 !important;
+        }
+
+        #cali-creamery-scope .cc-new-badge {
+            font-size: 0.26em;
+            padding: 7px 10px;
+            top: 0;
+        }
+
+        #cali-creamery-scope .cc-header__desc {
+            font-size: 14px;
+            line-height: 1.42;
+            max-width: 100%;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1100px) {
+        #cali-creamery-scope .cc-header__desc {
+            max-width: 900px;
+        }
+    }
+</style>
+
+<div id="cali-creamery-scope">
+    <header class="cc-header">
+        <span class="cc-header__sup">Premium Edibles</span>
+
+        <h2 class="cc-header__title">
+            <a class="cc-title-link" href="https://laxcc.com/brand/cali-creamery/">
+                <span class="cc-text-gradient">CALI CREAMERY</span>
+                <span class="cc-new-badge">NEW</span>
+            </a>
+        </h2>
+
+        <p class="cc-header__desc">
+            <strong>Cali Creamery</strong> makes small-batch, cannabis-infused edibles in California — precision-dosed treats built for consistent, reliable effects. Explore the full Cali Creamery lineup in stock at LAX Cannabis Club.
+        </p>
+    </header>
+
+    <div class="cc-products-section">
+        [leafbridge_specific_product_filter brand="8f758d71-ace5-4c21-ac6e-f933cb52c939" count="20"]
+    </div>
+</div>

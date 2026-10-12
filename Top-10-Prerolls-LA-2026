@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Updated 2026 guide to the best pre-rolls near LAX, including Raw Garden, El Blunto, Jeeter, Cannabiotix, Sluggers, Sparkiez, Royal Blunts, West Coast Cure, Birdies, and LAXCC house weed picks.">
+    <title>Top 10 Prerolls in LA for Sale in 2026 | LAX Cannabis Club</title>
+    <style>
+        :root {
+            --ink: #111111;
+            --muted: #555555;
+            --paper: #fbfaf6;
+            --panel: #ffffff;
+            --line: #dbe7ee;
+            --blue: #1D508A;
+            --teal: #00AFC9;
+            --mint: #7ECBB3;
+            --orange: #F89459;
+            --dark: #102a43;
+            --shadow: none;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 24px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            color: var(--ink);
+            background: var(--paper);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .page {
+            overflow: hidden;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            color: #fff;
+            background:
+                linear-gradient(180deg, rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.34)),
+                url("https://laxcc.com/wp-content/uploads/2024/12/best-prerolls-2025.jpg") center/cover;
+        }
+
+        .hero__inner {
+            width: min(1180px, 100%);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 0 24px;
+            color: #ffffff;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 34px;
+            height: 2px;
+            background: #FFD700;
+        }
+
+        h1 {
+            max-width: 1320px;
+            margin: 0;
+            color: #ffffff;
+            font-family: Impact, "Arial Black", Inter, sans-serif;
+            font-size: clamp(2.7rem, 5vw, 5rem);
+            font-weight: 900;
+            line-height: 1.04;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.55);
+        }
+
+        @media (min-width: 900px) {
+            h1 {
+                white-space: nowrap;
+            }
+        }
+
+        .stars {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin: 34px 0 30px;
+            color: #FFD22E;
+            font-size: clamp(2rem, 3.5vw, 2.9rem);
+            line-height: 1;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.28);
+        }
+
+        .hero__copy {
+            max-width: 760px;
+            margin: 0;
+            color: #ffffff;
+            font-size: clamp(1.05rem, 1.7vw, 1.45rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+        }
+
+        .hero__actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 34px;
+            justify-content: center;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 13px 28px;
+            border-radius: 999px;
+            font-weight: 800;
+            text-decoration: none;
+            background: #F89459;
+            color: #ffffff !important;
+            border: 0;
+            box-shadow: 0 8px 22px rgba(248, 148, 89, 0.28);
+            transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+        }
+
+        .button:hover,
+        .button:focus {
+            background: #f68240;
+            color: #ffffff !important;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 26px rgba(248, 148, 89, 0.36);
+        }
+
+        .button--primary {
+            background: #F89459;
+            color: #ffffff !important;
+            box-shadow: 0 8px 22px rgba(248, 148, 89, 0.28);
+        }
+
+        .button--primary:hover,
+        .button--primary:focus {
+            background: #f68240;
+            color: #ffffff !important;
+        }
+
+        .button--secondary {
+            background: #F89459;
+            color: #ffffff !important;
+        }
+
+        .button--secondary:hover,
+        .button--secondary:focus {
+            background: #f68240;
+            color: #ffffff !important;
+        }
+
+        .section {
+            width: min(1180px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+
+        .intro {
+            padding-bottom: 12px;
+        }
+
+        .intro h2,
+        .ranking h2,
+        .notes h2 {
+            margin: 0;
+            color: #111111;
+            font-size: clamp(2rem, 4vw, 3.25rem);
+            line-height: 1.03;
+            letter-spacing: 0;
+        }
+
+        .intro p,
+        .notes p {
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .intro p {
+            max-width: 100%;
+            margin: 18px 0 0;
+        }
+
+        .ranking {
+            padding-top: 0;
+        }
+
+        .list {
+            display: grid;
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .pick {
+            display: grid;
+            grid-template-columns: 54px minmax(0, 1fr) minmax(210px, 0.32fr);
+            gap: 20px;
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+        }
+
+        .pick__rank {
+            width: auto;
+            height: auto;
+            color: #111111;
+            font-size: 1.4rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .pick__rank::before {
+            content: "#";
+        }
+
+        .pick__brand {
+            margin: 0 0 7px;
+            color: #111111;
+            font-size: 0.8rem;
+            font-weight: 900;
+            letter-spacing: 0.11em;
+            text-transform: uppercase;
+        }
+
+        .pick h3 {
+            margin: 0;
+            color: #111111;
+            font-size: clamp(1.35rem, 2.3vw, 2rem);
+            line-height: 1.08;
+            letter-spacing: 0;
+        }
+
+        .pick > div:has(.pick__image) {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 190px;
+            column-gap: 24px;
+            align-items: start;
+        }
+
+        .pick__image {
+            grid-column: 2;
+            grid-row: 1 / span 5;
+            width: 190px;
+            height: 190px;
+            margin: 0;
+            object-fit: contain;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #ffffff;
+        }
+
+        .pick__dek {
+            margin: 12px 0 0;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .chips {
+            display: none;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            min-height: 34px;
+            padding: 7px 10px;
+            border-radius: 8px;
+            background: #e9f8fb;
+            color: #111111;
+            font-size: 0.82rem;
+            font-weight: 800;
+        }
+
+        .chip--hot {
+            background: #fff1df;
+            color: #9a5314;
+        }
+
+        .pick__aside {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
+            padding-left: 18px;
+            border-left: 1px solid var(--line);
+        }
+
+        .meta {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .meta strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #111111;
+        }
+
+        .shop-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 42px;
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            background: #F89459;
+            color: #ffffff !important;
+            font-weight: 900;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(248, 148, 89, 0.22);
+            transition: background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+        }
+
+        .shop-link:hover,
+        .shop-link:focus {
+            background: #f68240;
+            color: #ffffff !important;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(248, 148, 89, 0.32);
+        }
+
+        .notes {
+            display: grid;
+            grid-template-columns: minmax(0, 0.75fr) minmax(0, 1fr);
+            gap: 34px;
+            align-items: start;
+            border-top: 1px solid var(--line);
+        }
+
+        .cleanup-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .cleanup-list li {
+            padding: 8px 0;
+            border: 0;
+            border-bottom: 1px solid var(--line);
+            border-radius: 0;
+            background: transparent;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .footer-cta {
+            padding: 42px 20px;
+            border-top: 1px solid var(--line);
+            background: #ffffff;
+            color: #111111;
+            text-align: center;
+        }
+
+        .footer-cta h2 {
+            margin: 0 auto;
+            max-width: 800px;
+            font-size: clamp(2rem, 4vw, 4rem);
+            line-height: 1.02;
+            letter-spacing: 0;
+        }
+
+        .footer-cta p {
+            max-width: 660px;
+            margin: 18px auto 0;
+            color: var(--muted);
+        }
+
+        @media (max-width: 980px) {
+            .notes {
+                grid-template-columns: 1fr;
+            }
+
+            .pick {
+                grid-template-columns: 42px minmax(0, 1fr);
+            }
+
+            .pick__rank {
+                font-size: 1.25rem;
+            }
+
+            .pick__aside {
+                grid-column: 2;
+                padding: 0;
+                border-left: 0;
+            }
+
+            .pick > div:has(.pick__image) {
+                grid-template-columns: minmax(0, 1fr) 170px;
+                column-gap: 18px;
+            }
+
+            .pick__image {
+                width: 170px;
+                height: 170px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero {
+                min-height: 76vh;
+                padding-top: 34px;
+            }
+
+            .cleanup-list {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                width: min(100% - 28px, 1180px);
+                padding: 24px 0;
+            }
+
+            .intro {
+                padding-bottom: 0;
+            }
+
+            .intro p {
+                margin-top: 14px;
+            }
+
+            .ranking {
+                padding-top: 0;
+            }
+
+            .pick {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                padding: 18px;
+            }
+
+            .pick > div:has(.pick__image) {
+                grid-template-columns: 1fr;
+            }
+
+            .pick__image {
+                grid-column: 1;
+                grid-row: auto;
+                width: min(240px, 100%);
+                height: 220px;
+                justify-self: center;
+                margin-bottom: 12px;
+            }
+
+            .pick__aside {
+                grid-column: auto;
+            }
+
+            .shop-link {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <div class="hero__inner">
+                <p class="eyebrow">Updated for 2026</p>
+                <h1>Top 10 Prerolls in LA for Sale in 2026</h1>
+                <div class="stars" aria-label="Five star guide rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <p class="hero__copy">LAX Cannabis Club's Finest Selection</p>
+                <div class="hero__actions">
+                    <a class="button button--primary" href="https://laxcc.com/categories/pre_rolls/">View All Products</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section intro" aria-labelledby="intro-title">
+            <div>
+                <h2 id="intro-title">The 2026 list is about what actually deserves shelf space.</h2>
+                <p>This update moves away from a dated product grid and treats the guide like an editorial buying list: what burns well, what brings real flavor, what is easy to recommend, and what is available enough to stand behind.</p>
+                <p>Raw Garden leads the refresh because their live resin infused joints with live sauce hit the exact lane customers keep asking for: stronger than a standard joint, more terp-forward than distillate-heavy options, and built for people who want a premium infused smoke.</p>
+            </div>
+        </section>
+
+        <section class="section ranking" id="ranking" aria-labelledby="ranking-title">
+            <h2 id="ranking-title">2026 Pre-Roll Countdown</h2>
+            <div class="list">
+                <article class="pick" id="west-coast-cure">
+                    <div class="pick__rank">10</div>
+                    <div>
+                        <img class="pick__image" src="https://images.dutchie.com/c6405473d70d964524acaf76c7e0491b?w=500&amp;h=500&amp;fm=webp" alt="West Coast Cure LA grown weed 6 pack pre-rolls">
+                        <p class="pick__brand">West Coast Cure</p>
+                        <h3>LA Grown Weed 6-Pack Pre-Rolls</h3>
+                        <p class="pick__dek">West Coast Cure starts the countdown with a practical 6-pack: 2.1 grams total for $30. It is an easy grab when someone wants LA-grown weed in a shareable pre-roll format from a familiar California brand.</p>
+                        <div class="chips">
+                            <span class="chip">$30</span>
+                            <span class="chip">2.1g</span>
+                            <span class="chip">6-pack</span>
+                        </div>
+                    </div>
+                    <aside class="pick__aside">
+                        <p class="meta"><strong>Best for</strong>Customers who want a reliable multi-pack from a known LA cannabis brand.</p>
+                        <a class="shop-link" href="https://laxcc.com/brand/west-coast-cure/">View products</a>
+                    </aside>
+                </article>
+
+                <article class="pick" id="birdies">
+                    <div class="pick__rank">9</div>
+                    <div>
+                        <img class="pick__image" src="https://images.dutchie.com/c2b996cb15bc07cc5767929b2de07993?w=500&amp;h=500&amp;fm=webp" alt="Birdies 3 pack pre-rolls">
+                        <p class="pick__brand">Birdies</p>
+                        <h3>Birdies 3-Pack Pre-Rolls</h3>
+                        <p class="pick__dek">Birdies takes the #9 spot for shoppers who want a small pre-roll pack without spending much. At $15 for a 3-pack, it is a clean middle ground between a single joint and a larger multi-pack.</p>
+                        <div class="chips">
+                            <span class="chip">$15</span>
+                            <span class="chip">3-pack</span>
+                            <span class="chip">Easy value</span>
+                        </div>
+                    </div>
+                    <aside class="pick__aside">
+                        <p class="meta"><strong>Best for</strong>Quick pickups, short trips, and customers who want a low-commitment pack.</p>
+                        <a class="shop-link" href="https://laxcc.com/brand/birdies/">View products</a>
+                    </aside>
+                </article>
+
+                <article class="pick" id="laxcc-house-weed">
+                    <div class="pick__rank">8</div>
+                    <div>
+                        <img class="pick__image" src="https://images.dutchie.com/04e91932559b1993beb9e126a8c6b0cf?w=400&amp;h=400&amp;fm=webp" alt="LAX Cannabis Club house weed 1 gram pre-roll">
+                        <p class="pick__brand">LAX Cannabis Club House Weed</p>
+                        <h3>LA Grown Top Shelf Weed 1 Gram Pre-Roll</h3>
+                        <p class="pick__dek">The LAXCC house pre-roll earns #8 as a straightforward 1 gram joint for $10. It is LA-grown top shelf weed made for customers who want a simple, dependable smoke from the dispensary's own house selection.</p>
+                        <div class="chips">
+                            <span class="chip">$10</span>
+                            <span class="chip">1g</span>
+                            <span class="chip">House pick</span>
+                        </div>
+                    </div>
+                    <aside class="pick__aside">
+                        <p class="meta"><strong>Best for</strong>Customers who want LAXCC's house weed in a ready-to-smoke one-gram format.</p>
+                        <a class="shop-link" href="https://laxcc.com/brand/lusty/">View products</a>
+                    </aside>
+                </article>
+
+                <article class="pick" id="royal-blunts">
+                    <div class="pick__rank">7</div>
+                    <div>
+                        <img class="pick__image" src="https://images.dutchie.com/5a641ac2603e08783063f046f00c7dc0?w=500&amp;h=500" alt="Royal Blunts 1 gram pre-roll">
+                        <p class="pick__brand">Royal Blunts</p>
+                        <h3>Royal Blunts 1 Gram Pre-Roll</h3>
+                        <p class="pick__dek">Royal Blunts holds the #7 spot as the simple value pick: a ready-to-smoke 1 gram pre-roll for $5. It belongs here for customers who want an easy, affordable joint without overthinking the session.</p>
+                        <div class="chips">
+                            <span class="chip">$5</span>
+                            <span class="chip">1g</span>
+                            <span class="chip">Value pick</span>
+                        </div>
+                    </div>
+                    <aside class="pick__aside">
+                        <p class="meta"><strong>Best for</strong>Budget-friendly single sessions and customers who want a straightforward one-gram pre-roll.</p>
+                        <a class="shop-link" href="https://laxcc.com/brand/royal-blunts/">View products</a>
+                    </aside>
+                </article>
+
+                <article class="pick" id="sparkiez">
+                    <div class="pick__rank">6</div>
+                    <div>
+                        <img class="pick__image" src="https://images.dutchie.com/164f5beedd77899ec3eb53b9182eb27a?w=500&amp;h=500&amp;fm=webp" alt="Sparkiez Guava 7-pack pre-rolls">
+                        <p class="pick__brand">Sparkiez</p>
+                        <h3>Sparkiez Guava 7-Pack</h3>
+                        <p class="pick__dek">Sparkiez makes sense for the 2026 guide because multi-packs are practical. The Guava 7-pack is easy to split, easy to travel with after purchase, and better for customers who want a few smaller sessions instead of one oversized joint.</p>
+                        <div class="chips">
+                            <span class="chip">7-pack</span>
+                            <span class="chip">0.5g joints</span>
+                            <span class="chip">Shareable</span>
+                        </div>
+                    </div>
+                    <aside class="pick__aside">
+                        <p class="meta"><strong>Best for</strong>Weekend trips, small groups, and customers who prefer smaller joints.</p>
+                        <a class="shop-link" href="https://laxcc.com/product/shop-cannabis-lax_sparkiez-guava-7-preroll-pack/">View product</a>
+                    </aside>
+                </article>
+
+                <article class="pick" id="sluggers">
+                    <div class="pick__rank">5</div>
+                    <div>
+                        <img class="pick__image" src="https://images.dutchie.com/c8bfd727c52e812749a207a820a9f03a?w=500&amp;h=500&amp;fm=webp" alt="Sluggers Infused Preroll H Tempation">
+                        <p class="pick__brand">Sluggers</p>
+                        <h3>Sluggers Infused Preroll H Tempation</h3>
+                        <p class="pick__dek">Sluggers takes #5 with a .7g hybrid infused pre-roll for $12 testing at 35.04% THC. The brand also has 5-packs for $55 with 45% THC and an eighth of weed, making it a strong pick for customers who want more than a single joint.</p>
+                        <div class="chips">
+                            <span class="chip">$12</span>
+                            <span class="chip">.7g</span>
+                            <span class="chip">Hybrid</span>
+                            <span class="chip">THC 35.04%</span>
+                        </div>
+                    </div>
+                    <aside class="pick__aside">
+                        <p class="meta"><strong>Best for</strong>Customers who want an affordable infused single or a stronger 5-pack format.</p>
+                        <a class="shop-link" href="https://laxcc.com/brand/sluggers/">View products</a>
+                    </aside>
+                </article>
+
+                <article class="pick" id="cannabiotix">
+                    <div class="pick__rank">4</div>
+                    <div>
+                        <img class="pick__image" src="https://images.dutchie.com/fd7fa90a18903b8ee5daa99484c0c54f?w=500&amp;h=500&amp;fm=webp" alt="Cannabiotix Grape Gasby 4 pack pre-rolls">
+                        <p class="pick__brand">Cannabiotix</p>
+                        <h3>Cannabiotix Grape Gasby 4-Pack Pre-Roll</h3>
+                        <p class="pick__dek">Cannabiotix is the flower-forward pick on the list with Grape Gasby: a 4-pack totaling 2 grams for $40. It is here for customers who care about strain character, clean flower, and a premium ready-to-smoke format.</p>
+                        <div class="chips">
+                            <span class="chip">$40</span>
+                            <span class="chip">2g</span>
+                            <span class="chip">4-pack</span>
+                        </div>
+                    </div>
+                    <aside class="pick__aside">
+                        <p class="meta"><strong>Best for</strong>Customers who want recognizable top-shelf flower in a premium multi-pack format.</p>
+                        <a class="shop-link" href="https://laxcc.com/product/shop-cannabis-lax_cannabiotix-tropicanna-preroll/">View product</a>
+                    </aside>
+                </article>
+
+                <article class="pick" id="jeeter">
+                    <div class="pick__rank">3</div>
+                    <div>
+                        <img class="pick__image" src="https://images.dutchie.com/55686e7a3b847fce4f01b2080a404ccb?w=500&amp;h=500&amp;fm=webp" alt="Jeeter Baby Mimosa infused pre-roll">
+                        <p class="pick__brand">Jeeter</p>
+                        <h3>Jeeter Baby Mimosa</h3>
+                        <p class="pick__dek">Jeeter remains an easy recommendation because the format is familiar, portable, and approachable. Baby Jeeters are a good fit for people who want something infused and convenient without committing to an oversized roll.</p>
+                        <div class="chips">
+                            <span class="chip">Infused</span>
+                            <span class="chip">Travel-friendly</span>
+                            <span class="chip">Crowd favorite</span>
+                        </div>
+                    </div>
+                    <aside class="pick__aside">
+                        <p class="meta"><strong>Best for</strong>Visitors, quick sessions, and customers who already know the Jeeter format.</p>
+                        <a class="shop-link" href="https://laxcc.com/product/shop-cannabis-lax_jeeter-baby-mimosa-2/">View product</a>
+                    </aside>
+                </article>
+
+                <article class="pick" id="el-blunto">
+                    <div class="pick__rank">2</div>
+                    <div>
+                        <img class="pick__image" src="https://images.dutchie.com/11908295690b7519e4cc11255bacd486?w=500&amp;h=500&amp;fm=webp" alt="El Blunto Morado Hash Blunt">
+                        <p class="pick__brand">El Blunto</p>
+                        <h3>El Blunto Morado Hash Blunt</h3>
+                        <p class="pick__dek">El Blunto takes the #2 spot with Morado Hash Blunt, an indica hash blunt testing at 41.77% THC. At 1.65 grams for $25, it is built for customers who want a richer, slower-burning blunt format with real potency.</p>
+                        <div class="chips">
+                            <span class="chip">$25</span>
+                            <span class="chip">1.65g</span>
+                            <span class="chip">Indica</span>
+                            <span class="chip">THC 41.77%</span>
+                        </div>
+                    </div>
+                    <aside class="pick__aside">
+                        <p class="meta"><strong>Best for</strong>Experienced smokers who want a premium hash blunt with a stronger indica profile.</p>
+                        <a class="shop-link" href="https://laxcc.com/brand/el-blunto/">View products</a>
+                    </aside>
+                </article>
+
+                <article class="pick" id="raw-garden">
+                    <div class="pick__rank">1</div>
+                    <div>
+                        <img class="pick__image" src="https://images.dutchie.com/020f5d22c39359a65c76833231055cf5?w=400&amp;h=400&amp;fm=webp" alt="Raw Garden live sauce infused joints">
+                        <p class="pick__brand">Raw Garden</p>
+                        <h3>Live Resin Infused Joints with Live Sauce</h3>
+                        <p class="pick__dek">Raw Garden earns the top spot in the 2026 update. These are built for customers who want an infused joint that still feels like cannabis: live resin, live sauce, loud flavor, and a stronger session without leaning on a flat distillate profile.</p>
+                        <div class="chips">
+                            <span class="chip chip--hot">New 2026 pick</span>
+                            <span class="chip">Live resin infused</span>
+                            <span class="chip">Live sauce</span>
+                            <span class="chip">Premium smoke</span>
+                        </div>
+                    </div>
+                    <aside class="pick__aside">
+                        <p class="meta"><strong>Best for</strong>Experienced smokers, flavor chasers, and customers asking for a top-tier infused joint.</p>
+                        <a class="shop-link" href="https://laxcc.com/shop/pre-rolls-nearby-lax-airport/?pagination=1&amp;sort=POPULAR_DESC&amp;retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&amp;menu_type=RECREATIONAL&amp;collection_type=PICKUP&amp;categories=PRE_ROLLS%2C&amp;brands=%22bbdf26e3-c442-4346-898a-9dc657ff3acb%22%2C">Check availability</a>
+                    </aside>
+                </article>
+            </div>
+        </section>
+
+        <section class="section notes" aria-labelledby="list-method-title">
+            <div>
+                <h2 id="list-method-title">How this list changes each year</h2>
+                <p>Our pre-roll rankings are updated each year based on what customers actually buy, what they come back for, and what our staff sees performing best on the menu. Sales matter, but they are not the only factor.</p>
+            </div>
+            <ul class="cleanup-list" aria-label="How pre-roll rankings are chosen">
+                <li>Customer feedback on flavor, smoothness, potency, and burn quality.</li>
+                <li>Sales trends from shoppers looking for singles, multi-packs, infused joints, and premium blunts.</li>
+                <li>Menu availability, freshness, and whether a product is consistent enough to recommend.</li>
+                <li>Staff picks from the products people ask about most at LAX Cannabis Club.</li>
+            </ul>
+        </section>
+
+        <section class="footer-cta">
+            <h2>Shop the current pre-roll menu near LAX.</h2>
+            <p>Availability changes fast. Check the live menu for what is on the shelf today, then order ahead or walk in at LAX Cannabis Club.</p>
+            <div class="hero__actions" style="justify-content:center;">
+                <a class="button button--primary" href="https://laxcc.com/categories/pre_rolls/">Shop Pre-Rolls</a>
+                <a class="button button--secondary" href="https://laxcc.com/">Visit LAXCC</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

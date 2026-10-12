@@ -1,0 +1,696 @@
+<!-- SEO META — paste into Yoast/RankMath for this page -->
+<!-- Title: Buy KANHA Edibles | LAXCC Los Angeles Dispensary CA -->
+<!-- Description: Buy KANHA edibles at LAXCC — licensed LA dispensary 5 min from LAX. Gummies, chocolates & more, lab-tested. Walk in or order pickup today. -->
+<meta name="description" content="Buy KANHA edibles at LAXCC — licensed LA dispensary 5 min from LAX. Gummies, chocolates & more, lab-tested. Walk in or order pickup today.">
+
+<style>
+    /* ========================================
+       KANHA BRAND PAGE — LAXCC
+       Scoped to .laxcc-kanha
+       Elementor-safe: all rules use !important
+       ======================================== */
+
+    .laxcc-kanha *,
+    .laxcc-kanha *::before,
+    .laxcc-kanha *::after {
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .laxcc-kanha {
+        --navy: #1D508A;
+        --teal: #00AFC9;
+        --orange: #F89459;
+        --green: #7ECBB3;
+        --cream: #FBF8F2;
+        --white: #ffffff;
+        --text: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --navy-deep: #0f3a5f;
+
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        background: var(--cream) !important;
+        color: var(--text) !important;
+        line-height: 1.6 !important;
+        overflow-x: hidden !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+    }
+
+    @keyframes laxcc-kanha-fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* HERO — mobile-first */
+    .laxcc-kanha .kanha-hero { background: var(--cream) !important; }
+
+    .laxcc-kanha .kanha-hero-img {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #ffffff !important;
+        padding: 40px 20px !important;
+        overflow: hidden !important;
+    }
+
+    .laxcc-kanha .kanha-hero-img img {
+        max-width: 400px !important;
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+    /* Gallery photo fill mode */
+    .laxcc-kanha .kanha-hero-img-fill {
+        width: 100% !important;
+        overflow: hidden !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+
+    .laxcc-kanha .kanha-hero-img-fill img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+
+    .laxcc-kanha .kanha-hero-body {
+        max-width: 1400px !important;
+        margin: 0 auto !important;
+        padding: 32px 20px 28px !important;
+    }
+
+    .laxcc-kanha .kanha-hero-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        background: none !important;
+        border: none !important;
+        color: var(--text-muted) !important;
+        font-size: 0.65rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+        padding: 6px 14px !important;
+        border-radius: 100px !important;
+        margin-bottom: 16px !important;
+        white-space: nowrap !important;
+        width: fit-content !important;
+    }
+
+    .laxcc-kanha .kanha-hero-badge i { font-size: 0.55rem !important; }
+
+    .laxcc-kanha .kanha-hero h1 {
+        font-size: 2.4rem !important;
+        font-weight: 900 !important;
+        line-height: 1 !important;
+        letter-spacing: -0.03em !important;
+        color: var(--navy) !important;
+        margin-bottom: 16px !important;
+    }
+
+    .laxcc-kanha .kanha-hero h1 span { color: var(--orange) !important; }
+
+    .laxcc-kanha .kanha-hero-sub {
+        font-size: 0.95rem !important;
+        color: var(--text-muted) !important;
+        line-height: 1.6 !important;
+        margin-bottom: 24px !important;
+        max-width: 520px !important;
+    }
+
+    .laxcc-kanha .kanha-hero-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        margin-bottom: 28px !important;
+    }
+
+    .laxcc-kanha .kanha-hero-stats {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 12px !important;
+        border-top: 1px solid var(--border) !important;
+        padding-top: 24px !important;
+    }
+
+    .laxcc-kanha .kanha-stat-val {
+        font-size: 1.5rem !important;
+        font-weight: 900 !important;
+        color: var(--orange) !important;
+        letter-spacing: -0.03em !important;
+        line-height: 1 !important;
+        margin-bottom: 2px !important;
+    }
+
+    .laxcc-kanha .kanha-stat-lbl {
+        font-size: 0.6rem !important;
+        font-weight: 700 !important;
+        color: var(--text-muted) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    /* Buttons */
+    .laxcc-kanha .kanha-btn-primary,
+    .laxcc-kanha a.kanha-btn-primary,
+    .laxcc-kanha a.kanha-btn-primary:link,
+    .laxcc-kanha a.kanha-btn-primary:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        background: var(--orange) !important;
+        color: #fff !important;
+        font-size: 0.85rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.06em !important;
+        text-transform: uppercase !important;
+        padding: 16px 32px !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        transition: all 0.3s ease !important;
+        border: none !important;
+        cursor: pointer !important;
+    }
+
+    .laxcc-kanha a.kanha-btn-primary:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 32px rgba(248, 148, 89, 0.4) !important;
+    }
+
+    .laxcc-kanha .kanha-btn-secondary,
+    .laxcc-kanha a.kanha-btn-secondary,
+    .laxcc-kanha a.kanha-btn-secondary:link,
+    .laxcc-kanha a.kanha-btn-secondary:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        background: transparent !important;
+        color: var(--navy) !important;
+        font-size: 0.85rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.04em !important;
+        text-transform: uppercase !important;
+        padding: 16px 32px !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        border: 1px solid var(--navy) !important;
+        transition: all 0.3s ease !important;
+        cursor: pointer !important;
+    }
+
+    .laxcc-kanha a.kanha-btn-secondary:hover {
+        border-color: var(--orange) !important;
+        color: var(--orange) !important;
+        background: rgba(248, 148, 89, 0.06) !important;
+    }
+
+    /* Desktop hero */
+    @media (min-width: 769px) {
+        .laxcc-kanha .kanha-hero {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            min-height: 100vh !important;
+        }
+        .laxcc-kanha .kanha-hero-img {
+            height: 100% !important;
+            min-height: 100vh !important;
+            border-radius: 0 0 0 32px !important;
+            order: 2 !important;
+            padding: 60px 40px !important;
+        }
+        .laxcc-kanha .kanha-hero-img img { max-width: 480px !important; }
+        .laxcc-kanha .kanha-hero-img-fill {
+            height: 100% !important;
+            min-height: 100vh !important;
+            border-radius: 0 0 0 32px !important;
+            order: 2 !important;
+            padding: 0 !important;
+        }
+        .laxcc-kanha .kanha-hero-img-fill img { max-width: none !important; }
+        .laxcc-kanha .kanha-hero-body {
+            order: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            padding: 80px 60px !important;
+        }
+        .laxcc-kanha .kanha-hero h1 { font-size: clamp(2.8rem, 4vw, 4.2rem) !important; margin-bottom: 24px !important; }
+        .laxcc-kanha .kanha-hero-sub { font-size: 1.05rem !important; margin-bottom: 36px !important; }
+        .laxcc-kanha .kanha-hero-actions { flex-direction: row !important; margin-bottom: 0 !important; }
+        .laxcc-kanha .kanha-hero-stats { margin-top: 48px !important; padding-top: 32px !important; }
+        .laxcc-kanha .kanha-stat-val { font-size: 2rem !important; }
+        .laxcc-kanha .kanha-stat-lbl { font-size: 0.7rem !important; }
+    }
+
+    /* ABOUT section */
+    .laxcc-kanha .kanha-about { padding: 24px 0 0 !important; background: var(--cream) !important; }
+    .laxcc-kanha .kanha-about-container { max-width: 1400px !important; margin: 0 auto !important; padding: 0 20px !important; }
+    .laxcc-kanha .kanha-about-header { max-width: 680px !important; }
+
+    .laxcc-kanha .kanha-section-label {
+        display: inline-block !important;
+        font-size: 0.7rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 3px !important;
+        text-transform: uppercase !important;
+        color: var(--orange) !important;
+        margin-bottom: 20px !important;
+        position: relative !important;
+        padding-left: 36px !important;
+    }
+    .laxcc-kanha .kanha-section-label::before {
+        content: '' !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 50% !important;
+        width: 24px !important;
+        height: 2px !important;
+        background: var(--orange) !important;
+    }
+
+    .laxcc-kanha .kanha-about-top { display: flex !important; align-items: flex-end !important; justify-content: space-between !important; gap: 24px !important; margin-bottom: 16px !important; }
+    .laxcc-kanha .kanha-about-header h2 { font-size: clamp(2rem, 3.5vw, 3rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1.05 !important; margin-bottom: 12px !important; }
+    .laxcc-kanha .kanha-about-header p { font-size: 1rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; max-width: 480px !important; }
+
+    .laxcc-kanha .kanha-scroll-arrows { display: flex !important; gap: 8px !important; flex-shrink: 0 !important; }
+    .laxcc-kanha .kanha-scroll-arrow {
+        width: 40px !important; height: 40px !important; border-radius: 50% !important;
+        border: 1px solid var(--border) !important; background: var(--white) !important;
+        display: flex !important; align-items: center !important; justify-content: center !important;
+        cursor: pointer !important; transition: all 0.2s ease !important;
+        color: var(--text) !important; font-size: 0.8rem !important;
+    }
+    .laxcc-kanha .kanha-scroll-arrow:hover { border-color: var(--navy) !important; color: var(--navy) !important; }
+
+    .laxcc-kanha .kanha-about-track {
+        display: flex !important; gap: 20px !important; overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important; padding-bottom: 4px !important;
+    }
+    .laxcc-kanha .kanha-about-track::-webkit-scrollbar { display: none !important; }
+    .laxcc-kanha .kanha-about-slide {
+        flex: 0 0 280px !important; scroll-snap-align: start !important;
+        padding: 16px 0 0 !important; border-top: 2px solid var(--border) !important;
+        transition: border-color 0.3s ease !important;
+    }
+    .laxcc-kanha .kanha-about-slide:hover { border-color: var(--navy) !important; }
+    .laxcc-kanha .kanha-about-slide-num { font-size: 0.7rem !important; font-weight: 700 !important; color: var(--text-muted) !important; letter-spacing: 0.5px !important; margin-bottom: 12px !important; }
+    .laxcc-kanha .kanha-about-slide h3 { font-size: 1.1rem !important; font-weight: 800 !important; color: var(--text) !important; letter-spacing: -0.01em !important; margin-bottom: 8px !important; }
+    .laxcc-kanha .kanha-about-slide p { font-size: 0.85rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; }
+    @media (min-width: 769px) { .laxcc-kanha .kanha-about-slide { flex: 0 0 320px !important; } }
+
+    /* EDUCATION section */
+    .laxcc-kanha .kanha-education { padding: 24px 0 !important; background: var(--cream) !important; }
+    .laxcc-kanha .kanha-education-container { max-width: 1400px !important; margin: 0 auto !important; padding: 0 20px !important; }
+    .laxcc-kanha .kanha-education-top { display: flex !important; align-items: flex-end !important; justify-content: space-between !important; gap: 24px !important; margin-bottom: 16px !important; }
+    .laxcc-kanha .kanha-education-intro h2 { font-size: clamp(2rem, 3.5vw, 3rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1.05 !important; margin-bottom: 8px !important; }
+    .laxcc-kanha .kanha-education-intro p { font-size: 0.9rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; max-width: 480px !important; }
+    .laxcc-kanha .kanha-education-track {
+        display: flex !important; gap: 20px !important; overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+    }
+    .laxcc-kanha .kanha-education-track::-webkit-scrollbar { display: none !important; }
+    .laxcc-kanha .kanha-education-slide {
+        flex: 0 0 220px !important; scroll-snap-align: start !important;
+        padding: 16px 0 0 !important; border-top: 2px solid var(--border) !important;
+        text-align: center !important; transition: border-color 0.3s ease !important;
+    }
+    .laxcc-kanha .kanha-education-slide:hover { border-color: var(--navy) !important; }
+    .laxcc-kanha .kanha-education-num { font-size: 2.5rem !important; font-weight: 900 !important; color: var(--orange) !important; line-height: 1 !important; margin-bottom: 6px !important; }
+    .laxcc-kanha .kanha-education-name { font-size: 0.9rem !important; font-weight: 700 !important; color: var(--navy) !important; margin-bottom: 6px !important; }
+    .laxcc-kanha .kanha-education-desc { font-size: 0.8rem !important; color: var(--text-muted) !important; line-height: 1.5 !important; }
+    @media (min-width: 769px) {
+        .laxcc-kanha .kanha-education { padding: 60px 0 !important; }
+        .laxcc-kanha .kanha-education-container { padding: 0 60px !important; }
+        .laxcc-kanha .kanha-education-slide { flex: 0 0 260px !important; }
+    }
+
+    /* FAQ */
+    .laxcc-kanha .kanha-faq { padding: 140px 0 !important; background: var(--cream) !important; }
+    .laxcc-kanha .kanha-faq-container {
+        max-width: 1400px !important; margin: 0 auto !important; padding: 0 60px !important;
+        display: grid !important; grid-template-columns: 380px 1fr !important;
+        gap: 80px !important; align-items: start !important;
+    }
+    .laxcc-kanha .kanha-faq-sidebar { position: sticky !important; top: 40px !important; }
+    .laxcc-kanha .kanha-faq-sidebar h2 { font-size: 3rem !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1 !important; margin-bottom: 24px !important; }
+    .laxcc-kanha .kanha-faq-sidebar p { font-size: 1.05rem !important; color: var(--text-muted) !important; line-height: 1.7 !important; margin-bottom: 32px !important; }
+    .laxcc-kanha .kanha-faq-deco { width: 80px !important; height: 4px !important; background: var(--orange) !important; border-radius: 2px !important; }
+    .laxcc-kanha .kanha-faq-list { display: flex !important; flex-direction: column !important; }
+    .laxcc-kanha .kanha-faq-item { border-bottom: 1px solid var(--border) !important; padding: 32px 0 !important; }
+    .laxcc-kanha .kanha-faq-item:first-child { border-top: 1px solid var(--border) !important; }
+    .laxcc-kanha .kanha-faq-q {
+        font-size: 1.3rem !important; font-weight: 800 !important; color: var(--navy) !important;
+        cursor: pointer !important; display: flex !important; align-items: center !important;
+        justify-content: space-between !important; gap: 20px !important;
+        list-style: none !important; transition: color 0.3s ease !important; padding: 0 !important;
+    }
+    .laxcc-kanha .kanha-faq-q::-webkit-details-marker { display: none !important; }
+    .laxcc-kanha .kanha-faq-q:hover { color: var(--orange) !important; }
+    .laxcc-kanha .kanha-faq-q .kanha-faq-toggle {
+        font-size: 1.3rem !important; font-weight: 300 !important; flex-shrink: 0 !important;
+        transition: transform 0.3s ease !important; color: var(--text-muted) !important;
+    }
+    .laxcc-kanha .kanha-faq-item[open] .kanha-faq-toggle { transform: rotate(45deg) !important; color: var(--orange) !important; }
+    .laxcc-kanha .kanha-faq-a {
+        padding-top: 16px !important; font-size: 1rem !important; color: var(--text-muted) !important;
+        line-height: 1.7 !important; max-width: 90% !important; animation: laxcc-kanha-fadeUp 0.4s ease !important;
+    }
+
+    /* CTA */
+    .laxcc-kanha .kanha-cta {
+        padding: 120px 0 !important; background: var(--cream) !important;
+        text-align: center !important; position: relative !important; overflow: hidden !important;
+    }
+    .laxcc-kanha .kanha-cta::before {
+        content: '' !important; position: absolute !important; top: 50% !important; left: 50% !important;
+        transform: translate(-50%, -50%) !important; width: 600px !important; height: 600px !important;
+        background: radial-gradient(circle, rgba(248, 148, 89, 0.06) 0%, transparent 70%) !important;
+        border-radius: 50% !important; pointer-events: none !important;
+    }
+    .laxcc-kanha .kanha-cta-container { max-width: 700px !important; margin: 0 auto !important; padding: 0 40px !important; position: relative !important; z-index: 1 !important; }
+    .laxcc-kanha .kanha-cta h2 { font-size: clamp(2.5rem, 5vw, 4rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; margin-bottom: 20px !important; line-height: 1.05 !important; }
+    .laxcc-kanha .kanha-cta p { font-size: 1.1rem !important; color: var(--text-muted) !important; margin-bottom: 40px !important; line-height: 1.7 !important; }
+    .laxcc-kanha .kanha-cta-actions { display: flex !important; gap: 16px !important; justify-content: center !important; flex-wrap: wrap !important; }
+    .laxcc-kanha .kanha-cta-location { margin-top: 48px !important; padding-top: 32px !important; border-top: 1px solid rgba(29, 80, 138, 0.1) !important; }
+    .laxcc-kanha .kanha-cta-location p { font-size: 0.85rem !important; color: var(--text-muted) !important; margin-bottom: 0 !important; }
+    .laxcc-kanha .kanha-cta-location strong { color: var(--navy) !important; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .laxcc-kanha .kanha-about-container,
+        .laxcc-kanha .kanha-education-container,
+        .laxcc-kanha .kanha-faq-container { padding: 0 40px !important; }
+        .laxcc-kanha .kanha-faq-container { grid-template-columns: 1fr !important; gap: 48px !important; }
+        .laxcc-kanha .kanha-faq-sidebar { position: static !important; }
+    }
+    @media (max-width: 640px) {
+        .laxcc-kanha .kanha-education,
+        .laxcc-kanha .kanha-faq { padding: 40px 0 !important; }
+        .laxcc-kanha .kanha-about-container,
+        .laxcc-kanha .kanha-education-container,
+        .laxcc-kanha .kanha-faq-container { padding: 0 24px !important; }
+        .laxcc-kanha .kanha-faq-sidebar h2 { font-size: 2.2rem !important; }
+        .laxcc-kanha .kanha-faq-q { font-size: 1.1rem !important; }
+        .laxcc-kanha .kanha-cta { padding: 80px 0 !important; }
+    }
+
+    /* Elementor override */
+    .elementor-widget-container .laxcc-kanha {
+        width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+</style>
+
+<div class="laxcc-kanha">
+
+    <!-- HERO -->
+    <section class="kanha-hero">
+        <div class="kanha-hero-img">
+            <img src="https://images.dutchie.com/560e8bd26095dd3c826462bd1e0f5656?auto=format%2Ccompress&cs=srgb&fit=fill&fill=solid&fillColor=%23fff&w=787.5&dpr=1"
+                alt="KANHA products available at LAXCC dispensary in Los Angeles near LAX Airport"
+                loading="eager">
+        </div>
+
+        <div class="kanha-hero-body">
+            <div class="kanha-hero-badge">
+                <i class="fas fa-shield-halved"></i>
+                Licensed Dispensary &bull; 5 Min From LAX
+            </div>
+            <h1>Buy KANHA <span>Cannabis Edibles</span> in Los Angeles</h1>
+            <p class="kanha-hero-sub">
+                Award-winning cannabis gummies in bold fruit flavors — nano-infused for faster onset and precise dosing. Shop KANHA at LAXCC — a licensed Los Angeles dispensary just 5 minutes from LAX Airport. Available in-store and for pickup.
+            </p>
+            <div class="kanha-hero-actions">
+                <a href="#kanha-live-menu" class="kanha-btn-primary">
+                    Shop KANHA <i class="fas fa-arrow-down"></i>
+                </a>
+                <a href="https://www.google.com/maps?daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045"
+                    target="_blank" rel="noopener noreferrer" class="kanha-btn-secondary">
+                    <i class="fas fa-location-dot"></i> Get Directions
+                </a>
+            </div>
+            <div class="kanha-hero-stats">
+                <div>
+                    <div class="kanha-stat-val">100mg</div>
+                    <div class="kanha-stat-lbl">Up to Per Pack</div>
+                </div>
+                <div>
+                    <div class="kanha-stat-val">100%</div>
+                    <div class="kanha-stat-lbl">Lab Tested</div>
+                </div>
+                <div>
+                    <div class="kanha-stat-val">CA</div>
+                    <div class="kanha-stat-lbl">Licensed</div>
+                </div>
+                <div>
+                    <div class="kanha-stat-val">5+</div>
+                    <div class="kanha-stat-lbl">Products Stocked</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+<!-- END scoped wrapper — shortcode lives OUTSIDE -->
+
+<!-- LIVE MENU -->
+<section id="kanha-live-menu">
+    [leafbridge_specific_product_filter brand="18bb1389-9029-40dc-877e-cb1ec992bf3d" count="20"]
+</section>
+
+<!-- Resume scoped wrapper -->
+<div class="laxcc-kanha">
+
+    <!-- ABOUT -->
+    <section class="kanha-about">
+        <div class="kanha-about-container">
+            <div class="kanha-about-top">
+                <div class="kanha-about-header">
+                    <span class="kanha-section-label">About the Brand</span>
+                    <h2>Why KANHA</h2>
+                    <p>Award-winning cannabis gummies in bold fruit flavors — nano-infused for faster onset and precise dosing.</p>
+                </div>
+                <div class="kanha-scroll-arrows">
+                    <button class="kanha-scroll-arrow kanha-about-arrow" data-dir="-1" aria-label="Previous"><i class="fas fa-arrow-left"></i></button>
+                    <button class="kanha-scroll-arrow kanha-about-arrow" data-dir="1" aria-label="Next"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="kanha-about-track">
+                <div class="kanha-about-slide">
+                    <div class="kanha-about-slide-num">01</div>
+                    <h3>Precise Dosing</h3>
+                    <p>Every piece is dosed consistently so you know exactly what you're getting. Whether it's 5mg or 10mg per serving, the experience is predictable and reliable.</p>
+                </div>
+                <div class="kanha-about-slide">
+                    <div class="kanha-about-slide-num">02</div>
+                    <h3>Premium Ingredients</h3>
+                    <p>Made with quality ingredients and real cannabis extract — not synthetic cannabinoids. Great taste that happens to be infused, not infused products trying to taste good.</p>
+                </div>
+                <div class="kanha-about-slide">
+                    <div class="kanha-about-slide-num">03</div>
+                    <h3>Multiple Options</h3>
+                    <p>From gummies and chocolates to baked goods and mints — there's an edible format for every preference and occasion.</p>
+                </div>
+                <div class="kanha-about-slide">
+                    <div class="kanha-about-slide-num">04</div>
+                    <h3>California Licensed</h3>
+                    <p>Manufactured in a licensed California facility with strict quality controls. Every batch is lab-tested for accurate dosing, potency, and contaminants.</p>
+                </div>
+                <div class="kanha-about-slide">
+                    <div class="kanha-about-slide-num">05</div>
+                    <h3>Available at LAXCC</h3>
+                    <p>We carry KANHA at our dispensary near LAX Airport — walk in at 8332 Lincoln Blvd or order ahead for pickup. New products rotate in regularly, so check the live menu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="kanha-education">
+        <div class="kanha-education-container">
+            <div class="kanha-education-top">
+                <div class="kanha-education-intro">
+                    <span class="kanha-section-label">Know Your Product</span>
+                    <h2>What to Know About Cannabis Edibles</h2>
+                    <p>Edibles hit different than smoking. Here's what every customer should know before buying.</p>
+                </div>
+                <div class="kanha-scroll-arrows">
+                    <button class="kanha-scroll-arrow kanha-education-arrow" data-dir="-1" aria-label="Previous"><i class="fas fa-arrow-left"></i></button>
+                    <button class="kanha-scroll-arrow kanha-education-arrow" data-dir="1" aria-label="Next"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="kanha-education-track">
+                <div class="kanha-education-slide">
+                    <div class="kanha-education-num">1</div>
+                    <div class="kanha-education-name">Precise Dosing</div>
+                    <div class="kanha-education-desc">Quality edibles deliver consistent mg per piece. Look for brands that test every batch for accurate dosing — no hot spots, no surprises.</div>
+                </div>
+                <div class="kanha-education-slide">
+                    <div class="kanha-education-num">2</div>
+                    <div class="kanha-education-name">Onset Time</div>
+                    <div class="kanha-education-desc">Edibles take 30-90 minutes to kick in because they're processed through your digestive system. Don't redose too soon.</div>
+                </div>
+                <div class="kanha-education-slide">
+                    <div class="kanha-education-num">3</div>
+                    <div class="kanha-education-name">Duration</div>
+                    <div class="kanha-education-desc">Effects typically last 4-8 hours — much longer than smoking or vaping. Plan accordingly, especially if you're new.</div>
+                </div>
+                <div class="kanha-education-slide">
+                    <div class="kanha-education-num">4</div>
+                    <div class="kanha-education-name">Start Low</div>
+                    <div class="kanha-education-desc">If you're new to edibles, begin with 2.5-5mg THC and wait at least 2 hours before taking more. You can always eat more, never less.</div>
+                </div>
+                <div class="kanha-education-slide">
+                    <div class="kanha-education-num">5</div>
+                    <div class="kanha-education-name">Lab Testing</div>
+                    <div class="kanha-education-desc">Every batch is tested for THC/CBD accuracy, pesticides, and contaminants. What's on the label is what's in the package.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="kanha-faq">
+        <div class="kanha-faq-container">
+            <div class="kanha-faq-sidebar">
+                <h2>Common Questions</h2>
+                <p>Everything you need to know about buying KANHA at LAXCC near LAX Airport in Los Angeles.</p>
+                <div class="kanha-faq-deco"></div>
+            </div>
+
+            <div class="kanha-faq-list">
+                <details class="kanha-faq-item">
+                    <summary class="kanha-faq-q">
+                        Where can I buy KANHA near LAX?
+                        <span class="kanha-faq-toggle">+</span>
+                    </summary>
+                    <div class="kanha-faq-a">
+                        LAXCC is a licensed Los Angeles dispensary at 8332 Lincoln Blvd, Los Angeles, CA 90045 — just 5 minutes from LAX Airport. We carry KANHA edibles, gummies & infused treats. Walk in or order ahead for pickup.
+                    </div>
+                </details>
+
+                <details class="kanha-faq-item">
+                    <summary class="kanha-faq-q">
+                        What KANHA products does LAXCC carry?
+                        <span class="kanha-faq-toggle">+</span>
+                    </summary>
+                    <div class="kanha-faq-a">
+                        We stock a curated selection of KANHA edibles, gummies & infused treats. Availability rotates with new drops — check our live menu above for the most current inventory and pricing.
+                    </div>
+                </details>
+
+                <details class="kanha-faq-item">
+                    <summary class="kanha-faq-q">
+                        How strong are KANHA edibles?
+                        <span class="kanha-faq-toggle">+</span>
+                    </summary>
+                    <div class="kanha-faq-a">
+                        Potency varies by product — most KANHA edibles range from 5mg to 10mg THC per serving, with packages up to 100mg total. Check the label for exact dosing. If you're new to edibles, start with a low dose (2.5-5mg) and wait at least 2 hours before taking more.
+                    </div>
+                </details>
+
+                <details class="kanha-faq-item">
+                    <summary class="kanha-faq-q">
+                        How much does KANHA cost at LAXCC?
+                        <span class="kanha-faq-toggle">+</span>
+                    </summary>
+                    <div class="kanha-faq-a">
+                        Pricing varies by product and size — check the live menu on this page for current prices. LAXCC includes all taxes in our listed prices, so what you see is what you pay.
+                    </div>
+                </details>
+
+                <details class="kanha-faq-item">
+                    <summary class="kanha-faq-q">
+                        What are LAXCC's hours and location?
+                        <span class="kanha-faq-toggle">+</span>
+                    </summary>
+                    <div class="kanha-faq-a">
+                        LAXCC is open daily from 9:00 AM to 9:30 PM at 8332 Lincoln Blvd in Westchester, Los Angeles — 5 minutes from LAX Airport and 8 minutes from the beach. Walk-ins welcome, no appointment needed. We also offer pickup, curbside, and drive-thru options.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="kanha-cta">
+        <div class="kanha-cta-container">
+            <h2>Get KANHA Today at LAXCC</h2>
+            <p>
+                Walk into our licensed dispensary near LAX Airport and shop KANHA edibles, gummies & infused treats. All products lab-tested and ready for you.
+            </p>
+            <div class="kanha-cta-actions">
+                <a href="https://www.google.com/maps?daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045"
+                    target="_blank" rel="noopener noreferrer" class="kanha-btn-primary">
+                    <i class="fas fa-location-dot"></i> Directions to LAXCC
+                </a>
+            </div>
+            <div class="kanha-cta-location">
+                <p><strong>LAXCC</strong> &bull; 8332 Lincoln Blvd, Los Angeles, CA 90045 &bull; Open Daily 9AM - 9:30PM</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    (function () {
+        var ld = {
+            "@context": "https://schema.org",
+            "@type": "Store",
+            "name": "LAXCC - LAX Cannabis Club",
+            "description": "Licensed dispensary near LAX Airport carrying KANHA edibles, gummies & infused treats in Los Angeles.",
+            "url": "https://laxcc.com",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "8332 Lincoln Blvd",
+                "addressLocality": "Los Angeles",
+                "addressRegion": "CA",
+                "postalCode": "90045",
+                "addressCountry": "US"
+            },
+            "openingHours": "Mo-Su 09:00-21:30",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 33.9575,
+                "longitude": -118.4178
+            }
+        };
+        var s = document.createElement('script');
+        s.type = 'application/ld+json';
+        s.textContent = JSON.stringify(ld);
+        document.head.appendChild(s);
+    })();
+
+    /* Horizontal scroll arrows */
+    (function () {
+        [
+            { track: '.kanha-about-track', btns: '.kanha-about-arrow', step: 340 },
+            { track: '.kanha-education-track', btns: '.kanha-education-arrow', step: 240 }
+        ].forEach(function (cfg) {
+            var track = document.querySelector('.laxcc-kanha ' + cfg.track);
+            if (!track) return;
+            document.querySelectorAll('.laxcc-kanha ' + cfg.btns).forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var dir = parseInt(this.getAttribute('data-dir'));
+                    track.scrollBy({ left: dir * cfg.step, behavior: 'smooth' });
+                });
+            });
+        });
+    })();
+</script>

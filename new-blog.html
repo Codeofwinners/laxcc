@@ -1,0 +1,305 @@
+<div class="laxcc-blog-post-2026">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Maven+Pro:wght@400..900&display=swap');
+
+        /* BRAND DESIGN TOKENS */
+        .laxcc-blog-post-2026 {
+            --primary-teal: #00AFC9;
+            --primary-dark: #0f3a5f;
+            --accent-orange: #F89459;
+            --accent-green: #3daa6e;
+            --cream: #fbf8f2;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --white: #ffffff;
+
+            font-family: 'Maven Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            background-color: var(--cream);
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 900px;
+            padding: 4rem 1.5rem;
+            box-sizing: border-box;
+            font-size: 19px;
+        }
+
+        .laxcc-blog-post-2026 *,
+        .laxcc-blog-post-2026 *::before,
+        .laxcc-blog-post-2026 *::after {
+            box-sizing: inherit;
+        }
+
+        /* TYPOGRAPHY */
+        .laxcc-blog-header {
+            text-align: left;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--primary-teal);
+            padding-bottom: 2rem;
+        }
+
+        .laxcc-blog-meta {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .laxcc-blog-title {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            text-transform: none; /* Keeping it readable for long titles */
+        }
+
+        .laxcc-blog-author-line {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .laxcc-blog-content h2 {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+            border-left: 6px solid var(--primary-teal);
+            padding-left: 1rem;
+        }
+
+        .laxcc-blog-content h3 {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .laxcc-blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .laxcc-blog-content ul, .laxcc-blog-content ol {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+
+        .laxcc-blog-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        .laxcc-blog-content a {
+            color: var(--primary-teal);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .laxcc-blog-content a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        /* IMAGES */
+        .laxcc-blog-featured-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(15, 58, 95, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        /* QUOTES */
+        .laxcc-blog-quote {
+            background-color: var(--white);
+            border: 1px solid rgba(0, 175, 201, 0.2);
+            border-left: 8px solid var(--primary-teal);
+            padding: 2rem;
+            margin: 3rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            border-radius: 0 12px 12px 0;
+            box-shadow: 4px 4px 20px rgba(0,0,0,0.03);
+        }
+
+        /* TEST BOXES */
+        .laxcc-blog-test-box {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+
+        .laxcc-blog-test-box h3 {
+            color: var(--accent-orange) !important;
+            margin-top: 0 !important;
+        }
+
+        .laxcc-blog-test-box strong {
+            color: var(--primary-teal);
+        }
+
+        /* CTA SECTION */
+        .laxcc-blog-cta {
+            background: var(--primary-dark);
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: center;
+            color: var(--white);
+            margin-top: 4rem;
+        }
+
+        .laxcc-blog-cta h2 {
+            color: var(--white);
+            margin-top: 0;
+            font-family: 'Archivo Narrow', sans-serif;
+        }
+
+        .laxcc-blog-btn,
+        .laxcc-blog-btn:link,
+        .laxcc-blog-btn:visited {
+            display: inline-block;
+            background-color: var(--primary-teal) !important;
+            color: #ffffff !important;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none !important;
+            margin-top: 1.5rem;
+            white-space: nowrap;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .laxcc-blog-btn:hover {
+            transform: translateY(-3px);
+            background-color: #008fa3 !important;
+        }
+
+        /* DIVIDER */
+        .laxcc-blog-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-teal), transparent);
+            margin: 4rem 0;
+            opacity: 0.3;
+        }
+
+        /* SOURCES */
+        .laxcc-blog-sources {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid #e2e8f0;
+            padding-top: 2rem;
+        }
+
+        .laxcc-blog-sources ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 768px) {
+            .laxcc-blog-post-2026 {
+                padding: 2rem 1rem;
+                font-size: 17px;
+            }
+            .laxcc-blog-title {
+                font-size: 32px;
+            }
+            .laxcc-blog-cta {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+
+    <header class="laxcc-blog-header">
+        <div class="laxcc-blog-meta">March 29, 2026 &bull; Cannabis Law & Education</div>
+        <h1 class="laxcc-blog-title">California Just Changed the Rules on Cannabis in Your Car — Here's What Every Driver Needs to Know</h1>
+        <div class="laxcc-blog-author-line">
+            <span>By LAX Cannabis Club</span>
+        </div>
+    </header>
+
+    <div class="laxcc-blog-content">
+        <img src="https://laxcc.com/wp-content/uploads/2026/04/open-container-weed-law.jpg" alt="California Cannabis Open Container Law Ruling 2026" class="laxcc-blog-featured-image">
+
+        <p>On January 30, 2026, the California Supreme Court handed down one of the most significant cannabis-related legal decisions since voters passed Prop 64 back in 2016. If you drive in California and you consume cannabis — or even if you've ever had a crumb of flower land on your floorboard — this ruling directly affects your rights. We're breaking it all down so you know exactly where you stand.</p>
+
+        <h2>The Case That Changed Everything</h2>
+        <p>It started with a routine traffic stop in Sacramento on November 5, 2021. A man named Davonyae Sellers was riding as a passenger in the front seat of a car that was pulled over for failing to stop behind a limit line. Two Sacramento Police Department officers spotted two things: a joint-rolling tray on the back seat, and a few scattered marijuana crumbs on the rear floorboard.</p>
+
+        <p>That's it. No one was driving erratically. The driver had a clean record, a valid license, and no outstanding warrants. The total amount of cannabis found? <strong>0.36 grams</strong> — the approximate weight of a single dollar bill, scattered loosely across the floor.</p>
+
+        <p>Officers used the presence of those crumbs and the rolling tray to claim "probable cause" under California's open container law, which gave them justification to conduct a full search of the vehicle. During that search, an unregistered handgun was found in the car. Sellers was subsequently charged with unlawful possession of a firearm.</p>
+
+        <p>What followed was four and a half years of litigation over whether floor crumbs legally constitute an "open container" of cannabis.</p>
+
+        <h2>Four Years of Courts Getting It Wrong</h2>
+        <p>Sellers challenged the search from the start, arguing that the officers had no legitimate probable cause to search the vehicle. His motion to suppress was denied multiple times by lower courts. It wasn't until reaching the state's highest court that common sense prevailed.</p>
+
+        <p>Court of Appeal Justice Elana Duarte, in an earlier dissent, noted it would be absurd to criminalize a few scattered marijuana particles while legalizing a sealed baggie sitting in the front seat. The case eventually made its way to the California Supreme Court, where the justices took a very different view.</p>
+
+        <h2>The Supreme Court's Unanimous Decision</h2>
+        <p>On January 30, 2026, the California Supreme Court issued a unanimous ruling in Sellers' favor. The court's holding is now the binding legal standard across the entire state:</p>
+
+        <div class="laxcc-blog-quote">
+            "We hold that at a minimum, to constitute a violation of the open container law, marijuana in a vehicle must be of a usable quantity, in imminently usable condition, and readily accessible to an occupant."
+        </div>
+
+        <p>In plain English: <strong>if you can't actually consume it in the moment, it does not trigger the open container law.</strong></p>
+
+        <p>The court drew a clear and practical distinction between cannabis and alcohol. Grabbing an open beer from the back seat and drinking it while driving is easy. Collecting loose flower crumbs off a floorboard, packing a pipe, or rolling a joint while operating a vehicle is not. The risk to public safety simply isn't present when the substance can't be readily consumed.</p>
+
+        <h2>What This Means for You Practically</h2>
+        <p>The ruling establishes a three-part test that cannabis must meet before it can be considered an "open container" violation in California:</p>
+
+        <div class="laxcc-blog-test-box">
+            <h3>The 3-Part Compliance Test</h3>
+            <ul>
+                <li><strong>1. Usable quantity:</strong> A few crumbs or trace amounts of residue do not qualify. The cannabis must be present in an amount that could actually be used.</li>
+                <li><strong>2. Imminently usable condition:</strong> Loose flower scattered on a floorboard is not in a usable condition. A pre-rolled joint that's ready to smoke is. Packed bowl, ready to light — that counts.</li>
+                <li><strong>3. Readily accessible to an occupant:</strong> Cannabis in the trunk or in a sealed container does not meet this standard. The law is about whether you could realistically consume it from your position in the vehicle.</li>
+            </ul>
+        </div>
+
+        <h2>How to Stay Compliant When Transporting Cannabis</h2>
+        <p>California law still prohibits consuming cannabis while driving. Here's what we always recommend to our customers leaving <a href="https://laxcc.com/">LAX Cannabis Club</a>:</p>
+
+        <p><strong>Store in the Trunk or Sealed:</strong> Keep your purchased products in their original sealed packaging inside a bag, stored in the back seat or trunk. This keeps you clearly within the bounds of the law and removes any ambiguity. A sealed, childproof dispensary bag in the back seat is not an open container under any interpretation of this ruling.</p>
+
+        <p>If you have a question about what's legal when transporting cannabis in California, the <a href="https://cannabis.ca.gov/consumers/driving-and-cannabis/" target="_blank" rel="noopener noreferrer">California Department of Cannabis Control</a> has clear guidance on their website.</p>
+
+        <h2>The Bigger Picture</h2>
+        <p>This ruling matters beyond the specifics of one traffic stop. For years, vague interpretations of the open container law gave law enforcement a low-bar pretext for vehicle searches. The Supreme Court has now closed that door, protecting the civil liberties of millions of Californians who legally consume cannabis.</p>
+
+        <div class="laxcc-blog-divider"></div>
+
+        <div class="laxcc-blog-sources">
+            <h3>Sources and Further Reading</h3>
+            <ul>
+                <li><a href="http://www.metnews.com/articles/2026/opencontainer_013026.htm" target="_blank" rel="noopener noreferrer">California Supreme Court Opinion — Full Text</a></li>
+                <li><a href="https://calmatters.org/justice/2026/01/marijauna-laws-driving/" target="_blank" rel="noopener noreferrer">CalMatters: Cops Have to Treat Marijuana Differently</a></li>
+                <li><a href="https://norml.org/news/2026/02/05/california-supreme-court-rules-police-cant-search-vehicles-based-on-weed-crumbs" target="_blank" rel="noopener noreferrer">NORML: Police Can't Search Vehicles Based on Weed Crumbs</a></li>
+            </ul>
+        </div>
+
+        <div class="laxcc-blog-cta">
+            <h2>Shop Responsibly at LAXCC</h2>
+            <p>Visit the best dispensary near LAX for a premium selection of flower, edibles, and vapes. All orders come in compliant, childproof packaging for safe transport.</p>
+            <a href="https://laxcc.com/shop/" class="laxcc-blog-btn">Browse the Menu</a>
+        </div>
+    </div>
+</div>

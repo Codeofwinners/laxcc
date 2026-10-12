@@ -1,0 +1,55 @@
+# LAXCC Full Brand List — Dutchie Image URLs (from laxcc source)
+
+Reset complete: all entries now use Dutchie image URLs. Source is laxcc page source brandImages map; missing brands use Dutchie fallback image.
+
+Columns: Brand | Dutchie Image URL | Status
+
+1. Koa | https://images.dutchie.com/b2212a5e874b578d0b06ed126eba0b76?w=500&h=500&fm=webp | mapped
+2. Uncle Arnie's | https://images.dutchie.com/2b369c452ce5f21c9101609da9e3ea29?w=500&h=500&fm=webp | mapped
+3. Turn | https://images.dutchie.com/5cb159360fde764c5cd67a017a53e3c2?w=500&h=500&fm=webp | mapped
+4. Aims | https://images.dutchie.com/1d8b4202e7f0a3b63273d971090027f0 | mapped
+5. Korova | https://images.dutchie.com/1658c38caf59faed9d8028854dbb27ea?w=500&h=500&fm=webp | mapped
+6. Rockstar | https://images.dutchie.com/7ebf4edba255f4914848c9596492cb56 | fallback
+7. Aether Fields | https://images.dutchie.com/db7558cd89c095e6a084658a200dbb80 | mapped
+8. Sluggers | https://images.dutchie.com/003a21eb653bab7b1e81aeb054e47b9b?w=500&h=500&fm=webp | mapped
+9. St. Ides | https://laxcc.com/wp-content/uploads/2026/01/best-thc-drinks-for-sale.jpg | mapped
+10. Big Pete's | https://images.dutchie.com/5730895861f9619a5dca87068777dd4b?w=500&h=500&fm=webp | mapped
+11. Drops | https://images.dutchie.com/64d303efb692f19992a19c558da440d8?w=500&h=500&fm=webp | mapped
+12. Smokiez | https://images.dutchie.com/a29fe06f2f9cfb6f384dae571ea41703 | mapped
+13. Raw Garden | https://images.dutchie.com/c60382b8c18664439cd3d7bb071ae49e | mapped
+14. Bloom | https://images.dutchie.com/f930bb84f256cc546ce1755ac36e8791?w=500&h=500&fm=webp | mapped
+15. Kiva | https://images.dutchie.com/7ebf4edba255f4914848c9596492cb56 | fallback
+16. MicroBar | https://images.dutchie.com/b5c1dda81a1ff0009edd13e6ae38c5af?w=500&h=500&fm=webp | mapped
+17. Habitat | https://images.dutchie.com/e605f609299926260afd3000964681f4 | mapped
+18. Cali Creamery | https://images.dutchie.com/7ebf4edba255f4914848c9596492cb56 | fallback
+19. Presidential | https://images.dutchie.com/da8aa3977d7cc95e627eb6d2ec1bd4a9?w=500&h=500&fm=webp | mapped
+20. Good Tides | https://images.dutchie.com/cc58a6d9402b6f0017956b108e5f6c70?w=500&h=500&fm=webp | mapped
+21. WYLD | https://images.dutchie.com/056373a36dac887dc78e24e6f72de086?w=500&h=500&fm=webp | mapped
+22. American Weed Co. | https://images.dutchie.com/e04d8595a8dbe67338a86f1ab7be83ba?w=500&h=500&fm=webp | mapped
+23. Kingroll | https://images.dutchie.com/fc640cae64abbb9ca90de3a75cb1ccd7?w=500&h=500&fm=webp | mapped
+24. Kingpen | https://images.dutchie.com/1773f6519c47c2e0c36f7b4146d13c82?w=500&h=500&fm=webp | mapped
+25. Pacific Stone | https://images.dutchie.com/ec44daf8c8000c09961b649a33e5aa97 | mapped
+26. Time Machine | https://images.dutchie.com/7ebf4edba255f4914848c9596492cb56 | fallback
+27. Birdies | https://images.dutchie.com/7ebf4edba255f4914848c9596492cb56 | fallback
+28. THC Design | https://images.dutchie.com/1e009457ca3d2832cf296ed3479e8512?w=500&h=500&fm=webp | mapped
+29. West Coast Cure | https://images.dutchie.com/95aedabf83f5cc29fe96240bb3ebba55?w=500&h=500&fm=webp | mapped
+30. Nameless | https://images.dutchie.com/d2f209986822b007c952fc881bbd9327?w=500&h=500&fm=webp | mapped
+31. CQ | https://images.dutchie.com/d6cb43e006a59fee777dbc318a0a7f0b?w=500&h=500&fm=webp | mapped
+32. CAM | https://images.dutchie.com/36dbccacc58b34dd893e9bc4db7a4559?w=500&h=500&fm=webp | mapped
+33. Planta | https://images.dutchie.com/7ebf4edba255f4914848c9596492cb56 | fallback
+34. Goldmine | https://images.dutchie.com/7ebf4edba255f4914848c9596492cb56 | fallback
+35. Maven | https://images.dutchie.com/515bf5602c7ad9df9ca6eeaf0a7f6757?w=500&h=500&fm=webp | mapped
+36. Rove | https://dutchie-images.s3.us-west-2.amazonaws.com/819919252882ad3f8f0a6e7bf4db89aa?w=500&h=500&fm=webp | mapped
+37. Stiiizy | https://images.dutchie.com/1ef5da628dfa4e18c3b46362aa579f54 | mapped
+38. El Blunto | https://images.dutchie.com/b8a7c6c380faee2471303a62de7bf240?w=500&h=500&fm=webp | mapped
+39. Claybourne | https://images.dutchie.com/801acb3de7abcdc894439c2e645ffc28 | mapped
+40. Highatus | https://images.dutchie.com/b35b91297274d9daa40305be77a0d6c8?w=500&h=500&fm=webp | mapped
+41. Dompen | https://laxcc.com/wp-content/uploads/2026/01/buy-dompen-vape-near-lax-airport.png | mapped
+42. Jeeter | https://images.dutchie.com/dde10e30cf0c8922ba2cc7d098451ebb?w=500&h=500&fm=webp | mapped
+43. Clone Goddess | https://images.dutchie.com/332f18541693953eb78a8eb171760865 | mapped
+44. Froot | https://images.dutchie.com/7ebf4edba255f4914848c9596492cb56 | fallback
+45. Heirbloom | https://images.dutchie.com/45ecd9b756d3c0b8d600fcf8167e4c73?w=500&h=500&fm=webp | mapped
+46. Royal Blunts | https://images.dutchie.com/ca909929dda58d8d7e55ab596f39f6cb | mapped
+47. ColdFire | https://images.dutchie.com/cc35761f829c68e95b88dc12cc7147f2?w=500&h=500&fm=webp | mapped
+48. Papa & Barkley | https://images.dutchie.com/7ebf4edba255f4914848c9596492cb56 | fallback
+49. Lusty | https://images.dutchie.com/7ebf4edba255f4914848c9596492cb56 | fallback

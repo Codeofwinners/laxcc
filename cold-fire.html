@@ -1,0 +1,1127 @@
+<!-- SEO META -->
+<!-- Title: Coldfire Extracts at LAXCC — Juice Carts, Rosin Bars & Live Diamond Sauce -->
+<!-- Description: Shop Coldfire Extracts at LAX Cannabis Club — Live Resin Juice Carts, Cured Resin Carts, Rosin Juice Bars, Live Diamond Sauce & Badder. Single-pass extraction below -100°F. Same-day pickup in LA. -->
+<meta name="description"
+      content="Shop Coldfire Extracts at LAXCC — Juice Carts, Rosin Bars, Live Diamond Sauce, Cured & Live Resin Badder. Ultra-low-temp single-pass extraction. No additives, no distillate. Same-day express pickup.">
+
+<style>
+  /* ════════════════════════════════════════════════════════════
+     Coldfire brand page — matches sofi/culver/manhattan design.
+     Scoped under .coldfire-wrap. Embedded in Elementor/WP.
+     No JS — FAQ uses native <details>/<summary>.
+     Colors: navy #1D508A, cyan #00AFC9, orange #F89459 (CTAs).
+     ════════════════════════════════════════════════════════════ */
+  .coldfire-wrap {
+    --cf-bg: #fbf8f2;
+    --cf-surface: #ffffff;
+    --cf-navy: #1D508A;
+    --cf-navy-dark: #143b6b;
+    --cf-cyan: #00AFC9;
+    --cf-cyan-dark: #008fa4;
+    --cf-accent: #F89459;
+    --cf-accent-dark: #ef8345;
+    --cf-text: #0f172a;
+    --cf-text-muted: #64748b;
+    --cf-radius: 16px;
+    --cf-radius-lg: 22px;
+    --cf-shadow: 0 8px 24px -6px rgba(15, 23, 42, 0.08);
+    --cf-shadow-hover: 0 14px 36px -8px rgba(15, 23, 42, 0.14);
+    --cf-font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+    font-family: var(--cf-font) !important;
+    background: var(--cf-bg) !important;
+    color: var(--cf-text) !important;
+    padding: clamp(1rem, 2.5vw, 2rem) !important;
+    line-height: 1.5 !important;
+    box-sizing: border-box !important;
+    overflow-x: clip !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
+  .coldfire-wrap *,
+  .coldfire-wrap *::before,
+  .coldfire-wrap *::after { box-sizing: inherit !important; }
+  .coldfire-wrap p,
+  .coldfire-wrap h1,
+  .coldfire-wrap h2,
+  .coldfire-wrap h3,
+  .coldfire-wrap h4,
+  .coldfire-wrap ul,
+  .coldfire-wrap ol { margin: 0; padding: 0; }
+  .coldfire-wrap ul { list-style: none; }
+
+  .coldfire-shell { max-width: 1400px; margin: 0 auto; }
+
+  /* ─── HERO UNIT ─── image left, content right (no overlay) */
+  .coldfire-hero-unit {
+    background: var(--cf-bg);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    /* content column gets equal width so it reads as prominent, not cramped */
+    /* Desktop: full-bleed — break out of the 1400px shell + wrap padding
+       so the hero spans the entire viewport width and fills the area. */
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: calc(-1 * clamp(1rem, 2.5vw, 2rem));
+    min-height: 440px;
+  }
+
+  .coldfire-hero-img {
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    background-color: #0a0d12;
+    overflow: hidden;
+  }
+  .coldfire-hero-img video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .coldfire-wrap a.coldfire-credit,
+  .coldfire-wrap a.coldfire-credit:link,
+  .coldfire-wrap a.coldfire-credit:visited {
+    position: absolute;
+    bottom: 0.65rem;
+    right: 0.65rem;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.32rem 0.7rem;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 100px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    letter-spacing: 0.02em;
+    transition: background 0.2s ease;
+  }
+  .coldfire-wrap a.coldfire-credit:hover {
+    background: rgba(15, 23, 42, 0.75);
+    color: #ffffff !important;
+  }
+
+  .coldfire-hero-content {
+    padding: clamp(1.75rem, 3vw, 3.25rem);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .coldfire-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.95rem;
+    max-width: 100%;
+  }
+  .coldfire-stack > * { margin: 0; }
+
+  /* Brand badge (replaces the location hours pill on brand pages) */
+  .coldfire-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--cf-cyan-dark);
+    white-space: nowrap;
+  }
+  .coldfire-badge .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--cf-cyan);
+    box-shadow: 0 0 0 4px rgba(0, 175, 201, 0.18);
+  }
+
+  /* Eyebrow */
+  .coldfire-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--cf-cyan-dark);
+  }
+  .coldfire-eyebrow .pin {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--cf-cyan);
+  }
+
+  /* Headline */
+  .coldfire-h1 {
+    font-size: clamp(2rem, 3.6vw, 3.1rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.022em;
+    color: var(--cf-navy);
+    margin: 0;
+  }
+  .coldfire-h1 .accent {
+    background: linear-gradient(120deg, var(--cf-cyan) 0%, var(--cf-navy) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .coldfire-desc {
+    font-size: clamp(0.98rem, 1.2vw, 1.12rem);
+    line-height: 1.6;
+    color: var(--cf-text-muted);
+    max-width: 56ch;
+  }
+  .coldfire-desc strong { color: var(--cf-text); font-weight: 700; }
+
+  /* CTA row */
+  .coldfire-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 0;
+  }
+  /* Hero CTAs sit larger than the page default for presence */
+  .coldfire-wrap .coldfire-cta-row a.coldfire-btn {
+    padding: 1rem 1.7rem !important;
+    font-size: 0.98rem !important;
+  }
+  .coldfire-wrap a.coldfire-btn,
+  .coldfire-wrap a.coldfire-btn:link,
+  .coldfire-wrap a.coldfire-btn:visited {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    padding: 0.85rem 1.35rem !important;
+    border-radius: 100px !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease !important;
+    border: none !important;
+    line-height: 1 !important;
+  }
+  .coldfire-wrap a.coldfire-btn--primary,
+  .coldfire-wrap a.coldfire-btn--primary:link,
+  .coldfire-wrap a.coldfire-btn--primary:visited {
+    background: var(--cf-accent) !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+  }
+  .coldfire-wrap a.coldfire-btn--primary:hover,
+  .coldfire-wrap a.coldfire-btn--primary:focus,
+  .coldfire-wrap a.coldfire-btn--primary:active {
+    background: var(--cf-accent-dark) !important;
+    transform: translateY(-2px) !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+  }
+  .coldfire-wrap a.coldfire-btn--ghost,
+  .coldfire-wrap a.coldfire-btn--ghost:link,
+  .coldfire-wrap a.coldfire-btn--ghost:visited {
+    background: rgba(15, 23, 42, 0.06) !important;
+    color: var(--cf-text) !important;
+    box-shadow: none !important;
+  }
+  .coldfire-wrap a.coldfire-btn--ghost:hover {
+    background: rgba(15, 23, 42, 0.1) !important;
+    transform: translateY(-2px) !important;
+    color: var(--cf-text) !important;
+  }
+
+  .coldfire-btn svg { display: block; }
+
+  /* ─── TRUST STRIP ─── brand pillars */
+  .coldfire-trust {
+    background: var(--cf-surface);
+    border-radius: var(--cf-radius);
+    box-shadow: var(--cf-shadow);
+    margin-top: 0.85rem;
+    padding: 1rem 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .coldfire-trust-item {
+    padding: 0.4rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .coldfire-trust-item + .coldfire-trust-item {
+    border-left: 1px solid rgba(15, 23, 42, 0.08);
+  }
+  .coldfire-trust-val {
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    font-weight: 800;
+    color: var(--cf-navy);
+    letter-spacing: -0.015em;
+    line-height: 1;
+  }
+  .coldfire-trust-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--cf-text-muted);
+  }
+
+  /* ─── GOOGLE REVIEWS ─── */
+  .coldfire-wrap a.coldfire-social,
+  .coldfire-wrap a.coldfire-social:link,
+  .coldfire-wrap a.coldfire-social:visited {
+    margin-top: 0.85rem;
+    background: var(--cf-surface);
+    border-radius: var(--cf-radius);
+    box-shadow: var(--cf-shadow);
+    padding: 1.1rem 1.35rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.25rem;
+    text-decoration: none !important;
+    color: var(--cf-text) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .coldfire-wrap a.coldfire-social:hover { transform: translateY(-2px); box-shadow: var(--cf-shadow-hover); }
+  .coldfire-social-google {
+    width: 44px; height: 44px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234285F4' d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z'/%3E%3Cpath fill='%2334A853' d='M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z'/%3E%3Cpath fill='%23FBBC05' d='M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z'/%3E%3Cpath fill='%23EA4335' d='M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    flex-shrink: 0;
+  }
+  .coldfire-social-rating { display: flex; flex-direction: column; gap: 0.15rem; }
+  .coldfire-social-stars { display: flex; align-items: center; gap: 0.4rem; }
+  .coldfire-social-stars-score {
+    font-size: 1.25rem; font-weight: 800;
+    color: var(--cf-text); letter-spacing: -0.01em;
+  }
+  .coldfire-social-stars-icons { color: #FBC02D; font-size: 1rem; letter-spacing: 1px; line-height: 1; }
+  .coldfire-social-count { font-size: 0.82rem; color: var(--cf-text-muted); font-weight: 500; }
+  .coldfire-social-link { color: var(--cf-cyan-dark); font-weight: 700; font-size: 0.82rem; white-space: nowrap; }
+
+  /* ─── PRACTICAL GUIDE ─── 2-card brand story */
+  .coldfire-guide {
+    margin-top: 0.85rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+  .coldfire-card {
+    background: var(--cf-surface);
+    border-radius: var(--cf-radius);
+    box-shadow: var(--cf-shadow);
+    padding: clamp(1.25rem, 2.2vw, 1.75rem);
+  }
+  .coldfire-card h3 {
+    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+    font-weight: 800;
+    color: var(--cf-navy);
+    letter-spacing: -0.02em;
+    margin: 0.4rem 0 0.5rem;
+    line-height: 1.15;
+  }
+  .coldfire-card p {
+    font-size: 0.93rem;
+    line-height: 1.6;
+    color: var(--cf-text-muted);
+    margin: 0;
+  }
+  .coldfire-card p strong { color: var(--cf-text); font-weight: 700; }
+
+  .coldfire-checklist {
+    margin: 0.75rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+  .coldfire-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: var(--cf-text);
+  }
+  .coldfire-check {
+    flex: 0 0 18px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--cf-accent);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 800;
+    margin-top: 3px;
+    line-height: 1;
+  }
+
+  /* Full-width brand banner — sits as its own row, edge-to-edge of the shell */
+  .coldfire-banner {
+    margin-top: 0.85rem;
+    width: 100%;
+    background: var(--cf-surface);
+    border-radius: var(--cf-radius);
+    box-shadow: var(--cf-shadow);
+    overflow: hidden;
+    position: relative;
+  }
+  .coldfire-banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .coldfire-banner-caption {
+    display: block;
+    padding: 0.55rem 1rem;
+    font-size: 0.72rem;
+    color: var(--cf-text-muted);
+    text-align: right;
+    border-top: 1px solid rgba(15, 23, 42, 0.06);
+  }
+  .coldfire-wrap .coldfire-banner-caption a,
+  .coldfire-wrap .coldfire-banner-caption a:link,
+  .coldfire-wrap .coldfire-banner-caption a:visited {
+    color: var(--cf-cyan-dark) !important;
+    text-decoration: none !important;
+    font-weight: 700;
+  }
+  .coldfire-wrap .coldfire-banner-caption a:hover { text-decoration: underline !important; }
+
+  /* Inline brand asset inside a card (e.g. Coldfire cart-badge graphic) */
+  .coldfire-card-asset {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    border-radius: 12px;
+    background: #fbf8f2;
+    padding: 0.75rem;
+    object-fit: contain;
+  }
+  .coldfire-card-asset + .coldfire-asset-caption {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.7rem;
+    color: var(--cf-text-muted);
+    text-align: center;
+  }
+  .coldfire-wrap .coldfire-asset-caption a,
+  .coldfire-wrap .coldfire-asset-caption a:link,
+  .coldfire-wrap .coldfire-asset-caption a:visited {
+    color: var(--cf-cyan-dark) !important;
+    text-decoration: none !important;
+    font-weight: 700;
+  }
+  .coldfire-wrap .coldfire-asset-caption a:hover { text-decoration: underline !important; }
+
+  /* ─── LIVE MENU ─── */
+  .coldfire-menu {
+    margin-top: 1.75rem;
+    scroll-margin-top: 1rem;
+    padding: 0 clamp(1rem, 2vw, 1.5rem);
+  }
+  .coldfire-menu-intro { margin-bottom: 0.85rem; padding: 0.25rem; }
+  .coldfire-menu-intro h2 {
+    font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+    font-weight: 800;
+    color: var(--cf-navy);
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    margin: 0 0 0.35rem;
+  }
+  .coldfire-menu-intro p {
+    font-size: 0.95rem;
+    color: var(--cf-text-muted);
+    line-height: 1.55;
+    margin: 0;
+    max-width: 680px;
+  }
+
+  .coldfire-cat {
+    scroll-margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .coldfire-cat-head {
+    padding: 0.25rem 0.25rem 0.85rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .coldfire-cat-titles { min-width: 0; }
+  .coldfire-cat-head h3 {
+    font-size: clamp(1.65rem, 2.6vw, 2.1rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--cf-navy);
+    line-height: 1.1;
+    margin: 0 0 0.4rem;
+  }
+  .coldfire-cat-head p {
+    font-size: 0.93rem;
+    color: var(--cf-text-muted);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 760px;
+  }
+  .coldfire-cat-head p strong { color: var(--cf-text); font-weight: 700; }
+  .coldfire-wrap a.coldfire-shop-all,
+  .coldfire-wrap a.coldfire-shop-all:link,
+  .coldfire-wrap a.coldfire-shop-all:visited {
+    color: var(--cf-cyan-dark) !important;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none !important;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .coldfire-wrap a.coldfire-shop-all:hover { text-decoration: underline !important; }
+  .coldfire-cat-products { min-height: 220px; background: transparent; }
+
+  /* Filtered-shop CTA tile — replaces shortcodes since the menu shortcode
+     doesn't support brand-specific filtering. Links to the brand search URL. */
+  .coldfire-shop-tile {
+    background: var(--cf-surface);
+    border-radius: var(--cf-radius);
+    box-shadow: var(--cf-shadow);
+    padding: clamp(1.5rem, 2.5vw, 2rem);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .coldfire-shop-tile-text { display: flex; flex-direction: column; gap: 0.4rem; }
+  .coldfire-shop-tile-eyebrow {
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--cf-cyan-dark);
+  }
+  .coldfire-shop-tile-title {
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    font-weight: 800;
+    color: var(--cf-navy);
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    margin: 0;
+  }
+  .coldfire-shop-tile-sub {
+    font-size: 0.88rem;
+    color: var(--cf-text-muted);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 52ch;
+  }
+  @media (max-width: 580px) {
+    .coldfire-shop-tile {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
+  /* ─── ABOUT BRAND — facts grid ─── */
+  .coldfire-section { margin-top: 1.5rem; padding: 0 clamp(1rem, 2vw, 1.5rem); }
+  .coldfire-section-head {
+    padding: 0.5rem 0.25rem 1rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .coldfire-section-titles h2 {
+    font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+    font-weight: 800;
+    color: var(--cf-navy);
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    margin: 0 0 0.35rem;
+  }
+  .coldfire-section-titles p {
+    font-size: 0.95rem;
+    color: var(--cf-text-muted);
+    line-height: 1.55;
+    margin: 0;
+    max-width: 720px;
+  }
+
+  .coldfire-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+  }
+  .coldfire-fact {
+    background: var(--cf-surface);
+    border-radius: var(--cf-radius);
+    box-shadow: var(--cf-shadow);
+    padding: 1.15rem 1.25rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .coldfire-fact:hover { transform: translateY(-3px); box-shadow: var(--cf-shadow-hover); }
+  .coldfire-fact-label {
+    font-size: 0.66rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--cf-cyan-dark);
+    margin-bottom: 0.4rem;
+  }
+  .coldfire-fact-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--cf-navy);
+    margin: 0 0 0.3rem;
+    letter-spacing: -0.01em;
+  }
+  .coldfire-fact-body {
+    font-size: 0.86rem;
+    color: var(--cf-text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ─── PRODUCT-TYPE PILLS ─── */
+  .coldfire-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.85rem;
+  }
+  .coldfire-pill {
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(0, 175, 201, 0.08);
+    color: var(--cf-cyan-dark);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  /* ─── FAQ ─── */
+  .coldfire-faq {
+    margin-top: 1.5rem;
+    background: var(--cf-surface);
+    border-radius: var(--cf-radius);
+    box-shadow: var(--cf-shadow);
+    padding: clamp(1.25rem, 2.2vw, 1.75rem);
+  }
+  .coldfire-faq h2 {
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    font-weight: 800;
+    color: var(--cf-navy);
+    letter-spacing: -0.022em;
+    margin: 0 0 0.85rem;
+  }
+  .coldfire-faq details {
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    padding: 0;
+  }
+  .coldfire-faq details:last-of-type { border-bottom: 1px solid rgba(15, 23, 42, 0.08); }
+  .coldfire-faq summary {
+    list-style: none;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--cf-text);
+    line-height: 1.35;
+    transition: color 0.18s ease;
+  }
+  .coldfire-faq summary::-webkit-details-marker { display: none; }
+  .coldfire-faq summary::after {
+    content: '+';
+    flex-shrink: 0;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: rgba(0, 175, 201, 0.1);
+    color: var(--cf-cyan-dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .coldfire-faq details[open] summary::after {
+    content: '−';
+    background: var(--cf-cyan);
+    color: #ffffff;
+  }
+  .coldfire-faq summary:hover { color: var(--cf-cyan-dark); }
+  .coldfire-faq details > p {
+    padding: 0 0 1rem;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--cf-text-muted);
+    margin: 0;
+  }
+  .coldfire-faq details > p strong { color: var(--cf-text); font-weight: 700; }
+
+  /* ─── FINAL CTA ─── */
+  .coldfire-final {
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, var(--cf-navy) 0%, var(--cf-navy-dark) 100%);
+    padding: clamp(1.75rem, 3.5vw, 2.75rem);
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .coldfire-final::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(600px 400px at 90% 20%, rgba(0, 175, 201, 0.25), transparent 60%),
+      radial-gradient(500px 350px at 10% 90%, rgba(248, 148, 89, 0.15), transparent 60%);
+    pointer-events: none;
+  }
+  .coldfire-final-text { position: relative; z-index: 1; }
+  .coldfire-final-text .coldfire-eyebrow { color: #ffffff; margin-bottom: 0.75rem; }
+  .coldfire-final-text .coldfire-eyebrow .pin { background: #ffffff; }
+  .coldfire-final h2 {
+    font-size: clamp(1.65rem, 3vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    margin: 0 0 0.65rem;
+    color: #ffffff;
+  }
+  .coldfire-final p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 50ch;
+  }
+  .coldfire-final-cta { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 0.6rem; }
+  .coldfire-final-cta .coldfire-btn { width: 100%; justify-content: center; }
+  .coldfire-wrap .coldfire-final-cta a.coldfire-btn--ghost,
+  .coldfire-wrap .coldfire-final-cta a.coldfire-btn--ghost:link,
+  .coldfire-wrap .coldfire-final-cta a.coldfire-btn--ghost:visited {
+    background: transparent !important;
+    color: #ffffff !important;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35) !important;
+  }
+  .coldfire-wrap .coldfire-final-cta a.coldfire-btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+  }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 968px) {
+    .coldfire-wrap { padding: 0.85rem !important; }
+
+    .coldfire-hero-unit {
+      grid-template-columns: 1fr;
+      width: auto;
+      max-width: none;
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 0;
+      min-height: 0;
+      border-radius: var(--cf-radius-lg);
+    }
+    .coldfire-hero-img { height: clamp(200px, 30vh, 280px); }
+    .coldfire-hero-content { padding: 1.25rem 1.1rem; overflow: visible; }
+    .coldfire-cta-row { flex-wrap: nowrap; gap: 0.5rem; }
+    .coldfire-wrap .coldfire-cta-row a.coldfire-btn {
+      flex: 1 1 0;
+      min-width: 0;
+      justify-content: center !important;
+      padding: 0.9rem 0.6rem !important;
+      font-size: 0.85rem !important;
+    }
+
+    .coldfire-trust {
+      grid-template-columns: 1fr;
+      padding: 0.5rem 0.75rem;
+    }
+    .coldfire-trust-item + .coldfire-trust-item {
+      border-left: none;
+      border-top: 1px solid rgba(15, 23, 42, 0.07);
+    }
+    .coldfire-trust-item {
+      padding: 0.85rem 0.5rem;
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .coldfire-wrap a.coldfire-social,
+    .coldfire-wrap a.coldfire-social:link,
+    .coldfire-wrap a.coldfire-social:visited {
+      grid-template-columns: auto 1fr;
+      gap: 0.85rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .coldfire-social-link { display: none; }
+
+    .coldfire-guide { grid-template-columns: 1fr; }
+    .coldfire-facts { grid-template-columns: 1fr; }
+
+    .coldfire-final { grid-template-columns: 1fr; gap: 1.25rem; }
+    .coldfire-final-cta { width: 100%; }
+  }
+</style>
+
+<div class="coldfire-wrap">
+  <div class="coldfire-shell">
+
+    <!-- ─── HERO UNIT ─── -->
+    <section class="coldfire-hero-unit">
+      <div class="coldfire-hero-img">
+        <video autoplay muted loop playsinline preload="metadata"
+               aria-label="Coldfire Extracts lab footage">
+          <source src="https://coldfireextracts.com/wp-content/uploads/2026/03/coldfire-lab-video-square-1.mp4" type="video/mp4">
+        </video>
+        <a class="coldfire-credit"
+           href="https://coldfireextracts.com"
+           target="_blank" rel="nofollow noopener noreferrer"
+           aria-label="Video courtesy of Coldfire Extracts">
+          Video: Coldfire Extracts ↗
+        </a>
+      </div>
+      <div class="coldfire-hero-content">
+        <div class="coldfire-stack">
+          <span class="coldfire-badge">
+            <span class="dot" aria-hidden="true"></span>
+            In stock at LAXCC
+          </span>
+
+          <span class="coldfire-eyebrow"><span class="pin" aria-hidden="true"></span>Natural terpenes · Full potency · True strain flavor</span>
+
+          <h1 class="coldfire-h1">
+            Coldfire Extracts <span class="accent">— Full Flavor, Full Potency</span>
+          </h1>
+
+          <p class="coldfire-desc">
+            Some of the most natural-tasting cannabis oil you'll find — full-spectrum and packed with
+            the strain's real terpenes, not added flavoring. Coldfire's <strong>Live Resin Juice
+            Carts</strong>, <strong>Rosin Juice Bars</strong>, and <strong>Live Diamond Sauce</strong>
+            hit with bright, true flavor and the <strong>potency to match</strong>. Pure oil, never
+            flat distillate — what you taste is the plant.
+          </p>
+
+          <div class="coldfire-cta-row">
+            <a class="coldfire-btn coldfire-btn--primary" href="#coldfire-menu">
+              Shop Coldfire
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── LIVE MENU ─── single brand-filtered shortcode, sits directly below the hero -->
+    <section id="coldfire-menu" class="coldfire-menu" aria-label="Coldfire live menu at LAXCC">
+      <header class="coldfire-menu-intro">
+        <h2>Shop the Coldfire menu</h2>
+        <p>
+          Live Coldfire inventory from our LA shop — <strong>Live Resin &amp; Cured Resin Juice Carts</strong>,
+          <strong>Rosin Juice Bars</strong>, <strong>Live Diamond Sauce</strong>, and Resin Badders.
+          Filtered to Coldfire only. Order ahead for express pickup; ready in about 30 minutes.
+        </p>
+      </header>
+
+      <div class="coldfire-cat-products">
+        [leafbridge_specific_product_filter brand="a5b831a7-9ac5-488e-b72f-537d3cd08914" count="20"]
+      </div>
+    </section>
+
+    <!-- ─── TRUST STRIP — Coldfire brand pillars ─── -->
+    <div class="coldfire-trust" role="list">
+      <div class="coldfire-trust-item" role="listitem">
+        <span class="coldfire-trust-val">&lt; -100°F</span>
+        <span class="coldfire-trust-label">Single-pass extraction</span>
+      </div>
+      <div class="coldfire-trust-item" role="listitem">
+        <span class="coldfire-trust-val">Zero</span>
+        <span class="coldfire-trust-label">Additives · distillate · cutting agents</span>
+      </div>
+      <div class="coldfire-trust-item" role="listitem">
+        <span class="coldfire-trust-val">Family-owned</span>
+        <span class="coldfire-trust-label">Southern California craft</span>
+      </div>
+    </div>
+
+    <!-- ─── COLDFIRE CARTRIDGE LINEUP — full-width banner row ─── -->
+    <div class="coldfire-banner">
+      <img src="https://coldfireextracts.com/wp-content/uploads/2026/03/coldfire-categories-cartridges-4.jpg"
+           alt="Coldfire Extracts cultivator-collab cartridge lineup"
+           loading="lazy">
+      <span class="coldfire-banner-caption">
+        Image: <a href="https://coldfireextracts.com" target="_blank" rel="nofollow noopener noreferrer">Coldfire Extracts</a>
+      </span>
+    </div>
+
+    <!-- ─── GOOGLE REVIEWS ─── -->
+    <a class="coldfire-social"
+       href="https://www.google.com/search?q=LAXCC+reviews"
+       target="_blank" rel="noopener nofollow"
+       aria-label="See LAXCC's 4.9-star Google reviews">
+      <span class="coldfire-social-google" aria-hidden="true"></span>
+      <span class="coldfire-social-rating">
+        <span class="coldfire-social-stars">
+          <span class="coldfire-social-stars-score">4.9</span>
+          <span class="coldfire-social-stars-icons" aria-hidden="true">★★★★★</span>
+        </span>
+        <span class="coldfire-social-count">3,000+ verified Google reviews · LA's top-rated dispensary</span>
+      </span>
+      <span class="coldfire-social-link">Read reviews →</span>
+    </a>
+
+    <!-- ─── BRAND STORY — 2-card guide ─── -->
+    <div class="coldfire-guide">
+      <div class="coldfire-card">
+        <span class="coldfire-eyebrow"><span class="pin"></span>The craft</span>
+        <h3>Single-pass, below -100°F</h3>
+        <p>
+          Coldfire's whole thing is flavor preservation. They run an <strong>ultra-low-temp extraction
+          below -100°F</strong> in a single pass — minimal heat exposure, maximum terpene retention.
+          <strong>No additives, no distillate, no cutting agents</strong> in any of their oil.
+        </p>
+        <ul class="coldfire-checklist">
+          <li>
+            <span class="coldfire-check" aria-hidden="true">✓</span>
+            <span><strong>Live Resin Juice Carts</strong> — full-spectrum oil, cultivar-specific</span>
+          </li>
+          <li>
+            <span class="coldfire-check" aria-hidden="true">✓</span>
+            <span><strong>Rosin Juice Bars</strong> — solventless all-in-one disposables</span>
+          </li>
+          <li>
+            <span class="coldfire-check" aria-hidden="true">✓</span>
+            <span><strong>Family-owned Southern California</strong> — cultivator collabs at the core</span>
+          </li>
+        </ul>
+        <img class="coldfire-card-asset"
+             src="https://coldfireextracts.com/wp-content/uploads/2026/03/coldfire-cart-badges-3.png.webp"
+             alt="Coldfire Extracts cart purity badges — no additives, no distillate, no cutting agents"
+             loading="lazy">
+        <span class="coldfire-asset-caption">
+          Image: <a href="https://coldfireextracts.com" target="_blank" rel="nofollow noopener noreferrer">Coldfire Extracts</a>
+        </span>
+      </div>
+
+      <div class="coldfire-card">
+        <span class="coldfire-eyebrow"><span class="pin"></span>Cultivator collabs</span>
+        <h3>Limited drops with LA's top growers</h3>
+        <p>
+          Coldfire works directly with cultivators on <strong>limited collab drops</strong> — recent
+          partners include <strong>Fig Farms, Lumpy's, Team Elite Genetics, Booney Acres, Green Dragon,
+          Blem &amp; Flight Path</strong>. Strain-specific runs that taste exactly like the source flower.
+        </p>
+        <ul class="coldfire-checklist">
+          <li>
+            <span class="coldfire-check" aria-hidden="true">✓</span>
+            <span><strong>Order ahead online</strong> — collab drops move fast</span>
+          </li>
+          <li>
+            <span class="coldfire-check" aria-hidden="true">✓</span>
+            <span><strong>Same-day pickup</strong> at 8332 Lincoln Blvd, LA · ~30 min ready</span>
+          </li>
+          <li>
+            <span class="coldfire-check" aria-hidden="true">✓</span>
+            <span><strong>No direct shipping</strong> — Coldfire is licensed dispensary only. You found one.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ─── ABOUT THE BRAND ─── -->
+    <section class="coldfire-section">
+      <header class="coldfire-section-head">
+        <div class="coldfire-section-titles">
+          <h2>About Coldfire Extracts</h2>
+          <p>
+            A <strong>family-owned Southern California</strong> cannabis brand built around concentrate
+            craft, street culture, lab work, and collaborations with growers. The pitch is simple:
+            <strong>flavor-first, terpene-forward, connoisseur-grade</strong> — not a budget cart brand.
+          </p>
+        </div>
+      </header>
+
+      <div class="coldfire-facts">
+        <article class="coldfire-fact">
+          <div class="coldfire-fact-label">Extraction</div>
+          <h3 class="coldfire-fact-title">Below -100°F · single-pass</h3>
+          <p class="coldfire-fact-body">Ultra-low-temperature extraction in a single pass. Minimal heat = maximum terpene retention from the source flower.</p>
+        </article>
+        <article class="coldfire-fact">
+          <div class="coldfire-fact-label">Purity</div>
+          <h3 class="coldfire-fact-title">Zero additives</h3>
+          <p class="coldfire-fact-body">No distillate, no cutting agents, no flavorings — just pure full-spectrum oil. What you taste is the strain.</p>
+        </article>
+        <article class="coldfire-fact">
+          <div class="coldfire-fact-label">Vape line</div>
+          <h3 class="coldfire-fact-title">Juice Carts &amp; Bars</h3>
+          <p class="coldfire-fact-body">Live Resin &amp; Cured Resin Juice Carts (510-thread), plus Rosin Juice Bars and Resin Juice Bars as all-in-one disposables.</p>
+        </article>
+        <article class="coldfire-fact">
+          <div class="coldfire-fact-label">Concentrates</div>
+          <h3 class="coldfire-fact-title">Diamonds, Sauce, Badder</h3>
+          <p class="coldfire-fact-body">Live Diamond Sauce, Live Resin Badder, and Cured Resin Badder — all single-pass, all full-spectrum.</p>
+        </article>
+        <article class="coldfire-fact">
+          <div class="coldfire-fact-label">Built for</div>
+          <h3 class="coldfire-fact-title">The connoisseur</h3>
+          <p class="coldfire-fact-body">Flavor-first, terpene-forward, full-spectrum — not a budget cart brand. For consumers who care about strain expression, not just THC %.</p>
+        </article>
+        <article class="coldfire-fact">
+          <div class="coldfire-fact-label">Cultivator collabs</div>
+          <h3 class="coldfire-fact-title">Fig Farms · Lumpy's · Team Elite</h3>
+          <p class="coldfire-fact-body">Recent collab drops include Booney Acres, Fig Farms, Green Dragon, Lumpy's, Team Elite Genetics, Blem, and Flight Path.</p>
+        </article>
+      </div>
+
+      <div class="coldfire-pills">
+        <span class="coldfire-pill">Live Resin Juice Cart</span>
+        <span class="coldfire-pill">Cured Resin Juice Cart</span>
+        <span class="coldfire-pill">Rosin Juice Bar</span>
+        <span class="coldfire-pill">Resin Juice Bar</span>
+        <span class="coldfire-pill">Live Diamond Sauce</span>
+        <span class="coldfire-pill">Live Resin Badder</span>
+        <span class="coldfire-pill">Cured Resin Badder</span>
+        <span class="coldfire-pill">Collab drops</span>
+      </div>
+    </section>
+
+    <!-- ─── FAQ ─── -->
+    <section class="coldfire-faq" aria-label="Coldfire Extracts FAQ">
+      <h2>Frequently asked</h2>
+
+      <details>
+        <summary>Can I buy Coldfire Extracts direct from the brand?</summary>
+        <p>
+          <strong>No.</strong> Coldfire doesn't sell direct-to-consumer or deliver. Their products are
+          only available through <strong>licensed California dispensaries</strong>. LAXCC is one of them —
+          shop the live Coldfire menu above for what's in stock today.
+        </p>
+      </details>
+
+      <details>
+        <summary>What products in the Coldfire lineup does LAXCC carry?</summary>
+        <p>
+          We stock the full vape line — <strong>Live Resin Juice Carts, Cured Resin Juice Carts, Rosin
+          Juice Bars</strong> (solventless AIO) and <strong>Resin Juice Bars</strong> — plus the
+          concentrate side: <strong>Live Diamond Sauce, Live Resin Badder, and Cured Resin Badder</strong>.
+          Limited collab drops appear as released.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does Coldfire do collab drops with other brands?</summary>
+        <p>
+          <strong>Yes.</strong> Coldfire works directly with cultivators on limited collab drops. Recent
+          partners include <strong>Fig Farms, Lumpy's, Team Elite Genetics, Booney Acres, Green Dragon,
+          Blem, and Flight Path</strong>. Collab batches are strain-specific and tend to sell out fast —
+          order early when you see one in our menu.
+        </p>
+      </details>
+
+      <details>
+        <summary>What makes Coldfire different from other vape brands?</summary>
+        <p>
+          Three things: <strong>(1)</strong> single-pass extraction below <strong>-100°F</strong> to
+          preserve terpenes, <strong>(2)</strong> <strong>no additives, no distillate, no cutting
+          agents</strong> in any of their oil, and <strong>(3)</strong> cultivar-specific runs — each
+          batch tastes like the strain it came from, not generic "OG flavor."
+        </p>
+      </details>
+
+      <details>
+        <summary>Live Resin vs. Cured Resin Juice Carts — what's the difference?</summary>
+        <p>
+          <strong>Live Resin</strong> is made from <em>fresh-frozen</em> flower — flash-frozen at harvest
+          to lock in volatile terpenes that would otherwise dissipate during drying. <strong>Cured Resin</strong>
+          uses traditionally dried &amp; cured flower, so the terp profile is closer to what you'd smoke
+          in a joint. Both are full-spectrum at Coldfire — pick by flavor preference.
+        </p>
+      </details>
+
+      <details>
+        <summary>How do I order Coldfire for pickup at LAXCC?</summary>
+        <p>
+          Browse the live menu above (or hit <strong>Shop all</strong>), add to cart, and check out for
+          pickup. Most orders are bagged and ready in ~30 minutes. Pick up at <strong>8332 Lincoln Blvd,
+          Los Angeles, CA 90045</strong>. Free parking on Lincoln Blvd outside the shop.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do I need a medical card to buy Coldfire?</summary>
+        <p>
+          <strong>No.</strong> California allows any adult 21+ (or 18+ with a valid medical card) to
+          purchase. No residency required — out-of-state and international IDs are accepted.
+        </p>
+      </details>
+
+      <details>
+        <summary>What hardware works best with Coldfire concentrates?</summary>
+        <p>
+          Live Diamond Sauce and Resin Badders perform best on a <strong>quartz banger at 500–550°F</strong>
+          (low-temp dabs) — preserves the single-pass terpenes you paid for. E-rigs (Puffco, Dr. Dabber)
+          work great at similar temps. Sauce can also be added to a bowl of premium flower for a flavor boost.
+        </p>
+      </details>
+    </section>
+
+    <!-- ─── FINAL CTA ─── -->
+    <section class="coldfire-final">
+      <div class="coldfire-final-text">
+        <span class="coldfire-eyebrow"><span class="pin" aria-hidden="true"></span>Dispensary-only brand</span>
+        <h2>Coldfire only sells through dispensaries — and you found one.</h2>
+        <p>
+          Order online in 60 seconds, ready in ~30 minutes. Full Juice Cart, Rosin Bar &amp; Live
+          Diamond Sauce lineup plus limited cultivator collabs. Open daily 9 AM – 9:30 PM at
+          8332 Lincoln Blvd.
+        </p>
+      </div>
+      <div class="coldfire-final-cta">
+        <a class="coldfire-btn coldfire-btn--primary" href="https://laxcc.com/shop/?products_search=Coldfire&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3" target="_blank" rel="noopener">
+          Shop Coldfire
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a class="coldfire-btn coldfire-btn--ghost" href="https://www.google.com/maps/dir/?api=1&destination=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045" target="_blank" rel="nofollow noopener noreferrer">
+          Get directions
+        </a>
+      </div>
+    </section>
+
+  </div>
+</div>

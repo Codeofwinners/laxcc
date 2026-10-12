@@ -1,0 +1,706 @@
+<style>
+    /* ===== LAXCC PLAYA DEL REY DISPENSARY PAGE — ELEMENTOR SAFE ===== */
+    #laxcc-pdr-page {
+        --accent-cyan: #0891B2;
+        --accent-teal: #00AFC9;
+        --accent-orange: #F89459;
+        --primary-dark: #0f3a5f;
+        --primary-blue: #1D508A;
+        --text-dark: #0f172a;
+        --text-muted: #64748b;
+        --bg-cream: #FBF8F2;
+        --white: #ffffff;
+        --border: rgba(0,0,0,0.06);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: var(--bg-cream);
+    }
+
+    #laxcc-pdr-page *,
+    #laxcc-pdr-page *::before,
+    #laxcc-pdr-page *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* ===== LAYOUT ===== */
+    #laxcc-pdr-page .pdr-section {
+        width: 100%;
+        padding: 2.5rem 1.25rem;
+    }
+    @media (min-width: 768px) { #laxcc-pdr-page .pdr-section { padding: 4rem 2rem; } }
+    @media (min-width: 1024px) { #laxcc-pdr-page .pdr-section { padding: 5rem 3rem; } }
+
+    #laxcc-pdr-page .pdr-wrap {
+        max-width: 760px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    #laxcc-pdr-page .pdr-eyebrow {
+        color: var(--accent-cyan);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+    }
+    @media (min-width: 768px) { #laxcc-pdr-page .pdr-eyebrow { font-size: 0.75rem; } }
+
+    #laxcc-pdr-page h1.pdr-h1 {
+        font-size: 1.85rem;
+        font-weight: 900;
+        color: var(--text-dark);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        margin-bottom: 1.25rem;
+    }
+    @media (min-width: 768px) { #laxcc-pdr-page h1.pdr-h1 { font-size: 2.6rem; } }
+    @media (min-width: 1024px) { #laxcc-pdr-page h1.pdr-h1 { font-size: 3.1rem; } }
+
+    #laxcc-pdr-page .pdr-h1 span { color: var(--accent-cyan); }
+
+    #laxcc-pdr-page h2.pdr-h2 {
+        font-size: 1.35rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        line-height: 1.18;
+        letter-spacing: -0.01em;
+        margin-bottom: 0.85rem;
+    }
+    @media (min-width: 768px) { #laxcc-pdr-page h2.pdr-h2 { font-size: 1.75rem; } }
+
+    #laxcc-pdr-page p.pdr-body {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+        margin-bottom: 1rem;
+    }
+    @media (min-width: 768px) { #laxcc-pdr-page p.pdr-body { font-size: 1rem; } }
+
+    #laxcc-pdr-page p.pdr-body strong,
+    #laxcc-pdr-page p.pdr-lead strong {
+        color: var(--text-dark);
+        font-weight: 700;
+    }
+
+    #laxcc-pdr-page .pdr-lead {
+        font-size: 1.05rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    @media (min-width: 768px) { #laxcc-pdr-page .pdr-lead { font-size: 1.15rem; } }
+
+    /* ===== HERO ===== */
+    #laxcc-pdr-page .pdr-hero {
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        color: #fff;
+    }
+
+    #laxcc-pdr-page .pdr-hero-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    #laxcc-pdr-page .pdr-hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    #laxcc-pdr-page .pdr-hero .pdr-wrap {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Override text colors inside the video hero for legibility on dark overlay */
+    #laxcc-pdr-page .pdr-hero .pdr-eyebrow {
+        color: #ffffff;
+        opacity: 0.92;
+    }
+
+    #laxcc-pdr-page .pdr-hero h1.pdr-h1 {
+        color: #ffffff;
+        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+    }
+
+    #laxcc-pdr-page .pdr-hero .pdr-h1 span {
+        color: var(--accent-teal);
+    }
+
+    #laxcc-pdr-page .pdr-hero .pdr-lead {
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+        color: rgba(255, 255, 255, 0.92);
+    }
+
+    #laxcc-pdr-page .pdr-hero .pdr-lead strong {
+        color: #ffffff;
+    }
+
+    #laxcc-pdr-page .pdr-hero-stat {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 8px;
+        margin-top: 1.5rem;
+        padding: 0.75rem 1.25rem;
+        background: rgba(255, 255, 255, 0.16);
+        border-radius: 12px;
+        backdrop-filter: blur(6px);
+    }
+
+    #laxcc-pdr-page .pdr-hero-stat-num {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: #ffffff;
+        letter-spacing: -0.02em;
+    }
+    @media (min-width: 768px) { #laxcc-pdr-page .pdr-hero-stat-num { font-size: 1.75rem; } }
+
+    #laxcc-pdr-page .pdr-hero-stat-label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.92);
+    }
+
+    /* ===== DIVIDER ===== */
+    #laxcc-pdr-page .pdr-divider {
+        width: 48px;
+        height: 3px;
+        background: var(--accent-cyan);
+        border: none;
+        margin: 2rem auto;
+        border-radius: 2px;
+    }
+
+    /* ===== ROUTE MAP EMBED ===== */
+    #laxcc-pdr-page .pdr-map {
+        width: 100%;
+        height: 360px;
+        margin: 1.5rem 0 0.75rem;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        background: #e5e3df;
+    }
+    @media (min-width: 768px) {
+        #laxcc-pdr-page .pdr-map { height: 420px; }
+    }
+
+    #laxcc-pdr-page .pdr-map-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin: 0 0 1.5rem;
+    }
+
+    #laxcc-pdr-page .pdr-map-legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem 1rem;
+        align-items: center;
+    }
+
+    #laxcc-pdr-page .pdr-map-key {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        font-size: 0.85rem;
+        color: var(--text-dark);
+        font-weight: 600;
+    }
+
+    #laxcc-pdr-page .pdr-map-key-dot {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 0.7rem;
+        font-weight: 800;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    #laxcc-pdr-page .pdr-map-key-dot.a { background: #1D508A; }
+    #laxcc-pdr-page .pdr-map-key-dot.b { background: #00AFC9; }
+
+    #laxcc-pdr-page a.pdr-directions-btn,
+    #laxcc-pdr-page a.pdr-directions-btn:link,
+    #laxcc-pdr-page a.pdr-directions-btn:visited {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--accent-orange);
+        color: #ffffff !important;
+        text-decoration: none !important;
+        font-size: 0.88rem;
+        font-weight: 700;
+        padding: 0.7rem 1.4rem;
+        border-radius: 9999px;
+        white-space: nowrap;
+        letter-spacing: 0.02em;
+        transition: background 0.2s ease;
+    }
+
+    #laxcc-pdr-page a.pdr-directions-btn:hover {
+        background: #e67d42;
+        color: #ffffff !important;
+    }
+
+    /* ===== TRAVEL MODE GRID ===== */
+    #laxcc-pdr-page .pdr-modes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        margin: 1.5rem 0 1rem;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+    }
+    @media (min-width: 700px) {
+        #laxcc-pdr-page .pdr-modes {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    #laxcc-pdr-page .pdr-mode {
+        padding: 1rem 0.75rem;
+        text-align: center;
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+    }
+    #laxcc-pdr-page .pdr-mode:nth-child(2n),
+    #laxcc-pdr-page .pdr-mode:last-child {
+        border-right: none;
+    }
+    @media (min-width: 700px) {
+        #laxcc-pdr-page .pdr-mode {
+            border-bottom: none;
+        }
+        #laxcc-pdr-page .pdr-mode:nth-child(2n) {
+            border-right: 1px solid var(--border);
+        }
+        #laxcc-pdr-page .pdr-mode:last-child {
+            border-right: none;
+        }
+    }
+
+    #laxcc-pdr-page .pdr-mode-icon {
+        font-size: 1.5rem;
+        line-height: 1;
+        margin-bottom: 0.4rem;
+    }
+
+    #laxcc-pdr-page .pdr-mode-label {
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--text-muted);
+        margin-bottom: 0.25rem;
+    }
+
+    #laxcc-pdr-page .pdr-mode-time {
+        font-size: 1.05rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+    }
+    @media (min-width: 768px) { #laxcc-pdr-page .pdr-mode-time { font-size: 1.15rem; } }
+
+    /* ===== BULLET LIST ===== */
+    #laxcc-pdr-page ul.pdr-list {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0 1.25rem;
+    }
+
+    #laxcc-pdr-page ul.pdr-list li {
+        padding: 0.4rem 0 0.4rem 1.5rem;
+        position: relative;
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.55;
+    }
+    @media (min-width: 768px) {
+        #laxcc-pdr-page ul.pdr-list li { font-size: 1rem; }
+    }
+
+    #laxcc-pdr-page ul.pdr-list li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.95rem;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent-cyan);
+    }
+
+    /* ===== AREAS GRID ===== */
+    #laxcc-pdr-page .pdr-areas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem 1.5rem;
+        margin: 1.25rem 0 1rem;
+    }
+    @media (min-width: 640px) {
+        #laxcc-pdr-page .pdr-areas {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    @media (min-width: 900px) {
+        #laxcc-pdr-page .pdr-areas {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    #laxcc-pdr-page .pdr-area {
+        padding: 0.45rem 0 0.45rem 1.5rem;
+        position: relative;
+        font-size: 0.9rem;
+        color: var(--text-dark);
+        font-weight: 600;
+    }
+
+    #laxcc-pdr-page .pdr-area::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 6px;
+        height: 6px;
+        margin-top: -3px;
+        border-radius: 50%;
+        background: var(--accent-orange);
+    }
+
+    /* ===== ALT-BG SECTION ===== */
+    #laxcc-pdr-page .pdr-section-alt {
+        background: #ffffff;
+    }
+
+    /* ===== FINAL CTA ===== */
+    #laxcc-pdr-page .pdr-cta-section {
+        background: var(--primary-dark);
+        text-align: center;
+        padding: 2.75rem 1.25rem;
+    }
+    @media (min-width: 768px) {
+        #laxcc-pdr-page .pdr-cta-section { padding: 4rem 2rem; }
+    }
+
+    #laxcc-pdr-page .pdr-cta-section h2 {
+        color: var(--white);
+        font-size: 1.5rem;
+        font-weight: 900;
+        line-height: 1.15;
+        margin-bottom: 0.5rem;
+    }
+    @media (min-width: 768px) {
+        #laxcc-pdr-page .pdr-cta-section h2 { font-size: 2rem; }
+    }
+
+    #laxcc-pdr-page .pdr-cta-section p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        max-width: 560px;
+        margin: 0 auto 1.5rem;
+    }
+
+    #laxcc-pdr-page .pdr-cta-section p strong {
+        color: var(--white);
+    }
+
+    #laxcc-pdr-page a.pdr-btn,
+    #laxcc-pdr-page a.pdr-btn:link,
+    #laxcc-pdr-page a.pdr-btn:visited {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--accent-orange);
+        color: #ffffff !important;
+        text-decoration: none !important;
+        font-size: 0.95rem;
+        font-weight: 700;
+        padding: 0.875rem 2rem;
+        border-radius: 9999px;
+        white-space: nowrap;
+        letter-spacing: 0.02em;
+        transition: background 0.2s ease;
+    }
+
+    #laxcc-pdr-page a.pdr-btn:hover {
+        background: #e67d42;
+        color: #ffffff !important;
+    }
+
+    #laxcc-pdr-page .pdr-cta-info {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.42);
+        margin-top: 1.25rem;
+        letter-spacing: 0.04em;
+    }
+</style>
+
+<div id="laxcc-pdr-page">
+
+    <!-- ===== HERO ===== -->
+    <section class="pdr-section pdr-hero">
+        <video class="pdr-hero-video" autoplay loop muted playsinline preload="metadata" aria-hidden="true">
+            <source src="https://laxcc.com/wp-content/uploads/2026/04/Top-11-Best-Los-Angeles-Beaches-2026.mp4" type="video/mp4">
+        </video>
+        <div class="pdr-hero-overlay"></div>
+        <div class="pdr-wrap">
+            <p class="pdr-eyebrow">Dispensary Near Playa del Rey Beach</p>
+            <h1 class="pdr-h1">Closest Cannabis Dispensary to <span>Playa del Rey Beach</span></h1>
+            <p class="pdr-lead">If you're spending the day at Playa del Rey Beach and looking for a trusted cannabis dispensary nearby, <strong>LAX Cannabis Club</strong> is one of the closest options near the coast and just minutes from LAX.</p>
+            <p class="pdr-lead">Whether you're visiting Dockweiler Beach, walking the Playa del Rey shoreline, or staying near the Marina del Rey side, getting to LAXCC is quick and easy.</p>
+
+            <div class="pdr-hero-stat">
+                <span class="pdr-hero-stat-num">4&ndash;6 mi</span>
+                <span class="pdr-hero-stat-label">from the beach to LAXCC</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DISTANCE / TRAVEL TIMES ===== -->
+    <section class="pdr-section pdr-section-alt">
+        <div class="pdr-wrap">
+            <h2 class="pdr-h2">How Far Is Playa del Rey Beach From LAX Cannabis Club?</h2>
+            <p class="pdr-body">The drive from Playa del Rey Beach to LAX Cannabis Club is typically around <strong>4 to 6 miles</strong>, depending on your exact starting point.</p>
+
+            <div class="pdr-map" id="pdrRouteMap"></div>
+
+            <div class="pdr-map-actions">
+                <div class="pdr-map-legend">
+                    <span class="pdr-map-key"><span class="pdr-map-key-dot a">A</span> Playa del Rey Beach</span>
+                    <span class="pdr-map-key"><span class="pdr-map-key-dot b">B</span> LAX Cannabis Club</span>
+                </div>
+                <a class="pdr-directions-btn" href="https://www.google.com/maps/dir/?api=1&origin=Playa+del+Rey+Beach,+Los+Angeles,+CA&destination=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045&travelmode=driving" target="_blank" rel="noopener">
+                    Get Directions <span>&rarr;</span>
+                </a>
+            </div>
+
+            <div class="pdr-modes" aria-label="Travel times from Playa del Rey to LAXCC">
+                <div class="pdr-mode">
+                    <div class="pdr-mode-icon">🚗</div>
+                    <div class="pdr-mode-label">Light traffic</div>
+                    <div class="pdr-mode-time">10&ndash;15 min</div>
+                </div>
+                <div class="pdr-mode">
+                    <div class="pdr-mode-icon">🚙</div>
+                    <div class="pdr-mode-label">Normal LA traffic</div>
+                    <div class="pdr-mode-time">15&ndash;25 min</div>
+                </div>
+                <div class="pdr-mode">
+                    <div class="pdr-mode-icon">🚲</div>
+                    <div class="pdr-mode-label">By bike</div>
+                    <div class="pdr-mode-time">20&ndash;30 min</div>
+                </div>
+                <div class="pdr-mode">
+                    <div class="pdr-mode-icon">🚶</div>
+                    <div class="pdr-mode-label">Walking</div>
+                    <div class="pdr-mode-time">~1 hour</div>
+                </div>
+            </div>
+
+            <p class="pdr-body">If you're near the <strong>Dockweiler Beach</strong> or <strong>Vista Del Mar</strong> area, the trip is usually even faster.</p>
+        </div>
+    </section>
+
+    <!-- ===== WHY LAXCC ===== -->
+    <section class="pdr-section">
+        <div class="pdr-wrap">
+            <h2 class="pdr-h2">Why Playa del Rey Visitors Choose LAXCC</h2>
+            <p class="pdr-body">Many visitors staying near Playa del Rey want a dispensary that is:</p>
+
+            <ul class="pdr-list">
+                <li>Close to the beach</li>
+                <li>Near LAX for travelers</li>
+                <li>Easy to access from Lincoln Blvd</li>
+                <li>Fast for pickup before heading home</li>
+                <li>Stocked with premium flower, pre-rolls, vapes, edibles, and concentrates</li>
+            </ul>
+
+            <p class="pdr-body">LAX Cannabis Club checks all of those boxes. Its location makes it convenient for both locals and tourists who want a nearby cannabis shop without driving deep into the city.</p>
+        </div>
+    </section>
+
+    <!-- ===== NEARBY AREAS ===== -->
+    <section class="pdr-section pdr-section-alt">
+        <div class="pdr-wrap">
+            <h2 class="pdr-h2">Nearby Areas Also Close to LAXCC</h2>
+            <p class="pdr-body">Besides Playa del Rey Beach, many customers also visit from:</p>
+
+            <div class="pdr-areas">
+                <span class="pdr-area">Westchester</span>
+                <span class="pdr-area">Marina del Rey</span>
+                <span class="pdr-area">Venice Beach</span>
+                <span class="pdr-area">El Segundo</span>
+                <span class="pdr-area">Manhattan Beach</span>
+                <span class="pdr-area">Inglewood</span>
+                <span class="pdr-area">Culver City</span>
+                <span class="pdr-area">LAX Airport hotels</span>
+            </div>
+
+            <p class="pdr-body">This makes <strong>LAX Cannabis Club</strong> a strong option for anyone searching for a dispensary near the beach or near LAX.</p>
+        </div>
+    </section>
+
+    <!-- ===== WHAT'S AT LAXCC ===== -->
+    <section class="pdr-section">
+        <div class="pdr-wrap">
+            <h2 class="pdr-h2">What You'll Find at LAX Cannabis Club</h2>
+            <p class="pdr-body">Customers visiting from Playa del Rey often stop by for:</p>
+
+            <ul class="pdr-list">
+                <li>Premium indoor flower</li>
+                <li>Popular pre-roll deals</li>
+                <li>THC pills and discreet edibles</li>
+                <li>Live resin vape carts</li>
+                <li>Rosin concentrates</li>
+                <li>Budget-friendly ounce deals</li>
+                <li>Fast local pickup</li>
+            </ul>
+
+            <p class="pdr-body">The goal is simple: <strong>quality products without the long drive.</strong></p>
+        </div>
+    </section>
+
+    <!-- ===== AFTER THE BEACH ===== -->
+    <section class="pdr-section pdr-section-alt">
+        <div class="pdr-wrap">
+            <h2 class="pdr-h2">Visiting After the Beach</h2>
+            <p class="pdr-body">A lot of customers stop by after:</p>
+
+            <ul class="pdr-list">
+                <li>Beach days at Playa del Rey</li>
+                <li>Bike rides along the coast</li>
+                <li>Airport pickups near LAX</li>
+                <li>Hotel stays in Westchester</li>
+                <li>Weekend plans in Venice and Marina del Rey</li>
+            </ul>
+
+            <p class="pdr-body">Because of the location near Lincoln Blvd, it's an easy stop before heading back home.</p>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="pdr-cta-section">
+        <div class="pdr-wrap">
+            <h2>Looking for a Dispensary Near Playa del Rey Beach?</h2>
+            <p>If you're searching for the closest cannabis dispensary near Playa del Rey Beach, <strong>LAX Cannabis Club</strong> is one of the fastest and most convenient options nearby. Just a short drive from the beach &mdash; a simple stop for premium cannabis products near the coast.</p>
+            <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP" class="pdr-btn" target="_blank" rel="noopener">Shop LAXCC <span>&#x2192;</span></a>
+            <p class="pdr-cta-info">8332 Lincoln Blvd, Los Angeles, CA 90045 &nbsp;&#x2022;&nbsp; (310) 429-3789 &nbsp;&#x2022;&nbsp; 9 AM &ndash; 9:30 PM Daily</p>
+        </div>
+    </section>
+
+</div>
+
+<script>
+(function () {
+  const API_KEY = "AIzaSyBR3knBCX7iGSmTh6DR-mG9eajwjb5K6GM";
+
+  const PDR = { lat: 33.9575, lng: -118.4487, name: "Playa del Rey Beach" };
+  const LAXCC = { lat: 33.961922, lng: -118.420722, name: "LAX Cannabis Club" };
+
+  window.initPdrRouteMap = function () {
+    const mapEl = document.getElementById("pdrRouteMap");
+    if (!mapEl || !window.google || !google.maps) return;
+
+    const map = new google.maps.Map(mapEl, {
+      center: { lat: (PDR.lat + LAXCC.lat) / 2, lng: (PDR.lng + LAXCC.lng) / 2 },
+      zoom: 13,
+      mapTypeControl: false,
+      streetViewControl: false,
+      fullscreenControl: true,
+      gestureHandling: "cooperative"
+    });
+
+    new google.maps.Marker({
+      position: { lat: PDR.lat, lng: PDR.lng },
+      map: map,
+      title: PDR.name,
+      label: { text: "A", color: "#fff", fontWeight: "700", fontSize: "12px" },
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        fillColor: "#1D508A",
+        fillOpacity: 1,
+        strokeColor: "#ffffff",
+        strokeWeight: 2,
+        scale: 14
+      }
+    });
+
+    new google.maps.Marker({
+      position: { lat: LAXCC.lat, lng: LAXCC.lng },
+      map: map,
+      title: LAXCC.name,
+      label: { text: "B", color: "#fff", fontWeight: "700", fontSize: "12px" },
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        fillColor: "#00AFC9",
+        fillOpacity: 1,
+        strokeColor: "#ffffff",
+        strokeWeight: 2,
+        scale: 14
+      }
+    });
+
+    new google.maps.Polyline({
+      path: [
+        { lat: PDR.lat, lng: PDR.lng },
+        { lat: LAXCC.lat, lng: LAXCC.lng }
+      ],
+      geodesic: true,
+      strokeColor: "#F89459",
+      strokeOpacity: 0.9,
+      strokeWeight: 4,
+      map: map
+    });
+
+    const bounds = new google.maps.LatLngBounds();
+    bounds.extend({ lat: PDR.lat, lng: PDR.lng });
+    bounds.extend({ lat: LAXCC.lat, lng: LAXCC.lng });
+    map.fitBounds(bounds, 80);
+    google.maps.event.addListenerOnce(map, "idle", function () {
+      if (map.getZoom() > 13) map.setZoom(13);
+    });
+  };
+
+  function loadPdrMapsScript() {
+    if (window.google && window.google.maps) {
+      window.initPdrRouteMap();
+      return;
+    }
+    if (document.getElementById("pdrMapsScript")) return;
+    const script = document.createElement("script");
+    script.id = "pdrMapsScript";
+    script.src = "https://maps.googleapis.com/maps/api/js?key=" + API_KEY + "&callback=initPdrRouteMap";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
+  loadPdrMapsScript();
+})();
+</script>

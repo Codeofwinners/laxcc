@@ -1,0 +1,1531 @@
+<meta name="description" content="Explore top THC concentrate brands at LAX Cannabis Club. Lab-tested products from Raw Garden, 710 Labs, Stiiizy & more. Premium quality concentrates in LA.">
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Custom Styles -->
+<style>
+  :root {
+  --laxcc-primary: #00AFC9 !important;
+  --laxcc-secondary: #1D508A !important;
+  --laxcc-text: #2A2A2A !important;
+  --laxcc-background: #F5F8FA !important;
+  --laxcc-card-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+}
+
+body.laxcc-body {
+  background: var(--laxcc-background) !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  line-height: 1.6 !important;
+  color: var(--laxcc-text) !important;
+  margin: 0 !important;
+  padding: 20px !important;
+}
+
+.laxcc-brand-showcase {
+  background: #ffffff !important;
+  border: none !important;
+  border-radius: 20px !important;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 28px rgba(16, 24, 40, 0.06) !important;
+  margin: 20px auto !important;
+  padding: 32px !important;
+  max-width: 1100px !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+.laxcc-brand-showcase:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 2px 4px rgba(16, 24, 40, 0.05), 0 18px 48px rgba(16, 24, 40, 0.10) !important;
+}
+/* Strip card chrome when the wrapper only contains the TOC grid — TOC items are already cards (no double-card). */
+.laxcc-brand-showcase:has(> .laxcc-toc-grid) {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  transition: none !important;
+}
+.laxcc-brand-showcase:has(> .laxcc-toc-grid):hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.laxcc-intro-card {
+  text-align: center !important;
+  padding: 24px 20px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  color: white !important;
+  background: linear-gradient(-45deg, 
+    #00AFC9,
+    #1D508A,
+    #0088A3,
+    #2196F3
+  ) !important;
+  background-size: 200% 200% !important;
+  animation: laxcc-gradientBG 10s ease infinite !important;
+}
+
+/* Add these new styles */
+.laxcc-intro-card * {
+  color: white !important;
+}
+
+.laxcc-intro-title,
+.laxcc-intro-subtitle {
+  color: white !important;
+}
+
+.laxcc-intro-header {
+  margin-bottom: 16px !important;  /* Reduced margin */
+}
+
+.laxcc-intro-title {
+  font-size: 1.8rem !important;  /* Smaller font */
+  margin-bottom: 8px !important;
+}
+
+.laxcc-intro-subtitle {
+  font-size: 1rem !important;
+  margin-bottom: 16px !important;
+}
+
+.laxcc-intro-features {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;  /* Force 3 columns */
+  gap: 12px !important;
+  margin: 16px auto !important;
+  max-width: 800px !important;  /* Reduced max-width */
+}
+
+.laxcc-feature-item {
+  padding: 12px !important;  /* Reduced padding */
+  border-radius: 8px !important;
+}
+
+.laxcc-feature-icon {
+  font-size: 1.4rem !important;  /* Smaller icons */
+  margin-bottom: 8px !important;
+}
+
+.laxcc-feature-title {
+  font-size: 0.9rem !important;
+  margin-bottom: 4px !important;
+}
+
+.laxcc-feature-text {
+  font-size: 0.8rem !important;
+  line-height: 1.3 !important;
+}
+
+.laxcc-brand-header {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 14px !important;
+  margin-bottom: 18px !important;
+}
+
+.laxcc-brand-number {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 2.1rem !important;
+  font-weight: 500 !important;
+  color: #1D508A !important;
+  opacity: 0.55 !important;
+  min-width: auto !important;
+  line-height: 1 !important;
+  font-variant-numeric: tabular-nums !important;
+}
+
+.laxcc-brand-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 1.65rem !important;
+  font-weight: 500 !important;
+  color: #1a1a1a !important;
+  margin: 0 !important;
+  line-height: 1.15 !important;
+}
+
+.laxcc-brand-title a {
+  color: inherit !important;
+  text-decoration: none !important;
+  transition: color 0.2s !important;
+}
+
+.laxcc-brand-title a:hover {
+  color: var(--laxcc-primary) !important;
+}
+
+/* Seamless brand layout — no card containers, no inner cards */
+.laxcc-brand-content {
+  display: grid !important;
+  grid-template-columns: 220px 1fr !important;
+  gap: 28px !important;
+  align-items: start !important;
+}
+
+.laxcc-brand-image {
+  width: 100% !important;
+  max-width: 220px !important;
+  height: 220px !important;
+  border-radius: 10px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.laxcc-brand-data {
+  min-width: 0 !important;
+}
+
+/* Stats — inline definition list, no background, no inner card */
+.laxcc-brand-stats {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+  gap: 14px 20px !important;
+  margin: 0 0 14px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+.laxcc-stat-item {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+}
+
+.laxcc-stat-label {
+  font-size: 0.68rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  color: #888 !important;
+  margin-bottom: 0 !important;
+  font-weight: 600 !important;
+}
+
+.laxcc-stat-value {
+  font-size: 0.92rem !important;
+  font-weight: 500 !important;
+  color: #1a1a1a !important;
+  line-height: 1.3 !important;
+}
+
+/* Compact product list — tight, no oversized headings */
+.laxcc-product-details {
+  margin: 14px 0 0 !important;
+}
+
+.laxcc-details-section {
+  margin: 10px 0 0 !important;
+}
+
+.laxcc-details-title {
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+  color: #888 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+  margin-bottom: 6px !important;
+}
+
+/* Convert vertical bullet list to tight inline chips — ultra-compact */
+.laxcc-details-list {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+}
+
+.laxcc-details-list li {
+  margin: 0 !important;
+  padding: 4px 10px !important;
+  font-size: 0.8rem !important;
+  color: #444 !important;
+  background: rgba(0, 0, 0, 0.04) !important;
+  border-radius: 999px !important;
+  line-height: 1.3 !important;
+}
+
+.laxcc-brand-description {
+  font-size: 0.92rem !important;
+  line-height: 1.55 !important;
+  margin: 12px 0 0 !important;
+  color: #444 !important;
+}
+
+.laxcc-divider {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .laxcc-brand-showcase {
+    padding: 22px 18px !important;
+    margin: 14px auto !important;
+    border-radius: 16px !important;
+  }
+
+  .laxcc-brand-header {
+    flex-direction: row !important;
+    align-items: baseline !important;
+    text-align: left !important;
+    gap: 10px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .laxcc-brand-number {
+    font-size: 1.6rem !important;
+  }
+
+  .laxcc-brand-title {
+    font-size: 1.35rem !important;
+  }
+
+  .laxcc-brand-content {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .laxcc-brand-image {
+    max-width: 100% !important;
+    height: 180px !important;
+  }
+
+  .laxcc-brand-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px 16px !important;
+    padding: 0 !important;
+  }
+
+  .laxcc-details-list li {
+    font-size: 0.75rem !important;
+    padding: 3px 9px !important;
+  }
+
+  .laxcc-intro-title {
+    font-size: 2rem !important;
+  }
+  
+  .laxcc-intro-features {
+    grid-template-columns: 1fr !important;
+  }
+
+  .laxcc-intro-card {
+    padding: 20px 12px !important;
+  }
+  
+  .laxcc-intro-title {
+    font-size: 1.5rem !important;
+  }
+  
+  .laxcc-intro-subtitle {
+    font-size: 0.9rem !important;
+  }
+  
+  .laxcc-intro-features {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;  /* Allow stacking on very small screens */
+    gap: 8px !important;
+  }
+  
+  .laxcc-feature-item {
+    padding: 10px !important;
+  }
+  
+  .laxcc-feature-icon {
+    font-size: 1.2rem !important;
+  }
+  
+  .laxcc-feature-title {
+    font-size: 0.8rem !important;
+  }
+  
+  .laxcc-feature-text {
+    font-size: 0.75rem !important;
+  }
+
+  .laxcc-toc-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+    gap: 15px !important;
+    padding: 15px !important;
+  }
+  
+  .laxcc-toc-item img {
+    height: 120px !important;
+  }
+
+  .laxcc-brand-content {
+    flex-direction: column !important;
+  }
+
+  .laxcc-brand-image {
+    flex: 0 0 auto !important;
+    max-width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+/* Price — flat, no card, no border, just emphasis through color */
+.laxcc-stat-item[data-stat="price"] {
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+.laxcc-stat-item[data-stat="price"] .laxcc-stat-label {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  color: #888 !important;
+  font-weight: 600 !important;
+}
+
+.laxcc-stat-item[data-stat="price"] .laxcc-stat-label i {
+  font-size: 0.7rem !important;
+  color: #F89459 !important;
+}
+
+.laxcc-stat-item[data-stat="price"] .laxcc-stat-value {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #F89459 !important;
+}
+
+.laxcc-intro-card p {
+  font-size: 0.85rem !important;
+  max-width: 600px !important;
+  margin: 16px auto 0 !important;
+}
+
+.laxcc-intro-card a {
+  color: white !important;
+  text-decoration: underline !important;
+  transition: opacity 0.2s !important;
+}
+
+.laxcc-intro-card a:hover {
+  opacity: 0.8 !important;
+}
+
+@keyframes laxcc-gradientBG {
+  0% {
+    background-position: 0% 50% !important;
+  }
+  50% {
+    background-position: 100% 50% !important;
+  }
+  100% {
+    background-position: 0% 50% !important;
+  }
+}
+
+.laxcc-toc-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
+  gap: 20px !important;
+  padding: 20px !important;
+}
+
+.laxcc-toc-item {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  color: var(--laxcc-text) !important;
+  transition: transform 0.2s !important;
+  padding: 10px !important;
+  border-radius: 12px !important;
+  background: white !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+
+.laxcc-toc-item:hover {
+  transform: translateY(-5px) !important;
+}
+
+.laxcc-toc-item img {
+  width: 100% !important;
+  height: 150px !important;
+  object-fit: cover !important;
+  border-radius: 8px !important;
+  margin-bottom: 10px !important;
+}
+
+.laxcc-toc-number {
+  position: absolute !important;
+  top: 5px !important;
+  left: 5px !important;
+  background: var(--laxcc-primary) !important;
+  color: white !important;
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: bold !important;
+  font-size: 0.9rem !important;
+}
+
+.laxcc-toc-title {
+  font-weight: 600 !important;
+  text-align: center !important;
+  color: var(--laxcc-secondary) !important;
+}
+
+@media (max-width: 768px) {
+  .laxcc-toc-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+    gap: 15px !important;
+    padding: 15px !important;
+  }
+
+  .laxcc-toc-item img {
+    height: 120px !important;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   2025 HERO — Rotating brand ring, sticky scroll, editorial.
+   Clean white canvas. Serif headline. Brand-image carousel
+   that rotates on scroll. Self-contained under .laxcc-hero.
+   ════════════════════════════════════════════════════════════ */
+.laxcc-hero-scroll {
+  position: relative !important;
+  width: 100vw !important;                    /* full bleed past container padding */
+  margin-left: calc(50% - 50vw) !important;   /* break out of any parent gutter */
+  margin-right: calc(50% - 50vw) !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  height: 100vh !important; /* exactly viewport — no empty runway after unstick */
+  background: #ffffff !important;
+}
+.laxcc-hero {
+  position: relative !important;
+  width: 100% !important;
+  height: 100vh !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #ffffff !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  color: #111111 !important;
+}
+
+/* Rotating ring of brand product images */
+.laxcc-hero-ring {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 90vmin !important;
+  height: 90vmin !important;
+  transform: translate(-50%, -50%) rotate(0deg) !important;
+  border-radius: 50% !important;
+  z-index: 1 !important;
+  will-change: transform !important;
+}
+.laxcc-hero-ring img {
+  position: absolute !important;
+  top: calc(50% - clamp(70px, 14vmin, 220px) / 2) !important;
+  left: calc(50% - clamp(70px, 14vmin, 220px) / 2) !important;
+  width: clamp(70px, 14vmin, 220px) !important;
+  height: clamp(70px, 14vmin, 220px) !important;
+  object-fit: cover !important;
+  border-radius: clamp(10px, 2vw, 28px) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+  transform: rotate(calc(var(--i) * 36deg)) translateY(-45vmin) !important;
+}
+
+/* Center content over the ring */
+.laxcc-hero-content {
+  position: relative !important;
+  z-index: 10 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+}
+.laxcc-hero-center {
+  text-align: center !important;
+  width: 92% !important;
+  max-width: 760px !important;
+  padding: 3rem 1rem !important;
+  pointer-events: auto !important;
+  background: radial-gradient(circle at center,
+    rgba(255, 255, 255, 0.97) 0%,
+    rgba(255, 255, 255, 0.88) 45%,
+    rgba(255, 255, 255, 0) 75%) !important;
+  border-radius: 50% !important;
+}
+.laxcc-hero-eyebrow {
+  display: inline-block !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  color: #00AFC9 !important;
+  margin-bottom: 1.4rem !important;
+}
+.laxcc-hero h1 {
+  font-family: 'Playfair Display', 'Times New Roman', Georgia, serif !important;
+  font-size: clamp(2.2rem, 5vw, 4.3rem) !important;
+  line-height: 1.05 !important;
+  font-weight: 500 !important;
+  margin: 0 0 1rem !important;
+  color: #111111 !important;
+  letter-spacing: -0.01em !important;
+}
+.laxcc-hero h1 em {
+  font-style: italic !important;
+  color: #1D508A !important;
+  font-weight: 500 !important;
+}
+.laxcc-hero .laxcc-subtitle {
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem) !important;
+  color: #666666 !important;
+  margin: 0 auto 1.9rem !important;
+  font-weight: 300 !important;
+  line-height: 1.55 !important;
+  max-width: 580px !important;
+}
+.laxcc-hero a.laxcc-cta,
+.laxcc-hero a.laxcc-cta:link,
+.laxcc-hero a.laxcc-cta:visited {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background: #F89459 !important;
+  background-color: #F89459 !important;
+  color: #ffffff !important;
+  padding: clamp(0.85rem, 2vw, 1.05rem) clamp(1.7rem, 3vw, 2.1rem) !important;
+  border-radius: 50px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: clamp(0.9rem, 1.3vw, 1rem) !important;
+  letter-spacing: 0.01em !important;
+  transition: background 0.2s ease, transform 0.2s ease !important;
+  border: none !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  position: relative !important;
+  z-index: 20 !important;
+  box-shadow: 0 8px 24px rgba(248, 148, 89, 0.32) !important;
+}
+.laxcc-hero a.laxcc-cta:hover,
+.laxcc-hero a.laxcc-cta:focus,
+.laxcc-hero a.laxcc-cta:active {
+  background: #ef8345 !important;
+  background-color: #ef8345 !important;
+  transform: translateY(-2px) !important;
+  text-decoration: none !important;
+  color: #ffffff !important;
+}
+.laxcc-hero .laxcc-cta i {
+  transition: transform 0.2s ease !important;
+  font-size: 0.85em !important;
+}
+.laxcc-hero .laxcc-cta:hover i {
+  transform: translateX(3px) !important;
+}
+
+/* Trust strip — bottom-anchored, vertical hairline dividers */
+.laxcc-hero-features {
+  position: absolute !important;
+  bottom: 7vh !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  display: flex !important;
+  align-items: stretch !important;
+  width: 92% !important;
+  max-width: 980px !important;
+  z-index: 12 !important;
+  pointer-events: auto !important;
+  padding: 1.5rem 0 !important;
+  background: radial-gradient(ellipse at center,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 80%) !important;
+}
+.laxcc-feature {
+  flex: 1 !important;
+  padding: 0 1rem !important;
+  text-align: center !important;
+}
+.laxcc-feature:not(:last-child) {
+  border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+.laxcc-feature h3 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: clamp(1rem, 1.4vw, 1.2rem) !important;
+  font-weight: 500 !important;
+  margin: 0 0 0.3rem !important;
+  color: #1a1a1a !important;
+}
+.laxcc-feature p {
+  font-size: clamp(0.78rem, 1vw, 0.88rem) !important;
+  color: #666666 !important;
+  line-height: 1.5 !important;
+  font-weight: 300 !important;
+  margin: 0 !important;
+}
+
+/* Scroll cue */
+.laxcc-scroll-cue {
+  position: absolute !important;
+  bottom: 1.5vh !important;
+  left: 50% !important;
+  font-size: 0.7rem !important;
+  color: #999999 !important;
+  letter-spacing: 0.3em !important;
+  text-transform: uppercase !important;
+  z-index: 20 !important;
+  animation: laxcc-bounce 2.4s infinite !important;
+  pointer-events: none !important;
+  transform: translateX(-50%) !important;
+}
+@keyframes laxcc-bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+  40% { transform: translate(-50%, -8px); }
+  60% { transform: translate(-50%, -4px); }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  /* Let the hero flow naturally — no forced 100vh that traps the button under the trust strip */
+  .laxcc-hero-scroll {
+    height: auto !important;
+    min-height: auto !important;
+    background: #fbf8f2 !important;
+  }
+  .laxcc-hero {
+    height: auto !important;
+    min-height: auto !important;
+    display: block !important;
+    padding: 2rem 1.25rem 2.5rem !important;
+    background: #fbf8f2 !important;
+  }
+
+  /* Kill the rotating ring on mobile — it crashes through the headline and looks like clutter.
+     A static brand strip is cleaner and faster. */
+  .laxcc-hero-ring { display: none !important; }
+
+  /* Content stacks normally; no absolute overlay */
+  .laxcc-hero-content {
+    position: relative !important;
+    height: auto !important;
+    display: block !important;
+  }
+  .laxcc-hero-center {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    text-align: center !important;
+  }
+  .laxcc-hero-eyebrow {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.2em !important;
+    margin-bottom: 1rem !important;
+    color: #1D508A !important;
+  }
+  .laxcc-hero h1 {
+    font-size: clamp(2rem, 9vw, 2.7rem) !important;
+    line-height: 1.08 !important;
+    margin: 0 0 1rem !important;
+  }
+  .laxcc-hero .laxcc-subtitle {
+    font-size: 0.98rem !important;
+    line-height: 1.55 !important;
+    margin: 0 auto 1.75rem !important;
+    color: #555 !important;
+    max-width: 32ch !important;
+  }
+  .laxcc-hero a.laxcc-cta,
+  .laxcc-hero a.laxcc-cta:link,
+  .laxcc-hero a.laxcc-cta:visited {
+    width: 100% !important;
+    max-width: 360px !important;
+    justify-content: center !important;
+    padding: 1rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+
+  /* Trust strip becomes a clean card below the button — no overlap, real breathing room */
+  .laxcc-hero-features {
+    position: static !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 2.5rem auto 0 !important;
+    padding: 1.25rem 0.5rem !important;
+    background: #ffffff !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06) !important;
+    flex-wrap: wrap !important;
+    z-index: 1 !important;
+  }
+  .laxcc-feature {
+    flex: 1 1 50% !important;
+    padding: 0.9rem 0.75rem !important;
+    text-align: center !important;
+  }
+  .laxcc-feature h3 {
+    font-size: 0.95rem !important;
+    margin: 0 0 0.25rem !important;
+  }
+  .laxcc-feature p {
+    font-size: 0.78rem !important;
+    line-height: 1.4 !important;
+  }
+  .laxcc-feature:not(:last-child) { border-right: none !important; }
+  .laxcc-feature:nth-child(odd)   { border-right: 1px solid rgba(0,0,0,0.07) !important; }
+  .laxcc-feature:nth-child(-n+2)  { border-bottom: 1px solid rgba(0,0,0,0.07) !important; padding-bottom: 1rem !important; }
+  .laxcc-feature:nth-child(n+3)   { padding-top: 1rem !important; }
+  .laxcc-scroll-cue { display: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laxcc-hero-ring { transition: none !important; }
+  .laxcc-scroll-cue { animation: none !important; }
+}
+
+/* ════════════════════════════════════════════════════════════
+   STRONGEST DABS — Live product feed section
+   Sits below the hero, above the brand TOC.
+   ════════════════════════════════════════════════════════════ */
+.laxcc-strongest {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 32px auto !important;
+  padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 48px) !important;
+  border-radius: 20px !important;
+  background: #ffffff !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  color: var(--laxcc-text) !important;
+}
+
+.laxcc-strongest-eyebrow {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #c44a1a !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 14px !important;
+}
+.laxcc-strongest-eyebrow i {
+  font-size: 0.9rem !important;
+  color: #ff6b6b !important;
+}
+
+.laxcc-strongest-title {
+  font-size: clamp(1.7rem, 3.5vw, 2.6rem) !important;
+  line-height: 1.12 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 0 14px !important;
+  color: var(--laxcc-secondary) !important;
+}
+.laxcc-strongest-title span {
+  background: linear-gradient(135deg, #ff8a4c 0%, #ff6b6b 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.laxcc-strongest-intro {
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+  color: #4a5560 !important;
+  max-width: 760px !important;
+  margin: 0 0 28px !important;
+}
+.laxcc-strongest-intro strong {
+  color: var(--laxcc-secondary) !important;
+  font-weight: 700 !important;
+}
+
+.laxcc-strongest-products {
+  margin-top: 8px !important;
+}
+
+@media (max-width: 768px) {
+  .laxcc-strongest {
+    margin: 16px !important;
+    border-radius: 16px !important;
+    padding: 28px 20px !important;
+  }
+  .laxcc-strongest-eyebrow { font-size: 0.7rem !important; }
+  .laxcc-strongest-intro { font-size: 0.98rem !important; }
+}
+
+</style>
+
+<!-- Google Fonts for hero -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+
+<!-- 2025 Hero — Rotating brand ring with sticky scroll -->
+<div class="laxcc-hero-scroll" id="laxccHeroScroll">
+  <section class="laxcc-hero" aria-labelledby="laxccHeroTitle">
+
+    <!-- Rotating ring of the 10 brand product images -->
+    <div class="laxcc-hero-ring" id="laxccHeroRing" aria-hidden="true">
+      <img src="https://images.dutchie.com/626a36e553ba520d2305f107418d11ab" alt="" style="--i: 0;" loading="eager">
+      <img src="https://images.dutchie.com/fe121b7725ed70bcde68275b75db695f" alt="" style="--i: 1;" loading="eager">
+      <img src="https://images.dutchie.com/8b1476b0cce7bc40d140e775fc2c7dd5" alt="" style="--i: 2;" loading="eager">
+      <img src="https://images.dutchie.com/266b5d2de29f07fa197e26358e6cdd07" alt="" style="--i: 3;" loading="eager">
+      <img src="https://images.dutchie.com/148538cd0be014736896eaf7748b2986" alt="" style="--i: 4;" loading="eager">
+      <img src="https://images.dutchie.com/8c3a84af7a3e3447be38b5c60f66fea2" alt="" style="--i: 5;" loading="eager">
+      <img src="https://images.dutchie.com/73d30da0f4b4ec56c500f4898eec93af" alt="" style="--i: 6;" loading="eager">
+      <img src="https://images.dutchie.com/d139f76dc41df6d701c5bb95752e027f" alt="" style="--i: 7;" loading="eager">
+      <img src="https://images.dutchie.com/2278a539d53ce4226da0bed971d226d9" alt="" style="--i: 8;" loading="eager">
+      <img src="https://images.dutchie.com/f323edda58962b57d22f541b168264df" alt="" style="--i: 9;" loading="eager">
+    </div>
+
+    <!-- Center content -->
+    <div class="laxcc-hero-content">
+      <div class="laxcc-hero-center">
+        <span class="laxcc-hero-eyebrow">Updated for 2026 · LAX Cannabis Club</span>
+        <h1 id="laxccHeroTitle">
+          The 10 Best THC <em>Concentrates</em><br>in Los Angeles
+        </h1>
+        <p class="laxcc-subtitle">
+          Lab-tested live rosin, live resin, hash, and diamonds — ranked by potency, terps, and what's flying off our shelves in LA right now.
+        </p>
+        <a class="laxcc-cta" href="https://laxcc.com/categories/concentrates/"
+           aria-label="Shop concentrates at LAX Cannabis Club">
+          Shop LA Concentrates
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Trust strip -->
+    <div class="laxcc-hero-features">
+      <div class="laxcc-feature">
+        <h3>Lab Tested</h3>
+        <p>Verified potency &amp; purity</p>
+      </div>
+      <div class="laxcc-feature">
+        <h3>Local LA Licensed</h3>
+        <p>Born &amp; grown in Los Angeles</p>
+      </div>
+      <div class="laxcc-feature">
+        <h3>4.9★ Rated</h3>
+        <p>800+ verified LA reviews</p>
+      </div>
+      <div class="laxcc-feature">
+        <h3>Same-Day Pickup</h3>
+        <p>Order online, ready in 30 min</p>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="laxcc-scroll-cue">Scroll</div>
+
+  </section>
+</div>
+
+<script>
+(function(){
+  // Scroll-driven ring rotation. Smooth lerp toward target rotation
+  // computed from how far the hero has been scrolled past.
+  var ring    = document.getElementById('laxccHeroRing');
+  var wrapper = document.getElementById('laxccHeroScroll');
+  if (!ring || !wrapper) return;
+
+  var target = 0, current = 0, raf = null;
+  var SPEED = 0.25;   // degrees per pixel scrolled (tuned for 30vh runway)
+  var EASE  = 0.1;    // lerp factor (smoothing)
+
+  function recompute() {
+    var rect = wrapper.getBoundingClientRect();
+    // px scrolled past the wrapper's top edge
+    target = Math.max(0, -rect.top) * SPEED;
+  }
+
+  function tick() {
+    current += (target - current) * EASE;
+    ring.style.transform = 'translate(-50%, -50%) rotate(' + current.toFixed(3) + 'deg)';
+    raf = requestAnimationFrame(tick);
+  }
+
+  window.addEventListener('scroll', recompute, { passive: true });
+  window.addEventListener('resize', recompute, { passive: true });
+  recompute();
+  tick();
+})();
+</script>
+
+<!-- Strongest Dabs in LA — live shortcode-driven feed -->
+<section class="laxcc-strongest" aria-labelledby="laxcc-strongest-title">
+  <div class="laxcc-strongest-eyebrow">
+    <i class="fas fa-fire" aria-hidden="true"></i>
+    Live Inventory · Sorted by Potency
+  </div>
+  <h2 id="laxcc-strongest-title" class="laxcc-strongest-title">
+    The Strongest Dabs <span>for Sale in Los Angeles</span>
+  </h2>
+  <p class="laxcc-strongest-intro">
+    Before we get into our top 10 brand recommendations overall, here's our full live concentrate menu — pulled straight from our LA shop floor and sorted by THC potency. Real-time availability and pricing, updated as products move. Browse the heavy hitters first, then read on for the curated brand breakdown below.
+  </p>
+  <div class="laxcc-strongest-products">
+    [leafbridge_specific_product_filter category="CONCENTRATES" sort="POTENCY_DESC" count="20"]
+  </div>
+</section>
+
+<!-- Table of Contents -->
+<div class="laxcc-brand-showcase">
+  <div class="laxcc-toc-grid">
+    <a href="#west-coast-cure" class="laxcc-toc-item">
+      <img src="https://images.dutchie.com/f323edda58962b57d22f541b168264df" alt="West Coast Cure">
+      <span class="laxcc-toc-number">10</span>
+      <span class="laxcc-toc-title">West Coast Cure</span>
+    </a>
+    <a href="#pistil-whip" class="laxcc-toc-item">
+      <img src="https://images.dutchie.com/2278a539d53ce4226da0bed971d226d9" alt="Pistil Whip">
+      <span class="laxcc-toc-number">9</span>
+      <span class="laxcc-toc-title">Pistil Whip</span>
+    </a>
+    <a href="#nasha" class="laxcc-toc-item">
+      <img src="https://images.dutchie.com/d139f76dc41df6d701c5bb95752e027f" alt="Nasha">
+      <span class="laxcc-toc-number">8</span>
+      <span class="laxcc-toc-title">Nasha</span>
+    </a>
+    <a href="#mountain-man-melts" class="laxcc-toc-item">
+      <img src="https://images.dutchie.com/73d30da0f4b4ec56c500f4898eec93af" alt="Mountain Man Melts">
+      <span class="laxcc-toc-number">7</span>
+      <span class="laxcc-toc-title">Mountain Man Melts</span>
+    </a>
+    <a href="#seed-junky" class="laxcc-toc-item">
+      <img src="https://images.dutchie.com/8c3a84af7a3e3447be38b5c60f66fea2" alt="Seed Junky">
+      <span class="laxcc-toc-number">6</span>
+      <span class="laxcc-toc-title">Seed Junky</span>
+    </a>
+    <a href="#bloom" class="laxcc-toc-item">
+      <img src="https://images.dutchie.com/148538cd0be014736896eaf7748b2986" alt="Bloom">
+      <span class="laxcc-toc-number">5</span>
+      <span class="laxcc-toc-title">Bloom</span>
+    </a>
+    <a href="#cannabiotix" class="laxcc-toc-item">
+      <img src="https://images.dutchie.com/266b5d2de29f07fa197e26358e6cdd07" alt="Cannabiotix">
+      <span class="laxcc-toc-number">4</span>
+      <span class="laxcc-toc-title">Cannabiotix</span>
+    </a>
+    <a href="#710-labs" class="laxcc-toc-item">
+      <img src="https://images.dutchie.com/8b1476b0cce7bc40d140e775fc2c7dd5" alt="710 Labs">
+      <span class="laxcc-toc-number">3</span>
+      <span class="laxcc-toc-title">710 Labs</span>
+    </a>
+    <a href="#stiiizy" class="laxcc-toc-item">
+      <img src="https://images.dutchie.com/fe121b7725ed70bcde68275b75db695f" alt="Stiiizy">
+      <span class="laxcc-toc-number">2</span>
+      <span class="laxcc-toc-title">Stiiizy</span>
+    </a>
+    <a href="#raw-garden" class="laxcc-toc-item">
+      <img src="https://images.dutchie.com/626a36e553ba520d2305f107418d11ab" alt="Raw Garden">
+      <span class="laxcc-toc-number">1</span>
+      <span class="laxcc-toc-title">Raw Garden</span>
+    </a>
+  </div>
+</div>
+
+<!-- Brand Showcase Sections -->
+<!-- Repeat the structure below for each brand, ensuring unique IDs and updated class names -->
+
+<!-- Example: West Coast Cure -->
+<div class="laxcc-brand-showcase" id="west-coast-cure">
+  <div class="laxcc-brand-header">
+    <span class="laxcc-brand-number">10</span>
+    <h2 class="laxcc-brand-title">
+      <a href="https://laxcc.com/categories/concentrates/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=CONCENTRATES&brands=12bf51c6-d7f0-414c-997e-9c0af5c0f15d">West Coast Cure</a>
+    </h2>
+  </div>
+  
+  <div class="laxcc-brand-content">
+    <img class="laxcc-brand-image" src="https://images.dutchie.com/f323edda58962b57d22f541b168264df" alt="West Coast Cure Product Image" />
+    
+    <div class="laxcc-brand-data">
+      <div class="laxcc-brand-stats">
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Product Range</span>
+          <span class="laxcc-stat-value">Live Rosin, Live Resin</span>
+        </div>
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Specialties</span>
+          <span class="laxcc-stat-value">Diamonds & Sauce</span>
+        </div>
+        <div class="laxcc-stat-item" data-stat="price">
+          <span class="laxcc-stat-label">
+            <i class="fas fa-tag"></i>
+            Price Range
+          </span>
+          <span class="laxcc-stat-value">$20-$30</span>
+        </div>
+      </div>
+    
+      <div class="laxcc-product-details">
+        <div class="laxcc-details-section">
+          <h3 class="laxcc-details-title">Product Line</h3>
+          <ul class="laxcc-details-list">
+            <li>Live Rosin Diamonds</li>
+            <li>Live Rosin Fresh Press</li>
+            <li>Live Rosin Cold Cure Badder</li>
+            <li>Live Resin Diamonds</li>
+            <li>Live Resin Sauce</li>
+            <li>Wet Badder</li>
+            <li>Sugar</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Repeat similar blocks for Pistil Whip, Nasha, Mountain Man Melts, Seed Junky, Bloom, Cannabiotix, 710 Labs, Stiiizy, and Raw Garden -->
+
+<!-- Example: Pistil Whip -->
+<div class="laxcc-brand-showcase" id="pistil-whip">
+  <div class="laxcc-brand-header">
+    <span class="laxcc-brand-number">9</span>
+    <h2 class="laxcc-brand-title">
+      <a href="https://laxcc.com/categories/concentrates/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=CONCENTRATES&brands=0e51657c-f1dd-4f4e-8b43-1a3307f6c6b3">Pistil Whip</a>
+    </h2>
+  </div>
+  
+  <div class="laxcc-brand-content">
+    <img class="laxcc-brand-image" src="https://images.dutchie.com/2278a539d53ce4226da0bed971d226d9" alt="Pistil Whip Product Image" />
+    
+    <div class="laxcc-brand-data">
+      <div class="laxcc-brand-stats">
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Production Type</span>
+          <span class="laxcc-stat-value">Small Batch</span>
+        </div>
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Method</span>
+          <span class="laxcc-stat-value">Solventless</span>
+        </div>
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Focus</span>
+          <span class="laxcc-stat-value">Quality & Purity</span>
+        </div>
+        <div class="laxcc-stat-item" data-stat="price">
+          <span class="laxcc-stat-label">
+            <i class="fas fa-tag"></i>
+            Price Range
+          </span>
+          <span class="laxcc-stat-value">$60</span>
+        </div>
+      </div>
+    
+      <div class="laxcc-brand-description">
+        Pistil Whip specializes in small batch, solventless cannabis concentrates. Their limited production approach ensures careful attention to each batch, resulting in optimally potent and pure products that capture the true essence of the cannabis plant.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Brand Showcase: Nasha -->
+<div class="laxcc-brand-showcase" id="nasha">
+  <div class="laxcc-brand-header">
+    <span class="laxcc-brand-number">8</span>
+    <h2 class="laxcc-brand-title">
+      <a href="https://laxcc.com/categories/concentrates/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=CONCENTRATES&brands=5a6c9437-6e8d-4d27-9ee3-da74ee71a652">Nasha</a>
+    </h2>
+  </div>
+  
+  <div class="laxcc-brand-content">
+    <img class="laxcc-brand-image" src="https://images.dutchie.com/d139f76dc41df6d701c5bb95752e027f" alt="Nasha Product Image" />
+    
+    <div class="laxcc-brand-data">
+      <div class="laxcc-brand-stats">
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Origin</span>
+          <span class="laxcc-stat-value">Humboldt County</span>
+        </div>
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Extraction Method</span>
+          <span class="laxcc-stat-value">Mountain Water Process</span>
+        </div>
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Product Type</span>
+          <span class="laxcc-stat-value">Solventless Concentrates</span>
+        </div>
+        <div class="laxcc-stat-item" data-stat="price">
+          <span class="laxcc-stat-label">
+            <i class="fas fa-tag"></i>
+            Price Range
+          </span>
+          <span class="laxcc-stat-value">$20-$35</span>
+        </div>
+      </div>
+    
+      <div class="laxcc-brand-description">
+        Nasha, Sanskrit for "state of transformed consciousness," is California's premier hash brand. Their unique mountain water extraction process and deep connection to India's hash-making traditions set them apart in the concentrate market.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Brand Showcase: Mountain Man Melts -->
+<div class="laxcc-brand-showcase" id="mountain-man-melts">
+  <div class="laxcc-brand-header">
+    <span class="laxcc-brand-number">7</span>
+    <h2 class="laxcc-brand-title">
+      <a href="https://laxcc.com/categories/concentrates/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=CONCENTRATES&brands=1abe0a21-6ab3-4f62-8034-5c9200969949">Mountain Man Melts</a>
+    </h2>
+  </div>
+  
+  <div class="laxcc-brand-content">
+    <img class="laxcc-brand-image" src="https://images.dutchie.com/73d30da0f4b4ec56c500f4898eec93af" alt="Mountain Man Melts Product Image" />
+    
+    <div class="laxcc-brand-data">
+      <div class="laxcc-brand-stats">
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Specialties</span>
+          <span class="laxcc-stat-value">Rosin, Live Rosin</span>
+        </div>
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Notable Strains</span>
+          <span class="laxcc-stat-value">Papaya, Lemon OG</span>
+        </div>
+        <div class="laxcc-stat-item" data-stat="price">
+          <span class="laxcc-stat-label">
+            <i class="fas fa-tag"></i>
+            Price Range
+          </span>
+          <span class="laxcc-stat-value">$65.00</span>
+        </div>
+      </div>
+    
+      <div class="laxcc-brand-description">
+        Mountain Man Melts is celebrated for producing high-quality cannabis concentrates, with a special focus on rosin and live rosin products. Their commitment to quality shines through in their solventless concentrates that perfectly capture the natural flavors and effects of the cannabis plant.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Brand Showcase: Seed Junky -->
+<div class="laxcc-brand-showcase" id="seed-junky">
+  <div class="laxcc-brand-header">
+    <span class="laxcc-brand-number">6</span>
+    <h2 class="laxcc-brand-title">
+      <a href="https://laxcc.com/product/shop-cannabis-lax_seed-junky-pineapple-fruz-rosin/">Seed Junky</a>
+    </h2>
+  </div>
+  
+  <div class="laxcc-brand-content">
+    <img class="laxcc-brand-image" src="https://images.dutchie.com/8c3a84af7a3e3447be38b5c60f66fea2" alt="Seed Junky Pineapple Fruz Rosin" />
+    
+    <div class="laxcc-brand-data">
+      <div class="laxcc-brand-stats">
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Product Type</span>
+          <span class="laxcc-stat-value">Pineapple Fruz Rosin</span>
+        </div>
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">THC Content</span>
+          <span class="laxcc-stat-value">79.14%</span>
+        </div>
+        <div class="laxcc-stat-item" data-stat="price">
+          <span class="laxcc-stat-label">
+            <i class="fas fa-tag"></i>
+            Price Range
+          </span>
+          <span class="laxcc-stat-value">$50/1g</span>
+        </div>
+      </div>
+    
+      <div class="laxcc-product-details">
+        <div class="laxcc-details-section">
+          <h3 class="laxcc-details-title">Cannabinoid Profile</h3>
+          <ul class="laxcc-details-list">
+            <li>THC-D9: 74.9%</li>
+            <li>THCA: 817 mg/g</li>
+            <li>CBN: 2.86%</li>
+            <li>CBG: 0.31%</li>
+          </ul>
+        </div>
+        
+        <div class="laxcc-details-section">
+          <h3 class="laxcc-details-title">Flavor Profile</h3>
+          <ul class="laxcc-details-list">
+            <li>Sweet tropical pineapple notes</li>
+            <li>Earthy and refreshing pine undertones</li>
+            <li>Subtle diesel aroma</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Brand Showcase: Bloom -->
+<div class="laxcc-brand-showcase" id="bloom">
+  <div class="laxcc-brand-header">
+    <span class="laxcc-brand-number">5</span>
+    <h2 class="laxcc-brand-title">
+      <a href="https://laxcc.com/product/shop-cannabis-lax_bloom-grape-gas-live-budder/">Bloom</a>
+    </h2>
+  </div>
+  
+  <div class="laxcc-brand-content">
+    <img class="laxcc-brand-image" src="https://images.dutchie.com/148538cd0be014736896eaf7748b2986" alt="Bloom Grape Gas Live Budder" />
+    
+    <div class="laxcc-brand-data">
+      <div class="laxcc-brand-stats">
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Featured Product</span>
+          <span class="laxcc-stat-value">Grape Gas Live Budder</span>
+        </div>
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">THC Content</span>
+          <span class="laxcc-stat-value">85.41%</span>
+        </div>
+        <div class="laxcc-stat-item" data-stat="price">
+          <span class="laxcc-stat-label">
+            <i class="fas fa-tag"></i>
+            Price Range
+          </span>
+          <span class="laxcc-stat-value">$30/1g</span>
+        </div>
+      </div>
+    
+      <div class="laxcc-product-details">
+        <div class="laxcc-details-section">
+          <h3 class="laxcc-details-title">Product Profile</h3>
+          <ul class="laxcc-details-list">
+            <li>Sweet, fruity, berry grape flavor</li>
+            <li>Pungent gasoline and fuel notes</li>
+            <li>Dominant terpenes: Myrcene, Caryophyllene, Limonene</li>
+            <li>Relaxing Indica effects</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Brand Showcase: Cannabiotix -->
+<div class="laxcc-brand-showcase" id="cannabiotix">
+  <div class="laxcc-brand-header">
+    <span class="laxcc-brand-number">4</span>
+    <h2 class="laxcc-brand-title">
+      <a href="https://laxcc.com/categories/concentrates/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=CONCENTRATES&brands=505217fb-f296-4c6d-8b26-d74b46aa2b9a">Cannabiotix</a>
+    </h2>
+  </div>
+  
+  <div class="laxcc-brand-content">
+    <img class="laxcc-brand-image" src="https://images.dutchie.com/266b5d2de29f07fa197e26358e6cdd07" alt="Cannabiotix Product Image" />
+    
+    <div class="laxcc-brand-data">
+      <div class="laxcc-brand-stats">
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Location</span>
+          <span class="laxcc-stat-value">California & Nevada</span>
+        </div>
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Extraction Method</span>
+          <span class="laxcc-stat-value">Hydrocarbon</span>
+        </div>
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Known For</span>
+          <span class="laxcc-stat-value">Award-winning Strains</span>
+        </div>
+        <div class="laxcc-stat-item" data-stat="price">
+          <span class="laxcc-stat-label">
+            <i class="fas fa-tag"></i>
+            Price Range
+          </span>
+          <span class="laxcc-stat-value">$55-$65</span>
+        </div>
+      </div>
+    
+      <div class="laxcc-brand-description">
+        Cannabiotix specializes in premium cannabis products with unique in-house genetics. Their hydrocarbon extraction method ensures high-quality, single-sourced concentrates that maintain the integrity of their exclusive strains.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Brand Showcase: 710 Labs -->
+<div class="laxcc-brand-showcase" id="710-labs">
+  <div class="laxcc-brand-header">
+    <span class="laxcc-brand-number">3</span>
+    <h2 class="laxcc-brand-title">
+      <a href="https://laxcc.com/categories/concentrates/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=CONCENTRATES&brands=ef96572a-2030-4b58-9504-5b98a7bd9c7e">710 Labs</a>
+    </h2>
+  </div>
+  
+  <div class="laxcc-brand-content">
+    <img class="laxcc-brand-image" src="https://images.dutchie.com/8b1476b0cce7bc40d140e775fc2c7dd5" alt="710 Labs Product Image" />
+    
+    <div class="laxcc-brand-data">
+      <div class="laxcc-brand-stats">
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Established</span>
+          <span class="laxcc-stat-value">2010</span>
+        </div>
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Extraction Methods</span>
+          <span class="laxcc-stat-value">Solventless & Solvent-based</span>
+        </div>
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Specialties</span>
+          <span class="laxcc-stat-value">Water Hash, Live Rosin</span>
+        </div>
+        <div class="laxcc-stat-item" data-stat="price">
+          <span class="laxcc-stat-label">
+            <i class="fas fa-tag"></i>
+            Price Range
+          </span>
+          <span class="laxcc-stat-value">$70-$90</span>
+        </div>
+      </div>
+    
+      <div class="laxcc-brand-description">
+        710 Labs focuses on producing high-quality cannabis concentrates using both solventless and solvent-based extraction methods. Their innovative processes preserve the plant's rich flavors and natural properties.
+      </div>
+    
+      <div class="laxcc-product-details">
+        <div class="laxcc-details-section">
+          <h3 class="laxcc-details-title">Product Range</h3>
+          <ul class="laxcc-details-list">
+            <li>Water Hash</li>
+            <li>Live Rosin</li>
+            <li>Live Resin Sauce</li>
+            <li>Live Resin Sugar</li>
+            <li>Live Resin Badder</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Brand Showcase: Stiiizy -->
+<div class="laxcc-brand-showcase" id="stiiizy">
+  <div class="laxcc-brand-header">
+    <span class="laxcc-brand-number">2</span>
+    <h2 class="laxcc-brand-title">
+      <a href="https://laxcc.com/categories/concentrates/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=CONCENTRATES&brands=1cebe6f5-bab2-4f15-a50a-9730fee79de4">Stiiizy</a>
+    </h2>
+  </div>
+  
+  <div class="laxcc-brand-content">
+    <img class="laxcc-brand-image" src="https://images.dutchie.com/fe121b7725ed70bcde68275b75db695f" alt="Stiiizy Curated Live Resin" />
+    
+    <div class="laxcc-brand-data">
+      <div class="laxcc-brand-stats">
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Specialties</span>
+          <span class="laxcc-stat-value">Curated Live Resin, Live Rosin</span>
+        </div>
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Extraction Method</span>
+          <span class="laxcc-stat-value">Solventless</span>
+        </div>
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Product Range</span>
+          <span class="laxcc-stat-value">Live Resin Diamonds, Live Rosin</span>
+        </div>
+      </div>
+    
+      <div class="laxcc-brand-description">
+        STIIIZY specializes in high-quality, solventless cannabis concentrates. Their products preserve the full spectrum of cannabinoids and flavors, offering users a potent and authentic cannabis experience.
+      </div>
+    
+      <div class="laxcc-product-details">
+        <div class="laxcc-details-section">
+          <h3 class="laxcc-details-title">Extraction Methods</h3>
+          <ul class="laxcc-details-list">
+            <li>Heat and pressure techniques</li>
+            <li>Cold water extraction</li>
+            <li>Natural terpene preservation</li>
+            <li>Chemical-free processing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Brand Showcase: Raw Garden -->
+<div class="laxcc-brand-showcase" id="raw-garden">
+  <div class="laxcc-brand-header">
+    <span class="laxcc-brand-number">1</span>
+    <h2 class="laxcc-brand-title">
+      <a href="https://laxcc.com/categories/concentrates/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=CONCENTRATES&brands=bbdf26e3-c442-4346-898a-9dc657ff3acb">Raw Garden</a>
+    </h2>
+  </div>
+  
+  <div class="laxcc-brand-content">
+    <img class="laxcc-brand-image" src="https://images.dutchie.com/626a36e553ba520d2305f107418d11ab" alt="Raw Garden Product Image" />
+    
+    <div class="laxcc-brand-data">
+      <div class="laxcc-brand-stats">
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Product Type</span>
+          <span class="laxcc-stat-value">Live Resin, Refined Live Resin™ Diamonds</span>
+        </div>
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Source</span>
+          <span class="laxcc-stat-value">100% Cannabis, No Additives</span>
+        </div>
+        <div class="laxcc-stat-item">
+          <span class="laxcc-stat-label">Growing Method</span>
+          <span class="laxcc-stat-value">Sustainable Farming</span>
+        </div>
+        <div class="laxcc-stat-item" data-stat="price">
+          <span class="laxcc-stat-label">
+            <i class="fas fa-tag"></i>
+            Price Range
+          </span>
+          <span class="laxcc-stat-value">$25-$45</span>
+        </div>
+      </div>
+    
+      <div class="laxcc-brand-description">
+        Raw Garden is renowned for its premium, all-natural cannabis concentrates. Their products are made from 100% cannabis without additives, highlighting their commitment to purity and quality. They utilize an innovative process for their Refined Live Resin, removing impurities to enhance potency and flavor.
+      </div>
+    
+      <div class="laxcc-product-details">
+        <div class="laxcc-details-section">
+          <h3 class="laxcc-details-title">Key Features</h3>
+          <ul class="laxcc-details-list">
+            <li>Premium quality, all-natural concentrates</li>
+            <li>Innovative Refined Live Resin™ process</li>
+            <li>Sustainably grown on dedicated farms</li>
+            <li>Rigorous testing standards</li>
+            <li>Pure cannabis extracts with no additives</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

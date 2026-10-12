@@ -1,0 +1,1068 @@
+<!-- SEO META — paste into Yoast/RankMath for this page -->
+<!-- Title: Dispensary Near El Segundo | LAXCC — 8 Min From Main St -->
+<!-- Description: LAXCC is the closest licensed dispensary to El Segundo, CA — just 3 miles up Lincoln Blvd. 100+ brands, daily deals, express pickup. Open 9 AM – 9:30 PM daily. -->
+<meta name="description"
+      content="LAXCC is the closest licensed dispensary to El Segundo — 3 miles, 8 min up Lincoln Blvd. 100+ brands, 1,000+ products, express pickup. Open daily 9 AM – 9:30 PM.">
+
+<style>
+  /* ════════════════════════════════════════════════════════════
+     El Segundo page — matches sofi/culver/manhattan/habitat design.
+     Scoped under .elseg-wrap. Embedded in Elementor/WP.
+     No JS — FAQ uses native <details>/<summary>.
+     Colors: navy #1D508A, cyan #00AFC9, orange #F89459 (CTAs).
+     ════════════════════════════════════════════════════════════ */
+  .elseg-wrap {
+    --e-bg: #fbf8f2;
+    --e-surface: #ffffff;
+    --e-navy: #1D508A;
+    --e-navy-dark: #143b6b;
+    --e-cyan: #00AFC9;
+    --e-cyan-dark: #008fa4;
+    --e-accent: #F89459;
+    --e-accent-dark: #ef8345;
+    --e-text: #0f172a;
+    --e-text-muted: #64748b;
+    --e-radius: 16px;
+    --e-radius-lg: 22px;
+    --e-shadow: 0 8px 24px -6px rgba(15, 23, 42, 0.08);
+    --e-shadow-hover: 0 14px 36px -8px rgba(15, 23, 42, 0.14);
+    --e-font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+    font-family: var(--e-font) !important;
+    background: var(--e-bg) !important;
+    color: var(--e-text) !important;
+    padding: clamp(1rem, 2.5vw, 2rem) !important;
+    line-height: 1.5 !important;
+    box-sizing: border-box !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
+  .elseg-wrap *,
+  .elseg-wrap *::before,
+  .elseg-wrap *::after { box-sizing: inherit !important; }
+  .elseg-wrap p,
+  .elseg-wrap h1,
+  .elseg-wrap h2,
+  .elseg-wrap h3,
+  .elseg-wrap h4,
+  .elseg-wrap ul,
+  .elseg-wrap ol { margin: 0; padding: 0; }
+  .elseg-wrap ul { list-style: none; }
+
+  .elseg-shell { max-width: 1400px; margin: 0 auto; }
+
+  /* ─── HERO UNIT ─── */
+  .elseg-hero-unit {
+    background: var(--e-surface);
+    border-radius: var(--e-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--e-shadow);
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: stretch;
+  }
+
+  .elseg-hero-img {
+    position: relative;
+    min-height: 100%;
+    background-image: url('https://laxcc.com/wp-content/uploads/2025/06/best-cannabis-store-Los-Angeles-scaled.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #1a1f2b;
+  }
+
+  .elseg-hero-content {
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    display: flex;
+    align-items: center;
+  }
+
+  .elseg-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 100%;
+  }
+  .elseg-stack > * { margin: 0; }
+
+  /* Hours pill */
+  .elseg-hours {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.4rem 0.85rem 0.4rem 0.55rem;
+    background: rgba(34, 197, 94, 0.1);
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--e-text);
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    max-width: 100%;
+  }
+  .elseg-hours > * { white-space: nowrap; flex-shrink: 0; }
+  .elseg-hours .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+    flex: 0 0 8px;
+    animation: elsegPulse 2.4s ease-in-out infinite;
+  }
+  .elseg-hours .label {
+    font-size: 0.65rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: #15803d;
+  }
+  .elseg-hours .sep { width: 1px; height: 11px; background: rgba(15, 23, 42, 0.14); }
+  .elseg-hours .time { font-variant-numeric: tabular-nums; }
+  .elseg-hours .days { font-size: 0.72rem; color: var(--e-text-muted); font-weight: 500; }
+  @keyframes elsegPulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18); }
+    50%      { box-shadow: 0 0 0 7px rgba(34, 197, 94, 0.06); }
+  }
+
+  /* Eyebrow */
+  .elseg-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--e-cyan-dark);
+  }
+  .elseg-eyebrow .pin {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--e-cyan);
+  }
+
+  /* Headline */
+  .elseg-h1 {
+    font-size: clamp(1.85rem, 3.8vw, 3rem);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    color: var(--e-navy);
+    margin: 0;
+  }
+  .elseg-h1 .accent {
+    background: linear-gradient(120deg, var(--e-cyan) 0%, var(--e-navy) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .elseg-desc {
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.6;
+    color: var(--e-text-muted);
+    max-width: 56ch;
+  }
+  .elseg-desc strong { color: var(--e-text); font-weight: 700; }
+
+  /* CTA row */
+  .elseg-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.25rem;
+  }
+  .elseg-wrap a.elseg-btn,
+  .elseg-wrap a.elseg-btn:link,
+  .elseg-wrap a.elseg-btn:visited {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    padding: 0.85rem 1.35rem !important;
+    border-radius: 100px !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease !important;
+    border: none !important;
+    line-height: 1 !important;
+  }
+  .elseg-wrap a.elseg-btn--primary,
+  .elseg-wrap a.elseg-btn--primary:link,
+  .elseg-wrap a.elseg-btn--primary:visited {
+    background: var(--e-accent) !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 16px -4px rgba(248, 148, 89, 0.45) !important;
+  }
+  .elseg-wrap a.elseg-btn--primary:hover,
+  .elseg-wrap a.elseg-btn--primary:focus,
+  .elseg-wrap a.elseg-btn--primary:active {
+    background: var(--e-accent-dark) !important;
+    transform: translateY(-2px) !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 24px -4px rgba(248, 148, 89, 0.55) !important;
+  }
+  .elseg-wrap a.elseg-btn--ghost,
+  .elseg-wrap a.elseg-btn--ghost:link,
+  .elseg-wrap a.elseg-btn--ghost:visited {
+    background: transparent !important;
+    color: var(--e-text) !important;
+    box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.15) !important;
+  }
+  .elseg-wrap a.elseg-btn--ghost:hover {
+    background: rgba(15, 23, 42, 0.04) !important;
+    transform: translateY(-2px) !important;
+    color: var(--e-text) !important;
+  }
+  .elseg-btn svg { display: block; }
+
+  /* ─── TRUST STRIP ─── */
+  .elseg-trust {
+    background: var(--e-surface);
+    border-radius: var(--e-radius);
+    box-shadow: var(--e-shadow);
+    margin-top: 0.85rem;
+    padding: 1rem 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .elseg-trust-item {
+    padding: 0.4rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .elseg-trust-item + .elseg-trust-item {
+    border-left: 1px solid rgba(15, 23, 42, 0.08);
+  }
+  .elseg-trust-val {
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    font-weight: 800;
+    color: var(--e-navy);
+    letter-spacing: -0.015em;
+    line-height: 1;
+  }
+  .elseg-trust-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--e-text-muted);
+  }
+
+  /* ─── GOOGLE REVIEWS ─── */
+  .elseg-wrap a.elseg-social,
+  .elseg-wrap a.elseg-social:link,
+  .elseg-wrap a.elseg-social:visited {
+    margin-top: 0.85rem;
+    background: var(--e-surface);
+    border-radius: var(--e-radius);
+    box-shadow: var(--e-shadow);
+    padding: 1.1rem 1.35rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.25rem;
+    text-decoration: none !important;
+    color: var(--e-text) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .elseg-wrap a.elseg-social:hover { transform: translateY(-2px); box-shadow: var(--e-shadow-hover); }
+  .elseg-social-google {
+    width: 44px; height: 44px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234285F4' d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z'/%3E%3Cpath fill='%2334A853' d='M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z'/%3E%3Cpath fill='%23FBBC05' d='M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z'/%3E%3Cpath fill='%23EA4335' d='M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    flex-shrink: 0;
+  }
+  .elseg-social-rating { display: flex; flex-direction: column; gap: 0.15rem; }
+  .elseg-social-stars { display: flex; align-items: center; gap: 0.4rem; }
+  .elseg-social-stars-score {
+    font-size: 1.25rem; font-weight: 800;
+    color: var(--e-text); letter-spacing: -0.01em;
+  }
+  .elseg-social-stars-icons {
+    color: #FBC02D; font-size: 1rem;
+    letter-spacing: 1px; line-height: 1;
+  }
+  .elseg-social-count {
+    font-size: 0.82rem;
+    color: var(--e-text-muted);
+    font-weight: 500;
+  }
+  .elseg-social-link {
+    color: var(--e-cyan-dark);
+    font-weight: 700;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+
+  /* ─── MAP PREVIEW ─── */
+  .elseg-map {
+    margin-top: 0.85rem;
+    border-radius: var(--e-radius);
+    box-shadow: var(--e-shadow);
+    overflow: hidden;
+    position: relative;
+    background: var(--e-surface);
+  }
+  .elseg-map iframe {
+    width: 100%;
+    height: 320px;
+    display: block;
+    border: 0;
+    filter: grayscale(15%) contrast(1.05);
+  }
+  .elseg-map-badge {
+    position: absolute;
+    bottom: 0.85rem;
+    right: 0.85rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0.4rem 0.85rem;
+    border-radius: 100px;
+    font-weight: 800;
+    font-size: 0.82rem;
+    color: var(--e-navy);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .elseg-map-badge .elseg-map-dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--e-cyan);
+  }
+
+  /* ─── PRACTICAL GUIDE ─── */
+  .elseg-guide {
+    margin-top: 0.85rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+  .elseg-card {
+    background: var(--e-surface);
+    border-radius: var(--e-radius);
+    box-shadow: var(--e-shadow);
+    padding: clamp(1.25rem, 2.2vw, 1.75rem);
+  }
+  .elseg-card h3 {
+    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+    font-weight: 800;
+    color: var(--e-navy);
+    letter-spacing: -0.02em;
+    margin: 0.4rem 0 0.5rem;
+    line-height: 1.15;
+  }
+  .elseg-card p {
+    font-size: 0.93rem;
+    line-height: 1.6;
+    color: var(--e-text-muted);
+    margin: 0;
+  }
+  .elseg-card p strong { color: var(--e-text); font-weight: 700; }
+
+  .elseg-checklist {
+    margin: 0.75rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+  .elseg-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: var(--e-text);
+  }
+  .elseg-check {
+    flex: 0 0 18px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--e-accent);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 800;
+    margin-top: 3px;
+    line-height: 1;
+  }
+
+  /* ─── LIVE MENU ─── */
+  .elseg-menu {
+    margin-top: 1.75rem;
+    scroll-margin-top: 1rem;
+  }
+  .elseg-menu-intro { margin-bottom: 0.85rem; padding: 0.25rem; }
+  .elseg-menu-intro h2 {
+    font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+    font-weight: 800;
+    color: var(--e-navy);
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    margin: 0 0 0.35rem;
+  }
+  .elseg-menu-intro p {
+    font-size: 0.95rem;
+    color: var(--e-text-muted);
+    line-height: 1.55;
+    margin: 0;
+    max-width: 680px;
+  }
+
+  .elseg-cat {
+    scroll-margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .elseg-cat-head {
+    padding: 0.25rem 0.25rem 0.85rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .elseg-cat-titles { min-width: 0; }
+  .elseg-cat-head h3 {
+    font-size: clamp(1.65rem, 2.6vw, 2.1rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--e-navy);
+    line-height: 1.1;
+    margin: 0 0 0.4rem;
+  }
+  .elseg-cat-head p {
+    font-size: 0.93rem;
+    color: var(--e-text-muted);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 760px;
+  }
+  .elseg-cat-head p strong { color: var(--e-text); font-weight: 700; }
+  .elseg-wrap a.elseg-shop-all,
+  .elseg-wrap a.elseg-shop-all:link,
+  .elseg-wrap a.elseg-shop-all:visited {
+    color: var(--e-cyan-dark) !important;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none !important;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .elseg-wrap a.elseg-shop-all:hover { text-decoration: underline !important; }
+  .elseg-cat-products { min-height: 220px; background: transparent; }
+
+  /* ─── ABOUT EL SEGUNDO ─── */
+  .elseg-section { margin-top: 1.5rem; }
+  .elseg-section-head {
+    padding: 0.5rem 0.25rem 1rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .elseg-section-titles h2 {
+    font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+    font-weight: 800;
+    color: var(--e-navy);
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    margin: 0 0 0.35rem;
+  }
+  .elseg-section-titles p {
+    font-size: 0.95rem;
+    color: var(--e-text-muted);
+    line-height: 1.55;
+    margin: 0;
+    max-width: 720px;
+  }
+
+  .elseg-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+  }
+  .elseg-fact {
+    background: var(--e-surface);
+    border-radius: var(--e-radius);
+    box-shadow: var(--e-shadow);
+    padding: 1.15rem 1.25rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .elseg-fact:hover { transform: translateY(-3px); box-shadow: var(--e-shadow-hover); }
+  .elseg-fact-label {
+    font-size: 0.66rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--e-cyan-dark);
+    margin-bottom: 0.4rem;
+  }
+  .elseg-fact-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--e-navy);
+    margin: 0 0 0.3rem;
+    letter-spacing: -0.01em;
+  }
+  .elseg-fact-body {
+    font-size: 0.86rem;
+    color: var(--e-text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ─── FAQ (native <details>) ─── */
+  .elseg-faq {
+    margin-top: 1.5rem;
+    background: var(--e-surface);
+    border-radius: var(--e-radius);
+    box-shadow: var(--e-shadow);
+    padding: clamp(1.25rem, 2.2vw, 1.75rem);
+  }
+  .elseg-faq h2 {
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    font-weight: 800;
+    color: var(--e-navy);
+    letter-spacing: -0.022em;
+    margin: 0 0 0.85rem;
+  }
+  .elseg-faq details {
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    padding: 0;
+  }
+  .elseg-faq details:last-of-type { border-bottom: 1px solid rgba(15, 23, 42, 0.08); }
+  .elseg-faq summary {
+    list-style: none;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--e-text);
+    line-height: 1.35;
+    transition: color 0.18s ease;
+  }
+  .elseg-faq summary::-webkit-details-marker { display: none; }
+  .elseg-faq summary::after {
+    content: '+';
+    flex-shrink: 0;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: rgba(0, 175, 201, 0.1);
+    color: var(--e-cyan-dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .elseg-faq details[open] summary::after {
+    content: '−';
+    background: var(--e-cyan);
+    color: #ffffff;
+  }
+  .elseg-faq summary:hover { color: var(--e-cyan-dark); }
+  .elseg-faq details > p {
+    padding: 0 0 1rem;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--e-text-muted);
+    margin: 0;
+  }
+  .elseg-faq details > p strong { color: var(--e-text); font-weight: 700; }
+
+  /* ─── FINAL CTA ─── */
+  .elseg-final {
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, var(--e-navy) 0%, var(--e-navy-dark) 100%);
+    border-radius: var(--e-radius-lg);
+    padding: clamp(1.75rem, 3.5vw, 2.75rem);
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .elseg-final::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(600px 400px at 90% 20%, rgba(0, 175, 201, 0.25), transparent 60%),
+      radial-gradient(500px 350px at 10% 90%, rgba(248, 148, 89, 0.15), transparent 60%);
+    pointer-events: none;
+  }
+  .elseg-final-text { position: relative; z-index: 1; }
+  .elseg-final-text .elseg-eyebrow { color: var(--e-cyan); margin-bottom: 0.75rem; }
+  .elseg-final-text .elseg-eyebrow .pin { background: var(--e-cyan); }
+  .elseg-final h2 {
+    font-size: clamp(1.65rem, 3vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    margin: 0 0 0.65rem;
+    color: #ffffff;
+  }
+  .elseg-final p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 50ch;
+  }
+  .elseg-final-cta { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 0.6rem; }
+  .elseg-final-cta .elseg-btn { width: 100%; justify-content: center; }
+  .elseg-wrap .elseg-final-cta a.elseg-btn--ghost,
+  .elseg-wrap .elseg-final-cta a.elseg-btn--ghost:link,
+  .elseg-wrap .elseg-final-cta a.elseg-btn--ghost:visited {
+    background: transparent !important;
+    color: #ffffff !important;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35) !important;
+  }
+  .elseg-wrap .elseg-final-cta a.elseg-btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+  }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 968px) {
+    .elseg-wrap { padding: 0.85rem !important; }
+
+    .elseg-hero-unit { grid-template-columns: 1fr; }
+    .elseg-hero-img { height: clamp(200px, 30vh, 280px); }
+    .elseg-hero-content { padding: 1.25rem 1.1rem; }
+    .elseg-hours {
+      font-size: 0.76rem;
+      gap: 0.45rem;
+      padding: 0.38rem 0.75rem 0.38rem 0.5rem;
+    }
+    .elseg-hours .label { font-size: 0.6rem; letter-spacing: 0.12em; }
+    .elseg-hours .days { font-size: 0.68rem; }
+
+    .elseg-trust {
+      grid-template-columns: 1fr;
+      padding: 0.5rem 0.75rem;
+    }
+    .elseg-trust-item + .elseg-trust-item {
+      border-left: none;
+      border-top: 1px solid rgba(15, 23, 42, 0.07);
+    }
+    .elseg-trust-item {
+      padding: 0.85rem 0.5rem;
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .elseg-wrap a.elseg-social,
+    .elseg-wrap a.elseg-social:link,
+    .elseg-wrap a.elseg-social:visited {
+      grid-template-columns: auto 1fr;
+      gap: 0.85rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .elseg-social-link { display: none; }
+
+    .elseg-map iframe { height: 240px; }
+
+    .elseg-guide { grid-template-columns: 1fr; }
+    .elseg-facts { grid-template-columns: 1fr; }
+
+    .elseg-final { grid-template-columns: 1fr; gap: 1.25rem; }
+    .elseg-final-cta { width: 100%; }
+  }
+
+  @media (max-width: 380px) {
+    .elseg-hours .days { display: none; }
+  }
+</style>
+
+<div class="elseg-wrap">
+  <div class="elseg-shell">
+
+    <!-- ─── HERO UNIT ─── -->
+    <section class="elseg-hero-unit">
+      <div class="elseg-hero-img" role="img" aria-label="LAX Cannabis Club — the closest licensed dispensary to El Segundo"></div>
+      <div class="elseg-hero-content">
+        <div class="elseg-stack">
+          <span class="elseg-hours" aria-label="Store hours">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="label">Open</span>
+            <span class="sep" aria-hidden="true"></span>
+            <span class="time">9:00 AM – 9:30 PM</span>
+            <span class="days">· Every day</span>
+          </span>
+
+          <span class="elseg-eyebrow"><span class="pin" aria-hidden="true"></span>Westchester · 8 min from Main St</span>
+
+          <h1 class="elseg-h1">
+            Dispensary <span class="accent">Near El Segundo</span>
+          </h1>
+
+          <p class="elseg-desc">
+            LAXCC is the <strong>closest licensed cannabis dispensary to El Segundo</strong> — just
+            <strong>3 miles up Lincoln Blvd</strong>, an 8-minute drive from Main Street. Shop 100+ brands
+            across flower, vapes, edibles, pre-rolls &amp; concentrates. Order online for express pickup.
+          </p>
+
+          <div class="elseg-cta-row">
+            <a class="elseg-btn elseg-btn--primary" href="#elseg-menu">
+              Shop Now
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+              </svg>
+            </a>
+            <a class="elseg-btn elseg-btn--primary" href="https://www.google.com/maps/dir/?api=1&destination=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045" target="_blank" rel="noopener">
+              Get Directions
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a class="elseg-btn elseg-btn--ghost" href="tel:+13104293789">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              (310) 429-3789
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── TRUST STRIP ─── -->
+    <div class="elseg-trust" role="list">
+      <div class="elseg-trust-item" role="listitem">
+        <span class="elseg-trust-val">~3 mi</span>
+        <span class="elseg-trust-label">From El Segundo</span>
+      </div>
+      <div class="elseg-trust-item" role="listitem">
+        <span class="elseg-trust-val">8 min</span>
+        <span class="elseg-trust-label">Drive via Lincoln</span>
+      </div>
+      <div class="elseg-trust-item" role="listitem">
+        <span class="elseg-trust-val">1,000+</span>
+        <span class="elseg-trust-label">Products · 100+ brands</span>
+      </div>
+    </div>
+
+    <!-- ─── GOOGLE REVIEWS ─── -->
+    <a class="elseg-social"
+       href="https://www.google.com/search?q=LAXCC+reviews"
+       target="_blank" rel="noopener nofollow"
+       aria-label="See LAXCC's 4.9-star Google reviews">
+      <span class="elseg-social-google" aria-hidden="true"></span>
+      <span class="elseg-social-rating">
+        <span class="elseg-social-stars">
+          <span class="elseg-social-stars-score">4.9</span>
+          <span class="elseg-social-stars-icons" aria-hidden="true">★★★★★</span>
+        </span>
+        <span class="elseg-social-count">3,000+ verified Google reviews · LA's top-rated dispensary</span>
+      </span>
+      <span class="elseg-social-link">Read reviews →</span>
+    </a>
+
+    <!-- ─── MAP PREVIEW ─── -->
+    <div class="elseg-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d26482.4!2d-118.41941622089842!3d33.92!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x80c2b461c2b3d6f3%3A0x0!2sDowntown%20El%20Segundo%2C%20El%20Segundo%2C%20CA%2090245!3m2!1d33.9192222!2d-118.4156944!4m5!1s0x80c2b0eb4a3785d1%3A0xc86f05119335d417!2s8332%20Lincoln%20Blvd%2C%20Los%20Angeles%2C%20CA%2090045!3m2!1d33.96194!2d-118.42083!5e0!3m2!1sen!2sus!4v1714423950970!5m2!1sen!2sus"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Driving route from El Segundo to LAX Cannabis Club"></iframe>
+      <span class="elseg-map-badge" aria-hidden="true">
+        <span class="elseg-map-dot"></span>
+        8 min · 3 mi from El Segundo
+      </span>
+    </div>
+
+    <!-- ─── PRACTICAL GUIDE ─── -->
+    <div class="elseg-guide">
+      <div class="elseg-card">
+        <span class="elseg-eyebrow"><span class="pin"></span>The route</span>
+        <h3>Straight up Lincoln — no freeway</h3>
+        <p>
+          From Downtown El Segundo, head <strong>north on Lincoln Blvd</strong> (or cut over from Sepulveda)
+          for about 3 miles — you'll see us on the right. Clean surface streets, no 405 traffic, in and
+          out in under 30 minutes.
+        </p>
+        <ul class="elseg-checklist">
+          <li>
+            <span class="elseg-check" aria-hidden="true">✓</span>
+            <span><strong>Order ahead online</strong> — your bag is ready when you pull up</span>
+          </li>
+          <li>
+            <span class="elseg-check" aria-hidden="true">✓</span>
+            <span><strong>Free parking on Lincoln Blvd</strong> — quick in-and-out</span>
+          </li>
+          <li>
+            <span class="elseg-check" aria-hidden="true">✓</span>
+            <span><strong>Daily deals</strong> on flower, vapes, and edibles — check before you leave</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="elseg-card">
+        <span class="elseg-eyebrow"><span class="pin"></span>Visiting LA?</span>
+        <h3>Out-of-towners welcome</h3>
+        <p>
+          California allows <strong>21+ recreational</strong> or <strong>18+ with a valid medical
+          cannabis card</strong> to purchase. No residency required — international &amp; out-of-state IDs accepted.
+        </p>
+        <ul class="elseg-checklist">
+          <li>
+            <span class="elseg-check" aria-hidden="true">✓</span>
+            <span><strong>21+ recreational, or 18+ with a valid medical card</strong> — passport, license, or military ID</span>
+          </li>
+          <li>
+            <span class="elseg-check" aria-hidden="true">✓</span>
+            <span><strong>Private consumption only</strong> — not at El Segundo Beach, parks, or in vehicles</span>
+          </li>
+          <li>
+            <span class="elseg-check" aria-hidden="true">✓</span>
+            <span><strong>Cash &amp; debit</strong> accepted — ATM on site</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ─── LIVE MENU ─── -->
+    <section id="elseg-menu" class="elseg-menu" aria-label="LAXCC live menu near El Segundo">
+      <header class="elseg-menu-intro">
+        <h2>Shop the menu — pickup in 30 minutes</h2>
+        <p>
+          Live inventory from our LA shop, 8 minutes from El Segundo. Order ahead so it's ready
+          when you arrive — flower, pre-rolls, vapes, edibles, and concentrates from California's top brands.
+        </p>
+      </header>
+
+      <section id="elseg-flower" class="elseg-cat">
+        <header class="elseg-cat-head">
+          <div class="elseg-cat-titles">
+            <h3>Premium Cannabis Flower Near El Segundo</h3>
+            <p>
+              <strong>Top-shelf indoor flower</strong>, exotic hybrids, and high-THC sativas from LA's
+              most respected growers — ranked by potency. The closest premium flower menu to Main Street,
+              Boeing, and the LA Air Force Base, with same-day express pickup.
+            </p>
+          </div>
+          <a class="elseg-shop-all" href="https://laxcc.com/categories/flower/">Shop all →</a>
+        </header>
+        <div class="elseg-cat-products">
+          [leafbridge_specific_product_filter category="FLOWER" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+
+      <section id="elseg-prerolls" class="elseg-cat">
+        <header class="elseg-cat-head">
+          <div class="elseg-cat-titles">
+            <h3>Pre-Rolls &amp; Infused Joints Near El Segundo</h3>
+            <p>
+              <strong>Pre-rolls, infused blunts, hash-rolled joints, and multi-pack tins</strong> —
+              singles for after work, two-packs for the weekend, or 5-pack tins to share. Easiest grab
+              for South Bay locals and aerospace-industry commuters.
+            </p>
+          </div>
+          <a class="elseg-shop-all" href="https://laxcc.com/categories/pre-rolls/">Shop all →</a>
+        </header>
+        <div class="elseg-cat-products">
+          [leafbridge_specific_product_filter category="PRE_ROLLS" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+
+      <section id="elseg-vapes" class="elseg-cat">
+        <header class="elseg-cat-head">
+          <div class="elseg-cat-titles">
+            <h3>Premium Vaporizers Near El Segundo</h3>
+            <p>
+              <strong>Live resin cartridges, all-in-one disposables, distillate carts, and 510-thread
+              hardware</strong> — pocketable and discreet, ideal for the office or a quick break.
+              Low-tolerance friendly AIO disposables for first-timers.
+            </p>
+          </div>
+          <a class="elseg-shop-all" href="https://laxcc.com/categories/vaporizers/">Shop all →</a>
+        </header>
+        <div class="elseg-cat-products">
+          [leafbridge_specific_product_filter category="VAPORIZERS" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+
+      <section id="elseg-edibles" class="elseg-cat">
+        <header class="elseg-cat-head">
+          <div class="elseg-cat-titles">
+            <h3>Cannabis Edibles &amp; Gummies Near El Segundo</h3>
+            <p>
+              <strong>Microdose gummies, chocolates, mints, and infused beverages</strong> from
+              California's top edible brands. Precision-dosed 2.5–10mg singles for a daytime ride, or
+              100mg multi-packs for experienced consumers. The most discreet option for office workers
+              and weekend visitors.
+            </p>
+          </div>
+          <a class="elseg-shop-all" href="https://laxcc.com/categories/edibles/">Shop all →</a>
+        </header>
+        <div class="elseg-cat-products">
+          [leafbridge_specific_product_filter category="EDIBLES" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+
+      <section id="elseg-concentrates" class="elseg-cat">
+        <header class="elseg-cat-head">
+          <div class="elseg-cat-titles">
+            <h3>Cannabis Concentrates Near El Segundo</h3>
+            <p>
+              Connoisseur-grade extracts — <strong>solventless live rosin, hydrocarbon live resin,
+              diamonds, sauce, cold-cure badder, and shatter</strong>. Built for dab rigs and e-rigs.
+              The finest concentrate selection in the South Bay corridor.
+            </p>
+          </div>
+          <a class="elseg-shop-all" href="https://laxcc.com/categories/concentrates/">Shop all →</a>
+        </header>
+        <div class="elseg-cat-products">
+          [leafbridge_specific_product_filter category="CONCENTRATES" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+    </section>
+
+    <!-- ─── ABOUT EL SEGUNDO ─── -->
+    <section class="elseg-section">
+      <header class="elseg-section-head">
+        <div class="elseg-section-titles">
+          <h2>Discover El Segundo</h2>
+          <p>
+            The <strong>Aerospace Capital of the World</strong> — a polished coastal city that balances
+            small-town Main Street charm with a massive corporate heartbeat. More upscale than Hawthorne,
+            less glamorous than Manhattan Beach. The refined South Bay middle ground.
+          </p>
+        </div>
+      </header>
+
+      <div class="elseg-facts">
+        <article class="elseg-fact">
+          <div class="elseg-fact-label">Industry</div>
+          <h3 class="elseg-fact-title">Aerospace Capital</h3>
+          <p class="elseg-fact-body">Boeing, Raytheon, Northrop Grumman, and the Los Angeles Air Force Base — world-class innovation next to quiet residential streets.</p>
+        </article>
+        <article class="elseg-fact">
+          <div class="elseg-fact-label">Downtown</div>
+          <h3 class="elseg-fact-title">Main Street</h3>
+          <p class="elseg-fact-body">Old-school walkable downtown with local breweries, boutique restaurants, and small-town energy that's rare in modern LA.</p>
+        </article>
+        <article class="elseg-fact">
+          <div class="elseg-fact-label">Shopping</div>
+          <h3 class="elseg-fact-title">The Point</h3>
+          <p class="elseg-fact-body">Open-air retail center with restaurants, fitness studios, and lifestyle brands — El Segundo's go-to outdoor mall.</p>
+        </article>
+        <article class="elseg-fact">
+          <div class="elseg-fact-label">Coast</div>
+          <h3 class="elseg-fact-title">El Segundo Beach</h3>
+          <p class="elseg-fact-body">Clean, quiet oceanfront — less tourist-heavy than Manhattan or Venice. A real beach day without the flash.</p>
+        </article>
+        <article class="elseg-fact">
+          <div class="elseg-fact-label">Tech &amp; media</div>
+          <h3 class="elseg-fact-title">Beach Cities tech</h3>
+          <p class="elseg-fact-body">Beyond aerospace — Mattel HQ, AT&amp;T offices, and a growing tech scene make El Segundo a quiet West LA business hub.</p>
+        </article>
+        <article class="elseg-fact">
+          <div class="elseg-fact-label">Nearby</div>
+          <h3 class="elseg-fact-title">LAX &amp; the South Bay</h3>
+          <p class="elseg-fact-body">5 minutes to LAX, minutes to Manhattan Beach, Hermosa, and Hawthorne — the geographic center of the South Bay.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ─── FAQ ─── -->
+    <section class="elseg-faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked</h2>
+
+      <details>
+        <summary>What's the closest dispensary to El Segundo?</summary>
+        <p>
+          <strong>LAXCC at 8332 Lincoln Blvd</strong> is the closest licensed dispensary to El Segundo —
+          roughly 3 miles north and an 8-minute drive from Main Street. We carry 100+ brands across every
+          category and are open daily 9 AM – 9:30 PM.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I order online for pickup?</summary>
+        <p>
+          <strong>Yes.</strong> Browse the full menu at laxcc.com/shop, place your order, and it'll be
+          bagged and ready when you arrive. Walk-ins are always welcome too — no appointment needed.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is LAXCC a licensed dispensary?</summary>
+        <p>
+          <strong>Yes.</strong> LAXCC is a fully licensed, city- and state-authorized cannabis retail
+          dispensary in Los Angeles. All products are lab-tested and tax-compliant — your sticker price
+          is what you pay.
+        </p>
+      </details>
+
+      <details>
+        <summary>How far is LAXCC from Downtown El Segundo?</summary>
+        <p>
+          Approximately <strong>3 miles</strong> from Main Street — an 8–10 minute drive north via
+          Lincoln Blvd or Sepulveda. Most convenient licensed stop for El Segundo residents, aerospace
+          workers, and visitors.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do I need to be a California resident to shop?</summary>
+        <p>
+          <strong>No.</strong> California allows any adult 21+ (or 18+ with a valid medical cannabis
+          card) to purchase. Out-of-state and international IDs are accepted — passport, driver's license,
+          or military.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is parking easy at LAXCC?</summary>
+        <p>
+          Yes. Free parking on Lincoln Blvd right outside the shop. Order ahead online, pull up, grab
+          your bag, and you're back on the road in minutes.
+        </p>
+      </details>
+    </section>
+
+    <!-- ─── FINAL CTA ─── -->
+    <section class="elseg-final">
+      <div class="elseg-final-text">
+        <span class="elseg-eyebrow"><span class="pin" aria-hidden="true"></span>Heading north from ES?</span>
+        <h2>Order ahead. Skip the lines. Back home in 20 minutes.</h2>
+        <p>
+          Browse the live menu, place your order in 60 seconds, and pick up on your way home from
+          downtown El Segundo. Open every day, 9 AM – 9:30 PM.
+        </p>
+      </div>
+      <div class="elseg-final-cta">
+        <a class="elseg-btn elseg-btn--primary" href="https://laxcc.com/shop/?retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3">
+          Shop the menu
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a class="elseg-btn elseg-btn--ghost" href="https://www.google.com/maps/dir/?api=1&destination=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045" target="_blank" rel="noopener">
+          Get directions
+        </a>
+      </div>
+    </section>
+
+  </div>
+</div>

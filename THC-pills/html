@@ -1,0 +1,276 @@
+<style>
+    /* ===== THC PILLS HERO — ELEMENTOR SAFE ===== */
+    #laxcc-pills-hero {
+        --accent-cyan: #0891B2;
+        --accent-teal: #00AFC9;
+        --accent-orange: #F89459;
+        --primary-dark: #0f3a5f;
+        --text-dark: #0f172a;
+        --text-muted: #64748b;
+        --bg-cream: #FBF8F2;
+        --white: #ffffff;
+        --border: rgba(0,0,0,0.06);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: var(--bg-cream);
+        padding: 3rem 1.25rem 2.5rem;
+    }
+
+    @media (min-width: 768px) { #laxcc-pills-hero { padding: 5rem 2rem 3.5rem; } }
+    @media (min-width: 1024px) { #laxcc-pills-hero { padding: 6rem 3rem 4rem; } }
+
+    #laxcc-pills-hero *,
+    #laxcc-pills-hero *::before,
+    #laxcc-pills-hero *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    #laxcc-pills-hero .ph-wrap {
+        max-width: 960px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* Eyebrow */
+    #laxcc-pills-hero .ph-eyebrow {
+        color: var(--accent-cyan);
+        font-size: 0.6875rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 0.625rem;
+    }
+    @media (min-width: 768px) { #laxcc-pills-hero .ph-eyebrow { font-size: 0.75rem; } }
+
+    /* H1 */
+    #laxcc-pills-hero h1.ph-title {
+        font-size: 2.25rem;
+        font-weight: 900;
+        color: var(--text-dark);
+        line-height: 1.05;
+        letter-spacing: -0.025em;
+        margin-bottom: 1rem;
+    }
+    @media (min-width: 768px) { #laxcc-pills-hero h1.ph-title { font-size: 3.5rem; margin-bottom: 1.25rem; } }
+    @media (min-width: 1024px) { #laxcc-pills-hero h1.ph-title { font-size: 4.25rem; } }
+
+    #laxcc-pills-hero .ph-title span { color: var(--accent-cyan); }
+
+    /* Subtitle */
+    #laxcc-pills-hero .ph-subtitle {
+        font-size: 1.0625rem;
+        color: var(--text-muted);
+        line-height: 1.65;
+        max-width: 640px;
+        margin: 0 auto 2.5rem;
+    }
+    @media (min-width: 768px) { #laxcc-pills-hero .ph-subtitle { font-size: 1.1875rem; margin: 0 auto 3rem; } }
+
+    /* Product strip */
+    #laxcc-pills-hero .ph-strip {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 2.5rem;
+    }
+    @media (min-width: 640px) { #laxcc-pills-hero .ph-strip { gap: 2.5rem; margin-bottom: 3rem; } }
+
+    #laxcc-pills-hero .ph-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.625rem;
+        text-decoration: none;
+        transition: transform 0.2s ease;
+        width: 110px;
+    }
+    @media (min-width: 640px) { #laxcc-pills-hero .ph-item { width: 130px; } }
+
+    #laxcc-pills-hero .ph-item:hover { transform: translateY(-3px); }
+
+    #laxcc-pills-hero .ph-item-img {
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        object-fit: contain;
+        background: var(--white);
+        border: 2px solid var(--border);
+        padding: 8px;
+        transition: border-color 0.2s ease;
+    }
+    @media (min-width: 640px) {
+        #laxcc-pills-hero .ph-item-img {
+            width: 104px;
+            height: 104px;
+            padding: 10px;
+        }
+    }
+
+    #laxcc-pills-hero .ph-item:hover .ph-item-img {
+        border-color: var(--accent-cyan);
+    }
+
+    #laxcc-pills-hero .ph-item-brand {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    #laxcc-pills-hero .ph-item-dose {
+        font-size: 0.75rem;
+        color: var(--accent-cyan);
+        font-weight: 600;
+    }
+
+    /* Stats row */
+    #laxcc-pills-hero .ph-stats {
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 2.5rem;
+    }
+    @media (min-width: 640px) { #laxcc-pills-hero .ph-stats { gap: 3.5rem; } }
+
+    #laxcc-pills-hero .ph-stat {
+        text-align: center;
+    }
+
+    #laxcc-pills-hero .ph-stat-num {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--text-dark);
+        line-height: 1;
+        margin-bottom: 0.25rem;
+    }
+    @media (min-width: 768px) { #laxcc-pills-hero .ph-stat-num { font-size: 2.5rem; } }
+
+    #laxcc-pills-hero .ph-stat-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    /* CTA */
+    #laxcc-pills-hero a.ph-cta,
+    #laxcc-pills-hero a.ph-cta:link,
+    #laxcc-pills-hero a.ph-cta:visited {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--accent-cyan);
+        color: #fff !important;
+        text-decoration: none !important;
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 0.875rem 2.25rem;
+        border-radius: 9999px;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+        letter-spacing: 0.02em;
+    }
+
+    #laxcc-pills-hero a.ph-cta:hover {
+        background: var(--primary-dark);
+        color: #fff !important;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(15, 58, 95, 0.2);
+    }
+
+    /* Scroll hint */
+    #laxcc-pills-hero .ph-scroll {
+        margin-top: 1.5rem;
+        font-size: 0.6875rem;
+        color: var(--text-muted);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    #laxcc-pills-hero .ph-scroll-arrow {
+        display: block;
+        margin: 0.375rem auto 0;
+        font-size: 0.875rem;
+        color: var(--accent-cyan);
+        animation: ph-bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes ph-bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(4px); }
+    }
+</style>
+
+<div id="laxcc-pills-hero">
+    <div class="ph-wrap">
+
+        <p class="ph-eyebrow">Licensed Los Angeles Dispensary</p>
+        <h1 class="ph-title">THC Pills &amp; Cannabis <span>Tablets Near LAX</span></h1>
+        <p class="ph-subtitle">Precise dosing, zero sugar, long-lasting effects. Trusted California THC pill brands, doses from 10mg to 100mg — including the new Level Slumber CBN sleep tablet. All lab-tested and on the shelf.</p>
+
+        <!-- Product thumbnail strip -->
+        <div class="ph-strip">
+            <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=LEVEL" class="ph-item" target="_blank" rel="noopener">
+                <img class="ph-item-img" src="https://images.dutchie.com/c8ecd67fff8e44848c16c480d1c05561" alt="Level Protab" loading="lazy">
+                <span class="ph-item-brand">Level Protab</span>
+                <span class="ph-item-dose">25mg</span>
+            </a>
+            <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=LEVEL" class="ph-item" target="_blank" rel="noopener">
+                <img class="ph-item-img" src="https://images.dutchie.com/86fc63e67c975b19e94745b83c5d9241?w=500&h=500&fm=webp" alt="Level Slumber CBN" loading="lazy">
+                <span class="ph-item-brand">Level Slumber</span>
+                <span class="ph-item-dose">10mg + CBN</span>
+            </a>
+            <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=papa" class="ph-item" target="_blank" rel="noopener">
+                <img class="ph-item-img" src="https://images.dutchie.com/eca1a698e0fec9e0cfa6204fbf466850?w=500&h=500&fm=webp" alt="Papa & Barkley" loading="lazy">
+                <span class="ph-item-brand">Papa &amp; Barkley</span>
+                <span class="ph-item-dose">45.6mg</span>
+            </a>
+            <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=tablet" class="ph-item" target="_blank" rel="noopener">
+                <img class="ph-item-img" src="https://images.dutchie.com/1c3371bc723f23be0b6c3a178a22c6ad" alt="THE TABLET" loading="lazy">
+                <span class="ph-item-brand">THE TABLET</span>
+                <span class="ph-item-dose">50mg</span>
+            </a>
+            <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=emerald" class="ph-item" target="_blank" rel="noopener">
+                <img class="ph-item-img" src="https://images.dutchie.com/12e1aa0e171f611181a268d9d4260da3" alt="Emerald Bay Extracts" loading="lazy">
+                <span class="ph-item-brand">Emerald Bay</span>
+                <span class="ph-item-dose">100mg</span>
+            </a>
+        </div>
+
+        <!-- Quick stats -->
+        <div class="ph-stats">
+            <div class="ph-stat">
+                <div class="ph-stat-num">4</div>
+                <div class="ph-stat-label">Brands</div>
+            </div>
+            <div class="ph-stat">
+                <div class="ph-stat-num">10</div>
+                <div class="ph-stat-label">Products</div>
+            </div>
+            <div class="ph-stat">
+                <div class="ph-stat-num">$2.98</div>
+                <div class="ph-stat-label">Starting at</div>
+            </div>
+            <div class="ph-stat">
+                <div class="ph-stat-num">10–100</div>
+                <div class="ph-stat-label">mg Range</div>
+            </div>
+        </div>
+
+        <a href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=tablet" class="ph-cta" target="_blank" rel="noopener">Shop THC Pills <span>&#x2192;</span></a>
+
+        <div class="ph-scroll">
+            Scroll for the full guide
+            <span class="ph-scroll-arrow">&#x25BC;</span>
+        </div>
+
+    </div>
+</div>

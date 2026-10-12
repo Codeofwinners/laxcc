@@ -1,0 +1,763 @@
+<!-- SEO META — paste into Yoast/RankMath for this page -->
+<!-- Title: Buy Whoa Edibles Near LAX Airport | LAXCC -->
+<!-- Description: Buy Whoa edibles at LAXCC — licensed LA dispensary 5 min from LAX. Gummies, chocolates & more, lab-tested. Walk in or order pickup today. -->
+<meta name="description" content="Buy Whoa edibles at LAXCC — licensed LA dispensary 5 min from LAX. Gummies, chocolates & more, lab-tested. Walk in or order pickup today.">
+
+<style>
+    /* ========================================
+       WHOA BRAND PAGE — LAXCC
+       Scoped to .laxcc-whoa
+       Elementor-safe: all rules use !important
+       ======================================== */
+
+    .laxcc-whoa *,
+    .laxcc-whoa *::before,
+    .laxcc-whoa *::after {
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .laxcc-whoa {
+        --navy: #1D508A;
+        --teal: #00AFC9;
+        --orange: #F89459;
+        --green: #7ECBB3;
+        --cream: #FBF8F2;
+        --white: #ffffff;
+        --text: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --navy-deep: #0f3a5f;
+
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        background: var(--cream) !important;
+        color: var(--text) !important;
+        line-height: 1.6 !important;
+        overflow-x: hidden !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+    }
+
+    @keyframes laxcc-whoa-fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* HERO — mobile-first */
+    .laxcc-whoa .whoa-hero { background: var(--cream) !important; }
+
+    .laxcc-whoa .whoa-hero-img {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #ffffff !important;
+        padding: 40px 20px !important;
+        overflow: hidden !important;
+    }
+
+    .laxcc-whoa .whoa-hero-img img {
+        max-width: 400px !important;
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+    /* Gallery photo fill mode */
+    .laxcc-whoa .whoa-hero-img-fill {
+        width: 100% !important;
+        overflow: hidden !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+
+    .laxcc-whoa .whoa-hero-img-fill img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+
+    .laxcc-whoa .whoa-hero-body {
+        max-width: 1400px !important;
+        margin: 0 auto !important;
+        padding: 32px 20px 28px !important;
+    }
+
+    .laxcc-whoa .whoa-hero-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        background: none !important;
+        border: none !important;
+        color: var(--text-muted) !important;
+        font-size: 0.65rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+        padding: 6px 14px !important;
+        border-radius: 100px !important;
+        margin-bottom: 16px !important;
+        white-space: nowrap !important;
+        width: fit-content !important;
+    }
+
+    .laxcc-whoa .whoa-hero-badge i { font-size: 0.55rem !important; }
+
+    .laxcc-whoa .whoa-hero h1 {
+        font-size: 2.4rem !important;
+        font-weight: 900 !important;
+        line-height: 1 !important;
+        letter-spacing: -0.03em !important;
+        color: var(--navy) !important;
+        margin-bottom: 16px !important;
+    }
+
+    .laxcc-whoa .whoa-hero h1 span { color: var(--orange) !important; }
+
+    .laxcc-whoa .whoa-hero-sub {
+        font-size: 0.95rem !important;
+        color: var(--text-muted) !important;
+        line-height: 1.6 !important;
+        margin-bottom: 24px !important;
+        max-width: 520px !important;
+    }
+
+    .laxcc-whoa .whoa-hero-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        margin-bottom: 28px !important;
+    }
+
+    .laxcc-whoa .whoa-hero-stats {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 12px !important;
+        border-top: 1px solid var(--border) !important;
+        padding-top: 24px !important;
+    }
+
+    .laxcc-whoa .whoa-stat-val {
+        font-size: 1.5rem !important;
+        font-weight: 900 !important;
+        color: var(--orange) !important;
+        letter-spacing: -0.03em !important;
+        line-height: 1 !important;
+        margin-bottom: 2px !important;
+    }
+
+    .laxcc-whoa .whoa-stat-lbl {
+        font-size: 0.6rem !important;
+        font-weight: 700 !important;
+        color: var(--text-muted) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    /* Buttons */
+    .laxcc-whoa .whoa-btn-primary,
+    .laxcc-whoa a.whoa-btn-primary,
+    .laxcc-whoa a.whoa-btn-primary:link,
+    .laxcc-whoa a.whoa-btn-primary:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        background: var(--orange) !important;
+        color: #fff !important;
+        font-size: 0.85rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.06em !important;
+        text-transform: uppercase !important;
+        padding: 16px 32px !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        transition: all 0.3s ease !important;
+        border: none !important;
+        cursor: pointer !important;
+    }
+
+    .laxcc-whoa a.whoa-btn-primary:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 32px rgba(248, 148, 89, 0.4) !important;
+    }
+
+    .laxcc-whoa .whoa-btn-secondary,
+    .laxcc-whoa a.whoa-btn-secondary,
+    .laxcc-whoa a.whoa-btn-secondary:link,
+    .laxcc-whoa a.whoa-btn-secondary:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        background: transparent !important;
+        color: var(--navy) !important;
+        font-size: 0.85rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.04em !important;
+        text-transform: uppercase !important;
+        padding: 16px 32px !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        border: 1px solid var(--navy) !important;
+        transition: all 0.3s ease !important;
+        cursor: pointer !important;
+    }
+
+    .laxcc-whoa a.whoa-btn-secondary:hover {
+        border-color: var(--orange) !important;
+        color: var(--orange) !important;
+        background: rgba(248, 148, 89, 0.06) !important;
+    }
+
+    /* Desktop hero */
+    @media (min-width: 769px) {
+        .laxcc-whoa .whoa-hero {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            min-height: 100vh !important;
+        }
+        .laxcc-whoa .whoa-hero-img {
+            height: 100% !important;
+            min-height: 100vh !important;
+            border-radius: 0 0 0 32px !important;
+            order: 2 !important;
+            padding: 60px 40px !important;
+        }
+        .laxcc-whoa .whoa-hero-img img { max-width: 480px !important; }
+        .laxcc-whoa .whoa-hero-img-fill {
+            height: 100% !important;
+            min-height: 100vh !important;
+            border-radius: 0 0 0 32px !important;
+            order: 2 !important;
+            padding: 0 !important;
+        }
+        .laxcc-whoa .whoa-hero-img-fill img { max-width: none !important; }
+        .laxcc-whoa .whoa-hero-body {
+            order: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            padding: 80px 60px !important;
+        }
+        .laxcc-whoa .whoa-hero h1 { font-size: clamp(2.8rem, 4vw, 4.2rem) !important; margin-bottom: 24px !important; }
+        .laxcc-whoa .whoa-hero-sub { font-size: 1.05rem !important; margin-bottom: 36px !important; }
+        .laxcc-whoa .whoa-hero-actions { flex-direction: row !important; margin-bottom: 0 !important; }
+        .laxcc-whoa .whoa-hero-stats { margin-top: 48px !important; padding-top: 32px !important; }
+        .laxcc-whoa .whoa-stat-val { font-size: 2rem !important; }
+        .laxcc-whoa .whoa-stat-lbl { font-size: 0.7rem !important; }
+    }
+
+    /* ABOUT section */
+    .laxcc-whoa .whoa-about { padding: 24px 0 0 !important; background: var(--cream) !important; }
+    .laxcc-whoa .whoa-about-container { max-width: 1400px !important; margin: 0 auto !important; padding: 0 20px !important; }
+    .laxcc-whoa .whoa-about-header { max-width: 680px !important; }
+
+    .laxcc-whoa .whoa-section-label {
+        display: inline-block !important;
+        font-size: 0.7rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 3px !important;
+        text-transform: uppercase !important;
+        color: var(--orange) !important;
+        margin-bottom: 20px !important;
+        position: relative !important;
+        padding-left: 36px !important;
+    }
+    .laxcc-whoa .whoa-section-label::before {
+        content: '' !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 50% !important;
+        width: 24px !important;
+        height: 2px !important;
+        background: var(--orange) !important;
+    }
+
+    .laxcc-whoa .whoa-about-top { display: flex !important; align-items: flex-end !important; justify-content: space-between !important; gap: 24px !important; margin-bottom: 16px !important; }
+    .laxcc-whoa .whoa-about-header h2 { font-size: clamp(2rem, 3.5vw, 3rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1.05 !important; margin-bottom: 12px !important; }
+    .laxcc-whoa .whoa-about-header p { font-size: 1rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; max-width: 480px !important; }
+
+    .laxcc-whoa .whoa-scroll-arrows { display: flex !important; gap: 8px !important; flex-shrink: 0 !important; }
+    .laxcc-whoa .whoa-scroll-arrow {
+        width: 40px !important; height: 40px !important; border-radius: 50% !important;
+        border: 1px solid var(--border) !important; background: var(--white) !important;
+        display: flex !important; align-items: center !important; justify-content: center !important;
+        cursor: pointer !important; transition: all 0.2s ease !important;
+        color: var(--text) !important; font-size: 0.8rem !important;
+    }
+    .laxcc-whoa .whoa-scroll-arrow:hover { border-color: var(--navy) !important; color: var(--navy) !important; }
+
+    .laxcc-whoa .whoa-about-track {
+        display: flex !important; gap: 20px !important; overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important; padding-bottom: 4px !important;
+    }
+    .laxcc-whoa .whoa-about-track::-webkit-scrollbar { display: none !important; }
+    .laxcc-whoa .whoa-about-slide {
+        flex: 0 0 280px !important; scroll-snap-align: start !important;
+        padding: 16px 0 0 !important; border-top: 2px solid var(--border) !important;
+        transition: border-color 0.3s ease !important;
+    }
+    .laxcc-whoa .whoa-about-slide:hover { border-color: var(--navy) !important; }
+    .laxcc-whoa .whoa-about-slide-num { font-size: 0.7rem !important; font-weight: 700 !important; color: var(--text-muted) !important; letter-spacing: 0.5px !important; margin-bottom: 12px !important; }
+    .laxcc-whoa .whoa-about-slide h3 { font-size: 1.1rem !important; font-weight: 800 !important; color: var(--text) !important; letter-spacing: -0.01em !important; margin-bottom: 8px !important; }
+    .laxcc-whoa .whoa-about-slide p { font-size: 0.85rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; }
+    @media (min-width: 769px) { .laxcc-whoa .whoa-about-slide { flex: 0 0 320px !important; } }
+
+    /* FLAVOR SPOTLIGHT */
+    .laxcc-whoa .whoa-flavors { padding: 24px 0 0 !important; background: var(--cream) !important; }
+    .laxcc-whoa .whoa-flavors-container { max-width: 1400px !important; margin: 0 auto !important; padding: 0 20px !important; }
+    .laxcc-whoa .whoa-flavors-header { margin-bottom: 0 !important; }
+    .laxcc-whoa .whoa-flavors-header h2 { font-size: clamp(2rem, 3.5vw, 3rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; margin-bottom: 12px !important; }
+    .laxcc-whoa .whoa-flavors-header p { font-size: 1rem !important; color: var(--text-muted) !important; max-width: 520px !important; }
+    .laxcc-whoa .whoa-flavors-top { display: flex !important; align-items: flex-end !important; justify-content: space-between !important; gap: 24px !important; margin-bottom: 16px !important; }
+
+    .laxcc-whoa .whoa-flavors-track {
+        display: flex !important; gap: 20px !important; overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important; padding-bottom: 4px !important;
+    }
+    .laxcc-whoa .whoa-flavors-track::-webkit-scrollbar { display: none !important; }
+    .laxcc-whoa .whoa-flavor-slide {
+        flex: 0 0 260px !important; scroll-snap-align: start !important;
+        padding: 24px 0 !important; border-top: 2px solid var(--border) !important;
+        transition: border-color 0.3s ease !important;
+    }
+    .laxcc-whoa .whoa-flavor-slide:hover { border-color: var(--navy) !important; }
+    .laxcc-whoa .whoa-flavor-num { font-size: 0.65rem !important; font-weight: 700 !important; color: var(--text-muted) !important; letter-spacing: 0.5px !important; margin-bottom: 10px !important; }
+    .laxcc-whoa .whoa-flavor-slide h3 { font-size: 1rem !important; font-weight: 800 !important; color: var(--text) !important; letter-spacing: -0.01em !important; margin-bottom: 6px !important; }
+    .laxcc-whoa .whoa-flavor-slide p { font-size: 0.8rem !important; color: var(--text-muted) !important; line-height: 1.5 !important; margin-bottom: 10px !important; }
+    .laxcc-whoa .whoa-flavor-type { font-size: 0.6rem !important; font-weight: 700 !important; color: var(--text-muted) !important; text-transform: uppercase !important; letter-spacing: 1px !important; }
+    @media (min-width: 769px) {
+        .laxcc-whoa .whoa-flavors { padding: 120px 0 !important; }
+        .laxcc-whoa .whoa-flavors-container { padding: 0 60px !important; }
+        .laxcc-whoa .whoa-flavor-slide { flex: 0 0 300px !important; }
+    }
+
+    /* EDUCATION section */
+    .laxcc-whoa .whoa-education { padding: 24px 0 !important; background: var(--cream) !important; }
+    .laxcc-whoa .whoa-education-container { max-width: 1400px !important; margin: 0 auto !important; padding: 0 20px !important; }
+    .laxcc-whoa .whoa-education-top { display: flex !important; align-items: flex-end !important; justify-content: space-between !important; gap: 24px !important; margin-bottom: 16px !important; }
+    .laxcc-whoa .whoa-education-intro h2 { font-size: clamp(2rem, 3.5vw, 3rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1.05 !important; margin-bottom: 8px !important; }
+    .laxcc-whoa .whoa-education-intro p { font-size: 0.9rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; max-width: 480px !important; }
+    .laxcc-whoa .whoa-education-track {
+        display: flex !important; gap: 20px !important; overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+    }
+    .laxcc-whoa .whoa-education-track::-webkit-scrollbar { display: none !important; }
+    .laxcc-whoa .whoa-education-slide {
+        flex: 0 0 220px !important; scroll-snap-align: start !important;
+        padding: 16px 0 0 !important; border-top: 2px solid var(--border) !important;
+        text-align: center !important; transition: border-color 0.3s ease !important;
+    }
+    .laxcc-whoa .whoa-education-slide:hover { border-color: var(--navy) !important; }
+    .laxcc-whoa .whoa-education-num { font-size: 2.5rem !important; font-weight: 900 !important; color: var(--orange) !important; line-height: 1 !important; margin-bottom: 6px !important; }
+    .laxcc-whoa .whoa-education-name { font-size: 0.9rem !important; font-weight: 700 !important; color: var(--navy) !important; margin-bottom: 6px !important; }
+    .laxcc-whoa .whoa-education-desc { font-size: 0.8rem !important; color: var(--text-muted) !important; line-height: 1.5 !important; }
+    @media (min-width: 769px) {
+        .laxcc-whoa .whoa-education { padding: 60px 0 !important; }
+        .laxcc-whoa .whoa-education-container { padding: 0 60px !important; }
+        .laxcc-whoa .whoa-education-slide { flex: 0 0 260px !important; }
+    }
+
+    /* FAQ */
+    .laxcc-whoa .whoa-faq { padding: 140px 0 !important; background: var(--cream) !important; }
+    .laxcc-whoa .whoa-faq-container {
+        max-width: 1400px !important; margin: 0 auto !important; padding: 0 60px !important;
+        display: grid !important; grid-template-columns: 380px 1fr !important;
+        gap: 80px !important; align-items: start !important;
+    }
+    .laxcc-whoa .whoa-faq-sidebar { position: sticky !important; top: 40px !important; }
+    .laxcc-whoa .whoa-faq-sidebar h2 { font-size: 3rem !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1 !important; margin-bottom: 24px !important; }
+    .laxcc-whoa .whoa-faq-sidebar p { font-size: 1.05rem !important; color: var(--text-muted) !important; line-height: 1.7 !important; margin-bottom: 32px !important; }
+    .laxcc-whoa .whoa-faq-deco { width: 80px !important; height: 4px !important; background: var(--orange) !important; border-radius: 2px !important; }
+    .laxcc-whoa .whoa-faq-list { display: flex !important; flex-direction: column !important; }
+    .laxcc-whoa .whoa-faq-item { border-bottom: 1px solid var(--border) !important; padding: 32px 0 !important; }
+    .laxcc-whoa .whoa-faq-item:first-child { border-top: 1px solid var(--border) !important; }
+    .laxcc-whoa .whoa-faq-q {
+        font-size: 1.3rem !important; font-weight: 800 !important; color: var(--navy) !important;
+        cursor: pointer !important; display: flex !important; align-items: center !important;
+        justify-content: space-between !important; gap: 20px !important;
+        list-style: none !important; transition: color 0.3s ease !important; padding: 0 !important;
+    }
+    .laxcc-whoa .whoa-faq-q::-webkit-details-marker { display: none !important; }
+    .laxcc-whoa .whoa-faq-q:hover { color: var(--orange) !important; }
+    .laxcc-whoa .whoa-faq-q .whoa-faq-toggle {
+        font-size: 1.3rem !important; font-weight: 300 !important; flex-shrink: 0 !important;
+        transition: transform 0.3s ease !important; color: var(--text-muted) !important;
+    }
+    .laxcc-whoa .whoa-faq-item[open] .whoa-faq-toggle { transform: rotate(45deg) !important; color: var(--orange) !important; }
+    .laxcc-whoa .whoa-faq-a {
+        padding-top: 16px !important; font-size: 1rem !important; color: var(--text-muted) !important;
+        line-height: 1.7 !important; max-width: 90% !important; animation: laxcc-whoa-fadeUp 0.4s ease !important;
+    }
+
+    /* CTA */
+    .laxcc-whoa .whoa-cta {
+        padding: 120px 0 !important; background: var(--cream) !important;
+        text-align: center !important; position: relative !important; overflow: hidden !important;
+    }
+    .laxcc-whoa .whoa-cta::before {
+        content: '' !important; position: absolute !important; top: 50% !important; left: 50% !important;
+        transform: translate(-50%, -50%) !important; width: 600px !important; height: 600px !important;
+        background: radial-gradient(circle, rgba(248, 148, 89, 0.06) 0%, transparent 70%) !important;
+        border-radius: 50% !important; pointer-events: none !important;
+    }
+    .laxcc-whoa .whoa-cta-container { max-width: 700px !important; margin: 0 auto !important; padding: 0 40px !important; position: relative !important; z-index: 1 !important; }
+    .laxcc-whoa .whoa-cta h2 { font-size: clamp(2.5rem, 5vw, 4rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; margin-bottom: 20px !important; line-height: 1.05 !important; }
+    .laxcc-whoa .whoa-cta p { font-size: 1.1rem !important; color: var(--text-muted) !important; margin-bottom: 40px !important; line-height: 1.7 !important; }
+    .laxcc-whoa .whoa-cta-actions { display: flex !important; gap: 16px !important; justify-content: center !important; flex-wrap: wrap !important; }
+    .laxcc-whoa .whoa-cta-location { margin-top: 48px !important; padding-top: 32px !important; border-top: 1px solid rgba(29, 80, 138, 0.1) !important; }
+    .laxcc-whoa .whoa-cta-location p { font-size: 0.85rem !important; color: var(--text-muted) !important; margin-bottom: 0 !important; }
+    .laxcc-whoa .whoa-cta-location strong { color: var(--navy) !important; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .laxcc-whoa .whoa-about-container,
+        .laxcc-whoa .whoa-flavors-container,
+        .laxcc-whoa .whoa-education-container,
+        .laxcc-whoa .whoa-faq-container { padding: 0 40px !important; }
+        .laxcc-whoa .whoa-faq-container { grid-template-columns: 1fr !important; gap: 48px !important; }
+        .laxcc-whoa .whoa-faq-sidebar { position: static !important; }
+    }
+    @media (max-width: 640px) {
+        .laxcc-whoa .whoa-education,
+        .laxcc-whoa .whoa-faq { padding: 40px 0 !important; }
+        .laxcc-whoa .whoa-about-container,
+        .laxcc-whoa .whoa-flavors-container,
+        .laxcc-whoa .whoa-education-container,
+        .laxcc-whoa .whoa-faq-container { padding: 0 24px !important; }
+        .laxcc-whoa .whoa-faq-sidebar h2 { font-size: 2.2rem !important; }
+        .laxcc-whoa .whoa-faq-q { font-size: 1.1rem !important; }
+        .laxcc-whoa .whoa-cta { padding: 80px 0 !important; }
+    }
+
+    /* Elementor override */
+    .elementor-widget-container .laxcc-whoa {
+        width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+</style>
+
+<div class="laxcc-whoa">
+
+    <!-- HERO -->
+    <section class="whoa-hero">
+        <div class="whoa-hero-img-fill">
+            <a href="https://www.whoainfused.com/" target="_blank" rel="nofollow noopener noreferrer">
+                <img src="https://images.squarespace-cdn.com/content/v1/5aaea51885ede1bd72192ec0/ab2e2be6-cc97-4f97-ab0e-b0db8041f172/Website+graphics+%281%29.png"
+                    alt="WHOA Edibles premium gummies and chocolates available at LAXCC dispensary in Los Angeles near LAX Airport"
+                    loading="eager">
+            </a>
+        </div>
+
+        <div class="whoa-hero-body">
+            <div class="whoa-hero-badge">
+                <i class="fas fa-shield-halved"></i>
+                Licensed Dispensary &bull; 5 Min From LAX
+            </div>
+            <h1>Buy WHOA <span>Premium Edibles</span> in Los Angeles</h1>
+            <p class="whoa-hero-sub">
+                WHOA crafts all their edibles in-house in Long Beach, CA — precision-dosed gummies and chocolates with bold flavors like Mango Chile, Sour Blue Raspberry, and Strawberry Cookies & Cream. One of California's fastest-growing edibles brands.
+            </p>
+            <div class="whoa-hero-actions">
+                <a href="#whoa-live-menu" class="whoa-btn-primary">
+                    Shop WHOA Edibles <i class="fas fa-arrow-down"></i>
+                </a>
+                <a href="https://www.google.com/maps?daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045"
+                    target="_blank" rel="noopener noreferrer" class="whoa-btn-secondary">
+                    <i class="fas fa-location-dot"></i> Get Directions
+                </a>
+            </div>
+            <div class="whoa-hero-stats">
+                <div>
+                    <div class="whoa-stat-val">10mg</div>
+                    <div class="whoa-stat-lbl">Per Piece</div>
+                </div>
+                <div>
+                    <div class="whoa-stat-val">100mg</div>
+                    <div class="whoa-stat-lbl">Per Package</div>
+                </div>
+                <div>
+                    <div class="whoa-stat-val">CA</div>
+                    <div class="whoa-stat-lbl">Crafted</div>
+                </div>
+                <div>
+                    <div class="whoa-stat-val">3+</div>
+                    <div class="whoa-stat-lbl">Flavors Stocked</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+<!-- END scoped wrapper — shortcode lives OUTSIDE -->
+
+<!-- LIVE MENU -->
+<section id="whoa-live-menu">
+    [leafbridge_specific_product_filter brand="536abc1c-7ae9-4389-a71a-696e6808b03b" count="20"]
+</section>
+
+<!-- Resume scoped wrapper -->
+<div class="laxcc-whoa">
+
+    <!-- ABOUT -->
+    <section class="whoa-about">
+        <div class="whoa-about-container">
+            <div class="whoa-about-top">
+                <div class="whoa-about-header">
+                    <span class="whoa-section-label">About the Brand</span>
+                    <h2>Why WHOA Edibles Stand Out</h2>
+                    <p>WHOA is a California cannabis brand focused on crafting premium gummies and chocolates with loud flavors and consistent potency.</p>
+                </div>
+                <div class="whoa-scroll-arrows">
+                    <button class="whoa-scroll-arrow whoa-about-arrow" data-dir="-1" aria-label="Previous"><i class="fas fa-arrow-left"></i></button>
+                    <button class="whoa-scroll-arrow whoa-about-arrow" data-dir="1" aria-label="Next"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="whoa-about-track">
+                <div class="whoa-about-slide">
+                    <div class="whoa-about-slide-num">01</div>
+                    <h3>In-House Production</h3>
+                    <p>Crafted in Long Beach, CA from start to finish. Controlling the process allows WHOA to ensure every batch meets their rigorous standards.</p>
+                </div>
+                <div class="whoa-about-slide">
+                    <div class="whoa-about-slide-num">02</div>
+                    <h3>Precision Dosing</h3>
+                    <p>Consistent effects with every piece. Whether you're relaxing after work or enjoying the weekend, you can trust perfectly dosed 10mg servings.</p>
+                </div>
+                <div class="whoa-about-slide">
+                    <div class="whoa-about-slide-num">03</div>
+                    <h3>Bold Flavors</h3>
+                    <p>WHOA takes flavor seriously, offering exciting options like Mango Chile, Sour Blue Raspberry, and rich chocolate infused flavors.</p>
+                </div>
+                <div class="whoa-about-slide">
+                    <div class="whoa-about-slide-num">04</div>
+                    <h3>Premium Ingredients</h3>
+                    <p>Using only high-quality ingredients to deliver a clean, enjoyable experience without any cannabis aftertaste. Pure formulation means pure enjoyment.</p>
+                </div>
+                <div class="whoa-about-slide">
+                    <div class="whoa-about-slide-num">05</div>
+                    <h3>Available at LAXCC</h3>
+                    <p>We carry WHOA Edibles at our dispensary near LAX Airport — walk in at 8332 Lincoln Blvd or order ahead for pickup. New flavors rotate in regularly, so check the live menu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLAVOR SPOTLIGHT -->
+    <section class="whoa-flavors">
+        <div class="whoa-flavors-container">
+            <div class="whoa-flavors-top">
+                <div class="whoa-flavors-header">
+                    <span class="whoa-section-label">Available at LAXCC</span>
+                    <h2>WHOA Flavors We Carry</h2>
+                    <p>Swipe to explore the WHOA edibles currently in stock at our Los Angeles dispensary near LAX.</p>
+                </div>
+                <div class="whoa-scroll-arrows">
+                    <button class="whoa-scroll-arrow whoa-flavors-arrow" data-dir="-1" aria-label="Previous"><i class="fas fa-arrow-left"></i></button>
+                    <button class="whoa-scroll-arrow whoa-flavors-arrow" data-dir="1" aria-label="Next"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="whoa-flavors-track">
+                <div class="whoa-flavor-slide">
+                    <div class="whoa-flavor-num">01</div>
+                    <h3>Mango Chile Gummies</h3>
+                    <p>A sweet and spicy fiesta in every bite. Real fruit flavor paired with just the right amount of kick for a uniquely delicious gummy experience.</p>
+                    <span class="whoa-flavor-type">Hybrid &bull; 100mg THC</span>
+                </div>
+                <div class="whoa-flavor-slide">
+                    <div class="whoa-flavor-num">02</div>
+                    <h3>Sour Blue Raspberry Gummies</h3>
+                    <p>Tart, tangy, and totally nostalgic. These gummies pack a sour punch followed by sweet berry notes and relaxing, balanced effects.</p>
+                    <span class="whoa-flavor-type">Hybrid &bull; 100mg THC</span>
+                </div>
+                <div class="whoa-flavor-slide">
+                    <div class="whoa-flavor-num">03</div>
+                    <h3>Strawberry Cookies & Cream Chocolate</h3>
+                    <p>Rich, creamy chocolate mixed with sweet strawberry flavors. A dessert-like edible that melts nicely with relaxing and comforting effects.</p>
+                    <span class="whoa-flavor-type">Chocolate &bull; 100mg THC</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="whoa-education">
+        <div class="whoa-education-container">
+            <div class="whoa-education-top">
+                <div class="whoa-education-intro">
+                    <span class="whoa-section-label">Know Your Edibles</span>
+                    <h2>Why WHOA Hits Different</h2>
+                    <p>Not all cannabis edibles are created equal. Here's what makes WHOA a standout brand.</p>
+                </div>
+                <div class="whoa-scroll-arrows">
+                    <button class="whoa-scroll-arrow whoa-education-arrow" data-dir="-1" aria-label="Previous"><i class="fas fa-arrow-left"></i></button>
+                    <button class="whoa-scroll-arrow whoa-education-arrow" data-dir="1" aria-label="Next"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="whoa-education-track">
+                <div class="whoa-education-slide">
+                    <div class="whoa-education-num">1</div>
+                    <div class="whoa-education-name">Perfect Dosing</div>
+                    <div class="whoa-education-desc">Every piece is accurately infused with 10mg of THC, meaning you have complete control over your experience.</div>
+                </div>
+                <div class="whoa-education-slide">
+                    <div class="whoa-education-num">2</div>
+                    <div class="whoa-education-name">Great Taste</div>
+                    <div class="whoa-education-desc">Premium flavors mask the cannabis taste effectively, giving you a purely delicious bite.</div>
+                </div>
+                <div class="whoa-education-slide">
+                    <div class="whoa-education-num">3</div>
+                    <div class="whoa-education-name">Lab Tested</div>
+                    <div class="whoa-education-desc">Stringent testing guarantees purity, safety, and exact potency in every batch produced.</div>
+                </div>
+                <div class="whoa-education-slide">
+                    <div class="whoa-education-num">4</div>
+                    <div class="whoa-education-name">Local Craft</div>
+                    <div class="whoa-education-desc">Made right in Long Beach, CA, supporting the local cannabis community and ensuring freshness.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="whoa-faq">
+        <div class="whoa-faq-container">
+            <div class="whoa-faq-sidebar">
+                <h2>Common Questions</h2>
+                <p>Everything you need to know about buying WHOA Edibles at LAXCC near LAX Airport in Los Angeles.</p>
+                <div class="whoa-faq-deco"></div>
+            </div>
+
+            <div class="whoa-faq-list">
+                <details class="whoa-faq-item">
+                    <summary class="whoa-faq-q">
+                        Where can I buy WHOA edibles near LAX?
+                        <span class="whoa-faq-toggle">+</span>
+                    </summary>
+                    <div class="whoa-faq-a">
+                        LAXCC is a licensed Los Angeles dispensary at 8332 Lincoln Blvd, Los Angeles, CA 90045 — just 5 minutes from LAX Airport. We carry WHOA Edibles including gummies and chocolates. Walk in or order ahead for pickup.
+                    </div>
+                </details>
+
+                <details class="whoa-faq-item">
+                    <summary class="whoa-faq-q">
+                        What WHOA flavors does LAXCC carry?
+                        <span class="whoa-faq-toggle">+</span>
+                    </summary>
+                    <div class="whoa-faq-a">
+                        We currently stock WHOA Edibles including Mango Chile Gummies, Sour Blue Raspberry, and Strawberry Cookies & Cream. Availability rotates with new drops — check our live menu above for the most current inventory.
+                    </div>
+                </details>
+
+                <details class="whoa-faq-item">
+                    <summary class="whoa-faq-q">
+                        How many milligrams of THC are in WHOA edibles?
+                        <span class="whoa-faq-toggle">+</span>
+                    </summary>
+                    <div class="whoa-faq-a">
+                        WHOA edibles are standardized for accuracy. Typically, they come in a 100mg package, sectioned into precision-dosed 10mg servings. This makes it easy to control your experience, whether you are a beginner or a veteran.
+                    </div>
+                </details>
+
+                <details class="whoa-faq-item">
+                    <summary class="whoa-faq-q">
+                        How much do WHOA edibles cost at LAXCC?
+                        <span class="whoa-faq-toggle">+</span>
+                    </summary>
+                    <div class="whoa-faq-a">
+                        Pricing varies by product type — check the live menu on this page for current prices. LAXCC includes all taxes in our listed prices, so what you see is what you pay.
+                    </div>
+                </details>
+
+                <details class="whoa-faq-item">
+                    <summary class="whoa-faq-q">
+                        What are LAXCC's hours and location?
+                        <span class="whoa-faq-toggle">+</span>
+                    </summary>
+                    <div class="whoa-faq-a">
+                        LAXCC is open daily from 9:00 AM to 9:30 PM at 8332 Lincoln Blvd in Westchester, Los Angeles — 5 minutes from LAX Airport and 8 minutes from the beach. Walk-ins welcome, no appointment needed. We also offer pickup, curbside, and drive-thru options.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="whoa-cta">
+        <div class="whoa-cta-container">
+            <h2>Get WHOA Edibles Today at LAXCC</h2>
+            <p>
+                Walk into our licensed dispensary near LAX Airport and shop WHOA's premium edibles. Gummies, chocolates — all lab-tested and ready for you.
+            </p>
+            <div class="whoa-cta-actions">
+                <a href="https://www.google.com/maps?daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045"
+                    target="_blank" rel="noopener noreferrer" class="whoa-btn-primary">
+                    <i class="fas fa-location-dot"></i> Directions to LAXCC
+                </a>
+            </div>
+            <div class="whoa-cta-location">
+                <p><strong>LAXCC</strong> &bull; 8332 Lincoln Blvd, Los Angeles, CA 90045 &bull; Open Daily 9AM - 9:30PM</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    (function () {
+        var ld = {
+            "@context": "https://schema.org",
+            "@type": "Store",
+            "name": "LAXCC - LAX Cannabis Club",
+            "description": "Licensed dispensary near LAX Airport carrying WHOA Edibles premium gummies and chocolates in Los Angeles.",
+            "url": "https://laxcc.com",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "8332 Lincoln Blvd",
+                "addressLocality": "Los Angeles",
+                "addressRegion": "CA",
+                "postalCode": "90045",
+                "addressCountry": "US"
+            },
+            "openingHours": "Mo-Su 09:00-21:30",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 33.9575,
+                "longitude": -118.4178
+            }
+        };
+        var s = document.createElement('script');
+        s.type = 'application/ld+json';
+        s.textContent = JSON.stringify(ld);
+        document.head.appendChild(s);
+    })();
+
+    /* Horizontal scroll arrows */
+    (function () {
+        [
+            { track: '.whoa-about-track', btns: '.whoa-about-arrow', step: 340 },
+            { track: '.whoa-flavors-track', btns: '.whoa-flavors-arrow', step: 320 },
+            { track: '.whoa-education-track', btns: '.whoa-education-arrow', step: 240 }
+        ].forEach(function (cfg) {
+            var track = document.querySelector('.laxcc-whoa ' + cfg.track);
+            if (!track) return;
+            document.querySelectorAll('.laxcc-whoa ' + cfg.btns).forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var dir = parseInt(this.getAttribute('data-dir'));
+                    track.scrollBy({ left: dir * cfg.step, behavior: 'smooth' });
+                });
+            });
+        });
+    })();
+</script>

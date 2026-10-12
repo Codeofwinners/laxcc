@@ -1,437 +1,1143 @@
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap');
-
-    #laxcc_daily_modern {
-        --dm-bg: transparent;
+    #laxcc_daily_deals_unique {
         --dm-card-bg: #ffffff;
-        --dm-card-border: #e2e8f0;
-        --dm-accent: #F97316;
-        --dm-accent-glow: rgba(249, 115, 22, 0.15);
-        --dm-text: #1D508A;
-        --dm-text-muted: #64748b;
+        --dm-accent: #1D508A;
+        --dm-accent-soft: rgba(29, 80, 138, 0.08);
+        --dm-text: #0f172a;
+        --dm-text-muted: #475569;
+        --dm-border: #e5e9ef;
         --dm-font: 'Manrope', sans-serif;
-        font-family: var(--dm-font);
-        color: var(--dm-text);
-        padding: 40px 0;
-        position: relative;
-        width: 100%;
-        max-width: 1920px;
-        margin: 0 auto;
-        box-sizing: border-box;
+        font-family: var(--dm-font) !important;
+        color: var(--dm-text) !important;
+        padding: 20px 0 40px !important;
+        width: 100% !important;
+        max-width: 1500px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
     }
 
-    #laxcc_daily_modern * {
-        box-sizing: border-box;
+    #laxcc_daily_deals_unique *,
+    #laxcc_daily_deals_unique *::before,
+    #laxcc_daily_deals_unique *::after {
+        box-sizing: border-box !important;
     }
 
-    .dm_header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        margin-bottom: 24px;
-        flex-wrap: wrap;
-        gap: 20px;
+    #laxcc_daily_deals_unique .dm_header {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        margin-bottom: 18px !important;
+        padding: 0 12px !important;
+        gap: 12px !important;
+        flex-wrap: wrap !important;
     }
 
-    .dm_titles {
-        flex: 1;
-        min-width: 250px;
+    #laxcc_daily_deals_unique .dm_titles {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
     }
 
-    .dm_sup {
-        font-size: 14px;
-        font-weight: 700;
-        color: var(--dm-text-muted);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        margin-bottom: 6px;
+    #laxcc_daily_deals_unique .dm_sup {
+        font-size: 13px !important;
+        font-weight: 800 !important;
+        color: var(--dm-text) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.14em !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
     }
 
-    .dm_main_title {
-        font-size: 36px;
-        font-weight: 900;
-        line-height: 0.9;
-        text-transform: uppercase;
-        margin: 0;
-        color: var(--dm-text);
+    #laxcc_daily_deals_unique .dm_main_title,
+    #laxcc_daily_deals_unique .dm_desc {
+        display: none !important;
     }
 
-    .dm_main_title span {
-        color: var(--dm-accent);
+    #laxcc_daily_deals_unique .dm_pills {
+        display: inline-flex !important;
+        gap: 0 !important;
+        padding: 4px !important;
+        background: #f1f4f8 !important;
+        border-radius: 0 !important;
+        border: 1px solid var(--dm-border) !important;
     }
 
-    .dm_desc {
-        font-size: 16px;
-        font-weight: 500;
-        color: var(--dm-text-muted);
-        line-height: 1.5;
-        max-width: 400px;
-        margin-top: 12px;
-    }
-
-    .dm_pills {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-    }
-
-    .dm_pill {
-        background: #fff;
-        border: 1px solid var(--dm-card-border);
-        color: var(--dm-text-muted);
-        font-size: 13px;
-        font-weight: 600;
-        padding: 6px 12px;
-        border-radius: 100px;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
-
-    .dm_pill.active {
-        color: var(--dm-accent);
-        background: rgba(249, 115, 22, 0.08);
-        border-color: rgba(249, 115, 22, 0.2);
-    }
-
-    .dm_grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-        margin-bottom: 30px;
-        align-items: start;
-    }
-
-    @media (min-width: 640px) {
-        .dm_grid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            align-items: start;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .dm_grid {
-            grid-template-columns: repeat(5, 1fr);
-            gap: 24px;
-            align-items: start;
-        }
-    }
-
-    .dm_card {
-        background: var(--dm-card-bg);
-        border: 1px solid var(--dm-card-border);
-        border-radius: 16px;
-        padding: 16px;
-        display: flex;
-        flex-direction: column;
-        text-decoration: none;
-        color: inherit;
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
-    }
-
-    .dm_card:hover {
-        transform: translateY(-6px);
-        border-color: var(--dm-accent);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-
-    .dm_img_box {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 1;
-        background: #f8fafc;
-        border-radius: 10px;
-        border: 1px solid #f1f5f9;
-        padding: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 12px;
-        overflow: hidden;
-    }
-
-    .dm_img_box img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        mix-blend-mode: multiply;
-        transition: transform 0.4s ease;
-    }
-
-    .dm_card:hover .dm_img_box img {
-        transform: scale(1.1);
-    }
-
-    #dm_card_st_ides .dm_img_box,
-    #dm_card_cizi .dm_img_box {
-        padding: 0 !important;
+    #laxcc_daily_deals_unique .dm_pill {
         background: transparent !important;
         border: none !important;
+        color: var(--dm-text-muted) !important;
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        padding: 0 12px !important;
+        border-radius: 6px !important;
+        width: auto !important;
+        min-width: 0 !important;
+        height: 34px !important;
+        min-height: 34px !important;
+        max-height: 34px !important;
+        flex: 0 0 auto !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        appearance: none !important;
+        -webkit-appearance: none !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        transition: color 0.2s ease, background 0.25s ease, box-shadow 0.25s ease !important;
+        cursor: pointer !important;
+        white-space: nowrap !important;
+        user-select: none !important;
     }
 
-    #dm_card_st_ides .dm_img_box img,
-    #dm_card_cizi .dm_img_box img {
-        object-fit: cover !important;
-        mix-blend-mode: normal !important;
+    #laxcc_daily_deals_unique .dm_pill:hover {
+        color: var(--dm-text) !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_pill.active {
+        color: #fff !important;
+        background: var(--dm-accent) !important;
+        box-shadow: 0 4px 14px rgba(29, 80, 138, 0.28), 0 1px 3px rgba(29, 80, 138, 0.18) !important;
+    }
+
+    #laxcc_daily_deals_unique .laxcc_daily_deals_grid_unique {
+        display: flex !important;
+        gap: 14px !important;
+        margin-bottom: 24px !important;
+        overflow-x: auto !important;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding: 4px 12px 14px !important;
+        cursor: grab;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(15, 23, 42, 0.45) transparent;
+    }
+
+    #laxcc_daily_deals_unique .laxcc_daily_deals_grid_unique:active {
+        cursor: grabbing;
+    }
+
+    #laxcc_daily_deals_unique .laxcc_daily_deals_grid_unique::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    #laxcc_daily_deals_unique .laxcc_daily_deals_grid_unique::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    #laxcc_daily_deals_unique .laxcc_daily_deals_grid_unique::-webkit-scrollbar-thumb {
+        background: rgba(15, 23, 42, 0.45);
+        border-radius: 10px;
+        transition: background 0.2s ease;
+    }
+
+    #laxcc_daily_deals_unique .laxcc_daily_deals_grid_unique::-webkit-scrollbar-thumb:hover {
+        background: var(--dm-accent);
+    }
+
+    #laxcc_daily_deals_unique .laxcc_daily_deals_grid_unique_wrap {
+        position: relative !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_arrow {
+        position: absolute !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 10 !important;
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 50% !important;
+        border: none !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+        color: var(--dm-text) !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1) !important;
+        transition: all 0.2s ease !important;
+        padding: 0 !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_arrow:hover {
+        background: var(--dm-text) !important;
+        color: #fff !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_arrow--left {
+        left: -8px !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_arrow--right {
+        right: -8px !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_arrow.dm_arrow--hidden {
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_card {
+        background: var(--dm-card-bg) !important;
+        border: none !important;
+        border-radius: 16px !important;
+        padding: 14px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        text-decoration: none !important;
+        color: inherit !important;
+        transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+        min-width: 190px !important;
+        max-width: 190px !important;
+        flex-shrink: 0 !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_card:hover {
+        transform: translateY(-6px) !important;
+        box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.12) !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_img_box {
+        position: relative !important;
+        width: 100% !important;
+        aspect-ratio: 1 !important;
+        background: #f5f7f6 !important;
+        border-radius: 12px !important;
+        border: none !important;
+        padding: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin-bottom: 10px !important;
+        overflow: hidden !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_img_box img {
         width: 100% !important;
         height: 100% !important;
+        object-fit: contain !important;
+        mix-blend-mode: multiply;
+        transition: transform 0.4s ease !important;
     }
 
-    .dm_badge {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background: var(--dm-accent);
-        color: #fff;
-        font-size: 12px;
-        font-weight: 800;
-        padding: 6px 12px;
-        border-radius: 8px;
-        text-transform: uppercase;
-        z-index: 2;
-        letter-spacing: 0.03em;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    #laxcc_daily_deals_unique .dm_card:hover .dm_img_box img {
+        transform: scale(1.08) !important;
     }
 
-    .dm_title {
-        font-size: 20px;
-        font-weight: 800;
-        margin: 0 0 6px 0;
-        color: var(--dm-text);
-        line-height: 1.25;
+    #laxcc_daily_deals_unique .dm_card--filled .dm_img_box {
+        padding: 0 !important;
+        background: transparent !important;
     }
 
-    .dm_deal {
-        font-size: 16px;
-        color: var(--dm-text-muted);
-        line-height: 1.4;
-        font-weight: 600;
+    #laxcc_daily_deals_unique .dm_card--filled .dm_img_box img {
+        object-fit: cover !important;
+        mix-blend-mode: normal !important;
     }
 
-    .dm_footer {
-        display: flex;
-        justify-content: center;
-        margin-top: 30px;
-        border-top: 1px solid var(--dm-card-border);
-        padding-top: 30px;
+    #laxcc_daily_deals_unique .dm_badge {
+        position: absolute !important;
+        top: 8px !important;
+        left: 8px !important;
+        color: #fff !important;
+        font-size: 10px !important;
+        font-weight: 800 !important;
+        padding: 5px 10px !important;
+        border-radius: 6px !important;
+        text-transform: uppercase !important;
+        z-index: 2 !important;
+        letter-spacing: 0.04em !important;
+        white-space: nowrap !important;
     }
 
-    .dm_cta {
-        background: #1D508A;
-        color: #fff;
-        font-size: 14px;
-        font-weight: 800;
-        padding: 12px 32px;
-        border-radius: 12px;
-        text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        transition: all 0.2s;
+    #laxcc_daily_deals_unique .dm_title {
+        font-size: 16px !important;
+        font-weight: 800 !important;
+        margin: 0 0 4px 0 !important;
+        color: var(--dm-text) !important;
+        line-height: 1.2 !important;
     }
 
-    .dm_cta:hover {
-        background: var(--dm-accent);
-        transform: scale(1.05);
+    #laxcc_daily_deals_unique .dm_deal {
+        font-size: 13px !important;
+        color: var(--dm-text-muted) !important;
+        line-height: 1.35 !important;
+        font-weight: 600 !important;
     }
 
+    #laxcc_daily_deals_unique .dm_footer {
+        display: flex !important;
+        justify-content: center !important;
+        margin-top: 20px !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_cta,
+    #laxcc_daily_deals_unique .dm_cta:link,
+    #laxcc_daily_deals_unique .dm_cta:visited,
+    #laxcc_daily_deals_unique .dm_cta:active,
+    #laxcc_daily_deals_unique .dm_cta:hover,
+    #laxcc_daily_deals_unique a.dm_cta,
+    #laxcc_daily_deals_unique a.dm_cta:link,
+    #laxcc_daily_deals_unique a.dm_cta:visited {
+        background: #F89459 !important;
+        color: #fff !important;
+        font-size: 14px !important;
+        font-weight: 800 !important;
+        padding: 14px 36px !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.06em !important;
+        white-space: nowrap !important;
+        transition: transform 0.2s ease !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_cta:hover {
+        transform: translateY(-2px) !important;
+    }
+
+    /* Text blocks run the full container width so their edges line up with the
+       deal rail and header — no narrow centered column on desktop. */
+    #laxcc_daily_deals_unique .dm_intro {
+        padding: 0 12px !important;
+        margin: 0 0 12px !important;
+        max-width: 100% !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_intro p {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        color: var(--dm-text-muted) !important;
+        font-weight: 500 !important;
+        margin: 0 !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_seo {
+        padding: 16px 12px 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        text-align: center !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_seo p {
+        font-size: 13.5px !important;
+        line-height: 1.55 !important;
+        color: var(--dm-text-muted) !important;
+        font-weight: 500 !important;
+        margin: 0 !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_intro strong,
+    #laxcc_daily_deals_unique .dm_seo strong {
+        color: var(--dm-text) !important;
+        font-weight: 800 !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_seo a {
+        color: var(--dm-accent) !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+    }
+
+    /* VIP join offer — sits above the deal rail so it shows on both tabs */
+    #laxcc_daily_deals_unique .dm_vip {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 18px !important;
+        max-width: 100% !important;
+        margin: 0 12px 14px !important;
+        padding: 12px 20px !important;
+        border-radius: 14px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        background-color: #1D508A !important;
+        box-shadow: 0 2px 12px rgba(16, 52, 96, 0.34) !important;
+        text-decoration: none !important;
+        color: inherit !important;
+        transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+    }
+
+    /* CTA cluster — preroll image sits left of the button on desktop,
+       above it on mobile */
+    #laxcc_daily_deals_unique .dm_vip_cta {
+        display: flex !important;
+        align-items: center !important;
+        gap: 16px !important;
+        flex-shrink: 0 !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+    /* the PNG has ~40% transparent padding top and bottom, so it is sized
+       large and pulled in with negative margins to keep the row compact */
+    #laxcc_daily_deals_unique .dm_vip_img {
+        display: block !important;
+        width: 190px !important;
+        height: auto !important;
+        margin: -34px 0 !important;
+        flex-shrink: 0 !important;
+        pointer-events: none !important;
+        will-change: transform !important;
+        /* transform is owned by @keyframes — never declare it !important here */
+        animation: dmPrerollFloat 5s ease-in-out infinite !important;
+    }
+
+    /* levitation — translateY only, so container height never changes */
+    @keyframes dmPrerollFloat {
+
+        0%,
+        100% {
+            transform: translateY(-5px);
+            filter: drop-shadow(0 4px 5px rgba(5, 20, 42, 0.34));
+        }
+
+        50% {
+            transform: translateY(5px);
+            filter: drop-shadow(0 10px 12px rgba(5, 20, 42, 0.26));
+        }
+    }
+
+    /* travelling sheen — pure CSS, no JS */
+    #laxcc_daily_deals_unique .dm_vip::after {
+        content: '' !important;
+        position: absolute !important;
+        top: -60% !important;
+        bottom: -60% !important;
+        left: 0 !important;
+        width: 16% !important;
+        pointer-events: none !important;
+        background-image: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.38) 50%, rgba(255, 255, 255, 0) 100%) !important;
+        /* transform is set by @keyframes only — declaring it !important here would outrank the animation */
+        animation: dmVipShine 11s ease-in-out infinite !important;
+    }
+
+    @keyframes dmVipShine {
+        0% {
+            transform: translateX(-260%) rotate(18deg);
+            opacity: 0;
+        }
+
+        6% {
+            opacity: 1;
+        }
+
+        28% {
+            transform: translateX(560%) rotate(18deg);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(560%) rotate(18deg);
+            opacity: 0;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        #laxcc_daily_deals_unique .dm_vip::after {
+            animation: none !important;
+            opacity: 0 !important;
+        }
+
+        #laxcc_daily_deals_unique .dm_vip_img {
+            animation: none !important;
+        }
+    }
+
+    #laxcc_daily_deals_unique a.dm_vip:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 10px 26px -6px rgba(16, 52, 96, 0.48) !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_vip_txt {
+        min-width: 0 !important;
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_vip_eyebrow {
+        display: block !important;
+        font-size: 11px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.14em !important;
+        text-transform: uppercase !important;
+        color: #ffffff !important;
+        text-shadow: 0 1px 2px rgba(5, 20, 42, 0.55) !important;
+        margin-bottom: 2px !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_vip_head {
+        display: block !important;
+        font-size: 15px !important;
+        font-weight: 800 !important;
+        color: #ffffff !important;
+        text-shadow: 0 1px 3px rgba(5, 20, 42, 0.60) !important;
+        line-height: 1.25 !important;
+        margin: 0 !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_vip_head .dm_vip_price {
+        color: #ffffff !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_vip_sub {
+        display: block !important;
+        font-size: 12.5px !important;
+        font-weight: 600 !important;
+        color: rgba(255, 255, 255, 0.94) !important;
+        text-shadow: 0 1px 2px rgba(5, 20, 42, 0.55) !important;
+        line-height: 1.4 !important;
+        margin: 2px 0 0 !important;
+    }
+
+    #laxcc_daily_deals_unique .dm_vip_btn {
+        display: block !important;
+        flex-shrink: 0 !important;
+        position: relative !important;
+        z-index: 1 !important;
+        background: #F89459 !important;
+        color: #fff !important;
+        font-size: 13px !important;
+        font-weight: 800 !important;
+        padding: 11px 22px !important;
+        border-radius: 10px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.06em !important;
+        white-space: nowrap !important;
+    }
+
+    @media (max-width: 768px) {
+        #laxcc_daily_deals_unique .dm_vip {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 14px !important;
+            margin: 0 16px 16px !important;
+            padding: 16px 18px !important;
+        }
+
+        /* stack: preroll image ABOVE the Join Free button */
+        #laxcc_daily_deals_unique .dm_vip_cta {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 6px !important;
+            width: 100% !important;
+        }
+
+        #laxcc_daily_deals_unique .dm_vip_img {
+            width: 200px !important;
+            margin: -30px auto -26px !important;
+        }
+
+        #laxcc_daily_deals_unique .dm_vip_head {
+            font-size: 15px !important;
+        }
+
+        #laxcc_daily_deals_unique .dm_vip_sub {
+            font-size: 12px !important;
+        }
+
+        #laxcc_daily_deals_unique .dm_vip_btn {
+            width: 100% !important;
+            text-align: center !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #laxcc_daily_deals_unique {
+            padding: 12px 0 24px !important;
+        }
+
+        #laxcc_daily_deals_unique .dm_header {
+            padding: 0 16px !important;
+            margin-bottom: 12px !important;
+        }
+
+        #laxcc_daily_deals_unique .dm_intro {
+            padding: 0 16px !important;
+            margin-bottom: 14px !important;
+        }
+
+        #laxcc_daily_deals_unique .dm_intro p {
+            font-size: 13.5px !important;
+        }
+
+        #laxcc_daily_deals_unique .dm_seo {
+            padding: 18px 16px 0 !important;
+        }
+
+        #laxcc_daily_deals_unique .dm_seo p {
+            font-size: 12.5px !important;
+        }
+
+        #laxcc_daily_deals_unique .dm_pills {
+            flex-wrap: nowrap !important;
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        #laxcc_daily_deals_unique .dm_pills::-webkit-scrollbar {
+            display: none;
+        }
+
+        #laxcc_daily_deals_unique .dm_pill {
+            white-space: nowrap !important;
+            flex-shrink: 0 !important;
+        }
+
+        #laxcc_daily_deals_unique .laxcc_daily_deals_grid_unique {
+            gap: 10px !important;
+            padding: 4px 16px 12px !important;
+        }
+
+        #laxcc_daily_deals_unique .dm_card {
+            min-width: 150px !important;
+            max-width: 150px !important;
+            padding: 10px !important;
+            border-radius: 12px !important;
+        }
+
+        #laxcc_daily_deals_unique .dm_img_box {
+            border-radius: 8px !important;
+            padding: 8px !important;
+            margin-bottom: 8px !important;
+        }
+
+        #laxcc_daily_deals_unique .dm_badge {
+            font-size: 9px !important;
+            padding: 4px 7px !important;
+        }
+
+        #laxcc_daily_deals_unique .dm_title {
+            font-size: 13px !important;
+            margin-bottom: 2px !important;
+        }
+
+        #laxcc_daily_deals_unique .dm_deal {
+            font-size: 11px !important;
+        }
+
+        #laxcc_daily_deals_unique .dm_arrow {
+            display: none !important;
+        }
+    }
+    /* Compact version of the Specials dark cards and circular flame artwork. */
+    #laxcc_daily_deals_unique .dm_pills { background: transparent !important; border: 0 !important; gap: 6px !important; }
+    #laxcc_daily_deals_unique .laxcc_daily_deals_grid_unique { padding-top: 12px !important; align-items: flex-start !important; }
+    #laxcc_daily_deals_unique .dm_card {
+        background: radial-gradient(circle at 50% 20%, rgba(25,183,201,.18), transparent 55%), linear-gradient(145deg, #182631, #101820) !important;
+        border: 1px solid rgba(25,183,201,.2) !important;
+        box-shadow: none !important;
+        overflow: hidden !important;
+        height: 320px !important; min-height: 320px !important; max-height: 320px !important;
+        align-self: flex-start !important;
+        position: relative !important; isolation: isolate;
+    }
+    #laxcc_daily_deals_unique .dm_card > *:not(.dm_watermark) { position: relative; z-index: 1; }
+    #laxcc_daily_deals_unique .dm_watermark {
+        position: absolute !important; right: -28px !important; bottom: 42px !important;
+        z-index: 0 !important; font-family: 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+        font-size: 124px !important; line-height: 1 !important; opacity: .08 !important;
+        transform: rotate(-15deg) !important; pointer-events: none !important;
+        filter: grayscale(1) !important; user-select: none !important;
+    }
+    #laxcc_daily_deals_unique .dm_card:hover { box-shadow: none !important; }
+    #laxcc_daily_deals_unique .dm_card:focus-visible { outline: 3px solid #00afc9 !important; outline-offset: 3px !important; }
+    #laxcc_daily_deals_unique .dm_card .dm_img_box {
+        background: transparent !important; padding: 0 !important; overflow: hidden !important;
+        width: 100% !important; height: 160px !important; min-height: 160px !important;
+        max-height: 160px !important; aspect-ratio: 1 / 1 !important;
+        flex: 0 0 160px !important; isolation: isolate;
+    }
+    #laxcc_daily_deals_unique .dm_img_box::after {
+        content: ''; position: absolute; inset: 13%; border-radius: 50%;
+        background: #fff; z-index: 0; box-shadow: 0 8px 18px rgba(0,0,0,.22);
+    }
+    #laxcc_daily_deals_unique .dm_img_box::before {
+        content: ''; position: absolute; inset: 9%; border-radius: 50%;
+        background: conic-gradient(#ff3d2e, #ff9b3f, #ffd84d, #ff4635, #ff3d2e);
+        animation: dmRingSpin 5s linear infinite;
+        box-shadow: 0 0 15px rgba(255,111,52,.35); z-index: -1;
+    }
+    #laxcc_daily_deals_unique .dm_photo_circle {
+        position: absolute !important; inset: 13% !important; z-index: 1 !important;
+        display: flex !important; align-items: center !important; justify-content: center !important;
+        border-radius: 50% !important; overflow: hidden !important;
+        background: #fff !important; box-shadow: 0 8px 18px rgba(0,0,0,.22) !important;
+    }
+    #laxcc_daily_deals_unique .dm_photo_circle img {
+        position: relative !important; z-index: 1 !important;
+        display: block !important; width: auto !important; height: auto !important;
+        max-width: 100% !important; max-height: 100% !important;
+        object-fit: contain !important; aspect-ratio: auto !important;
+        padding: 4px !important; border-radius: 0 !important; background: transparent !important;
+        mix-blend-mode: normal !important;
+    }
+    #laxcc_daily_deals_unique .dm_card--filled .dm_photo_circle img {
+        width: auto !important; height: auto !important;
+        max-width: 100% !important; max-height: 100% !important;
+        object-fit: contain !important; aspect-ratio: auto !important;
+    }
+    #laxcc_daily_deals_unique .dm_card:hover .dm_photo_circle img { transform: scale(1.02) !important; }
+    #laxcc_daily_deals_unique .dm_flame {
+        display: inline-flex !important; position: relative !important;
+        width: 16px !important; height: 16px !important; flex: 0 0 16px !important;
+        align-items: center !important; justify-content: center !important;
+        font-size: 16px !important; line-height: 1 !important;
+        animation: dmFireDance .8s ease-in-out infinite alternate !important;
+        transform-origin: center bottom !important;
+        filter: drop-shadow(0 0 3px #ff6b00);
+        pointer-events: none !important;
+    }
+    /* WordPress converts emoji into images: keep them out of the product-photo styling. */
+    #laxcc_daily_deals_unique .dm_card .dm_img_box .dm_flame img {
+        width: 16px !important; height: 16px !important;
+        min-width: 0 !important; max-width: 16px !important;
+        padding: 0 !important; margin: 0 !important;
+        background: transparent !important; border: 0 !important;
+        border-radius: 0 !important; box-shadow: none !important;
+        transform: none !important; object-fit: contain !important;
+    }
+    #laxcc_daily_deals_unique .dm_badge { top: 0 !important; left: 0 !important; background: #17407a !important; display: inline-flex !important; align-items: center !important; gap: 5px !important; }
+    #laxcc_daily_deals_unique .dm_title { color: #19b7c9 !important; }
+    #laxcc_daily_deals_unique .dm_deal { color: #e2e8f0 !important; margin-bottom: 12px !important; overflow-wrap: anywhere; }
+    #laxcc_daily_deals_unique .dm_shop {
+        display: block; width: 100% !important; height: 36px !important;
+        min-height: 36px !important; max-height: 36px !important;
+        flex: 0 0 36px !important; margin-top: auto !important; padding: 9px 5px;
+        box-sizing: border-box !important; border-radius: 8px !important;
+        appearance: none !important; -webkit-appearance: none !important;
+        background: linear-gradient(135deg, #ff9b3f, #ff745f); color: #fff;
+        text-align: center; font-size: 11px; line-height: 18px; font-weight: 800;
+        white-space: nowrap; overflow: hidden;
+    }
+    @keyframes dmRingSpin { to { transform: rotate(360deg); } }
+    @keyframes dmFireDance {
+        0% { transform: scale(1) rotate(-2deg) translateY(0); }
+        20% { transform: scale(1.15) rotate(1deg) translateY(-1px); }
+        40% { transform: scale(1.05) rotate(-1.5deg) translateY(-2px); }
+        60% { transform: scale(1.2) rotate(2deg) translateY(-1px); }
+        80% { transform: scale(1.1) rotate(-1deg) translateY(0); }
+        100% { transform: scale(1.15) rotate(1.5deg) translateY(-2px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        #laxcc_daily_deals_unique .dm_flame { animation: none !important; }
+        #laxcc_daily_deals_unique .dm_img_box::before { animation: none; }
+        #laxcc_daily_deals_unique .laxcc_daily_deals_grid_unique { scroll-behavior: auto; }
+    }
     @media (max-width: 600px) {
-        #laxcc_daily_modern {
-            padding: 20px 0;
+        #laxcc_daily_deals_unique .dm_card {
+            height: 278px !important; min-height: 278px !important; max-height: 278px !important;
         }
-        .dm_header {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 15px;
-        }
-        .dm_main_title {
-            font-size: 32px;
-        }
-        .dm_desc {
-            font-size: 14px;
-        }
-        .dm_card {
-            padding: 12px;
-        }
-        .dm_title {
-            font-size: 14px;
-        }
-        .dm_deal {
-            font-size: 13px;
-        }
-        .dm_badge {
-            font-size: 11px;
-            padding: 5px 10px;
-            top: 8px;
-            left: 8px;
+        #laxcc_daily_deals_unique .dm_card .dm_img_box {
+            height: 130px !important; min-height: 130px !important; max-height: 130px !important;
+            flex-basis: 130px !important;
         }
     }
 </style>
 
-<div id="laxcc_daily_modern">
+<div id="laxcc_daily_deals_unique">
+    <div class="dm_intro">
+        <p>Hunting for the <strong>best weed deals in Los Angeles</strong>? These are today's live picks at LAX Cannabis
+            Club — one of the <strong>best Los Angeles dispensaries</strong> for everyday value. We refresh our daily
+            dispensary deals every day of the week with BOGOs, buy-2-get-1 offers and half-off drops on the brands
+            Angelenos actually reach for, all just 5 minutes from LAX Airport.</p>
+    </div>
+    <a href="https://lab.alpineiq.com/join/c/2748/4715" class="dm_vip" target="_blank"
+        rel="nofollow noopener noreferrer">
+        <span class="dm_vip_txt">
+            <span class="dm_vip_eyebrow">New VIP Members</span>
+            <span class="dm_vip_head">Join free and get a staff-picked pre-roll for just <span
+                    class="dm_vip_price">$0.01</span></span>
+            <span class="dm_vip_sub">Hand-picked by our budtenders — $25 minimum purchase, one per new member, while
+                supplies last.</span>
+        </span>
+        <span class="dm_vip_cta">
+            <img class="dm_vip_img" src="https://laxcc.com/wp-content/uploads/2026/08/free-preroll-for-1-penny.png"
+                alt="LAX CC pre-roll free for one penny with new VIP membership" loading="lazy" decoding="async">
+            <span class="dm_vip_btn">Join Free</span>
+        </span>
+    </a>
     <div class="dm_header">
         <div class="dm_titles">
             <div class="dm_sup" id="dm_date_label">Today's Deals</div>
-            <h2 class="dm_main_title">Daily <span>Drops</span></h2>
-            <div class="dm_desc">Limit one BOGO per brand/day. Mix & match across brands allowed. While supplies last.</div>
+            <h2 class="dm_main_title"></h2>
+            <div class="dm_desc"></div>
         </div>
         <div class="dm_pills">
-            <div class="dm_pill active">🔥 Today's Picks</div>
-            <div class="dm_pill">🚀 Everyday Deals</div>
+            <button type="button" class="dm_pill active" aria-pressed="true">Today's Picks</button>
+            <button type="button" class="dm_pill" aria-pressed="false">Everyday Deals</button>
         </div>
     </div>
-    <div class="dm_grid" id="dm_grid"></div>
+    <div class="laxcc_daily_deals_grid_unique_wrap">
+        <button class="dm_arrow dm_arrow--left" id="laxcc_daily_deals_arrow_left_unique" aria-label="Scroll left">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+        <div class="laxcc_daily_deals_grid_unique" id="laxcc_daily_deals_grid_unique"></div>
+        <button class="dm_arrow dm_arrow--right" id="laxcc_daily_deals_arrow_right_unique" aria-label="Scroll right">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </button>
+    </div>
     <div class="dm_footer">
-        <a href="https://laxcc.com/shop" class="dm_cta" target="_blank">View All Deals</a>
+        <a href="https://laxcc.com/deals/" class="dm_cta" target="_blank">See All September Deals</a>
+    </div>
+    <div class="dm_seo">
+        <p>From rotating weekly specials to everyday BOGOs across flower, pre-rolls, vapes, edibles and concentrates,
+            LAX Cannabis Club keeps some of the <strong>best weed deals in Los Angeles</strong> running seven days a
+            week. Whether you're a local restocking or a traveler landing at LAX, it's the easiest way to shop the
+            <strong>best Los Angeles dispensary</strong> deals — real savings on top LA weed brands, minutes from the
+            airport.
+        </p>
     </div>
 </div>
 
 <script>
-(function(){
-var t=document.getElementById('dm_grid');
-if(!t)return;
+    (function () {
+        var t = document.getElementById('laxcc_daily_deals_grid_unique');
+        if (!t) return;
 
-var everyday=[
-{b:'710 Labs',d:'Buy pod get battery',t:'HOT',c:'#F97316'},
-{b:'Cizi',d:'Buy 2 get 1 on AIO & 7g',t:'B2G1',c:'#3B82f6'},
-{b:'Kanha',d:'Solventless Belts Buy 1 Get 1',t:'BOGO',c:'#F97316'}
-];
+        var everyday = [
+            { b: 'Manzanita Naturals', d: 'BOGO on THC beverages', t: 'BOGO', c: '#E8430D', img: 'https://images.dutchie.com/38e4d740f895270350722f8595c06f7b?w=500&h=500&fm=webp' },
+            { b: 'Lusty', d: 'BOGO on Meta O.G 7g flower', t: 'BOGO', c: '#E8430D' },
+            { b: 'Kyles', d: 'BOGO on 1/8ths', t: 'BOGO', c: '#E8430D' },
+            { b: 'Heirbloom', d: 'BOGO prerolls', t: 'BOGO', c: '#E8430D', img: 'https://images.dutchie.com/4e2478badb674bece94cc5906a18dc7e?w=500&h=500&fm=webp' },
+            { b: 'Koa', d: 'BOGO on gummies', t: 'BOGO', c: '#E8430D' },
+            { b: 'Royal Blunts', d: 'Buy 2 get 1 (non-infused prerolls)', t: 'B2G1', c: '#3B82f6' },
+            { b: 'CIZI', d: 'BOGO on hash holes', t: 'BOGO', c: '#E8430D' },
+            { b: 'Selfies', d: 'BOGO on 2pks', t: 'BOGO', c: '#E8430D' },
+            { b: 'Big Petes', d: "Buy any Big Pete's item and get gummies or a rice crispy", t: 'HOT', c: '#F97316' },
+            { b: 'Emerald Sky', d: 'Buy any Emerald Sky item and get Mellow Melon gummies', t: 'HOT', c: '#F97316' },
+            { b: 'Whoa', d: 'Buy a 100mg gummy and get a 25mg gummy', t: 'HOT', c: '#F97316' },
+            { b: 'Emerald Bay', d: 'Buy 1 syringe and get a 25mg tablet', t: 'HOT', c: '#F97316' },
+            { b: 'Stiiizy', d: 'BOGO on 1g pods', t: 'BOGO', c: '#E8430D' },
+            { b: 'Lift Tickets', d: 'BOGO', t: 'BOGO', c: '#E8430D' },
+            { b: 'Highatus', d: 'Buy 1 and get two 2pks', t: 'B1G2', c: '#3B82f6' },
+            { b: 'Top Shelf', d: 'BOGO prerolls', t: 'BOGO', c: '#E8430D' },
+            { b: 'Lolo', d: 'Buy 1 and get a preroll', t: 'HOT', c: '#F97316' }
+        ];
 
-var weekly={
-Sunday:[
-{b:'Koa',d:'Buy 10pk get 2pk',t:'HOT',c:'#db2777'},
-{b:'Uncle Arnies',d:'Buy 2 Get 1',t:'B2G1',c:'#3B82f6'},
-{b:'Turn',d:'Buy POD get battery / B2G1 Pods & AIO',t:'HOT',c:'#EF4444'},
-{b:'Aims',d:'Buy 1/8th get 1g / Buy 2 7pk get 1',t:'BOGO',c:'#F97316'},
-{b:'Korova',d:'Buy Bar/Gel Tabs get Terp Ropes',t:'HOT',c:'#EF4444'}
-],
-Monday:[
-{b:'Drops',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'},
-{b:'Aether Fields',d:'Buy 1/8th Get 1g flower',t:'HOT',c:'#EF4444'},
-{b:'Sluggers',d:'Buy 5pk get .7g Infused Preroll',t:'HOT',c:'#EF4444'},
-{b:'St. Ides',d:'Buy 2 get 1 (St. Ides/PBR/NY Fathers)',t:'B2G1',c:'#3B82f6'},
-{b:'Daily Smoke',d:'Buy 1/8th get 1g Preroll',t:'HOT',c:'#EF4444'}
-],
-Tuesday:[
-{b:'Raw Garden',d:'Buy 2 1g Cart get 1g AIO / Buy 2 Get 1 Wax',t:'HOT',c:'#EF4444'},
-{b:'Bloom',d:'BOGO on cart',t:'BOGO',c:'#F97316'},
-{b:'Lost Farm',d:'Buy 2 Get 1',t:'B2G1',c:'#3B82f6'},
-{b:'MicroBar',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'},
-{b:'Habitat',d:'Buy 1/8th get 1g preroll',t:'HOT',c:'#EF4444'}
-],
-Wednesday:[
-{b:'Good Tides',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'},
-{b:'7 Leaves',d:'Buy 1/8th get a 1g preroll',t:'HOT',c:'#EF4444'},
-{b:'Kingroll',d:'Buy 2 1.3g get 1 / B1G.5g / B2G1 Cart',t:'B2G1',c:'#3B82f6'},
-{b:'American Weed Co.',d:'Buy 14g get 3.5g / Buy 1/8th get 1g',t:'BOGO',c:'#F97316'},
-{b:'Pacific Stone',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'}
-],
-Thursday:[
-{b:'West Coast Cure',d:'Buy 1 cart get 2nd 1/2 off / Buy 1/8th get 1g',t:'HOT',c:'#EF4444'},
-{b:'Nameless',d:'Buy 1 get 1 1/2 off',t:'50% OFF',c:'#8B5CF6'},
-{b:'CQ',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'},
-{b:'CAM',d:'Buy 1/8th get a 1g Preroll',t:'HOT',c:'#EF4444'},
-{b:'LAX Packs',d:'Buy 1/8th get a 1g Preroll',t:'HOT',c:'#EF4444'}
-],
-Friday:[
-{b:'Maven',d:'Buy 1/8th get 1g',t:'HOT',c:'#EF4444'},
-{b:'Rove',d:'BOGO Carts / BOGO AIO / B2G1 Reload',t:'BOGO',c:'#F97316'},
-{b:'Stiiizy',d:'Buy 2 (1g/0.5g) get 1',t:'B2G1',c:'#3B82f6'},
-{b:'El Blunto',d:'Buy 1.6g get .65g Preroll',t:'HOT',c:'#EF4444'},
-{b:'Claybourne',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'},
-{b:'Highatus',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'}
-],
-Saturday:[
-{b:'Canabiotix',d:'Buy Rosin get 1 Terp sugar',t:'HOT',c:'#EF4444'},
-{b:'Dompen',d:'Buy 2 get 1 AIO',t:'B2G1',c:'#3B82f6'},
-{b:'Jeeter',d:'Buy 1 get 0.5g',t:'HOT',c:'#EF4444'},
-{b:'St. Ides',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'},
-{b:'Clone Goddess',d:'Buy 2 get 1',t:'B2G1',c:'#3B82f6'}
-]
-};
+        var weekly = {
+            Sunday: [
+                { b: 'Aims', d: 'Buy 2 get 1 on prerolls / Buy an 1/8th and get 1g', t: 'B2G1', c: '#F97316' },
+                { b: 'Care by Design', d: 'BOGO', t: 'BOGO', c: '#F97316' },
+                { b: 'Koa', d: 'BOGO prerolls', t: 'BOGO', c: '#F97316', img: 'https://images.dutchie.com/d611c675173ad6bc8c45906c22efb850?w=400&h=400&fm=webp' },
+                { b: 'Uncle Arnies', d: 'Buy 2 get 1', t: 'B2G1', c: '#F97316' },
+                { b: 'Highatus', d: 'Buy 2 get 1 (full size, not mini)', t: 'B2G1', c: '#F97316' }
+            ],
+            Monday: [
+                { b: 'Smokiez', d: 'BOGO', t: 'BOGO', c: '#3B82f6' },
+                { b: 'Selfies', d: 'BOGO on 2pks & groupies', t: 'BOGO', c: '#3B82f6' },
+                { b: 'Sluggers', d: 'BOGO on .7g prerolls', t: 'BOGO', c: '#3B82f6' },
+                { b: 'PlugPlay', d: 'BOGO', t: 'BOGO', c: '#3B82f6' },
+                { b: 'Drops', d: 'Buy 2 get 1', t: 'B2G1', c: '#3B82f6' },
+                { b: 'Timeless', d: 'Buy a cart get an AIO', t: 'HOT', c: '#3B82f6' }
+            ],
+            Tuesday: [
+                { b: 'Kiva', d: 'Lost Farm buy 2 get 1 / Camino buy 2 get 1', t: 'B2G1', c: '#db2777' },
+                { b: 'Habitat', d: 'Buy 2 get 1 on prerolls & 1/8ths', t: 'B2G1', c: '#db2777' },
+                { b: 'Raw Garden', d: 'Buy any 2 get 1 (AIO, 1g carts, wax)', t: 'B2G1', c: '#db2777' },
+                { b: 'Presidential', d: 'Buy 1 get 1', t: 'BOGO', c: '#db2777' },
+                { b: 'MicroBar', d: 'Buy 2 get 1', t: 'B2G1', c: '#db2777' },
+                { b: 'Bloom', d: 'Buy 1 and get an AIO', t: 'HOT', c: '#db2777' }
+            ],
+            Wednesday: [
+                { b: 'Time Machine', d: 'Buy 1 get 2g', t: 'HOT', c: '#3D7A2A' },
+                { b: 'Pacific Stone', d: 'Buy 1 and get 2g', t: 'HOT', c: '#3D7A2A' },
+                { b: 'Good Tides', d: 'Buy 2 get 1', t: 'B2G1', c: '#3D7A2A' },
+                { b: 'WYLD', d: 'Buy 2 get 1', t: 'B2G1', c: '#3D7A2A' },
+                { b: 'Kingroll & Kingpen', d: 'Buy 2 1.3g prerolls get 1 / Buy 1 get .5g preroll / Buy 2 get 1 cart', t: 'B2G1', c: '#3D7A2A' },
+                { b: 'Jetty Extracts', d: 'Buy 2 get 1', t: 'B2G1', c: '#3D7A2A' }
+            ],
+            Thursday: [
+                { b: 'Goldmine', d: 'Buy 1 get 2 singles', t: 'HOT', c: '#F97316' },
+                { b: 'West Coast Cure', d: 'BOGO 1g preroll / Buy 1 get 1/2 off carts', t: 'HOT', c: '#F97316' },
+                { b: 'Turn', d: 'Buy 2 get 1', t: 'B2G1', c: '#F97316' },
+                { b: 'Rove', d: 'Buy 2 get 1 carts & pods', t: 'B2G1', c: '#F97316' },
+                { b: 'Delighted', d: 'Buy 2 get 1', t: 'B2G1', c: '#F97316' },
+                { b: 'Boutiq', d: 'Buy 2 get 1 prerolls', t: 'B2G1', c: '#F97316' }
+            ],
+            Friday: [
+                { b: 'Maven', d: 'BOGO Goldies & 5pk / Buy 2 get 1 on 1/8ths', t: 'BOGO', c: '#3B82f6' },
+                { b: 'Emerald Bay', d: 'Buy 1 get a 25mg', t: 'HOT', c: '#3B82f6' },
+                { b: 'CIZI', d: 'BOGO 2pk prerolls / BOGO hash holes (all other offers available only when the rep is here)', t: 'BOGO', c: '#3B82f6' },
+                { b: 'Top Shelf', d: 'BOGO 1g prerolls', t: 'BOGO', c: '#3B82f6' },
+                { b: 'Claybourne', d: 'Buy 2 get 1 AIO / Buy 1/8th get 2g flower', t: 'B2G1', c: '#3B82f6' },
+                { b: 'Nuvata', d: 'Buy 2 get 1', t: 'B2G1', c: '#3B82f6' }
+            ],
+            Saturday: [
+                { b: 'Heirbloom', d: 'Buy 2 1/8ths get 1', t: 'B2G1', c: '#F97316' },
+                { b: 'Froot', d: 'Buy 2 get 1', t: 'B2G1', c: '#F97316' },
+                { b: 'Dompen', d: 'Buy 2 get 1', t: 'B2G1', c: '#F97316' },
+                { b: 'PBR', d: 'Buy 2 get 1', t: 'B2G1', c: '#F97316' },
+                { b: 'Chico Verde', d: 'Buy 2 get 1 on prerolls & 1/8ths', t: 'B2G1', c: '#F97316' },
+                { b: 'THC Design', d: 'Buy 2 get 1 prerolls', t: 'B2G1', c: '#F97316' }
+            ]
+        };
 
-var imgs={
-'710 Labs':'https://images.dutchie.com/cc815160c7bcdafb3dd0e07500d4afbf?w=500&h=500&fm=webp',
-'Cizi':'https://laxcc.com/wp-content/uploads/2026/01/buy-cizi-vape-near-lax.png',
-'Kanha':'https://images.dutchie.com/8b16bf446b8c2192ef8a5eb1841b60b3?w=500&h=500&fm=webp',
-'Koa':'https://images.dutchie.com/b2212a5e874b578d0b06ed126eba0b76?w=500&h=500&fm=webp',
-'Uncle Arnies':'https://images.dutchie.com/2b369c452ce5f21c9101609da9e3ea29?w=500&h=500&fm=webp',
-'Turn':'https://images.dutchie.com/5cb159360fde764c5cd67a017a53e3c2?w=500&h=500&fm=webp',
-'Aims':'https://images.dutchie.com/1d8b4202e7f0a3b63273d971090027f0',
-'Korova':'https://images.dutchie.com/1658c38caf59faed9d8028854dbb27ea?w=500&h=500&fm=webp',
-'Drops':'https://images.dutchie.com/64d303efb692f19992a19c558da440d8?w=500&h=500&fm=webp',
-'Aether Fields':'https://images.dutchie.com/db7558cd89c095e6a084658a200dbb80',
-'Sluggers':'https://images.dutchie.com/003a21eb653bab7b1e81aeb054e47b9b?w=500&h=500&fm=webp',
-'St. Ides':'https://laxcc.com/wp-content/uploads/2026/01/best-thc-drinks-for-sale.jpg',
-'Daily Smoke':'https://images.dutchie.com/cc815160c7bcdafb3dd0e07500d4afbf?w=500&h=500&fm=webp',
-'Raw Garden':'https://images.dutchie.com/c60382b8c18664439cd3d7bb071ae49e',
-'Bloom':'https://images.dutchie.com/f930bb84f256cc546ce1755ac36e8791?w=500&h=500&fm=webp',
-'Lost Farm':'https://images.dutchie.com/5f387aa9537824113c8cb0abd19225ff',
-'MicroBar':'https://images.dutchie.com/b5c1dda81a1ff0009edd13e6ae38c5af?w=500&h=500&fm=webp',
-'Habitat':'https://images.dutchie.com/e605f609299926260afd3000964681f4',
-'Good Tides':'https://images.dutchie.com/cc58a6d9402b6f0017956b108e5f6c70?w=500&h=500&fm=webp',
-'7 Leaves':'https://images.dutchie.com/b15f2780158a377b365e05a178e0b6a3?w=500&h=500&fm=webp',
-'Kingroll':'https://images.dutchie.com/fc640cae64abbb9ca90de3a75cb1ccd7?w=500&h=500&fm=webp',
-'American Weed Co.':'https://images.dutchie.com/e04d8595a8dbe67338a86f1ab7be83ba?w=500&h=500&fm=webp',
-'Pacific Stone':'https://images.dutchie.com/ec44daf8c8000c09961b649a33e5aa97',
-'West Coast Cure':'https://images.dutchie.com/95aedabf83f5cc29fe96240bb3ebba55?w=500&h=500&fm=webp',
-'Nameless':'https://images.dutchie.com/d2f209986822b007c952fc881bbd9327?w=500&h=500&fm=webp',
-'CQ':'https://images.dutchie.com/d6cb43e006a59fee777dbc318a0a7f0b?w=500&h=500&fm=webp',
-'CAM':'https://images.dutchie.com/36dbccacc58b34dd893e9bc4db7a4559?w=500&h=500&fm=webp',
-'LAX Packs':'https://images.dutchie.com/9708fce7cefb47ca683b42ef4104fd9b?w=500&h=500&fm=webp',
-'Maven':'https://images.dutchie.com/515bf5602c7ad9df9ca6eeaf0a7f6757?w=500&h=500&fm=webp',
-'Rove':'https://dutchie-images.s3.us-west-2.amazonaws.com/819919252882ad3f8f0a6e7bf4db89aa?w=500&h=500&fm=webp',
-'Stiiizy':'https://images.dutchie.com/1ef5da628dfa4e18c3b46362aa579f54',
-'El Blunto':'https://images.dutchie.com/b8a7c6c380faee2471303a62de7bf240?w=500&h=500&fm=webp',
-'Claybourne':'https://images.dutchie.com/801acb3de7abcdc894439c2e645ffc28',
-'Highatus':'https://images.dutchie.com/b35b91297274d9daa40305be77a0d6c8?w=500&h=500&fm=webp',
-'Canabiotix':'https://cdn.prod.website-files.com/609f053ed9b5e241593f931b/68489755c344e73e394f335f_concentrates-solventless.png',
-'Dompen':'https://laxcc.com/wp-content/uploads/2026/01/buy-dompen-vape-near-lax-airport.png',
-'Jeeter':'https://images.dutchie.com/dde10e30cf0c8922ba2cc7d098451ebb?w=500&h=500&fm=webp',
-'Clone Goddess':'https://images.dutchie.com/332f18541693953eb78a8eb171760865'
-};
+        var imgs = {
+            'Dompen': 'https://laxcc.com/wp-content/uploads/2026/06/dompen-disposable-vape-peach-rings.png',
+            'Kanha': 'https://images.dutchie.com/5091a386fecb9b52f3d5ee5e08ae1b91?w=500&h=500&fm=webp',
+            'Care by Design': 'https://images.dutchie.com/195037ace94688e29cac0b47a317279f?w=500&h=500&fm=webp',
+            'Sluggers': 'https://images.dutchie.com/64f4c4b99989d683f64c987a391e7a0c?w=500&h=500&fm=webp',
+            'Koa': 'https://images.dutchie.com/855d57c48eaa8316fa943911b3a56a88?w=500&h=500&fm=webp',
+            'Uncle Arnies': 'https://images.dutchie.com/2b369c452ce5f21c9101609da9e3ea29?w=500&h=500&fm=webp',
+            'Turn': 'https://images.dutchie.com/5cb159360fde764c5cd67a017a53e3c2?w=500&h=500&fm=webp',
+            'Korova': 'https://images.dutchie.com/1658c38caf59faed9d8028854dbb27ea?w=500&h=500&fm=webp',
+            'Aims': 'https://images.dutchie.com/4713b5a67bd476a33ce5b899f20c5404?w=500&h=500&fm=webp',
+            'Rockstar': 'https://images.dutchie.com/a6f293c2f791de202ae299e1c961bbae?w=400&h=400&fm=webp',
+            'Aether Fields': 'https://images.dutchie.com/db7558cd89c095e6a084658a200dbb80',
+            'St. Ides': 'https://laxcc.com/wp-content/uploads/2026/01/best-thc-drinks-for-sale.jpg',
+            'St. Ides / PBR / NY Fathers': 'https://laxcc.com/wp-content/uploads/2026/01/best-thc-drinks-for-sale.jpg',
+            'Big Petes': 'https://images.dutchie.com/5730895861f9619a5dca87068777dd4b?w=500&h=500&fm=webp',
+            'Drops': 'https://images.dutchie.com/64d303efb692f19992a19c558da440d8?w=500&h=500&fm=webp',
+            'Smokiez': 'https://images.dutchie.com/a29fe06f2f9cfb6f384dae571ea41703',
+            'Raw Garden': 'https://images.dutchie.com/c60382b8c18664439cd3d7bb071ae49e',
+            'Bloom': 'https://images.dutchie.com/f930bb84f256cc546ce1755ac36e8791?w=500&h=500&fm=webp',
+            'Kiva': 'https://images.dutchie.com/7f3793e6f441b4f6fed9817cd0a46f27?w=500&h=500&fm=webp',
+            'Habitat': 'https://images.dutchie.com/582165c24be85c4eb7c0e79959ed93e7?w=500&h=500&fm=webp',
+            'Cali Creamery': 'https://images.dutchie.com/89d60794c5321424b8764411ec990a57?w=500&h=500&fm=webp',
+            'Presidential': 'https://images.dutchie.com/0f0989a05267da7a6befe91cb5ea7d3d?w=500&h=500&fm=webp',
+            'MicroBar': 'https://images.dutchie.com/b5c1dda81a1ff0009edd13e6ae38c5af?w=500&h=500&fm=webp',
+            'Good Tides': 'https://images.dutchie.com/cc58a6d9402b6f0017956b108e5f6c70?w=500&h=500&fm=webp',
+            'WYLD': 'https://images.dutchie.com/eeae4ee25c35c03202cc65b1fb17efc2?w=500&h=500&fm=webp',
+            'Lolo': 'https://images.squarespace-cdn.com/content/v1/65b16a2a27b29622d7a61230/d2d81f69-2165-4c4f-8cbe-9a7f4fd9f33c/lolo-infused-rtr.png?format=1000w',
+            'Whoa': 'https://images.dutchie.com/e51241ac5580c5d6eea354814485aff6?w=500&h=500&fm=webp',
+            'Grasshoppers': 'https://images.dutchie.com/54b4b0d90b3e22a25699716c7ccdfe31?w=500&h=500&fm=webp',
+            'American Weed Co.': 'https://images.dutchie.com/e04d8595a8dbe67338a86f1ab7be83ba?w=500&h=500&fm=webp',
+            'Kingroll & Kingpen': 'https://images.dutchie.com/1773f6519c47c2e0c36f7b4146d13c82?w=500&h=500&fm=webp',
+            'Pacific Stone': 'https://images.dutchie.com/4f89d464f8abf255ed00ffc95e7538b8?w=500&h=500&fm=webp',
+            'Time Machine': 'https://images.dutchie.com/3f09658a3c76b509372dd0aeea4cc1ea?w=500&h=500&fm=webp',
+            'Birdies': 'https://images.dutchie.com/e7184e245e3c7de34aed96819399c9ea?w=400&h=400&fm=webp',
+            'THC Design': 'https://images.dutchie.com/1e009457ca3d2832cf296ed3479e8512?w=500&h=500&fm=webp',
+            'West Coast Cure': 'https://images.dutchie.com/969ebb1fafd79205bbe228b4fbeb4d97?w=500&h=500&fm=webp',
+            'Nameless': 'https://images.dutchie.com/d2f209986822b007c952fc881bbd9327?w=500&h=500&fm=webp',
+            'CQ': 'https://images.dutchie.com/d6cb43e006a59fee777dbc318a0a7f0b?w=500&h=500&fm=webp',
+            'CAM': 'https://images.dutchie.com/36dbccacc58b34dd893e9bc4db7a4559?w=500&h=500&fm=webp',
+            'Planta': 'https://images.dutchie.com/0ab1507b6653ead5a7dcc65b6d952176?w=500&h=500&fm=webp',
+            'Goldmine': 'https://findbreez.com/wp-content/uploads/2024/01/Breez-Category-4-1.jpg',
+            'Maven': 'https://images.dutchie.com/515bf5602c7ad9df9ca6eeaf0a7f6757?w=500&h=500&fm=webp',
+            'Rove': 'https://dutchie-images.s3.us-west-2.amazonaws.com/819919252882ad3f8f0a6e7bf4db89aa?w=500&h=500&fm=webp',
+            'Stiiizy': 'https://images.dutchie.com/1ef5da628dfa4e18c3b46362aa579f54',
+            'El Blunto': 'https://images.dutchie.com/b8a7c6c380faee2471303a62de7bf240?w=500&h=500&fm=webp',
+            'Claybourne': 'https://images.dutchie.com/801acb3de7abcdc894439c2e645ffc28',
+            'Highatus': 'https://images.dutchie.com/b35b91297274d9daa40305be77a0d6c8?w=500&h=500&fm=webp',
+            'Jeeter': 'https://images.dutchie.com/dde10e30cf0c8922ba2cc7d098451ebb?w=500&h=500&fm=webp',
+            'Papa & Barkley': 'https://images.dutchie.com/d7a7e50dde5aa23f66e4b585516d04e7?w=500&h=500&fm=webp',
+            'Froot': 'https://images.dutchie.com/75144afeffee420d609471c2ca99af3f?w=500&h=500&fm=webp',
+            'Heirbloom': 'https://images.dutchie.com/775e27f7a8a8d5d586528a7391b4c952?w=500&h=500&fm=webp',
+            'Selfies': 'https://images.dutchie.com/2af123206f662e0e1cf54d13365d2a1c?w=500&h=500&fm=webp',
+            'Happy Place': 'https://images.dutchie.com/f195eb19ed2e0482fee9ccb840ad5503?w=400&h=400&fm=webp',
+            'CIZI': 'https://images.dutchie.com/f7f3b8001b31466241eabf5f0fe69bf6?w=500&h=500&fm=webp',
+            'Hash Holes by Cizi': 'https://images.dutchie.com/14cfa5cf01ea2b20bcb75c65cee9c169?w=500&h=500&fm=webp',
+            '710 Labs': 'https://images.dutchie.com/750b3355398da55be8572debb56660f1?w=500&h=500&fm=webp',
+            'Delighted': 'https://images.dutchie.com/dd1b437d22c11e9a8ada482190eb40e7?w=400&h=400&fm=webp',
+            'Emerald Sky': 'https://images.dutchie.com/064ab441341c103f398e8ebdfb12c1cb?w=500&h=500&fm=webp',
+            'Lift Tickets': 'https://images.dutchie.com/bdc5cf66e72cfb2e92a87d19ad92ca77?w=400&h=400&fm=webp',
+            'Boutiq - Prerolls': 'https://images.dutchie.com/75024eeb9518ce6becc4df9021a27269?w=500&h=500&fm=webp',
+            'Boutiq': 'https://images.dutchie.com/75024eeb9518ce6becc4df9021a27269?w=500&h=500&fm=webp',
+            'Kyles': 'https://images.dutchie.com/30c7e942f08cdbc0617b3d2a073a5f8d?w=500&h=500&fm=webp',
+            'Lusty': 'https://images.dutchie.com/226a524e00004428d33e590a8de42200?w=400&h=400&fm=webp',
+            'STEREO': 'https://images.dutchie.com/c86baa55291cf9294ea8d7c8613d7562?w=500&h=500&fm=webp',
+            'Chico Verde': 'https://images.dutchie.com/ff8e22c75cd239e61a58724729a1fe55?w=400&h=400&fm=webp',
+            'Emerald Bay': 'https://images.dutchie.com/c099f83853650e83530b9b0577caff33?w=500&h=500&fm=webp',
+            'Top Shelf Cultivation': 'https://images.dutchie.com/836f49ce5095617eb6f58ae2eb047fa4?w=500&h=500&fm=webp',
+            'Top Shelf': 'https://images.dutchie.com/836f49ce5095617eb6f58ae2eb047fa4?w=500&h=500&fm=webp',
+            'Cannabiotix': 'https://images.dutchie.com/b9095cebe1c394baf39931bb1ec46177?w=500&h=500&fm=webp',
+            'PBR': 'https://images.dutchie.com/809b8eb7fcfbb6765143d259edeb690c?w=500&h=500&fm=webp',
+            'PlugPlay': 'https://images.dutchie.com/73021912152258b9719bc989aa455f4c?w=500&h=500&fm=webp',
+            'Timeless': 'https://images.dutchie.com/62677f385adfeeb165f90db458998e51?w=500&h=500&fm=webp',
+            'Jetty Extracts': 'https://images.dutchie.com/b55555ea1484b8d0bfa3d782ced70881?w=500&h=500&fm=webp',
+            'Nuvata': 'https://images.dutchie.com/84d8365966db43e26c2d71a91cdbf201?w=500&h=500&fm=webp',
+            'Royal Blunts': 'https://images.dutchie.com/255af3fb8dc165c7065bca637d3265dc?w=500&h=500&fm=webp'
+        };
 
-var links={
-'Jeeter':'https://laxcc.com/categories/pre_rolls/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=PRE_ROLLS&brands=d80165b1-f4b5-45ea-9071-f5f571b47e4d',
-'Kanha':'https://laxcc.com/shop/?pagination=1&sort=NAME_ASC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP',
-'Lost Farm':'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=Lost+Farm'
-};
+        var base = 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=';
 
-var base='https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=';
+        var links = {
+            '710 Labs': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=ef96572a-2030-4b58-9504-5b98a7bd9c7e',
+            'Aether Fields': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=70175080-ebc1-4928-9e5f-5dd2f49556e0',
+            'Aims': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=5b240c06-a77b-4276-95cb-66fc886bf59c',
+            'American Weed Co.': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=1148dc1d-6fa1-4d43-949c-0257f74c14ce',
+            'Big Petes': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=f6f6b30a-49d4-4bbf-b9fa-775f6fc6d70c',
+            'Birdies': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=e1171f8f-a117-4fe8-82a3-48d9c3908d47',
+            'Bloom': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=1d682d79-2ceb-45dc-826a-0c702cc68f42',
+            'Boutiq': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=bc87a8a2-5182-4c79-bb07-f2053a35f645',
+            'Boutiq - Prerolls': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=bc87a8a2-5182-4c79-bb07-f2053a35f645',
+            'CAM': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=cam',
+            'CIZI': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=68c0f43b-c6cb-407f-8008-a67f43301e81',
+            'CQ': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d68c4f6a-32db-4b2b-a3c2-598a6f5f9d2a',
+            'Cali Creamery': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=8f758d71-ace5-4c21-ac6e-f933cb52c939',
+            'Camino': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d5a04b99-5ebf-4f65-b243-2d36ac5de7db',
+            'Cannabiotix': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=505217fb-f296-4c6d-8b26-d74b46aa2b9a',
+            'Care by Design': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=600b849e-87dd-4f84-914a-2c848cb99be9',
+            'Chico Verde': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=bf230249-277b-4e9d-88df-b9fb7d17169d',
+            'Claybourne': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=5369177f-42fc-47c8-8ff7-799e521b0429',
+            'ColdFire': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=40189139-1c62-486a-af4a-067ae09f18d9',
+            'Delighted': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=44bfe537-7bbb-4a78-940c-227efb7fbac3',
+            'Dompen': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=5ec5f475-e696-4f61-afa7-d25d9b356e51',
+            'Drops': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=edb40dc1-9b3c-43a6-8dc8-dc3aa37b1c4e',
+            'El Blunto': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=02310a6b-cbbf-4bed-a715-c08778511a4b',
+            'Emerald Bay': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=0057a600-eb4b-46f6-b4ce-f5e0284bf2d3',
+            'Emerald Sky': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=bb70e53c-5160-41c7-8809-e7de80167a2d',
+            'Froot': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=5f795974-685c-480e-a1ef-366cf0a5cf82',
+            'Goldmine': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=fd27daf9-341e-49e1-a751-c8bb408555d5',
+            'Good Tides': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=c6349e33-3c1e-4c16-9bf8-00fa42d59469',
+            'Grasshoppers': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=50ce6902-1e08-441b-b4c2-b764a30619ed',
+            'Habitat': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d7715bec-be5e-46c3-939a-041ac8c93f32',
+            'Happy Place': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d5a9f1a4-8051-4192-83fa-593bf22fd951',
+            'Hash Holes by Cizi': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=68c0f43b-c6cb-407f-8008-a67f43301e81',
+            'Heirbloom': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=24a6f4be-0371-41f6-8ef1-63df88d06148',
+            'Highatus': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=3fdc295c-cafd-46c6-a8a7-084704225d4a',
+            'Jeeter': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d80165b1-f4b5-45ea-9071-f5f571b47e4d',
+            'Jetty Extracts': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=9a513505-fdb9-41aa-a7cd-4bfeced6dad1',
+            'Kanha': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=18bb1389-9029-40dc-877e-cb1ec992bf3d',
+            'Kingroll & Kingpen': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=ac1d9691-a426-4401-bc8a-cf0186dad693',
+            'Kiva': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=677de0df-da8a-4253-9a02-ff71a42ae0dc',
+            'Koa': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d829ed6a-6842-4fb6-8cb6-43cc5867b1c0',
+            'Korova': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=ee641884-f562-4690-b08f-e79cded33ed3',
+            'Kyles': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=00211102-7314-430a-8d46-f8bee81b6c63',
+            'Lift Tickets': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=22e232f6-36dc-4d7a-b899-c0f21bd36a31',
+            'Lolo': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d675866b-4bb1-4dc6-9fd9-fc8778c88be0',
+            'Lusty': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=059c2471-6311-45cb-a612-973890ebe85f',
+            'Manzanita Naturals': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=e0ff29ef-bb41-4dcf-a9b8-e05b70dfc6f8',
+            'Maven': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=168f8d00-fae4-4ba4-a59f-451d1ad5266b',
+            'MicroBar': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=98aba420-d4ad-4a05-9c40-57442a904157',
+            'Nameless': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=775dea2b-0341-4227-9faf-85780c1d1229',
+            'Nuvata': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=nuvata',
+            'PBR': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=ceb8c1cb-73e4-41a8-8fc1-5766dfb9aebc',
+            'Pacific Stone': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=6708af15-e788-4b40-9cd5-b729167e21fd',
+            'Papa & Barkley': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=c78b7047-7c5f-4e61-9bdf-c92e7bec302d',
+            'Planta': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=9a5deac8-f3bb-49b4-a532-df7452c69210',
+            'PlugPlay': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=4f1e6e20-5ab7-409e-901a-262f4c9ec830',
+            'Presidential': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=584b8301-b7e1-494d-9234-70886a1defd0',
+            'Raw Garden': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=bbdf26e3-c442-4346-898a-9dc657ff3acb',
+            'Rockstar': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=2adf1f26-66f8-4524-a5ee-f24e5e803d4d',
+            'Rove': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=daa99d8d-6b0b-4db5-8664-534d7d3868b1',
+            'Royal Blunts': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d021fa69-07e1-4213-aa06-07655ec9d001',
+            'STEREO': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=fe06933a-db69-4c96-ba69-b3aa19e6e150',
+            'Selfies': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=1dc45f47-4011-4beb-b2b6-81d6ac01b865',
+            'Sluggers': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=8a36b114-ab9f-4fbd-a2c9-5d33e4a7a656',
+            'Smokiez': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=42fc93f4-b11c-4b69-8110-198027021ad4',
+            'St. Ides': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=9002435f-1106-405e-8ebd-f47ff0ad67eb',
+            'St. Ides / PBR / NY Fathers': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=9002435f-1106-405e-8ebd-f47ff0ad67eb',
+            'Stiiizy': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=1cebe6f5-bab2-4f15-a50a-9730fee79de4',
+            'THC Design': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=61c55fcf-2d64-4e61-82e2-b730dd46826a',
+            'Time Machine': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=a5936b7f-9ca5-4bff-b34c-4e671fe68e2a',
+            'Timeless': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=708dbaf2-0738-458e-8014-8a465b1fa357',
+            'Top Shelf': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=33f66fce-e622-471c-abca-3d694c067fb7',
+            'Top Shelf Cultivation': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=33f66fce-e622-471c-abca-3d694c067fb7',
+            'Turn': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=ddf076f1-936e-4eb5-8d8d-0d726ff4a2b6',
+            'Uncle Arnies': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=1e5c266e-9328-4472-8125-e6090fed2f0f',
+            'WYLD': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d8a9a6d9-224c-440e-a408-bc56b5e3785c',
+            'West Coast Cure': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=12bf51c6-d7f0-414c-997e-9c0af5c0f15d',
+            'Whoa': 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=536abc1c-7ae9-4389-a71a-696e6808b03b'
+        };
 
-var days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-var today=days[new Date().getDay()];
+        var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        var today = new Intl.DateTimeFormat('en-US', { weekday: 'long', timeZone: 'America/Los_Angeles' }).format(new Date());
 
-var label=document.getElementById('dm_date_label');
-if(label)label.innerText=today+"'s Deals";
+        var label = document.getElementById('dm_date_label');
+        if (label) label.innerText = today + "'s Deals";
 
-var picks=weekly[today]||[];
-var used={};
-for(var i=0;i<picks.length;i++)used[picks[i].b]=1;
-var evday=[];
-for(var i=0;i<everyday.length;i++){
-if(!used[everyday[i].b])evday.push(everyday[i]);
-}
-var all=picks.concat(evday);
+        var badgeMap = { 'HOT': 'HOT DEAL', 'B1G2': 'BUY 1 GET 2', 'B2G1': 'BUY 2 GET 1', 'BOGO': 'BOGO', '50% OFF': 'HALF OFF' };
 
-t.innerHTML='';
-for(var i=0;i<all.length;i++){
-var item=all[i];
-var link=links[item.b]||base+encodeURIComponent(item.b);
-var img=imgs[item.b]||'https://placehold.co/300x400/f8fafc/0f172a.png?font=roboto&text='+encodeURIComponent(item.b);
+        var filledBrands = ['St. Ides', 'St. Ides / PBR / NY Fathers', 'Habitat', 'Kingroll & Kingpen', 'THC Design', 'West Coast Cure', 'Cali Creamery', 'Dompen', 'Kanha'];
 
-var a=document.createElement('a');
-a.className='dm_card';
-a.href=link;
-a.target='_blank';
-a.rel='nofollow';
+        var picks = weekly[today] || [];
+        var used = {};
+        function dealKey(item) { return item.b + '|' + item.d; }
+        for (var i = 0; i < picks.length; i++)used[dealKey(picks[i])] = 1;
+        var evday = [];
+        for (var i = 0; i < everyday.length; i++) {
+            if (!used[dealKey(everyday[i])]) evday.push(everyday[i]);
+        }
 
-if(item.b==='St. Ides'){a.id='dm_card_st_ides';a.className+=' dm_card--filled';}
-if(item.b==='Cizi'){a.id='dm_card_cizi';a.className+=' dm_card--filled';}
+        function renderDeals(mode) {
+            var data = mode === 'everyday' ? everyday : picks.concat(evday);
+            t.innerHTML = '';
+            for (var i = 0; i < data.length; i++) {
+                var item = data[i];
+                var link = item.link || links[item.b] || base + item.b.toLowerCase().replace(/\s+/g, '+');
+                var img = item.img || imgs[item.b] || 'https://placehold.co/300x400/f8fafc/0f172a.png?font=roboto&text=' + encodeURIComponent(item.b);
+                var isFilled = filledBrands.indexOf(item.b) !== -1;
 
-a.innerHTML='<div class="dm_img_box"><span class="dm_badge" style="background:'+item.c+'">'+item.t+'</span><img src="'+img+'" alt="'+item.b+'" loading="lazy"></div><div class="dm_title">'+item.b+'</div><div class="dm_deal">'+item.d+'</div>';
-t.appendChild(a);
-}
-})();
+                var a = document.createElement('a');
+                a.className = 'dm_card';
+                a.href = link;
+                a.target = '_blank';
+                a.rel = 'nofollow noopener noreferrer';
+
+                if (isFilled) { a.id = 'dm_card_' + item.b.toLowerCase().replace(/[^a-z]/g, '_'); a.className += ' dm_card--filled'; }
+
+                var badgeText = badgeMap[item.t] || item.t;
+                a.innerHTML = '<span class="dm_watermark" aria-hidden="true">🔥</span><div class="dm_img_box"><span class="dm_badge"><span class="dm_flame" aria-hidden="true">🔥</span>' + badgeText + '</span><span class="dm_photo_circle"><img src="' + img + '" alt="' + item.b + '" loading="lazy"></span></div><div class="dm_title">' + item.b + '</div><div class="dm_deal">' + item.d + '</div><span class="dm_shop">Shop Deal &rarr;</span>';
+                t.appendChild(a);
+            }
+            t.scrollLeft = 0;
+            if (typeof updateArrows === 'function') updateArrows();
+        }
+
+        renderDeals('today');
+
+        var pills = document.querySelectorAll('#laxcc_daily_deals_unique .dm_pill');
+        for (var pi = 0; pi < pills.length; pi++) {
+            (function (p, idx) {
+                p.addEventListener('click', function () {
+                    for (var pp = 0; pp < pills.length; pp++) {
+                        pills[pp].classList.remove('active');
+                        pills[pp].setAttribute('aria-pressed', 'false');
+                    }
+                    p.classList.add('active');
+                    p.setAttribute('aria-pressed', 'true');
+                    renderDeals(idx === 1 ? 'everyday' : 'today');
+                });
+            })(pills[pi], pi);
+        }
+
+        var isDown = false, startX, scrollLeft, dragged = false;
+        t.addEventListener('mousedown', function (e) {
+            isDown = true; dragged = false;
+            t.style.scrollBehavior = 'auto';
+            startX = e.pageX - t.offsetLeft;
+            scrollLeft = t.scrollLeft;
+        });
+        t.addEventListener('mouseleave', function () { isDown = false; t.style.scrollBehavior = 'smooth'; });
+        t.addEventListener('mouseup', function () { isDown = false; t.style.scrollBehavior = 'smooth'; });
+        t.addEventListener('mousemove', function (e) {
+            if (!isDown) return;
+            e.preventDefault();
+            var x = e.pageX - t.offsetLeft;
+            var walk = (x - startX) * 1.5;
+            t.scrollLeft = scrollLeft - walk;
+            if (Math.abs(x - startX) > 5) dragged = true;
+        });
+        t.addEventListener('click', function (e) {
+            if (dragged) { e.preventDefault(); dragged = false; }
+        }, true);
+
+        var arrowL = document.getElementById('laxcc_daily_deals_arrow_left_unique');
+        var arrowR = document.getElementById('laxcc_daily_deals_arrow_right_unique');
+        var scrollAmt = 440;
+
+        function updateArrows() {
+            if (!arrowL || !arrowR) return;
+            arrowL.classList.toggle('dm_arrow--hidden', t.scrollLeft <= 4);
+            arrowR.classList.toggle('dm_arrow--hidden', t.scrollLeft >= t.scrollWidth - t.clientWidth - 4);
+        }
+
+        if (arrowL) arrowL.addEventListener('click', function () { t.scrollBy({ left: -scrollAmt, behavior: 'smooth' }); });
+        if (arrowR) arrowR.addEventListener('click', function () { t.scrollBy({ left: scrollAmt, behavior: 'smooth' }); });
+        t.addEventListener('scroll', updateArrows);
+        window.addEventListener('resize', updateArrows);
+        updateArrows();
+    })();
 </script>

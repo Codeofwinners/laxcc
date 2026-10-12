@@ -1,0 +1,396 @@
+<style>
+    /* PREMIUM POPUP V4.1 - Final Live Version
+       - Logic: 3-second timer, 24-hour frequency cap.
+    */
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap');
+
+    .ba-popup-wrapper {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Outfit', sans-serif;
+        opacity: 0;
+        transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        padding: 20px;
+    }
+
+    .ba-popup-wrapper.ba-open {
+        display: flex;
+        opacity: 1;
+    }
+
+    /* Deep Blur Backdrop */
+    .ba-popup-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(4, 9, 14, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* Sleek, Floating Card */
+    .ba-popup-card {
+        position: relative;
+        width: 100%;
+        max-width: 480px;
+        background: #0d141e;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.8), 
+                    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-direction: column;
+        z-index: 10;
+        transform: translateY(40px) scale(0.92);
+        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .ba-popup-wrapper.ba-open .ba-popup-card {
+        transform: translateY(0) scale(1);
+    }
+
+    /* Clean Image Header Integration */
+    .ba-image-container {
+        position: relative;
+        width: 100%;
+        height: 180px;
+        overflow: hidden;
+    }
+
+    .ba-bg-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.05);
+        transition: transform 10s ease-out;
+    }
+
+    .ba-popup-wrapper.ba-open .ba-bg-image {
+        transform: scale(1);
+    }
+
+    /* Smooth Fade from Image to Body */
+    .ba-image-gradient {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(13, 20, 30, 0) 0%, #0d141e 100%);
+    }
+
+    /* Modern Minimalist Close Button */
+    .ba-popup-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 20;
+        width: 36px;
+        height: 36px;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: rgba(255, 255, 255, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 22px;
+        padding: 0;
+        line-height: 1;
+    }
+
+    .ba-popup-close:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        transform: scale(1.1) rotate(90deg);
+    }
+
+    /* Card Body Formatting */
+    .ba-card-body {
+        padding: 0 40px 40px 40px;
+        text-align: center;
+        margin-top: -20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .ba-headline {
+        font-size: 34px;
+        font-weight: 900;
+        line-height: 1.1;
+        color: #ffffff;
+        margin: 0 0 10px 0;
+        letter-spacing: -1px;
+    }
+
+    .ba-subtitle {
+        font-size: 15px;
+        color: #94a3b8;
+        margin: 0 0 32px 0;
+        line-height: 1.5;
+        font-weight: 300;
+    }
+
+    /* Premium Heroes Grid */
+    .ba-heroes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 32px;
+    }
+
+    .ba-hero-block {
+        padding: 24px 16px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .ba-hero-block:hover {
+        transform: translateY(-4px);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .ba-hero-number {
+        font-weight: 900;
+        font-size: 42px;
+        line-height: 1;
+        display: block;
+        margin-bottom: 8px;
+        letter-spacing: -1px;
+    }
+
+    .ba-hero-preroll .ba-hero-number {
+        color: #00AFC9;
+        text-shadow: 0 0 30px rgba(0, 175, 201, 0.3);
+    }
+
+    .ba-hero-points .ba-hero-number {
+        color: #7ECBB3;
+        text-shadow: 0 0 30px rgba(126, 203, 179, 0.3);
+    }
+
+    .ba-hero-label {
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #f8fafc;
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    .ba-hero-desc {
+        font-size: 12px;
+        color: #64748b;
+        font-weight: 500;
+    }
+
+    /* High-Converting CTA */
+    .ba-cta-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 18px;
+        background: linear-gradient(135deg, #F89459 0%, #e07a3a 100%);
+        color: #ffffff;
+        border-radius: 14px;
+        font-weight: 700;
+        font-size: 18px;
+        text-decoration: none;
+        box-shadow: 0 10px 25px -5px rgba(248, 148, 89, 0.4);
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        letter-spacing: 0.5px;
+    }
+
+    .ba-cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 35px -5px rgba(248, 148, 89, 0.6);
+        background: linear-gradient(135deg, #faa876 0%, #F89459 100%);
+    }
+
+    /* Trust Indicators */
+    .ba-trust-line {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin-top: 24px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #64748b;
+    }
+
+    .ba-trust-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .ba-trust-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #00AFC9;
+    }
+
+    /* FLAWLESS MOBILE OPTIMIZATION */
+    @media (max-width: 480px) {
+        .ba-popup-wrapper {
+            padding: 16px;
+        }
+
+        .ba-popup-card {
+            max-height: 95vh;
+            overflow-y: auto;
+        }
+
+        .ba-image-container {
+            height: 140px;
+        }
+
+        .ba-card-body {
+            padding: 0 24px 32px 24px;
+            margin-top: -10px;
+        }
+
+        .ba-headline {
+            font-size: 28px;
+        }
+
+        .ba-heroes {
+            gap: 12px;
+            display: flex;
+            flex-direction: column; /* Stack vertically if text gets squeezed */
+        }
+
+        .ba-hero-block {
+            padding: 20px 12px;
+        }
+
+        .ba-hero-number {
+            font-size: 32px;
+        }
+
+        .ba-cta-button {
+            padding: 16px;
+            font-size: 16px;
+        }
+
+        .ba-trust-line {
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            margin-top: 20px;
+            text-align: center;
+        }
+    }
+</style>
+
+<div id="ba-popup-wrapper" class="ba-popup-wrapper" role="dialog" aria-modal="true">
+    <div class="ba-popup-overlay" id="ba-popup-overlay"></div>
+
+    <div class="ba-popup-card">
+        <button id="ba-popup-close-btn" class="ba-popup-close" aria-label="Close">&times;</button>
+
+        <div class="ba-image-container">
+            <img src="https://laxcc.com/wp-content/uploads/2024/07/shop-in-house-dispensary-flower.jpg" alt="Premium Flower" class="ba-bg-image">
+            <div class="ba-image-gradient"></div>
+        </div>
+
+        <div class="ba-card-body">
+            <h1 class="ba-headline">VIP Loyalty</h1>
+            <p class="ba-subtitle">Redeem your points for premium cannabis products & exclusive discounts.</p>
+            
+            <div class="ba-heroes">
+                <div class="ba-hero-block ba-hero-preroll">
+                    <span class="ba-hero-number">$0.01</span>
+                    <span class="ba-hero-label">Pre-Roll</span>
+                    <span class="ba-hero-desc">when you join</span>
+                </div>
+                <div class="ba-hero-block ba-hero-points">
+                    <span class="ba-hero-number">3X</span>
+                    <span class="ba-hero-label">Points</span>
+                    <span class="ba-hero-desc">per $1 spent</span>
+                </div>
+            </div>
+
+            <a href="https://laxcc.com/best-cannabis-club-in-la" class="ba-cta-button" id="ba-cta-btn">
+                Join the Club Now
+            </a>
+
+            <div class="ba-trust-line">
+                <div class="ba-trust-item">
+                    <span class="ba-trust-dot"></span>
+                    <span>Zero hidden fees to start earning rewards</span>
+                </div>
+                <div class="ba-trust-item">
+                    <span class="ba-trust-dot" style="background: #7ECBB3;"></span>
+                    <span>Takes 30 seconds</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        var popupConfig = {
+            id: 'laxcc_vip_popup_v4', // Unique storage ID
+            delay: 7000,              // 7 seconds
+            frequencyHours: 24        // Cooldown period
+        };
+
+        var wrapper = document.getElementById('ba-popup-wrapper');
+        var closeBtn = document.getElementById('ba-popup-close-btn');
+        var overlay = document.getElementById('ba-popup-overlay');
+        var ctaBtn = document.getElementById('ba-cta-btn');
+
+        function shouldShowPopup() {
+            var lastClosed = localStorage.getItem(popupConfig.id + '_closed');
+            if (!lastClosed) return true;
+            
+            // Calculate hours passed since they last closed it
+            var hoursSince = (Date.now() - parseInt(lastClosed)) / (1000 * 60 * 60);
+            return hoursSince >= popupConfig.frequencyHours;
+        }
+
+        function openPopup() {
+            if (!shouldShowPopup()) return;
+
+            wrapper.style.display = 'flex';
+            setTimeout(function () {
+                wrapper.classList.add('ba-open');
+                document.body.style.overflow = 'hidden';
+            }, 10);
+        }
+
+        function closePopup() {
+            wrapper.classList.remove('ba-open');
+            setTimeout(function () {
+                wrapper.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 500);
+
+            // Record the exact time they closed the popup
+            localStorage.setItem(popupConfig.id + '_closed', Date.now().toString());
+        }
+
+        // Close events
+        if (closeBtn) closeBtn.addEventListener('click', closePopup);
+        if (overlay) overlay.addEventListener('click', closePopup);
+        if (ctaBtn) ctaBtn.addEventListener('click', closePopup);
+
+        // Fire the popup
+        setTimeout(openPopup, popupConfig.delay);
+    })();
+</script>

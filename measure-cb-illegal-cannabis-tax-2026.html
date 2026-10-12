@@ -1,0 +1,703 @@
+<div class="laxcc-blog-post-2026">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Maven+Pro:wght@400..900&display=swap");
+
+    .laxcc-blog-post-2026 {
+      --primary-teal: #00afc9;
+      --primary-dark: #0f3a5f;
+      --accent-orange: #f89459;
+      --cream: #fbf8f2;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --white: #ffffff;
+      font-family:
+        "Maven Pro",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      color: var(--text-main);
+      background-color: var(--cream);
+      line-height: 1.65;
+      width: 100vw;
+      max-width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      box-sizing: border-box;
+      font-size: 19px;
+    }
+
+    .laxcc-blog-post-2026 *,
+    .laxcc-blog-post-2026 *::before,
+    .laxcc-blog-post-2026 *::after {
+      box-sizing: inherit;
+    }
+
+    .laxcc-blog-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    .laxcc-blog-header {
+      border-bottom: 2px solid var(--primary-teal);
+      margin-bottom: 2.75rem;
+      padding-bottom: 2rem;
+    }
+
+    .laxcc-blog-meta {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .laxcc-blog-title {
+      color: var(--primary-dark);
+      font-family: "Archivo Narrow", sans-serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 800;
+      letter-spacing: 0;
+      line-height: 1.05;
+      margin: 0 0 1.25rem;
+    }
+
+    .laxcc-blog-dek {
+      color: #475569;
+      font-size: clamp(19px, 2.4vw, 23px);
+      line-height: 1.55;
+      margin: 0;
+      max-width: 760px;
+    }
+
+    .laxcc-blog-author-line {
+      color: var(--primary-dark);
+      font-weight: 700;
+      margin-top: 1.5rem;
+    }
+
+    .laxcc-blog-content h2 {
+      border-left: 6px solid var(--primary-teal);
+      color: var(--primary-dark);
+      font-family: "Archivo Narrow", sans-serif;
+      font-size: clamp(30px, 4vw, 38px);
+      font-weight: 800;
+      line-height: 1.15;
+      margin: 3rem 0 1.25rem;
+      padding-left: 1rem;
+    }
+
+    .laxcc-blog-content h3 {
+      color: var(--primary-dark);
+      font-family: "Archivo Narrow", sans-serif;
+      font-size: 25px;
+      font-weight: 800;
+      margin: 2rem 0 0.75rem;
+    }
+
+    .laxcc-blog-content p {
+      margin: 0 0 1.45rem;
+    }
+
+    .laxcc-blog-content a {
+      color: var(--primary-teal);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .laxcc-blog-content a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+
+    .laxcc-blog-key-box {
+      background: var(--white);
+      border: 1px solid rgba(15, 58, 95, 0.12);
+      border-left: 8px solid var(--accent-orange);
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(15, 58, 95, 0.06);
+      margin: 2.5rem 0;
+      padding: 1.75rem;
+    }
+
+    .laxcc-blog-key-box h3 {
+      margin-top: 0;
+    }
+
+    .laxcc-blog-key-box ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .laxcc-blog-key-box li {
+      margin-bottom: 0.8rem;
+    }
+
+    .laxcc-blog-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 2.5rem 0;
+    }
+
+    .laxcc-blog-card {
+      background: var(--white);
+      border: 1px solid rgba(15, 58, 95, 0.12);
+      border-radius: 12px;
+      padding: 1.4rem;
+    }
+
+    .laxcc-blog-card strong {
+      color: var(--primary-dark);
+      display: block;
+      font-family: "Archivo Narrow", sans-serif;
+      font-size: 24px;
+      line-height: 1.1;
+      margin-bottom: 0.65rem;
+    }
+
+    .laxcc-blog-card p {
+      color: #526273;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .laxcc-blog-note {
+      background: #ffffff;
+      border: 1px solid rgba(0, 175, 201, 0.18);
+      border-radius: 12px;
+      color: #334155;
+      font-size: 0.96rem;
+      margin: 2.5rem 0;
+      padding: 1.4rem;
+    }
+
+    .laxcc-blog-cta {
+      background: var(--primary-dark);
+      border-radius: 18px;
+      color: var(--white);
+      margin-top: 3.5rem;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .laxcc-blog-cta h2 {
+      border: 0;
+      color: var(--white);
+      font-family: "Archivo Narrow", sans-serif;
+      font-size: clamp(32px, 4vw, 42px);
+      margin: 0 0 1rem;
+      padding: 0;
+    }
+
+    .laxcc-blog-cta p {
+      color: rgba(255, 255, 255, 0.86);
+      margin: 0 auto;
+      max-width: 680px;
+    }
+
+    .laxcc-blog-btn,
+    .laxcc-blog-btn:link,
+    .laxcc-blog-btn:visited {
+      background-color: var(--accent-orange) !important;
+      border-radius: 10px;
+      color: #ffffff !important;
+      display: inline-block;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      margin-top: 1.75rem;
+      padding: 1rem 2.25rem;
+      text-decoration: none !important;
+      text-transform: uppercase;
+    }
+
+    .laxcc-blog-btn:hover {
+      background-color: #e58249 !important;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .laxcc-blog-post-2026 {
+        font-size: 17px;
+      }
+
+      .laxcc-blog-inner {
+        padding: 2rem 1rem;
+      }
+
+      .laxcc-blog-header {
+        margin-bottom: 2rem;
+      }
+
+      .laxcc-blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .laxcc-blog-key-box,
+      .laxcc-blog-cta {
+        padding: 1.5rem;
+      }
+
+      .laxcc-blog-btn {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    /* Lightbox Styles */
+    .laxcc-lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding: 2rem;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(15, 58, 95, 0.9);
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      cursor: zoom-out;
+      box-sizing: border-box;
+    }
+
+    .laxcc-lightbox.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .laxcc-lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      cursor: default;
+      object-fit: contain;
+    }
+
+    .laxcc-lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .laxcc-lightbox-close:hover {
+      color: var(--accent-orange);
+    }
+  </style>
+
+  <div class="laxcc-blog-inner">
+    <header class="laxcc-blog-header">
+      <div class="laxcc-blog-meta">Los Angeles Cannabis Policy • May 2026</div>
+      <h1 class="laxcc-blog-title">
+        How Measure CB is Quietly Trying to Destroy the Legal Cannabis Market
+      </h1>
+      <p class="laxcc-blog-dek">
+        Los Angeles voters will see Measure CB on the June 2, 2026 ballot. We
+        created this guide because the measure affects more than city revenue.
+        It affects consumer safety, licensed dispensaries, legal cannabis
+        workers, and the future of the regulated cannabis market.
+      </p>
+      <div class="laxcc-blog-author-line">By LAX Cannabis Club</div>
+    </header>
+
+    <picture style="display: block; margin-bottom: 2.5rem; cursor: zoom-in;" onclick="openLaxccLightbox('https://laxcc.com/wp-content/uploads/2026/05/about-measure-cb.png')">
+      <source media="(max-width: 768px)" srcset="https://laxcc.com/wp-content/uploads/2026/05/measure-cb.png" />
+      <img src="https://laxcc.com/wp-content/uploads/2026/05/about-measure-cb.png" alt="Vote No on Measure CB" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(15, 58, 95, 0.08); display: block;" />
+    </picture>
+
+    <article class="laxcc-blog-content">
+      <p>
+        LAX Cannabis Club opposes Measure CB. In Los Angeles, Measure CB was
+        initiated by the City Attorney’s Office at the request of the City
+        Council in January 2026, aiming to apply existing cannabis business
+        taxes to unlicensed operators. Cannabis laws exist for a reason: to
+        protect people. Legal dispensaries must follow rules around age
+        verification, product sourcing, testing, labeling, taxes, licensing, and
+        compliance. Unlicensed cannabis businesses do not operate under the same
+        system, and treating them like taxable businesses misses the point.
+      </p>
+
+      <p>
+        While that measure focuses on taxation, licensed cannabis businesses
+        already follow strict state testing rules. All cannabis batches must be
+        lab-tested in their final form for contaminants like pesticides, heavy
+        metals, and microbes, and the results are reported into the state’s
+        track-and-trace system. Compliance with these testing standards is
+        mandatory for licensed operators. Measure CB is a City of Los Angeles
+        ballot measure focused on unlicensed cannabis businesses that operate
+        outside the regulated system. According to the official Los Angeles
+        County ballot listing, the measure would apply the city's current
+        cannabis business tax rates to unlicensed cannabis businesses and would
+        require majority voter approval. We believe that approach puts city
+        revenue ahead of the cannabis consumers and licensed cannabis businesses
+        that the law is supposed to protect.
+      </p>
+
+      <div class="laxcc-blog-key-box">
+        <h3>Measure CB at a glance</h3>
+        <img src="https://laxcc.com/wp-content/uploads/2026/05/risks.png" alt="Risks of the Illegal Cannabis Market" style="width: 100%; height: auto; border-radius: 12px; margin: 1.5rem 0; box-shadow: 0 8px 24px rgba(15, 58, 95, 0.08); display: block; cursor: zoom-in;" onclick="openLaxccLightbox('https://laxcc.com/wp-content/uploads/2026/05/risks.png')" />
+        <ul>
+          <li><strong>Election date:</strong> June 2, 2026.</li>
+          <li><strong>Jurisdiction:</strong> City of Los Angeles.</li>
+          <li>
+            <strong>What it targets:</strong> Unlicensed cannabis businesses.
+          </li>
+          <li>
+            <strong>Estimated revenue:</strong> About $30 million to $35 million
+            per year for general city services, according to city estimates
+            cited in official election materials and the Los Angeles Times voter
+            guide.
+          </li>
+          <li>
+            <strong>Tax rates listed:</strong> 10% on cannabis sales, 5% on
+            medical cannabis sales, 2% on manufacturing/cultivation/other
+            commercialization, and 1% on transportation/testing/research.
+          </li>
+        </ul>
+      </div>
+
+      <p>
+        Measure CB outlines how illegal cannabis operators will be taxed, but they will not need to follow the same procedures and rules as legal cannabis, risking the consumer. Ultimately, it is the local citizens of Los Angeles who pay the price in the end.
+      </p>
+
+      <h2>Why This Blog Post Exists</h2>
+      <p>
+        This is not just a tax story. It is a safety story, a fairness story,
+        and a legal cannabis survival story. If Los Angeles wants a healthy
+        cannabis market, the city should be strengthening the licensed market
+        and shutting down unsafe illegal operators, not building a tax framework
+        around unlicensed cannabis.
+      </p>
+
+      <p>
+        Consumers deserve to know the difference. Legal cannabis is expensive to
+        operate because licensed businesses have to do the work: testing,
+        compliance, trained staff, secure operations, verified products, proper
+        labeling, and accountable sourcing. When illegal operators skip those
+        standards, they are not just avoiding taxes. They are avoiding the
+        safeguards that protect shoppers.
+      </p>
+
+      <h2>Why This Matters to Cannabis Customers</h2>
+      <p>
+        For everyday shoppers, the big issue is not only tax policy. It is the
+        difference between buying from a licensed dispensary and buying from a
+        business that is not licensed, inspected, or held to the same testing
+        and compliance rules.
+      </p>
+
+      <p>
+        Licensed dispensaries have to verify age, source products through the
+        regulated supply chain, sell labeled products, follow local and state
+        cannabis rules, and carry inventory that goes through required testing.
+        Unlicensed shops can avoid those obligations, which may let them
+        undercut legal stores on price while leaving customers with fewer
+        protections.
+      </p>
+
+      <div class="laxcc-blog-grid">
+        <div class="laxcc-blog-card">
+          <strong>Tested Products</strong>
+          <p>
+            Licensed cannabis comes through a regulated supply chain with
+            required testing and labeling.
+          </p>
+        </div>
+        <div class="laxcc-blog-card">
+          <strong>Real Accountability</strong>
+          <p>
+            Legal dispensaries operate under city and state licensing
+            requirements, inspections, and compliance rules.
+          </p>
+        </div>
+        <div class="laxcc-blog-card">
+          <strong>Fair Competition</strong>
+          <p>
+            Unlicensed sellers can avoid the costs that licensed operators must
+            pay to stay compliant.
+          </p>
+        </div>
+      </div>
+
+      <h2>What Measure CB Would Do</h2>
+      <p>
+        The official ballot language says Measure CB would apply Los Angeles'
+        existing cannabis business taxes to unlicensed cannabis businesses at
+        the current rates. Those rates include 10% on cannabis sales, 5% on
+        medical cannabis sales, 2% on manufacturing, cultivation, or other
+        commercialization, and 1% on transportation, testing, or research.
+      </p>
+
+      <p>
+        The city estimates the measure could bring in $30 million to $35 million
+        annually for general city services, including street and sidewalk
+        repairs, 911 emergency response, fire protection, and parks. The
+        <a href="https://www.latimes.com/california/story/2026-05-01/2026-california-election-measure-cb-illegal-cannabis-tax-voter-guide" target="_blank" rel="noopener">Los Angeles Times voter guide</a>
+        also notes that supporters view the proposal
+        as a way to close a tax loophole and level the field between licensed
+        and unlicensed operators.
+      </p>
+
+      <h2>Why LAXCC Believes Measure CB Is the Wrong Approach</h2>
+      <p>
+        We agree that illegal cannabis operators should not get a financial
+        advantage. But taxing unlicensed cannabis businesses does not solve the
+        real problem. The real problem is that unlicensed operators should not
+        be selling cannabis in the first place.
+      </p>
+
+      <p>
+        When the city creates a tax category for illegal cannabis, it risks
+        making unlicensed operators feel like another class of cannabis business
+        instead of a public safety and enforcement issue. That is harmful to
+        licensed dispensaries that invested in compliance, and it is harmful to
+        consumers who may not understand the difference between taxed and
+        licensed.
+      </p>
+
+      <p>
+        The legal cannabis industry already carries heavy costs. Licensed
+        dispensaries pay taxes, licensing fees, rent, payroll, security,
+        insurance, testing costs, and compliance costs. Adding a revenue model
+        around illegal cannabis does not protect the businesses doing things the
+        right way. It keeps pressure on the legal market while allowing the
+        illegal market to remain part of the conversation. Basically, this
+        measure aims to gain tax revenue at the expense of consumers and hurts
+        legal operators that follow the rules. It shows a selfish side to the
+        industry, and we encourage everyone to vote against this measure to
+        ensure we can protect the regulated market and the safety standards it
+        upholds.
+      </p>
+
+      <p>
+        Furthermore, we believe this initiative is going to create more crime. If
+        these unlicensed operators were already willing to break the law in the first
+        place, imagine what they'd be willing to do with their competition. It's
+        not good for the city; it can create violence, and this is another huge
+        reason why we're against it.
+      </p>
+
+      <h2>Why the Illegal Market Exists</h2>
+
+      <p>
+        The illegal market exists for several reasons. Legal cannabis is heavily
+        taxed and regulated, which makes licensed products more expensive.
+        Unlicensed operators can often sell cheaper products because they do not
+        carry the same tax burden, compliance costs, testing requirements, or
+        licensing obligations.
+      </p>
+
+      <p>
+        That lower price can look attractive, but it comes with risk. Cannabis
+        that does not move through the regulated supply chain may not be tested
+        for contaminants. Unsafe cultivation and processing can expose products
+        to mold, pests, pesticides, heavy metals, residual solvents, or other
+        problems customers cannot see by looking at the package. That is exactly
+        why lab testing matters.
+      </p>
+
+      <p>
+        It's important to learn from history, or we're going to repeat the same mistakes. We already have issues with the illegal market to the point where it put <a href="https://archive.cdc.gov/www_cdc_gov/tobacco/basic_information/e-cigarettes/severe-lung-disease.html?utm_source=chatgpt.com" target="_blank" rel="noopener">22 people in the hospital with severe breathing problems</a>. These cases have been <a href="https://www.cdc.gov/mmwr/volumes/69/wr/mm6903e2.htm?utm_source=chatgpt.com" target="_blank" rel="noopener">extensively documented by the CDC</a>, highlighting the life-threatening dangers of illicit products. When unlicensed operators aren't required to follow the strict testing rules, consumers are the ones who pay the price.
+      </p>
+
+      <p>
+        Specific examples of these dangers are already documented. In an
+        independent lab test conducted in the Bay Area, researchers detected
+        harmful pesticides in unlicensed products like 'Moon Rock Clear'
+        cartridges. These tests reveal that products sold in the illegal market
+        often fail to meet the safety standards that are mandatory for legal
+        shops, putting anyone who uses them at risk.
+      </p>
+
+      <h3>Independent Lab Test: Pesticides in Illicit Cartridges</h3>
+      <div
+        style="
+          position: relative;
+          padding-bottom: 56.25%;
+          height: 0;
+          overflow: hidden;
+          max-width: 100%;
+          border-radius: 12px;
+          margin: 1.5rem 0 2rem;
+          box-shadow: 0 8px 24px rgba(15, 58, 95, 0.08);
+        "
+      >
+        <iframe
+          src="https://www.youtube.com/embed/G18DZdvW02w"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <p>
+        In the video above, an independent lab test on a 'Moon Rock Clear' cartridge revealed it failed for three extremely dangerous pesticides. When these chemicals are heated and inhaled directly into the lungs via a vape pen, the health risks are severe:
+      </p>
+      <ul>
+        <li style="margin-bottom: 0.5rem;">
+          <strong>Clofentezine:</strong> An agricultural pesticide used to kill mites. Inhaling it can cause significant irritation to the respiratory tract, and long-term exposure is linked to liver toxicity and developmental issues.
+        </li>
+        <li style="margin-bottom: 0.5rem;">
+          <strong>Myclobutanil:</strong> A chemical fungicide that is notoriously dangerous when used in vapes. When heated by the vape battery, myclobutanil transforms into <strong>hydrogen cyanide</strong>, a highly toxic gas that can cause severe respiratory failure and neurological damage.
+        </li>
+        <li style="margin-bottom: 0.5rem;">
+          <strong>Tebuconazole:</strong> Another potent fungicide that is considered a suspected carcinogen and is known to cause liver damage and hormonal disruption when introduced into the human body.
+        </li>
+      </ul>
+
+      <p>
+        Licensed cannabis is not perfect, but the regulated system gives
+        consumers a safety framework: test results, track-and-trace
+        requirements, labeling rules, age checks, product recalls, and
+        businesses that regulators can hold accountable. The illegal market
+        avoids many of those protections.
+      </p>
+
+      <h2>The Debate Around Measure CB</h2>
+      <p>
+        Supporters argue that illegal cannabis businesses should not get a
+        financial advantage over licensed dispensaries that pay taxes, fees,
+        rent, payroll, compliance costs, and product testing costs. In that
+        view, applying the tax gives the city another tool to pressure
+        unlicensed operators and recover money from businesses that have been
+        operating outside the rules.
+      </p>
+
+      <p>
+        Opponents raise a different concern: taxing unlicensed businesses could
+        blur the line between legal and illegal cannabis. They also question
+        whether the city can consistently collect from businesses that are
+        already operating outside the licensing system. Another concern is that
+        the city should not become financially dependent on revenue from
+        unlicensed cannabis shops.
+      </p>
+
+      <p>
+        Both sides are pointing at a real problem. Los Angeles still has to deal
+        with an illegal cannabis market that affects customers, neighborhoods,
+        and licensed operators. The disagreement is over whether Measure CB is a
+        useful enforcement and revenue tool, or whether it risks sending the
+        wrong message about unlicensed cannabis.
+      </p>
+
+      <h2>What LAXCC Wants Shoppers to Remember</h2>
+      <p>
+        However voters decide on Measure CB, cannabis customers should
+        understand one thing clearly: legal dispensaries and unlicensed shops
+        are not the same. A licensed store like LAX Cannabis Club is required to
+        operate under rules built around product safety, age verification,
+        traceability, and consumer protection.
+      </p>
+
+      <p>
+        When shoppers choose a licensed dispensary, they are not only choosing
+        convenience. They are choosing tested products, clear labels,
+        accountable operators, and a legal retail system that has to answer to
+        regulators. That matters whether you are buying flower, pre-rolls,
+        vapes, edibles, concentrates, or THC tablets.
+      </p>
+
+      <p>
+        If you care about safe cannabis, legal jobs, responsible operators, and
+        a stronger licensed industry, this is the kind of issue where you have
+        to pay attention and step up. Read the measure, understand what is at
+        stake, talk to other cannabis consumers, and vote with the legal
+        cannabis market in mind.
+      </p>
+
+      <h2>How You Can Make a Difference</h2>
+      <p>
+        If you want to protect the safe, regulated cannabis market and ensure Los Angeles isn't empowering the illicit market, your vote matters. Making your voice heard on Measure CB is simple, but it requires action. Here is how you can step up:
+      </p>
+
+      <div class="laxcc-blog-grid">
+        <div class="laxcc-blog-card">
+          <strong>1. Register to Vote</strong>
+          <p>
+            Make sure your voter registration is up to date for the June 2, 2026 election. You can check your status or register online at <a href="https://registertovote.ca.gov/" target="_blank" rel="noopener">registertovote.ca.gov</a>.
+          </p>
+        </div>
+        <div class="laxcc-blog-card">
+          <strong>2. Know Your Ballot</strong>
+          <p>
+            Measure CB will be on your local City of Los Angeles ballot. Look for it and ensure you vote with the legal cannabis market in mind.
+          </p>
+        </div>
+        <div class="laxcc-blog-card">
+          <strong>3. Cast Your Vote</strong>
+          <p>
+            Return your mail-in ballot as soon as you receive it, drop it off at a secure drop box, or vote in person on election day: <strong>June 2, 2026</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="laxcc-blog-note">
+        <strong>Sources:</strong> This article is based on the official Los
+        Angeles County June 2, 2026 ballot measure listing for Measure CB and
+        the Los Angeles Times voter guide published May 1, 2026. Read the
+        official measure listing from the
+        <a
+          href="https://content.lavote.gov/docs/rrcc/documents/measures-appearing-on-the-ballot-3-13-26-v-6-%28002%29.pdf"
+          target="_blank"
+          rel="noopener"
+          >Los Angeles County Registrar-Recorder/County Clerk</a
+        >
+        and the
+        <a
+          href="https://www.latimes.com/california/story/2026-05-01/2026-california-election-measure-cb-illegal-cannabis-tax-voter-guide"
+          target="_blank"
+          rel="noopener"
+          >Los Angeles Times Measure CB guide</a
+        >.
+      </div>
+
+      <section class="laxcc-blog-cta">
+        <h2>Support Licensed Cannabis Near LAX</h2>
+        <p>
+          LAX Cannabis Club serves adult-use customers near LAX with licensed,
+          tested cannabis products from trusted California brands. Choose the
+          legal market and help protect cannabis consumers.
+        </p>
+        <a
+          class="laxcc-blog-btn"
+          href="https://laxcc.com/shop/"
+          target="_blank"
+          rel="noopener"
+          >Shop Legal Cannabis</a
+        >
+      </section>
+    </article>
+
+    <div id="laxccHeroLightbox" class="laxcc-lightbox" onclick="closeLaxccLightbox()">
+      <span class="laxcc-lightbox-close" onclick="closeLaxccLightbox()">&times;</span>
+      <img id="laxccLightboxImg" src="" onclick="event.stopPropagation()" alt="Full Size Image">
+    </div>
+
+    <script>
+      function openLaxccLightbox(src) {
+        document.getElementById('laxccLightboxImg').src = src;
+        const lightbox = document.getElementById('laxccHeroLightbox');
+        lightbox.style.display = 'flex';
+        setTimeout(() => lightbox.classList.add('active'), 10);
+      }
+      function closeLaxccLightbox() {
+        const lightbox = document.getElementById('laxccHeroLightbox');
+        lightbox.classList.remove('active');
+        setTimeout(() => lightbox.style.display = 'none', 300);
+      }
+    </script>
+  </div>
+</div>

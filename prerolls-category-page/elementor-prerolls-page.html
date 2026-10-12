@@ -1,299 +1,1086 @@
+<!-- ============================================================
+     LAX CANNABIS CLUB — PRE_ROLLS BRANDS COLLECTION STRIP (ELEMENTOR SAFE)
+     Target Page: PRE_ROLLS category collection page
+     - Layout: Strictly 2 rows (top & bottom) with smooth horizontal scroll
+     - Fully responsive for mobile touch swipe and desktop navigation
+     - Live-only loading shell, no JavaScript, 100% WordPress/Elementor WAF safe
+     ============================================================ -->
+
+<section id="laxcc-preroll-brands-strip" class="vbs-section">
+    <div class="vbs-container">
+
+        <!-- HEADER TOOLBAR -->
+        <div class="vbs-header">
+            <div class="vbs-header-left">
+                <span class="vbs-kicker">Shop By Brand &bull; Live Inventory</span>
+                <h2 class="vbs-title">Top Pre-Roll &amp; Joint Brands in Los Angeles</h2>
+                <p class="vbs-subtitle">Swipe or scroll to browse premium pre-rolls, joints &amp; infused blunts in
+                    stock at our Los Angeles dispensary near LAX.</p>
+            </div>
+            <div class="vbs-header-controls">
+                <button type="button" class="vbs-arrow-btn vbs-arrow-prev" id="pbs-prev" aria-label="Scroll left" disabled>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        style="display:block!important;width:20px!important;height:20px!important;stroke:#17407A!important;fill:none!important;pointer-events:none!important;">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button type="button" class="vbs-arrow-btn vbs-arrow-next" id="pbs-next" aria-label="Scroll right">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        style="display:block!important;width:20px!important;height:20px!important;stroke:#17407A!important;fill:none!important;pointer-events:none!important;">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- 2-ROW HORIZONTAL SCROLL CONTAINER -->
+        <div class="vbs-scroll-track" id="vbs-scroll-track">
+            <div class="vbs-grid" id="vbs-grid">
+                <div class="preroll-live-status">Checking live brand inventory&hellip;</div>
+            </div>
+        </div>
+
+        <!-- MOBILE SWIPE HINT -->
+        <div class="vbs-scroll-hint">
+            <span>&larr; Swipe to explore live pre-roll brands &rarr;</span>
+        </div>
+
+    </div>
+</section>
+
 <style>
-    /* ===== LAXCC PREROLLS - ELEMENTOR SAFE ===== */
-    #laxcc-prerolls-2025 {
-        --primary: #8B5CF6;
-        --secondary: #00AFC9;
-        --bg-light: #f8f5ff;
-        --bg-dark: #1a1225;
-        --purple-light: #EDE9FE;
-        --purple-dark: #5B21B6;
-        --sand-accent: #F5F3FF;
-        --text-dark: #1c1326;
-        --card-bg: #ffffff;
-        --gray-100: #f3f4f6;
-        --gray-400: #9ca3af;
-        --gray-500: #6b7280;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
+    /* ============================================================
+       STYLES FOR LAXCC VAPE BRANDS STRIP
+       Scoped to #laxcc-preroll-brands-strip for 100% Elementor safety
+       ============================================================ */
+    #laxcc-preroll-brands-strip {
+        --vbs-navy-deep: #17407A;
+        --vbs-navy: #1D508A;
+        --vbs-orange: #F89459;
+        --vbs-orange-hover: #e57b3d;
+        --vbs-cream: #FBF8F2;
+        --vbs-white: #ffffff;
+        --vbs-border: rgba(23, 64, 122, 0.12);
+        --vbs-border-hover: #17407A;
+        --vbs-text-dark: #0f172a;
+        --vbs-text-muted: #64748b;
+        --vbs-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        --vbs-shadow-hover: 0 8px 22px rgba(23, 64, 122, 0.12);
+        --vbs-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        --vbs-font-serif: 'Playfair Display', Georgia, serif;
 
-    #laxcc-prerolls-2025 [class^="laxcc-"],
-    #laxcc-prerolls-2025 [class*=" laxcc-"] {
         box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    #laxcc-prerolls-2025 .laxcc-wrapper {
-        background-color: #fbf8f2;
+        width: 100%;
+        margin: 0 auto;
+        padding: 2.5rem 1rem;
+        background: var(--vbs-cream);
+        font-family: var(--vbs-font-sans);
+        color: var(--vbs-text-dark);
         -webkit-font-smoothing: antialiased;
     }
 
-    /* ===== SCROLLBAR HIDE ===== */
-    #laxcc-prerolls-2025 .no-scrollbar::-webkit-scrollbar {
-        display: none;
-    }
-    #laxcc-prerolls-2025 .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+    #laxcc-preroll-brands-strip *,
+    #laxcc-preroll-brands-strip *::before,
+    #laxcc-preroll-brands-strip *::after {
+        box-sizing: border-box;
     }
 
-    /* ===== HERO CAROUSEL ===== */
-    #laxcc-prerolls-2025 .laxcc-hero-section {
-        position: relative;
+    #laxcc-preroll-brands-strip .vbs-container {
+        max-width: 1360px;
+        margin: 0 auto;
+    }
+
+    /* HEADER */
+    #laxcc-preroll-brands-strip .vbs-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 1.25rem;
+        padding: 0 0.25rem;
+    }
+
+    #laxcc-preroll-brands-strip .vbs-kicker {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--vbs-navy);
+        margin-bottom: 0.25rem;
+    }
+
+    #laxcc-preroll-brands-strip .vbs-title {
+        font-family: var(--vbs-font-serif);
+        font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+        font-weight: 800;
+        color: var(--vbs-navy-deep);
+        margin: 0 0 0.25rem 0;
+        line-height: 1.2;
+    }
+
+    #laxcc-preroll-brands-strip .vbs-subtitle {
+        font-size: 0.875rem;
+        color: var(--vbs-text-muted);
+        margin: 0;
+        max-width: 600px;
+    }
+
+    /* DESKTOP SCROLL ARROWS */
+    #laxcc-preroll-brands-strip .vbs-header-controls {
+        display: flex !important;
+        gap: 8px !important;
+        flex-shrink: 0 !important;
+        align-items: center !important;
+    }
+
+    #laxcc-preroll-brands-strip .vbs-arrow-btn {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        max-width: 40px !important;
+        min-height: 40px !important;
+        max-height: 40px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 50% !important;
+        background: #ffffff !important;
+        border: 2px solid var(--vbs-navy-deep) !important;
+        color: var(--vbs-navy-deep) !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+        box-shadow: 0 2px 8px rgba(23, 64, 122, 0.12) !important;
+        line-height: 1 !important;
+        outline: none !important;
+        box-sizing: border-box !important;
+        flex-shrink: 0 !important;
+        appearance: none !important;
+        -webkit-appearance: none !important;
+    }
+
+    #laxcc-preroll-brands-strip .vbs-arrow-btn svg {
+        width: 20px !important;
+        height: 20px !important;
+        min-width: 20px !important;
+        min-height: 20px !important;
+        max-width: 20px !important;
+        max-height: 20px !important;
+        display: block !important;
+        stroke: var(--vbs-navy-deep) !important;
+        stroke-width: 3 !important;
+        fill: none !important;
+        pointer-events: none !important;
+        flex-shrink: 0 !important;
+        margin: 0 auto !important;
+    }
+
+    #laxcc-preroll-brands-strip .vbs-arrow-btn:hover:not(:disabled) {
+        background: var(--vbs-navy-deep) !important;
+        color: #ffffff !important;
+        border-color: var(--vbs-navy-deep) !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 5px 14px rgba(23, 64, 122, 0.25) !important;
+    }
+
+    #laxcc-preroll-brands-strip .vbs-arrow-btn:hover:not(:disabled) svg {
+        stroke: #ffffff !important;
+    }
+
+    #laxcc-preroll-brands-strip .vbs-arrow-btn:disabled {
+        opacity: 0.25 !important;
+        cursor: not-allowed !important;
+        border-color: rgba(23, 64, 122, 0.2) !important;
+        box-shadow: none !important;
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-preroll-brands-strip .vbs-header-controls {
+            display: none !important;
+        }
+    }
+
+    /* ============================================================
+       2-ROW HORIZONTAL SCROLL TRACK
+       - Strictly 2 rows (top & bottom)
+       - Auto-fills columns horizontally
+       ============================================================ */
+    #laxcc-preroll-brands-strip .vbs-scroll-track {
         width: 100%;
-        overflow: hidden;
-        padding-top: 0.5rem;
-        padding-bottom: 1.5rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        padding-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(23, 64, 122, 0.25) transparent;
     }
 
-    #laxcc-prerolls-2025 .laxcc-swipe-hint {
+    #laxcc-preroll-brands-strip .vbs-scroll-track::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    #laxcc-preroll-brands-strip .vbs-scroll-track::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.04);
+        border-radius: 9999px;
+    }
+
+    #laxcc-preroll-brands-strip .vbs-scroll-track::-webkit-scrollbar-thumb {
+        background: rgba(23, 64, 122, 0.25);
+        border-radius: 9999px;
+    }
+
+    #laxcc-preroll-brands-strip .vbs-scroll-track::-webkit-scrollbar-thumb:hover {
+        background: var(--vbs-navy-deep);
+    }
+
+    #laxcc-preroll-brands-strip .vbs-grid {
+        display: grid;
+        grid-template-rows: repeat(2, 76px);
+        /* STRICTLY 2 ROWS */
+        grid-auto-flow: column;
+        /* HORIZONTAL COLUMN FILL */
+        grid-auto-columns: 220px;
+        /* CARD WIDTH */
+        gap: 12px;
+        width: max-content;
+        padding: 4px;
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-preroll-brands-strip .vbs-grid {
+            grid-template-rows: repeat(2, 68px);
+            grid-auto-columns: 190px;
+            gap: 8px;
+        }
+
+        #laxcc-preroll-brands-strip {
+            padding: 1.75rem 0.75rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #laxcc-preroll-brands-strip .vbs-grid {
+            grid-template-rows: repeat(2, 64px);
+            grid-auto-columns: 175px;
+            gap: 8px;
+        }
+    }
+
+    /* CARD DESIGN (COMPACT HORIZONTAL PILL) */
+    #laxcc-preroll-brands-strip .vbs-card {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--vbs-white);
+        border: 1px solid var(--vbs-border);
+        border-radius: 12px;
+        padding: 8px 12px;
+        text-decoration: none !important;
+        color: inherit !important;
+        box-shadow: var(--vbs-shadow);
+        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+            box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+            border-color 0.2s ease;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #laxcc-preroll-brands-strip .vbs-card:hover {
+        transform: translateY(-2px);
+        border-color: var(--vbs-border-hover);
+        box-shadow: var(--vbs-shadow-hover);
+    }
+
+    #laxcc-preroll-brands-strip .vbs-card-logo-wrap {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0.5rem;
-        padding: 0.75rem 0;
-        color: var(--gray-500);
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
+        background: #f8fafc;
+        border-radius: 8px;
+        padding: 4px;
+        border: 1px solid rgba(0, 0, 0, 0.04);
     }
 
-    @media (min-width: 768px) {
-        #laxcc-prerolls-2025 .laxcc-swipe-hint {
-            display: none;
+    @media (max-width: 768px) {
+        #laxcc-preroll-brands-strip .vbs-card-logo-wrap {
+            width: 42px;
+            height: 42px;
+            padding: 3px;
         }
     }
 
-    #laxcc-prerolls-2025 .laxcc-swipe-icon {
-        font-size: 1rem;
-        animation: laxcc-swipe-anim 1.5s ease-in-out infinite;
+    #laxcc-preroll-brands-strip .vbs-card-logo {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        transition: transform 0.2s ease;
     }
 
-    @keyframes laxcc-swipe-anim {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(6px); }
+    #laxcc-preroll-brands-strip .vbs-card:hover .vbs-card-logo {
+        transform: scale(1.08);
     }
 
-    #laxcc-prerolls-2025 .laxcc-hero-carousel {
-        display: flex;
+    #laxcc-preroll-brands-strip .vbs-card-initial {
         width: 100%;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 1rem;
-        padding: 0 1rem;
+        height: 100%;
+        border-radius: 6px;
+        background: linear-gradient(135deg, #17407A 0%, #1D508A 100%);
+        color: #ffffff;
+        font-family: var(--vbs-font-serif);
+        font-size: 1.15rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    #laxcc-prerolls-2025 .laxcc-story-card {
-        scroll-snap-align: center;
-        flex-shrink: 0;
-        width: 85vw;
-        max-width: 400px;
-        position: relative;
-        border-radius: 2rem;
+    #laxcc-preroll-brands-strip .vbs-card-body {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #laxcc-preroll-brands-strip .vbs-card-name {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--vbs-navy-deep);
+        margin: 0;
+        line-height: 1.2;
+        white-space: nowrap;
         overflow: hidden;
-        aspect-ratio: 3/4;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        text-overflow: ellipsis;
     }
 
-    #laxcc-prerolls-2025 .laxcc-story-card.purple-bg {
-        background-color: #7C3AED;
+    @media (max-width: 768px) {
+        #laxcc-preroll-brands-strip .vbs-card-name {
+            font-size: 0.78rem;
+        }
     }
 
-    #laxcc-prerolls-2025 .laxcc-story-card.gold-bg {
-        background-color: #fbf8f2;
+    #laxcc-preroll-brands-strip .vbs-card-count {
+        font-size: 0.68rem;
+        font-weight: 600;
+        color: var(--vbs-text-muted);
+        margin-top: 2px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: color 0.2s ease;
     }
 
-    #laxcc-prerolls-2025 .laxcc-story-card.green-bg {
-        background-color: #059669;
+    #laxcc-preroll-brands-strip .vbs-card:hover .vbs-card-count {
+        color: var(--vbs-navy);
+        font-weight: 700;
     }
 
-    #laxcc-prerolls-2025 .laxcc-story-bg {
-        position: absolute;
-        inset: 0;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        transition: transform 0.7s ease;
+    @media (max-width: 768px) {
+        #laxcc-preroll-brands-strip .vbs-card-count {
+            font-size: 0.64rem;
+        }
     }
 
-    #laxcc-prerolls-2025 .laxcc-story-card:hover .laxcc-story-bg {
-        transform: scale(1.05);
+    /* Compact brand pills, including cards replaced by WordPress inventory. */
+    #laxcc-preroll-brands-strip .vbs-grid {
+        grid-template-rows: repeat(2, 34px) !important;
+        grid-auto-columns: max-content !important;
+        gap: 8px !important;
+    }
+    #laxcc-preroll-brands-strip .vbs-card {
+        display: inline-flex !important;
+        flex-flow: row nowrap !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+        width: auto !important;
+        min-width: max-content !important;
+        height: 34px !important;
+        padding: 0 13px !important;
+        border-radius: 6px !important;
+        color: #17407A !important;
+    }
+    #laxcc-preroll-brands-strip .vbs-card.active {
+        background: #F89459 !important;
+        border-color: #F89459 !important;
+        color: #fff !important;
+    }
+    #laxcc-preroll-brands-strip .vbs-card-logo-wrap {
+        display: none !important;
+    }
+    #laxcc-preroll-brands-strip .vbs-card-body {
+        display: flex !important;
+        flex-flow: row nowrap !important;
+        align-items: center !important;
+        gap: 6px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    #laxcc-preroll-brands-strip .vbs-card-name,
+    #laxcc-preroll-brands-strip .vbs-card-count {
+        position: static !important;
+        flex: 0 0 auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font: normal 700 12px/1.2 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        text-transform: none !important;
+        letter-spacing: normal !important;
+        white-space: nowrap !important;
+        color: inherit !important;
+    }
+    #laxcc-preroll-brands-strip .vbs-card-count {
+        font-size: 10px !important;
+        font-weight: 600 !important;
+    }
+    #laxcc-preroll-live-results .laxcc-prod-card[data-preroll-brand-excluded="true"] {
+        display: none !important;
+    }
+    @media (max-width: 768px) {
+        #laxcc-preroll-brands-strip .vbs-grid {
+            grid-template-rows: repeat(2, 32px) !important;
+            gap: 6px !important;
+        }
+        #laxcc-preroll-brands-strip .vbs-card {
+            height: 32px !important;
+            padding: 0 11px !important;
+        }
+        #laxcc-preroll-brands-strip .vbs-card-name {
+            font-size: 11.5px !important;
+        }
     }
 
-    #laxcc-prerolls-2025 .laxcc-story-overlay {
+    /* MOBILE SWIPE HINT */
+    #laxcc-preroll-brands-strip .vbs-scroll-hint {
+        display: none;
+        text-align: center;
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--vbs-text-muted);
+        margin-top: 0.25rem;
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-preroll-brands-strip .vbs-scroll-hint {
+            display: block;
+        }
+    }
+
+    /* ── DEDICATED PRE-ROLLS PRICE FILTERS BAR (ABOVE PRODUCTS) ── */
+    #laxcc-preroll-filters-strip {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 1360px;
+        margin: 1.5rem auto 1rem;
+        padding: 0 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    #laxcc-preroll-filters-strip .laxcc-preroll-filters-wrapper {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        gap: 8px;
+    }
+
+    #laxcc-preroll-filters-strip .laxcc-preroll-filters-track {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
+        flex: 1;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        white-space: nowrap;
+        padding: 4px 0 8px;
+    }
+
+    #laxcc-preroll-filters-strip .laxcc-preroll-filters-track::-webkit-scrollbar {
         display: none;
     }
 
-    #laxcc-prerolls-2025 .laxcc-story-content {
+    #laxcc-preroll-filters-strip .laxcc-preroll-filter-pill {
+        background: transparent !important;
+        color: #17407A !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        border-radius: 0;
+        padding: 4px 6px;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.2;
+        cursor: pointer;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        text-decoration: none !important;
+        transition: all 0.2s ease;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        flex-shrink: 0;
+        opacity: 0.8;
+        position: relative;
+    }
+
+    #laxcc-preroll-filters-strip .laxcc-preroll-filter-pill:hover,
+    #laxcc-preroll-filters-strip .laxcc-preroll-filter-pill.active {
+        opacity: 1;
+        color: #F89459 !important;
+        transform: translateY(-1px);
+    }
+
+    #laxcc-preroll-filters-strip .laxcc-preroll-filter-pill::after {
+        content: '';
         position: absolute;
         bottom: 0;
-        left: 0;
-        padding: 1.5rem;
+        left: 6px;
+        right: 6px;
+        height: 2px;
+        background: #F89459;
+        border-radius: 2px;
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
+    }
+
+    #laxcc-preroll-filters-strip .laxcc-preroll-filter-pill:hover::after,
+    #laxcc-preroll-filters-strip .laxcc-preroll-filter-pill.active::after {
+        transform: scaleX(1);
+    }
+
+    /* MINIMALISTIC SCROLL ARROW (NON-OVERLAPPING) */
+    #laxcc-preroll-filters-strip .laxcc-filters-scroll-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        border-radius: 50%;
+        background: #ffffff;
+        border: 1.5px solid rgba(23, 64, 122, 0.2);
+        color: #17407A;
+        box-shadow: 0 2px 6px rgba(23, 64, 122, 0.08);
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        flex-shrink: 0;
+        transition: all 0.2s ease;
+        outline: none;
+    }
+
+    #laxcc-preroll-filters-strip .laxcc-filters-scroll-arrow:hover {
+        background: #17407A;
+        color: #ffffff;
+        border-color: #17407A;
+        transform: scale(1.05);
+    }
+
+    #laxcc-preroll-filters-strip .laxcc-filters-scroll-arrow svg {
+        width: 14px;
+        height: 14px;
+        stroke: currentColor;
+        pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-preroll-filters-strip {
+            margin: 1rem auto 0.75rem;
+            padding: 0 0.75rem;
+        }
+
+        #laxcc-preroll-filters-strip .laxcc-preroll-filters-track {
+            gap: 10px;
+        }
+
+        #laxcc-preroll-filters-strip .laxcc-preroll-filter-pill {
+            font-size: 12px;
+            padding: 3px 4px;
+        }
+
+        #laxcc-preroll-filters-strip .laxcc-filters-scroll-arrow {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+        }
+
+        #laxcc-preroll-filters-strip .laxcc-filters-scroll-arrow svg {
+            width: 12px;
+            height: 12px;
+        }
+    }
+
+    /* ── LIVE PRE-ROLLS PRODUCTS GRID ── */
+    #laxcc-preroll-live-results {
+        box-sizing: border-box;
         width: 100%;
-        background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        max-width: 1360px;
+        margin: 1rem auto 2.5rem;
+        padding: 0 1rem;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
-    #laxcc-prerolls-2025 .laxcc-story-tag {
-        display: inline-block;
-        padding: 0.25rem 0.75rem;
-        margin-bottom: 0.75rem;
-        font-size: 0.75rem;
+    /* SLEEK & RESPONSIVE HEADER BANNER */
+    #laxcc-preroll-live-results .laxcc-sort-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    #laxcc-preroll-live-results .laxcc-sort-label {
+        color: #17407A;
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap;
+    }
+
+    #laxcc-preroll-live-results .laxcc-sort-select {
+        width: min(100%, 245px);
+        height: 36px;
+        margin: 0;
+        padding: 0 34px 0 11px;
+        border: 1px solid rgba(23, 64, 122, 0.22);
+        border-radius: 8px;
+        background-color: #ffffff;
+        color: #17407A;
+        font: 700 12px/1.2 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        cursor: pointer;
+        box-shadow: 0 2px 7px rgba(23, 64, 122, 0.06);
+    }
+
+    #laxcc-preroll-live-results .laxcc-sort-select:focus-visible {
+        outline: 3px solid rgba(0, 175, 201, 0.25);
+        outline-offset: 2px;
+        border-color: #00AFC9;
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-preroll-live-results .laxcc-sort-toolbar {
+            align-items: stretch;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 8px;
+        }
+
+        #laxcc-preroll-live-results .laxcc-sort-select {
+            width: 100%;
+        }
+    }
+
+    #laxcc-preroll-live-results .laxcc-grid-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 8px 14px;
+        background: #f7fafc;
+        border: 1px solid rgba(23, 64, 122, 0.1);
+        border-radius: 12px;
+        margin-bottom: 1.25rem;
+        box-sizing: border-box;
+    }
+
+    #laxcc-preroll-live-results .laxcc-grid-header-left {
+        display: flex;
+        align-items: center;
+        gap: 8px 12px;
+        flex-wrap: wrap;
+        min-width: 0;
+    }
+
+    #laxcc-preroll-live-results .laxcc-grid-badge {
+        background: rgba(248, 148, 89, 0.15);
+        color: #e06c28;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap !important;
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+        line-height: 1.2;
+    }
+
+    #laxcc-preroll-live-results .laxcc-grid-count {
+        font-size: 12px;
+        font-weight: 600;
+        color: #64748b;
+        white-space: nowrap !important;
+        line-height: 1.2;
+    }
+
+    #laxcc-preroll-live-results .laxcc-grid-clear-btn {
+        background: #ffffff;
+        border: 1px solid rgba(23, 64, 122, 0.2);
+        color: #17407A;
+        font-size: 11px;
         font-weight: 700;
-        color: #000;
-        background-color: rgba(255, 255, 255, 0.9);
-        border-radius: 9999px;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
+        padding: 5px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        white-space: nowrap !important;
+        flex-shrink: 0;
+        line-height: 1.2;
+        transition: all 0.2s ease;
     }
 
-    #laxcc-prerolls-2025 .laxcc-story-tag.purple {
-        background-color: rgba(237, 233, 254, 0.9);
-        color: #5B21B6;
+    #laxcc-preroll-live-results .laxcc-grid-clear-btn:hover {
+        background: #17407A;
+        color: #ffffff;
     }
 
-    #laxcc-prerolls-2025 .laxcc-story-title {
-        color: #fff;
-        font-size: 1.875rem;
+    @media (max-width: 768px) {
+        #laxcc-preroll-live-results {
+            padding: 0 0.75rem;
+            margin: 0.75rem auto 2rem;
+        }
+
+        #laxcc-preroll-live-results .laxcc-grid-header {
+            padding: 6px 10px;
+            gap: 6px;
+            margin-bottom: 0.85rem;
+        }
+
+        #laxcc-preroll-live-results .laxcc-grid-header-left {
+            gap: 4px 8px;
+        }
+
+        #laxcc-preroll-live-results .laxcc-grid-badge {
+            font-size: 11px;
+            padding: 3px 8px;
+        }
+
+        #laxcc-preroll-live-results .laxcc-grid-count {
+            font-size: 11px;
+        }
+
+        #laxcc-preroll-live-results .laxcc-grid-clear-btn {
+            font-size: 10px;
+            padding: 4px 8px;
+        }
+    }
+
+    #laxcc-preroll-live-results .laxcc-products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 18px;
+    }
+
+    #laxcc-preroll-brands-strip .preroll-live-status,
+    #laxcc-preroll-live-results .preroll-live-status {
+        grid-column: 1 / -1;
+        width: 100%;
+        padding: 24px;
+        border: 1px dashed rgba(23, 64, 122, 0.2);
+        border-radius: 12px;
+        background: #f8fafc;
+        color: #64748b;
+        font-size: 14px;
         font-weight: 700;
-        line-height: 1;
-        margin-bottom: 0.5rem;
+        text-align: center;
     }
 
-    #laxcc-prerolls-2025 .laxcc-story-desc {
-        color: rgba(255, 255, 255, 0.9);
-        font-size: 0.875rem;
-        font-weight: 500;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-        -webkit-box-orient: vertical;
+    #laxcc-preroll-live-results .laxcc-prod-card {
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 14px;
+        padding: 14px;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none !important;
+        color: inherit !important;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        position: relative;
         overflow: hidden;
     }
 
-    #laxcc-prerolls-2025 .laxcc-story-credit {
-        margin-top: 0.5rem;
-        font-size: 0.625rem;
-        color: rgba(255, 255, 255, 0.5);
+    #laxcc-preroll-live-results .laxcc-prod-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 24px rgba(23, 64, 122, 0.12);
+        border-color: rgba(248, 148, 89, 0.4);
     }
 
-    #laxcc-prerolls-2025 .laxcc-story-credit a {
-        color: rgba(255, 255, 255, 0.6);
-        text-decoration: none;
+    #laxcc-preroll-live-results .laxcc-prod-img-wrap {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        border-radius: 10px;
+        background: #f8fafc;
+        overflow: hidden;
+        margin-bottom: 12px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    #laxcc-prerolls-2025 .laxcc-story-credit a:hover {
-        color: rgba(255, 255, 255, 0.9);
+    #laxcc-preroll-live-results .laxcc-prod-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
     }
 
-    /* ===== DESKTOP STYLES ===== */
-    @media (min-width: 768px) {
-        #laxcc-prerolls-2025 .laxcc-story-card {
-            width: 45vw;
-            max-width: 500px;
+    #laxcc-preroll-live-results .laxcc-prod-card:hover .laxcc-prod-img {
+        transform: scale(1.04);
+    }
+
+    #laxcc-preroll-live-results .laxcc-prod-strain {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+        padding: 3px 8px;
+        border-radius: 6px;
+        letter-spacing: 0.04em;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(4px);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        color: #17407A;
+    }
+
+    #laxcc-preroll-live-results .laxcc-prod-potency-badge {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        font-size: 10px;
+        font-weight: 800;
+        padding: 3px 7px;
+        border-radius: 6px;
+        background: rgba(23, 64, 122, 0.88);
+        color: #ffffff;
+        letter-spacing: 0.02em;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    }
+
+    #laxcc-preroll-live-results .laxcc-prod-brand {
+        font-size: 11px;
+        font-weight: 800;
+        color: #00AFC9;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 4px;
+    }
+
+    #laxcc-preroll-live-results .laxcc-prod-name {
+        font-size: 14px;
+        font-weight: 700;
+        color: #17407A;
+        line-height: 1.3;
+        margin: 0 0 6px 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: 36px;
+    }
+
+    #laxcc-preroll-live-results .laxcc-prod-potency-line {
+        font-size: 11px;
+        font-weight: 700;
+        color: #64748b;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    #laxcc-preroll-live-results .laxcc-prod-thc-pill {
+        background: rgba(248, 148, 89, 0.12);
+        color: #e06c28;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 800;
+    }
+
+    #laxcc-preroll-live-results .laxcc-prod-weight-pill {
+        background: rgba(23, 64, 122, 0.1);
+        color: #17407A;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 800;
+    }
+
+    #laxcc-preroll-live-results .laxcc-prod-cbd-pill {
+        background: rgba(0, 175, 201, 0.12);
+        color: #00879c;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 10px;
+        font-weight: 800;
+    }
+
+    #laxcc-preroll-live-results .laxcc-prod-footer {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    #laxcc-preroll-live-results .laxcc-prod-price {
+        font-size: 16px;
+        font-weight: 800;
+        color: #17407A;
+    }
+
+    #laxcc-preroll-live-results .laxcc-prod-price-orig {
+        font-size: 11px;
+        color: #8e8e93;
+        text-decoration: line-through;
+        margin-left: 4px;
+    }
+
+    #laxcc-preroll-live-results .laxcc-prod-order-btn {
+        background: #F89459;
+        color: #ffffff !important;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    #laxcc-preroll-live-results .laxcc-prod-order-btn:hover {
+        background: #e06c28;
+        transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-preroll-live-results .laxcc-products-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
         }
 
-        #laxcc-prerolls-2025 .laxcc-hero-carousel {
-            padding: 0 2rem;
+        #laxcc-preroll-live-results .laxcc-prod-card {
+            padding: 10px;
         }
-    }
 
-    @media (min-width: 1024px) {
-        #laxcc-prerolls-2025 .laxcc-story-card {
-            width: 30vw;
-            max-width: 400px;
+        #laxcc-preroll-live-results .laxcc-prod-name {
+            font-size: 12px;
+            min-height: 32px;
+        }
+
+        #laxcc-preroll-live-results .laxcc-prod-price {
+            font-size: 14px;
+        }
+
+        #laxcc-preroll-live-results .laxcc-prod-order-btn {
+            font-size: 10px;
+            padding: 4px 8px;
         }
     }
 </style>
 
-<div id="laxcc-prerolls-2025">
-    <div class="laxcc-wrapper">
-
-        <!-- Brand Cards Carousel -->
-        <section class="laxcc-hero-section">
-            <div class="laxcc-hero-carousel no-scrollbar">
-
-                <!-- Jeeter - Infused Pre-Rolls -->
-                <div class="laxcc-story-card purple-bg">
-                    <div class="laxcc-story-bg" style="background-image: url('https://cdn.prod.website-files.com/621f634a14b77abb52c5f8da/67cf02f86abeeebe771cfb91_Apples%20and%20Bananas.webp');"></div>
-                    <div class="laxcc-story-content">
-                        <span class="laxcc-story-tag purple">Infused</span>
-                        <h2 class="laxcc-story-title">Jeeter</h2>
-                        <p class="laxcc-story-desc">California's #1 infused pre-roll. Liquid diamonds meet premium flower.</p>
-                        <p class="laxcc-story-credit">Image: <a href="https://www.jeeter.com/" target="_blank" rel="nofollow noopener">Jeeter</a></p>
-                    </div>
-                </div>
-
-                <!-- El Blunto - Cannabis Cigars -->
-                <div class="laxcc-story-card gold-bg">
-                    <div class="laxcc-story-bg" style="background-image: url('https://elblunto.com/cdn/shop/files/Screen_Shot_2022-06-13_at_9.28.34_AM_1.png?v=1727904154');"></div>
-                    <div class="laxcc-story-content">
-                        <span class="laxcc-story-tag">Premium</span>
-                        <h2 class="laxcc-story-title">El Blunto</h2>
-                        <p class="laxcc-story-desc">Premium cannabis cigars. Hand-rolled perfection for the connoisseur.</p>
-                        <p class="laxcc-story-credit">Image: <a href="https://elblunto.com/" target="_blank" rel="nofollow noopener">El Blunto</a></p>
-                    </div>
-                </div>
-
-                <!-- Raw Garden - Live Resin Pre-Rolls -->
-                <div class="laxcc-story-card green-bg">
-                    <div class="laxcc-story-bg" style="background-image: url('https://rawgarden.farm/wp-content/uploads/2025/10/0.5gPre-Roll_Sauce_5Pack_ProductShotGrey_v3-1-1-1.png');"></div>
-                    <div class="laxcc-story-content">
-                        <span class="laxcc-story-tag">Live Resin</span>
-                        <h2 class="laxcc-story-title">Raw Garden</h2>
-                        <p class="laxcc-story-desc">Clean, pure live resin infused pre-rolls. California's craft cannabis leader.</p>
-                        <p class="laxcc-story-credit">Image: <a href="https://rawgarden.farm/" target="_blank" rel="nofollow noopener">Raw Garden</a></p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="laxcc-swipe-hint">
-                <span>Swipe to explore</span>
-                <span class="laxcc-swipe-icon">&#x2192;</span>
-            </div>
-        </section>
-
+<!-- DEDICATED PRE-ROLLS PRICE FILTERS (ABOVE PRODUCTS) -->
+<div id="laxcc-preroll-filters-strip" class="laxcc-preroll-filters-container">
+    <div class="laxcc-preroll-filters-wrapper">
+        <div class="laxcc-preroll-filters-track" id="laxcc-preroll-filters-track" role="group" aria-label="Pre-Rolls Price Filters">
+            <button type="button" class="laxcc-preroll-filter-pill active">💨 All Pre-Rolls</button>
+            <button type="button" class="laxcc-preroll-filter-pill" data-price="10">💨 Pre-Rolls Under $10</button>
+            <button type="button" class="laxcc-preroll-filter-pill" data-price="15">💨 Pre-Rolls Under $15</button>
+            <button type="button" class="laxcc-preroll-filter-pill" data-price="20">💨 Pre-Rolls Under $20</button>
+            <button type="button" class="laxcc-preroll-filter-pill" data-price="30">💨 Pre-Rolls Under $30</button>
+            <button type="button" class="laxcc-preroll-filter-pill" data-price="40">💨 Pre-Rolls Under $40</button>
+            <button type="button" class="laxcc-preroll-filter-pill" data-price="50">💨 Pre-Rolls Under $50</button>
+        </div>
+        <button type="button" class="laxcc-filters-scroll-arrow" aria-label="Scroll Pre-Rolls filters right">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
     </div>
 </div>
 
-<!-- ========== SHORTCODE BELOW - COMPLETELY OUTSIDE STYLED COMPONENT ========== -->
-[leafbridge_shop_wizard category="PRE_ROLLS"]
-
+<!-- DYNAMIC LIVE PRE-ROLLS RESULTS CONTAINER -->
 <script>
-(function() {
+(function () {
     'use strict';
-
-    var wrapper = document.getElementById('laxcc-prerolls-2025');
-    if (!wrapper) return;
-
-    // Drag to scroll for carousel
-    var carousel = wrapper.querySelector('.laxcc-hero-carousel');
-    if (carousel) {
-        var isDown = false;
-        var startX;
-        var scrollLeft;
-
-        carousel.addEventListener('mousedown', function(e) {
-            isDown = true;
-            startX = e.pageX - carousel.offsetLeft;
-            scrollLeft = carousel.scrollLeft;
+    if (window.laxccPrerollBrandCardsBound) return;
+    window.laxccPrerollBrandCardsBound = true;
+    var selectedBrand = '';
+    function brandKey(value) {
+        return String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+    }
+    function applyBrand() {
+        var results = document.getElementById('laxcc-preroll-live-results');
+        if (!results) return;
+        results.querySelectorAll('.laxcc-prod-card').forEach(function (card) {
+            var name = card.querySelector('.laxcc-prod-brand');
+            var brand = brandKey(card.dataset.brand || (name ? name.textContent.trim() : 'Other'));
+            var excluded = !!selectedBrand && brand !== selectedBrand;
+            card.setAttribute('data-preroll-brand-excluded', excluded ? 'true' : 'false');
         });
-
-        carousel.addEventListener('mouseleave', function() {
-            isDown = false;
-        });
-
-        carousel.addEventListener('mouseup', function() {
-            isDown = false;
-        });
-
-        carousel.addEventListener('mousemove', function(e) {
-            if (!isDown) return;
-            e.preventDefault();
-            var x = e.pageX - carousel.offsetLeft;
-            var walk = (x - startX) * 1.5;
-            carousel.scrollLeft = scrollLeft - walk;
+        document.querySelectorAll('#laxcc-preroll-brands-strip .vbs-card').forEach(function (card) {
+            var name = card.querySelector('.vbs-card-name, .vbf-name');
+            var brand = brandKey(card.getAttribute('data-live-brand') || (name ? name.textContent.trim() : ''));
+            var active = !!selectedBrand && brand === selectedBrand;
+            card.classList.toggle('active', active);
+            card.setAttribute('aria-pressed', String(active));
         });
     }
-})();
+    document.addEventListener('click', function (event) {
+        var card = event.target.closest('#laxcc-preroll-brands-strip .vbs-card');
+        if (card) {
+            var name = card.querySelector('.vbs-card-name, .vbf-name');
+            selectedBrand = brandKey(card.getAttribute('data-live-brand') || (name ? name.textContent.trim() : ''));
+            applyBrand();
+        } else if (event.target.closest('#laxcc-preroll-clear, #laxcc-preroll-filters-strip .laxcc-preroll-filter-pill')) {
+            selectedBrand = '';
+            applyBrand();
+        }
+    }, true);
+    // Reapply only after card replacements; visibility resets cannot erase this attribute.
+    new MutationObserver(function (records) {
+        if (records.some(function (record) {
+            return record.target.matches && record.target.matches('#laxcc-preroll-live-results .laxcc-products-grid, #laxcc-preroll-brands-strip .vbs-grid');
+        })) applyBrand();
+    }).observe(document.documentElement, { childList: true, subtree: true });
+}());
 </script>
+<div id="laxcc-preroll-live-results">
+    <div class="laxcc-sort-toolbar">
+        <label class="laxcc-sort-label" for="laxcc-preroll-sort">Sort and filter products</label>
+        <select class="laxcc-sort-select" id="laxcc-preroll-sort" aria-label="Sort and filter Pre-Rolls products">
+            <option value="default">Default order</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="thc-percent-asc">THC %: Low to High</option>
+            <option value="thc-percent-desc">THC %: High to Low</option>
+        </select>
+    </div>
+    <div class="laxcc-grid-header">
+        <div class="laxcc-grid-header-left">
+            <span class="laxcc-grid-badge" id="laxcc-preroll-badge">💨 All Pre-Rolls</span>
+            <span class="laxcc-grid-count" id="laxcc-preroll-count">Checking live inventory&hellip;</span>
+        </div>
+        <button type="button" class="laxcc-grid-clear-btn" id="laxcc-preroll-clear" style="display: none;">✕ View All</button>
+    </div>
+    <div class="laxcc-products-grid">
+        <div class="preroll-live-status">Checking live inventory&hellip;</div>
+    </div>
+</div>

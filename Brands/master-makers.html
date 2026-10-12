@@ -1,0 +1,652 @@
+<!-- SEO META — paste into Yoast/RankMath for this page -->
+<!-- Title: Buy Master Makers Accessories in LA Near LAX | LAXCC -->
+<!-- Description: Buy Master Makers at LAXCC — licensed LA dispensary 5 min from LAX. Rolling papers, wraps & accessories always in stock. Walk in, open daily 9-9:30. -->
+<meta name="description" content="Buy Master Makers at LAXCC — licensed LA dispensary 5 min from LAX. Rolling papers, wraps & accessories always in stock. Walk in, open daily 9-9:30.">
+
+<style>
+    /* ========================================
+       MASTER-MAKERS BRAND PAGE — LAXCC
+       Scoped to .laxcc-master-makers
+       Elementor-safe: all rules use !important
+       ======================================== */
+
+    .laxcc-master-makers *,
+    .laxcc-master-makers *::before,
+    .laxcc-master-makers *::after {
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .laxcc-master-makers {
+        --navy: #1D508A;
+        --teal: #00AFC9;
+        --orange: #F89459;
+        --green: #7ECBB3;
+        --cream: #FBF8F2;
+        --white: #ffffff;
+        --text: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --navy-deep: #0f3a5f;
+
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        background: var(--cream) !important;
+        color: var(--text) !important;
+        line-height: 1.6 !important;
+        overflow-x: hidden !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+    }
+
+    @keyframes laxcc-master-makers-fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* HERO — mobile-first */
+    .laxcc-master-makers .master-makers-hero { background: var(--cream) !important; }
+
+    .laxcc-master-makers .master-makers-hero-img {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #ffffff !important;
+        padding: 40px 20px !important;
+        overflow: hidden !important;
+    }
+
+    .laxcc-master-makers .master-makers-hero-img img {
+        max-width: 400px !important;
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+    /* Gallery photo fill mode */
+    .laxcc-master-makers .master-makers-hero-img-fill {
+        width: 100% !important;
+        overflow: hidden !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+
+    .laxcc-master-makers .master-makers-hero-img-fill img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+
+    .laxcc-master-makers .master-makers-hero-body {
+        max-width: 1400px !important;
+        margin: 0 auto !important;
+        padding: 32px 20px 28px !important;
+    }
+
+    .laxcc-master-makers .master-makers-hero-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        background: none !important;
+        border: none !important;
+        color: var(--text-muted) !important;
+        font-size: 0.65rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+        padding: 6px 14px !important;
+        border-radius: 100px !important;
+        margin-bottom: 16px !important;
+        white-space: nowrap !important;
+        width: fit-content !important;
+    }
+
+    .laxcc-master-makers .master-makers-hero-badge i { font-size: 0.55rem !important; }
+
+    .laxcc-master-makers .master-makers-hero h1 {
+        font-size: 2.4rem !important;
+        font-weight: 900 !important;
+        line-height: 1 !important;
+        letter-spacing: -0.03em !important;
+        color: var(--navy) !important;
+        margin-bottom: 16px !important;
+    }
+
+    .laxcc-master-makers .master-makers-hero h1 span { color: var(--orange) !important; }
+
+    .laxcc-master-makers .master-makers-hero-sub {
+        font-size: 0.95rem !important;
+        color: var(--text-muted) !important;
+        line-height: 1.6 !important;
+        margin-bottom: 24px !important;
+        max-width: 520px !important;
+    }
+
+    .laxcc-master-makers .master-makers-hero-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        margin-bottom: 28px !important;
+    }
+
+    .laxcc-master-makers .master-makers-hero-stats {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 12px !important;
+        border-top: 1px solid var(--border) !important;
+        padding-top: 24px !important;
+    }
+
+    .laxcc-master-makers .master-makers-stat-val {
+        font-size: 1.5rem !important;
+        font-weight: 900 !important;
+        color: var(--orange) !important;
+        letter-spacing: -0.03em !important;
+        line-height: 1 !important;
+        margin-bottom: 2px !important;
+    }
+
+    .laxcc-master-makers .master-makers-stat-lbl {
+        font-size: 0.6rem !important;
+        font-weight: 700 !important;
+        color: var(--text-muted) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    /* Buttons */
+    .laxcc-master-makers .master-makers-btn-primary,
+    .laxcc-master-makers a.master-makers-btn-primary,
+    .laxcc-master-makers a.master-makers-btn-primary:link,
+    .laxcc-master-makers a.master-makers-btn-primary:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        background: var(--orange) !important;
+        color: #fff !important;
+        font-size: 0.85rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.06em !important;
+        text-transform: uppercase !important;
+        padding: 16px 32px !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        transition: all 0.3s ease !important;
+        border: none !important;
+        cursor: pointer !important;
+    }
+
+    .laxcc-master-makers a.master-makers-btn-primary:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 32px rgba(248, 148, 89, 0.4) !important;
+    }
+
+    .laxcc-master-makers .master-makers-btn-secondary,
+    .laxcc-master-makers a.master-makers-btn-secondary,
+    .laxcc-master-makers a.master-makers-btn-secondary:link,
+    .laxcc-master-makers a.master-makers-btn-secondary:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        background: transparent !important;
+        color: var(--navy) !important;
+        font-size: 0.85rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.04em !important;
+        text-transform: uppercase !important;
+        padding: 16px 32px !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        border: 1px solid var(--navy) !important;
+        transition: all 0.3s ease !important;
+        cursor: pointer !important;
+    }
+
+    .laxcc-master-makers a.master-makers-btn-secondary:hover {
+        border-color: var(--orange) !important;
+        color: var(--orange) !important;
+        background: rgba(248, 148, 89, 0.06) !important;
+    }
+
+    /* Desktop hero */
+    @media (min-width: 769px) {
+        .laxcc-master-makers .master-makers-hero {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            min-height: 100vh !important;
+        }
+        .laxcc-master-makers .master-makers-hero-img {
+            height: 100% !important;
+            min-height: 100vh !important;
+            border-radius: 0 0 0 32px !important;
+            order: 2 !important;
+            padding: 60px 40px !important;
+        }
+        .laxcc-master-makers .master-makers-hero-img img { max-width: 480px !important; }
+        .laxcc-master-makers .master-makers-hero-img-fill {
+            height: 100% !important;
+            min-height: 100vh !important;
+            border-radius: 0 0 0 32px !important;
+            order: 2 !important;
+            padding: 0 !important;
+        }
+        .laxcc-master-makers .master-makers-hero-img-fill img { max-width: none !important; }
+        .laxcc-master-makers .master-makers-hero-body {
+            order: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            padding: 80px 60px !important;
+        }
+        .laxcc-master-makers .master-makers-hero h1 { font-size: clamp(2.8rem, 4vw, 4.2rem) !important; margin-bottom: 24px !important; }
+        .laxcc-master-makers .master-makers-hero-sub { font-size: 1.05rem !important; margin-bottom: 36px !important; }
+        .laxcc-master-makers .master-makers-hero-actions { flex-direction: row !important; margin-bottom: 0 !important; }
+        .laxcc-master-makers .master-makers-hero-stats { margin-top: 48px !important; padding-top: 32px !important; }
+        .laxcc-master-makers .master-makers-stat-val { font-size: 2rem !important; }
+        .laxcc-master-makers .master-makers-stat-lbl { font-size: 0.7rem !important; }
+    }
+
+    /* ABOUT section */
+    .laxcc-master-makers .master-makers-about { padding: 24px 0 0 !important; background: var(--cream) !important; }
+    .laxcc-master-makers .master-makers-about-container { max-width: 1400px !important; margin: 0 auto !important; padding: 0 20px !important; }
+    .laxcc-master-makers .master-makers-about-header { max-width: 680px !important; }
+
+    .laxcc-master-makers .master-makers-section-label {
+        display: inline-block !important;
+        font-size: 0.7rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 3px !important;
+        text-transform: uppercase !important;
+        color: var(--orange) !important;
+        margin-bottom: 20px !important;
+        position: relative !important;
+        padding-left: 36px !important;
+    }
+    .laxcc-master-makers .master-makers-section-label::before {
+        content: '' !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 50% !important;
+        width: 24px !important;
+        height: 2px !important;
+        background: var(--orange) !important;
+    }
+
+    .laxcc-master-makers .master-makers-about-top { display: flex !important; align-items: flex-end !important; justify-content: space-between !important; gap: 24px !important; margin-bottom: 16px !important; }
+    .laxcc-master-makers .master-makers-about-header h2 { font-size: clamp(2rem, 3.5vw, 3rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1.05 !important; margin-bottom: 12px !important; }
+    .laxcc-master-makers .master-makers-about-header p { font-size: 1rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; max-width: 480px !important; }
+
+    .laxcc-master-makers .master-makers-scroll-arrows { display: flex !important; gap: 8px !important; flex-shrink: 0 !important; }
+    .laxcc-master-makers .master-makers-scroll-arrow {
+        width: 40px !important; height: 40px !important; border-radius: 50% !important;
+        border: 1px solid var(--border) !important; background: var(--white) !important;
+        display: flex !important; align-items: center !important; justify-content: center !important;
+        cursor: pointer !important; transition: all 0.2s ease !important;
+        color: var(--text) !important; font-size: 0.8rem !important;
+    }
+    .laxcc-master-makers .master-makers-scroll-arrow:hover { border-color: var(--navy) !important; color: var(--navy) !important; }
+
+    .laxcc-master-makers .master-makers-about-track {
+        display: flex !important; gap: 20px !important; overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important; padding-bottom: 4px !important;
+    }
+    .laxcc-master-makers .master-makers-about-track::-webkit-scrollbar { display: none !important; }
+    .laxcc-master-makers .master-makers-about-slide {
+        flex: 0 0 280px !important; scroll-snap-align: start !important;
+        padding: 16px 0 0 !important; border-top: 2px solid var(--border) !important;
+        transition: border-color 0.3s ease !important;
+    }
+    .laxcc-master-makers .master-makers-about-slide:hover { border-color: var(--navy) !important; }
+    .laxcc-master-makers .master-makers-about-slide-num { font-size: 0.7rem !important; font-weight: 700 !important; color: var(--text-muted) !important; letter-spacing: 0.5px !important; margin-bottom: 12px !important; }
+    .laxcc-master-makers .master-makers-about-slide h3 { font-size: 1.1rem !important; font-weight: 800 !important; color: var(--text) !important; letter-spacing: -0.01em !important; margin-bottom: 8px !important; }
+    .laxcc-master-makers .master-makers-about-slide p { font-size: 0.85rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; }
+    @media (min-width: 769px) { .laxcc-master-makers .master-makers-about-slide { flex: 0 0 320px !important; } }
+
+    /* EDUCATION section */
+    .laxcc-master-makers .master-makers-education { padding: 24px 0 !important; background: var(--cream) !important; }
+    .laxcc-master-makers .master-makers-education-container { max-width: 1400px !important; margin: 0 auto !important; padding: 0 20px !important; }
+    .laxcc-master-makers .master-makers-education-top { display: flex !important; align-items: flex-end !important; justify-content: space-between !important; gap: 24px !important; margin-bottom: 16px !important; }
+    .laxcc-master-makers .master-makers-education-intro h2 { font-size: clamp(2rem, 3.5vw, 3rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1.05 !important; margin-bottom: 8px !important; }
+    .laxcc-master-makers .master-makers-education-intro p { font-size: 0.9rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; max-width: 480px !important; }
+    .laxcc-master-makers .master-makers-education-track {
+        display: flex !important; gap: 20px !important; overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+    }
+    .laxcc-master-makers .master-makers-education-track::-webkit-scrollbar { display: none !important; }
+    .laxcc-master-makers .master-makers-education-slide {
+        flex: 0 0 220px !important; scroll-snap-align: start !important;
+        padding: 16px 0 0 !important; border-top: 2px solid var(--border) !important;
+        text-align: center !important; transition: border-color 0.3s ease !important;
+    }
+    .laxcc-master-makers .master-makers-education-slide:hover { border-color: var(--navy) !important; }
+    .laxcc-master-makers .master-makers-education-num { font-size: 2.5rem !important; font-weight: 900 !important; color: var(--orange) !important; line-height: 1 !important; margin-bottom: 6px !important; }
+    .laxcc-master-makers .master-makers-education-name { font-size: 0.9rem !important; font-weight: 700 !important; color: var(--navy) !important; margin-bottom: 6px !important; }
+    .laxcc-master-makers .master-makers-education-desc { font-size: 0.8rem !important; color: var(--text-muted) !important; line-height: 1.5 !important; }
+    @media (min-width: 769px) {
+        .laxcc-master-makers .master-makers-education { padding: 60px 0 !important; }
+        .laxcc-master-makers .master-makers-education-container { padding: 0 60px !important; }
+        .laxcc-master-makers .master-makers-education-slide { flex: 0 0 260px !important; }
+    }
+
+    /* FAQ */
+    .laxcc-master-makers .master-makers-faq { padding: 140px 0 !important; background: var(--cream) !important; }
+    .laxcc-master-makers .master-makers-faq-container {
+        max-width: 1400px !important; margin: 0 auto !important; padding: 0 60px !important;
+        display: grid !important; grid-template-columns: 380px 1fr !important;
+        gap: 80px !important; align-items: start !important;
+    }
+    .laxcc-master-makers .master-makers-faq-sidebar { position: sticky !important; top: 40px !important; }
+    .laxcc-master-makers .master-makers-faq-sidebar h2 { font-size: 3rem !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1 !important; margin-bottom: 24px !important; }
+    .laxcc-master-makers .master-makers-faq-sidebar p { font-size: 1.05rem !important; color: var(--text-muted) !important; line-height: 1.7 !important; margin-bottom: 32px !important; }
+    .laxcc-master-makers .master-makers-faq-deco { width: 80px !important; height: 4px !important; background: var(--orange) !important; border-radius: 2px !important; }
+    .laxcc-master-makers .master-makers-faq-list { display: flex !important; flex-direction: column !important; }
+    .laxcc-master-makers .master-makers-faq-item { border-bottom: 1px solid var(--border) !important; padding: 32px 0 !important; }
+    .laxcc-master-makers .master-makers-faq-item:first-child { border-top: 1px solid var(--border) !important; }
+    .laxcc-master-makers .master-makers-faq-q {
+        font-size: 1.3rem !important; font-weight: 800 !important; color: var(--navy) !important;
+        cursor: pointer !important; display: flex !important; align-items: center !important;
+        justify-content: space-between !important; gap: 20px !important;
+        list-style: none !important; transition: color 0.3s ease !important; padding: 0 !important;
+    }
+    .laxcc-master-makers .master-makers-faq-q::-webkit-details-marker { display: none !important; }
+    .laxcc-master-makers .master-makers-faq-q:hover { color: var(--orange) !important; }
+    .laxcc-master-makers .master-makers-faq-q .master-makers-faq-toggle {
+        font-size: 1.3rem !important; font-weight: 300 !important; flex-shrink: 0 !important;
+        transition: transform 0.3s ease !important; color: var(--text-muted) !important;
+    }
+    .laxcc-master-makers .master-makers-faq-item[open] .master-makers-faq-toggle { transform: rotate(45deg) !important; color: var(--orange) !important; }
+    .laxcc-master-makers .master-makers-faq-a {
+        padding-top: 16px !important; font-size: 1rem !important; color: var(--text-muted) !important;
+        line-height: 1.7 !important; max-width: 90% !important; animation: laxcc-master-makers-fadeUp 0.4s ease !important;
+    }
+
+    /* CTA */
+    .laxcc-master-makers .master-makers-cta {
+        padding: 120px 0 !important; background: var(--cream) !important;
+        text-align: center !important; position: relative !important; overflow: hidden !important;
+    }
+    .laxcc-master-makers .master-makers-cta::before {
+        content: '' !important; position: absolute !important; top: 50% !important; left: 50% !important;
+        transform: translate(-50%, -50%) !important; width: 600px !important; height: 600px !important;
+        background: radial-gradient(circle, rgba(248, 148, 89, 0.06) 0%, transparent 70%) !important;
+        border-radius: 50% !important; pointer-events: none !important;
+    }
+    .laxcc-master-makers .master-makers-cta-container { max-width: 700px !important; margin: 0 auto !important; padding: 0 40px !important; position: relative !important; z-index: 1 !important; }
+    .laxcc-master-makers .master-makers-cta h2 { font-size: clamp(2.5rem, 5vw, 4rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; margin-bottom: 20px !important; line-height: 1.05 !important; }
+    .laxcc-master-makers .master-makers-cta p { font-size: 1.1rem !important; color: var(--text-muted) !important; margin-bottom: 40px !important; line-height: 1.7 !important; }
+    .laxcc-master-makers .master-makers-cta-actions { display: flex !important; gap: 16px !important; justify-content: center !important; flex-wrap: wrap !important; }
+    .laxcc-master-makers .master-makers-cta-location { margin-top: 48px !important; padding-top: 32px !important; border-top: 1px solid rgba(29, 80, 138, 0.1) !important; }
+    .laxcc-master-makers .master-makers-cta-location p { font-size: 0.85rem !important; color: var(--text-muted) !important; margin-bottom: 0 !important; }
+    .laxcc-master-makers .master-makers-cta-location strong { color: var(--navy) !important; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .laxcc-master-makers .master-makers-about-container,
+        .laxcc-master-makers .master-makers-education-container,
+        .laxcc-master-makers .master-makers-faq-container { padding: 0 40px !important; }
+        .laxcc-master-makers .master-makers-faq-container { grid-template-columns: 1fr !important; gap: 48px !important; }
+        .laxcc-master-makers .master-makers-faq-sidebar { position: static !important; }
+    }
+    @media (max-width: 640px) {
+        .laxcc-master-makers .master-makers-education,
+        .laxcc-master-makers .master-makers-faq { padding: 40px 0 !important; }
+        .laxcc-master-makers .master-makers-about-container,
+        .laxcc-master-makers .master-makers-education-container,
+        .laxcc-master-makers .master-makers-faq-container { padding: 0 24px !important; }
+        .laxcc-master-makers .master-makers-faq-sidebar h2 { font-size: 2.2rem !important; }
+        .laxcc-master-makers .master-makers-faq-q { font-size: 1.1rem !important; }
+        .laxcc-master-makers .master-makers-cta { padding: 80px 0 !important; }
+    }
+
+    /* Elementor override */
+    .elementor-widget-container .laxcc-master-makers {
+        width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+</style>
+
+<div class="laxcc-master-makers">
+
+    <!-- HERO -->
+    <section class="master-makers-hero">
+        <div class="master-makers-hero-img">
+            <img src="https://static.wixstatic.com/media/4a2c54_7044f1a125624bd1b1dd26f9cbdb6cba~mv2.png/v1/fill/w_488,h_508,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/MasterMakers_Category_coldcure_rp.png"
+                alt="Master Makers products available at LAXCC dispensary in Los Angeles near LAX Airport"
+                loading="eager">
+        </div>
+
+        <div class="master-makers-hero-body">
+            <div class="master-makers-hero-badge">
+                <i class="fas fa-shield-halved"></i>
+                Licensed Dispensary &bull; 5 Min From LAX
+            </div>
+            <h1>Buy Master Makers <span>Smoking Accessories</span> in Los Angeles</h1>
+            <p class="master-makers-hero-sub">
+                Quality smoking accessories and tools for the discerning cannabis consumer. Shop Master Makers at LAXCC — a licensed Los Angeles dispensary just 5 minutes from LAX Airport. Available in-store and for pickup.
+            </p>
+            <div class="master-makers-hero-actions">
+                <a href="#master-makers-live-menu" class="master-makers-btn-primary">
+                    Shop Master Makers <i class="fas fa-arrow-down"></i>
+                </a>
+                <a href="https://www.google.com/maps?daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045"
+                    target="_blank" rel="noopener noreferrer" class="master-makers-btn-secondary">
+                    <i class="fas fa-location-dot"></i> Get Directions
+                </a>
+            </div>
+            <div class="master-makers-hero-stats">
+                <div>
+                    <div class="master-makers-stat-val">Top</div>
+                    <div class="master-makers-stat-lbl">Brand Quality</div>
+                </div>
+                <div>
+                    <div class="master-makers-stat-val">100%</div>
+                    <div class="master-makers-stat-lbl">Authentic</div>
+                </div>
+                <div>
+                    <div class="master-makers-stat-val">In</div>
+                    <div class="master-makers-stat-lbl">Stock Now</div>
+                </div>
+                <div>
+                    <div class="master-makers-stat-val">5+</div>
+                    <div class="master-makers-stat-lbl">Products Stocked</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+<!-- END scoped wrapper — shortcode lives OUTSIDE -->
+
+<!-- LIVE MENU -->
+<section id="master-makers-live-menu">
+    [leafbridge_specific_product_filter brand="8095aff6-84c5-4e15-9b69-5581208d4b25" count="20"]
+</section>
+
+<!-- Resume scoped wrapper -->
+<div class="laxcc-master-makers">
+
+    <!-- ABOUT -->
+    <section class="master-makers-about">
+        <div class="master-makers-about-container">
+            <div class="master-makers-about-top">
+                <div class="master-makers-about-header">
+                    <span class="master-makers-section-label">About the Brand</span>
+                    <h2>Why Master Makers</h2>
+                    <p>Quality smoking accessories and tools for the discerning cannabis consumer.</p>
+                </div>
+                <div class="master-makers-scroll-arrows">
+                    <button class="master-makers-scroll-arrow master-makers-about-arrow" data-dir="-1" aria-label="Previous"><i class="fas fa-arrow-left"></i></button>
+                    <button class="master-makers-scroll-arrow master-makers-about-arrow" data-dir="1" aria-label="Next"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="master-makers-about-track">
+                <div class="master-makers-about-slide">
+                    <div class="master-makers-about-slide-num">01</div>
+                    <h3>Trusted Brand</h3>
+                    <p>A recognized name in smoking accessories — quality materials, consistent products, and a reputation built on delivering what smokers actually want.</p>
+                </div>
+                <div class="master-makers-about-slide">
+                    <div class="master-makers-about-slide-num">02</div>
+                    <h3>Premium Materials</h3>
+                    <p>Made with quality materials for a clean, even burn. No harsh chemicals, no off-flavors — just a smooth smoking experience.</p>
+                </div>
+                <div class="master-makers-about-slide">
+                    <div class="master-makers-about-slide-num">03</div>
+                    <h3>Wide Selection</h3>
+                    <p>Multiple sizes, styles, and formats to match your rolling preference. From classic papers to specialty wraps, there's something for every smoker.</p>
+                </div>
+                <div class="master-makers-about-slide">
+                    <div class="master-makers-about-slide-num">04</div>
+                    <h3>Always In Stock</h3>
+                    <p>We keep our accessory wall stocked so you never have to make a separate trip. Grab your papers and your flower in one stop at LAXCC.</p>
+                </div>
+                <div class="master-makers-about-slide">
+                    <div class="master-makers-about-slide-num">05</div>
+                    <h3>Available at LAXCC</h3>
+                    <p>We carry Master Makers at our dispensary near LAX Airport — walk in at 8332 Lincoln Blvd or order ahead for pickup. New products rotate in regularly, so check the live menu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="master-makers-faq">
+        <div class="master-makers-faq-container">
+            <div class="master-makers-faq-sidebar">
+                <h2>Common Questions</h2>
+                <p>Everything you need to know about buying Master Makers at LAXCC near LAX Airport in Los Angeles.</p>
+                <div class="master-makers-faq-deco"></div>
+            </div>
+
+            <div class="master-makers-faq-list">
+                <details class="master-makers-faq-item">
+                    <summary class="master-makers-faq-q">
+                        Where can I buy Master Makers near LAX?
+                        <span class="master-makers-faq-toggle">+</span>
+                    </summary>
+                    <div class="master-makers-faq-a">
+                        LAXCC is a licensed Los Angeles dispensary at 8332 Lincoln Blvd, Los Angeles, CA 90045 — just 5 minutes from LAX Airport. We carry Master Makers rolling papers, wraps & accessories. Walk in or order ahead for pickup.
+                    </div>
+                </details>
+
+                <details class="master-makers-faq-item">
+                    <summary class="master-makers-faq-q">
+                        What Master Makers products does LAXCC carry?
+                        <span class="master-makers-faq-toggle">+</span>
+                    </summary>
+                    <div class="master-makers-faq-a">
+                        We stock a curated selection of Master Makers rolling papers, wraps & accessories. Availability rotates with new drops — check our live menu above for the most current inventory and pricing.
+                    </div>
+                </details>
+
+                <details class="master-makers-faq-item">
+                    <summary class="master-makers-faq-q">
+                        What Master Makers products does LAXCC carry?
+                        <span class="master-makers-faq-toggle">+</span>
+                    </summary>
+                    <div class="master-makers-faq-a">
+                        We stock a selection of Master Makers smoking accessories at LAXCC. Availability varies — check with our budtenders for the current selection. We keep our accessory wall well-stocked so you can grab everything you need in one trip.
+                    </div>
+                </details>
+
+                <details class="master-makers-faq-item">
+                    <summary class="master-makers-faq-q">
+                        How much does Master Makers cost at LAXCC?
+                        <span class="master-makers-faq-toggle">+</span>
+                    </summary>
+                    <div class="master-makers-faq-a">
+                        Pricing varies by product and size — check the live menu on this page for current prices. LAXCC includes all taxes in our listed prices, so what you see is what you pay.
+                    </div>
+                </details>
+
+                <details class="master-makers-faq-item">
+                    <summary class="master-makers-faq-q">
+                        What are LAXCC's hours and location?
+                        <span class="master-makers-faq-toggle">+</span>
+                    </summary>
+                    <div class="master-makers-faq-a">
+                        LAXCC is open daily from 9:00 AM to 9:30 PM at 8332 Lincoln Blvd in Westchester, Los Angeles — 5 minutes from LAX Airport and 8 minutes from the beach. Walk-ins welcome, no appointment needed. We also offer pickup, curbside, and drive-thru options.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="master-makers-cta">
+        <div class="master-makers-cta-container">
+            <h2>Get Master Makers Today at LAXCC</h2>
+            <p>
+                Walk into our licensed dispensary near LAX Airport and shop Master Makers rolling papers, wraps & accessories. All products lab-tested and ready for you.
+            </p>
+            <div class="master-makers-cta-actions">
+                <a href="https://www.google.com/maps?daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045"
+                    target="_blank" rel="noopener noreferrer" class="master-makers-btn-primary">
+                    <i class="fas fa-location-dot"></i> Directions to LAXCC
+                </a>
+            </div>
+            <div class="master-makers-cta-location">
+                <p><strong>LAXCC</strong> &bull; 8332 Lincoln Blvd, Los Angeles, CA 90045 &bull; Open Daily 9AM - 9:30PM</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    (function () {
+        var ld = {
+            "@context": "https://schema.org",
+            "@type": "Store",
+            "name": "LAXCC - LAX Cannabis Club",
+            "description": "Licensed dispensary near LAX Airport carrying Master Makers rolling papers, wraps & accessories in Los Angeles.",
+            "url": "https://laxcc.com",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "8332 Lincoln Blvd",
+                "addressLocality": "Los Angeles",
+                "addressRegion": "CA",
+                "postalCode": "90045",
+                "addressCountry": "US"
+            },
+            "openingHours": "Mo-Su 09:00-21:30",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 33.9575,
+                "longitude": -118.4178
+            }
+        };
+        var s = document.createElement('script');
+        s.type = 'application/ld+json';
+        s.textContent = JSON.stringify(ld);
+        document.head.appendChild(s);
+    })();
+
+    /* Horizontal scroll arrows */
+    (function () {
+        [
+            { track: '.master-makers-about-track', btns: '.master-makers-about-arrow', step: 340 }
+        ].forEach(function (cfg) {
+            var track = document.querySelector('.laxcc-master-makers ' + cfg.track);
+            if (!track) return;
+            document.querySelectorAll('.laxcc-master-makers ' + cfg.btns).forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var dir = parseInt(this.getAttribute('data-dir'));
+                    track.scrollBy({ left: dir * cfg.step, behavior: 'smooth' });
+                });
+            });
+        });
+    })();
+</script>

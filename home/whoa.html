@@ -1,0 +1,177 @@
+<style>
+    #whoa-brand-scope {
+        --wh-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --wh-bg: #fbf8f2;
+        --wh-text: #1d508a;
+        --wh-text-muted: #64748b;
+        --wh-accent: #F89459;
+
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow: visible;
+        padding: clamp(24px, 3vw, 44px) clamp(14px, 2vw, 28px);
+        background: var(--wh-bg);
+        font-family: var(--wh-font);
+        color: var(--wh-text);
+        position: relative;
+    }
+
+    #whoa-brand-scope *,
+    #whoa-brand-scope *::before,
+    #whoa-brand-scope *::after {
+        box-sizing: border-box;
+    }
+
+    #whoa-brand-scope .wh-header {
+        position: relative;
+        margin-bottom: clamp(18px, 2vw, 28px);
+        width: 100%;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        text-align: left;
+    }
+
+    #whoa-brand-scope .wh-header__sup {
+        font-size: 11px;
+        font-weight: 700;
+        color: #1D508A;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-self: start;
+        border: 1px solid #1D508A;
+        padding: 4px 12px;
+        border-radius: 999px;
+        background: rgba(29, 80, 138, 0.05);
+        width: fit-content;
+    }
+
+    #whoa-brand-scope .wh-header__title {
+        font-size: clamp(34px, 5vw, 72px) !important;
+        font-weight: 800 !important;
+        line-height: 0.92 !important;
+        text-transform: uppercase !important;
+        margin: 0 !important;
+        letter-spacing: -0.04em !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 10px !important;
+        flex-wrap: wrap !important;
+        color: #d946ef !important;
+    }
+
+    #whoa-brand-scope .wh-text-gradient {
+        background: linear-gradient(135deg, #d946ef 0%, #f472b6 50%, #F89459 100%) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        color: transparent !important;
+        display: inline-block !important;
+    }
+
+    #whoa-brand-scope .wh-new-badge {
+        background: #ef4444;
+        color: #fff;
+        font-size: 0.23em;
+        font-weight: 800;
+        line-height: 1;
+        padding: 8px 12px;
+        border-radius: 999px;
+        -webkit-text-fill-color: white !important;
+        color: white !important;
+        letter-spacing: 0.08em;
+        position: relative;
+        top: -2px;
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.28);
+        animation: wh-pulse-badge 2s infinite;
+    }
+
+    @keyframes wh-pulse-badge {
+        0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.55); }
+        70% { transform: scale(1.04); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+        100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+    }
+
+    #whoa-brand-scope .wh-header__desc {
+        font-size: clamp(14px, 1.2vw, 18px);
+        color: var(--wh-text-muted);
+        max-width: 1100px;
+        margin: 0;
+        line-height: 1.45;
+    }
+
+    #whoa-brand-scope .wh-products-section {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 767px) {
+        #whoa-brand-scope {
+            padding: 20px 12px 24px;
+        }
+
+        #whoa-brand-scope .wh-header {
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        #whoa-brand-scope .wh-header__sup {
+            font-size: 10px;
+            padding: 4px 10px;
+        }
+
+        #whoa-brand-scope .wh-header__title {
+            font-size: clamp(30px, 10vw, 46px) !important;
+            gap: 8px !important;
+            line-height: 0.95 !important;
+        }
+
+        #whoa-brand-scope .wh-new-badge {
+            font-size: 0.26em;
+            padding: 7px 10px;
+            top: 0;
+        }
+
+        #whoa-brand-scope .wh-header__desc {
+            font-size: 14px;
+            line-height: 1.42;
+            max-width: 100%;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1100px) {
+        #whoa-brand-scope .wh-header__desc {
+            max-width: 900px;
+        }
+    }
+</style>
+
+<div id="whoa-brand-scope">
+    <header class="wh-header">
+        <span class="wh-header__sup">Premium Edibles</span>
+
+        <h2 class="wh-header__title">
+            <span class="wh-text-gradient">WHOA</span>
+            <span class="wh-new-badge">NEW</span>
+        </h2>
+
+        <p class="wh-header__desc">
+            <strong>WHOA</strong> crafts all their edibles in-house in Long Beach, CA — precision-dosed gummies and chocolates with bold flavors like Mango Chile, Sour Blue Raspberry, and Strawberry Cookies &amp; Cream. One of California's fastest-growing edibles brands.
+        </p>
+    </header>
+
+    <div class="wh-products-section">
+        [leafbridge_specific_product_filter brand="536abc1c-7ae9-4389-a71a-696e6808b03b" count="20"]
+    </div>
+</div>

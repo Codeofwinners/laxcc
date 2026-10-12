@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dispensary Near SoFi Stadium · LAX Cannabis Club</title>
+  <meta name="description" content="LA's top-rated dispensary near SoFi Stadium — 17 minutes from the venue. Shop premium flower, vapes, edibles & pre-rolls. Express pickup before and after the game.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* ════════════════════════════════════════════════════════════
+       SoFi page — modern, on-brand, award-winning, strong CRO.
+       Scoped under .sofi-wrap so styles don't leak.
+       Colors: navy #1D508A, cyan #00AFC9, orange #F89459 (CTAs).
+       ════════════════════════════════════════════════════════════ */
+    .sofi-wrap {
+      --s-bg: #fbf8f2;
+      --s-surface: #ffffff;
+      --s-navy: #1D508A;
+      --s-navy-dark: #143b6b;
+      --s-cyan: #00AFC9;
+      --s-cyan-dark: #008fa4;
+      --s-accent: #F89459;
+      --s-accent-dark: #ef8345;
+      --s-text: #0f172a;
+      --s-text-muted: #64748b;
+      --s-radius: 16px;
+      --s-radius-lg: 22px;
+      --s-shadow: 0 8px 24px -6px rgba(15, 23, 42, 0.08);
+      --s-shadow-hover: 0 14px 36px -8px rgba(15, 23, 42, 0.14);
+      --s-font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+      font-family: var(--s-font);
+      background: var(--s-bg);
+      color: var(--s-text);
+      padding: clamp(1rem, 2.5vw, 2rem);
+      line-height: 1.5;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+    }
+    .sofi-wrap *,
+    .sofi-wrap *::before,
+    .sofi-wrap *::after { box-sizing: inherit; }
+
+    .sofi-shell {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* ─── HERO UNIT ─── image left, content right (no overlay on image) */
+    .sofi-hero-unit {
+      background: var(--s-surface);
+      border-radius: var(--s-radius-lg);
+      overflow: hidden;
+      box-shadow: var(--s-shadow);
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      align-items: stretch;
+    }
+
+    .sofi-hero-img {
+      position: relative;
+      min-height: 100%;
+      background-image: url('https://laxcc.com/wp-content/uploads/2026/05/sofi-dispensary-weed-near-me.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #1a1f2b;
+    }
+
+    .sofi-hero-content {
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      display: flex;
+      align-items: center;
+    }
+
+    .sofi-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      max-width: 100%;
+    }
+    .sofi-stack > * { margin: 0; }
+
+    /* Hours pill — minimal, live status */
+    .sofi-hours {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.4rem 0.85rem 0.4rem 0.55rem;
+      background: rgba(34, 197, 94, 0.1);
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--s-text);
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      max-width: 100%;
+    }
+    .sofi-hours > * { white-space: nowrap; flex-shrink: 0; }
+    .sofi-hours .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+      flex: 0 0 8px;
+      animation: sofiPulse 2.4s ease-in-out infinite;
+    }
+    .sofi-hours .label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #15803d;
+    }
+    .sofi-hours .sep {
+      width: 1px;
+      height: 11px;
+      background: rgba(15, 23, 42, 0.14);
+    }
+    .sofi-hours .time {
+      font-variant-numeric: tabular-nums;
+    }
+    .sofi-hours .days {
+      font-size: 0.72rem;
+      color: var(--s-text-muted);
+      font-weight: 500;
+    }
+    @keyframes sofiPulse {
+      0%, 100% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18); }
+      50%      { box-shadow: 0 0 0 7px rgba(34, 197, 94, 0.06); }
+    }
+
+    /* Eyebrow */
+    .sofi-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--s-cyan-dark);
+    }
+    .sofi-eyebrow .pin {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--s-cyan);
+    }
+
+    /* Headline */
+    .sofi-h1 {
+      font-size: clamp(1.85rem, 3.8vw, 3rem);
+      font-weight: 800;
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      color: var(--s-navy);
+      margin: 0;
+    }
+    .sofi-h1 .accent {
+      background: linear-gradient(120deg, var(--s-cyan) 0%, var(--s-navy) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    .sofi-desc {
+      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+      line-height: 1.6;
+      color: var(--s-text-muted);
+      max-width: 56ch;
+    }
+    .sofi-desc strong { color: var(--s-text); font-weight: 700; }
+
+    /* CTA row */
+    .sofi-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.25rem;
+    }
+    .sofi-btn,
+    .sofi-btn:link,
+    .sofi-btn:visited {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.85rem 1.35rem;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .sofi-btn--primary,
+    .sofi-btn--primary:link,
+    .sofi-btn--primary:visited {
+      background: var(--s-accent);
+      color: #ffffff !important;
+      box-shadow: 0 6px 16px -4px rgba(248, 148, 89, 0.45);
+    }
+    .sofi-btn--primary:hover,
+    .sofi-btn--primary:focus,
+    .sofi-btn--primary:active {
+      background: var(--s-accent-dark);
+      transform: translateY(-2px);
+      color: #ffffff !important;
+      box-shadow: 0 10px 24px -4px rgba(248, 148, 89, 0.55);
+    }
+    .sofi-btn--ghost,
+    .sofi-btn--ghost:link,
+    .sofi-btn--ghost:visited {
+      background: transparent;
+      color: var(--s-text) !important;
+      box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.15);
+    }
+    .sofi-btn--ghost:hover {
+      background: rgba(15, 23, 42, 0.04);
+      transform: translateY(-2px);
+      color: var(--s-text) !important;
+    }
+    .sofi-btn svg { display: block; }
+
+    /* ─── TRUST STRIP — 3 stat columns with hairline dividers ─── */
+    .sofi-trust {
+      background: var(--s-surface);
+      border-radius: var(--s-radius);
+      box-shadow: var(--s-shadow);
+      margin-top: 0.85rem;
+      padding: 1rem 0.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .sofi-trust-item {
+      padding: 0.4rem 1rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .sofi-trust-item + .sofi-trust-item {
+      border-left: 1px solid rgba(15, 23, 42, 0.08);
+    }
+    .sofi-trust-val {
+      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      font-weight: 800;
+      color: var(--s-navy);
+      letter-spacing: -0.015em;
+      line-height: 1;
+    }
+    .sofi-trust-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--s-text-muted);
+    }
+
+    /* ─── GAME-DAY GUIDE — practical info, 2 cols ─── */
+    .sofi-guide {
+      margin-top: 0.85rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+    .sofi-card {
+      background: var(--s-surface);
+      border-radius: var(--s-radius);
+      box-shadow: var(--s-shadow);
+      padding: clamp(1.25rem, 2.2vw, 1.75rem);
+    }
+    .sofi-card h3 {
+      font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+      font-weight: 800;
+      color: var(--s-navy);
+      letter-spacing: -0.02em;
+      margin: 0.4rem 0 0.5rem;
+      line-height: 1.15;
+    }
+    .sofi-card p {
+      font-size: 0.93rem;
+      line-height: 1.6;
+      color: var(--s-text-muted);
+      margin: 0;
+    }
+    .sofi-card p strong { color: var(--s-text); font-weight: 700; }
+
+    .sofi-checklist {
+      list-style: none;
+      margin: 0.75rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 0.55rem;
+    }
+    .sofi-checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: var(--s-text);
+    }
+    .sofi-check {
+      flex: 0 0 18px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--s-accent);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 800;
+      margin-top: 3px;
+      line-height: 1;
+    }
+
+    /* ─── ABOUT SOFI ─── transparent header + flat grid of facts */
+    .sofi-section {
+      margin-top: 1.5rem;
+    }
+    .sofi-section-head {
+      padding: 0.5rem 0.25rem 1rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .sofi-section-titles { min-width: 0; }
+    .sofi-section-titles h2 {
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 800;
+      color: var(--s-navy);
+      letter-spacing: -0.022em;
+      line-height: 1.1;
+      margin: 0 0 0.35rem;
+    }
+    .sofi-section-titles p {
+      font-size: 0.95rem;
+      color: var(--s-text-muted);
+      line-height: 1.55;
+      margin: 0;
+      max-width: 680px;
+    }
+
+    .sofi-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.85rem;
+    }
+    .sofi-fact {
+      background: var(--s-surface);
+      border-radius: var(--s-radius);
+      box-shadow: var(--s-shadow);
+      padding: 1.15rem 1.25rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .sofi-fact:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--s-shadow-hover);
+    }
+    .sofi-fact-label {
+      font-size: 0.66rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--s-cyan-dark);
+      margin-bottom: 0.4rem;
+    }
+    .sofi-fact-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--s-navy);
+      margin: 0 0 0.3rem;
+      letter-spacing: -0.01em;
+    }
+    .sofi-fact-body {
+      font-size: 0.86rem;
+      color: var(--s-text-muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* ─── FINAL CTA BANNER ─── */
+    .sofi-final {
+      margin-top: 1.5rem;
+      background: linear-gradient(135deg, var(--s-navy) 0%, var(--s-navy-dark) 100%);
+      border-radius: var(--s-radius-lg);
+      padding: clamp(1.75rem, 3.5vw, 2.75rem);
+      color: #ffffff;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .sofi-final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(600px 400px at 90% 20%, rgba(0, 175, 201, 0.25), transparent 60%),
+        radial-gradient(500px 350px at 10% 90%, rgba(248, 148, 89, 0.15), transparent 60%);
+      pointer-events: none;
+    }
+    .sofi-final-text {
+      position: relative;
+      z-index: 1;
+    }
+    .sofi-final-text .sofi-eyebrow {
+      color: var(--s-cyan);
+      margin-bottom: 0.75rem;
+    }
+    .sofi-final-text .sofi-eyebrow .pin {
+      background: var(--s-cyan);
+    }
+    .sofi-final h2 {
+      font-size: clamp(1.65rem, 3vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.022em;
+      line-height: 1.1;
+      margin: 0 0 0.65rem;
+      color: #ffffff;
+    }
+    .sofi-final p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 50ch;
+    }
+    .sofi-final-cta {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      align-items: stretch;
+    }
+    .sofi-final-cta .sofi-btn { width: 100%; justify-content: center; }
+    .sofi-final-cta .sofi-btn--ghost,
+    .sofi-final-cta .sofi-btn--ghost:link,
+    .sofi-final-cta .sofi-btn--ghost:visited {
+      background: transparent;
+      color: #ffffff !important;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+    }
+    .sofi-final-cta .sofi-btn--ghost:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff !important;
+    }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 968px) {
+      .sofi-wrap { padding: 0.85rem; }
+
+      .sofi-hero-unit {
+        grid-template-columns: 1fr;
+      }
+      .sofi-hero-img {
+        height: clamp(200px, 30vh, 280px);
+      }
+      .sofi-hero-content {
+        padding: 1.25rem 1.1rem;
+      }
+      .sofi-hours {
+        font-size: 0.76rem;
+        gap: 0.45rem;
+        padding: 0.38rem 0.75rem 0.38rem 0.5rem;
+      }
+      .sofi-hours .label { font-size: 0.6rem; letter-spacing: 0.12em; }
+      .sofi-hours .days { font-size: 0.68rem; }
+
+      .sofi-trust {
+        grid-template-columns: 1fr;
+        padding: 0.5rem 0.75rem;
+      }
+      .sofi-trust-item + .sofi-trust-item {
+        border-left: none;
+        border-top: 1px solid rgba(15, 23, 42, 0.07);
+      }
+      .sofi-trust-item {
+        padding: 0.85rem 0.5rem;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+
+      .sofi-guide { grid-template-columns: 1fr; }
+      .sofi-facts { grid-template-columns: 1fr; }
+
+      .sofi-final {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      .sofi-final-cta { width: 100%; }
+    }
+
+    /* Tiny phones — shrink the days suffix so the pill stays one row */
+    @media (max-width: 380px) {
+      .sofi-hours .days { display: none; }
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       GOOGLE REVIEWS social proof card — sits next to trust strip
+       ════════════════════════════════════════════════════════════ */
+    .sofi-social {
+      margin-top: 0.85rem;
+      background: var(--s-surface);
+      border-radius: var(--s-radius);
+      box-shadow: var(--s-shadow);
+      padding: 1.1rem 1.35rem;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 1.25rem;
+      text-decoration: none;
+      color: var(--s-text);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .sofi-social:hover { transform: translateY(-2px); box-shadow: var(--s-shadow-hover); }
+    .sofi-social-google {
+      width: 44px;
+      height: 44px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234285F4' d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z'/%3E%3Cpath fill='%2334A853' d='M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z'/%3E%3Cpath fill='%23FBBC05' d='M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z'/%3E%3Cpath fill='%23EA4335' d='M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      flex-shrink: 0;
+    }
+    .sofi-social-rating {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .sofi-social-stars {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .sofi-social-stars-score {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--s-text);
+      letter-spacing: -0.01em;
+    }
+    .sofi-social-stars-icons {
+      color: #FBC02D;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      line-height: 1;
+    }
+    .sofi-social-count {
+      font-size: 0.82rem;
+      color: var(--s-text-muted);
+      font-weight: 500;
+    }
+    .sofi-social-link {
+      color: var(--s-cyan-dark);
+      font-weight: 700;
+      font-size: 0.82rem;
+      white-space: nowrap;
+    }
+    @media (max-width: 580px) {
+      .sofi-social {
+        grid-template-columns: auto 1fr;
+        gap: 0.85rem;
+        padding: 0.95rem 1.1rem;
+      }
+      .sofi-social-link { display: none; }
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       MAP PREVIEW — embedded route from SoFi to LAXCC
+       ════════════════════════════════════════════════════════════ */
+    .sofi-map {
+      margin-top: 0.85rem;
+      border-radius: var(--s-radius);
+      box-shadow: var(--s-shadow);
+      overflow: hidden;
+      position: relative;
+      background: var(--s-surface);
+    }
+    .sofi-map iframe {
+      width: 100%;
+      height: 320px;
+      display: block;
+      border: 0;
+      filter: grayscale(15%) contrast(1.05);
+    }
+    .sofi-map-badge {
+      position: absolute;
+      bottom: 0.85rem;
+      right: 0.85rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 0.4rem 0.85rem;
+      border-radius: 100px;
+      font-weight: 800;
+      font-size: 0.82rem;
+      color: var(--s-navy);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .sofi-map-badge .sofi-map-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--s-cyan);
+    }
+    @media (max-width: 580px) {
+      .sofi-map iframe { height: 240px; }
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       LIVE MENU — category sections with leafbridge shortcodes
+       Same pattern as venice-beach: transparent wrapper, navy h3,
+       leafbridge renders its own white container.
+       ════════════════════════════════════════════════════════════ */
+    .sofi-menu {
+      margin-top: 1.75rem;
+      scroll-margin-top: 1rem;
+    }
+    html { scroll-behavior: smooth; }
+    .sofi-menu-intro {
+      margin-bottom: 0.85rem;
+      padding: 0.25rem 0.25rem;
+    }
+    .sofi-menu-intro h2 {
+      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+      font-weight: 800;
+      color: var(--s-navy);
+      letter-spacing: -0.022em;
+      line-height: 1.1;
+      margin: 0 0 0.35rem;
+    }
+    .sofi-menu-intro p {
+      font-size: 0.95rem;
+      color: var(--s-text-muted);
+      line-height: 1.55;
+      margin: 0;
+      max-width: 680px;
+    }
+
+    .sofi-cat {
+      scroll-margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .sofi-cat-head {
+      padding: 0.25rem 0.25rem 0.85rem;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .sofi-cat-titles { min-width: 0; }
+    .sofi-cat-head h3 {
+      font-size: clamp(1.65rem, 2.6vw, 2.1rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--s-navy);
+      line-height: 1.1;
+      margin: 0 0 0.4rem;
+    }
+    .sofi-cat-head p {
+      font-size: 0.93rem;
+      color: var(--s-text-muted);
+      line-height: 1.6;
+      margin: 0;
+      max-width: 760px;
+    }
+    .sofi-cat-head p strong { color: var(--s-text); font-weight: 700; }
+    .sofi-shop-all,
+    .sofi-shop-all:link,
+    .sofi-shop-all:visited {
+      color: var(--s-cyan-dark) !important;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .sofi-shop-all:hover { text-decoration: underline; }
+    .sofi-cat-products {
+      min-height: 220px;
+      background: transparent;
+    }
+  </style>
+</head>
+<body>
+  <div class="sofi-wrap">
+    <div class="sofi-shell">
+
+      <!-- ─── HERO UNIT ─── image (no overlay) + content -->
+      <section class="sofi-hero-unit">
+        <div class="sofi-hero-img" role="img" aria-label="LAX Cannabis Club dispensary near SoFi Stadium"></div>
+        <div class="sofi-hero-content">
+          <div class="sofi-stack">
+            <span class="sofi-hours" aria-label="Store hours">
+              <span class="dot" aria-hidden="true"></span>
+              <span class="label">Open</span>
+              <span class="sep" aria-hidden="true"></span>
+              <span class="time">9:00 AM – 9:30 PM</span>
+              <span class="days">· Every day</span>
+            </span>
+
+            <span class="sofi-eyebrow"><span class="pin" aria-hidden="true"></span>Inglewood · 17 min from SoFi</span>
+
+            <h1 class="sofi-h1">
+              Dispensary <span class="accent">Near SoFi Stadium</span>
+            </h1>
+
+            <p class="sofi-desc">
+              LA's top-rated cannabis dispensary — <strong>17 minutes from SoFi Stadium</strong>, a stop on your way
+              in from LAX, or a fast pickup after the game. Shop <strong>flower, vapes, edibles, pre-rolls &amp;
+              concentrates</strong> from California's leading brands. Order online and skip the line.
+            </p>
+
+            <div class="sofi-cta-row">
+              <a class="sofi-btn sofi-btn--primary" href="#sofi-menu">
+                Shop Now
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 5v14M5 12l7 7 7-7"/>
+                </svg>
+              </a>
+              <a class="sofi-btn sofi-btn--primary" href="https://www.google.com/maps/dir/?api=1&destination=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045" target="_blank" rel="noopener">
+                Get Directions
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+              <a class="sofi-btn sofi-btn--ghost" href="tel:+13104293789">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                (310) 429-3789
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── TRUST STRIP ─── -->
+      <div class="sofi-trust" role="list">
+        <div class="sofi-trust-item" role="listitem">
+          <span class="sofi-trust-val">5.7 mi</span>
+          <span class="sofi-trust-label">From SoFi Stadium</span>
+        </div>
+        <div class="sofi-trust-item" role="listitem">
+          <span class="sofi-trust-val">17 min</span>
+          <span class="sofi-trust-label">Drive time</span>
+        </div>
+        <div class="sofi-trust-item" role="listitem">
+          <span class="sofi-trust-val">1,000+</span>
+          <span class="sofi-trust-label">Lab-tested products</span>
+        </div>
+      </div>
+
+      <!-- ─── GOOGLE REVIEWS social proof ─── -->
+      <a class="sofi-social"
+         href="https://www.google.com/search?q=LAXCC+reviews"
+         target="_blank" rel="noopener nofollow"
+         aria-label="See LAXCC's 4.9-star Google reviews">
+        <span class="sofi-social-google" aria-hidden="true"></span>
+        <span class="sofi-social-rating">
+          <span class="sofi-social-stars">
+            <span class="sofi-social-stars-score">4.9</span>
+            <span class="sofi-social-stars-icons" aria-hidden="true">★★★★★</span>
+          </span>
+          <span class="sofi-social-count">3,000+ verified Google reviews · LA's top-rated dispensary</span>
+        </span>
+        <span class="sofi-social-link">Read reviews →</span>
+      </a>
+
+      <!-- ─── MAP PREVIEW — visual proof of the SoFi → LAXCC route ─── -->
+      <div class="sofi-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d26476.36873185696!2d-118.41941622089842!3d33.95375957377587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x80c2b650dde894d7%3A0x3862b0ff474e1e94!2s1001%20Stadium%20Dr%2C%20Inglewood%2C%20CA%2090301!3m2!1d33.953514!2d-118.3390416!4m5!1s0x80c2b0eb4a3785d1%3A0xc86f05119335d417!2s8332%20Lincoln%20Blvd%2C%20Los%20Angeles%2C%20CA%2090045!3m2!1d33.96194!2d-118.42083!5e0!3m2!1sen!2sus!4v1714423950970!5m2!1sen!2sus"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Driving route from SoFi Stadium to LAX Cannabis Club"></iframe>
+        <span class="sofi-map-badge" aria-hidden="true">
+          <span class="sofi-map-dot"></span>
+          17 min · 5.7 mi from SoFi
+        </span>
+      </div>
+
+      <!-- ─── GAME-DAY GUIDE ─── -->
+      <div class="sofi-guide">
+        <div class="sofi-card">
+          <span class="sofi-eyebrow"><span class="pin"></span>Game day plan</span>
+          <h3>Stop in before kickoff</h3>
+          <p>
+            We're a quick <strong>17-minute drive</strong> from SoFi via Lincoln &amp; Manchester. Order online for
+            express pickup so you're in and out fast — no lines on game day.
+          </p>
+          <ul class="sofi-checklist">
+            <li>
+              <span class="sofi-check" aria-hidden="true">✓</span>
+              <span><strong>Order ahead</strong> from your hotel, Airbnb, or LAX terminal</span>
+            </li>
+            <li>
+              <span class="sofi-check" aria-hidden="true">✓</span>
+              <span><strong>Pull up to Lincoln Blvd</strong> — easy parking, in and out in minutes</span>
+            </li>
+            <li>
+              <span class="sofi-check" aria-hidden="true">✓</span>
+              <span><strong>Continue to SoFi</strong> via Manchester or the 405 freeway</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sofi-card">
+          <span class="sofi-eyebrow"><span class="pin"></span>Visiting LA?</span>
+          <h3>Out-of-towners welcome</h3>
+          <p>
+            California allows <strong>21+ recreational</strong> or <strong>18+ with a valid medical
+            cannabis card</strong> to purchase. No residency required — international &amp; out-of-state IDs accepted.
+          </p>
+          <ul class="sofi-checklist">
+            <li>
+              <span class="sofi-check" aria-hidden="true">✓</span>
+              <span><strong>21+ recreational, or 18+ with a valid medical cannabis card</strong> — passport, driver's license, or military ID</span>
+            </li>
+            <li>
+              <span class="sofi-check" aria-hidden="true">✓</span>
+              <span><strong>Private consumption only</strong> — not at SoFi, in vehicles, or in public spaces</span>
+            </li>
+            <li>
+              <span class="sofi-check" aria-hidden="true">✓</span>
+              <span><strong>Cash &amp; debit</strong> accepted — ATM on site</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ─── LIVE MENU — shop categories ─── -->
+      <section id="sofi-menu" class="sofi-menu" aria-label="LAXCC live menu near SoFi Stadium">
+        <header class="sofi-menu-intro">
+          <h2>Shop the menu — pickup before kickoff</h2>
+          <p>
+            Live inventory from our LA shop, 17 minutes from SoFi. Order ahead so it's ready when you
+            roll in — flower, pre-rolls, vapes, edibles, and concentrates from California's top brands.
+          </p>
+        </header>
+
+        <section id="sofi-flower" class="sofi-cat">
+          <header class="sofi-cat-head">
+            <div class="sofi-cat-titles">
+              <h3>Premium Cannabis Flower Near SoFi Stadium</h3>
+              <p>
+                <strong>Top-shelf indoor flower</strong>, exotic hybrids, and high-THC sativas from LA's
+                most respected growers — ranked by potency. The closest premium flower menu to SoFi,
+                with same-day express pickup.
+              </p>
+            </div>
+            <a class="sofi-shop-all" href="https://laxcc.com/categories/flower/">Shop all →</a>
+          </header>
+          <div class="sofi-cat-products">
+            [leafbridge_specific_product_filter category="FLOWER" sort="POTENCY_DESC" count="20"]
+          </div>
+        </section>
+
+        <section id="sofi-prerolls" class="sofi-cat">
+          <header class="sofi-cat-head">
+            <div class="sofi-cat-titles">
+              <h3>Top-Rated Pre-Rolls Near SoFi Stadium</h3>
+              <p>
+                <strong>Pre-rolls, infused blunts, hash-rolled joints, and multi-pack tins</strong> —
+                grab a single for a quick session or a 5-pack to share with friends at the tailgate.
+                Pickup-ready in minutes.
+              </p>
+            </div>
+            <a class="sofi-shop-all" href="https://laxcc.com/categories/pre-rolls/">Shop all →</a>
+          </header>
+          <div class="sofi-cat-products">
+            [leafbridge_specific_product_filter category="PRE_ROLLS" sort="POTENCY_DESC" count="20"]
+          </div>
+        </section>
+
+        <section id="sofi-vapes" class="sofi-cat">
+          <header class="sofi-cat-head">
+            <div class="sofi-cat-titles">
+              <h3>Premium Vaporizers Near SoFi Stadium</h3>
+              <p>
+                <strong>Live resin cartridges, all-in-one disposables, distillate carts, and 510-thread
+                hardware</strong> — pocketable and discreet, perfect for a hotel stay or pre-game
+                session. Low-tolerance friendly options available.
+              </p>
+            </div>
+            <a class="sofi-shop-all" href="https://laxcc.com/categories/vaporizers/">Shop all →</a>
+          </header>
+          <div class="sofi-cat-products">
+            [leafbridge_specific_product_filter category="VAPORIZERS" sort="POTENCY_DESC" count="20"]
+          </div>
+        </section>
+
+        <section id="sofi-edibles" class="sofi-cat">
+          <header class="sofi-cat-head">
+            <div class="sofi-cat-titles">
+              <h3>Cannabis Edibles &amp; Gummies Near SoFi Stadium</h3>
+              <p>
+                <strong>Microdose gummies, chocolates, mints, and infused beverages</strong> from
+                California's top edible brands. Precision-dosed 2.5–10mg singles for an easy ride, or
+                100mg multi-packs for experienced consumers. The most discreet option for SoFi visitors.
+              </p>
+            </div>
+            <a class="sofi-shop-all" href="https://laxcc.com/categories/edibles/">Shop all →</a>
+          </header>
+          <div class="sofi-cat-products">
+            [leafbridge_specific_product_filter category="EDIBLES" sort="POTENCY_DESC" count="20"]
+          </div>
+        </section>
+
+        <section id="sofi-concentrates" class="sofi-cat">
+          <header class="sofi-cat-head">
+            <div class="sofi-cat-titles">
+              <h3>Cannabis Concentrates Near SoFi Stadium</h3>
+              <p>
+                Connoisseur-grade extracts — <strong>solventless live rosin, hydrocarbon live resin,
+                diamonds, sauce, cold-cure badder, and shatter</strong>. Built for dab rigs and e-rigs.
+                The finest concentrate selection in the Inglewood / Westchester corridor.
+              </p>
+            </div>
+            <a class="sofi-shop-all" href="https://laxcc.com/categories/concentrates/">Shop all →</a>
+          </header>
+          <div class="sofi-cat-products">
+            [leafbridge_specific_product_filter category="CONCENTRATES" sort="POTENCY_DESC" count="20"]
+          </div>
+        </section>
+      </section>
+
+      <!-- ─── ABOUT SOFI ─── -->
+      <section class="sofi-section">
+        <header class="sofi-section-head">
+          <div class="sofi-section-titles">
+            <h2>About SoFi Stadium</h2>
+            <p>
+              Home to the LA Rams &amp; LA Chargers, host venue for Super Bowl LVI, the 2026 World Cup,
+              and the 2028 Summer Olympics opening ceremony. The crown jewel of the Inglewood
+              entertainment district.
+            </p>
+          </div>
+        </header>
+
+        <div class="sofi-facts">
+          <article class="sofi-fact">
+            <div class="sofi-fact-label">Location</div>
+            <h3 class="sofi-fact-title">Inglewood, CA</h3>
+            <p class="sofi-fact-body">On the historic Hollywood Park Racetrack site — 17 minutes from LAXCC via Lincoln &amp; Manchester.</p>
+          </article>
+          <article class="sofi-fact">
+            <div class="sofi-fact-label">Capacity</div>
+            <h3 class="sofi-fact-title">70,240 seats</h3>
+            <p class="sofi-fact-body">Expandable to 100,240 for marquee events — the second-largest NFL venue in capacity.</p>
+          </article>
+          <article class="sofi-fact">
+            <div class="sofi-fact-label">Design</div>
+            <h3 class="sofi-fact-title">Indoor-outdoor</h3>
+            <p class="sofi-fact-body">Translucent ETFE roof keeps the open-air SoCal feel while protecting from rain and sun.</p>
+          </article>
+          <article class="sofi-fact">
+            <div class="sofi-fact-label">Tech</div>
+            <h3 class="sofi-fact-title">Infinity Screen</h3>
+            <p class="sofi-fact-body">120-yard, dual-sided 4K HDR video board with 80 million pixels — the largest in pro sports.</p>
+          </article>
+          <article class="sofi-fact">
+            <div class="sofi-fact-label">Events</div>
+            <h3 class="sofi-fact-title">World stage</h3>
+            <p class="sofi-fact-body">Super Bowl LVI host, 2026 FIFA World Cup matches, 2028 Olympics opening &amp; closing ceremonies.</p>
+          </article>
+          <article class="sofi-fact">
+            <div class="sofi-fact-label">District</div>
+            <h3 class="sofi-fact-title">Hollywood Park</h3>
+            <p class="sofi-fact-body">298 acres of restaurants, shopping, residential, and the new Intuit Dome (LA Clippers).</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ─── FINAL CTA BANNER ─── -->
+      <section class="sofi-final">
+        <div class="sofi-final-text">
+          <span class="sofi-eyebrow"><span class="pin" aria-hidden="true"></span>Heading to SoFi?</span>
+          <h2>Order ahead. Skip the line. Get to the game.</h2>
+          <p>
+            Browse the live menu, place your order in 60 seconds, and pick up on your way to kickoff.
+            Open every day, 9 AM – 9:30 PM.
+          </p>
+        </div>
+        <div class="sofi-final-cta">
+          <a class="sofi-btn sofi-btn--primary" href="https://laxcc.com/shop/?retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3">
+            Shop the menu
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a class="sofi-btn sofi-btn--ghost" href="https://www.google.com/maps/dir/?api=1&destination=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045" target="_blank" rel="noopener">
+            Get directions
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</body>
+</html>

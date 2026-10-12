@@ -1,0 +1,361 @@
+<div class="laxcc-blog-post-2026">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Maven+Pro:wght@400..900&display=swap');
+
+        /* BRAND DESIGN TOKENS */
+        .laxcc-blog-post-2026 {
+            --primary-teal: #00AFC9;
+            --primary-dark: #0f3a5f;
+            --accent-orange: #F89459;
+            --cream: #fbf8f2;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --white: #ffffff;
+
+            font-family: 'Maven Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            background-color: var(--cream);
+            line-height: 1.6;
+            width: 100vw;
+            max-width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            box-sizing: border-box;
+            font-size: 19px;
+        }
+
+        .laxcc-blog-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .laxcc-blog-post-2026 *,
+        .laxcc-blog-post-2026 *::before,
+        .laxcc-blog-post-2026 *::after {
+            box-sizing: inherit;
+        }
+
+        /* TYPOGRAPHY */
+        .laxcc-blog-header {
+            text-align: left;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--primary-teal);
+            padding-bottom: 2rem;
+        }
+
+        .laxcc-blog-meta {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .laxcc-blog-title {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            text-transform: none;
+        }
+
+        .laxcc-blog-author-line {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .laxcc-blog-content h2 {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-top: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+            border-left: 6px solid var(--primary-teal);
+            padding-left: 1rem;
+        }
+
+        .laxcc-blog-content h3 {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .laxcc-blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .laxcc-blog-content a {
+            color: var(--primary-teal);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .laxcc-blog-content a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        /* IMAGES & CREDITS */
+        .laxcc-blog-figure {
+            margin: 3rem 0;
+        }
+
+        .laxcc-blog-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(15, 58, 95, 0.1);
+            display: block;
+        }
+
+        .laxcc-blog-figcaption {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            text-align: right;
+            font-style: italic;
+        }
+
+        .laxcc-blog-figcaption a {
+            font-weight: 400 !important;
+        }
+
+        /* QUOTES */
+        .laxcc-blog-quote {
+            background-color: var(--white);
+            border-left: 8px solid var(--primary-teal);
+            padding: 2rem;
+            margin: 4rem 0;
+            font-style: italic;
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            border-radius: 0 12px 12px 0;
+            box-shadow: 4px 4px 20px rgba(0,0,0,0.03);
+        }
+
+        /* INFO BOXES */
+        .laxcc-blog-info-box {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin: 4rem 0;
+        }
+
+        .laxcc-blog-info-box h3 {
+            color: var(--accent-orange) !important;
+            margin-top: 0 !important;
+            font-size: 28px !important;
+        }
+
+        .laxcc-blog-info-box ul {
+            padding-left: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        .laxcc-blog-info-box li {
+            margin-bottom: 1rem;
+        }
+
+        /* CTA SECTION */
+        .laxcc-blog-cta {
+            background: var(--primary-dark);
+            padding: 4rem 3rem;
+            border-radius: 20px;
+            text-align: center;
+            color: var(--white);
+            margin-top: 5rem;
+        }
+
+        .laxcc-blog-cta h2 {
+            color: var(--white);
+            margin-top: 0;
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 36px;
+        }
+
+        .laxcc-blog-btn,
+        .laxcc-blog-btn:link,
+        .laxcc-blog-btn:visited {
+            display: inline-block;
+            background-color: var(--accent-orange) !important;
+            color: #ffffff !important;
+            padding: 1.2rem 3rem;
+            border-radius: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none !important;
+            margin-top: 2rem;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .laxcc-blog-btn:hover {
+            transform: translateY(-3px);
+            background-color: #e58249 !important;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 768px) {
+            .laxcc-blog-inner {
+                padding: 2rem 1rem;
+            }
+            .laxcc-blog-post-2026 {
+                font-size: 17px;
+            }
+            .laxcc-blog-title {
+                font-size: 32px;
+            }
+            .laxcc-blog-cta {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+
+    <div class="laxcc-blog-inner">
+    <header class="laxcc-blog-header">
+        <div class="laxcc-blog-meta">April 1, 2026 &bull; Legal Guide & Travel</div>
+        <h1 class="laxcc-blog-title">10 Places You Can Legally Smoke Weed Near Los Angeles in 2026</h1>
+        <div class="laxcc-blog-author-line">
+            <span>By LAX Cannabis Club</span>
+        </div>
+    </header>
+
+    <div class="laxcc-blog-content">
+        <figure class="laxcc-blog-figure">
+            <img src="https://images.squarespace-cdn.com/content/v1/66aaa7bf76c3a5074d19af09/ece9ade6-7096-468e-bc2f-1e6eab9f6201/IMG_4340.jpeg" alt="Cannabis lounges in West Hollywood's Emerald Village" class="laxcc-blog-image">
+            <figcaption class="laxcc-blog-figcaption">Legal cannabis smoking lounges currently show up in West Hollywood and Hawthorne, not inside the City of Los Angeles.</figcaption>
+        </figure>
+
+        <p>If you want the accurate version of this topic, start with the city line. <strong>Inside the City of Los Angeles, commercial cannabis smoking lounges are still prohibited.</strong> The <a href="https://cannabis.lacity.gov/laws-policy/local-law" target="_blank" rel="nofollow noopener noreferrer">City of Los Angeles cannabis local-law framework</a> says consumption lounges are currently prohibited. So if you mean Hollywood, Venice, Downtown LA, Silver Lake, or other places inside LA city limits, this is not a list of legal public lounges there.</p>
+
+        <p><strong>Near Los Angeles is different.</strong> Neighboring cities such as West Hollywood and Hawthorne do have publicly supportable lounge models. <a href="https://ecode360.com/43917313" target="_blank" rel="nofollow noopener noreferrer">West Hollywood's municipal code</a> defines cannabis consumption areas with on-site retail for smoking, vaping, and ingestion, and <a href="https://www.cityofhawthorne.org/government/going-forward-with-cannabis" target="_blank" rel="nofollow noopener noreferrer">Hawthorne's cannabis approvals</a> include lounge operators. At the state level, <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=26200.&lawCode=BPC" target="_blank" rel="nofollow noopener noreferrer">Business and Professions Code Section 26200(g)</a> allows local jurisdictions to permit smoking, vaporizing, and ingesting on licensed retailer or microbusiness premises if specific conditions are met.</p>
+
+        <p>California's <a href="https://www.cannabis.ca.gov/consumers/whats-legal/" target="_blank" rel="nofollow noopener noreferrer">official consumer guidance</a> says you can use cannabis on private property, but not in public places, and <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=11362.3.&lawCode=HSC" target="_blank" rel="nofollow noopener noreferrer">Health and Safety Code Section 11362.3</a> still blocks public smoking outside the Section 26200 framework. That means this list has two different categories only: legal lounges in nearby cities, and legal private-property options. It does <em>not</em> treat secluded beaches, hikes, parking lots, or other public spots as legal workarounds. If you only want public-facing businesses, skip to <strong>#8 through #1</strong>.</p>
+
+        <div class="laxcc-blog-info-box">
+            <h3>Executive Summary</h3>
+            <ul>
+                <li><strong>Los Angeles city proper:</strong> No commercial smoking lounges under the current city framework.</li>
+                <li><strong>Best legal lounge clusters nearby:</strong> West Hollywood first, Hawthorne second.</li>
+                <li><strong>State law:</strong> Section 26200(g) allows local authorization for on-site smoking, but only under strict conditions.</li>
+                <li><strong>Private property:</strong> Legal only when the owner allows it.</li>
+                <li><strong>Public spots:</strong> Beaches, hikes, scenic overlooks, sidewalks, parking lots, and cars still do not make this list.</li>
+            </ul>
+        </div>
+
+        <h2>What Makes This List Defensible</h2>
+        <p>Each public-facing lounge below has an active state retailer premises record plus public evidence that the venue operates in a city that allows smoking lounges. The two private-property entries stay on the list because they are legal routes for people who want a lower-key, away-from-the-crowd option without inventing fake loopholes around beaches, hikes, or public land.</p>
+
+        <h2>10. A Private Patio or Backyard Where the Owner Says Yes</h2>
+        <p>If you want something outdoor and low-key, a truly private residential patio, backyard, or similar private space with the property owner's permission is the cleanest legal answer. California's official guidance says cannabis can be used on private property, not in public places.</p>
+        <p>This does not override lease terms, HOA rules, condo rules, or nuisance complaints. Private means genuinely private. A shared courtyard, front stoop, apartment walkway, or "hidden" patch of sand does not count.</p>
+        <p><strong>Evidence:</strong> California's <a href="https://www.cannabis.ca.gov/consumers/whats-legal/" target="_blank" rel="nofollow noopener noreferrer">official consumer guidance</a> says cannabis can be used on private property, while <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=11362.3.&lawCode=HSC" target="_blank" rel="nofollow noopener noreferrer">Health and Safety Code Section 11362.3</a> is why beaches, hikes, sidewalks, and other public places still do not qualify.</p>
+
+        <h2>9. A 420-Friendly Rental or Stay With Written Smoking Permission</h2>
+        <p>The second-best low-profile option is private lodging that clearly allows cannabis smoking in writing. That might be a 420-friendly rental, a boutique stay with a designated smoking area, or a private host who specifically approves cannabis use on the property.</p>
+        <p><a href="https://www.budandbreakfast.com/property-region/los-angeles/" target="_blank" rel="nofollow noopener noreferrer">Bud and Breakfast's Los Angeles page</a> is one public example showing that cannabis-friendly stays are actively marketed in the area. But that listing alone is not the legal rule. The legal rule is still private property plus host permission plus compliance with house rules.</p>
+        <p>Do not assume "420-friendly" automatically means flower is allowed. California law still lets property owners ban cannabis use, so the smart move is to get written confirmation about where smoking is allowed before you book.</p>
+        <p><strong>Evidence:</strong> <a href="https://www.budandbreakfast.com/property-region/los-angeles/" target="_blank" rel="nofollow noopener noreferrer">Bud and Breakfast Los Angeles listings</a> plus California's <a href="https://www.cannabis.ca.gov/consumers/whats-legal/" target="_blank" rel="nofollow noopener noreferrer">official private-property guidance</a>.</p>
+
+        <h2>8. Catalyst Hawthorne</h2>
+        <p><strong>Catalyst Hawthorne</strong> has a credible public paper trail. Its state premises page shows active retailer license <strong>C10-0001427-LIC</strong> at 14115 Crenshaw Boulevard, and Hawthorne's official <a href="https://www.cityofhawthorne.org/government/going-forward-with-cannabis" target="_blank" rel="nofollow noopener noreferrer">cannabis approval page</a> lists Catalyst as approved for <strong>Retail, Distribution, Lounge, Delivery</strong>.</p>
+        <p>Hawthorne then made the lounge status even clearer on <a href="https://www.cityofhawthorne.org/residents/events-gallery/2025-events/catalyst-ribbon-cutting-ceremony" target="_blank" rel="nofollow noopener noreferrer">April 1, 2025</a>, when the city described Catalyst as its second cannabis retail and lounge space. Catalyst's own site also markets a dedicated Hawthorne cannabis lounge, which is enough to put it on the board as a real legal option near LAX.</p>
+        <figure class="laxcc-blog-figure">
+            <img src="https://d14jfwlo68bhyr.cloudfront.net/catalyst/locations/hawthorne-cannabis-lounge-1773156458907-ab83b597-7c73-477b-9fbc-1eaa6c0a52c4-md.webp" alt="Catalyst Hawthorne cannabis lounge" class="laxcc-blog-image">
+            <figcaption class="laxcc-blog-figcaption">State license proof: <a href="https://real.cannabis.ca.gov/premises/catalyst-hawthorne-hawthorne-c10-0001427/" target="_blank" rel="nofollow noopener noreferrer">Real CA Cannabis</a> &bull; Official site: <a href="https://catalyst-cannabis.com/dispensary-locations/hawthorne-cannabis-lounge" target="_blank" rel="nofollow noopener noreferrer">Catalyst Hawthorne Lounge</a></figcaption>
+        </figure>
+
+        <h2>7. The Artist Tree Hawthorne</h2>
+        <p><strong>The Artist Tree Hawthorne</strong> is another legitimate South Bay lounge. Its state premises page shows active retailer license <strong>C10-0001469-LIC</strong> at 4756 W Imperial Highway, and Hawthorne's official cannabis approvals list shows The Artist Tree approved for <strong>Retail, Lounge, Delivery</strong>.</p>
+        <p>The City of Hawthorne then publicly celebrated the opening on <a href="https://www.cityofhawthorne.org/residents/events-gallery/2024-events/the-artist-tree-ribbon-cutting-ceremony" target="_blank" rel="nofollow noopener noreferrer">August 20, 2024</a>, describing the business as a dispensary, lounge, and art space. The Artist Tree's own lounge page also markets Hawthorne as a dedicated lounge near LAX, which makes this one of the clearest non-WeHo options in the region.</p>
+        <figure class="laxcc-blog-figure">
+            <img src="https://www.theartisttree.com/wp-content/uploads/2025/09/Hawthorne_cocktail.webp" alt="The Artist Tree Hawthorne lounge near LAX" class="laxcc-blog-image">
+            <figcaption class="laxcc-blog-figcaption">State license proof: <a href="https://real.cannabis.ca.gov/premises/the-artist-tree-inglewood-c10-0001469/" target="_blank" rel="nofollow noopener noreferrer">Real CA Cannabis</a> &bull; Official site: <a href="https://www.theartisttree.com/cannabis-lounges/" target="_blank" rel="nofollow noopener noreferrer">The Artist Tree Lounges</a></figcaption>
+        </figure>
+
+        <h2>6. Private Reserve @ Off The Charts</h2>
+        <p><strong>Private Reserve</strong> ranks lower only because the public proof stack is thinner, not because the concept looks fake. Emerald Village lists <strong>Private Reserve @ Off The Charts</strong> at 8448 Santa Monica Boulevard as one of West Hollywood's lounges, and the state premises page for <strong>Aeon Botanika</strong> at that same address shows active retailer license <strong>C10-0000764-LIC</strong>.</p>
+        <p>The cleanest public lounge description here comes from Emerald Village rather than a dedicated lounge microsite, so it does not outrank the heavyweights above it. Still, it sits inside the West Hollywood framework that explicitly authorizes smoking, vaping, and ingestion lounges.</p>
+        <figure class="laxcc-blog-figure">
+            <img src="https://images.squarespace-cdn.com/content/v1/66aaa7bf76c3a5074d19af09/893b27db-98b4-4376-927a-ec849e98abce/IMG_4998.jpeg" alt="Private Reserve at Off The Charts in West Hollywood" class="laxcc-blog-image">
+            <figcaption class="laxcc-blog-figcaption">State license proof: <a href="https://real.cannabis.ca.gov/premises/aeon-botanika-w-hollywood-c10-0000764/" target="_blank" rel="nofollow noopener noreferrer">Real CA Cannabis</a> &bull; Lounge listing: <a href="https://www.emeraldvillageweho.com/lounges" target="_blank" rel="nofollow noopener noreferrer">Emerald Village West Hollywood</a></figcaption>
+        </figure>
+
+        <h2>5. Sunset Social Club</h2>
+        <p><strong>Sunset Social Club</strong> is one of the clearest members-only entries on the board. Its state premises record shows active retailer license <strong>C10-0001370-LIC</strong> at 8228 Sunset Boulevard, and Emerald Village lists it as a cannabis lounge on the Sunset Strip.</p>
+        <p>It ranks behind the walk-in leaders because the public-facing access model is narrower and more club-driven. But if what you want is a private-lounge format inside a city that expressly authorizes smoking lounges, Sunset Social Club is one of the real West Hollywood options.</p>
+        <figure class="laxcc-blog-figure">
+            <img src="https://static.wixstatic.com/media/e2e012_f9e68419783341fb8bd552b815d56c47~mv2.jpg/v1/fill/w_706,h_940,q_90,enc_avif,quality_auto/e2e012_f9e68419783341fb8bd552b815d56c47~mv2.jpg" alt="Sunset Social Club in West Hollywood" class="laxcc-blog-image">
+            <figcaption class="laxcc-blog-figcaption">State license proof: <a href="https://real.cannabis.ca.gov/premises/sunset-social-club-w-hollywood-c10-0001370/" target="_blank" rel="nofollow noopener noreferrer">Real CA Cannabis</a> &bull; Official site: <a href="https://www.sunsetsocialclub.net/" target="_blank" rel="nofollow noopener noreferrer">sunsetsocialclub.net</a></figcaption>
+        </figure>
+
+        <h2>4. Original Cannabis Cafe</h2>
+        <p><strong>Original Cannabis Cafe</strong> belongs on any serious LA-area list because the public claims are unusually direct. Its state premises page shows active retailer license <strong>C10-0000600-LIC</strong> in West Hollywood, and the cafe's own site says customers can "eat, drink and smoke cannabis" on its patio.</p>
+        <p>This is not just cannabis-adjacent hospitality. It is a real, smoke-friendly cafe in a city that already authorizes smoking consumption areas, which is exactly the combination you want if you are trying to stay on the right side of the law.</p>
+        <figure class="laxcc-blog-figure">
+            <img src="https://cannabis.cafe/wp-content/uploads/2023/12/asset-8.png" alt="Original Cannabis Cafe patio in West Hollywood" class="laxcc-blog-image">
+            <figcaption class="laxcc-blog-figcaption">State license proof: <a href="https://real.cannabis.ca.gov/premises/original-cannabis-cafe-w-hollywood-c10-0000600/" target="_blank" rel="nofollow noopener noreferrer">Real CA Cannabis</a> &bull; Official site: <a href="https://cannabis.cafe/" target="_blank" rel="nofollow noopener noreferrer">cannabis.cafe</a></figcaption>
+        </figure>
+
+        <h2>3. PleasureMed / Eire</h2>
+        <p><strong>PleasureMed</strong> has some of the clearest inhale-specific lounge evidence in the region. Its state premises page shows active retailer license <strong>C10-0001209-LIC</strong> at 7715 Santa Monica Boulevard, and the operator's own site says the lounge allows products purchased from PleasureMed and that <strong>bongs and dab rigs are available for rent</strong>.</p>
+        <p>That matters because it points to real smoking and dabbing operations, not just edibles or a vague "experience." The business also says walk-ins are welcome and encourages guests to call ahead for reservations and current rules, which is why it stays in the top three.</p>
+        <figure class="laxcc-blog-figure">
+            <img src="https://images.squarespace-cdn.com/content/v1/68264ae9e086f665530774a8/6b5d2107-5f63-47cd-8aa8-0fa184de2ea7/PleasureMed_ARPhoto_0055_websize.jpg" alt="Pleasure Med lounge in West Hollywood" class="laxcc-blog-image">
+            <figcaption class="laxcc-blog-figcaption">State license proof: <a href="https://real.cannabis.ca.gov/premises/pleasure-med-llc-w-hollywood-c10-0001209/" target="_blank" rel="nofollow noopener noreferrer">Real CA Cannabis</a> &bull; Official site: <a href="https://www.pleasuremed.com/about/" target="_blank" rel="nofollow noopener noreferrer">pleasuremed.com/about</a></figcaption>
+        </figure>
+
+        <h2>2. The Artist Tree West Hollywood</h2>
+        <p><strong>The Artist Tree West Hollywood</strong> is the correction the old draft needed. Its Real CA Cannabis premises page shows active retailer license <strong>C10-0000643-LIC</strong> at 8625 Santa Monica Boulevard, Unit A. More important, the West Hollywood Business License Commission approved relocation of smoking/vaping/edibles consumption license <strong>CCA-000008</strong> to that address on <strong>January 9, 2024</strong>.</p>
+        <p>The Artist Tree's own lounge pages market West Hollywood as a smoking lounge with an open-air patio, events, and gravity-bong service. That combination of active state retail proof, city consumption-license records, and direct lounge marketing makes it one of the strongest verified legal smoking spots near Los Angeles.</p>
+        <figure class="laxcc-blog-figure">
+            <img src="https://www.theartisttree.com/wp-content/uploads/2025/09/Inside-looking-outside-southeast.webp" alt="The Artist Tree West Hollywood smoking lounge" class="laxcc-blog-image">
+            <figcaption class="laxcc-blog-figcaption">State license proof: <a href="https://real.cannabis.ca.gov/premises/the-artist-tree-w-hollywood-c10-0000643/" target="_blank" rel="nofollow noopener noreferrer">Real CA Cannabis</a> &bull; City resolution: <a href="https://weho.granicus.com/MetaViewer.php?event_id=1503&amp;meta_id=266196&amp;view_id=16" target="_blank" rel="nofollow noopener noreferrer">West Hollywood BLC24-0002</a> &bull; Official site: <a href="https://www.theartisttree.com/cannabis-lounges/" target="_blank" rel="nofollow noopener noreferrer">The Artist Tree Lounges</a></figcaption>
+        </figure>
+
+        <h2>1. The Woods WeHo</h2>
+        <p><strong>The Woods</strong> still takes the top spot because the public record and the customer-facing lounge model line up cleanly. Its Real CA Cannabis premises page shows active retailer license <strong>C10-0001017-LIC</strong> at 8271 Santa Monica Boulevard, and the official site describes a licensed dispensary and lounge with outdoor seating, private cabanas, and a beverage bar.</p>
+        <p>If somebody asks for the single easiest lounge to defend from public sources, this is still the answer. The Woods is not just a retailer that happens to tolerate consumption; it is openly positioned as one of West Hollywood's flagship cannabis-lounge experiences.</p>
+        <figure class="laxcc-blog-figure">
+            <img src="https://framerusercontent.com/assets/2CePEmSulOhWaZp6ARBvr3hm5I.jpg" alt="The Woods WeHo Ganja Garden" class="laxcc-blog-image">
+            <figcaption class="laxcc-blog-figcaption">State license proof: <a href="https://real.cannabis.ca.gov/premises/the-woods-weho-w-hollywood-c10-0001017/" target="_blank" rel="nofollow noopener noreferrer">Real CA Cannabis</a> &bull; Official site: <a href="https://thewoodsweho.com/" target="_blank" rel="nofollow noopener noreferrer">thewoodsweho.com</a></figcaption>
+        </figure>
+
+        <div class="laxcc-blog-info-box">
+            <h3>How To Verify A Lounge Before You Go</h3>
+            <ul>
+                <li><strong>Check the city first:</strong> Los Angeles city proper is still a no for commercial smoking lounges, so start with the jurisdiction before you believe the branding.</li>
+                <li><strong>Check the exact address:</strong> Use the state-run <a href="https://real.cannabis.ca.gov/" target="_blank" rel="nofollow noopener noreferrer">Real CA Cannabis</a> records to verify the premises and license status.</li>
+                <li><strong>Confirm smoking, not just "consumption":</strong> Look for smoking-specific language, city consumption-area records, or direct lounge rules, not just a cool patio and weed-themed decor.</li>
+                <li><strong>For private property, get permission in writing:</strong> The owner or host can still ban cannabis use even on private land.</li>
+                <li><strong>Do not treat public places like loopholes:</strong> Beaches, hikes, sidewalks, scenic overlooks, parking lots, and cars still fail the legal test even when they feel secluded.</li>
+            </ul>
+        </div>
+
+        <h2>Your Journey Starts at LAXCC</h2>
+        <p>The best cannabis experiences in the LA area start with the right products and the right expectations. Before you head to West Hollywood, Hawthorne, or a private stay where smoking is actually allowed, stop by <a href="https://laxcc.com/">LAX Cannabis Club</a>—the closest premier dispensary to LAX airport. We offer a curated selection of California flower, vapes, and edibles so you can shop first and then consume only where the law and the property rules say yes.</p>
+
+        <div class="laxcc-blog-cta">
+            <h2>Stock Up at the Best Dispensary Near LAX</h2>
+            <p>From premium exclusives to the largest edible selection in Los Angeles, LAXCC is your first stop for a world-class cannabis experience.</p>
+            <a href="https://laxcc.com/shop/" class="laxcc-blog-btn">Browse the Menu</a>
+        </div>
+    </div>
+</div>
+</div>

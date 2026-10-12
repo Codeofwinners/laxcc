@@ -1,0 +1,1170 @@
+<!-- SEO META -->
+<!-- Title: Dispensary Near Playa del Rey Beach | LAXCC -->
+<!-- Description: LAXCC is the closest licensed dispensary to Playa del Rey & Dockweiler Beach — 2.2 mi up Lincoln Blvd, 5 min drive. Premium flower, vapes, edibles. Open 9 AM – 9:30 PM. -->
+<meta name="description"
+      content="Closest licensed cannabis dispensary to Playa del Rey Beach — 2.2 mi up Lincoln Blvd, 5 min drive. Flower, vapes, edibles, pre-rolls & concentrates. Open daily 9 AM – 9:30 PM.">
+
+<style>
+  /* ════════════════════════════════════════════════════════════
+     Playa del Rey page — matches sofi/culver/manhattan/habitat/elseg.
+     Scoped under .playa-wrap. Embedded in Elementor/WP.
+     No JS — FAQ uses native <details>/<summary>.
+     Colors: navy #1D508A, cyan #00AFC9, orange #F89459.
+     ════════════════════════════════════════════════════════════ */
+  .playa-wrap {
+    --p-bg: #fbf8f2;
+    --p-surface: #ffffff;
+    --p-navy: #1D508A;
+    --p-navy-dark: #143b6b;
+    --p-cyan: #00AFC9;
+    --p-cyan-dark: #008fa4;
+    --p-accent: #F89459;
+    --p-accent-dark: #ef8345;
+    --p-text: #0f172a;
+    --p-text-muted: #64748b;
+    --p-radius: 16px;
+    --p-radius-lg: 22px;
+    --p-shadow: 0 8px 24px -6px rgba(15, 23, 42, 0.08);
+    --p-shadow-hover: 0 14px 36px -8px rgba(15, 23, 42, 0.14);
+    --p-font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+    font-family: var(--p-font) !important;
+    background: var(--p-bg) !important;
+    color: var(--p-text) !important;
+    padding: clamp(1rem, 2.5vw, 2rem) !important;
+    line-height: 1.5 !important;
+    box-sizing: border-box !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
+  .playa-wrap *,
+  .playa-wrap *::before,
+  .playa-wrap *::after { box-sizing: inherit !important; }
+  .playa-wrap p,
+  .playa-wrap h1,
+  .playa-wrap h2,
+  .playa-wrap h3,
+  .playa-wrap h4,
+  .playa-wrap ul,
+  .playa-wrap ol { margin: 0; padding: 0; }
+  .playa-wrap ul { list-style: none; }
+
+  .playa-shell { max-width: 1400px; margin: 0 auto; }
+
+  /* ─── HERO UNIT ─── */
+  .playa-hero-unit {
+    background: var(--p-surface);
+    border-radius: var(--p-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--p-shadow);
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: stretch;
+    max-height: 420px;
+  }
+
+  .playa-hero-media {
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    background-color: #1a1f2b;
+    overflow: hidden;
+  }
+  .playa-hero-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .playa-hero-content {
+    padding: clamp(1.1rem, 2vw, 1.6rem);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .playa-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    max-width: 100%;
+  }
+  .playa-stack > * { margin: 0; }
+
+  /* Hours pill */
+  .playa-hours {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.4rem 0.85rem 0.4rem 0.55rem;
+    background: rgba(34, 197, 94, 0.1);
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--p-text);
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    max-width: 100%;
+  }
+  .playa-hours > * { white-space: nowrap; flex-shrink: 0; }
+  .playa-hours .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+    flex: 0 0 8px;
+    animation: playaPulse 2.4s ease-in-out infinite;
+  }
+  .playa-hours .label {
+    font-size: 0.65rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: #15803d;
+  }
+  .playa-hours .sep { width: 1px; height: 11px; background: rgba(15, 23, 42, 0.14); }
+  .playa-hours .time { font-variant-numeric: tabular-nums; }
+  .playa-hours .days { font-size: 0.72rem; color: var(--p-text-muted); font-weight: 500; }
+  @keyframes playaPulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18); }
+    50%      { box-shadow: 0 0 0 7px rgba(34, 197, 94, 0.06); }
+  }
+
+  /* Eyebrow */
+  .playa-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--p-cyan-dark);
+  }
+  .playa-eyebrow .pin {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--p-cyan);
+  }
+
+  /* Headline */
+  .playa-h1 {
+    font-size: clamp(1.6rem, 3vw, 2.35rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.022em;
+    color: var(--p-navy);
+    margin: 0;
+  }
+  .playa-h1 .accent {
+    background: linear-gradient(120deg, var(--p-cyan) 0%, var(--p-navy) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .playa-desc {
+    font-size: clamp(0.88rem, 1.05vw, 0.95rem);
+    line-height: 1.5;
+    color: var(--p-text-muted);
+    max-width: 56ch;
+  }
+  .playa-desc strong { color: var(--p-text); font-weight: 700; }
+
+  /* CTA row */
+  .playa-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.25rem;
+  }
+  .playa-wrap a.playa-btn,
+  .playa-wrap a.playa-btn:link,
+  .playa-wrap a.playa-btn:visited {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    padding: 0.85rem 1.35rem !important;
+    border-radius: 100px !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease !important;
+    border: none !important;
+    line-height: 1 !important;
+  }
+  .playa-wrap a.playa-btn--primary,
+  .playa-wrap a.playa-btn--primary:link,
+  .playa-wrap a.playa-btn--primary:visited {
+    background: var(--p-accent) !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 16px -4px rgba(248, 148, 89, 0.45) !important;
+  }
+  .playa-wrap a.playa-btn--primary:hover,
+  .playa-wrap a.playa-btn--primary:focus,
+  .playa-wrap a.playa-btn--primary:active {
+    background: var(--p-accent-dark) !important;
+    transform: translateY(-2px) !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 24px -4px rgba(248, 148, 89, 0.55) !important;
+  }
+  .playa-wrap a.playa-btn--ghost,
+  .playa-wrap a.playa-btn--ghost:link,
+  .playa-wrap a.playa-btn--ghost:visited {
+    background: transparent !important;
+    color: var(--p-text) !important;
+    box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.15) !important;
+  }
+  .playa-wrap a.playa-btn--ghost:hover {
+    background: rgba(15, 23, 42, 0.04) !important;
+    transform: translateY(-2px) !important;
+    color: var(--p-text) !important;
+  }
+  .playa-btn svg { display: block; }
+
+  /* ─── TRUST STRIP ─── */
+  .playa-trust {
+    background: var(--p-surface);
+    border-radius: var(--p-radius);
+    box-shadow: var(--p-shadow);
+    margin-top: 0.85rem;
+    padding: 1rem 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .playa-trust-item {
+    padding: 0.4rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .playa-trust-item + .playa-trust-item {
+    border-left: 1px solid rgba(15, 23, 42, 0.08);
+  }
+  .playa-trust-val {
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    font-weight: 800;
+    color: var(--p-navy);
+    letter-spacing: -0.015em;
+    line-height: 1;
+  }
+  .playa-trust-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--p-text-muted);
+  }
+
+  /* ─── GOOGLE REVIEWS ─── */
+  .playa-wrap a.playa-social,
+  .playa-wrap a.playa-social:link,
+  .playa-wrap a.playa-social:visited {
+    margin-top: 0.85rem;
+    background: var(--p-surface);
+    border-radius: var(--p-radius);
+    box-shadow: var(--p-shadow);
+    padding: 1.1rem 1.35rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.25rem;
+    text-decoration: none !important;
+    color: var(--p-text) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .playa-wrap a.playa-social:hover { transform: translateY(-2px); box-shadow: var(--p-shadow-hover); }
+  .playa-social-google {
+    width: 44px; height: 44px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%234285F4' d='M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z'/%3E%3Cpath fill='%2334A853' d='M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z'/%3E%3Cpath fill='%23FBBC05' d='M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z'/%3E%3Cpath fill='%23EA4335' d='M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    flex-shrink: 0;
+  }
+  .playa-social-rating { display: flex; flex-direction: column; gap: 0.15rem; }
+  .playa-social-stars { display: flex; align-items: center; gap: 0.4rem; }
+  .playa-social-stars-score {
+    font-size: 1.25rem; font-weight: 800;
+    color: var(--p-text); letter-spacing: -0.01em;
+  }
+  .playa-social-stars-icons {
+    color: #FBC02D; font-size: 1rem;
+    letter-spacing: 1px; line-height: 1;
+  }
+  .playa-social-count { font-size: 0.82rem; color: var(--p-text-muted); font-weight: 500; }
+  .playa-social-link { color: var(--p-cyan-dark); font-weight: 700; font-size: 0.82rem; white-space: nowrap; }
+
+  /* ─── MAP PREVIEW ─── */
+  .playa-map {
+    margin-top: 0.85rem;
+    border-radius: var(--p-radius);
+    box-shadow: var(--p-shadow);
+    overflow: hidden;
+    position: relative;
+    background: var(--p-surface);
+  }
+  .playa-map iframe {
+    width: 100%;
+    height: 320px;
+    display: block;
+    border: 0;
+    filter: grayscale(15%) contrast(1.05);
+  }
+  .playa-map-badge {
+    position: absolute;
+    bottom: 0.85rem;
+    right: 0.85rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0.4rem 0.85rem;
+    border-radius: 100px;
+    font-weight: 800;
+    font-size: 0.82rem;
+    color: var(--p-navy);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .playa-map-badge .playa-map-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--p-cyan); }
+
+  /* ─── TRAVEL MODES — 4-up card grid (unique to this page) ─── */
+  .playa-modes {
+    margin-top: 0.85rem;
+    background: var(--p-surface);
+    border-radius: var(--p-radius);
+    box-shadow: var(--p-shadow);
+    padding: 0.85rem 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .playa-mode {
+    padding: 0.65rem 0.85rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  .playa-mode + .playa-mode {
+    border-left: 1px solid rgba(15, 23, 42, 0.08);
+  }
+  .playa-mode-label {
+    font-size: 0.62rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--p-cyan-dark);
+  }
+  .playa-mode-time {
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    font-weight: 800;
+    color: var(--p-navy);
+    letter-spacing: -0.015em;
+    line-height: 1;
+  }
+  .playa-mode-note {
+    font-size: 0.7rem;
+    color: var(--p-text-muted);
+    line-height: 1.35;
+  }
+
+  /* ─── PRACTICAL GUIDE ─── */
+  .playa-guide {
+    margin-top: 0.85rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+  }
+  .playa-card {
+    background: var(--p-surface);
+    border-radius: var(--p-radius);
+    box-shadow: var(--p-shadow);
+    padding: clamp(1.25rem, 2.2vw, 1.75rem);
+  }
+  .playa-card h3 {
+    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+    font-weight: 800;
+    color: var(--p-navy);
+    letter-spacing: -0.02em;
+    margin: 0.4rem 0 0.5rem;
+    line-height: 1.15;
+  }
+  .playa-card p {
+    font-size: 0.93rem;
+    line-height: 1.6;
+    color: var(--p-text-muted);
+    margin: 0;
+  }
+  .playa-card p strong { color: var(--p-text); font-weight: 700; }
+
+  .playa-checklist {
+    margin: 0.75rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+  .playa-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.88rem;
+    line-height: 1.45;
+    color: var(--p-text);
+  }
+  .playa-check {
+    flex: 0 0 18px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--p-accent);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 800;
+    margin-top: 3px;
+    line-height: 1;
+  }
+
+  /* ─── LIVE MENU ─── */
+  .playa-menu { margin-top: 1.75rem; scroll-margin-top: 1rem; }
+  .playa-menu-intro { margin-bottom: 0.85rem; padding: 0.25rem; }
+  .playa-menu-intro h2 {
+    font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+    font-weight: 800;
+    color: var(--p-navy);
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    margin: 0 0 0.35rem;
+  }
+  .playa-menu-intro p {
+    font-size: 0.95rem;
+    color: var(--p-text-muted);
+    line-height: 1.55;
+    margin: 0;
+    max-width: 680px;
+  }
+
+  .playa-cat { scroll-margin-top: 1.5rem; margin-bottom: 1.5rem; }
+  .playa-cat-head {
+    padding: 0.25rem 0.25rem 0.85rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .playa-cat-titles { min-width: 0; }
+  .playa-cat-head h3 {
+    font-size: clamp(1.65rem, 2.6vw, 2.1rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--p-navy);
+    line-height: 1.1;
+    margin: 0 0 0.4rem;
+  }
+  .playa-cat-head p {
+    font-size: 0.93rem;
+    color: var(--p-text-muted);
+    line-height: 1.6;
+    margin: 0;
+    max-width: 760px;
+  }
+  .playa-cat-head p strong { color: var(--p-text); font-weight: 700; }
+  .playa-wrap a.playa-shop-all,
+  .playa-wrap a.playa-shop-all:link,
+  .playa-wrap a.playa-shop-all:visited {
+    color: var(--p-cyan-dark) !important;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none !important;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .playa-wrap a.playa-shop-all:hover { text-decoration: underline !important; }
+  .playa-cat-products { min-height: 220px; background: transparent; }
+
+  /* ─── ABOUT / NEARBY AREAS ─── */
+  .playa-section { margin-top: 1.5rem; }
+  .playa-section-head {
+    padding: 0.5rem 0.25rem 1rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .playa-section-titles h2 {
+    font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+    font-weight: 800;
+    color: var(--p-navy);
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    margin: 0 0 0.35rem;
+  }
+  .playa-section-titles p {
+    font-size: 0.95rem;
+    color: var(--p-text-muted);
+    line-height: 1.55;
+    margin: 0;
+    max-width: 720px;
+  }
+
+  .playa-facts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.85rem;
+  }
+  .playa-fact {
+    background: var(--p-surface);
+    border-radius: var(--p-radius);
+    box-shadow: var(--p-shadow);
+    padding: 1.15rem 1.25rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .playa-fact:hover { transform: translateY(-3px); box-shadow: var(--p-shadow-hover); }
+  .playa-fact-label {
+    font-size: 0.66rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--p-cyan-dark);
+    margin-bottom: 0.4rem;
+  }
+  .playa-fact-title {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--p-navy);
+    margin: 0 0 0.3rem;
+    letter-spacing: -0.01em;
+  }
+  .playa-fact-body {
+    font-size: 0.86rem;
+    color: var(--p-text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ─── NEARBY AREA PILLS ─── */
+  .playa-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.85rem;
+  }
+  .playa-pill {
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(0, 175, 201, 0.08);
+    color: var(--p-cyan-dark);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  /* ─── FAQ ─── */
+  .playa-faq {
+    margin-top: 1.5rem;
+    background: var(--p-surface);
+    border-radius: var(--p-radius);
+    box-shadow: var(--p-shadow);
+    padding: clamp(1.25rem, 2.2vw, 1.75rem);
+  }
+  .playa-faq h2 {
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    font-weight: 800;
+    color: var(--p-navy);
+    letter-spacing: -0.022em;
+    margin: 0 0 0.85rem;
+  }
+  .playa-faq details {
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    padding: 0;
+  }
+  .playa-faq details:last-of-type { border-bottom: 1px solid rgba(15, 23, 42, 0.08); }
+  .playa-faq summary {
+    list-style: none;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--p-text);
+    line-height: 1.35;
+    transition: color 0.18s ease;
+  }
+  .playa-faq summary::-webkit-details-marker { display: none; }
+  .playa-faq summary::after {
+    content: '+';
+    flex-shrink: 0;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: rgba(0, 175, 201, 0.1);
+    color: var(--p-cyan-dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .playa-faq details[open] summary::after {
+    content: '−';
+    background: var(--p-cyan);
+    color: #ffffff;
+  }
+  .playa-faq summary:hover { color: var(--p-cyan-dark); }
+  .playa-faq details > p {
+    padding: 0 0 1rem;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--p-text-muted);
+    margin: 0;
+  }
+  .playa-faq details > p strong { color: var(--p-text); font-weight: 700; }
+
+  /* ─── FINAL CTA ─── */
+  .playa-final {
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, var(--p-navy) 0%, var(--p-navy-dark) 100%);
+    border-radius: var(--p-radius-lg);
+    padding: clamp(1.75rem, 3.5vw, 2.75rem);
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .playa-final::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(600px 400px at 90% 20%, rgba(0, 175, 201, 0.25), transparent 60%),
+      radial-gradient(500px 350px at 10% 90%, rgba(248, 148, 89, 0.15), transparent 60%);
+    pointer-events: none;
+  }
+  .playa-final-text { position: relative; z-index: 1; }
+  .playa-final-text .playa-eyebrow { color: var(--p-cyan); margin-bottom: 0.75rem; }
+  .playa-final-text .playa-eyebrow .pin { background: var(--p-cyan); }
+  .playa-final h2 {
+    font-size: clamp(1.65rem, 3vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.022em;
+    line-height: 1.1;
+    margin: 0 0 0.65rem;
+    color: #ffffff;
+  }
+  .playa-final p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 50ch;
+  }
+  .playa-final-cta { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 0.6rem; }
+  .playa-final-cta .playa-btn { width: 100%; justify-content: center; }
+  .playa-wrap .playa-final-cta a.playa-btn--ghost,
+  .playa-wrap .playa-final-cta a.playa-btn--ghost:link,
+  .playa-wrap .playa-final-cta a.playa-btn--ghost:visited {
+    background: transparent !important;
+    color: #ffffff !important;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35) !important;
+  }
+  .playa-wrap .playa-final-cta a.playa-btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+  }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 968px) {
+    .playa-wrap { padding: 0.85rem !important; }
+
+    .playa-hero-unit { grid-template-columns: 1fr; max-height: none; }
+    .playa-hero-media { height: clamp(200px, 30vh, 280px); }
+    .playa-hero-content { padding: 1.25rem 1.1rem; overflow: visible; }
+    .playa-hours {
+      font-size: 0.76rem;
+      gap: 0.45rem;
+      padding: 0.38rem 0.75rem 0.38rem 0.5rem;
+    }
+    .playa-hours .label { font-size: 0.6rem; letter-spacing: 0.12em; }
+    .playa-hours .days { font-size: 0.68rem; }
+
+    .playa-trust {
+      grid-template-columns: 1fr;
+      padding: 0.5rem 0.75rem;
+    }
+    .playa-trust-item + .playa-trust-item {
+      border-left: none;
+      border-top: 1px solid rgba(15, 23, 42, 0.07);
+    }
+    .playa-trust-item {
+      padding: 0.85rem 0.5rem;
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .playa-wrap a.playa-social,
+    .playa-wrap a.playa-social:link,
+    .playa-wrap a.playa-social:visited {
+      grid-template-columns: auto 1fr;
+      gap: 0.85rem;
+      padding: 0.95rem 1.1rem;
+    }
+    .playa-social-link { display: none; }
+
+    .playa-map iframe { height: 240px; }
+
+    .playa-modes {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0.5rem;
+    }
+    .playa-mode + .playa-mode { border-left: none; }
+    .playa-mode:nth-child(2n) { border-left: 1px solid rgba(15, 23, 42, 0.08); }
+    .playa-mode:nth-child(n+3) { border-top: 1px solid rgba(15, 23, 42, 0.08); }
+
+    .playa-guide { grid-template-columns: 1fr; }
+    .playa-facts { grid-template-columns: 1fr; }
+
+    .playa-final { grid-template-columns: 1fr; gap: 1.25rem; }
+    .playa-final-cta { width: 100%; }
+  }
+
+  @media (max-width: 380px) {
+    .playa-hours .days { display: none; }
+  }
+</style>
+
+<div class="playa-wrap">
+  <div class="playa-shell">
+
+    <!-- ─── HERO UNIT ─── -->
+    <section class="playa-hero-unit">
+      <div class="playa-hero-media">
+        <video autoplay muted loop playsinline preload="metadata"
+               aria-label="Top LA beaches near Playa del Rey">
+          <source src="https://laxcc.com/wp-content/uploads/2026/04/Top-11-Best-Los-Angeles-Beaches-2026.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="playa-hero-content">
+        <div class="playa-stack">
+          <span class="playa-hours" aria-label="Store hours">
+            <span class="dot" aria-hidden="true"></span>
+            <span class="label">Open</span>
+            <span class="sep" aria-hidden="true"></span>
+            <span class="time">9:00 AM – 9:30 PM</span>
+            <span class="days">· Every day</span>
+          </span>
+
+          <span class="playa-eyebrow"><span class="pin" aria-hidden="true"></span>Westchester · 5 min from Playa del Rey</span>
+
+          <h1 class="playa-h1">
+            Dispensary <span class="accent">Near Playa del Rey Beach</span>
+          </h1>
+
+          <p class="playa-desc">
+            <strong>LAX Cannabis Club</strong> is one of the closest licensed dispensaries to <strong>Playa del Rey
+            &amp; Dockweiler Beach</strong> — just <strong>2.2 miles up Lincoln Blvd</strong>, a 5-minute drive
+            from the coast. Shop premium flower, vapes, edibles, pre-rolls &amp; concentrates. Order online for
+            express pickup before or after the beach.
+          </p>
+
+          <div class="playa-cta-row">
+            <a class="playa-btn playa-btn--primary" href="#playa-menu">
+              Shop Now
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+              </svg>
+            </a>
+            <a class="playa-btn playa-btn--primary" href="https://www.google.com/maps/dir/?api=1&origin=Playa+del+Rey+Beach,+Los+Angeles,+CA&destination=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045&travelmode=driving" target="_blank" rel="noopener">
+              Get Directions
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a class="playa-btn playa-btn--ghost" href="tel:+13104293789">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              (310) 429-3789
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── TRUST STRIP ─── -->
+    <div class="playa-trust" role="list">
+      <div class="playa-trust-item" role="listitem">
+        <span class="playa-trust-val">2.2 mi</span>
+        <span class="playa-trust-label">From Playa del Rey</span>
+      </div>
+      <div class="playa-trust-item" role="listitem">
+        <span class="playa-trust-val">5 min</span>
+        <span class="playa-trust-label">Drive time</span>
+      </div>
+      <div class="playa-trust-item" role="listitem">
+        <span class="playa-trust-val">1,000+</span>
+        <span class="playa-trust-label">Lab-tested products</span>
+      </div>
+    </div>
+
+    <!-- ─── GOOGLE REVIEWS ─── -->
+    <a class="playa-social"
+       href="https://www.google.com/search?q=LAXCC+reviews"
+       target="_blank" rel="noopener nofollow"
+       aria-label="See LAXCC's 4.9-star Google reviews">
+      <span class="playa-social-google" aria-hidden="true"></span>
+      <span class="playa-social-rating">
+        <span class="playa-social-stars">
+          <span class="playa-social-stars-score">4.9</span>
+          <span class="playa-social-stars-icons" aria-hidden="true">★★★★★</span>
+        </span>
+        <span class="playa-social-count">3,000+ verified Google reviews · LA's top-rated dispensary</span>
+      </span>
+      <span class="playa-social-link">Read reviews →</span>
+    </a>
+
+    <!-- ─── MAP PREVIEW (iframe — no JS, no API key exposure) ─── -->
+    <div class="playa-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d26478.0!2d-118.43441622089842!3d33.96!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x80c2ba8c5e3a8d63%3A0x0!2sPlaya%20del%20Rey%20Beach%2C%20Los%20Angeles%2C%20CA!3m2!1d33.9575!2d-118.4487!4m5!1s0x80c2b0eb4a3785d1%3A0xc86f05119335d417!2s8332%20Lincoln%20Blvd%2C%20Los%20Angeles%2C%20CA%2090045!3m2!1d33.96194!2d-118.42083!5e0!3m2!1sen!2sus!4v1714423950970!5m2!1sen!2sus"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Driving route from Playa del Rey Beach to LAX Cannabis Club"></iframe>
+      <span class="playa-map-badge" aria-hidden="true">
+        <span class="playa-map-dot"></span>
+        5 min · 2.2 mi from PDR
+      </span>
+    </div>
+
+    <!-- ─── TRAVEL MODES — unique to this page ─── -->
+    <div class="playa-modes" role="list" aria-label="Travel times from Playa del Rey to LAXCC">
+      <div class="playa-mode" role="listitem">
+        <span class="playa-mode-label">Light traffic</span>
+        <span class="playa-mode-time">5 min</span>
+        <span class="playa-mode-note">Quick coastal drive</span>
+      </div>
+      <div class="playa-mode" role="listitem">
+        <span class="playa-mode-label">Normal traffic</span>
+        <span class="playa-mode-time">8–10 min</span>
+        <span class="playa-mode-note">Typical LA drive</span>
+      </div>
+      <div class="playa-mode" role="listitem">
+        <span class="playa-mode-label">By bike</span>
+        <span class="playa-mode-time">~15 min</span>
+        <span class="playa-mode-note">Flat coastal route</span>
+      </div>
+      <div class="playa-mode" role="listitem">
+        <span class="playa-mode-label">Walking</span>
+        <span class="playa-mode-time">~40 min</span>
+        <span class="playa-mode-note">From the beach</span>
+      </div>
+    </div>
+
+    <!-- ─── PRACTICAL GUIDE ─── -->
+    <div class="playa-guide">
+      <div class="playa-card">
+        <span class="playa-eyebrow"><span class="pin"></span>The route</span>
+        <h3>Straight up Lincoln from the coast</h3>
+        <p>
+          From <strong>Dockweiler Beach</strong> or <strong>Vista Del Mar</strong>, head north on
+          Vista Del Mar to Pershing, then jump on Lincoln Blvd — you're at LAXCC in 5 minutes.
+          Easy stop before heading back to your rental or the airport.
+        </p>
+        <ul class="playa-checklist">
+          <li>
+            <span class="playa-check" aria-hidden="true">✓</span>
+            <span><strong>Order ahead online</strong> — your bag is ready when you pull up</span>
+          </li>
+          <li>
+            <span class="playa-check" aria-hidden="true">✓</span>
+            <span><strong>Free parking on Lincoln Blvd</strong> — quick in-and-out</span>
+          </li>
+          <li>
+            <span class="playa-check" aria-hidden="true">✓</span>
+            <span><strong>5 minutes to LAX</strong> — perfect for travelers on the way out</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="playa-card">
+        <span class="playa-eyebrow"><span class="pin"></span>Visiting LA?</span>
+        <h3>Out-of-towners welcome</h3>
+        <p>
+          California allows <strong>21+ recreational</strong> or <strong>18+ with a valid medical
+          cannabis card</strong> to purchase. No residency required — international &amp; out-of-state IDs accepted.
+        </p>
+        <ul class="playa-checklist">
+          <li>
+            <span class="playa-check" aria-hidden="true">✓</span>
+            <span><strong>21+ recreational, or 18+ with a valid medical card</strong> — passport, license, or military ID</span>
+          </li>
+          <li>
+            <span class="playa-check" aria-hidden="true">✓</span>
+            <span><strong>Private consumption only</strong> — not on the beach, in cars, or in public spaces</span>
+          </li>
+          <li>
+            <span class="playa-check" aria-hidden="true">✓</span>
+            <span><strong>Cash &amp; debit</strong> accepted — ATM on site</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ─── LIVE MENU ─── -->
+    <section id="playa-menu" class="playa-menu" aria-label="LAXCC live menu near Playa del Rey">
+      <header class="playa-menu-intro">
+        <h2>Shop the menu — pickup in 30 minutes</h2>
+        <p>
+          Live inventory from our LA shop, 5 minutes from Playa del Rey Beach. Order ahead so it's ready
+          when you arrive — flower, pre-rolls, vapes, edibles, and concentrates from California's top brands.
+        </p>
+      </header>
+
+      <section id="playa-flower" class="playa-cat">
+        <header class="playa-cat-head">
+          <div class="playa-cat-titles">
+            <h3>Premium Cannabis Flower Near Playa del Rey</h3>
+            <p>
+              <strong>Top-shelf indoor flower</strong>, exotic hybrids, and high-THC sativas from LA's
+              most respected growers — ranked by potency. The closest premium flower menu to Dockweiler,
+              Playa Vista, and Marina del Rey, with same-day express pickup.
+            </p>
+          </div>
+          <a class="playa-shop-all" href="https://laxcc.com/categories/flower/">Shop all →</a>
+        </header>
+        <div class="playa-cat-products">
+          [leafbridge_specific_product_filter category="FLOWER" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+
+      <section id="playa-prerolls" class="playa-cat">
+        <header class="playa-cat-head">
+          <div class="playa-cat-titles">
+            <h3>Pre-Rolls &amp; Infused Joints Near Playa del Rey</h3>
+            <p>
+              <strong>Pre-rolls, infused blunts, hash-rolled joints, and multi-pack tins</strong> — perfect for
+              a Dockweiler sunset, a bike-path session, or a backyard hang. Pickup-ready in minutes.
+            </p>
+          </div>
+          <a class="playa-shop-all" href="https://laxcc.com/categories/pre-rolls/">Shop all →</a>
+        </header>
+        <div class="playa-cat-products">
+          [leafbridge_specific_product_filter category="PRE_ROLLS" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+
+      <section id="playa-vapes" class="playa-cat">
+        <header class="playa-cat-head">
+          <div class="playa-cat-titles">
+            <h3>Premium Vaporizers Near Playa del Rey</h3>
+            <p>
+              <strong>Live resin cartridges, all-in-one disposables, distillate carts, and 510-thread
+              hardware</strong> — pocketable for the coast, easy to bring along on a bike ride or beach day.
+              Low-tolerance friendly AIO disposables for first-timers.
+            </p>
+          </div>
+          <a class="playa-shop-all" href="https://laxcc.com/categories/vaporizers/">Shop all →</a>
+        </header>
+        <div class="playa-cat-products">
+          [leafbridge_specific_product_filter category="VAPORIZERS" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+
+      <section id="playa-edibles" class="playa-cat">
+        <header class="playa-cat-head">
+          <div class="playa-cat-titles">
+            <h3>Cannabis Edibles &amp; Gummies Near Playa del Rey</h3>
+            <p>
+              <strong>Microdose gummies, chocolates, mints, and infused beverages</strong> from
+              California's top edible brands. <strong>The smoke-free option</strong> for the beach or a
+              non-smoking hotel — precision-dosed 2.5–10mg singles for daytime, or 100mg multi-packs
+              for experienced consumers.
+            </p>
+          </div>
+          <a class="playa-shop-all" href="https://laxcc.com/categories/edibles/">Shop all →</a>
+        </header>
+        <div class="playa-cat-products">
+          [leafbridge_specific_product_filter category="EDIBLES" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+
+      <section id="playa-concentrates" class="playa-cat">
+        <header class="playa-cat-head">
+          <div class="playa-cat-titles">
+            <h3>Cannabis Concentrates Near Playa del Rey</h3>
+            <p>
+              Connoisseur-grade extracts — <strong>solventless live rosin, hydrocarbon live resin,
+              diamonds, sauce, cold-cure badder, and shatter</strong>. Built for dab rigs and e-rigs.
+              The finest concentrate selection in the Westchester / Playa corridor.
+            </p>
+          </div>
+          <a class="playa-shop-all" href="https://laxcc.com/categories/concentrates/">Shop all →</a>
+        </header>
+        <div class="playa-cat-products">
+          [leafbridge_specific_product_filter category="CONCENTRATES" sort="POTENCY_DESC" count="20"]
+        </div>
+      </section>
+    </section>
+
+    <!-- ─── DISCOVER PDR FACTS ─── -->
+    <section class="playa-section">
+      <header class="playa-section-head">
+        <div class="playa-section-titles">
+          <h2>Discover Playa del Rey</h2>
+          <p>
+            A laid-back coastal pocket tucked between Marina del Rey and LAX — quieter than Venice,
+            grittier than Manhattan Beach. Where locals come for surf, sunsets on the dunes, and
+            Dockweiler bonfire nights.
+          </p>
+        </div>
+      </header>
+
+      <div class="playa-facts">
+        <article class="playa-fact">
+          <div class="playa-fact-label">The beach</div>
+          <h3 class="playa-fact-title">Dockweiler State Beach</h3>
+          <p class="playa-fact-body">Three-mile stretch of sand south of the jetty — the only LA County beach where bonfires are legal. Sunsets right under the LAX flight path.</p>
+        </article>
+        <article class="playa-fact">
+          <div class="playa-fact-label">Coastal route</div>
+          <h3 class="playa-fact-title">Vista Del Mar</h3>
+          <p class="playa-fact-body">The scenic two-lane road hugging the dunes from PDR to Manhattan Beach — one of the best coastal drives in LA.</p>
+        </article>
+        <article class="playa-fact">
+          <div class="playa-fact-label">Wetlands</div>
+          <h3 class="playa-fact-title">Ballona Wetlands</h3>
+          <p class="playa-fact-body">600 acres of protected coastal wetlands — trails, birding, and a rare quiet escape between LAX and Marina del Rey.</p>
+        </article>
+        <article class="playa-fact">
+          <div class="playa-fact-label">Local culture</div>
+          <h3 class="playa-fact-title">PDR village</h3>
+          <p class="playa-fact-body">Small downtown around Culver and Pershing — Cantalini's, Tower 42, and a handful of bars that feel like the old LA beach town it used to be.</p>
+        </article>
+        <article class="playa-fact">
+          <div class="playa-fact-label">Bike path</div>
+          <h3 class="playa-fact-title">The Strand</h3>
+          <p class="playa-fact-body">Pick up the LA bike path at Dockweiler and ride all the way to Torrance — 22 miles of uninterrupted coast.</p>
+        </article>
+        <article class="playa-fact">
+          <div class="playa-fact-label">Nearby</div>
+          <h3 class="playa-fact-title">LAX &amp; Westchester</h3>
+          <p class="playa-fact-body">5 minutes to LAX, minutes to Westchester, Marina del Rey, and Playa Vista — Playa del Rey is the calmer side of the airport corridor.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ─── NEARBY AREAS ─── -->
+    <section class="playa-section">
+      <header class="playa-section-head">
+        <div class="playa-section-titles">
+          <h2>Also close to LAXCC</h2>
+          <p>Beyond Playa del Rey, we're the convenient stop for the entire Westside-and-airport corridor.</p>
+        </div>
+      </header>
+      <div class="playa-pills">
+        <span class="playa-pill">Westchester</span>
+        <span class="playa-pill">Marina del Rey</span>
+        <span class="playa-pill">Playa Vista</span>
+        <span class="playa-pill">Venice Beach</span>
+        <span class="playa-pill">El Segundo</span>
+        <span class="playa-pill">Manhattan Beach</span>
+        <span class="playa-pill">Inglewood</span>
+        <span class="playa-pill">Culver City</span>
+        <span class="playa-pill">LAX hotels</span>
+        <span class="playa-pill">Dockweiler Beach</span>
+      </div>
+    </section>
+
+    <!-- ─── FAQ ─── -->
+    <section class="playa-faq" aria-label="Frequently asked questions">
+      <h2>Frequently asked</h2>
+
+      <details>
+        <summary>What's the closest dispensary to Playa del Rey Beach?</summary>
+        <p>
+          <strong>LAX Cannabis Club at 8332 Lincoln Blvd</strong> is one of the closest licensed dispensaries
+          to Playa del Rey — roughly 2.2 miles up Lincoln Blvd, a 5-minute drive from the coast.
+        </p>
+      </details>
+
+      <details>
+        <summary>How far is LAXCC from Dockweiler Beach?</summary>
+        <p>
+          From <strong>Dockweiler State Beach</strong> it's typically <strong>5 minutes</strong> by car —
+          even faster from the Vista Del Mar parking lots. Easiest stop on your way back from a bonfire or sunset.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I order online for pickup before I head to the beach?</summary>
+        <p>
+          <strong>Yes.</strong> Browse the menu at laxcc.com/shop, place your order, and we'll have it bagged
+          and ready when you arrive. Most pickups are ready in 30 minutes or less.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I consume cannabis at Playa del Rey or Dockweiler Beach?</summary>
+        <p>
+          <strong>No.</strong> California prohibits cannabis consumption in any public space — including
+          beaches, parks, sidewalks, and vehicles. Consumption is private property only. Edibles, tinctures,
+          and patches are smoke-free options that keep you compliant for the trip back.
+        </p>
+      </details>
+
+      <details>
+        <summary>Do I need to be a California resident to shop?</summary>
+        <p>
+          <strong>No.</strong> California allows any adult 21+ (or 18+ with a valid medical cannabis card)
+          to purchase. International and out-of-state IDs are accepted — passport, driver's license, or military.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is parking easy at LAXCC?</summary>
+        <p>
+          Yes. Free parking on Lincoln Blvd right outside the shop. Order ahead online, pull up, grab your
+          bag, and you're back on the road in minutes.
+        </p>
+      </details>
+    </section>
+
+    <!-- ─── FINAL CTA ─── -->
+    <section class="playa-final">
+      <div class="playa-final-text">
+        <span class="playa-eyebrow"><span class="pin" aria-hidden="true"></span>Heading to or from the beach?</span>
+        <h2>Order ahead. Pickup in 30 min. Back to the coast.</h2>
+        <p>
+          Browse the live menu, place your order in 60 seconds, and pick up on your way to or from
+          Playa del Rey. Open every day, 9 AM – 9:30 PM.
+        </p>
+      </div>
+      <div class="playa-final-cta">
+        <a class="playa-btn playa-btn--primary" href="https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP" target="_blank" rel="noopener">
+          Shop the menu
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a class="playa-btn playa-btn--ghost" href="https://www.google.com/maps/dir/?api=1&origin=Playa+del+Rey+Beach,+Los+Angeles,+CA&destination=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045&travelmode=driving" target="_blank" rel="noopener">
+          Get directions
+        </a>
+      </div>
+    </section>
+
+  </div>
+</div>

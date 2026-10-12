@@ -1,0 +1,554 @@
+<!-- SEO META — paste into Yoast/RankMath for this page -->
+<!-- Title: Best Recreational & Medical Weed Dispensary in Los Angeles | LAXCC -->
+<!-- Description: LAXCC is a top-rated recreational and medical cannabis dispensary in Los Angeles near LAX. Huge menu of recreational marijuana and medical cannabis, best weed deals, best brands. Open daily 9 AM–9:30 PM, adults 21+ / medical 18+. -->
+<!-- Canonical: https://laxcc.com/best-recreational-medical-dispensary-los-angeles/ -->
+<!-- Suggested URL slug: best-recreational-medical-dispensary-los-angeles -->
+<!-- Primary keyword: best recreational and medical dispensary in Los Angeles -->
+<!-- Secondary: recreational cannabis, recreational marijuana, medical cannabis, medical marijuana, recreational weed dispensary Los Angeles, medical marijuana dispensary Los Angeles, dispensary near LAX -->
+
+<style>
+    /* ========================================
+       BEST RECREATIONAL & MEDICAL DISPENSARY LA — LAXCC
+       Magazine / storyboard editorial layout
+       Scoped to .laxcc-mag
+       Elementor-safe: all rules use !important, zero JavaScript
+       Branding: cream bg, orange buttons w/ white text, no blue section bg
+       ======================================== */
+
+    .laxcc-mag *,
+    .laxcc-mag *::before,
+    .laxcc-mag *::after {
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .laxcc-mag {
+        --navy: #1D508A;
+        --teal: #00AFC9;
+        --orange: #F89459;
+        --green: #7ECBB3;
+        --cream: #FBF8F2;
+        --ink: #17222e;
+        --text: #1e293b;
+        --text-muted: #64748b;
+
+        --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+        --sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+        font-family: var(--sans) !important;
+        background: var(--cream) !important;
+        color: var(--text) !important;
+        line-height: 1.6 !important;
+        overflow-x: hidden !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+    }
+
+    /* ---------- IMAGE PLACEHOLDERS (swap <div class="mag-ph"> for <img> when art is ready) ---------- */
+    .laxcc-mag .mag-ph {
+        position: relative !important; width: 100% !important; height: 100% !important; min-height: 260px !important;
+        display: flex !important; align-items: center !important; justify-content: center !important;
+        background:
+            repeating-linear-gradient(45deg, rgba(29,80,138,0.05) 0 14px, rgba(29,80,138,0.09) 14px 28px),
+            linear-gradient(135deg, #e7eef6 0%, #dfe9dd 100%) !important;
+        color: var(--navy) !important; text-align: center !important; overflow: hidden !important;
+    }
+    .laxcc-mag .mag-ph span {
+        font-size: 0.72rem !important; font-weight: 800 !important; letter-spacing: 1.5px !important;
+        text-transform: uppercase !important; color: var(--navy) !important; opacity: 0.72 !important;
+        padding: 0 20px !important; line-height: 1.5 !important;
+    }
+    .laxcc-mag .mag-ph::before { content: '\1F4F7' !important; position: absolute !important; top: 14px !important; left: 16px !important; font-size: 1rem !important; opacity: 0.5 !important; }
+
+    /* ---------- COVER / MASTHEAD (image is clean — no text overlay) ---------- */
+    .laxcc-mag .mag-cover { background: var(--cream) !important; }
+    .laxcc-mag .mag-cover-media { width: 100% !important; order: 1 !important; }
+    .laxcc-mag .mag-cover-media .mag-ph { min-height: 0 !important; aspect-ratio: 4 / 3 !important; }
+    .laxcc-mag .mag-cover-media img { display: block !important; width: 100% !important; height: 100% !important; aspect-ratio: 4 / 3 !important; object-fit: cover !important; }
+    .laxcc-mag .mag-cover-inner {
+        order: 2 !important; max-width: 1280px !important; margin: 0 auto !important; padding: 26px 24px 10px !important;
+        display: flex !important; flex-direction: column !important;
+    }
+    .laxcc-mag .mag-masthead {
+        display: flex !important; align-items: center !important; gap: 12px !important;
+        color: var(--text-muted) !important; font-size: 0.66rem !important; font-weight: 800 !important;
+        letter-spacing: 2.5px !important; text-transform: uppercase !important; margin-bottom: 16px !important;
+    }
+    .laxcc-mag .mag-masthead .mag-rule { height: 1px !important; flex: 1 1 auto !important; background: rgba(23,34,46,0.18) !important; }
+    .laxcc-mag .mag-kicker {
+        display: inline-block !important; color: var(--orange) !important; font-size: 0.74rem !important; font-weight: 800 !important;
+        letter-spacing: 2.5px !important; text-transform: uppercase !important; margin-bottom: 12px !important;
+    }
+    .laxcc-mag .mag-cover h1 {
+        font-family: var(--serif) !important; color: var(--navy) !important; font-weight: 800 !important;
+        font-size: clamp(2rem, 6vw, 4.6rem) !important; line-height: 1.04 !important; letter-spacing: -0.02em !important;
+        margin-bottom: 16px !important; max-width: 16ch !important; text-wrap: balance !important;
+    }
+    .laxcc-mag .mag-cover h1 em { font-style: italic !important; color: var(--orange) !important; }
+    .laxcc-mag .mag-cover-sub {
+        color: var(--text-muted) !important; font-size: clamp(0.98rem, 1.3vw, 1.15rem) !important; line-height: 1.6 !important;
+        max-width: 60ch !important; margin-bottom: 22px !important;
+    }
+    .laxcc-mag .mag-cover-meta {
+        display: flex !important; flex-wrap: wrap !important; gap: 8px 22px !important; align-items: center !important;
+        padding-top: 18px !important; border-top: 1px solid rgba(23,34,46,0.14) !important;
+    }
+    .laxcc-mag .mag-cover-meta span {
+        color: var(--navy) !important; font-size: 0.78rem !important; font-weight: 700 !important;
+        letter-spacing: 0.3px !important; white-space: nowrap !important; display: inline-flex !important; align-items: center !important; gap: 7px !important;
+    }
+    .laxcc-mag .mag-cover-meta i { color: var(--orange) !important; }
+
+    /* ---------- BUTTONS ---------- */
+    .laxcc-mag .mag-btn,
+    .laxcc-mag a.mag-btn,
+    .laxcc-mag a.mag-btn:link,
+    .laxcc-mag a.mag-btn:visited {
+        display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 10px !important;
+        background: var(--orange) !important; color: #fff !important; font-family: var(--sans) !important;
+        font-size: 0.85rem !important; font-weight: 800 !important; letter-spacing: 0.06em !important; text-transform: uppercase !important;
+        padding: 16px 34px !important; border-radius: 12px !important; text-decoration: none !important; white-space: nowrap !important;
+        transition: transform 0.25s ease, box-shadow 0.25s ease !important; cursor: pointer !important;
+    }
+    .laxcc-mag a.mag-btn:hover { transform: translateY(-2px) !important; box-shadow: 0 10px 30px rgba(248,148,89,0.4) !important; color: #fff !important; }
+    .laxcc-mag .mag-btn-ghost,
+    .laxcc-mag a.mag-btn-ghost,
+    .laxcc-mag a.mag-btn-ghost:link,
+    .laxcc-mag a.mag-btn-ghost:visited {
+        display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 10px !important;
+        background: transparent !important; color: #fff !important; font-family: var(--sans) !important;
+        font-size: 0.85rem !important; font-weight: 700 !important; letter-spacing: 0.05em !important; text-transform: uppercase !important;
+        padding: 15px 30px !important; border-radius: 12px !important; text-decoration: none !important; white-space: nowrap !important;
+        box-shadow: inset 0 0 0 1.5px rgba(255,255,255,0.55) !important; transition: background 0.25s ease !important;
+    }
+    .laxcc-mag a.mag-btn-ghost:hover { background: rgba(255,255,255,0.12) !important; color: #fff !important; }
+    /* Secondary button for light (cream) backgrounds */
+    .laxcc-mag .mag-btn-2,
+    .laxcc-mag a.mag-btn-2,
+    .laxcc-mag a.mag-btn-2:link,
+    .laxcc-mag a.mag-btn-2:visited {
+        display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 10px !important;
+        background: rgba(29,80,138,0.08) !important; color: var(--navy) !important; font-family: var(--sans) !important;
+        font-size: 0.85rem !important; font-weight: 700 !important; letter-spacing: 0.05em !important; text-transform: uppercase !important;
+        padding: 15px 30px !important; border-radius: 12px !important; text-decoration: none !important; white-space: nowrap !important;
+        transition: background 0.25s ease, color 0.25s ease !important;
+    }
+    .laxcc-mag a.mag-btn-2:hover { background: rgba(248,148,89,0.14) !important; color: var(--orange) !important; }
+    .laxcc-mag .mag-cover-actions { display: flex !important; flex-wrap: wrap !important; gap: 12px !important; margin: 4px 0 20px !important; }
+
+    /* ---------- LEDE ---------- */
+    .laxcc-mag .mag-lede { background: var(--cream) !important; padding: 40px 24px !important; }
+    .laxcc-mag .mag-lede-inner { max-width: 1000px !important; margin: 0 auto !important; }
+    .laxcc-mag .mag-lede p {
+        font-family: var(--serif) !important; font-size: clamp(1.35rem, 2.4vw, 2rem) !important; line-height: 1.5 !important;
+        color: var(--ink) !important; font-weight: 500 !important; letter-spacing: -0.01em !important; text-wrap: pretty !important;
+    }
+    .laxcc-mag .mag-lede p strong { color: var(--navy) !important; font-weight: 700 !important; }
+    .laxcc-mag .mag-lede p a { color: var(--navy) !important; font-weight: 700 !important; text-decoration: underline !important; text-underline-offset: 3px !important; text-decoration-thickness: 1px !important; }
+    .laxcc-mag .mag-lede p a:hover { color: var(--orange) !important; }
+    .laxcc-mag .mag-lede p::first-letter {
+        font-family: var(--serif) !important; font-weight: 800 !important; color: var(--orange) !important;
+        font-size: 4.6em !important; line-height: 0.72 !important; float: left !important; margin: 0.06em 0.10em 0 0 !important;
+    }
+
+    /* ---------- STORYBOARD CHAPTERS (criss-cross: square, edge-to-edge, flush corners) ---------- */
+    .laxcc-mag .mag-chapter { max-width: none !important; margin: 0 !important; padding: 0 !important; }
+    .laxcc-mag .mag-spread { display: flex !important; flex-direction: column !important; gap: 0 !important; }
+    .laxcc-mag .mag-spread-media { width: 100% !important; }
+    .laxcc-mag .mag-figure { margin: 0 !important; }
+    .laxcc-mag .mag-figure .mag-shot {
+        width: 100% !important; aspect-ratio: 3 / 2 !important; border-radius: 0 !important; overflow: hidden !important; box-shadow: none !important;
+    }
+    .laxcc-mag .mag-figure .mag-shot img { display: block !important; width: 100% !important; height: 100% !important; object-fit: cover !important; }
+    .laxcc-mag .mag-figcaption { display: none !important; }
+    .laxcc-mag .mag-spread-body { width: 100% !important; padding: 30px 24px 38px !important; }
+    .laxcc-mag .mag-chapno {
+        font-family: var(--serif) !important; font-size: 0.95rem !important; font-weight: 700 !important; font-style: italic !important;
+        color: var(--orange) !important; letter-spacing: 0.5px !important; margin-bottom: 10px !important;
+    }
+    .laxcc-mag .mag-chapter h2 {
+        font-family: var(--serif) !important; font-size: clamp(1.9rem, 3.6vw, 3rem) !important; font-weight: 800 !important;
+        color: var(--navy) !important; line-height: 1.08 !important; letter-spacing: -0.02em !important; margin-bottom: 18px !important; text-wrap: balance !important;
+    }
+    .laxcc-mag .mag-chapter h2 em { font-style: italic !important; color: var(--orange) !important; }
+    .laxcc-mag .mag-chapter p { font-size: 1.05rem !important; line-height: 1.8 !important; color: var(--text-muted) !important; margin-bottom: 16px !important; }
+    .laxcc-mag .mag-chapter p strong { color: var(--navy) !important; font-weight: 800 !important; }
+    .laxcc-mag .mag-chapter p a { color: var(--navy) !important; font-weight: 700 !important; text-decoration: none !important; }
+    .laxcc-mag .mag-chapter p a:hover { color: var(--orange) !important; }
+
+    /* Inline key-points list — icon row, no bullets, no boxes */
+    .laxcc-mag .mag-points { display: flex !important; flex-direction: column !important; gap: 0 !important; margin: 20px 0 4px !important; }
+    .laxcc-mag .mag-point {
+        display: flex !important; align-items: flex-start !important; gap: 14px !important; padding: 15px 0 !important;
+        box-shadow: 0 1px 0 rgba(23,34,46,0.09) !important;
+    }
+    .laxcc-mag .mag-point:last-child { box-shadow: none !important; }
+    .laxcc-mag .mag-point i {
+        flex: 0 0 auto !important; width: 34px !important; height: 34px !important; border-radius: 9px !important;
+        display: inline-flex !important; align-items: center !important; justify-content: center !important;
+        background: rgba(248,148,89,0.14) !important; color: var(--orange) !important; font-size: 0.9rem !important; margin-top: 2px !important;
+    }
+    .laxcc-mag .mag-point div { flex: 1 1 auto !important; min-width: 0 !important; }
+    .laxcc-mag .mag-point strong { display: block !important; color: var(--navy) !important; font-weight: 800 !important; font-size: 1rem !important; margin-bottom: 2px !important; }
+    .laxcc-mag .mag-point span { color: var(--text-muted) !important; font-size: 0.94rem !important; line-height: 1.6 !important; }
+
+    /* ---------- PULL QUOTE (full-bleed image band) ---------- */
+    .laxcc-mag .mag-quote { position: relative !important; background: var(--ink) !important; overflow: hidden !important; }
+    .laxcc-mag .mag-quote .mag-ph { position: absolute !important; inset: 0 !important; min-height: 0 !important; }
+    .laxcc-mag .mag-quote > img, .laxcc-mag .mag-cta > img { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important; z-index: 0 !important; }
+    .laxcc-mag .mag-quote-scrim { position: absolute !important; inset: 0 !important; background: rgba(11,17,23,0.66) !important; z-index: 1 !important; }
+    .laxcc-mag .mag-quote-inner { position: relative !important; z-index: 2 !important; max-width: 1000px !important; margin: 0 auto !important; padding: 56px 24px !important; text-align: center !important; }
+    .laxcc-mag .mag-quote blockquote {
+        font-family: var(--serif) !important; color: #fff !important; font-weight: 600 !important; font-style: italic !important;
+        font-size: clamp(1.7rem, 3.6vw, 2.9rem) !important; line-height: 1.28 !important; letter-spacing: -0.01em !important; text-wrap: balance !important;
+    }
+    .laxcc-mag .mag-quote blockquote span { color: var(--orange) !important; }
+    .laxcc-mag .mag-quote cite {
+        display: block !important; margin-top: 26px !important; font-family: var(--sans) !important; font-style: normal !important;
+        color: rgba(255,255,255,0.8) !important; font-size: 0.78rem !important; font-weight: 800 !important; letter-spacing: 2px !important; text-transform: uppercase !important;
+    }
+
+    /* ---------- STATS STRIP ---------- */
+    .laxcc-mag .mag-stats { background: var(--cream) !important; padding: 40px 24px !important; }
+    .laxcc-mag .mag-stats-inner { max-width: 1180px !important; margin: 0 auto !important; display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 0 !important; }
+    .laxcc-mag .mag-stat { padding: 22px 20px !important; text-align: center !important; box-shadow: inset 0 -1px 0 rgba(23,34,46,0.1) !important; }
+    .laxcc-mag .mag-stat-num { font-family: var(--serif) !important; font-size: clamp(2.4rem, 5vw, 3.6rem) !important; font-weight: 800 !important; color: var(--navy) !important; line-height: 1 !important; letter-spacing: -0.02em !important; }
+    .laxcc-mag .mag-stat-num span { color: var(--orange) !important; }
+    .laxcc-mag .mag-stat-lbl { margin-top: 10px !important; font-size: 0.72rem !important; font-weight: 800 !important; letter-spacing: 1px !important; text-transform: uppercase !important; color: var(--text-muted) !important; }
+
+    /* ---------- FAQ ---------- */
+    .laxcc-mag .mag-faq { background: var(--cream) !important; padding: 44px 24px !important; }
+    .laxcc-mag .mag-faq-inner { max-width: 900px !important; margin: 0 auto !important; }
+    .laxcc-mag .mag-faq-head { font-family: var(--serif) !important; font-size: clamp(1.9rem, 3.6vw, 2.8rem) !important; font-weight: 800 !important; color: var(--navy) !important; letter-spacing: -0.02em !important; margin-bottom: 8px !important; }
+    .laxcc-mag .mag-faq-intro { color: var(--text-muted) !important; font-size: 1rem !important; margin-bottom: 28px !important; }
+    .laxcc-mag .mag-faq-item { box-shadow: 0 1px 0 rgba(23,34,46,0.1) !important; }
+    .laxcc-mag .mag-faq-item:first-child { box-shadow: 0 1px 0 rgba(23,34,46,0.1), 0 -1px 0 rgba(23,34,46,0.1) !important; }
+    .laxcc-mag .mag-faq-q { font-size: 1.12rem !important; font-weight: 800 !important; color: var(--navy) !important; cursor: pointer !important; list-style: none !important; display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 18px !important; padding: 22px 0 !important; }
+    .laxcc-mag .mag-faq-q::-webkit-details-marker { display: none !important; }
+    .laxcc-mag .mag-faq-q:hover { color: var(--orange) !important; }
+    .laxcc-mag .mag-faq-toggle { color: var(--orange) !important; font-size: 1.4rem !important; font-weight: 300 !important; flex: 0 0 auto !important; transition: transform 0.3s ease !important; }
+    .laxcc-mag .mag-faq-item[open] .mag-faq-toggle { transform: rotate(45deg) !important; }
+    .laxcc-mag .mag-faq-a { padding: 0 0 22px !important; color: var(--text-muted) !important; font-size: 1rem !important; line-height: 1.75 !important; }
+    .laxcc-mag .mag-faq-a a { color: var(--navy) !important; font-weight: 700 !important; text-decoration: none !important; }
+    .laxcc-mag .mag-faq-a a:hover { color: var(--orange) !important; }
+
+    /* ---------- CTA ---------- */
+    .laxcc-mag .mag-cta { position: relative !important; background: var(--ink) !important; overflow: hidden !important; }
+    .laxcc-mag .mag-cta .mag-ph { position: absolute !important; inset: 0 !important; min-height: 0 !important; }
+    .laxcc-mag .mag-cta-scrim { position: absolute !important; inset: 0 !important; background: linear-gradient(180deg, rgba(11,17,23,0.72) 0%, rgba(11,17,23,0.86) 100%) !important; z-index: 1 !important; }
+    .laxcc-mag .mag-cta-inner { position: relative !important; z-index: 2 !important; max-width: 760px !important; margin: 0 auto !important; padding: 56px 24px !important; text-align: center !important; }
+    .laxcc-mag .mag-cta h2 { font-family: var(--serif) !important; font-size: clamp(2.2rem, 5vw, 3.6rem) !important; font-weight: 800 !important; color: #fff !important; line-height: 1.06 !important; letter-spacing: -0.02em !important; margin-bottom: 18px !important; text-wrap: balance !important; }
+    .laxcc-mag .mag-cta p { color: rgba(255,255,255,0.88) !important; font-size: 1.1rem !important; line-height: 1.7 !important; margin-bottom: 34px !important; }
+    .laxcc-mag .mag-cta-actions { display: flex !important; gap: 14px !important; justify-content: center !important; flex-wrap: wrap !important; }
+    .laxcc-mag .mag-cta-info { margin-top: 40px !important; padding-top: 26px !important; border-top: 1px solid rgba(255,255,255,0.18) !important; }
+    .laxcc-mag .mag-cta-info p { font-size: 0.86rem !important; color: rgba(255,255,255,0.82) !important; margin: 0 !important; }
+    .laxcc-mag .mag-cta-info strong { color: #fff !important; }
+
+    /* ---------- DISCLOSURE ---------- */
+    .laxcc-mag .mag-disc { background: var(--cream) !important; padding: 28px 24px 44px !important; }
+    .laxcc-mag .mag-disc-inner { max-width: 900px !important; margin: 0 auto !important; }
+    .laxcc-mag .mag-disc p { font-size: 0.8rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; font-style: italic !important; }
+
+    /* ---------- DESKTOP ---------- */
+    @media (min-width: 861px) {
+        /* Cover: clean image on one side, text on the other — nothing overlaid */
+        .laxcc-mag .mag-cover { display: grid !important; grid-template-columns: 1.05fr 1fr !important; align-items: stretch !important; }
+        .laxcc-mag .mag-cover-media { order: 2 !important; }
+        .laxcc-mag .mag-cover-media .mag-ph { height: 100% !important; aspect-ratio: auto !important; min-height: 84vh !important; }
+        .laxcc-mag .mag-cover-media img { aspect-ratio: auto !important; min-height: 84vh !important; }
+        .laxcc-mag .mag-cover-inner { order: 1 !important; justify-content: center !important; max-width: none !important; padding: 56px 5vw !important; }
+
+        /* Storyboard: full-bleed alternating grid, zero gaps → image corners meet (criss-cross) */
+        .laxcc-mag .mag-chapter { padding: 0 !important; }
+        .laxcc-mag .mag-spread { flex-direction: row !important; align-items: stretch !important; gap: 0 !important; }
+        .laxcc-mag .mag-spread-media { flex: 1 1 50% !important; }
+        .laxcc-mag .mag-figure, .laxcc-mag .mag-spread-media .mag-shot { height: 100% !important; }
+        .laxcc-mag .mag-figure .mag-shot { aspect-ratio: auto !important; min-height: 540px !important; }
+        .laxcc-mag .mag-spread-body { flex: 1 1 50% !important; padding: 56px 5vw !important; display: flex !important; flex-direction: column !important; justify-content: center !important; }
+        .laxcc-mag .mag-spread.mag-reverse { flex-direction: row-reverse !important; }
+
+        .laxcc-mag .mag-lede { padding: 92px 40px !important; }
+        .laxcc-mag .mag-stats-inner { grid-template-columns: repeat(4, 1fr) !important; }
+        .laxcc-mag .mag-stat { box-shadow: inset -1px 0 0 rgba(23,34,46,0.1) !important; }
+        .laxcc-mag .mag-stat:last-child { box-shadow: none !important; }
+    }
+
+    /* ---------- LIVE MENU CATEGORY LABELS (outside .laxcc-mag wrapper) ---------- */
+    #mag-live-menu { max-width: 1400px !important; margin: 0 auto !important; padding: 20px 24px 44px !important; background: #FBF8F2 !important; }
+    #mag-live-menu .mag-menu-head { margin: 44px 0 18px !important; }
+    #mag-live-menu .mag-menu-head:first-child { margin-top: 8px !important; }
+    #mag-live-menu .mag-menu-eyebrow { display: block !important; color: #F89459 !important; font-family: 'Manrope', -apple-system, sans-serif !important; font-size: 0.72rem !important; font-weight: 800 !important; letter-spacing: 2.5px !important; text-transform: uppercase !important; margin-bottom: 10px !important; }
+    #mag-live-menu .mag-menu-head h2 { font-family: 'Playfair Display', Georgia, 'Times New Roman', serif !important; font-size: clamp(1.7rem, 4vw, 2.6rem) !important; font-weight: 800 !important; color: #1D508A !important; letter-spacing: -0.02em !important; line-height: 1.1 !important; margin: 0 0 6px !important; }
+    #mag-live-menu .mag-menu-sub { font-family: 'Manrope', -apple-system, sans-serif !important; font-size: 0.98rem !important; color: #64748b !important; line-height: 1.6 !important; margin: 0 !important; max-width: 60ch !important; }
+    @media (min-width: 861px) { #mag-live-menu { padding: 32px 40px 56px !important; } #mag-live-menu .mag-menu-head { margin: 56px 0 22px !important; } }
+
+    /* Elementor override — fill parent column width, no 100vw breakout */
+    .elementor-widget-container .laxcc-mag { width: 100% !important; }
+</style>
+
+<div class="laxcc-mag">
+
+    <!-- ============ COVER / MASTHEAD (clean image, text beside/below — nothing overlaid) ============ -->
+    <section class="mag-cover">
+        <div class="mag-cover-media">
+            <img src="https://laxcc.com/wp-content/uploads/2024/06/front-desk-LAX_dispensary-with-cannabis-products-for-sale.jpg"
+                alt="Front desk at LAX Cannabis Club dispensary in Los Angeles with cannabis products for sale"
+                referrerpolicy="no-referrer" loading="eager">
+        </div>
+        <div class="mag-cover-inner">
+            <div class="mag-masthead">
+                <span>LAXCC &mdash; Los Angeles</span>
+                <span class="mag-rule"></span>
+                <span>The Dispensary Issue</span>
+            </div>
+            <span class="mag-kicker">Recreational &amp; Medical Cannabis</span>
+            <h1>The Best <em>Recreational</em> &amp; <em>Medical</em> Weed Dispensary in Los Angeles</h1>
+            <p class="mag-cover-sub">
+                One address on Lincoln Blvd for the whole city &mdash; recreational marijuana for adults 21+ and medical cannabis for patients 18+ &mdash; with the best weed deals in LA, the best brands, and one of the biggest menus in Los Angeles.
+            </p>
+            <div class="mag-cover-actions">
+                <a href="https://laxcc.com/shop/" class="mag-btn">Shop the Menu <i class="fas fa-arrow-right"></i></a>
+                <a href="https://www.google.com/maps?daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045" target="_blank" rel="nofollow noopener noreferrer" class="mag-btn-2"><i class="fas fa-location-dot"></i> Get Directions</a>
+            </div>
+            <div class="mag-cover-meta">
+                <span><i class="fas fa-cannabis"></i> Recreational 21+</span>
+                <span><i class="fas fa-notes-medical"></i> Medical 18+</span>
+                <span><i class="fas fa-clock"></i> Open Daily 9 AM&ndash;9:30 PM</span>
+                <span><i class="fas fa-plane"></i> Minutes from LAX</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ LEDE ============ -->
+    <section class="mag-lede">
+        <div class="mag-lede-inner">
+            <p>
+                There's a ton of dispensaries in Los Angeles &mdash; but none like <strong>LAX Cannabis Club</strong>, the <a href="https://laxcc.com/">Los Angeles dispensary</a> just five minutes from the LAX airport. Whether you walk in 21+ for <strong>recreational cannabis</strong> or arrive 18+ with a doctor's recommendation for <strong>medical marijuana</strong>, LAXCC is stocked with the <strong>Best California weed</strong> at every budget. It's where locals and travelers alike come for the <strong>best weed in California</strong> &mdash; an honest price, one of the biggest menus in LA, and someone who actually knows it.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============ CHAPTER 01 — RECREATIONAL ============ -->
+    <section class="mag-chapter">
+        <div class="mag-spread">
+            <div class="mag-spread-media">
+                <figure class="mag-figure">
+                    <div class="mag-shot"><img src="https://laxcc.com/wp-content/uploads/2024/06/order-weed-online-curb-side-pick-up-in-store.jpg" alt="Order weed online for curbside pickup or in-store at LAX Cannabis Club in Los Angeles" referrerpolicy="no-referrer" loading="lazy"></div>
+                    <figcaption class="mag-figcaption">The recreational floor &mdash; no card, no appointment, 21+</figcaption>
+                </figure>
+            </div>
+            <div class="mag-spread-body">
+                <div class="mag-chapno">Chapter 01</div>
+                <h2>Recreational Cannabis, <em>Zero Hassle</em></h2>
+                <p>
+                    If you're 21 or older, that's the whole list. <strong>Recreational marijuana</strong> at LAXCC means walk in with a valid government ID, browse the full menu, and check out &mdash; no medical card, no membership, no waiting. It's the easy front door to legal cannabis in Los Angeles.
+                </p>
+                <div class="mag-points">
+                    <div class="mag-point"><i class="fas fa-id-card"></i><div><strong>Just bring ID</strong><span>Any valid government-issued photo ID proving you're 21+. That's it.</span></div></div>
+                    <div class="mag-point"><i class="fas fa-store"></i><div><strong>Walk in or order ahead</strong><span>Shop in person or reserve on the <a href="https://laxcc.com/shop/">live menu</a> for fast pickup.</span></div></div>
+                    <div class="mag-point"><i class="fas fa-hand-holding-heart"></i><div><strong>Budtenders who guide</strong><span>New to it? Tell us your vibe and tolerance and we'll steer you right.</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CHAPTER 02 — MEDICAL ============ -->
+    <section class="mag-chapter">
+        <div class="mag-spread mag-reverse">
+            <div class="mag-spread-media">
+                <figure class="mag-figure">
+                    <div class="mag-shot"><img src="https://laxcc.com/wp-content/uploads/2024/10/best-medical-marijuana-dispensary-LA.jpg" alt="Best medical marijuana dispensary in LA — LAX Cannabis Club" referrerpolicy="no-referrer" loading="lazy"></div>
+                    <figcaption class="mag-figcaption">Medical patients &mdash; 18+ with a valid recommendation</figcaption>
+                </figure>
+            </div>
+            <div class="mag-spread-body">
+                <div class="mag-chapno">Chapter 02</div>
+                <h2>Medical Marijuana, <em>Handled With Care</em></h2>
+                <p>
+                    LAXCC serves qualified <strong>medical cannabis</strong> patients 18 and older with a valid physician's recommendation. If you're managing a condition and need consistent, higher-potency options, our team helps you find products dialed to your needs &mdash; and patients with a state MMIC card can save on tax.
+                </p>
+                <div class="mag-points">
+                    <div class="mag-point"><i class="fas fa-notes-medical"></i><div><strong>18+ with a valid rec</strong><span>Bring your physician's recommendation and a matching photo ID.</span></div></div>
+                    <div class="mag-point"><i class="fas fa-percent"></i><div><strong>MMIC tax savings</strong><span>A state Medical Marijuana ID card exempts qualifying purchases from sales &amp; use tax.</span></div></div>
+                    <div class="mag-point"><i class="fas fa-flask"></i><div><strong>Potency &amp; format range</strong><span>High-THC flower, RSO, tinctures, and precise-dose edibles for daily routines.</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PULL QUOTE ============ -->
+    <section class="mag-quote">
+        <img src="https://laxcc.com/wp-content/uploads/2024/06/Best-LA-dispensary-2024.jpg" alt="Best LA dispensary 2024 — LAX Cannabis Club" referrerpolicy="no-referrer" loading="lazy">
+        <div class="mag-quote-scrim"></div>
+        <div class="mag-quote-inner">
+            <blockquote>Recreational or medical, the goal is the same: the <span>right product</span>, an honest price, and someone who actually knows the menu.</blockquote>
+            <cite>&mdash; The LAXCC Floor</cite>
+        </div>
+    </section>
+
+    <!-- ============ CHAPTER 03 — THE SELECTION ============ -->
+    <section class="mag-chapter">
+        <div class="mag-spread">
+            <div class="mag-spread-media">
+                <figure class="mag-figure">
+                    <div class="mag-shot"><img src="https://laxcc.com/wp-content/uploads/2024/07/LA-dispensary-cannabis-recommendations-by-staff-scaled.jpg" alt="LAX Cannabis Club staff giving cannabis recommendations at the LA dispensary" referrerpolicy="no-referrer" loading="lazy"></div>
+                    <figcaption class="mag-figcaption">One of the biggest menus in Los Angeles</figcaption>
+                </figure>
+            </div>
+            <div class="mag-spread-body">
+                <div class="mag-chapno">Chapter 03</div>
+                <h2>The Selection, <em>Head to Toe</em></h2>
+                <p>
+                    The best California brands across value, mid-shelf, and top-shelf &mdash; <a href="https://laxcc.com/shop/cannabis-nearby-lax-airport/">flower</a>, <a href="https://laxcc.com/shop/pre-rolls-nearby-lax-airport/">pre-rolls</a>, vapes, <a href="https://laxcc.com/shop/buy-thc-concentrates-dabs-near-lax/">concentrates</a>, <a href="https://laxcc.com/shop/thc-gummies-edibles-near-lax-airport/">edibles</a>, and drinks. Whether you've got $25 or $250, recreational or medical, there's a pick with your name on it.
+                </p>
+                <div class="mag-points">
+                    <div class="mag-point"><i class="fas fa-layer-group"></i><div><strong>Every budget, every shelf</strong><span>From daily-driver value to rare top-shelf drops.</span></div></div>
+                    <div class="mag-point"><i class="fas fa-award"></i><div><strong>The brands people ask for</strong><span>Curated California labels, restocked as they move.</span></div></div>
+                    <div class="mag-point"><i class="fas fa-tags"></i><div><strong>Best weed deals in LA</strong><span>Rotating promos, bundles, and first-visit specials &mdash; check <a href="https://laxcc.com/deals/">today's deals</a>.</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CHAPTER 04 — FIND US ============ -->
+    <section class="mag-chapter">
+        <div class="mag-spread mag-reverse">
+            <div class="mag-spread-media">
+                <figure class="mag-figure">
+                    <div class="mag-shot"><img src="https://laxcc.com/wp-content/uploads/2024/06/inside-the-best-la-dispensary-menu-lax-cc.jpg" alt="Inside LAX Cannabis Club on Lincoln Blvd, the best LA dispensary" referrerpolicy="no-referrer" loading="lazy"></div>
+                    <figcaption class="mag-figcaption">8332 Lincoln Blvd &mdash; minutes from LAX</figcaption>
+                </figure>
+            </div>
+            <div class="mag-spread-body">
+                <div class="mag-chapno">Chapter 04</div>
+                <h2>Find Us on <em>Lincoln Blvd</em></h2>
+                <p>
+                    LAXCC sits at <strong>8332 Lincoln Blvd, Los Angeles, CA 90045</strong> &mdash; on the Westside between LAX and Santa Monica, about five minutes from the airport. Land, stock up, and you're on your way. Open every day, <strong>9 AM&ndash;9:30 PM</strong>.
+                </p>
+                <div class="mag-points">
+                    <div class="mag-point"><i class="fas fa-plane-arrival"></i><div><strong>~5 minutes from LAX</strong><span>The easiest dispensary stop for anyone flying in or out.</span></div></div>
+                    <div class="mag-point"><i class="fas fa-clock"></i><div><strong>Open daily 9 AM&ndash;9:30 PM</strong><span>Same hours every day &mdash; no split schedule.</span></div></div>
+                    <div class="mag-point"><i class="fas fa-phone"></i><div><strong>(310) 429-3789</strong><span>Call ahead with a question or to check stock.</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="mag-stats">
+        <div class="mag-stats-inner">
+            <div class="mag-stat"><div class="mag-stat-num">21<span>+</span></div><div class="mag-stat-lbl">Recreational</div></div>
+            <div class="mag-stat"><div class="mag-stat-num">18<span>+</span></div><div class="mag-stat-lbl">Medical Patients</div></div>
+            <div class="mag-stat"><div class="mag-stat-num">~5<span>min</span></div><div class="mag-stat-lbl">From LAX</div></div>
+            <div class="mag-stat"><div class="mag-stat-num">9&ndash;9:30</div><div class="mag-stat-lbl">Open Daily</div></div>
+        </div>
+    </section>
+
+</div>
+<!-- END scoped wrapper — live menu shortcode lives OUTSIDE the wrapper -->
+
+<!-- LIVE MENU — shop by category -->
+<section id="mag-live-menu">
+    <div class="mag-menu-head"><span class="mag-menu-eyebrow">Order Online for Pickup</span><h2>Shop Weed</h2><p class="mag-menu-sub">Buy top-shelf flower online and pick up at LAXCC &mdash; minutes from LAX.</p></div>
+    [leafbridge_specific_product_filter category="FLOWER" count="20"]
+
+    <div class="mag-menu-head"><h2>Buy Prerolls</h2><p class="mag-menu-sub">Shop ready-to-go prerolls and infused joints for pickup today.</p></div>
+    [leafbridge_specific_product_filter category="PRE_ROLLS" count="20"]
+
+    <div class="mag-menu-head"><h2>Shop Vapes</h2><p class="mag-menu-sub">Order carts, disposables, and AIO vapes online in a few taps.</p></div>
+    [leafbridge_specific_product_filter category="VAPORIZERS" count="20"]
+
+    <div class="mag-menu-head"><h2>Buy Edibles</h2><p class="mag-menu-sub">Shop gummies, chocolates, and drinks &mdash; dosed and ready to reserve.</p></div>
+    [leafbridge_specific_product_filter category="EDIBLES" count="20"]
+</section>
+
+<!-- Resume scoped wrapper -->
+<div class="laxcc-mag">
+
+    <!-- ============ FAQ ============ -->
+    <section class="mag-faq">
+        <div class="mag-faq-inner">
+            <h2 class="mag-faq-head">Recreational &amp; Medical, Answered</h2>
+            <p class="mag-faq-intro">The quick facts on shopping recreational cannabis and medical marijuana at LAXCC.</p>
+
+            <details class="mag-faq-item">
+                <summary class="mag-faq-q">What's the difference between recreational and medical at LAXCC? <span class="mag-faq-toggle">+</span></summary>
+                <div class="mag-faq-a">Recreational cannabis is for any adult 21+ with a valid photo ID &mdash; no card or paperwork needed. Medical marijuana is for patients 18+ who have a valid physician's recommendation; medical patients with a state MMIC card can also save on tax. Both shop the same store and much of the same menu.</div>
+            </details>
+            <details class="mag-faq-item">
+                <summary class="mag-faq-q">Do I need a medical card to buy weed in Los Angeles? <span class="mag-faq-toggle">+</span></summary>
+                <div class="mag-faq-a">No. Recreational marijuana is fully legal for adults 21+ in California &mdash; just bring a valid government-issued ID. A medical recommendation is only required if you're 18&ndash;20 or want medical-specific benefits like MMIC tax savings.</div>
+            </details>
+            <details class="mag-faq-item">
+                <summary class="mag-faq-q">What ID do I need to bring? <span class="mag-faq-toggle">+</span></summary>
+                <div class="mag-faq-a">A valid, unexpired government-issued photo ID (driver's license, state ID, or passport). Medical patients 18&ndash;20 should also bring their physician's recommendation, and an MMIC card if you have one.</div>
+            </details>
+            <details class="mag-faq-item">
+                <summary class="mag-faq-q">Where is LAXCC and what are the hours? <span class="mag-faq-toggle">+</span></summary>
+                <div class="mag-faq-a">LAXCC is at 8332 Lincoln Blvd, Los Angeles, CA 90045 &mdash; on Highway 1 between LAX and Santa Monica, about 5 minutes from the airport. Open daily, 9 AM&ndash;9:30 PM. Call <a href="tel:+13104293789">(310) 429-3789</a>.</div>
+            </details>
+            <details class="mag-faq-item">
+                <summary class="mag-faq-q">Can I order online for pickup? <span class="mag-faq-toggle">+</span></summary>
+                <div class="mag-faq-a">Yes. Browse and reserve on the <a href="https://laxcc.com/shop/">live menu</a>, then pick up in store &mdash; the fastest way in and out. Walk-ins are always welcome too.</div>
+            </details>
+        </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="mag-cta">
+        <img src="https://laxcc.com/wp-content/uploads/2024/06/inside-LAX-Cannabis-club-dispensary-.jpg" alt="Inside LAX Cannabis Club dispensary in Los Angeles" referrerpolicy="no-referrer" loading="lazy">
+        <div class="mag-cta-scrim"></div>
+        <div class="mag-cta-inner">
+            <h2>Recreational or Medical &mdash; Come See Why We're LA's Best</h2>
+            <p>Browse the live menu, reserve for pickup, or just walk in. The best deals, the best brands, and one of the biggest menus in Los Angeles are waiting on Lincoln Blvd.</p>
+            <div class="mag-cta-actions">
+                <a href="https://laxcc.com/shop/" class="mag-btn"><i class="fas fa-cannabis"></i> Shop the Menu</a>
+                <a href="https://www.google.com/maps?daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045" target="_blank" rel="nofollow noopener noreferrer" class="mag-btn-ghost"><i class="fas fa-location-dot"></i> Directions</a>
+            </div>
+            <div class="mag-cta-info">
+                <p><strong>LAXCC</strong> &bull; 8332 Lincoln Blvd, Los Angeles, CA 90045 &bull; Open Daily 9 AM&ndash;9:30 PM &bull; Recreational 21+ / Medical 18+</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ DISCLOSURE ============ -->
+    <section class="mag-disc">
+        <div class="mag-disc-inner">
+            <p>For adults 21+ (medical patients 18+ with a valid physician's recommendation). Cannabis products have intoxicating effects and may be habit forming. Keep out of reach of children and pets. Do not operate a vehicle or machinery under the influence. Medical tax exemptions require a valid state MMIC card. Product availability, pricing, and deals are subject to change &mdash; see the live menu for current offerings.</p>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    (function () {
+        var ld = {
+            "@context": "https://schema.org",
+            "@type": "Store",
+            "name": "LAX Cannabis Club - LAXCC",
+            "description": "Best recreational and medical weed dispensary in Los Angeles. Recreational cannabis for adults 21+ and medical marijuana for patients 18+, with the best weed deals and one of the biggest menus in LA. Minutes from LAX on Lincoln Blvd.",
+            "url": "https://laxcc.com",
+            "telephone": "+1-310-429-3789",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "8332 Lincoln Blvd",
+                "addressLocality": "Los Angeles",
+                "addressRegion": "CA",
+                "postalCode": "90045",
+                "addressCountry": "US"
+            },
+            "geo": { "@type": "GeoCoordinates", "latitude": 33.9575, "longitude": -118.4178 },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+                "opens": "09:00",
+                "closes": "21:30"
+            }
+        };
+        var s = document.createElement('script');
+        s.type = 'application/ld+json';
+        s.textContent = JSON.stringify(ld);
+        document.head.appendChild(s);
+    })();
+</script>

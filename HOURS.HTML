@@ -1,0 +1,399 @@
+<!-- LAXCC Header Bar - Elementor WordPress Version -->
+<!-- Add this to an HTML widget in Elementor (ONLY ONE widget!) -->
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<div class="laxcc-header-bar-wrapper">
+    <div class="laxcc-header-container">
+        <div class="laxcc-header-content">
+            <!-- Left Section: Status and Location -->
+            <div class="laxcc-header-left">
+                <!-- Open Status -->
+                <div class="laxcc-status-group">
+                    <span class="laxcc-status-indicator">
+                        <span class="laxcc-pulse"></span>
+                        <span class="laxcc-dot"></span>
+                    </span>
+                    <span class="laxcc-status-text">OPEN</span>
+                </div>
+
+                <!-- Divider -->
+                <div class="laxcc-divider"></div>
+
+                <!-- Location -->
+                <div class="laxcc-location-group">
+                    <span class="material-symbols-outlined laxcc-location-icon">location_on</span>
+                    <span class="laxcc-location-text">5 Min Drive From LAX</span>
+                </div>
+
+                <!-- Divider -->
+                <div class="laxcc-divider laxcc-hide-mobile"></div>
+
+                <!-- Hours -->
+                <span class="laxcc-hours-text">Daily 9AM - 9:30PM</span>
+            </div>
+
+            <!-- Right Section: Buttons -->
+            <div class="laxcc-header-right">
+                <a href="https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUqCggAEEUYFhgeGDsyCggAEEUYFhgeGDsyBggBEEUYQDIPCAIQLhgKGK8BGMcBGIAEMgkIAxAAGAoYgAQyCQgEEAAYChiABDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBBzk0OWowajeoAgCwAgA&um=1&ie=UTF-8&fb=1&gl=us&sa=X&geocode=KcV7PbKUsMKAMRV9PE_uQ_xU&daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045"
+                    target="_blank" class="laxcc-btn laxcc-btn-directions">
+                    <span>Directions</span>
+                </a>
+                <a href="https://laxcc.com/shop/" target="_self" class="laxcc-btn laxcc-btn-order">
+                    <span>Order Now</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* LAXCC Header Bar - Scoped Styles */
+    .laxcc-header-bar-wrapper {
+        --laxcc-primary: #F89459;
+        --laxcc-secondary: #00AFC9;
+        --laxcc-navy: #1D508A;
+        --laxcc-green: #7ECBB3;
+        --laxcc-bg-light: #FBF8F2;
+        --laxcc-bg-dark: #221610;
+        --laxcc-text-primary: #1e293b;
+        --laxcc-text-secondary: #475569;
+        --laxcc-text-light: #94a3b8;
+        --laxcc-border: #e2e8f0;
+
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        width: 100%;
+        padding: 1rem;
+        background-color: var(--laxcc-bg-light);
+    }
+
+    /* Reset for nested elements */
+    .laxcc-header-bar-wrapper *,
+    .laxcc-header-bar-wrapper *::before,
+    .laxcc-header-bar-wrapper *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Container */
+    .laxcc-header-bar-wrapper .laxcc-header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 9999px;
+        padding: 0.5rem 0.75rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* Content wrapper */
+    .laxcc-header-bar-wrapper .laxcc-header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    /* Left section */
+    .laxcc-header-bar-wrapper .laxcc-header-left {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex: 1;
+        min-width: 0;
+    }
+
+    /* Status Group */
+    .laxcc-header-bar-wrapper .laxcc-status-group {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex-shrink: 0;
+    }
+
+    /* Status Indicator */
+    .laxcc-header-bar-wrapper .laxcc-status-indicator {
+        position: relative;
+        display: flex;
+        height: 12px;
+        width: 12px;
+    }
+
+    .laxcc-header-bar-wrapper .laxcc-pulse {
+        position: absolute;
+        display: inline-flex;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        background-color: var(--laxcc-green);
+        opacity: 0.75;
+        animation: laxcc-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes laxcc-ping {
+        75%, 100% {
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
+
+    .laxcc-header-bar-wrapper .laxcc-dot {
+        position: relative;
+        display: inline-flex;
+        border-radius: 50%;
+        height: 12px;
+        width: 12px;
+        background-color: var(--laxcc-green);
+    }
+
+    /* Status Text */
+    .laxcc-header-bar-wrapper .laxcc-status-text {
+        color: var(--laxcc-navy);
+        font-size: 1rem;
+        font-weight: 900;
+        letter-spacing: -0.025em;
+    }
+
+    /* Divider */
+    .laxcc-header-bar-wrapper .laxcc-divider {
+        height: 1rem;
+        width: 1px;
+        background-color: var(--laxcc-border);
+        display: none;
+    }
+
+    @media (min-width: 640px) {
+        .laxcc-header-bar-wrapper .laxcc-divider {
+            display: block;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .laxcc-header-bar-wrapper .laxcc-divider.laxcc-hide-mobile {
+            display: block;
+        }
+    }
+
+    /* Location Group */
+    .laxcc-header-bar-wrapper .laxcc-location-group {
+        display: none;
+        align-items: center;
+        gap: 0.5rem;
+        min-width: 0;
+    }
+
+    @media (min-width: 640px) {
+        .laxcc-header-bar-wrapper .laxcc-location-group {
+            display: flex;
+        }
+    }
+
+    .laxcc-header-bar-wrapper .laxcc-location-icon {
+        font-size: 1.125rem;
+        color: var(--laxcc-navy);
+        flex-shrink: 0;
+    }
+
+    .laxcc-header-bar-wrapper .laxcc-location-text {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--laxcc-text-primary);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Hours Text */
+    .laxcc-header-bar-wrapper .laxcc-hours-text {
+        color: var(--laxcc-text-secondary);
+        font-size: 0.875rem;
+        font-weight: 700;
+        white-space: nowrap;
+        display: none;
+    }
+
+    @media (min-width: 768px) {
+        .laxcc-header-bar-wrapper .laxcc-hours-text {
+            display: block;
+        }
+    }
+
+    /* Right section - Buttons */
+    .laxcc-header-bar-wrapper .laxcc-header-right {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    /* Button Base Styles */
+    .laxcc-header-bar-wrapper .laxcc-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 84px;
+        height: 40px;
+        padding: 0 1.25rem;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing: 0.025em;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: none;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .laxcc-header-bar-wrapper .laxcc-btn span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* Directions Button */
+    .laxcc-header-bar-wrapper .laxcc-btn-directions {
+        background-color: var(--laxcc-primary);
+        color: white;
+    }
+
+    .laxcc-header-bar-wrapper .laxcc-btn-directions:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(248, 148, 89, 0.3);
+    }
+
+    /* Order Button */
+    .laxcc-header-bar-wrapper .laxcc-btn-order {
+        background-color: var(--laxcc-secondary);
+        color: white;
+    }
+
+    .laxcc-header-bar-wrapper .laxcc-btn-order:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 175, 201, 0.3);
+    }
+
+    /* Dark Mode Support */
+    body.dark .laxcc-header-bar-wrapper {
+        background-color: var(--laxcc-bg-dark);
+    }
+
+    body.dark .laxcc-header-bar-wrapper .laxcc-header-container {
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    body.dark .laxcc-header-bar-wrapper .laxcc-status-text {
+        color: var(--laxcc-primary);
+    }
+
+    body.dark .laxcc-header-bar-wrapper .laxcc-location-icon {
+        color: var(--laxcc-green);
+    }
+
+    body.dark .laxcc-header-bar-wrapper .laxcc-location-text {
+        color: #e2e8f0;
+    }
+
+    body.dark .laxcc-header-bar-wrapper .laxcc-hours-text {
+        color: #94a3b8;
+    }
+
+    body.dark .laxcc-header-bar-wrapper .laxcc-divider {
+        background-color: #475569;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 800px) {
+        .laxcc-header-bar-wrapper {
+            padding: 0.75rem 0.5rem;
+        }
+
+        .laxcc-header-bar-wrapper .laxcc-header-container {
+            padding: 0.4rem 0.5rem;
+            border-radius: 20px;
+        }
+
+        .laxcc-header-bar-wrapper .laxcc-header-content {
+            gap: 0.5rem;
+            flex-wrap: nowrap;
+        }
+
+        .laxcc-header-bar-wrapper .laxcc-header-left {
+            flex: 1;
+            min-width: 0;
+            gap: 0.5rem;
+        }
+
+        .laxcc-header-bar-wrapper .laxcc-header-right {
+            flex-shrink: 0;
+        }
+
+        .laxcc-header-bar-wrapper .laxcc-btn {
+            min-width: auto;
+            padding: 0 0.75rem;
+            font-size: 0.75rem;
+            height: 36px;
+            white-space: nowrap;
+        }
+
+        .laxcc-header-bar-wrapper .laxcc-status-text {
+            font-size: 0.85rem;
+        }
+    }
+
+    /* Material Symbols Settings */
+    .laxcc-header-bar-wrapper .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    /* Elementor Full-Width Override */
+    .elementor-widget-container .laxcc-header-bar-wrapper {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+</style>
+
+<script>
+    (function () {
+        // Update open/closed status
+        function updateStatus() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var currentTime = hours * 60 + minutes;
+
+            var openTime = 9 * 60;
+            var closeTime = 21 * 60 + 30;
+
+            var statusText = document.querySelector('.laxcc-status-text');
+            var statusIndicator = document.querySelector('.laxcc-status-indicator');
+
+            if (statusText && statusIndicator) {
+                if (currentTime >= openTime && currentTime < closeTime) {
+                    statusText.textContent = 'OPEN';
+                    statusIndicator.style.display = 'flex';
+                } else {
+                    statusText.textContent = 'CLOSED';
+                    statusIndicator.style.display = 'none';
+                }
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', updateStatus);
+        } else {
+            updateStatus();
+        }
+        setInterval(updateStatus, 60000);
+    })();
+</script>

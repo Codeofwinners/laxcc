@@ -1,0 +1,155 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap');
+
+    #btq-modern {
+        /* --- THEME VARS --- */
+        --ph-bg: transparent;
+        --ph-card-bg: #ffffff;
+        --ph-card-border: #e2e8f0;
+        --ph-accent: #00AFC9;
+        --ph-accent-light: rgba(0, 175, 201, 0.1);
+        --ph-accent-border: rgba(0, 175, 201, 0.3);
+        --ph-text: #1D508A;
+        --ph-text-muted: #64748b;
+        --ph-font: 'Manrope', sans-serif;
+
+        /* Spacing */
+        --ph-spacing-sm: 8px;
+        --ph-spacing-md: 12px;
+        --ph-spacing-lg: 16px;
+        --ph-spacing-xl: 30px;
+
+        /* Border Radius */
+        --ph-radius-sm: 6px;
+        --ph-radius-md: 10px;
+        --ph-radius-lg: 16px;
+        --ph-radius-pill: 100px;
+
+        /* Transitions */
+        --ph-transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        --ph-transition-fast: 0.2s ease;
+
+        /* Shadows */
+        --ph-shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.01), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+        --ph-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        --ph-shadow-badge: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        font-family: var(--ph-font);
+        color: var(--ph-text);
+        padding: 40px 0;
+        position: relative;
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    #btq-modern *,
+    #btq-modern *::before,
+    #btq-modern *::after {
+        box-sizing: border-box;
+    }
+
+    /* HEADER */
+    .btq-header {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: var(--ph-spacing-xl);
+        flex-wrap: wrap;
+    }
+
+    .btq-header__titles {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .btq-header__sup {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--ph-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 6px;
+    }
+
+    .btq-header__title {
+        font-size: 42px;
+        font-weight: 900;
+        line-height: 0.9;
+        text-transform: uppercase;
+        margin: 0;
+        color: var(--ph-text);
+    }
+
+    .btq-header__title span {
+        color: var(--ph-accent);
+    }
+
+    .btq-header__desc {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--ph-text-muted);
+        line-height: 1.5;
+        max-width: 400px;
+        margin-top: var(--ph-spacing-md);
+    }
+
+    /* BENEFITS PILLS */
+    .btq-benefits {
+        display: flex;
+        gap: var(--ph-spacing-sm);
+        flex-wrap: wrap;
+    }
+
+    .btq-benefits__pill {
+        background: var(--ph-accent-light);
+        border: 1px solid var(--ph-accent-border);
+        color: var(--ph-text);
+        font-size: 13px;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: var(--ph-radius-pill);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    /* RESPONSIVE - Mobile */
+    @media (max-width: 600px) {
+        #btq-modern {
+            padding: 20px 0;
+        }
+
+        .btq-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--ph-spacing-lg);
+        }
+
+        .btq-header__title {
+            font-size: 32px;
+        }
+    }
+</style>
+
+<div id="btq-modern">
+    <div class="btq-header">
+        <div class="btq-header__titles">
+            <div class="btq-header__sup">Boutiq</div>
+            <h2 class="btq-header__title">Liquid Diamonds <span>THC OIL</span></h2>
+            <div class="btq-header__desc">Cannabis-derived terpenes meets full-spectrum flavor. Premium liquid diamond vapes & concentrates.</div>
+        </div>
+        <div class="btq-benefits">
+            <div class="btq-benefits__pill">💎 Liquid Diamonds</div>
+            <div class="btq-benefits__pill">🌿 Cannabis-Derived Terpenes</div>
+            <div class="btq-benefits__pill">🔥 Full-Spectrum Flavor</div>
+        </div>
+    </div>
+
+    [leafbridge_specific_product_filter brand="bc87a8a2-5182-4c79-bb07-f2053a35f645" count="20"]
+</div>

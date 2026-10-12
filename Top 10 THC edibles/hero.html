@@ -1,3 +1,4 @@
+<meta name="description" content="Explore the Top 10 Best THC edibles in Los Angeles 2026. Our updated guide features premium gummies, chocolates, and drinks at LAX Cannabis Club. Shop now!">
 <!-- LAXCC THC Guide Hero (Elementor-safe, mobile-first) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -12,10 +13,10 @@
         <span>LAX Cannabis Club Guide 2026</span>
       </div>
 
-      <h1 class="laxclub-hero-title">Top THC Edibles &amp; Gummies in LA</h1>
+      <h1 class="laxclub-hero-title">Top 10 Best THC edibles in Los Angeles 2026</h1>
 
       <p class="laxclub-hero-description">
-        Discover LA's finest cannabis-infused treats in our comprehensive guide. From artisanal chocolates to innovative gummies, explore the best California has to offer.
+        Discover Los Angeles' finest cannabis-infused treats in our comprehensive guide. From artisanal chocolates to innovative gummies, explore the best California has to offer.
       </p>
 
       <div class="laxclub-hero-stats" aria-label="Guide highlights">
@@ -36,34 +37,7 @@
       <a href="https://laxcc.com/shop/thc-gummies-edibles-near-lax-airport/" class="laxclub-hero-cta">Shop THC Edibles Near LAX</a>
     </div>
 
-    <!-- RIGHT: Video (bigger on all screens) -->
-    <div class="laxclub-video-section">
-      <div class="laxclub-video-shell">
-        <div class="video-frame" aria-label="Product video">
-          <video
-            id="hero-video"
-            class="hero-video"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            poster="http://laxcc.com/wp-content/uploads/2025/02/smokiez-edibles11.jpg"
-          >
-            <!-- Use HTTPS if your site is HTTPS -->
-            <source src="http://laxcc.com/wp-content/uploads/2025/08/drops-edibles-gummies-live-rosin.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
 
-          <div class="video-overlay" aria-hidden="true"></div>
-
-          <button id="sound-toggle" class="sound-toggle muted" aria-label="Toggle sound" title="Toggle sound">
-            <i class="fas fa-volume-mute sound-icon muted" aria-hidden="true"></i>
-            <i class="fas fa-volume-up sound-icon unmuted" aria-hidden="true"></i>
-          </button>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -381,30 +355,30 @@
   }
   
   .laxclub-hero-widget .laxclub-hero-container{
-    display: grid;
-    grid-template-columns: minmax(320px, 1.05fr) minmax(320px, .95fr);
-    gap: clamp(32px, 4vw, 64px);
-    text-align: left;
+    max-width: 1200px;
+    text-align: center;
   }
   
   .laxclub-hero-widget .laxclub-content{
-    align-items: flex-start;
-    max-width: 72ch;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 80ch;
   }
   
   .laxclub-hero-widget .laxclub-hero-title{
     font-size: clamp(42px, 4.2vw, 64px);
-    text-align: left;
+    text-align: center;
   }
   
   .laxclub-hero-widget .laxclub-hero-description{
     font-size: clamp(18px, 1.4vw, 20px);
     max-width: 60ch;
-    text-align: left;
+    text-align: center;
   }
   
   .laxclub-hero-widget .laxclub-hero-stats{
     display: flex; /* Switch to flex on desktop */
+    justify-content: center;
     gap: 24px;
     max-width: none;
   }
@@ -455,39 +429,5 @@
 </style>
 
 <script>
-/* LAXCC Hero — small QoL JS (scoped) */
-document.addEventListener('DOMContentLoaded', () => {
-  const video = document.getElementById('hero-video');
-  const toggle = document.getElementById('sound-toggle');
-
-  if (!video || !toggle) return;
-
-  // Initial UI state
-  toggle.classList.add('muted');
-
-  // Toggle mute/unmute
-  toggle.addEventListener('click', () => {
-    const willUnmute = video.muted;
-    video.muted = !video.muted;
-    toggle.classList.toggle('unmuted', willUnmute);
-    toggle.classList.toggle('muted', !willUnmute);
-  });
-
-  // Pause when off-screen; resume when visible
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Resume only if user hasn't paused (we use 'data-paused' to remember)
-        if (!video.dataset.pausedByUser) video.play().catch(() => {});
-      } else {
-        video.pause();
-      }
-    });
-  }, { threshold: 0.25 });
-  io.observe(video);
-
-  // If user manually pauses via native controls (if enabled later)
-  video.addEventListener('pause', () => { video.dataset.pausedByUser = '1'; });
-  video.addEventListener('play',  () => { delete video.dataset.pausedByUser; });
 });
 </script>

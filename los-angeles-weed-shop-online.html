@@ -1,0 +1,1696 @@
+<!-- SEO META — paste into Yoast/RankMath for this page -->
+<!-- Title: Los Angeles Weed Shop Online | Order Cannabis Online at LAX Cannabis Club -->
+<!-- Description: Shop the LAX Cannabis Club online menu — flower, prerolls, vapes, edibles and drinks. Order online, pick up at 8332 Lincoln Blvd in Los Angeles. Open 9AM–9:30PM daily. -->
+<!-- Canonical: https://laxcc.com/los-angeles-weed-shop-online/ -->
+<!-- Suggested URL slug: los-angeles-weed-shop-online -->
+<!-- Primary keyword: Los Angeles weed shop online -->
+<!-- Secondary: order weed online Los Angeles, online dispensary Los Angeles, weed shop near LAX, buy cannabis online LA, LA online weed menu -->
+
+<!--
+  MEDIA MAP — every slot on this page is live. No placeholders remain.
+  All images use class="lso-img" (+ an aspect class) and are cropped with
+  object-fit: cover, so any replacement drops in without a layout change.
+
+    HERO A   4:5   video   los-angeles-weed-shop.webm          (looping, silent)
+    HERO B   1:1   image   best-LA-Cannabis-Club.jpg
+    STORY 01 4:5   image   over-600-cannabis-products-LA_dispensary.jpg
+    STORY 02 4:5   image   out-side-LAX-cannabis-club-...california.jpg
+    STORY 03 4:5   image   lax-cannabis-club-dispensary-faq.jpg
+    STORY 04 4:5   video   LAXX-FINAL_1.mp4                    (looping, silent)
+    TILE     3:4   image   Flower   LAXCC-Airport-DispensaryNearMe-LA-beachside_10.jpg
+                           Prerolls best-pre-rolls-in-LA.jpg
+                           Vapes    alien-labs-vaporizer-near-me-LA.jpg
+                           Edibles  camino-edibles-la.jpg
+                           Drinks   Uncle-Arnies04.jpg
+                           Extracts THC-design-cannabis.jpg
+    CTA      16:9  image   lusty-in-house-cannabis.jpg         (fills column on desktop)
+    HERO BG        image   best-los-angeles-weed-shop.png      (weed art, full-bleed, 38%)
+
+  To swap any image: replace the src. Keep the class list intact.
+  To re-crop one: add object-position (e.g. `object-position: center top`).
+
+  HERO VIDEO (plate A) — COMPATIBILITY NOTE
+  Silent, endless loop, no controls, autoplays on mobile (muted + playsinline).
+  Older Safari / iOS 15 and below cannot play .webm and will show a blank
+  plate. To close that gap, export an .mp4 (H.264) and swap the src for
+  source tags:
+      <video class="lso-video ar-45" autoplay muted loop playsinline preload="auto">
+        <source src=".../los-angeles-weed-shop.webm" type="video/webm">
+        <source src=".../los-angeles-weed-shop.mp4"  type="video/mp4">
+      </video>
+-->
+
+<style>
+    /* ========================================
+       LOS ANGELES WEED SHOP ONLINE — LAXCC
+       Scoped to .laxcc-la-shop-online
+       Magazine storyboard + criss-cross hero
+       Elementor-safe: all rules use !important, zero JS
+       ======================================== */
+
+    .laxcc-la-shop-online *,
+    .laxcc-la-shop-online *::before,
+    .laxcc-la-shop-online *::after {
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .laxcc-la-shop-online {
+        --teal: #00AFC9;
+        --navy: #0f3a5f;
+        --orange: #F89459;
+        --peach: #FBD1A1;
+        --green: #3daa6e;
+        --cream: #fbf8f2;
+        --cream-deep: #f2ece1;
+        --ink: #1a1714;
+        --white: #ffffff;
+        --text: #1e293b;
+        --muted: #64748b;
+        --rule: rgba(15, 58, 95, 0.14);
+
+        --sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --serif: 'Playfair Display', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+        --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+        font-family: var(--sans) !important;
+        background: var(--cream) !important;
+        color: var(--text) !important;
+        line-height: 1.6 !important;
+        overflow-x: hidden !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+    }
+
+    .laxcc-la-shop-online section { background: var(--cream) !important; }
+
+    /* ---------- SHARED PRIMITIVES ---------- */
+
+    .laxcc-la-shop-online .lso-wrap {
+        max-width: 1320px !important;
+        margin: 0 auto !important;
+        padding: 0 20px !important;
+    }
+
+    /* Eyebrow — plain text only, no bg, no border */
+    .laxcc-la-shop-online .lso-eyebrow {
+        display: block !important;
+        font-family: var(--mono) !important;
+        font-size: 0.66rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.22em !important;
+        text-transform: uppercase !important;
+        color: #0a7d8f !important;
+        margin-bottom: 14px !important;
+        white-space: nowrap !important;
+    }
+    .laxcc-la-shop-online .lso-eyebrow.is-orange { color: var(--teal) !important; }
+    .laxcc-la-shop-online .lso-eyebrow.is-light { color: #ffffff !important; }
+
+    /* Hairline rule (only allowed divider — no boxes, no outlines) */
+    .laxcc-la-shop-online .lso-rule {
+        height: 1px !important;
+        width: 100% !important;
+        background: var(--rule) !important;
+    }
+
+    /* IMAGE PLACEHOLDER — swap for <img class="lso-img"> later */
+    .laxcc-la-shop-online .lso-ph {
+        position: relative !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        background: linear-gradient(150deg, #e9e0d2 0%, #dfe9ea 55%, #e4ded2 100%) !important;
+        color: rgba(15, 58, 95, 0.5) !important;
+        font-family: var(--mono) !important;
+        text-align: center !important;
+        overflow: hidden !important;
+        border-radius: 4px !important;
+    }
+    .laxcc-la-shop-online .lso-ph::before {
+        content: '' !important;
+        position: absolute !important;
+        inset: 10px !important;
+        background:
+            repeating-linear-gradient(45deg, rgba(15,58,95,0.05) 0 10px, transparent 10px 20px) !important;
+        pointer-events: none !important;
+    }
+    .laxcc-la-shop-online .lso-ph-label {
+        position: relative !important;
+        font-size: 0.68rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.18em !important;
+        text-transform: uppercase !important;
+        line-height: 1.5 !important;
+    }
+    .laxcc-la-shop-online .lso-ph-dim {
+        position: relative !important;
+        font-size: 0.6rem !important;
+        letter-spacing: 0.1em !important;
+        color: rgba(15, 58, 95, 0.38) !important;
+        line-height: 1.5 !important;
+    }
+    /* Real images drop straight into the same boxes */
+    .laxcc-la-shop-online .lso-img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+        border-radius: 4px !important;
+    }
+
+    /* Background video — fills its box exactly like .lso-ph / .lso-img.
+       Muted + looping + no controls, so it reads as a moving photo plate. */
+    .laxcc-la-shop-online .lso-video {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+        border-radius: 4px !important;
+        background: #e9e0d2 !important;
+        pointer-events: none !important;
+    }
+    .laxcc-la-shop-online .lso-video::-webkit-media-controls { display: none !important; }
+
+    /* Aspect boxes */
+    .laxcc-la-shop-online .ar-45  { aspect-ratio: 4 / 5 !important; }
+    .laxcc-la-shop-online .ar-34  { aspect-ratio: 3 / 4 !important; }
+    .laxcc-la-shop-online .ar-11  { aspect-ratio: 1 / 1 !important; }
+    .laxcc-la-shop-online .ar-169 { aspect-ratio: 16 / 9 !important; }
+
+    /* Buttons — orange only, white text, never wrap */
+    .laxcc-la-shop-online .lso-btn,
+    .laxcc-la-shop-online a.lso-btn,
+    .laxcc-la-shop-online a.lso-btn:link,
+    .laxcc-la-shop-online a.lso-btn:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        background: var(--orange) !important;
+        color: #ffffff !important;
+        font-family: var(--sans) !important;
+        font-size: 0.82rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.07em !important;
+        text-transform: uppercase !important;
+        padding: 16px 30px !important;
+        border-radius: 10px !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        border: none !important;
+        transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+        cursor: pointer !important;
+    }
+    .laxcc-la-shop-online a.lso-btn:hover,
+    .laxcc-la-shop-online a.lso-btn:focus {
+        color: #ffffff !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 10px 30px rgba(248, 148, 89, 0.38) !important;
+    }
+
+    /* Text link (secondary action — no button chrome) */
+    .laxcc-la-shop-online .lso-link,
+    .laxcc-la-shop-online a.lso-link,
+    .laxcc-la-shop-online a.lso-link:link,
+    .laxcc-la-shop-online a.lso-link:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        color: var(--navy) !important;
+        font-size: 0.8rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.06em !important;
+        text-transform: uppercase !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        padding: 14px 0 !important;
+        box-shadow: inset 0 -1px 0 rgba(15, 58, 95, 0.3) !important;
+        transition: color 0.25s ease, box-shadow 0.25s ease !important;
+    }
+    .laxcc-la-shop-online a.lso-link:hover {
+        color: var(--teal) !important;
+        box-shadow: inset 0 -1px 0 var(--teal) !important;
+    }
+    .laxcc-la-shop-online .lso-link.is-light,
+    .laxcc-la-shop-online a.lso-link.is-light:link,
+    .laxcc-la-shop-online a.lso-link.is-light:visited {
+        color: #ffffff !important;
+        box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.45) !important;
+    }
+
+    /* Vertical rotated rail label (magazine spine) */
+    .laxcc-la-shop-online .lso-spine {
+        display: none !important;
+        font-family: var(--mono) !important;
+        font-size: 0.62rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.34em !important;
+        text-transform: uppercase !important;
+        color: rgba(15, 58, 95, 0.4) !important;
+        white-space: nowrap !important;
+        writing-mode: vertical-rl !important;
+        transform: rotate(180deg) !important;
+    }
+
+    /* ============ 1. CRISS-CROSS HERO ============ */
+
+    .laxcc-la-shop-online .lso-hero {
+        padding: 28px 0 40px !important;
+        overflow: hidden !important;
+    }
+    .laxcc-la-shop-online .lso-hero-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+
+    /* Mobile source order: image first (never hidden), then copy */
+    .laxcc-la-shop-online .lso-hero-a { order: 1 !important; }
+    .laxcc-la-shop-online .lso-hero-copy { order: 2 !important; padding-top: 26px !important; }
+    .laxcc-la-shop-online .lso-hero-b { order: 3 !important; padding-top: 22px !important; }
+
+    .laxcc-la-shop-online .lso-hero h1 {
+        font-family: var(--serif) !important;
+        font-weight: 900 !important;
+        font-size: clamp(2.5rem, 12vw, 3.6rem) !important;
+        line-height: 0.94 !important;
+        letter-spacing: -0.03em !important;
+        color: var(--navy) !important;
+        margin-bottom: 20px !important;
+    }
+    .laxcc-la-shop-online .lso-hero h1 .l1 { display: block !important; color: var(--navy) !important; }
+    .laxcc-la-shop-online .lso-hero h1 .l2 {
+        display: block !important;
+        color: var(--navy) !important;
+        font-style: italic !important;
+        margin-left: 6vw !important;
+    }
+    .laxcc-la-shop-online .lso-hero h1 .l3 {
+        display: block !important;
+        color: var(--navy) !important;
+        margin-left: 2vw !important;
+    }
+    .laxcc-la-shop-online .lso-hero-sub {
+        font-size: 1rem !important;
+        line-height: 1.7 !important;
+        color: var(--muted) !important;
+        max-width: 520px !important;
+        margin-bottom: 26px !important;
+    }
+    .laxcc-la-shop-online .lso-hero-sub strong { color: var(--navy) !important; font-weight: 800 !important; }
+    .laxcc-la-shop-online .lso-hero-actions {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        gap: 14px 26px !important;
+        margin-bottom: 30px !important;
+    }
+
+    /* Hero fact list — hairline rows, no boxes */
+    .laxcc-la-shop-online .lso-facts { display: flex !important; flex-direction: column !important; max-width: 460px !important; }
+    .laxcc-la-shop-online .lso-fact {
+        display: flex !important;
+        align-items: baseline !important;
+        justify-content: space-between !important;
+        gap: 18px !important;
+        padding: 13px 0 !important;
+        box-shadow: 0 1px 0 var(--rule) !important;
+    }
+    .laxcc-la-shop-online .lso-fact:first-child { box-shadow: 0 1px 0 var(--rule), 0 -1px 0 var(--rule) !important; }
+    .laxcc-la-shop-online .lso-fact-k {
+        font-family: var(--mono) !important;
+        font-size: 0.62rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.16em !important;
+        text-transform: uppercase !important;
+        color: var(--muted) !important;
+        white-space: nowrap !important;
+    }
+    .laxcc-la-shop-online .lso-fact-v {
+        font-size: 0.92rem !important;
+        font-weight: 800 !important;
+        color: var(--navy) !important;
+        text-align: right !important;
+    }
+
+    .laxcc-la-shop-online .lso-hero-caption {
+        font-family: var(--mono) !important;
+        font-size: 0.62rem !important;
+        letter-spacing: 0.14em !important;
+        text-transform: uppercase !important;
+        color: var(--muted) !important;
+        padding-top: 10px !important;
+        line-height: 1.6 !important;
+    }
+
+    /* ============ 2. TICKER STRIP ============ */
+
+    .laxcc-la-shop-online .lso-strip { padding: 0 0 8px !important; }
+    .laxcc-la-shop-online .lso-strip-inner {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0 !important;
+        padding: 22px 0 !important;
+        box-shadow: 0 1px 0 var(--rule), 0 -1px 0 var(--rule) !important;
+    }
+    .laxcc-la-shop-online .lso-strip-cell { padding: 14px 12px !important; text-align: center !important; }
+    .laxcc-la-shop-online .lso-strip-val {
+        font-family: var(--serif) !important;
+        font-size: 1.7rem !important;
+        font-weight: 900 !important;
+        color: var(--teal) !important;
+        line-height: 1 !important;
+        letter-spacing: -0.02em !important;
+        white-space: nowrap !important;
+    }
+    .laxcc-la-shop-online .lso-strip-lbl {
+        font-family: var(--mono) !important;
+        font-size: 0.58rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.16em !important;
+        text-transform: uppercase !important;
+        color: var(--muted) !important;
+        margin-top: 8px !important;
+        line-height: 1.5 !important;
+    }
+
+    /* ============ 3. STORYBOARD ============ */
+
+    .laxcc-la-shop-online .lso-board { padding: 56px 0 20px !important; }
+    .laxcc-la-shop-online .lso-board-head { max-width: 720px !important; margin-bottom: 44px !important; }
+    .laxcc-la-shop-online .lso-h2 {
+        font-family: var(--serif) !important;
+        font-size: clamp(1.9rem, 6.5vw, 2.9rem) !important;
+        font-weight: 900 !important;
+        line-height: 1.05 !important;
+        letter-spacing: -0.025em !important;
+        color: var(--navy) !important;
+        margin-bottom: 16px !important;
+    }
+    .laxcc-la-shop-online .lso-h2 em { font-style: italic !important; color: var(--teal) !important; }
+    .laxcc-la-shop-online .lso-lede {
+        font-size: 1rem !important;
+        line-height: 1.75 !important;
+        color: var(--muted) !important;
+        max-width: 620px !important;
+    }
+
+    .laxcc-la-shop-online .lso-story {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+        padding: 34px 0 !important;
+        box-shadow: 0 -1px 0 var(--rule) !important;
+    }
+    .laxcc-la-shop-online .lso-story-media { order: 1 !important; }
+    .laxcc-la-shop-online .lso-story-body { order: 2 !important; padding-top: 24px !important; }
+
+    .laxcc-la-shop-online .lso-num {
+        font-family: var(--serif) !important;
+        font-size: 3rem !important;
+        font-weight: 900 !important;
+        line-height: 0.8 !important;
+        letter-spacing: -0.04em !important;
+        color: rgba(15, 58, 95, 0.16) !important;
+        display: block !important;
+        margin-bottom: 12px !important;
+    }
+    .laxcc-la-shop-online .lso-story h3 {
+        font-family: var(--serif) !important;
+        font-size: clamp(1.5rem, 5.5vw, 2rem) !important;
+        font-weight: 900 !important;
+        line-height: 1.12 !important;
+        letter-spacing: -0.02em !important;
+        color: var(--navy) !important;
+        margin-bottom: 14px !important;
+    }
+    .laxcc-la-shop-online .lso-story p {
+        font-size: 0.98rem !important;
+        line-height: 1.78 !important;
+        color: var(--muted) !important;
+        margin-bottom: 14px !important;
+        max-width: 560px !important;
+    }
+    .laxcc-la-shop-online .lso-story p strong { color: var(--navy) !important; font-weight: 800 !important; }
+
+    /* Icon-row detail list — no bullets, no bars, no boxes */
+    .laxcc-la-shop-online .lso-details { display: flex !important; flex-direction: column !important; margin-top: 18px !important; max-width: 560px !important; }
+    .laxcc-la-shop-online .lso-detail {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 14px !important;
+        padding: 13px 0 !important;
+        box-shadow: 0 1px 0 var(--rule) !important;
+    }
+    .laxcc-la-shop-online .lso-detail:last-child { box-shadow: none !important; }
+    .laxcc-la-shop-online .lso-detail-icon {
+        flex: 0 0 auto !important;
+        width: 26px !important;
+        font-family: var(--mono) !important;
+        font-size: 0.66rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.1em !important;
+        color: var(--teal) !important;
+        line-height: 1.75 !important;
+        white-space: nowrap !important;
+    }
+    .laxcc-la-shop-online .lso-detail-txt {
+        font-size: 0.92rem !important;
+        line-height: 1.7 !important;
+        color: var(--text) !important;
+    }
+    .laxcc-la-shop-online .lso-detail-txt b { color: var(--navy) !important; font-weight: 800 !important; }
+
+    .laxcc-la-shop-online .lso-caption {
+        font-family: var(--mono) !important;
+        font-size: 0.6rem !important;
+        letter-spacing: 0.14em !important;
+        text-transform: uppercase !important;
+        color: var(--muted) !important;
+        padding-top: 10px !important;
+        line-height: 1.6 !important;
+    }
+
+    /* ============ 4. PULL QUOTE ============ */
+
+    .laxcc-la-shop-online .lso-quote { padding: 52px 0 !important; }
+    .laxcc-la-shop-online .lso-quote-inner {
+        max-width: 900px !important;
+        padding: 44px 0 !important;
+        box-shadow: 0 1px 0 var(--rule), 0 -1px 0 var(--rule) !important;
+    }
+    .laxcc-la-shop-online .lso-quote blockquote {
+        font-family: var(--serif) !important;
+        font-size: clamp(1.4rem, 5vw, 2.2rem) !important;
+        font-weight: 700 !important;
+        font-style: italic !important;
+        line-height: 1.3 !important;
+        letter-spacing: -0.02em !important;
+        color: var(--navy) !important;
+    }
+    .laxcc-la-shop-online .lso-quote blockquote span { color: var(--teal) !important; }
+    .laxcc-la-shop-online .lso-quote cite {
+        display: block !important;
+        margin-top: 20px !important;
+        font-family: var(--mono) !important;
+        font-style: normal !important;
+        font-size: 0.62rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.18em !important;
+        text-transform: uppercase !important;
+        color: var(--muted) !important;
+    }
+
+    /* ============ 5. CATEGORY TILES ============ */
+
+    .laxcc-la-shop-online .lso-cats { padding: 20px 0 56px !important; }
+    .laxcc-la-shop-online .lso-cat-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 22px 16px !important;
+        margin-top: 34px !important;
+    }
+    .laxcc-la-shop-online .lso-cat { display: block !important; text-decoration: none !important; }
+    .laxcc-la-shop-online a.lso-cat:link,
+    .laxcc-la-shop-online a.lso-cat:visited { text-decoration: none !important; }
+    .laxcc-la-shop-online .lso-cat-name {
+        display: block !important;
+        font-family: var(--serif) !important;
+        font-size: 1.15rem !important;
+        font-weight: 900 !important;
+        letter-spacing: -0.02em !important;
+        color: var(--navy) !important;
+        margin-top: 14px !important;
+        line-height: 1.2 !important;
+    }
+    .laxcc-la-shop-online a.lso-cat:hover .lso-cat-name { color: var(--teal) !important; }
+    .laxcc-la-shop-online .lso-cat-meta {
+        display: block !important;
+        font-family: var(--mono) !important;
+        font-size: 0.6rem !important;
+        letter-spacing: 0.14em !important;
+        text-transform: uppercase !important;
+        color: var(--muted) !important;
+        margin-top: 6px !important;
+        line-height: 1.6 !important;
+    }
+
+    /* ============ 6. HOW IT WORKS ============ */
+
+    .laxcc-la-shop-online .lso-steps { padding: 8px 0 56px !important; }
+    .laxcc-la-shop-online .lso-step-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 0 !important;
+        margin-top: 32px !important;
+    }
+    .laxcc-la-shop-online .lso-step { padding: 26px 0 !important; box-shadow: 0 1px 0 var(--rule) !important; }
+    .laxcc-la-shop-online .lso-step:first-child { box-shadow: 0 1px 0 var(--rule), 0 -1px 0 var(--rule) !important; }
+    .laxcc-la-shop-online .lso-step-n {
+        font-family: var(--mono) !important;
+        font-size: 0.62rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.2em !important;
+        text-transform: uppercase !important;
+        color: var(--teal) !important;
+        display: block !important;
+        margin-bottom: 10px !important;
+    }
+    .laxcc-la-shop-online .lso-step h4 {
+        font-family: var(--serif) !important;
+        font-size: 1.3rem !important;
+        font-weight: 900 !important;
+        color: var(--navy) !important;
+        letter-spacing: -0.02em !important;
+        margin-bottom: 8px !important;
+        line-height: 1.2 !important;
+    }
+    .laxcc-la-shop-online .lso-step p {
+        font-size: 0.94rem !important;
+        line-height: 1.72 !important;
+        color: var(--muted) !important;
+        max-width: 460px !important;
+    }
+
+    /* ============ 7. FAQ ============ */
+
+    .laxcc-la-shop-online .lso-faq { padding: 8px 0 56px !important; }
+    .laxcc-la-shop-online .lso-faq-list { margin-top: 30px !important; }
+    .laxcc-la-shop-online .lso-faq-item { padding: 24px 0 !important; box-shadow: 0 1px 0 var(--rule) !important; }
+    .laxcc-la-shop-online .lso-faq-item:first-child { box-shadow: 0 1px 0 var(--rule), 0 -1px 0 var(--rule) !important; }
+    .laxcc-la-shop-online .lso-faq-item h4 {
+        font-family: var(--serif) !important;
+        font-size: 1.15rem !important;
+        font-weight: 900 !important;
+        color: var(--navy) !important;
+        letter-spacing: -0.015em !important;
+        margin-bottom: 10px !important;
+        line-height: 1.3 !important;
+    }
+    .laxcc-la-shop-online .lso-faq-item p {
+        font-size: 0.94rem !important;
+        line-height: 1.75 !important;
+        color: var(--muted) !important;
+        max-width: 720px !important;
+    }
+    .laxcc-la-shop-online .lso-faq-item p a,
+    .laxcc-la-shop-online .lso-faq-item p a:link,
+    .laxcc-la-shop-online .lso-faq-item p a:visited {
+        color: var(--navy) !important;
+        font-weight: 800 !important;
+        text-decoration: underline !important;
+    }
+    .laxcc-la-shop-online .lso-faq-item p a:hover { color: var(--teal) !important; }
+
+    /* ============ 8. FINAL CTA (warm dark, never navy/blue) ============ */
+
+    .laxcc-la-shop-online .lso-cta { background: var(--ink) !important; padding: 0 !important; }
+    .laxcc-la-shop-online .lso-cta-grid { display: flex !important; flex-direction: column !important; }
+    .laxcc-la-shop-online .lso-cta-media { order: 1 !important; }
+    .laxcc-la-shop-online .lso-cta-media .lso-ph,
+    .laxcc-la-shop-online .lso-cta-media .lso-img { border-radius: 0 !important; height: 100% !important; }
+    .laxcc-la-shop-online .lso-cta-body {
+        order: 2 !important;
+        padding: 44px 20px 52px !important;
+    }
+    .laxcc-la-shop-online .lso-cta h2 {
+        font-family: var(--serif) !important;
+        font-size: clamp(1.9rem, 7vw, 2.8rem) !important;
+        font-weight: 900 !important;
+        line-height: 1.06 !important;
+        letter-spacing: -0.025em !important;
+        color: var(--white) !important;
+        margin-bottom: 16px !important;
+    }
+    .laxcc-la-shop-online .lso-cta h2 em { font-style: italic !important; color: #ffffff !important; }
+    .laxcc-la-shop-online .lso-cta p {
+        font-size: 0.98rem !important;
+        line-height: 1.75 !important;
+        color: rgba(255, 255, 255, 0.74) !important;
+        max-width: 500px !important;
+        margin-bottom: 26px !important;
+    }
+    .laxcc-la-shop-online .lso-cta-actions {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        gap: 14px 26px !important;
+        margin-bottom: 30px !important;
+    }
+    .laxcc-la-shop-online .lso-cta-facts { display: flex !important; flex-direction: column !important; max-width: 460px !important; }
+    .laxcc-la-shop-online .lso-cta-fact {
+        display: flex !important;
+        align-items: baseline !important;
+        justify-content: space-between !important;
+        gap: 18px !important;
+        padding: 12px 0 !important;
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.14) !important;
+    }
+    .laxcc-la-shop-online .lso-cta-fact:last-child { box-shadow: none !important; }
+    .laxcc-la-shop-online .lso-cta-k {
+        font-family: var(--mono) !important;
+        font-size: 0.6rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.16em !important;
+        text-transform: uppercase !important;
+        color: rgba(255, 255, 255, 0.5) !important;
+        white-space: nowrap !important;
+    }
+    .laxcc-la-shop-online .lso-cta-v {
+        font-size: 0.9rem !important;
+        font-weight: 800 !important;
+        color: var(--white) !important;
+        text-align: right !important;
+    }
+    .laxcc-la-shop-online .lso-cta-v a,
+    .laxcc-la-shop-online .lso-cta-v a:link,
+    .laxcc-la-shop-online .lso-cta-v a:visited { color: var(--white) !important; text-decoration: none !important; }
+    .laxcc-la-shop-online .lso-cta-v a:hover { color: var(--teal) !important; }
+
+    .laxcc-la-shop-online .lso-legal {
+        padding: 26px 0 44px !important;
+        font-family: var(--mono) !important;
+        font-size: 0.58rem !important;
+        letter-spacing: 0.1em !important;
+        text-transform: uppercase !important;
+        line-height: 1.9 !important;
+        color: var(--muted) !important;
+    }
+
+    /* =========================================================
+       TABLET — 2-up grids
+       ========================================================= */
+    @media (min-width: 600px) {
+        .laxcc-la-shop-online .lso-strip-inner { grid-template-columns: repeat(4, 1fr) !important; }
+        .laxcc-la-shop-online .lso-cat-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 26px 20px !important; }
+        .laxcc-la-shop-online .lso-step-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 0 28px !important; }
+        .laxcc-la-shop-online .lso-step,
+        .laxcc-la-shop-online .lso-step:first-child { box-shadow: 0 -1px 0 var(--rule) !important; padding: 26px 0 0 !important; }
+    }
+
+    /* =========================================================
+       DESKTOP — CRISS-CROSS LAYOUT
+       Hero: 12-col grid, copy block and two media plates
+       overlap across each other on opposing diagonals.
+       ========================================================= */
+    @media (min-width: 1000px) {
+
+        .laxcc-la-shop-online .lso-spine { display: block !important; }
+
+        /* Reclaim the dead margins on wide screens — 1320px was leaving
+           ~150px of empty cream on each side and squeezing every column. */
+        .laxcc-la-shop-online .lso-wrap {
+            max-width: 1560px !important;
+            padding: 0 40px !important;
+        }
+
+        /* ---- HERO ----
+           ONE row, two real columns. The copy owns cols 1–6 and fills them
+           edge to edge (no max-widths, no fake bottom padding). The video
+           owns cols 7–12 and stretches to the full height of the row.
+           Plate B hangs off the video's lower-left corner and overhangs the
+           gutter — that overhang IS the criss-cross. Nothing depends on a
+           second row or a negative margin guess. */
+        /* Bottom padding is deep because plate B hangs below the video */
+        .laxcc-la-shop-online .lso-hero { padding: 48px 0 210px !important; }
+        .laxcc-la-shop-online .lso-hero-grid {
+            display: grid !important;
+            grid-template-columns: repeat(12, 1fr) !important;
+            grid-template-rows: auto !important;
+            align-items: stretch !important;
+            column-gap: 32px !important;
+            row-gap: 0 !important;
+        }
+
+        /* COPY — cols 1–6, centred vertically, uses the whole column width */
+        .laxcc-la-shop-online .lso-hero-copy {
+            grid-column: 1 / 7 !important;
+            grid-row: 1 !important;
+            z-index: 2 !important;
+            align-self: center !important;
+            /* Right padding is the safety gutter plate B overhangs into.
+               It must always exceed plate B's negative left margin. */
+            padding: 0 40px 0 0 !important;
+            background: transparent !important;
+        }
+        /* Kill the mobile width caps — they were the "smushed" culprit */
+        .laxcc-la-shop-online .lso-hero-copy .lso-hero-sub,
+        .laxcc-la-shop-online .lso-hero-copy .lso-facts {
+            max-width: none !important;
+            width: 100% !important;
+        }
+
+        /* VIDEO PLATE — cols 7–12, fills the row top to bottom */
+        .laxcc-la-shop-online .lso-hero-a {
+            grid-column: 7 / 13 !important;
+            grid-row: 1 !important;
+            z-index: 1 !important;
+            position: relative !important;
+            display: flex !important;
+            flex-direction: column !important;
+            padding: 0 !important;
+        }
+        .laxcc-la-shop-online .lso-hero-a .lso-ph,
+        .laxcc-la-shop-online .lso-hero-a .lso-video {
+            aspect-ratio: auto !important;
+            flex: 1 1 auto !important;
+            height: auto !important;
+            min-height: 700px !important;
+            max-height: none !important;
+        }
+        /* Caption is pulled out of the flow so hero-a's bottom edge IS the
+           video's bottom edge — that's the reference plate B aligns to. */
+        .laxcc-la-shop-online .lso-hero-a .lso-hero-caption {
+            position: absolute !important;
+            left: 52% !important;
+            right: 0 !important;
+            bottom: -38px !important;
+            text-align: right !important;
+            padding: 0 !important;
+        }
+
+        /* PLATE B — crosses the video's bottom-left CORNER and hangs below it.
+           Only a shallow band overlaps the video instead of the plate sitting
+           on top of it. Two constraints keep it safe:
+             · margin-left (-60px) < gutter (40px padding + 32px gap = 72px)
+               → it can never reach the copy text
+             · margin-bottom (-170px) < hero bottom padding (210px)
+               → it can never crash into the stat strip below */
+        .laxcc-la-shop-online .lso-hero-b {
+            grid-column: 7 / 11 !important;
+            grid-row: 1 !important;
+            align-self: end !important;
+            justify-self: start !important;
+            z-index: 3 !important;
+            width: 380px !important;
+            max-width: none !important;
+            margin: 0 0 -170px -60px !important;
+            padding: 10px !important;
+            background: var(--cream) !important;
+            border-radius: 6px !important;
+            box-shadow: 0 24px 56px rgba(15, 58, 95, 0.18) !important;
+        }
+
+        /* Headline is sized to actually FILL the copy column. "Los Angeles" is
+           the widest line at ~6.05em, so the column's text width divided by
+           6.05 is the largest safe size — 6.1vw tracks that across the range. */
+        .laxcc-la-shop-online .lso-hero h1 {
+            font-size: clamp(3rem, 6.1vw, 6.8rem) !important;
+            line-height: 0.92 !important;
+            margin-bottom: 30px !important;
+        }
+        .laxcc-la-shop-online .lso-hero h1 .l1,
+        .laxcc-la-shop-online .lso-hero h1 .l2,
+        .laxcc-la-shop-online .lso-hero h1 .l3 { white-space: nowrap !important; }
+        .laxcc-la-shop-online .lso-hero h1 .l2 { margin-left: 0.62em !important; }
+        .laxcc-la-shop-online .lso-hero h1 .l3 { margin-left: 0.22em !important; }
+        .laxcc-la-shop-online .lso-hero-sub { font-size: 1.06rem !important; margin-bottom: 30px !important; }
+        .laxcc-la-shop-online .lso-hero-actions { margin-bottom: 34px !important; }
+
+        /* Spine label sits vertically beside the video plate */
+        .laxcc-la-shop-online .lso-hero-a .lso-spine {
+            position: absolute !important;
+            left: -26px !important;
+            top: 0 !important;
+        }
+
+        /* ---- STRIP ---- */
+        .laxcc-la-shop-online .lso-strip-cell { text-align: left !important; padding: 4px 24px 4px 0 !important; }
+        .laxcc-la-shop-online .lso-strip-val { font-size: 2.1rem !important; }
+
+        /* ---- STORYBOARD: alternating criss-cross ---- */
+        .laxcc-la-shop-online .lso-board { padding: 84px 0 30px !important; }
+        /* Section intro spans the full width: heading left, lede right,
+           baselines aligned. No 720px block stranded in a 1480px row. */
+        .laxcc-la-shop-online .lso-board-head {
+            display: grid !important;
+            grid-template-columns: repeat(12, 1fr) !important;
+            column-gap: 32px !important;
+            align-items: end !important;
+            max-width: none !important;
+            margin-bottom: 64px !important;
+        }
+        .laxcc-la-shop-online .lso-board-head .lso-eyebrow { grid-column: 1 / -1 !important; }
+        .laxcc-la-shop-online .lso-board-head .lso-h2 {
+            grid-column: 1 / 8 !important;
+            margin-bottom: 0 !important;
+        }
+        .laxcc-la-shop-online .lso-board-head .lso-lede {
+            grid-column: 8 / 13 !important;
+            max-width: none !important;
+            padding-bottom: 6px !important;
+        }
+
+        .laxcc-la-shop-online .lso-story {
+            display: grid !important;
+            grid-template-columns: repeat(12, 1fr) !important;
+            column-gap: 32px !important;
+            align-items: center !important;
+            padding: 70px 0 !important;
+        }
+        /* Odd rows: media right, text left, media rides high */
+        .laxcc-la-shop-online .lso-story .lso-story-media {
+            grid-column: 8 / 13 !important;
+            grid-row: 1 !important;
+            margin-top: -40px !important;
+            padding: 0 !important;
+        }
+        .laxcc-la-shop-online .lso-story .lso-story-body {
+            grid-column: 1 / 8 !important;
+            grid-row: 1 !important;
+            padding: 0 40px 0 0 !important;
+            z-index: 2 !important;
+        }
+        /* Even rows: flip the cross */
+        .laxcc-la-shop-online .lso-story.is-flip .lso-story-media {
+            grid-column: 1 / 6 !important;
+            margin-top: 40px !important;
+        }
+        .laxcc-la-shop-online .lso-story.is-flip .lso-story-body {
+            grid-column: 6 / 13 !important;
+            padding: 0 0 0 40px !important;
+        }
+
+        /* The story body is itself two columns: prose on the left, the
+           detail list on the right. The 560px caps below were leaving
+           ~280px of the column dead while squeezing the text — never
+           leave a column half-filled. */
+        .laxcc-la-shop-online .lso-story-body {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            column-gap: 44px !important;
+            align-content: start !important;
+        }
+        .laxcc-la-shop-online .lso-story-body .lso-num,
+        .laxcc-la-shop-online .lso-story-body h3 { grid-column: 1 / -1 !important; }
+        .laxcc-la-shop-online .lso-story-body .lso-story-text { grid-column: 1 !important; }
+        .laxcc-la-shop-online .lso-story-body .lso-details {
+            grid-column: 2 !important;
+            margin-top: 0 !important;
+        }
+        .laxcc-la-shop-online .lso-story-body p,
+        .laxcc-la-shop-online .lso-story-body .lso-details { max-width: none !important; }
+        .laxcc-la-shop-online .lso-story-body .lso-detail:first-child { padding-top: 0 !important; }
+
+        .laxcc-la-shop-online .lso-num { font-size: 4.4rem !important; margin-bottom: 16px !important; }
+
+        /* ---- QUOTE ---- */
+        .laxcc-la-shop-online .lso-quote { padding: 78px 0 !important; }
+        .laxcc-la-shop-online .lso-quote-inner { padding: 60px 0 !important; margin: 0 auto !important; }
+
+        /* ---- CATS ---- */
+        .laxcc-la-shop-online .lso-cats { padding: 30px 0 84px !important; }
+        .laxcc-la-shop-online .lso-cat-grid { grid-template-columns: repeat(6, 1fr) !important; gap: 0 20px !important; margin-top: 42px !important; }
+        /* Stagger the tiles so the row reads as a criss-cross, not a straight band */
+        .laxcc-la-shop-online .lso-cat-grid > *:nth-child(odd)  { margin-top: 0 !important; }
+        .laxcc-la-shop-online .lso-cat-grid > *:nth-child(even) { margin-top: 46px !important; }
+
+        /* ---- STEPS ---- */
+        .laxcc-la-shop-online .lso-steps { padding: 0 0 84px !important; }
+
+        /* ---- FAQ ---- */
+        .laxcc-la-shop-online .lso-faq { padding: 0 0 84px !important; }
+        .laxcc-la-shop-online .lso-faq-list {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            column-gap: 56px !important;
+        }
+        .laxcc-la-shop-online .lso-faq-item:nth-child(2) { box-shadow: 0 1px 0 var(--rule), 0 -1px 0 var(--rule) !important; }
+
+        /* ---- CTA ---- */
+        .laxcc-la-shop-online .lso-cta-grid {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            align-items: stretch !important;
+            min-height: 560px !important;
+        }
+        .laxcc-la-shop-online .lso-cta-media { order: 1 !important; position: relative !important; }
+        .laxcc-la-shop-online .lso-cta-media .lso-ph,
+        .laxcc-la-shop-online .lso-cta-media .lso-img {
+            position: absolute !important;
+            inset: 0 !important;
+            aspect-ratio: auto !important;
+            height: 100% !important;
+            object-fit: cover !important;
+        }
+        .laxcc-la-shop-online .lso-cta-body {
+            order: 2 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            padding: 88px 72px !important;
+        }
+        /* Same rule as the storyboard — mobile width caps must not survive
+           into a desktop column, or the column sits half empty. */
+        .laxcc-la-shop-online .lso-cta-body p,
+        .laxcc-la-shop-online .lso-cta-facts { max-width: none !important; }
+        .laxcc-la-shop-online .lso-quote-inner { max-width: 1100px !important; }
+    }
+
+    /* Wide desktop — let the cross breathe */
+    @media (min-width: 1400px) {
+        .laxcc-la-shop-online .lso-wrap { max-width: 1760px !important; padding: 0 48px !important; }
+        .laxcc-la-shop-online .lso-hero-copy { padding-right: 56px !important; }
+        .laxcc-la-shop-online .lso-hero-b { width: 440px !important; margin: 0 0 -195px -76px !important; }
+        .laxcc-la-shop-online .lso-hero { padding-bottom: 240px !important; }
+        .laxcc-la-shop-online .lso-hero-a .lso-ph,
+        .laxcc-la-shop-online .lso-hero-a .lso-video { min-height: 760px !important; }
+        .laxcc-la-shop-online .lso-story .lso-story-media { margin-top: -60px !important; }
+        .laxcc-la-shop-online .lso-story.is-flip .lso-story-media { margin-top: 60px !important; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        .laxcc-la-shop-online * { transition: none !important; animation: none !important; }
+    }
+
+    /* =========================================================
+       HERO COLOR SKIN — .lso-hero-dark
+       Self-contained: every selector is prefixed with
+       .lso-hero-dark, so it can only reach inside the hero
+       section. Nothing below the hero is touched.
+       Deliberately placed LAST in the stylesheet — media query
+       rules carry no extra specificity, so source order is what
+       lets these colors win over the responsive blocks above.
+       Only colors are set here. No layout, no spacing.
+       ========================================================= */
+
+    /* Section background */
+    .laxcc-la-shop-online .lso-hero-dark {
+        background: #1D508A !important;
+        position: relative !important;
+        isolation: isolate !important;
+    }
+
+    /* PARTICLE FIELD — five layers of radial-gradient dots at different
+       sizes, opacities and offsets. Each layer alone is a regular grid;
+       overlaid, the tile sizes are mutually prime (137/89/211/61/293) so
+       their repeats never line up inside the viewport and the field reads
+       as scattered rather than tiled. Pure CSS, no image, no JS.
+       The element is inset -12% so the slow drift below never exposes an
+       edge as it moves. */
+    .laxcc-la-shop-online .lso-hero-dark::before {
+        content: '' !important;
+        position: absolute !important;
+        inset: -12% !important;
+        z-index: 0 !important;
+        pointer-events: none !important;
+        background-image:
+            radial-gradient(circle at 50% 50%, rgba(255,255,255,0.55) 0 1.4px, transparent 1.8px),
+            radial-gradient(circle at 50% 50%, rgba(255,255,255,0.30) 0 1.0px, transparent 1.4px),
+            radial-gradient(circle at 50% 50%, rgba(255,255,255,0.18) 0 2.4px, transparent 2.8px),
+            radial-gradient(circle at 50% 50%, rgba(255,255,255,0.13) 0 0.9px, transparent 1.3px),
+            radial-gradient(circle at 50% 50%, rgba(255,255,255,0.09) 0 3.2px, transparent 3.6px) !important;
+        background-size:
+            137px 121px,
+            89px 97px,
+            211px 187px,
+            61px 73px,
+            293px 271px !important;
+        background-position:
+            0 0,
+            34px 51px,
+            97px 12px,
+            19px 88px,
+            160px 140px !important;
+        /* Dissolve toward the bottom so the hero melts into the cream
+           section instead of stopping on a hard seam. Stops are pulled in
+           to ~92% because the element overhangs the section by 12%. */
+        -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 55%, rgba(0,0,0,0.35) 78%, transparent 92%) !important;
+                mask-image: linear-gradient(to bottom, #000 0%, #000 55%, rgba(0,0,0,0.35) 78%, transparent 92%) !important;
+        animation: lso-particle-drift 52s ease-in-out infinite alternate !important;
+        will-change: transform !important;
+    }
+
+    /* Barely-there drift — transform only, so it composites on the GPU
+       and never triggers layout. */
+    @keyframes lso-particle-drift {
+        from { transform: translate3d(0, 0, 0); }
+        to   { transform: translate3d(-26px, -34px, 0); }
+    }
+
+    /* The global reduced-motion reset uses `*`, which never matches a
+       pseudo-element — so the particle drift needs its own opt-out. */
+    @media (prefers-reduced-motion: reduce) {
+        .laxcc-la-shop-online .lso-hero-dark::before { animation: none !important; }
+    }
+
+    /* Soft light bloom behind the headline — keeps the lattice from
+       reading as flat graph paper and adds depth under the type. */
+    .laxcc-la-shop-online .lso-hero-dark::after {
+        content: '' !important;
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 0 !important;
+        pointer-events: none !important;
+        background:
+            radial-gradient(70% 60% at 22% 34%, rgba(255,255,255,0.10) 0%, transparent 62%),
+            radial-gradient(50% 50% at 92% 96%, rgba(0,0,0,0.25) 0%, transparent 70%),
+            linear-gradient(180deg, rgba(29,80,138,0.58) 0%, rgba(29,80,138,0.44) 55%, rgba(29,80,138,0.62) 100%) !important;
+    }
+
+    /* Desktop: the scrim leans left, where the copy sits. The art stays
+       strongest on the right/centre where nothing has to stay readable. */
+    @media (min-width: 1000px) {
+        .laxcc-la-shop-online .lso-hero-dark::after {
+            background:
+                radial-gradient(70% 60% at 22% 34%, rgba(255,255,255,0.10) 0%, transparent 62%),
+                radial-gradient(50% 50% at 92% 96%, rgba(0,0,0,0.25) 0%, transparent 70%),
+                linear-gradient(90deg, rgba(29,80,138,0.74) 0%, rgba(29,80,138,0.56) 38%, rgba(29,80,138,0.26) 64%, rgba(29,80,138,0.16) 100%) !important;
+        }
+    }
+
+    /* WEED ART — layer 3 of the background stack:
+         1. #1D508A fill        (section background)
+         2. particle field      (::before, drifting)
+         3. bloom + vignette    (::after)
+         4. this artwork        (z-index 0, above all three)
+         5. content             (.lso-wrap, z-index 1)
+       Bleeds off the left and bottom edges; the section's overflow:hidden
+       does the cropping. Mobile keeps it — just smaller and fainter. */
+    .laxcc-la-shop-online .lso-hero-art {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        z-index: 0 !important;
+        opacity: 0.38 !important;
+        pointer-events: none !important;
+        user-select: none !important;
+    }
+
+    /* Content rides above every background layer */
+    .laxcc-la-shop-online .lso-hero-dark .lso-wrap {
+        position: relative !important;
+        z-index: 1 !important;
+    }
+
+    /* Eyebrow + headline */
+    .laxcc-la-shop-online .lso-hero-dark .lso-eyebrow { color: #ffffff !important; }
+    /* Headline is white throughout — never orange on header text */
+    .laxcc-la-shop-online .lso-hero-dark h1,
+    .laxcc-la-shop-online .lso-hero-dark h1 .l1,
+    .laxcc-la-shop-online .lso-hero-dark h1 .l2,
+    .laxcc-la-shop-online .lso-hero-dark h1 .l3 { color: #ffffff !important; }
+
+    /* Intro paragraph */
+    .laxcc-la-shop-online .lso-hero-dark .lso-hero-sub { color: rgba(255, 255, 255, 0.82) !important; }
+    .laxcc-la-shop-online .lso-hero-dark .lso-hero-sub strong { color: #ffffff !important; }
+
+    /* Fact rows — hairlines flip from navy-on-cream to white-on-blue */
+    .laxcc-la-shop-online .lso-hero-dark .lso-fact {
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.20) !important;
+    }
+    .laxcc-la-shop-online .lso-hero-dark .lso-fact:first-child {
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.20), 0 -1px 0 rgba(255, 255, 255, 0.20) !important;
+    }
+    .laxcc-la-shop-online .lso-hero-dark .lso-fact-k { color: rgba(255, 255, 255, 0.58) !important; }
+    .laxcc-la-shop-online .lso-hero-dark .lso-fact-v { color: #ffffff !important; }
+
+    /* Captions + vertical spine label */
+    .laxcc-la-shop-online .lso-hero-dark .lso-hero-caption { color: rgba(255, 255, 255, 0.62) !important; }
+    .laxcc-la-shop-online .lso-hero-dark .lso-spine { color: rgba(255, 255, 255, 0.48) !important; }
+
+    /* Secondary text link (primary orange button already has white text) */
+    .laxcc-la-shop-online .lso-hero-dark a.lso-link,
+    .laxcc-la-shop-online .lso-hero-dark a.lso-link:link,
+    .laxcc-la-shop-online .lso-hero-dark a.lso-link:visited {
+        color: #ffffff !important;
+        box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.45) !important;
+    }
+    .laxcc-la-shop-online .lso-hero-dark a.lso-link:hover,
+    .laxcc-la-shop-online .lso-hero-dark a.lso-link:focus {
+        color: #00AFC9 !important;
+        box-shadow: inset 0 -1px 0 #00AFC9 !important;
+    }
+
+    /* Plate B mat — a cream frame would glare on blue, so it becomes a
+       translucent white edge with a deeper drop shadow. */
+    .laxcc-la-shop-online .lso-hero-dark .lso-hero-b {
+        background: rgba(255, 255, 255, 0.15) !important;
+        box-shadow: 0 24px 56px rgba(0, 0, 0, 0.30) !important;
+    }
+</style>
+
+<div class="laxcc-la-shop-online">
+
+    <!-- ============ 1. CRISS-CROSS HERO ============ -->
+    <section class="lso-hero lso-hero-dark">
+
+        <!-- Decorative weed art — sits above the blue + particle field,
+             below all content. Purely ornamental, so alt="" + aria-hidden. -->
+        <img
+            class="lso-hero-art"
+            src="https://laxcc.com/wp-content/uploads/2026/08/best-los-angeles-weed-shop.png"
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+            decoding="async">
+
+        <div class="lso-wrap lso-hero-grid">
+
+            <!-- PLATE A — vertical 4:5 -->
+            <div class="lso-hero-a">
+                <span class="lso-spine">Issue 01 — Online Menu</span>
+                <!-- HERO VIDEO — silent, endless loop, fills the 4:5 plate -->
+                <video
+                    class="lso-video ar-45"
+                    src="https://laxcc.com/wp-content/uploads/2026/08/los-angeles-weed-shop.webm"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    webkit-playsinline
+                    preload="auto"
+                    disablepictureinpicture
+                    aria-label="Inside the LAX Cannabis Club weed shop in Los Angeles"></video>
+                <p class="lso-hero-caption">Above — the counter at 8332 Lincoln Blvd, two minutes off Sepulveda.</p>
+            </div>
+
+            <!-- COPY -->
+            <div class="lso-hero-copy">
+                <span class="lso-eyebrow">Order Online · Pick Up in 90045 · Licensed</span>
+                <h1>
+                    <span class="l1">Los Angeles</span>
+                    <span class="l2">Weed Shop</span>
+                    <span class="l3">Online</span>
+                </h1>
+                <p class="lso-hero-sub">
+                    The whole dispensary menu lives online — flower, prerolls, vapes, edibles and drinks, priced
+                    and in stock in real time. Build a cart from anywhere in
+                    <strong>Los Angeles</strong>, send it over, and it's bagged under your name at 8332
+                    Lincoln Blvd by the time you get here. <strong>You pay at the counter</strong>,
+                    so nothing goes on a card until you're standing there.
+                </p>
+                <div class="lso-hero-actions">
+                    <a href="https://laxcc.com/shop/" class="lso-btn">Start Your Online Order</a>
+                    <a href="https://laxcc.com/deals/" class="lso-link">See Today's Deals</a>
+                </div>
+                <div class="lso-facts">
+                    <div class="lso-fact">
+                        <span class="lso-fact-k">Open Daily</span>
+                        <span class="lso-fact-v">9:00 AM – 9:30 PM</span>
+                    </div>
+                    <div class="lso-fact">
+                        <span class="lso-fact-k">Address</span>
+                        <span class="lso-fact-v">8332 Lincoln Blvd, LA 90045</span>
+                    </div>
+                    <div class="lso-fact">
+                        <span class="lso-fact-k">Phone</span>
+                        <span class="lso-fact-v">(310) 429-3789</span>
+                    </div>
+                    <div class="lso-fact">
+                        <span class="lso-fact-k">From LAX</span>
+                        <span class="lso-fact-v">Roughly 5 minutes north</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PLATE B — square, overhangs the video plate's lower-left corner -->
+            <div class="lso-hero-b">
+                <img
+                    class="lso-img ar-11"
+                    src="https://laxcc.com/wp-content/uploads/2024/08/best-LA-Cannabis-Club.jpg"
+                    alt="Inside LAX Cannabis Club, a licensed weed shop in Los Angeles"
+                    loading="eager"
+                    decoding="async">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============ 2. STRIP ============ -->
+    <section class="lso-strip">
+        <div class="lso-wrap">
+            <div class="lso-strip-inner">
+                <div class="lso-strip-cell">
+                    <div class="lso-strip-val">9–9:30</div>
+                    <div class="lso-strip-lbl">Open Every Day</div>
+                </div>
+                <div class="lso-strip-cell">
+                    <div class="lso-strip-val">5 min</div>
+                    <div class="lso-strip-lbl">From LAX Terminals</div>
+                </div>
+                <div class="lso-strip-cell">
+                    <div class="lso-strip-val">Live</div>
+                    <div class="lso-strip-lbl">Real-Time Stock &amp; Pricing</div>
+                </div>
+                <div class="lso-strip-cell">
+                    <div class="lso-strip-val">21+</div>
+                    <div class="lso-strip-lbl">Valid Government ID</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 3. STORYBOARD ============ -->
+    <section class="lso-board">
+        <div class="lso-wrap">
+
+            <div class="lso-board-head">
+                <span class="lso-eyebrow is-orange">The Storyboard</span>
+                <h2 class="lso-h2">Buying weed online in LA, <em>the way it should work</em></h2>
+                <p class="lso-lede">
+                    Four things separate a real online weed shop from a menu screenshot someone
+                    forgot to update in March. Here's how ordering works at LAX Cannabis Club,
+                    start to finish.
+                </p>
+            </div>
+
+            <!-- STORY 01 -->
+            <article class="lso-story">
+                <div class="lso-story-media">
+                    <img
+                        class="lso-img ar-45"
+                        src="https://laxcc.com/wp-content/uploads/2024/08/over-600-cannabis-products-LA_dispensary.jpg"
+                        alt="Shelves of cannabis products at a Los Angeles dispensary"
+                        loading="lazy"
+                        decoding="async">
+                    <p class="lso-caption">Fig. 01 — Hundreds of products on the shelf, all of it on the online menu.</p>
+                </div>
+                <div class="lso-story-body">
+                    <span class="lso-num">01</span>
+                    <h3>One of the biggest dispensary menus in LA</h3>
+                    <div class="lso-story-text">
+                    <p>
+                        <strong>Hundreds of products from 75+ brands</strong> at any given time,
+                        across eight categories — flower, prerolls, vapes, edibles, concentrates,
+                        tinctures, topicals and glass. Flower alone runs past 200 options, from
+                        value ounces to top-shelf indoor.
+                    </p>
+                    <p>
+                        A menu that deep is only useful if you can cut through it, so everything
+                        filters by <strong>category, brand, potency or price</strong> — and it's the
+                        same inventory the budtenders work from. If a jar empties at 4pm, it's off
+                        the site at 4pm.
+                    </p>
+                    </div>
+                    <div class="lso-details">
+                        <div class="lso-detail">
+                            <span class="lso-detail-icon">01</span>
+                            <span class="lso-detail-txt"><b>200+ flower options</b> — the deepest single category on the menu.</span>
+                        </div>
+                        <div class="lso-detail">
+                            <span class="lso-detail-icon">02</span>
+                            <span class="lso-detail-txt"><b>75+ brands</b> stocked side by side, so you can compare without leaving the page.</span>
+                        </div>
+                        <div class="lso-detail">
+                            <span class="lso-detail-icon">03</span>
+                            <span class="lso-detail-txt"><b>Live stock counts</b> — no "call to confirm availability."</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- STORY 02 -->
+            <article class="lso-story is-flip">
+                <div class="lso-story-media">
+                    <img
+                        class="lso-img ar-45"
+                        src="https://laxcc.com/wp-content/uploads/2024/06/out-side-LAX-cannabis-club-dispensary-los-angeles-california.jpg"
+                        alt="Outside LAX Cannabis Club dispensary on Lincoln Blvd in Los Angeles"
+                        loading="lazy"
+                        decoding="async">
+                    <p class="lso-caption">Fig. 02 — Pull up on Lincoln Blvd, walk in, and your order's waiting.</p>
+                </div>
+                <div class="lso-story-body">
+                    <span class="lso-num">02</span>
+                    <h3>Order online, walk in, walk out</h3>
+                    <div class="lso-story-text">
+                    <p>
+                        Place the order from the car, the hotel, or seat 22C on approach. When you
+                        arrive, show ID at the door, give your name, and your bag is already packed.
+                        Most pickups take under five minutes inside the shop.
+                    </p>
+                    <p>
+                        You pay in store, so there's <strong>nothing to enter online</strong> and
+                        nothing charged until you're standing there.
+                    </p>
+                    </div>
+                    <div class="lso-details">
+                        <div class="lso-detail">
+                            <span class="lso-detail-icon">01</span>
+                            <span class="lso-detail-txt"><b>ID at the door</b> — 21+ recreational, valid government photo ID.</span>
+                        </div>
+                        <div class="lso-detail">
+                            <span class="lso-detail-icon">02</span>
+                            <span class="lso-detail-txt"><b>Pay at the counter</b> — debit and cash, ATM on site.</span>
+                        </div>
+                        <div class="lso-detail">
+                            <span class="lso-detail-icon">03</span>
+                            <span class="lso-detail-txt"><b>Parking on site</b> — no meters, no circling Lincoln Blvd.</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- STORY 03 -->
+            <article class="lso-story">
+                <div class="lso-story-media">
+                    <img
+                        class="lso-img ar-45"
+                        src="https://laxcc.com/wp-content/uploads/2024/07/lax-cannabis-club-dispensary-faq.jpg"
+                        alt="Licensed cannabis products on the shelf at a Los Angeles dispensary"
+                        loading="lazy"
+                        decoding="async">
+                    <p class="lso-caption">Fig. 03 — Every product on the menu is state-tracked and lab-tested.</p>
+                </div>
+                <div class="lso-story-body">
+                    <span class="lso-num">03</span>
+                    <h3>Licensed, tested, and traceable</h3>
+                    <div class="lso-story-text">
+                    <p>
+                        Everything on the online menu comes through California's licensed supply
+                        chain — tested for pesticides, heavy metals and microbials, then tracked
+                        from the farm to the bag you carry out.
+                    </p>
+                    <p>
+                        That's the real difference between a licensed
+                        <strong>Los Angeles weed shop online</strong> and a delivery number someone
+                        texted you. Same plant, very different paperwork.
+                    </p>
+                    </div>
+                    <div class="lso-details">
+                        <div class="lso-detail">
+                            <span class="lso-detail-icon">01</span>
+                            <span class="lso-detail-txt"><b>State-licensed retailer</b> in the City of Los Angeles.</span>
+                        </div>
+                        <div class="lso-detail">
+                            <span class="lso-detail-icon">02</span>
+                            <span class="lso-detail-txt"><b>Lab-tested batches</b> — potency numbers on the label are the real ones.</span>
+                        </div>
+                        <div class="lso-detail">
+                            <span class="lso-detail-icon">03</span>
+                            <span class="lso-detail-txt"><b>Child-resistant exit packaging</b> included on every order.</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- STORY 04 -->
+            <article class="lso-story is-flip">
+                <div class="lso-story-media">
+                    <!-- STORY 04 VIDEO — silent, endless loop, same 4:5 plate -->
+                    <video
+                        class="lso-video ar-45"
+                        src="https://laxcc.com/wp-content/uploads/2023/07/LAXX-FINAL_1.mp4"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        webkit-playsinline
+                        preload="metadata"
+                        disablepictureinpicture
+                        aria-label="LAX Cannabis Club on Lincoln Blvd in Los Angeles"></video>
+                    <p class="lso-caption">Fig. 04 — Lincoln Blvd, between Westchester and Playa del Rey.</p>
+                </div>
+                <div class="lso-story-body">
+                    <span class="lso-num">04</span>
+                    <h3>Placed for the whole Westside</h3>
+                    <div class="lso-story-text">
+                    <p>
+                        We sit on Lincoln Blvd in the 90045 — the hinge between LAX, Westchester,
+                        Playa del Rey, El Segundo and Marina del Rey. Order online from anywhere on
+                        the Westside and the detour is usually a few minutes.
+                    </p>
+                    <p>
+                        Layover crowd: it's a short hop from the terminals, and we're open until
+                        <strong>9:30 PM every day</strong> — including the days most shops close early.
+                    </p>
+                    </div>
+                    <div class="lso-details">
+                        <div class="lso-detail">
+                            <span class="lso-detail-icon">01</span>
+                            <span class="lso-detail-txt"><b>Five minutes from LAX</b> — straight up Sepulveda to Lincoln.</span>
+                        </div>
+                        <div class="lso-detail">
+                            <span class="lso-detail-icon">02</span>
+                            <span class="lso-detail-txt"><b>Westchester, Playa, El Segundo, MDR</b> all inside a short drive.</span>
+                        </div>
+                        <div class="lso-detail">
+                            <span class="lso-detail-icon">03</span>
+                            <span class="lso-detail-txt"><b>Same hours every day</b> — 9:00 AM to 9:30 PM, weekends included.</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ============ 4. PULL QUOTE ============ -->
+    <section class="lso-quote">
+        <div class="lso-wrap">
+            <div class="lso-quote-inner">
+                <blockquote>
+                    “Ordering online should mean <span>the product is waiting when you get there</span> —
+                    not that you filled out a form and hoped.”
+                </blockquote>
+                <cite>LAX Cannabis Club — 8332 Lincoln Blvd, Los Angeles</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 5. CATEGORY TILES ============ -->
+    <section class="lso-cats">
+        <div class="lso-wrap">
+            <span class="lso-eyebrow">Shop by Category</span>
+            <h2 class="lso-h2">What's on the <em>online menu</em></h2>
+
+            <div class="lso-cat-grid">
+
+                <a href="https://laxcc.com/shop/" class="lso-cat">
+                    <!-- SWAP: flower jar -->
+                    <img
+                        class="lso-img ar-34"
+                        src="https://laxcc.com/wp-content/uploads/2023/07/LAXCC-Airport-DispensaryNearMe-LA-beachside_10.jpg"
+                        alt="Cannabis flower jars on the shelf at a Los Angeles dispensary"
+                        loading="lazy"
+                        decoding="async">
+                    <span class="lso-cat-name">Flower</span>
+                    <span class="lso-cat-meta">Eighths · Quarters · Ounces</span>
+                </a>
+
+                <a href="https://laxcc.com/shop/" class="lso-cat">
+                    <!-- SWAP: preroll pack -->
+                    <img
+                        class="lso-img ar-34"
+                        src="https://laxcc.com/wp-content/uploads/2024/07/best-pre-rolls-in-LA.jpg"
+                        alt="Pre-rolled joints available at a Los Angeles weed shop"
+                        loading="lazy"
+                        decoding="async">
+                    <span class="lso-cat-name">Prerolls</span>
+                    <span class="lso-cat-meta">Singles · Infused · 5-Packs</span>
+                </a>
+
+                <a href="https://laxcc.com/shop/" class="lso-cat">
+                    <!-- SWAP: AIO vape -->
+                    <img
+                        class="lso-img ar-34"
+                        src="https://laxcc.com/wp-content/uploads/2025/01/alien-labs-vaporizer-near-me-LA.jpg"
+                        alt="Alien Labs vape cartridges at a Los Angeles dispensary"
+                        loading="lazy"
+                        decoding="async">
+                    <span class="lso-cat-name">Vapes</span>
+                    <span class="lso-cat-meta">All-in-One · Carts · Pods</span>
+                </a>
+
+                <a href="https://laxcc.com/shop/" class="lso-cat">
+                    <!-- SWAP: gummies -->
+                    <img
+                        class="lso-img ar-34"
+                        src="https://laxcc.com/wp-content/uploads/2025/01/camino-edibles-la.jpg"
+                        alt="Camino cannabis gummies at a Los Angeles dispensary"
+                        loading="lazy"
+                        decoding="async">
+                    <span class="lso-cat-name">Edibles</span>
+                    <span class="lso-cat-meta">Gummies · Chocolate · Low-Dose</span>
+                </a>
+
+                <a href="https://laxcc.com/shop/" class="lso-cat">
+                    <!-- SWAP: THC beverage -->
+                    <img
+                        class="lso-img ar-34"
+                        src="https://laxcc.com/wp-content/uploads/2025/02/Uncle-Arnies04.jpg"
+                        alt="Uncle Arnie's THC drinks at a Los Angeles dispensary"
+                        loading="lazy"
+                        decoding="async">
+                    <span class="lso-cat-name">Drinks</span>
+                    <span class="lso-cat-meta">Seltzers · Shots · Fast-Acting</span>
+                </a>
+
+                <a href="https://laxcc.com/shop/" class="lso-cat">
+                    <!-- SWAP: concentrate / CBD topical -->
+                    <img
+                        class="lso-img ar-34"
+                        src="https://laxcc.com/wp-content/uploads/2025/01/THC-design-cannabis.jpg"
+                        alt="THC Design cannabis extracts at a Los Angeles dispensary"
+                        loading="lazy"
+                        decoding="async">
+                    <span class="lso-cat-name">Extracts &amp; CBD</span>
+                    <span class="lso-cat-meta">Rosin · Hash · Balms · Tinctures</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 6. HOW IT WORKS ============ -->
+    <section class="lso-steps">
+        <div class="lso-wrap">
+            <span class="lso-eyebrow is-orange">Three Steps</span>
+            <h2 class="lso-h2">From your phone to <em>the counter</em></h2>
+
+            <div class="lso-step-grid">
+                <div class="lso-step">
+                    <span class="lso-step-n">Step 01</span>
+                    <h4>Build the cart</h4>
+                    <p>
+                        Open the online menu, filter to what you want, and add it. Prices shown are
+                        what you'll pay at the register — taxes included at checkout.
+                    </p>
+                </div>
+                <div class="lso-step">
+                    <span class="lso-step-n">Step 02</span>
+                    <h4>Submit for pickup</h4>
+                    <p>
+                        Choose pickup and drop your name and number. We pull the order off the shelf
+                        and set it aside under your name.
+                    </p>
+                </div>
+                <div class="lso-step">
+                    <span class="lso-step-n">Step 03</span>
+                    <h4>ID, pay, done</h4>
+                    <p>
+                        Come to 8332 Lincoln Blvd any day between 9:00 AM and 9:30 PM. Show a valid
+                        21+ ID, pay at the counter, and you're back on the road.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 7. FAQ ============ -->
+    <section class="lso-faq">
+        <div class="lso-wrap">
+            <span class="lso-eyebrow">Questions</span>
+            <h2 class="lso-h2">Ordering weed online in LA, <em>answered</em></h2>
+
+            <div class="lso-faq-list">
+
+                <div class="lso-faq-item">
+                    <h4>Can I actually buy weed online in Los Angeles?</h4>
+                    <p>
+                        You can browse and reserve online, but California requires the sale itself to
+                        finish in person or through a licensed delivery driver. At LAX Cannabis Club
+                        you build the order on our <a href="https://laxcc.com/shop/">online menu</a>,
+                        we set it aside, and you finish the purchase at the counter with your ID.
+                    </p>
+                </div>
+
+                <div class="lso-faq-item">
+                    <h4>Do I need a medical card?</h4>
+                    <p>
+                        No. We serve recreational customers 21 and over with a valid government-issued
+                        photo ID — driver's license, state ID or passport. Out-of-state and
+                        international IDs are fine.
+                    </p>
+                </div>
+
+                <div class="lso-faq-item">
+                    <h4>Does LAX Cannabis Club deliver?</h4>
+                    <p>
+                        No — we don't deliver. Every order is <strong>pickup only</strong>. You build the
+                        cart online and we hold it under your name at 8332 Lincoln Blvd until you come
+                        and collect it. There's parking on site, and the counter is open until 9:30 PM
+                        every day.
+                    </p>
+                </div>
+
+                <div class="lso-faq-item">
+                    <h4>How long does a pickup order take?</h4>
+                    <p>
+                        Usually well under an hour from order to ready, and most people are in and out
+                        of the shop in a few minutes. If you're on a tight layover, call
+                        (310) 429-3789 and we'll tell you exactly where your order stands.
+                    </p>
+                </div>
+
+                <div class="lso-faq-item">
+                    <h4>What are your hours?</h4>
+                    <p>
+                        9:00 AM to 9:30 PM, every single day — no split schedule and no early Sunday
+                        close. Orders placed after hours are waiting when we open.
+                    </p>
+                </div>
+
+                <div class="lso-faq-item">
+                    <h4>Is the online menu the same as what's in the store?</h4>
+                    <p>
+                        Yes. The online shop and the in-store register run off one inventory, so stock
+                        and pricing match. Deals move fast though — check the
+                        <a href="https://laxcc.com/deals/">daily deals page</a> before you build your cart.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ 8. FINAL CTA ============ -->
+    <section class="lso-cta">
+        <div class="lso-cta-grid">
+            <div class="lso-cta-media">
+                <!-- 16:9 band on mobile; fills the column edge-to-edge on desktop -->
+                <img
+                    class="lso-img ar-169"
+                    src="https://laxcc.com/wp-content/uploads/2024/07/lusty-in-house-cannabis.jpg"
+                    alt="In-house cannabis flower at LAX Cannabis Club in Los Angeles"
+                    loading="lazy"
+                    decoding="async">
+            </div>
+            <div class="lso-cta-body">
+                <span class="lso-eyebrow is-light">Open Today</span>
+                <h2>Start your order <em>right now</em></h2>
+                <p>
+                    The menu is live, the shelves are stocked, and the counter's open until 9:30 PM.
+                    Build the cart on your phone and pick it up on Lincoln Blvd.
+                </p>
+                <div class="lso-cta-actions">
+                    <a href="https://laxcc.com/shop/" class="lso-btn">Shop the Online Menu</a>
+                    <a href="https://laxcc.com/deals/" class="lso-link is-light">Today's Deals</a>
+                </div>
+                <div class="lso-cta-facts">
+                    <div class="lso-cta-fact">
+                        <span class="lso-cta-k">Address</span>
+                        <span class="lso-cta-v">8332 Lincoln Blvd, Los Angeles, CA 90045</span>
+                    </div>
+                    <div class="lso-cta-fact">
+                        <span class="lso-cta-k">Phone</span>
+                        <span class="lso-cta-v"><a href="tel:+13104293789">(310) 429-3789</a></span>
+                    </div>
+                    <div class="lso-cta-fact">
+                        <span class="lso-cta-k">Hours</span>
+                        <span class="lso-cta-v">9:00 AM – 9:30 PM, daily</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="lso-wrap">
+        <p class="lso-legal">
+            21+ only. Valid government-issued photo ID required. Keep out of reach of children and
+            pets. Do not drive or operate machinery under the influence of cannabis.
+        </p>
+    </div>
+
+</div>

@@ -1,7 +1,7 @@
 <style>
     /* ===== LAXCC PREROLLS HERO - ELEMENTOR SAFE ===== */
     #laxcc-prerolls-hero-2025 {
-        --primary: #f2690d;
+        --primary: #F89459;
         --ocean: #00AFC9;
         --bg-dark: #1a120b;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -26,6 +26,13 @@
         background-color: var(--bg-dark);
     }
 
+    /* Shorter hero on mobile so the wide image fills with less zoom/crop */
+    @media (max-width: 768px) {
+        #laxcc-prerolls-hero-2025 .laxcc-hero-section {
+            min-height: 65vh;
+        }
+    }
+
     #laxcc-prerolls-hero-2025 .laxcc-hero-bg {
         position: absolute;
         inset: 0;
@@ -35,15 +42,55 @@
     #laxcc-prerolls-hero-2025 .laxcc-hero-mask {
         position: absolute;
         inset: 0;
-        z-index: 1;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.6) 100%);
+        z-index: 2;
+        background: transparent;
     }
 
     #laxcc-prerolls-hero-2025 .laxcc-hero-image {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
         width: 100%;
         height: 100%;
         background-size: cover;
-        background-position: center;
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-image: url('https://laxcc.com/wp-content/uploads/2024/12/best-prerolls-LA.jpg');
+    }
+
+    @media (max-width: 768px) {
+        #laxcc-prerolls-hero-2025 .laxcc-hero-image {
+            background-image: url('https://laxcc.com/wp-content/uploads/2024/08/best-pre-rolls-for-sale.jpg');
+            background-size: auto 130%;
+            background-position: center calc(50% - 50px);
+        }
+    }
+
+    /* ===== ANIMATED BRAND-COLOR DIFFUSION ===== */
+    #laxcc-prerolls-hero-2025 .laxcc-hero-diffuse {
+        position: absolute;
+        inset: -20%;
+        z-index: 1;
+        pointer-events: none;
+        background:
+            radial-gradient(38% 46% at 22% 30%, rgba(0, 175, 201, 0.70), transparent 62%),
+            radial-gradient(42% 52% at 80% 24%, rgba(0, 175, 201, 0.65), transparent 62%),
+            radial-gradient(46% 50% at 62% 82%, rgba(124, 58, 237, 0.55), transparent 62%),
+            radial-gradient(44% 50% at 26% 78%, rgba(29, 80, 138, 0.55), transparent 62%);
+        background-size: 200% 200%;
+        mix-blend-mode: overlay;
+        filter: blur(40px);
+        animation: laxcc-diffuse 22s ease-in-out infinite;
+    }
+    @keyframes laxcc-diffuse {
+        0%   { background-position: 0% 0%;   transform: scale(1); }
+        25%  { background-position: 100% 0%; }
+        50%  { background-position: 100% 100%; transform: scale(1.08); }
+        75%  { background-position: 0% 100%; }
+        100% { background-position: 0% 0%;   transform: scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        #laxcc-prerolls-hero-2025 .laxcc-hero-diffuse { animation: none; }
     }
 
     #laxcc-prerolls-hero-2025 .laxcc-verified {
@@ -56,6 +103,8 @@
     }
 
     #laxcc-prerolls-hero-2025 .laxcc-hero-content {
+        width: 100% !important;
+        max-width: none !important;
         position: relative;
         z-index: 20;
         text-align: center;
@@ -98,7 +147,7 @@
         color: #fff;
         font-size: 1.25rem;
         font-weight: 600;
-        max-width: 40rem;
+        max-width: none;
         margin: 0 auto 1rem;
     }
 
@@ -115,8 +164,98 @@
         color: rgba(255, 255, 255, 0.85);
         font-size: 1rem;
         font-weight: 500;
-        max-width: 32rem;
+        max-width: none;
         margin: 0 auto 2rem;
+    }
+
+    /* ===== LOCAL SEO: eyebrow, meta, CTA ===== */
+    #laxcc-prerolls-hero-2025 .laxcc-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--ocean);
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 1.1rem;
+    }
+    #laxcc-prerolls-hero-2025 .laxcc-eyebrow .laxcc-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--ocean);
+        flex-shrink: 0;
+    }
+
+    #laxcc-prerolls-hero-2025 .laxcc-meta {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.1rem;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.82rem;
+        font-weight: 600;
+        margin: 0 auto 1.75rem;
+        max-width: none;
+    }
+    #laxcc-prerolls-hero-2025 .laxcc-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        white-space: nowrap;
+    }
+    #laxcc-prerolls-hero-2025 .laxcc-meta a {
+        color: rgba(255, 255, 255, 0.72);
+        text-decoration: none;
+    }
+    #laxcc-prerolls-hero-2025 .laxcc-meta a:hover { color: #fff; }
+
+    #laxcc-prerolls-hero-2025 .laxcc-cta-row {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+    #laxcc-prerolls-hero-2025 a.laxcc-cta,
+    #laxcc-prerolls-hero-2025 a.laxcc-cta:link,
+    #laxcc-prerolls-hero-2025 a.laxcc-cta:visited {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--primary);
+        color: #fff !important;
+        text-decoration: none !important;
+        font-weight: 800;
+        font-size: 1rem;
+        padding: 0.9rem 1.7rem;
+        border-radius: 100px;
+        white-space: nowrap;
+        transition: transform 0.2s ease, background 0.2s ease;
+    }
+    #laxcc-prerolls-hero-2025 a.laxcc-cta:hover {
+        transform: translateY(-2px);
+        background: #ef8345;
+        color: #fff !important;
+    }
+    #laxcc-prerolls-hero-2025 a.laxcc-cta--ghost,
+    #laxcc-prerolls-hero-2025 a.laxcc-cta--ghost:link,
+    #laxcc-prerolls-hero-2025 a.laxcc-cta--ghost:visited {
+        background: transparent;
+        color: #fff !important;
+        box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.4);
+    }
+    #laxcc-prerolls-hero-2025 a.laxcc-cta--ghost:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff !important;
+    }
+    @media (max-width: 639px) {
+        #laxcc-prerolls-hero-2025 a.laxcc-cta,
+        #laxcc-prerolls-hero-2025 a.laxcc-cta:link,
+        #laxcc-prerolls-hero-2025 a.laxcc-cta:visited {
+            font-size: 0.85rem;
+            padding: 0.7rem 1.25rem;
+        }
     }
 
     #laxcc-prerolls-hero-2025 .laxcc-scroll-hint {
@@ -125,7 +264,7 @@
         align-items: center;
         gap: 0.5rem;
         margin-top: 3rem;
-        animation: laxcc-prerolls-bounce 1s infinite;
+        animation: laxcc-prerolls-bounce 2.4s ease-in-out infinite;
     }
 
     @keyframes laxcc-prerolls-bounce {
@@ -144,25 +283,6 @@
     #laxcc-prerolls-hero-2025 .laxcc-scroll-icon {
         color: rgba(255, 255, 255, 0.6);
         font-size: 1.5rem;
-    }
-
-    #laxcc-prerolls-hero-2025 .laxcc-credit {
-        position: absolute;
-        bottom: 1rem;
-        left: 1rem;
-        z-index: 30;
-    }
-
-    #laxcc-prerolls-hero-2025 .laxcc-credit a {
-        color: rgba(255, 255, 255, 0.4);
-        font-size: 0.625rem;
-        text-decoration: none;
-        letter-spacing: 0.05em;
-        transition: color 0.2s ease;
-    }
-
-    #laxcc-prerolls-hero-2025 .laxcc-credit a:hover {
-        color: rgba(255, 255, 255, 0.7);
     }
 
     /* ===== RESPONSIVE ===== */
@@ -206,24 +326,19 @@
 
         <!-- Background -->
         <div class="laxcc-hero-bg">
+            <div class="laxcc-hero-image"></div>
+            <div class="laxcc-hero-diffuse"></div>
             <div class="laxcc-hero-mask"></div>
-            <div class="laxcc-hero-image" style="background-image: url('https://images.squarespace-cdn.com/content/v1/5b5f6f6e89c1721e0f3192ce/1646942284160-WPDCDU18QVMV0Q82FPBT/2021_06_24_MVX_0198_RT_PRE-ROLL_WEB.jpg');"></div>
         </div>
 
         <!-- Content -->
         <div class="laxcc-hero-content">
-            <h1 class="laxcc-title">Shop Premium Pre-Rolls Near LAX</h1>
-            <p class="laxcc-subtitle">Featuring <a href="https://laxcc.com/categories/pre_rolls/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=PRE_ROLLS&brands=%22168f8d00-fae4-4ba4-a59f-451d1ad5266b%22%2C">Maven Genetics</a> &amp; California's Top Pre-Roll Brands</p>
-            <p class="laxcc-desc">Hand-rolled perfection from LA's finest. Singles, packs &amp; infused pre-rolls — ready for pickup or delivery.</p>
+            <h1 class="laxcc-title">Pre-Rolls Near LAX</h1>
+            <p class="laxcc-desc">Singles, packs &amp; infused pre-rolls. Order ahead for pickup.</p>
             <div class="laxcc-scroll-hint">
                 <span class="laxcc-scroll-text">Scroll</span>
                 <span class="laxcc-scroll-icon">&#x25BC;</span>
             </div>
-        </div>
-
-        <!-- Image Credit -->
-        <div class="laxcc-credit">
-            <a href="https://laxcc.com/" target="_blank" rel="nofollow noopener">Image: LAXCC</a>
         </div>
 
     </section>

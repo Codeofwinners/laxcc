@@ -2,6 +2,7 @@
     /* ===== LAXCC PREROLLS INFO - ELEMENTOR SAFE ===== */
     #laxcc-prerolls-info-2025 {
         --primary: #8B5CF6;
+        /* UPDATED: Changed from #F8F5FF to #fbf8f2 to match body background */
         --panel-light: #fbf8f2;
         --accent-teal: #00AFC9;
         --accent-purple: #7C3AED;
@@ -31,6 +32,7 @@
     #laxcc-prerolls-info-2025 .laxcc-main {
         position: relative;
         width: 100%;
+        /* UPDATED: Ensures main container matches */
         background-color: #fbf8f2 !important;
     }
 
@@ -64,6 +66,7 @@
         position: relative;
         overflow: hidden;
         flex-shrink: 0;
+        /* Uses --panel-light which is now #fbf8f2 */
         background-color: var(--panel-light);
     }
 
@@ -118,6 +121,7 @@
     /* ===== INFO PANEL ===== */
     #laxcc-prerolls-info-2025 .laxcc-info {
         width: 100%;
+        /* Uses --panel-light which is now #fbf8f2 */
         background-color: var(--panel-light);
         display: flex;
         flex-direction: column;
@@ -392,13 +396,107 @@
     #laxcc-prerolls-info-2025 .laxcc-dot.active {
         background-color: #fff;
     }
+
+    /* ===== PRE-ROLL GUIDE (helpful content) ===== */
+    #laxcc-prerolls-info-2025 .laxcc-guide {
+        background-color: #fbf8f2;
+        padding: 3rem 1.25rem;
+    }
+    @media (min-width: 768px) {
+        #laxcc-prerolls-info-2025 .laxcc-guide { padding: 4.5rem 2rem; }
+    }
+    #laxcc-prerolls-info-2025 .laxcc-guide-inner { max-width: 1100px; margin: 0 auto; }
+
+    #laxcc-prerolls-info-2025 .laxcc-guide-eyebrow {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        color: var(--accent-purple); font-size: 0.7rem; font-weight: 800;
+        letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    #laxcc-prerolls-info-2025 .laxcc-guide-eyebrow .laxcc-pin {
+        width: 6px; height: 6px; border-radius: 50%; background: var(--accent-teal);
+    }
+    #laxcc-prerolls-info-2025 .laxcc-guide-h2 {
+        font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 900; color: var(--text-dark);
+        letter-spacing: -0.02em; line-height: 1.1; margin: 0 0 0.9rem;
+    }
+    #laxcc-prerolls-info-2025 .laxcc-guide-lead {
+        font-size: 1.05rem; line-height: 1.7; color: #4b5563; max-width: 760px; margin: 0 0 2.5rem;
+    }
+    #laxcc-prerolls-info-2025 .laxcc-guide-lead strong { color: var(--text-dark); font-weight: 700; }
+
+    /* type grid */
+    #laxcc-prerolls-info-2025 .laxcc-type-grid {
+        display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 3rem;
+    }
+    @media (min-width: 640px) { #laxcc-prerolls-info-2025 .laxcc-type-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { #laxcc-prerolls-info-2025 .laxcc-type-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+    #laxcc-prerolls-info-2025 .laxcc-type-card {
+        background: #fff; border-radius: 1rem; padding: 1.5rem;
+        box-shadow: 0 4px 18px rgba(28, 19, 38, 0.06);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    #laxcc-prerolls-info-2025 .laxcc-type-card:hover {
+        transform: translateY(-3px); box-shadow: 0 12px 28px rgba(28, 19, 38, 0.10);
+    }
+    #laxcc-prerolls-info-2025 .laxcc-type-ico {
+        width: 44px; height: 44px; border-radius: 12px;
+        display: inline-flex; align-items: center; justify-content: center;
+        font-size: 1.4rem; margin-bottom: 0.9rem; background: rgba(124, 58, 237, 0.1);
+    }
+    #laxcc-prerolls-info-2025 .laxcc-type-card.teal .laxcc-type-ico { background: rgba(0, 175, 201, 0.12); }
+    #laxcc-prerolls-info-2025 .laxcc-type-title {
+        font-size: 1.1rem; font-weight: 800; color: var(--text-dark); margin: 0 0 0.4rem;
+    }
+    #laxcc-prerolls-info-2025 .laxcc-type-desc {
+        font-size: 0.9rem; line-height: 1.6; color: #6b7280; margin: 0;
+    }
+    #laxcc-prerolls-info-2025 .laxcc-type-desc strong { color: var(--accent-purple); font-weight: 700; }
+
+    /* laws panel */
+    #laxcc-prerolls-info-2025 .laxcc-laws {
+        background: #fff; border-radius: 1.25rem; padding: 1.75rem;
+        box-shadow: 0 4px 18px rgba(28, 19, 38, 0.06);
+    }
+    @media (min-width: 768px) { #laxcc-prerolls-info-2025 .laxcc-laws { padding: 2.5rem; } }
+    #laxcc-prerolls-info-2025 .laxcc-laws-h3 {
+        font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 900; color: var(--text-dark);
+        margin: 0 0 0.5rem; letter-spacing: -0.02em;
+    }
+    #laxcc-prerolls-info-2025 .laxcc-laws-sub {
+        font-size: 0.95rem; line-height: 1.6; color: #6b7280; margin: 0 0 1.75rem; max-width: 720px;
+    }
+    #laxcc-prerolls-info-2025 .laxcc-laws-cols { display: grid; grid-template-columns: 1fr; gap: 1.75rem; }
+    @media (min-width: 768px) { #laxcc-prerolls-info-2025 .laxcc-laws-cols { grid-template-columns: 1fr 1fr; gap: 2.5rem; } }
+    #laxcc-prerolls-info-2025 .laxcc-laws-coltitle {
+        display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; font-weight: 800;
+        text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 0.9rem;
+    }
+    #laxcc-prerolls-info-2025 .laxcc-laws-coltitle.ok { color: #15803d; }
+    #laxcc-prerolls-info-2025 .laxcc-laws-coltitle.no { color: #b91c1c; }
+    #laxcc-prerolls-info-2025 .laxcc-laws-list {
+        list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.7rem;
+    }
+    #laxcc-prerolls-info-2025 .laxcc-laws-item {
+        display: flex; gap: 0.6rem; align-items: flex-start;
+        font-size: 0.9rem; line-height: 1.5; color: var(--text-dark);
+    }
+    #laxcc-prerolls-info-2025 .laxcc-laws-mark {
+        flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
+        display: inline-flex; align-items: center; justify-content: center;
+        font-size: 0.7rem; font-weight: 800; color: #fff; margin-top: 1px;
+    }
+    #laxcc-prerolls-info-2025 .laxcc-laws-mark.ok { background: #16a34a; }
+    #laxcc-prerolls-info-2025 .laxcc-laws-mark.no { background: #dc2626; }
+    #laxcc-prerolls-info-2025 .laxcc-laws-note {
+        margin: 1.75rem 0 0; font-size: 0.78rem; line-height: 1.55; color: #6b7280;
+    }
 </style>
 
 <div id="laxcc-prerolls-info-2025">
     <main class="laxcc-main">
         <div class="laxcc-scroll-wrapper laxcc-no-scrollbar">
 
-            <!-- Slide 1: Infused Pre-Rolls -->
             <section class="laxcc-slide">
                 <div class="laxcc-visual">
                     <div class="laxcc-visual-bg" style="background-image: url('https://cdn.prod.website-files.com/621f634a14b77abb52c5f8da/67d88eace2999f0504e47142_prod.webp');"></div>
@@ -411,14 +509,14 @@
                             <span class="laxcc-exhibit-icon">&#x1F525;</span>
                             <span class="laxcc-exhibit-label">Exhibit 01</span>
                         </div>
-                        <h1 class="laxcc-title">INFUSED PRE-ROLLS</h1>
+                        <h2 class="laxcc-title">INFUSED PRE-ROLLS</h2>
                         <div class="laxcc-blocks">
                             <div class="laxcc-block">
                                 <h3 class="laxcc-block-title">The Craft</h3>
                                 <ul class="laxcc-block-list">
                                     <li class="laxcc-block-item">
                                         <span class="laxcc-block-icon">&#x2713;</span>
-                                        <span>Premium flower infused with liquid diamonds or live resin.</span>
+                                        <span>Premium flower joints infused with liquid diamonds or live resin.</span>
                                     </li>
                                     <li class="laxcc-block-item">
                                         <span class="laxcc-block-icon">&#x2713;</span>
@@ -435,7 +533,7 @@
                                     </li>
                                     <li class="laxcc-block-item">
                                         <span class="laxcc-block-icon">&#x26A1;</span>
-                                        <span>Full entourage effect with enhanced terpene profiles.</span>
+                                        <span>In stock for same-day pickup at LAXCC — the closest dispensary to LAX airport.</span>
                                     </li>
                                 </ul>
                             </div>
@@ -462,7 +560,6 @@
                 </div>
             </section>
 
-            <!-- Slide 2: Classic Pre-Rolls -->
             <section class="laxcc-slide">
                 <div class="laxcc-visual">
                     <div class="laxcc-visual-bg" style="background-image: url('https://rawgarden.farm/wp-content/uploads/2025/10/0.5gPre-Roll_Sauce_5Pack_ProductShotGrey_v3-1-1-1.png');"></div>
@@ -475,14 +572,14 @@
                             <span class="laxcc-exhibit-icon">&#x1F343;</span>
                             <span class="laxcc-exhibit-label">Exhibit 02</span>
                         </div>
-                        <h1 class="laxcc-title">CLASSIC PRE-ROLLS</h1>
+                        <h2 class="laxcc-title">CLASSIC PRE-ROLLS &amp; JOINTS</h2>
                         <div class="laxcc-blocks">
                             <div class="laxcc-block">
                                 <h3 class="laxcc-block-title">The Craft</h3>
                                 <ul class="laxcc-block-list">
                                     <li class="laxcc-block-item">
                                         <span class="laxcc-block-icon">&#x2713;</span>
-                                        <span>Pure flower, expertly ground and evenly rolled.</span>
+                                        <span>Pure flower joints, expertly ground and evenly rolled.</span>
                                     </li>
                                     <li class="laxcc-block-item">
                                         <span class="laxcc-block-icon">&#x2713;</span>
@@ -495,11 +592,11 @@
                                 <ul class="laxcc-block-list">
                                     <li class="laxcc-block-item">
                                         <span class="laxcc-block-icon">&#x26A1;</span>
-                                        <span>Consistent, reliable experience every time.</span>
+                                        <span>Consistent, reliable joints at great value, every time.</span>
                                     </li>
                                     <li class="laxcc-block-item">
                                         <span class="laxcc-block-icon">&#x26A1;</span>
-                                        <span>Great value without sacrificing quality.</span>
+                                        <span>Grab weed near LAX airport — perfect to pick up before or after your flight.</span>
                                     </li>
                                 </ul>
                             </div>
@@ -526,10 +623,9 @@
                 </div>
             </section>
 
-            <!-- Slide 3: Blunts & Wraps -->
             <section class="laxcc-slide">
                 <div class="laxcc-visual">
-                    <div class="laxcc-visual-bg" style="background-image: url('https://elblunto.com/wp-content/uploads/2023/12/elblunto-product-lineup-2.jpg');"></div>
+                    <div class="laxcc-visual-bg" style="background-image: url('https://elblunto.com/cdn/shop/files/El_Blunto_THCa_-_Birkin_Dream_1.75g_Sativa_1.png?v=1727911429');"></div>
                     <div class="laxcc-visual-overlay"></div>
                     <p class="laxcc-image-credit"><a href="https://elblunto.com/" target="_blank" rel="nofollow noopener">Image: El Blunto</a></p>
                 </div>
@@ -539,7 +635,7 @@
                             <span class="laxcc-exhibit-icon">&#x1F451;</span>
                             <span class="laxcc-exhibit-label">Exhibit 03</span>
                         </div>
-                        <h1 class="laxcc-title">BLUNTS &amp; WRAPS</h1>
+                        <h2 class="laxcc-title">BLUNTS &amp; WRAPS</h2>
                         <div class="laxcc-blocks">
                             <div class="laxcc-block">
                                 <h3 class="laxcc-block-title">The Craft</h3>
@@ -563,7 +659,7 @@
                                     </li>
                                     <li class="laxcc-block-item">
                                         <span class="laxcc-block-icon">&#x26A1;</span>
-                                        <span>Rich, full-bodied flavor from quality wraps.</span>
+                                        <span>Pick up at our Westchester dispensary near LAX — minutes from the terminals.</span>
                                     </li>
                                 </ul>
                             </div>
@@ -592,7 +688,6 @@
 
         </div>
 
-        <!-- Pagination -->
         <div class="laxcc-pagination">
             <div class="laxcc-pagination-inner">
                 <span class="laxcc-pagination-arrow">&#x2190;</span>
@@ -606,6 +701,73 @@
         </div>
 
     </main>
+
+    <!-- ===== HELPFUL CONTENT: pre-roll types + LA cannabis laws ===== -->
+    <section class="laxcc-guide">
+        <div class="laxcc-guide-inner">
+            <span class="laxcc-guide-eyebrow"><span class="laxcc-pin" aria-hidden="true"></span>Pre-Roll Buyer's Guide</span>
+            <h2 class="laxcc-guide-h2">Types of Pre-Rolls at Our Los Angeles Dispensary</h2>
+            <p class="laxcc-guide-lead">Not all joints are created equal. From <strong>top-shelf indoor flower</strong> to <strong>live-resin infused</strong> rolls and value-friendly sun-grown, here's how to pick the right pre-roll at LAX Cannabis Club — every one lab-tested and rolled from licensed California cannabis, ready for pickup near LAX.</p>
+
+            <div class="laxcc-type-grid">
+                <div class="laxcc-type-card">
+                    <span class="laxcc-type-ico" aria-hidden="true">💎</span>
+                    <h3 class="laxcc-type-title">Indoor Pre-Rolls</h3>
+                    <p class="laxcc-type-desc">Flower grown in climate-controlled rooms for maximum trichome density, aroma and potency. The <strong>premium, top-shelf</strong> choice — slow-cured, hand-trimmed buds with the cleanest burn.</p>
+                </div>
+                <div class="laxcc-type-card teal">
+                    <span class="laxcc-type-ico" aria-hidden="true">🌤️</span>
+                    <h3 class="laxcc-type-title">Greenhouse &amp; Light-Dep</h3>
+                    <p class="laxcc-type-desc">Grown in greenhouses that blend natural sunlight with light-deprivation techniques. <strong>Near-indoor quality at a friendlier price</strong>, with a smaller carbon footprint.</p>
+                </div>
+                <div class="laxcc-type-card">
+                    <span class="laxcc-type-ico" aria-hidden="true">☀️</span>
+                    <h3 class="laxcc-type-title">Sun-Grown Outdoor</h3>
+                    <p class="laxcc-type-desc">Cultivated outdoors under full California sun. Terpene-rich, eco-friendly and the <strong>best value per gram</strong> — a great everyday smoke that won't break the bank.</p>
+                </div>
+                <div class="laxcc-type-card teal">
+                    <span class="laxcc-type-ico" aria-hidden="true">⚡</span>
+                    <h3 class="laxcc-type-title">Infused Pre-Rolls</h3>
+                    <p class="laxcc-type-desc">Flower enhanced with live resin, liquid diamonds, hash or kief for a serious boost — often <strong>35%+ THC</strong>. Built for experienced smokers who want maximum potency.</p>
+                </div>
+                <div class="laxcc-type-card">
+                    <span class="laxcc-type-ico" aria-hidden="true">🧊</span>
+                    <h3 class="laxcc-type-title">Hash &amp; Solventless</h3>
+                    <p class="laxcc-type-desc">Rolled with or coated in <strong>solventless hash rosin</strong> — full-flavor, chemical-free extracts pressed from ice water and heat. The connoisseur's choice.</p>
+                </div>
+                <div class="laxcc-type-card teal">
+                    <span class="laxcc-type-ico" aria-hidden="true">👑</span>
+                    <h3 class="laxcc-type-title">Blunts &amp; Wraps</h3>
+                    <p class="laxcc-type-desc">Premium flower in <strong>tobacco-free</strong> natural leaf or hemp wraps. Slow-burning, full-bodied and made for sharing — singles up to baseball-bat sizes.</p>
+                </div>
+            </div>
+
+            <div class="laxcc-laws">
+                <h3 class="laxcc-laws-h3">Where Can You Smoke? California Cannabis Laws</h3>
+                <p class="laxcc-laws-sub">Cannabis is legal for adults 21+ in California, but where you can actually light up is limited — especially around Los Angeles and LAX. Here's the quick version so you stay legal and respectful.</p>
+                <div class="laxcc-laws-cols">
+                    <div>
+                        <p class="laxcc-laws-coltitle ok"><span>✓</span> Where it's allowed</p>
+                        <ul class="laxcc-laws-list">
+                            <li class="laxcc-laws-item"><span class="laxcc-laws-mark ok" aria-hidden="true">✓</span><span>On <strong>private property</strong> — a home or yard where the owner permits it (21+).</span></li>
+                            <li class="laxcc-laws-item"><span class="laxcc-laws-mark ok" aria-hidden="true">✓</span><span>At <strong>licensed cannabis consumption lounges</strong>.</span></li>
+                            <li class="laxcc-laws-item"><span class="laxcc-laws-mark ok" aria-hidden="true">✓</span><span>Sealed and stored in your <strong>trunk</strong> while transporting it in a vehicle.</span></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="laxcc-laws-coltitle no"><span>✕</span> Where it's not</p>
+                        <ul class="laxcc-laws-list">
+                            <li class="laxcc-laws-item"><span class="laxcc-laws-mark no" aria-hidden="true">✕</span><span>In <strong>public</strong> — sidewalks, parks, beaches, businesses or anywhere tobacco smoking is banned.</span></li>
+                            <li class="laxcc-laws-item"><span class="laxcc-laws-mark no" aria-hidden="true">✕</span><span>Within <strong>1,000 ft of a school, daycare or youth center</strong> while children are present.</span></li>
+                            <li class="laxcc-laws-item"><span class="laxcc-laws-mark no" aria-hidden="true">✕</span><span>In any <strong>vehicle</strong> (driver or passenger) — and never drive impaired.</span></li>
+                            <li class="laxcc-laws-item"><span class="laxcc-laws-mark no" aria-hidden="true">✕</span><span>At <strong>LAX, on planes</strong>, or across state lines — and in most hotels &amp; rentals.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="laxcc-laws-note">Cannabis is for adults 21+ (or 18+ with a valid medical recommendation). Rules vary by city and property — when in doubt, consume privately and responsibly, and never drive under the influence. This is general information, not legal advice.</p>
+            </div>
+        </div>
+    </section>
 </div>
 
 <script>

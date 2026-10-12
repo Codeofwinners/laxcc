@@ -1,0 +1,164 @@
+<!-- LAXCC — Inside the Dispensary Photo Slider (homepage section) -->
+<!-- Square tiles, no rounded corners, identical dimensions, single-row slider. Arrows live in the header (never over images). -->
+<!-- Inline onclick (no <script> tag) — native swipe/scroll-snap still works if handlers are stripped -->
+<style>
+    .laxcc-gallery {
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+        max-width: 1680px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        background: #FCF9F2;
+    }
+
+    .laxcc-gallery * { box-sizing: border-box; }
+
+    .laxcc-gallery .lg_top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .laxcc-gallery .lg_h {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: #1D508A;
+        text-transform: uppercase;
+        letter-spacing: .05em;
+        margin: 0;
+    }
+
+    /* Right-side controls: arrows + view gallery link */
+    .laxcc-gallery .lg_ctrls {
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+    }
+
+    .laxcc-gallery a.lg_all {
+        font-size: .8rem;
+        font-weight: 700;
+        color: #F89459 !important;
+        text-decoration: none !important;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        white-space: nowrap;
+        margin-left: .3rem;
+    }
+    .laxcc-gallery a.lg_all:hover { opacity: .8; }
+
+    /* Circular arrow buttons — solid navy, white chevron */
+    .laxcc-gallery .lg_arrow {
+        flex: 0 0 auto;
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        padding: 0;
+        margin: 0;
+        border: none;
+        border-radius: 50%;
+        background: #1D508A;
+        color: #ffffff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 0;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: background .2s ease, transform .12s ease;
+    }
+    .laxcc-gallery .lg_arrow:hover { background: #F89459; }
+    .laxcc-gallery .lg_arrow:active { transform: scale(.92); }
+    .laxcc-gallery .lg_arrow svg { width: 18px; height: 18px; display: block; }
+
+    /* Single-row horizontal slider — scrollbar hidden */
+    .laxcc-gallery .lg_track {
+        display: flex;
+        gap: 1rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;            /* Firefox */
+        -ms-overflow-style: none;         /* old Edge */
+    }
+    .laxcc-gallery .lg_track::-webkit-scrollbar { display: none; width: 0; height: 0; }  /* Chrome/Safari */
+
+    /* Identical square tiles — no rounded corners */
+    .laxcc-gallery .lg_item {
+        flex: 0 0 auto;
+        width: clamp(260px, 78vw, 400px);
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        border-radius: 0;
+        background: #e7eef6;
+        scroll-snap-align: start;
+        display: block;
+    }
+
+    .laxcc-gallery .lg_item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform .5s cubic-bezier(.25,.8,.25,1);
+    }
+    .laxcc-gallery .lg_item:hover img { transform: scale(1.05); }
+</style>
+
+<div class="laxcc-gallery">
+    <div class="lg_top">
+        <h2 class="lg_h">Inside LAX Cannabis Club</h2>
+        <div class="lg_ctrls">
+            <button type="button" class="lg_arrow lg_prev" aria-label="Previous photos"
+                onclick="var t=this.closest('.laxcc-gallery').querySelector('.lg_track');t.scrollBy({left:-(t.clientWidth*0.8),behavior:'smooth'});">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button type="button" class="lg_arrow lg_next" aria-label="Next photos"
+                onclick="var t=this.closest('.laxcc-gallery').querySelector('.lg_track');t.scrollBy({left:(t.clientWidth*0.8),behavior:'smooth'});">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <a class="lg_all" href="https://laxcc.com/dispensary-gallery/">View Gallery &rarr;</a>
+        </div>
+    </div>
+
+    <div class="lg_track">
+        <div class="lg_item">
+            <img src="https://laxcc.com/wp-content/uploads/2024/06/front-desk-LAX_dispensary-with-cannabis-products-for-sale.jpg"
+                alt="Front desk at LAX Cannabis Club dispensary in Los Angeles with cannabis products for sale"
+                referrerpolicy="no-referrer" loading="lazy">
+        </div>
+        <div class="lg_item">
+            <img src="https://laxcc.com/wp-content/uploads/2024/06/order-weed-online-curb-side-pick-up-in-store.jpg"
+                alt="Order weed online for curbside pickup or in-store at LAX Cannabis Club"
+                referrerpolicy="no-referrer" loading="lazy">
+        </div>
+        <div class="lg_item">
+            <img src="https://laxcc.com/wp-content/uploads/2024/10/best-medical-marijuana-dispensary-LA.jpg"
+                alt="Best medical marijuana dispensary in LA — LAX Cannabis Club"
+                referrerpolicy="no-referrer" loading="lazy">
+        </div>
+        <div class="lg_item">
+            <img src="https://laxcc.com/wp-content/uploads/2024/06/Best-LA-dispensary-2024.jpg"
+                alt="Best LA dispensary 2024 — LAX Cannabis Club"
+                referrerpolicy="no-referrer" loading="lazy">
+        </div>
+        <div class="lg_item">
+            <img src="https://laxcc.com/wp-content/uploads/2024/07/LA-dispensary-cannabis-recommendations-by-staff-scaled.jpg"
+                alt="LAX Cannabis Club staff giving cannabis recommendations at the LA dispensary"
+                referrerpolicy="no-referrer" loading="lazy">
+        </div>
+        <div class="lg_item">
+            <img src="https://laxcc.com/wp-content/uploads/2024/06/inside-the-best-la-dispensary-menu-lax-cc.jpg"
+                alt="Inside LAX Cannabis Club, the best LA dispensary, browsing the menu"
+                referrerpolicy="no-referrer" loading="lazy">
+        </div>
+        <div class="lg_item">
+            <img src="https://laxcc.com/wp-content/uploads/2024/06/inside-LAX-Cannabis-club-dispensary-.jpg"
+                alt="Inside LAX Cannabis Club dispensary in Los Angeles"
+                referrerpolicy="no-referrer" loading="lazy">
+        </div>
+    </div>
+</div>

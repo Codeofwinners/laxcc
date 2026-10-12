@@ -1,0 +1,257 @@
+<script>
+(function () {
+  // Prevent double loading
+  if (window.LAXCC_AGEGATE_SCOPED) return;
+  window.LAXCC_AGEGATE_SCOPED = true;
+
+  // --- CONFIGURATION ---
+  var HERO_IMG = 'https://laxcc.com/wp-content/uploads/2024/07/lax-cannabis-club-dispensary-directions.jpg';
+  var LOGO_IMG = 'https://laxcc.com/wp-content/uploads/2023/05/Logov1_1.png';
+  var STORAGE_KEY = 'laxcc-age-verified-v2';
+  var BRAND_COLOR = '#00AFC9';
+
+  // --- LOGIC ---
+  function isVerified() {
+    try {
+      return (
+        localStorage.getItem(STORAGE_KEY) === 'true' ||
+        sessionStorage.getItem(STORAGE_KEY) === 'true' ||
+        document.cookie.indexOf(STORAGE_KEY + '=true') !== -1
+      );
+    } catch (e) { return false; }
+  }
+
+  function setVerified() {
+    try {
+      localStorage.setItem(STORAGE_KEY, 'true');
+      sessionStorage.setItem(STORAGE_KEY, 'true');
+      document.cookie = STORAGE_KEY + '=true; max-age=31536000; path=/';
+    } catch (e) {}
+  }
+
+  function mountAgeGate() {
+    // 1. Clean up any old versions
+    var existing = document.getElementById('laxcc-age-gate-root');
+    if (existing) existing.remove();
+
+    // 2. Preload Image
+    var link = document.createElement('link');
+    link.rel = 'preload'; link.as = 'image'; link.href = HERO_IMG;
+    document.head.appendChild(link);
+
+    // 3. Define Unique CSS
+    // We use ID selectors (#laxcc-age-gate-root) to guarantee high specificity (override theme)
+    if (!document.getElementById('laxcc-ag-styles')) {
+      var css = document.createElement('style');
+      css.id = 'laxcc-ag-styles';
+      css.textContent = `
+        /* Lock Body Scroll */
+        html.laxcc-ag-locked, body.laxcc-ag-locked { 
+          overflow: hidden !important; 
+          height: 100vh !important; 
+        }
+        
+        /* THE ROOT CONTAINER */
+        #laxcc-age-gate-root {
+          position: fixed !important;
+          inset: 0 !important;
+          top: 0; left: 0; width: 100vw; height: 100vh;
+          z-index: 2147483647 !important; /* Max Z-Index */
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          justify-content: center !important;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+          opacity: 0;
+          transition: opacity 0.5s ease !important;
+          background: #000;
+        }
+        
+        #laxcc-age-gate-root.laxcc-ag-visible { opacity: 1; }
+
+        /* RESET: Prevent Theme Bleed */
+        #laxcc-age-gate-root * {
+          box-sizing: border-box;
+          margin: 0; padding: 0;
+          line-height: 1.5;
+        }
+
+        /* BACKGROUND IMAGE LAYER */
+        .laxcc-ag-background {
+          position: absolute; inset: 0; z-index: 0;
+          pointer-events: none;
+        }
+        .laxcc-ag-background img {
+          width: 100%; height: 100%; object-fit: cover;
+          filter: brightness(0.35); /* Darken for readability */
+          transform: scale(1.1);
+        }
+
+        /* CONTENT WRAPPER */
+        .laxcc-ag-content {
+          position: relative; z-index: 10;
+          width: 100%; max-width: 600px;
+          padding: 20px;
+          display: flex; flex-direction: column; align-items: center;
+          text-align: center;
+        }
+
+        /* LOGO */
+        .laxcc-ag-logo {
+          width: auto !important; height: 65px !important;
+          margin-bottom: 35px !important;
+          filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+          display: block;
+        }
+
+        /* HEADLINE */
+        .laxcc-ag-headline {
+          color: #ffffff !important;
+          font-size: 46px !important;
+          font-weight: 900 !important;
+          margin-bottom: 12px !important;
+          line-height: 1.1 !important;
+          text-transform: uppercase !important;
+          letter-spacing: -1.5px !important;
+          text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        /* SUBTEXT */
+        .laxcc-ag-subtext {
+          color: rgba(255,255,255,0.9) !important;
+          font-size: 17px !important;
+          font-weight: 400 !important;
+          margin-bottom: 40px !important;
+          max-width: 360px !important;
+        }
+
+        /* BUTTON: PRIMARY (YES) */
+        .laxcc-ag-btn-primary {
+          display: block !important;
+          width: 100% !important; max-width: 320px !important;
+          background: ${BRAND_COLOR} !important;
+          color: #ffffff !important;
+          border: none !important;
+          padding: 20px !important;
+          border-radius: 50px !important;
+          font-size: 18px !important;
+          font-weight: 700 !important;
+          text-transform: uppercase !important;
+          letter-spacing: 1px !important;
+          cursor: pointer !important;
+          box-shadow: 0 10px 30px rgba(0, 175, 201, 0.4) !important;
+          transition: transform 0.2s, box-shadow 0.2s !important;
+          margin-bottom: 16px !important;
+          text-decoration: none !important;
+        }
+        .laxcc-ag-btn-primary:hover {
+          transform: translateY(-2px) !important;
+          box-shadow: 0 15px 40px rgba(0, 175, 201, 0.6) !important;
+        }
+
+        /* BUTTON: SECONDARY (NO) */
+        .laxcc-ag-btn-secondary {
+          display: block !important;
+          width: 100% !important; max-width: 320px !important;
+          background: transparent !important;
+          border: 2px solid rgba(255,255,255,0.3) !important;
+          color: #ffffff !important;
+          padding: 18px !important;
+          border-radius: 50px !important;
+          font-size: 16px !important;
+          font-weight: 600 !important;
+          letter-spacing: 0.5px !important;
+          cursor: pointer !important;
+          transition: all 0.2s ease !important;
+          text-decoration: none !important;
+        }
+        .laxcc-ag-btn-secondary:hover {
+          border-color: #ffffff !important;
+          background: rgba(255,255,255,0.1) !important;
+        }
+
+        /* MOBILE ADJUSTMENTS */
+        @media (max-width: 480px) {
+           .laxcc-ag-headline { font-size: 36px !important; }
+           .laxcc-ag-logo { height: 55px !important; }
+           .laxcc-ag-btn-primary { padding: 18px !important; font-size: 16px !important; }
+           .laxcc-ag-btn-secondary { padding: 16px !important; font-size: 14px !important; }
+        }
+      `;
+      document.head.appendChild(css);
+    }
+
+    // 4. Create HTML Structure
+    var root = document.createElement('div');
+    root.id = 'laxcc-age-gate-root';
+    root.setAttribute('role', 'dialog');
+    root.setAttribute('aria-modal', 'true');
+    root.innerHTML = `
+      <div class="laxcc-ag-background">
+        <img src="${HERO_IMG}" alt="">
+      </div>
+      <div class="laxcc-ag-content">
+        <img class="laxcc-ag-logo" src="${LOGO_IMG}" alt="LAX CC Logo">
+        <h1 class="laxcc-ag-headline">Are you 21?</h1>
+        <p class="laxcc-ag-subtext">Please verify that you are 21+ or hold a valid medical card to view our menu.</p>
+        
+        <button type="button" class="laxcc-ag-btn-primary" id="laxcc-ag-yes">Yes, Enter Site</button>
+        <button type="button" class="laxcc-ag-btn-secondary" id="laxcc-ag-no">No, I am under 21</button>
+      </div>
+    `;
+
+    document.body.appendChild(root);
+
+    // Lock Screen
+    document.documentElement.classList.add('laxcc-ag-locked');
+    document.body.classList.add('laxcc-ag-locked');
+
+    // Animate In
+    requestAnimationFrame(function(){ root.classList.add('laxcc-ag-visible'); });
+
+    // 5. Event Listeners
+    var btnYes = document.getElementById('laxcc-ag-yes');
+    var btnNo = document.getElementById('laxcc-ag-no');
+
+    function closeGate() {
+      setVerified();
+      root.classList.remove('laxcc-ag-visible');
+      setTimeout(function() {
+        if (root) root.remove();
+        document.documentElement.classList.remove('laxcc-ag-locked');
+        document.body.classList.remove('laxcc-ag-locked');
+      }, 500);
+    }
+
+    // Handle Yes
+    ['click', 'touchend'].forEach(function(evt) {
+      btnYes.addEventListener(evt, function(e) {
+        if (evt === 'touchend') e.preventDefault(); // Prevent ghost clicks
+        e.stopPropagation();
+        closeGate();
+      }, { once: true });
+    });
+
+    // Handle No
+    btnNo.addEventListener('click', function() {
+      window.location.href = 'https://www.google.com';
+    });
+  }
+
+  // --- INIT ---
+  function init() {
+    if (!isVerified()) {
+      if (document.body) mountAgeGate();
+      else document.addEventListener('DOMContentLoaded', mountAgeGate);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
+</script>
+

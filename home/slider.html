@@ -1,0 +1,654 @@
+<style>
+    #lux-hero {
+        --lux-primary: #1D508A;
+        --lux-accent: #F89459;
+        --lux-white: #ffffff;
+        --lux-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        position: relative !important;
+        width: calc(100% - 40px) !important;
+        max-width: 1400px !important;
+        height: 500px !important;
+        border-radius: 20px !important;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+        overflow: hidden !important;
+        background: #0a0a0a !important;
+        font-family: var(--lux-font) !important;
+        margin: 5px auto 20px auto !important;
+        padding: 0 !important;
+    }
+
+    /* ── WATERMARK ── */
+    #lux-hero .lux-watermark {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        font-size: clamp(40px, 8vw, 140px) !important;
+        font-weight: 900 !important;
+        text-transform: uppercase !important;
+        color: rgba(255, 255, 255, 0.03) !important;
+        letter-spacing: -0.03em !important;
+        line-height: 0.9 !important;
+        text-align: center !important;
+        pointer-events: none !important;
+        z-index: 1 !important;
+        white-space: nowrap !important;
+    }
+
+    /* ── SLIDES CONTAINER ── */
+    #lux-hero .lux-slides {
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 2 !important;
+        border-radius: inherit !important;
+        overflow: hidden !important;
+    }
+
+    #lux-hero .lux-slide {
+        position: absolute !important;
+        inset: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: hidden !important;
+    }
+
+    #lux-hero .lux-slide.lux-active {
+        opacity: 1 !important;
+        visibility: visible !important;
+        z-index: 5 !important;
+    }
+
+    /* ── SLIDE BACKGROUND ── */
+    #lux-hero .lux-slide-bg {
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 0 !important;
+    }
+
+    /* Ambient background video layer */
+    #lux-hero .lux-slide-bg .lux-bg-video {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        opacity: 1 !important;
+        z-index: 0 !important;
+    }
+
+    /* Gradient overlay sits on top of video */
+    #lux-hero .lux-slide-bg .lux-bg-gradient {
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 1 !important;
+    }
+
+    /* Filled Background Slides */
+    #lux-slide-stereo .lux-bg-fill,
+    #lux-slide-aims .lux-bg-fill,
+    #lux-slide-abx .lux-bg-fill,
+    #lux-slide-laff .lux-bg-fill,
+    #lux-slide-bloom .lux-bg-fill {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        z-index: 0 !important;
+        object-position: center center !important;
+    }
+
+    /* ABX Background */
+    #lux-slide-abx .lux-slide-bg {
+        background:
+            radial-gradient(circle at 78% 22%, rgba(126, 203, 179, 0.34) 0%, transparent 55%),
+            radial-gradient(circle at 18% 82%, rgba(248, 148, 89, 0.24) 0%, transparent 58%),
+            linear-gradient(135deg, #071412 0%, #10241f 50%, #090b0c 100%) !important;
+    }
+
+    #lux-slide-abx .lux-bg-fill {
+        object-position: right center !important;
+    }
+
+    /* Standard Top-Shadow Gradients for legibility */
+    #lux-hero .lux-slide .lux-bg-gradient {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.15) 35%, transparent 80%),
+            linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 55%, transparent 100%) !important;
+    }
+
+    #lux-slide-abx .lux-bg-gradient {
+        background: none !important;
+    }
+
+    #lux-slide-abx .lux-badge {
+        background: #7ECBB3 !important;
+    }
+
+    #lux-slide-abx .lux-subtitle {
+        color: #7ECBB3 !important;
+        font-weight: 700 !important;
+    }
+
+    #lux-slide-abx .lux-slide-inner {
+        align-items: flex-end !important;
+        padding-bottom: 92px !important;
+    }
+
+    #lux-slide-abx .lux-slide-text {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        max-width: 220px !important;
+    }
+
+    /* Layouts for Filled Slides */
+    #lux-slide-stereo .lux-slide-inner,
+    #lux-slide-aims .lux-slide-inner,
+    #lux-slide-abx .lux-slide-inner,
+    #lux-slide-laff .lux-slide-inner,
+    #lux-slide-bloom .lux-slide-inner {
+        justify-content: flex-start !important;
+    }
+
+    #lux-slide-laff .lux-bg-gradient {
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.15) 100%) !important;
+    }
+
+    #lux-slide-stereo .lux-bg-gradient {
+        background:
+            linear-gradient(90deg, rgba(5, 10, 20, 0.78) 0%, rgba(5, 10, 20, 0.35) 55%, transparent 100%),
+            linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, transparent 40%) !important;
+    }
+
+    /* ── SLIDE INNER LAYOUT ── */
+    #lux-hero .lux-slide-inner {
+        position: relative !important;
+        z-index: 2 !important;
+        width: 100% !important;
+        max-width: 1400px !important;
+        height: 100% !important;
+        margin: 0 auto !important;
+        padding: 40px 60px 80px 60px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 40px !important;
+    }
+
+    /* ── TEXT SIDE ── */
+    #lux-hero .lux-slide-text {
+        flex: 1 !important;
+        max-width: 500px !important;
+        z-index: 3 !important;
+    }
+
+    #lux-hero .lux-badge {
+        display: inline-block !important;
+        background: #7ECBB3 !important;
+        color: var(--lux-white) !important;
+        font-weight: 800 !important;
+        font-size: 14px !important;
+        padding: 8px 20px !important;
+        border-radius: 100px !important;
+        letter-spacing: 0.02em !important;
+        margin-bottom: 20px !important;
+    }
+
+    #lux-hero .lux-name {
+        font-size: clamp(32px, 5vw, 64px) !important;
+        font-weight: 900 !important;
+        color: var(--lux-white) !important;
+        line-height: 0.95 !important;
+        letter-spacing: -0.04em !important;
+        margin: 0 0 12px 0 !important;
+        text-transform: uppercase !important;
+        text-shadow: 0 4px 40px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    #lux-hero .lux-subtitle {
+        font-size: 16px !important;
+        color: rgba(255, 255, 255, 1) !important;
+        font-weight: 500 !important;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+        margin: 0 0 10px 0 !important;
+        letter-spacing: 0.02em !important;
+    }
+
+    #lux-hero .lux-desc {
+        font-size: 14px !important;
+        color: rgba(255, 255, 255, 1) !important;
+        font-weight: 500 !important;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+        margin: 0 0 28px 0 !important;
+        line-height: 1.5 !important;
+        max-width: 420px !important;
+    }
+
+    #lux-hero .lux-cta {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        background: #F89459 !important;
+        color: var(--lux-white) !important;
+        font-family: var(--lux-font) !important;
+        font-size: 15px !important;
+        font-weight: 700 !important;
+        padding: 14px 32px !important;
+        border-radius: 8px !important;
+        text-decoration: none !important;
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    #lux-hero .lux-cta:hover {
+        transform: translateY(-2px) scale(1.03) !important;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    #lux-hero .lux-cta svg {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    /* ── IMAGE SIDE ── */
+    #lux-hero .lux-media {
+        flex: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        position: relative !important;
+        z-index: 2 !important;
+    }
+
+    #lux-hero .lux-media img,
+    #lux-hero .lux-media video {
+        max-width: 100% !important;
+        max-height: 320px !important;
+        object-fit: contain !important;
+        filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.4)) !important;
+    }
+
+    /* ── PROGRESS BAR ── */
+    #lux-hero .lux-progress {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 3px !important;
+        z-index: 50 !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    #lux-hero .lux-progress-bar {
+        height: 100% !important;
+        width: 0% !important;
+        background: var(--lux-accent) !important;
+        transition: width 0.1s linear !important;
+    }
+
+    /* ── SLIDE COUNTER ── */
+    #lux-hero .lux-counter {
+        position: absolute !important;
+        top: 30px !important;
+        right: 40px !important;
+        z-index: 30 !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        color: rgba(255, 255, 255, 0.72) !important;
+        letter-spacing: 0.1em !important;
+        padding: 8px 12px !important;
+        border-radius: 999px !important;
+        background: rgba(10, 10, 10, 0.38) !important;
+        backdrop-filter: blur(14px) !important;
+    }
+
+    #lux-hero .lux-counter-current {
+        color: var(--lux-white) !important;
+        font-size: 18px !important;
+    }
+
+    /* ── THUMBNAIL DOCK ── */
+    #lux-hero .lux-dock {
+        position: absolute !important;
+        bottom: 24px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 40 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        padding: 6px !important;
+        background: rgba(10, 10, 10, 0.6) !important;
+        backdrop-filter: blur(20px) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 16px !important;
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    #lux-hero .lux-dock-thumb {
+        width: 48px !important;
+        height: 48px !important;
+        border-radius: 10px !important;
+        overflow: hidden !important;
+        cursor: pointer !important;
+        border: 2px solid transparent !important;
+        transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+        opacity: 0.5 !important;
+        flex-shrink: 0 !important;
+    }
+
+    #lux-hero .lux-dock-thumb.lux-thumb-active {
+        border-color: var(--lux-accent) !important;
+        opacity: 1 !important;
+        box-shadow: 0 0 16px rgba(248, 148, 89, 0.55) !important;
+        transform: translateY(-2px) scale(1.08) !important;
+    }
+
+    #lux-hero .lux-dock-thumb img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+        #lux-hero {
+            width: calc(100% - 16px) !important;
+            margin: 8px auto 72px auto !important;
+            border-radius: 16px !important;
+            height: auto !important;
+            min-height: 520px !important;
+            padding-bottom: 0 !important;
+        }
+
+        #lux-hero .lux-slide-inner {
+            flex-direction: column !important;
+            padding: 24px 18px 20px !important;
+            gap: 14px !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+        }
+
+        #lux-hero .lux-media img,
+        #lux-hero .lux-media video {
+            max-height: 200px !important;
+        }
+
+        #lux-hero .lux-dock {
+            bottom: -58px !important;
+        }
+    }
+</style>
+
+<div id="lux-hero">
+    <div class="lux-watermark" aria-hidden="true">LAXCC</div>
+
+    <div class="lux-progress">
+        <div class="lux-progress-bar"></div>
+    </div>
+
+    <div class="lux-counter">
+        <span class="lux-counter-current">01</span> / <span class="lux-counter-total">06</span>
+    </div>
+
+    <div class="lux-slides">
+
+        <!-- Slide 0: ABX (First) -->
+        <div class="lux-slide lux-active" data-slide="0" id="lux-slide-abx">
+            <div class="lux-slide-bg">
+                <picture>
+                    <source media="(min-width: 769px)"
+                        srcset="https://laxcc.com/wp-content/uploads/2026/05/THCV_capsules-los-angeles.png">
+                    <img class="lux-bg-fill" src="https://laxcc.com/wp-content/uploads/2026/05/thcv-gel-capsules.png"
+                        alt="ABX Absolute Extracts THC pills">
+                </picture>
+                <div class="lux-bg-gradient"></div>
+            </div>
+            <div class="lux-slide-inner">
+                <div class="lux-slide-text">
+                    <span class="lux-badge">From $7</span>
+                    <h2 class="lux-name">ABX</h2>
+                    <p class="lux-subtitle">Soft Gel Capsules</p>
+                    <p class="lux-desc">Precise dosing, clinical quality. Absolute Extracts soft gels for wellness and
+                        focus.</p>
+                    <a href="https://laxcc.com/brand/absolutextracts/" class="lux-cta">
+                        Shop ABX
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 1: Highatus -->
+        <div class="lux-slide" data-slide="1" id="lux-slide-laff">
+            <div class="lux-slide-bg">
+                <picture>
+                    <source media="(min-width: 769px)"
+                        srcset="https://laxcc.com/wp-content/uploads/2026/05/best-thc-gummies-la.png">
+                    <img class="lux-bg-fill"
+                        src="https://laxcc.com/wp-content/uploads/2026/05/shop-edibles-los-angeles.png"
+                        alt="Highatus rosin gummies">
+                </picture>
+                <div class="lux-bg-gradient"></div>
+            </div>
+            <div class="lux-slide-inner">
+                <div class="lux-slide-text">
+                    <span class="lux-badge">$20 Rosin Gummies</span>
+                    <h2 class="lux-name">Highatus</h2>
+                    <p class="lux-subtitle">10mg Each &bull; Natural Ingredients</p>
+                    <p class="lux-desc">Flavor-first cannabis edibles made to help you recharge, relax, and enjoy the
+                        break.</p>
+                    <a href="https://laxcc.com/brand/highatus/" class="lux-cta">
+                        Shop Highatus
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Stereo -->
+        <div class="lux-slide" data-slide="2" id="lux-slide-stereo">
+            <div class="lux-slide-bg">
+                <img class="lux-bg-fill"
+                    src="https://laxcc.com/wp-content/uploads/2026/04/buy-cheap-weed-los-angeles-dispensary.png"
+                    alt="Stereo Flower Pink Sherbet">
+                <div class="lux-bg-gradient"></div>
+            </div>
+            <div class="lux-slide-inner">
+                <div class="lux-slide-text">
+                    <span class="lux-badge">$50 Quarter</span>
+                    <h2 class="lux-name">Stereo</h2>
+                    <p class="lux-subtitle">Top-Shelf Indoor Flower</p>
+                    <p class="lux-desc">Sweet, creamy Pink Sherbet with a clean indoor finish.</p>
+                    <a href="https://laxcc.com/shop/?products_search=stereo" class="lux-cta">
+                        Shop Now
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Aims -->
+        <div class="lux-slide" data-slide="3" id="lux-slide-aims">
+            <div class="lux-slide-bg">
+                <img class="lux-bg-fill" src="https://aims.la/wp-content/uploads/2021/04/E69A9763.jpg"
+                    alt="Aims Horticulture">
+                <div class="lux-bg-gradient"></div>
+            </div>
+            <div class="lux-slide-inner">
+                <div class="lux-slide-text">
+                    <span class="lux-badge">$21 7-Packs & $30 1/8ths</span>
+                    <h2 class="lux-name">Aims Horticulture</h2>
+                    <p class="lux-subtitle">Indoor Flower &bull; 7-Pack Prerolls</p>
+                    <p class="lux-desc">$30 eighths and 7-pack of 1/8 oz pre-rolls for just $21. Premium indoor flower from Los Angeles' finest cultivators.</p>
+                    <a href="https://laxcc.com/brand/aims-horticulture/" class="lux-cta">
+                        Shop Aims
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Stiiizy -->
+        <div class="lux-slide" data-slide="4" id="lux-slide-stiiizy">
+            <div class="lux-slide-bg">
+                <video class="lux-bg-video" autoplay muted playsinline loop>
+                    <source src="https://laxcc.com/wp-content/uploads/2024/04/STIIIZY_Hero_Desktop_1.webm"
+                        type="video/webm">
+                </video>
+                <div class="lux-bg-gradient"></div>
+            </div>
+            <div class="lux-slide-inner">
+                <div class="lux-slide-text">
+                    <span class="lux-badge">From $20</span>
+                    <h2 class="lux-name">Stiiizy Pods</h2>
+                    <p class="lux-subtitle">California's Best-Selling Vape</p>
+                    <p class="lux-desc">The #1 cannabis vape brand near LAX. Pods, all-in-ones, and disposables.</p>
+                    <a href="https://laxcc.com/categories/vaporizers/?brands=1cebe6f5-bab2-4f15-a50a-9730fee79de4"
+                        class="lux-cta">
+                        Shop Now
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="lux-media">
+                    <img src="https://www.stiiizy.com/cdn/shop/files/IL_AIO_POD_FAMILY_SHOTS_1200x.png?v=1692232410"
+                        alt="Stiiizy Pods">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Bloom Surf (Fixed) -->
+        <div class="lux-slide" data-slide="5" id="lux-slide-bloom">
+            <div class="lux-slide-bg">
+                <img class="lux-bg-fill"
+                    src="https://laxcc.com/wp-content/uploads/2026/04/bloom-vape-disposable-los-angeles.png"
+                    alt="Bloom Surf">
+                <div class="lux-bg-gradient"></div>
+            </div>
+            <div class="lux-slide-inner">
+                <div class="lux-slide-text">
+                    <span class="lux-badge">New Flavor Drop</span>
+                    <h2 class="lux-name">Bloom Surf</h2>
+                    <p class="lux-subtitle">Live Resin &bull; Terpene Rich</p>
+                    <p class="lux-desc">Full-spectrum experience on the go. The ultimate disposable vape technology.</p>
+                    <a href="https://laxcc.com/brand/bloom/" class="lux-cta">
+                        Shop Bloom
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Dock -->
+    <nav class="lux-dock" aria-label="Product navigation">
+        <div class="lux-dock-thumb lux-thumb-active" data-thumb="0">
+            <img src="https://laxcc.com/wp-content/uploads/2026/05/THCV_capsules-los-angeles.png" alt="ABX">
+        </div>
+        <div class="lux-dock-thumb" data-thumb="1">
+            <img src="https://laxcc.com/wp-content/uploads/2026/05/best-thc-gummies-la.png" alt="Highatus">
+        </div>
+        <div class="lux-dock-thumb" data-thumb="2">
+            <img src="https://laxcc.com/wp-content/uploads/2026/04/buy-cheap-weed-los-angeles-dispensary.png"
+                alt="Stereo">
+        </div>
+        <div class="lux-dock-thumb" data-thumb="3">
+            <img src="https://aims.la/wp-content/uploads/2021/04/E69A9763.jpg" alt="Aims">
+        </div>
+        <div class="lux-dock-thumb" data-thumb="4">
+            <img src="https://www.stiiizy.com/cdn/shop/files/IL_AIO_POD_FAMILY_SHOTS_1200x.png?v=1692232410"
+                alt="Stiiizy">
+        </div>
+        <div class="lux-dock-thumb" data-thumb="5">
+            <img src="https://thebloombrands.com/wp-content/uploads/2023/08/Bloom-Which-Surf-Is-Right-For-You-004.jpg"
+                alt="Bloom">
+        </div>
+    </nav>
+</div>
+
+<script>
+    (function () {
+        'use strict';
+        var wrap = document.getElementById('lux-hero');
+        if (!wrap) return;
+
+        var slides = wrap.querySelectorAll('.lux-slide');
+        var thumbs = wrap.querySelectorAll('.lux-dock-thumb');
+        var bar = wrap.querySelector('.lux-progress-bar');
+        var counterCur = wrap.querySelector('.lux-counter-current');
+        var total = slides.length;
+        var current = 0;
+        var interval = 6000;
+        var timer = null;
+        var elapsed = 0;
+        var tick = 50;
+        var paused = false;
+
+        function goTo(idx) {
+            if (idx < 0) idx = total - 1;
+            if (idx >= total) idx = 0;
+            slides[current].classList.remove('lux-active');
+            thumbs[current].classList.remove('lux-thumb-active');
+            current = idx;
+            slides[current].classList.add('lux-active');
+            thumbs[current].classList.add('lux-thumb-active');
+            counterCur.textContent = String(current + 1).padStart(2, '0');
+            elapsed = 0;
+        }
+
+        function startTimer() {
+            if (timer) return;
+            timer = setInterval(function () {
+                if (paused) return;
+                elapsed += tick;
+                var pct = (elapsed / interval) * 100;
+                bar.style.width = pct + '%';
+                if (elapsed >= interval) {
+                    goTo(current + 1);
+                }
+            }, tick);
+        }
+
+        function resetTimer() {
+            elapsed = 0;
+            bar.style.width = '0%';
+        }
+
+        wrap.addEventListener('click', function (e) {
+            var thumb = e.target.closest('[data-thumb]');
+            if (thumb) {
+                var idx = parseInt(thumb.getAttribute('data-thumb'), 10);
+                goTo(idx);
+                resetTimer();
+            }
+        });
+
+        wrap.addEventListener('mouseenter', function () { paused = true; });
+        wrap.addEventListener('mouseleave', function () { paused = false; });
+
+        startTimer();
+    })();
+</script>

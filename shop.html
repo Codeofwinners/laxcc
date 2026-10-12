@@ -1,0 +1,693 @@
+<!-- SEO META — paste into Yoast/RankMath for this page -->
+<!-- Title: Dispensary Near LAX Airport | LAXCC — Shop Cannabis in Los Angeles -->
+<!-- Description: LAXCC is a licensed dispensary near LAX Airport in Los Angeles. Shop flower, pre-rolls, edibles, vapes & more. Walk in daily 9AM–9:30PM at 8332 Lincoln Blvd. -->
+<meta name="description" content="LAXCC is a licensed dispensary near LAX Airport in Los Angeles. Shop flower, pre-rolls, edibles, vapes & more. Walk in daily 9AM–9:30PM at 8332 Lincoln Blvd.">
+
+<style>
+    /* ========================================
+       SHOP PAGE SEO CONTENT — LAXCC
+       Scoped to .laxcc-shop
+       Elementor-safe: all rules use !important
+       ======================================== */
+
+    .laxcc-shop *,
+    .laxcc-shop *::before,
+    .laxcc-shop *::after {
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .laxcc-shop {
+        --navy: #1D508A;
+        --teal: #00AFC9;
+        --orange: #F89459;
+        --green: #7ECBB3;
+        --cream: #FBF8F2;
+        --white: #ffffff;
+        --text: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --navy-deep: #0f3a5f;
+
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        background: var(--cream) !important;
+        color: var(--text) !important;
+        line-height: 1.6 !important;
+        overflow-x: hidden !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+    }
+
+    @keyframes laxcc-shop-fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* SECTION LABEL */
+    .laxcc-shop .shop-section-label {
+        display: inline-block !important;
+        font-size: 0.7rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 3px !important;
+        text-transform: uppercase !important;
+        color: var(--orange) !important;
+        margin-bottom: 20px !important;
+        position: relative !important;
+        padding-left: 36px !important;
+    }
+    .laxcc-shop .shop-section-label::before {
+        content: '' !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 50% !important;
+        width: 24px !important;
+        height: 2px !important;
+        background: var(--orange) !important;
+    }
+
+    /* INTRO */
+    .laxcc-shop .shop-intro {
+        padding: 80px 0 60px !important;
+        background: var(--cream) !important;
+    }
+    .laxcc-shop .shop-intro-container {
+        max-width: 1400px !important;
+        margin: 0 auto !important;
+        padding: 0 20px !important;
+    }
+    .laxcc-shop .shop-intro h2 {
+        font-size: clamp(2.2rem, 4vw, 3.5rem) !important;
+        font-weight: 900 !important;
+        color: var(--navy) !important;
+        letter-spacing: -0.03em !important;
+        line-height: 1.05 !important;
+        margin-bottom: 20px !important;
+        max-width: 720px !important;
+    }
+    .laxcc-shop .shop-intro h2 span { color: var(--orange) !important; }
+    .laxcc-shop .shop-intro-text {
+        font-size: 1.05rem !important;
+        color: var(--text-muted) !important;
+        line-height: 1.7 !important;
+        max-width: 680px !important;
+        margin-bottom: 16px !important;
+    }
+    @media (min-width: 769px) {
+        .laxcc-shop .shop-intro-container { padding: 0 60px !important; }
+    }
+
+    /* SCROLL ARROWS (shared) */
+    .laxcc-shop .shop-scroll-arrows { display: flex !important; gap: 8px !important; flex-shrink: 0 !important; }
+    .laxcc-shop .shop-scroll-arrow {
+        width: 40px !important; height: 40px !important; border-radius: 50% !important;
+        border: 1px solid var(--border) !important; background: var(--white) !important;
+        display: flex !important; align-items: center !important; justify-content: center !important;
+        cursor: pointer !important; transition: all 0.2s ease !important;
+        color: var(--text) !important; font-size: 0.8rem !important;
+    }
+    .laxcc-shop .shop-scroll-arrow:hover { border-color: var(--navy) !important; color: var(--navy) !important; }
+
+    /* WHY LAXCC section */
+    .laxcc-shop .shop-why { padding: 24px 0 0 !important; background: var(--cream) !important; }
+    .laxcc-shop .shop-why-container { max-width: 1400px !important; margin: 0 auto !important; padding: 0 20px !important; }
+    .laxcc-shop .shop-why-header { max-width: 680px !important; }
+    .laxcc-shop .shop-why-top { display: flex !important; align-items: flex-end !important; justify-content: space-between !important; gap: 24px !important; margin-bottom: 16px !important; }
+    .laxcc-shop .shop-why-header h2 { font-size: clamp(2rem, 3.5vw, 3rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1.05 !important; margin-bottom: 12px !important; }
+    .laxcc-shop .shop-why-header p { font-size: 1rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; max-width: 480px !important; }
+
+    .laxcc-shop .shop-why-track {
+        display: flex !important; gap: 20px !important; overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important; padding-bottom: 4px !important;
+    }
+    .laxcc-shop .shop-why-track::-webkit-scrollbar { display: none !important; }
+    .laxcc-shop .shop-why-slide {
+        flex: 0 0 280px !important; scroll-snap-align: start !important;
+        padding: 16px 0 0 !important; border-top: 2px solid var(--border) !important;
+        transition: border-color 0.3s ease !important;
+    }
+    .laxcc-shop .shop-why-slide:hover { border-color: var(--navy) !important; }
+    .laxcc-shop .shop-why-slide-num { font-size: 0.7rem !important; font-weight: 700 !important; color: var(--text-muted) !important; letter-spacing: 0.5px !important; margin-bottom: 12px !important; }
+    .laxcc-shop .shop-why-slide h3 { font-size: 1.1rem !important; font-weight: 800 !important; color: var(--text) !important; letter-spacing: -0.01em !important; margin-bottom: 8px !important; }
+    .laxcc-shop .shop-why-slide p { font-size: 0.85rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; }
+    @media (min-width: 769px) { .laxcc-shop .shop-why-slide { flex: 0 0 320px !important; } }
+
+    /* WHAT WE CARRY */
+    .laxcc-shop .shop-categories { padding: 24px 0 !important; background: var(--cream) !important; }
+    .laxcc-shop .shop-categories-container { max-width: 1400px !important; margin: 0 auto !important; padding: 0 20px !important; }
+    .laxcc-shop .shop-categories-top { display: flex !important; align-items: flex-end !important; justify-content: space-between !important; gap: 24px !important; margin-bottom: 16px !important; }
+    .laxcc-shop .shop-categories-intro h2 { font-size: clamp(2rem, 3.5vw, 3rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1.05 !important; margin-bottom: 8px !important; }
+    .laxcc-shop .shop-categories-intro p { font-size: 0.9rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; max-width: 480px !important; }
+
+    .laxcc-shop .shop-categories-track {
+        display: flex !important; gap: 20px !important; overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+    }
+    .laxcc-shop .shop-categories-track::-webkit-scrollbar { display: none !important; }
+    .laxcc-shop .shop-category-slide {
+        flex: 0 0 220px !important; scroll-snap-align: start !important;
+        padding: 16px 0 0 !important; border-top: 2px solid var(--border) !important;
+        text-align: center !important; transition: border-color 0.3s ease !important;
+    }
+    .laxcc-shop .shop-category-slide:hover { border-color: var(--navy) !important; }
+    .laxcc-shop .shop-category-num { font-size: 2.5rem !important; font-weight: 900 !important; color: var(--orange) !important; line-height: 1 !important; margin-bottom: 6px !important; }
+    .laxcc-shop .shop-category-name { font-size: 0.9rem !important; font-weight: 700 !important; color: var(--navy) !important; margin-bottom: 6px !important; }
+    .laxcc-shop .shop-category-desc { font-size: 0.8rem !important; color: var(--text-muted) !important; line-height: 1.5 !important; }
+    @media (min-width: 769px) {
+        .laxcc-shop .shop-categories { padding: 60px 0 !important; }
+        .laxcc-shop .shop-categories-container { padding: 0 60px !important; }
+        .laxcc-shop .shop-category-slide { flex: 0 0 260px !important; }
+    }
+
+    /* LOCATION section */
+    .laxcc-shop .shop-location { padding: 80px 0 !important; background: var(--cream) !important; }
+    .laxcc-shop .shop-location-container {
+        max-width: 1400px !important; margin: 0 auto !important; padding: 0 20px !important;
+        display: grid !important; grid-template-columns: 1fr !important; gap: 40px !important;
+    }
+    .laxcc-shop .shop-location-header h2 { font-size: clamp(2rem, 3.5vw, 3rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1.05 !important; margin-bottom: 12px !important; }
+    .laxcc-shop .shop-location-header p { font-size: 1rem !important; color: var(--text-muted) !important; line-height: 1.7 !important; max-width: 620px !important; margin-bottom: 16px !important; }
+    .laxcc-shop .shop-location-details {
+        display: grid !important; grid-template-columns: repeat(2, 1fr) !important;
+        gap: 24px !important; margin-top: 8px !important;
+    }
+    .laxcc-shop .shop-location-detail-val { font-size: 1.3rem !important; font-weight: 900 !important; color: var(--navy) !important; line-height: 1.2 !important; margin-bottom: 4px !important; }
+    .laxcc-shop .shop-location-detail-lbl { font-size: 0.65rem !important; font-weight: 700 !important; color: var(--text-muted) !important; text-transform: uppercase !important; letter-spacing: 1px !important; }
+    @media (min-width: 769px) {
+        .laxcc-shop .shop-location-container { grid-template-columns: 1fr 1fr !important; gap: 80px !important; padding: 0 60px !important; align-items: center !important; }
+        .laxcc-shop .shop-location-details { grid-template-columns: repeat(2, 1fr) !important; gap: 32px !important; }
+    }
+    @media (max-width: 480px) {
+        .laxcc-shop .shop-location-details { grid-template-columns: 1fr !important; }
+    }
+
+    /* EDITORIAL — long-form SEO copy */
+    .laxcc-shop .shop-editorial { padding: 60px 0 !important; background: var(--cream) !important; }
+    .laxcc-shop .shop-editorial-container { max-width: 760px !important; margin: 0 auto !important; padding: 0 20px !important; }
+    .laxcc-shop .shop-editorial h2 { font-size: clamp(1.8rem, 3vw, 2.4rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.02em !important; line-height: 1.1 !important; margin-bottom: 16px !important; }
+    .laxcc-shop .shop-editorial h3 { font-size: 1.2rem !important; font-weight: 800 !important; color: var(--navy) !important; margin-bottom: 8px !important; margin-top: 32px !important; }
+    .laxcc-shop .shop-editorial p { font-size: 1rem !important; color: var(--text-muted) !important; line-height: 1.7 !important; margin-bottom: 16px !important; }
+    @media (min-width: 769px) {
+        .laxcc-shop .shop-editorial-container { padding: 0 60px !important; }
+    }
+
+    /* FAQ */
+    .laxcc-shop .shop-faq { padding: 140px 0 !important; background: var(--cream) !important; }
+    .laxcc-shop .shop-faq-container {
+        max-width: 1400px !important; margin: 0 auto !important; padding: 0 60px !important;
+        display: grid !important; grid-template-columns: 380px 1fr !important;
+        gap: 80px !important; align-items: start !important;
+    }
+    .laxcc-shop .shop-faq-sidebar { position: sticky !important; top: 40px !important; }
+    .laxcc-shop .shop-faq-sidebar h2 { font-size: 3rem !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1 !important; margin-bottom: 24px !important; }
+    .laxcc-shop .shop-faq-sidebar p { font-size: 1.05rem !important; color: var(--text-muted) !important; line-height: 1.7 !important; margin-bottom: 32px !important; }
+    .laxcc-shop .shop-faq-deco { width: 80px !important; height: 4px !important; background: var(--orange) !important; border-radius: 2px !important; }
+    .laxcc-shop .shop-faq-list { display: flex !important; flex-direction: column !important; }
+    .laxcc-shop .shop-faq-item { border-bottom: 1px solid var(--border) !important; padding: 32px 0 !important; }
+    .laxcc-shop .shop-faq-item:first-child { border-top: 1px solid var(--border) !important; }
+    .laxcc-shop .shop-faq-q {
+        font-size: 1.3rem !important; font-weight: 800 !important; color: var(--navy) !important;
+        cursor: pointer !important; display: flex !important; align-items: center !important;
+        justify-content: space-between !important; gap: 20px !important;
+        list-style: none !important; transition: color 0.3s ease !important; padding: 0 !important;
+    }
+    .laxcc-shop .shop-faq-q::-webkit-details-marker { display: none !important; }
+    .laxcc-shop .shop-faq-q:hover { color: var(--orange) !important; }
+    .laxcc-shop .shop-faq-q .shop-faq-toggle {
+        font-size: 1.3rem !important; font-weight: 300 !important; flex-shrink: 0 !important;
+        transition: transform 0.3s ease !important; color: var(--text-muted) !important;
+    }
+    .laxcc-shop .shop-faq-item[open] .shop-faq-toggle { transform: rotate(45deg) !important; color: var(--orange) !important; }
+    .laxcc-shop .shop-faq-a {
+        padding-top: 16px !important; font-size: 1rem !important; color: var(--text-muted) !important;
+        line-height: 1.7 !important; max-width: 90% !important; animation: laxcc-shop-fadeUp 0.4s ease !important;
+    }
+
+    /* CTA */
+    .laxcc-shop .shop-cta {
+        padding: 120px 0 !important; background: var(--cream) !important;
+        text-align: center !important; position: relative !important; overflow: hidden !important;
+    }
+    .laxcc-shop .shop-cta::before {
+        content: '' !important; position: absolute !important; top: 50% !important; left: 50% !important;
+        transform: translate(-50%, -50%) !important; width: 600px !important; height: 600px !important;
+        background: radial-gradient(circle, rgba(248, 148, 89, 0.06) 0%, transparent 70%) !important;
+        border-radius: 50% !important; pointer-events: none !important;
+    }
+    .laxcc-shop .shop-cta-container { max-width: 700px !important; margin: 0 auto !important; padding: 0 40px !important; position: relative !important; z-index: 1 !important; }
+    .laxcc-shop .shop-cta h2 { font-size: clamp(2.5rem, 5vw, 4rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; margin-bottom: 20px !important; line-height: 1.05 !important; }
+    .laxcc-shop .shop-cta p { font-size: 1.1rem !important; color: var(--text-muted) !important; margin-bottom: 40px !important; line-height: 1.7 !important; }
+    .laxcc-shop .shop-cta-actions { display: flex !important; gap: 16px !important; justify-content: center !important; flex-wrap: wrap !important; }
+    .laxcc-shop .shop-cta-location { margin-top: 48px !important; padding-top: 32px !important; border-top: 1px solid rgba(29, 80, 138, 0.1) !important; }
+    .laxcc-shop .shop-cta-location p { font-size: 0.85rem !important; color: var(--text-muted) !important; margin-bottom: 0 !important; }
+    .laxcc-shop .shop-cta-location strong { color: var(--navy) !important; }
+
+    /* Buttons */
+    .laxcc-shop .shop-btn-primary,
+    .laxcc-shop a.shop-btn-primary,
+    .laxcc-shop a.shop-btn-primary:link,
+    .laxcc-shop a.shop-btn-primary:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        background: var(--orange) !important;
+        color: #fff !important;
+        font-size: 0.85rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.06em !important;
+        text-transform: uppercase !important;
+        padding: 16px 32px !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        transition: all 0.3s ease !important;
+        border: none !important;
+        cursor: pointer !important;
+    }
+    .laxcc-shop a.shop-btn-primary:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 32px rgba(248, 148, 89, 0.4) !important;
+    }
+
+    .laxcc-shop .shop-btn-secondary,
+    .laxcc-shop a.shop-btn-secondary,
+    .laxcc-shop a.shop-btn-secondary:link,
+    .laxcc-shop a.shop-btn-secondary:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        background: transparent !important;
+        color: var(--navy) !important;
+        font-size: 0.85rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.04em !important;
+        text-transform: uppercase !important;
+        padding: 16px 32px !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        border: 1px solid var(--navy) !important;
+        transition: all 0.3s ease !important;
+        cursor: pointer !important;
+    }
+    .laxcc-shop a.shop-btn-secondary:hover {
+        border-color: var(--orange) !important;
+        color: var(--orange) !important;
+        background: rgba(248, 148, 89, 0.06) !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .laxcc-shop .shop-why-container,
+        .laxcc-shop .shop-categories-container,
+        .laxcc-shop .shop-faq-container { padding: 0 40px !important; }
+        .laxcc-shop .shop-faq-container { grid-template-columns: 1fr !important; gap: 48px !important; }
+        .laxcc-shop .shop-faq-sidebar { position: static !important; }
+    }
+    @media (max-width: 640px) {
+        .laxcc-shop .shop-categories,
+        .laxcc-shop .shop-faq { padding: 40px 0 !important; }
+        .laxcc-shop .shop-why-container,
+        .laxcc-shop .shop-categories-container,
+        .laxcc-shop .shop-faq-container { padding: 0 24px !important; }
+        .laxcc-shop .shop-faq-sidebar h2 { font-size: 2.2rem !important; }
+        .laxcc-shop .shop-faq-q { font-size: 1.1rem !important; }
+        .laxcc-shop .shop-cta { padding: 80px 0 !important; }
+        .laxcc-shop .shop-intro { padding: 48px 0 40px !important; }
+    }
+
+    /* Elementor override */
+    .elementor-widget-container .laxcc-shop {
+        width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+</style>
+
+<div class="laxcc-shop">
+
+    <!-- INTRO -->
+    <section class="shop-intro">
+        <div class="shop-intro-container">
+            <span class="shop-section-label">Licensed Dispensary Near LAX</span>
+            <h2>Los Angeles Cannabis Dispensary <span>5 Minutes From LAX Airport</span></h2>
+            <p class="shop-intro-text">
+                LAXCC is a fully licensed cannabis dispensary in Los Angeles located at 8332 Lincoln Blvd — just 5 minutes from LAX Airport in the Westchester neighborhood. Whether you're a local, visiting LA, or catching a flight, we're the closest dispensary to LAX with a full menu of flower, pre-rolls, edibles, vapes, concentrates, and accessories.
+            </p>
+            <p class="shop-intro-text">
+                Browse our live menu above to see real-time pricing and availability. All taxes are included in every price — what you see is what you pay. Walk in, order pickup, or use our curbside and drive-thru options.
+            </p>
+        </div>
+    </section>
+
+    <!-- WHY LAXCC -->
+    <section class="shop-why">
+        <div class="shop-why-container">
+            <div class="shop-why-top">
+                <div class="shop-why-header">
+                    <span class="shop-section-label">Why Shop Here</span>
+                    <h2>Why LAXCC Is the Go-To Dispensary Near LAX</h2>
+                    <p>A licensed, full-service cannabis shop built for convenience — whether you live in LA or you're passing through.</p>
+                </div>
+                <div class="shop-scroll-arrows">
+                    <button class="shop-scroll-arrow shop-why-arrow" data-dir="-1" aria-label="Previous"><i class="fas fa-arrow-left"></i></button>
+                    <button class="shop-scroll-arrow shop-why-arrow" data-dir="1" aria-label="Next"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="shop-why-track">
+                <div class="shop-why-slide">
+                    <div class="shop-why-slide-num">01</div>
+                    <h3>Closest Dispensary to LAX</h3>
+                    <p>Located on Lincoln Blvd in Westchester, LAXCC is the nearest licensed dispensary to Los Angeles International Airport. A quick 5-minute drive from any terminal — no freeway needed.</p>
+                </div>
+                <div class="shop-why-slide">
+                    <div class="shop-why-slide-num">02</div>
+                    <h3>Fully Licensed & Lab-Tested</h3>
+                    <p>Every product on our shelves is sourced through California's licensed supply chain and tested by accredited labs for potency, pesticides, and contaminants. No gray market, no guesswork.</p>
+                </div>
+                <div class="shop-why-slide">
+                    <div class="shop-why-slide-num">03</div>
+                    <h3>All Taxes Included</h3>
+                    <p>The price you see is the price you pay. We include all state and local cannabis taxes in our listed prices — no surprises at checkout. Transparent pricing, every time.</p>
+                </div>
+                <div class="shop-why-slide">
+                    <div class="shop-why-slide-num">04</div>
+                    <h3>Walk-In, Pickup & Drive-Thru</h3>
+                    <p>Shop however works best for you. Browse in-store, order ahead for express pickup, use our curbside service, or pull up to the drive-thru window. Open daily from 9 AM to 9:30 PM.</p>
+                </div>
+                <div class="shop-why-slide">
+                    <div class="shop-why-slide-num">05</div>
+                    <h3>Curated Brand Selection</h3>
+                    <p>We stock California's best brands across every category — from top-shelf flower and pre-rolls to precision-dosed edibles and live resin vapes. New drops rotate in weekly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT WE CARRY -->
+    <section class="shop-categories">
+        <div class="shop-categories-container">
+            <div class="shop-categories-top">
+                <div class="shop-categories-intro">
+                    <span class="shop-section-label">What We Carry</span>
+                    <h2>Cannabis Products Available at LAXCC</h2>
+                    <p>Everything you need from a Los Angeles dispensary — all lab-tested, tax-included, and ready to go.</p>
+                </div>
+                <div class="shop-scroll-arrows">
+                    <button class="shop-scroll-arrow shop-categories-arrow" data-dir="-1" aria-label="Previous"><i class="fas fa-arrow-left"></i></button>
+                    <button class="shop-scroll-arrow shop-categories-arrow" data-dir="1" aria-label="Next"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="shop-categories-track">
+                <div class="shop-category-slide">
+                    <div class="shop-category-num"><i class="fas fa-leaf"></i></div>
+                    <div class="shop-category-name">Flower</div>
+                    <div class="shop-category-desc">Premium indoor and greenhouse flower from top California cultivators. Eighths, quarters, halves, and ounces always in stock.</div>
+                </div>
+                <div class="shop-category-slide">
+                    <div class="shop-category-num"><i class="fas fa-joint"></i></div>
+                    <div class="shop-category-name">Pre-Rolls</div>
+                    <div class="shop-category-desc">Buy pre-rolls near LAX — singles, multipacks, and infused joints from brands like Stiiizy, Jeeter, and more. Ready to smoke, no prep needed.</div>
+                </div>
+                <div class="shop-category-slide">
+                    <div class="shop-category-num"><i class="fas fa-candy-cane"></i></div>
+                    <div class="shop-category-name">Edibles</div>
+                    <div class="shop-category-desc">Gummies, chocolates, drinks, and more. Precision-dosed THC and CBD edibles from brands like Wyld, WHOA, Kiva, and others.</div>
+                </div>
+                <div class="shop-category-slide">
+                    <div class="shop-category-num"><i class="fas fa-wind"></i></div>
+                    <div class="shop-category-name">Vapes</div>
+                    <div class="shop-category-desc">Disposables, cartridges, and pods — live resin, distillate, and rosin options from California's leading vape brands.</div>
+                </div>
+                <div class="shop-category-slide">
+                    <div class="shop-category-num"><i class="fas fa-gem"></i></div>
+                    <div class="shop-category-name">Concentrates</div>
+                    <div class="shop-category-desc">Live resin, rosin, badder, shatter, and diamonds. High-potency extracts for experienced consumers.</div>
+                </div>
+                <div class="shop-category-slide">
+                    <div class="shop-category-num"><i class="fas fa-toolbox"></i></div>
+                    <div class="shop-category-name">Accessories</div>
+                    <div class="shop-category-desc">Rolling papers, wraps, lighters, grinders, and storage. Everything you need alongside your purchase — including Zig-Zag and RAW.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="shop-location">
+        <div class="shop-location-container">
+            <div class="shop-location-header">
+                <span class="shop-section-label">Visit Us</span>
+                <h2>Find the Best Dispensary Near LAX Airport</h2>
+                <p>
+                    LAXCC sits on Lincoln Blvd in Westchester, Los Angeles — the main corridor connecting LAX Airport to the surrounding neighborhoods. We're just off the 405 and minutes from Playa Del Rey, Marina Del Rey, El Segundo, and Inglewood. Whether you're headed to the airport, coming from the beach, or driving through LA, we're easy to find and open every day.
+                </p>
+            </div>
+            <div>
+                <div class="shop-location-details">
+                    <div>
+                        <div class="shop-location-detail-val">8332 Lincoln Blvd</div>
+                        <div class="shop-location-detail-lbl">Los Angeles, CA 90045</div>
+                    </div>
+                    <div>
+                        <div class="shop-location-detail-val">9 AM – 9:30 PM</div>
+                        <div class="shop-location-detail-lbl">Open Daily, 7 Days a Week</div>
+                    </div>
+                    <div>
+                        <div class="shop-location-detail-val">(310) 429-3789</div>
+                        <div class="shop-location-detail-lbl">Call or Text</div>
+                    </div>
+                    <div>
+                        <div class="shop-location-detail-val">5 Minutes</div>
+                        <div class="shop-location-detail-lbl">From LAX Airport</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDITORIAL — long-form SEO -->
+    <section class="shop-editorial">
+        <div class="shop-editorial-container">
+            <h2>Your Guide to Buying Weed Near LAX Airport</h2>
+            <p>
+                If you're searching for a dispensary near LAX, LAXCC is the answer. We're a state-licensed cannabis retailer located at 8332 Lincoln Blvd in Los Angeles — the closest full-service dispensary to Los Angeles International Airport. No appointment needed. Just walk in, browse our menu, and walk out with lab-tested cannabis products at transparent, tax-included prices.
+            </p>
+
+            <h3>Buying Cannabis in Los Angeles</h3>
+            <p>
+                California legalized recreational cannabis for adults 21 and over. That means anyone with a valid ID can walk into a licensed Los Angeles dispensary like LAXCC and purchase cannabis legally. We carry a complete selection: flower, pre-rolls, edibles, vapes, concentrates, topicals, tinctures, and accessories. Every product is tested and tracked through California's regulated supply chain.
+            </p>
+
+            <h3>Buy Pre-Rolls Near LAX</h3>
+            <p>
+                Pre-rolls are one of the most popular products at LAXCC. Whether you want a classic half-gram joint, a full-gram infused pre-roll, or a multipack to share, we stock pre-rolls from dozens of top California brands. They're convenient, ready to smoke, and available in indica, sativa, and hybrid options. If you're looking to buy pre-rolls near LAX Airport, we have the largest selection in the area.
+            </p>
+
+            <h3>LAX Weed: What to Know</h3>
+            <p>
+                Searching for LAX weed? While you can't consume cannabis inside the airport, you can legally purchase it at a nearby dispensary before or after your trip. LAXCC is a 5-minute drive from any LAX terminal — take Lincoln Blvd south from the airport and you'll find us on the right. Many travelers stop by for edibles, pre-rolls, or vape cartridges while visiting Los Angeles.
+            </p>
+
+            <h3>Los Angeles Dispensary Hours & Access</h3>
+            <p>
+                LAXCC is open daily from 9:00 AM to 9:30 PM, 7 days a week — including holidays. We offer walk-in shopping, online ordering with express pickup, curbside service, and a drive-thru window. Located in the Westchester neighborhood of Los Angeles, we serve customers from across LA County including Playa Del Rey, Marina Del Rey, El Segundo, Inglewood, Culver City, and beyond.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="shop-faq">
+        <div class="shop-faq-container">
+            <div class="shop-faq-sidebar">
+                <h2>Common Questions</h2>
+                <p>Everything you need to know about shopping at LAXCC — the closest dispensary to LAX Airport in Los Angeles.</p>
+                <div class="shop-faq-deco"></div>
+            </div>
+
+            <div class="shop-faq-list">
+                <details class="shop-faq-item">
+                    <summary class="shop-faq-q">
+                        Where is the closest dispensary to LAX Airport?
+                        <span class="shop-faq-toggle">+</span>
+                    </summary>
+                    <div class="shop-faq-a">
+                        LAXCC is the closest licensed dispensary to LAX Airport, located at 8332 Lincoln Blvd in Los Angeles, CA 90045. We're just a 5-minute drive south of the airport on Lincoln Blvd — no freeway required. Open daily from 9 AM to 9:30 PM.
+                    </div>
+                </details>
+
+                <details class="shop-faq-item">
+                    <summary class="shop-faq-q">
+                        Can I buy weed near LAX Airport legally?
+                        <span class="shop-faq-toggle">+</span>
+                    </summary>
+                    <div class="shop-faq-a">
+                        Yes. California allows adults 21 and older to purchase recreational cannabis from licensed dispensaries. LAXCC is a fully licensed Los Angeles dispensary near LAX. Just bring a valid government-issued ID. No medical card or appointment needed.
+                    </div>
+                </details>
+
+                <details class="shop-faq-item">
+                    <summary class="shop-faq-q">
+                        Where can I buy pre-rolls near LAX?
+                        <span class="shop-faq-toggle">+</span>
+                    </summary>
+                    <div class="shop-faq-a">
+                        LAXCC carries a wide selection of pre-rolls from top California brands — singles, multipacks, and infused options in indica, sativa, and hybrid varieties. We're located 5 minutes from LAX Airport at 8332 Lincoln Blvd. Check our live menu above for current pre-roll inventory and pricing.
+                    </div>
+                </details>
+
+                <details class="shop-faq-item">
+                    <summary class="shop-faq-q">
+                        What are LAXCC's hours?
+                        <span class="shop-faq-toggle">+</span>
+                    </summary>
+                    <div class="shop-faq-a">
+                        LAXCC is open daily from 9:00 AM to 9:30 PM, 7 days a week including holidays. We offer walk-in, online pickup, curbside, and drive-thru service. Located at 8332 Lincoln Blvd, Los Angeles, CA 90045.
+                    </div>
+                </details>
+
+                <details class="shop-faq-item">
+                    <summary class="shop-faq-q">
+                        Does LAXCC include taxes in their prices?
+                        <span class="shop-faq-toggle">+</span>
+                    </summary>
+                    <div class="shop-faq-a">
+                        Yes. All prices listed on our menu include California state and local cannabis taxes. The price you see is the price you pay — no hidden fees or surprise totals at checkout.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="shop-cta">
+        <div class="shop-cta-container">
+            <h2>Visit LAXCC Today</h2>
+            <p>
+                Walk into the closest dispensary to LAX Airport. Browse hundreds of lab-tested cannabis products — flower, pre-rolls, edibles, vapes, and more. All taxes included.
+            </p>
+            <div class="shop-cta-actions">
+                <a href="https://www.google.com/maps?daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045"
+                    target="_blank" rel="noopener noreferrer" class="shop-btn-primary">
+                    <i class="fas fa-location-dot"></i> Directions to LAXCC
+                </a>
+                <a href="tel:+13104293789" class="shop-btn-secondary">
+                    <i class="fas fa-phone"></i> (310) 429-3789
+                </a>
+            </div>
+            <div class="shop-cta-location">
+                <p><strong>LAXCC</strong> &bull; 8332 Lincoln Blvd, Los Angeles, CA 90045 &bull; Open Daily 9AM – 9:30PM</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    (function () {
+        var ld = {
+            "@context": "https://schema.org",
+            "@type": "Store",
+            "name": "LAXCC - LAX Cannabis Club",
+            "description": "Licensed cannabis dispensary near LAX Airport in Los Angeles. Shop flower, pre-rolls, edibles, vapes, concentrates and accessories.",
+            "url": "https://laxcc.com",
+            "telephone": "+1-310-429-3789",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "8332 Lincoln Blvd",
+                "addressLocality": "Los Angeles",
+                "addressRegion": "CA",
+                "postalCode": "90045",
+                "addressCountry": "US"
+            },
+            "openingHours": "Mo-Su 09:00-21:30",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 33.9575,
+                "longitude": -118.4178
+            },
+            "hasMap": "https://www.google.com/maps?daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045",
+            "priceRange": "$$"
+        };
+        var s = document.createElement('script');
+        s.type = 'application/ld+json';
+        s.textContent = JSON.stringify(ld);
+        document.head.appendChild(s);
+    })();
+
+    /* FAQ structured data */
+    (function () {
+        var faq = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Where is the closest dispensary to LAX Airport?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "LAXCC is the closest licensed dispensary to LAX Airport, located at 8332 Lincoln Blvd in Los Angeles, CA 90045. We're just a 5-minute drive south of the airport on Lincoln Blvd. Open daily from 9 AM to 9:30 PM."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can I buy weed near LAX Airport legally?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. California allows adults 21 and older to purchase recreational cannabis from licensed dispensaries. LAXCC is a fully licensed Los Angeles dispensary near LAX. Just bring a valid government-issued ID."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Where can I buy pre-rolls near LAX?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "LAXCC carries a wide selection of pre-rolls from top California brands — singles, multipacks, and infused options in indica, sativa, and hybrid varieties. We're located 5 minutes from LAX Airport at 8332 Lincoln Blvd."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What are LAXCC's hours?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "LAXCC is open daily from 9:00 AM to 9:30 PM, 7 days a week including holidays. We offer walk-in, online pickup, curbside, and drive-thru service."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does LAXCC include taxes in their prices?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. All prices listed on our menu include California state and local cannabis taxes. The price you see is the price you pay."
+                    }
+                }
+            ]
+        };
+        var s = document.createElement('script');
+        s.type = 'application/ld+json';
+        s.textContent = JSON.stringify(faq);
+        document.head.appendChild(s);
+    })();
+
+    /* Horizontal scroll arrows */
+    (function () {
+        [
+            { track: '.shop-why-track', btns: '.shop-why-arrow', step: 340 },
+            { track: '.shop-categories-track', btns: '.shop-categories-arrow', step: 240 }
+        ].forEach(function (cfg) {
+            var track = document.querySelector('.laxcc-shop ' + cfg.track);
+            if (!track) return;
+            document.querySelectorAll('.laxcc-shop ' + cfg.btns).forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var dir = parseInt(this.getAttribute('data-dir'));
+                    track.scrollBy({ left: dir * cfg.step, behavior: 'smooth' });
+                });
+            });
+        });
+    })();
+</script>

@@ -1,0 +1,319 @@
+<div id="laxcc-promo-anchor"></div>
+
+<style>
+    .laxcc-promo-bar-wrapper {
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        width: 100%;
+        padding: 0 0.5rem 5px 0.5rem;
+        background: #ffffff;
+        color: #1e293b;
+    }
+
+    .laxcc-promo-bar-wrapper,
+    .laxcc-promo-bar-wrapper *,
+    .laxcc-promo-bar-wrapper *::before,
+    .laxcc-promo-bar-wrapper *::after {
+        box-sizing: border-box;
+    }
+
+    .laxcc-promo-bar-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 12px 14px 10px 14px;
+        background: #ffffff;
+    }
+
+    .laxcc-promo-bar-top {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .laxcc-promo-bar-left {
+        display: block;
+        cursor: pointer;
+    }
+
+    .laxcc-promo-bar-summary {
+        display: grid;
+        grid-template-columns: auto 40px minmax(0, 1fr) 16px;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .laxcc-promo-bar-icon {
+        font-size: 0.8rem;
+        line-height: 1;
+        background: linear-gradient(135deg, #b8860b 0%, #ffd700 20%, #fff4b8 40%, #ffd700 55%, #daa520 70%, #ffd700 85%, #b8860b 100%);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: laxcc-gold-shimmer 6s ease-in-out infinite;
+    }
+
+    @keyframes laxcc-gold-shimmer {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .laxcc-promo-bar-thumb {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        display: block;
+        border-radius: 6px;
+    }
+
+    .laxcc-promo-bar-copy {
+        min-width: 0;
+    }
+
+    .laxcc-promo-bar-label {
+        display: block;
+        font-size: 0.92rem;
+        font-weight: 800;
+        line-height: 1.2;
+        color: #1e293b;
+    }
+
+    .laxcc-promo-bar-subtext {
+        display: block;
+        margin-top: 2px;
+        font-size: 0.78rem;
+        line-height: 1.3;
+        font-weight: 600;
+        color: #64748b;
+    }
+
+    .laxcc-promo-bar-chevron {
+        position: relative;
+        width: 14px;
+        height: 14px;
+        margin-left: auto;
+        opacity: 0.75;
+        transition: transform 0.25s ease;
+    }
+
+    .laxcc-promo-bar-chevron::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid #1D508A;
+        border-bottom: 2px solid #1D508A;
+        transform: translate(-50%, -65%) rotate(45deg);
+    }
+
+    .laxcc-promo-bar-wrapper.laxcc-promo-expanded .laxcc-promo-bar-chevron {
+        transform: rotate(180deg);
+    }
+
+    .laxcc-promo-bar-discount {
+        margin-top: 8px;
+        padding-left: 48px;
+    }
+
+    .laxcc-promo-bar-discount-label {
+        display: block;
+        font-size: 0.56rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #1D508A;
+        opacity: 0.72;
+    }
+
+    .laxcc-promo-bar-discount-text {
+        display: block;
+        margin-top: 2px;
+        font-size: 0.84rem;
+        font-weight: 800;
+        line-height: 1.25;
+        color: #1e293b;
+    }
+
+    .laxcc-promo-bar-discount-text strong {
+        color: #F89459;
+    }
+
+    .laxcc-promo-bar-detail {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.3s ease, opacity 0.25s ease;
+    }
+
+    .laxcc-promo-bar-wrapper.laxcc-promo-expanded .laxcc-promo-bar-detail {
+        max-height: 260px;
+        opacity: 1;
+    }
+
+    .laxcc-promo-bar-detail-inner {
+        padding: 10px 0 4px 48px;
+    }
+
+    .laxcc-promo-bar-detail-text {
+        font-size: 0.8rem;
+        line-height: 1.55;
+        color: #64748b;
+        font-weight: 500;
+    }
+
+    .laxcc-promo-bar-detail-text strong {
+        color: #1e293b;
+        font-weight: 800;
+    }
+
+    .laxcc-promo-bar-detail-note {
+        margin-top: 8px;
+        font-size: 0.8rem;
+        line-height: 1.4;
+        font-weight: 800;
+        color: #1e293b;
+    }
+
+    .laxcc-promo-bar-detail-note strong {
+        color: #F89459;
+    }
+
+    .laxcc-promo-bar-cta {
+        margin-top: 10px;
+    }
+
+    .laxcc-promo-bar-cta a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 148px;
+        height: 36px;
+        padding: 0 1rem;
+        border-radius: 999px;
+        background: #F89459;
+        color: #ffffff !important;
+        text-decoration: none !important;
+        font-size: 0.74rem;
+        font-weight: 800;
+        letter-spacing: 0.03em;
+    }
+
+    .elementor-widget-container .laxcc-promo-bar-wrapper {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @media (min-width: 901px) {
+        .laxcc-promo-bar-wrapper {
+            padding: 0 1rem 5px 1rem;
+        }
+
+        .laxcc-promo-bar-container {
+            padding: 14px 18px 10px 18px;
+        }
+
+        .laxcc-promo-bar-top {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .laxcc-promo-bar-left {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 260px;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .laxcc-promo-bar-summary {
+            grid-template-columns: auto 48px minmax(0, 1fr) 16px;
+            gap: 12px;
+        }
+
+        .laxcc-promo-bar-thumb {
+            width: 48px;
+            height: 48px;
+        }
+
+        .laxcc-promo-bar-discount {
+            margin-top: 0;
+            padding-left: 18px;
+        }
+
+        .laxcc-promo-bar-label {
+            font-size: 0.98rem;
+        }
+
+        .laxcc-promo-bar-subtext {
+            font-size: 0.82rem;
+        }
+
+        .laxcc-promo-bar-discount-text {
+            font-size: 0.92rem;
+        }
+
+        .laxcc-promo-bar-detail-inner {
+            padding: 12px 0 4px 78px;
+        }
+
+        .laxcc-promo-bar-detail {
+            max-height: 0;
+        }
+
+        .laxcc-promo-bar-wrapper.laxcc-promo-expanded .laxcc-promo-bar-detail {
+            max-height: 220px;
+        }
+    }
+</style>
+
+<div class="laxcc-promo-bar-wrapper" id="laxccPromoBar">
+    <div class="laxcc-promo-bar-container">
+        <div class="laxcc-promo-bar-top">
+            <div class="laxcc-promo-bar-left" id="laxccPromoToggle">
+                <div class="laxcc-promo-bar-summary">
+                    <span class="laxcc-promo-bar-icon">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <img class="laxcc-promo-bar-thumb" src="https://laxcc.com/wp-content/uploads/2026/03/penny-eighth-dealpng.png" alt="Penny and eighth deal">
+                    <div class="laxcc-promo-bar-copy">
+                        <span class="laxcc-promo-bar-label">1&cent; EIGHTH &mdash; FIRST VISIT DEAL</span>
+                        <span class="laxcc-promo-bar-subtext">Leave a 5-star Google review and show it in store.</span>
+                    </div>
+                    <span class="laxcc-promo-bar-chevron" aria-hidden="true"></span>
+                </div>
+                <div class="laxcc-promo-bar-discount">
+                    <span class="laxcc-promo-bar-discount-label">Community discount</span>
+                    <span class="laxcc-promo-bar-discount-text">Veterans &amp; seniors get <strong>10% off</strong></span>
+                </div>
+            </div>
+        </div>
+        <div class="laxcc-promo-bar-detail">
+            <div class="laxcc-promo-bar-detail-inner">
+                <div class="laxcc-promo-bar-detail-text">
+                    Leave a <strong>5-star Google review</strong> and show it to your budtender to get an <strong>1/8th of flower for just 1&cent;</strong>. Strain is budtender&apos;s choice. <strong>$5 minimum purchase required.</strong> While supplies last &mdash; limited time only.
+                </div>
+                <div class="laxcc-promo-bar-detail-note">
+                    Veterans and seniors get <strong>10% off</strong>.
+                </div>
+                <div class="laxcc-promo-bar-cta">
+                    <a href="https://g.page/r/CRV9PE_uQ_xUEAE/review" target="_blank" rel="noopener">Leave a Review</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        var toggle = document.getElementById('laxccPromoToggle');
+        var bar = document.getElementById('laxccPromoBar');
+        if (!toggle || !bar) return;
+
+        toggle.onclick = function () {
+            bar.classList.toggle('laxcc-promo-expanded');
+        };
+    })();
+</script>

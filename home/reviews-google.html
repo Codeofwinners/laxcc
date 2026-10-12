@@ -1,0 +1,785 @@
+<style>
+    /* LAX CC Map Widget - Elementor Conflict-Free Styles */
+    .elementor-laxcc-map-widget {
+        width: 100% !important;
+        padding: 40px 20px !important;
+        background: linear-gradient(135deg, #FBF8F2 0%, #f5f0e8 100%) !important;
+        border-radius: 20px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        font-family: system-ui, -apple-system, sans-serif !important;
+        box-sizing: border-box !important;
+        display: block !important;
+        margin: 0 !important;
+    }
+
+    .elementor-laxcc-map-widget * {
+        box-sizing: border-box !important;
+    }
+
+    /* Decorative Elements */
+    .elementor-laxcc-map-widget::before {
+        content: '' !important;
+        position: absolute !important;
+        top: -50px !important;
+        right: -50px !important;
+        width: 100px !important;
+        height: 100px !important;
+        background: radial-gradient(circle, rgba(0, 175, 201, 0.1) 0%, transparent 70%) !important;
+        border-radius: 50% !important;
+        pointer-events: none !important;
+    }
+
+    .elementor-laxcc-map-widget::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: -30px !important;
+        left: -30px !important;
+        width: 80px !important;
+        height: 80px !important;
+        background: radial-gradient(circle, rgba(248, 148, 89, 0.1) 0%, transparent 70%) !important;
+        border-radius: 50% !important;
+        pointer-events: none !important;
+    }
+
+    .elementor-laxcc-map-widget .laxcc-map-container {
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        position: relative !important;
+        z-index: 2 !important;
+        padding: 0 !important;
+    }
+
+    /* Header Styles */
+    .elementor-laxcc-map-widget .laxcc-map-header {
+        text-align: center !important;
+        margin-bottom: 32px !important;
+        padding: 0 !important;
+    }
+
+    .elementor-laxcc-map-widget .laxcc-map-title {
+        font-weight: 800 !important;
+        font-size: 2.5rem !important;
+        margin: 0 0 12px 0 !important;
+        color: #1D508A !important;
+        line-height: 1.1 !important;
+        letter-spacing: -0.02em !important;
+        display: block !important;
+        text-align: center !important;
+    }
+
+    .elementor-laxcc-map-widget .laxcc-map-subtitle {
+        font-size: 1.1rem !important;
+        color: #17407A !important;
+        opacity: 0.8 !important;
+        margin: 0 !important;
+        line-height: 1.5 !important;
+        text-align: center !important;
+        display: block !important;
+    }
+
+    /* Map Wrapper */
+    .elementor-laxcc-map-widget .laxcc-map-wrapper {
+        position: relative !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        box-shadow: 0 20px 60px rgba(29, 80, 138, 0.15) !important;
+        background: #fff !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        margin-bottom: 24px !important;
+        height: 500px !important;
+    }
+
+    /* Map Container */
+    #laxcc-3d-map {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* 3D Controls Overlay */
+    .laxcc-3d-controls {
+        position: absolute !important;
+        bottom: 20px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 10 !important;
+        display: flex !important;
+        gap: 8px !important;
+        /* Reduced gap */
+        background: rgba(255, 255, 255, 0.95) !important;
+        padding: 6px !important;
+        /* Reduced padding */
+        border-radius: 10px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+        backdrop-filter: blur(5px) !important;
+        width: auto !important;
+        max-width: 95% !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
+
+    .laxcc-control-btn {
+        background: #1D508A !important;
+        color: white !important;
+        border: none !important;
+        padding: 6px 12px !important;
+        /* Ultra compact padding */
+        border-radius: 6px !important;
+        font-weight: 600 !important;
+        font-size: 0.85rem !important;
+        /* Slightly smaller font */
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+        transition: all 0.2s !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+        height: 32px !important;
+        /* Fixed compact height */
+    }
+
+    .laxcc-control-btn:hover {
+        background: #153d6b !important;
+        transform: translateY(-1px) !important;
+    }
+
+    .laxcc-control-btn.active {
+        background: #00AFC9 !important;
+    }
+
+    /* Responsive Controls */
+    @media (max-width: 600px) {
+        .elementor-laxcc-map-widget .laxcc-map-wrapper {
+            height: 350px !important;
+            margin-bottom: 60px !important;
+            /* Space for buttons below */
+            overflow: visible !important;
+            /* Allow buttons to sit outside */
+        }
+
+        .laxcc-3d-controls {
+            bottom: -50px !important;
+            /* Move BELOW map */
+            width: 100% !important;
+            background: transparent !important;
+            /* Remove background container on mobile */
+            box-shadow: none !important;
+            backdrop-filter: none !important;
+            padding: 0 !important;
+        }
+
+        .laxcc-control-btn {
+            flex: 1 !important;
+            /* Equal width buttons */
+            justify-content: center !important;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
+            font-size: 0.8rem !important;
+            padding: 8px 4px !important;
+        }
+    }
+
+    /* Seamless Info Bar */
+    .elementor-laxcc-map-widget .laxcc-map-info {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 32px !important;
+        /* Space between items */
+        margin-top: 24px !important;
+        padding: 20px 0 !important;
+        border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    }
+
+    .elementor-laxcc-map-widget .laxcc-info-card {
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: row !important;
+        /* Horizontal layout */
+        align-items: center !important;
+        text-align: left !important;
+        gap: 12px !important;
+    }
+
+    /* Remove hover effects */
+    .elementor-laxcc-map-widget .laxcc-info-card:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    .elementor-laxcc-map-widget .laxcc-info-card::before {
+        display: none !important;
+    }
+
+    .elementor-laxcc-map-widget .laxcc-info-header {
+        display: contents !important;
+        /* Remove wrapper behavior */
+    }
+
+    .elementor-laxcc-map-widget .laxcc-info-icon {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+        color: #00AFC9 !important;
+        background: rgba(0, 175, 201, 0.08) !important;
+        /* Very subtle background */
+        border-radius: 12px !important;
+        /* Soft square */
+        padding: 10px !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+    }
+
+    .laxcc-info-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2px !important;
+    }
+
+    .elementor-laxcc-map-widget .laxcc-info-title {
+        font-size: 0.75rem !important;
+        font-weight: 700 !important;
+        color: #999 !important;
+        /* Subtle label */
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+        margin: 0 !important;
+        line-height: 1 !important;
+    }
+
+    .elementor-laxcc-map-widget .laxcc-info-text {
+        font-size: 1rem !important;
+        color: #1D508A !important;
+        /* Brand Blue for text */
+        line-height: 1.3 !important;
+        margin: 0 !important;
+        font-weight: 600 !important;
+    }
+
+    /* Mobile: Stack items */
+    @media (max-width: 768px) {
+        .elementor-laxcc-map-widget .laxcc-map-info {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 20px !important;
+            padding: 0 10px !important;
+        }
+
+        .elementor-laxcc-map-widget .laxcc-info-card {
+            width: 100% !important;
+        }
+    }
+
+    /* Reviews Section */
+    .laxcc-reviews-container {
+        margin-top: 32px !important;
+        background: white !important;
+        border-radius: 16px !important;
+        padding: 24px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    .laxcc-rating-header {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        margin-bottom: 20px !important;
+        padding-bottom: 20px !important;
+        border-bottom: 1px solid #eee !important;
+    }
+
+    .laxcc-big-rating {
+        font-size: 3rem !important;
+        font-weight: 800 !important;
+        color: #1D508A !important;
+        line-height: 1 !important;
+    }
+
+    .laxcc-stars {
+        color: #fbc02d !important;
+        font-size: 1.2rem !important;
+    }
+
+    .laxcc-total-reviews {
+        color: #666 !important;
+        font-size: 0.9rem !important;
+    }
+
+    .laxcc-review-item {
+        margin-bottom: 16px !important;
+        padding-bottom: 16px !important;
+        border-bottom: 1px solid #f5f5f5 !important;
+    }
+
+    .laxcc-review-author {
+        font-weight: 600 !important;
+        color: #333 !important;
+        margin-bottom: 4px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+
+    .laxcc-review-author img {
+        width: 24px !important;
+        height: 24px !important;
+        border-radius: 50% !important;
+    }
+
+    .laxcc-review-text {
+        font-size: 0.95rem !important;
+        color: #555 !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Leave a Review Section */
+    .laxcc-leave-review {
+        margin-top: 24px !important;
+        padding-top: 20px !important;
+        border-top: 1px solid #eee !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 20px !important;
+    }
+
+    .laxcc-qr-text p {
+        margin: 0 0 4px 0 !important;
+        font-weight: 600 !important;
+        color: #333 !important;
+        font-size: 1rem !important;
+    }
+
+    .laxcc-qr-text a {
+        color: #1D508A !important;
+        text-decoration: none !important;
+        font-weight: 700 !important;
+        font-size: 0.95rem !important;
+    }
+
+    .laxcc-qr-text a:hover {
+        text-decoration: underline !important;
+    }
+
+    /* Keep the QR link from collapsing in the flex row */
+    .laxcc-leave-review > a:last-child {
+        flex: 0 0 auto !important;
+        line-height: 0 !important;
+        display: block !important;
+    }
+
+    .laxcc-qr-code {
+        width: 80px !important;
+        height: 80px !important;
+        min-width: 80px !important;
+        max-width: 80px !important;
+        aspect-ratio: 1 / 1 !important;
+        flex-shrink: 0 !important;
+        object-fit: contain !important;
+        border-radius: 8px !important;
+        border: 1px solid #eee !important;
+        display: block !important;
+    }
+
+    /* Responsive adjustments for QR section */
+    @media (max-width: 480px) {
+        .laxcc-leave-review {
+            flex-direction: row !important;
+            /* Keep side by side even on mobile if possible, or stack if too tight */
+            align-items: center !important;
+            text-align: left !important;
+            gap: 14px !important;
+        }
+
+        .laxcc-qr-text {
+            min-width: 0 !important; /* allow text to wrap instead of squashing the QR */
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+        .elementor-laxcc-map-widget {
+            padding: 20px 15px !important;
+        }
+
+        .elementor-laxcc-map-widget .laxcc-map-wrapper {
+            height: 400px !important;
+        }
+
+        .laxcc-3d-controls {
+            width: 90% !important;
+            justify-content: center !important;
+        }
+    }
+</style>
+
+<div class="elementor-laxcc-map-widget">
+    <div class="laxcc-map-container">
+        <!-- Header -->
+        <div class="laxcc-map-header">
+            <h2 class="laxcc-map-title">The Best Dispensary Near LAX & LA Beaches</h2>
+            <p class="laxcc-map-subtitle">
+                Just <span style="color:#00AFC9; font-weight:700;">1.2 miles</span> from Los Angeles International
+                Airport.<br>
+                The perfect stop before hitting Santa Monica, Venice, or Manhattan Beach! 🏖️✈️
+            </p>
+        </div>
+
+        <!-- 3D Map -->
+        <div class="laxcc-map-wrapper">
+            <div id="laxcc-3d-map"></div>
+
+            <!-- Controls -->
+            <div class="laxcc-3d-controls">
+                <button class="laxcc-control-btn" onclick="LAX3DWidget.resetView()">
+                    <span>📍 Map</span>
+                </button>
+                <button class="laxcc-control-btn active" onclick="LAX3DWidget.startFlyover()">
+                    <span>🚁 3D Flyover</span>
+                </button>
+                <a href="https://www.google.com/maps/dir//8332+Lincoln+Blvd,+Los+Angeles,+CA+90045" target="_blank"
+                    class="laxcc-control-btn" style="text-decoration:none;">
+                    <span>➡️ Directions</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Info Cards (Seamless Bar) -->
+        <div class="laxcc-map-info">
+            <div class="laxcc-info-card">
+                <div class="laxcc-info-header">
+                    <svg class="laxcc-info-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                </div>
+                <div class="laxcc-info-content">
+                    <h3 class="laxcc-info-title">Address</h3>
+                    <p class="laxcc-info-text">8332 Lincoln Blvd, Los Angeles, CA 90045</p>
+                </div>
+            </div>
+
+            <div class="laxcc-info-card">
+                <div class="laxcc-info-header">
+                    <svg class="laxcc-info-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                    </svg>
+                </div>
+                <div class="laxcc-info-content">
+                    <h3 class="laxcc-info-title">Hours</h3>
+                    <p class="laxcc-info-text">Daily: 9 AM - 9:30 PM</p>
+                </div>
+            </div>
+
+            <div class="laxcc-info-card">
+                <div class="laxcc-info-header">
+                    <svg class="laxcc-info-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                    </svg>
+                </div>
+                <div class="laxcc-info-content">
+                    <h3 class="laxcc-info-title">Contact</h3>
+                    <p class="laxcc-info-text">(310) 429-3789</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="laxcc-reviews-container" id="laxcc-reviews">
+            <div class="laxcc-rating-header">
+                <div class="laxcc-big-rating" id="laxcc-rating-score">4.8</div>
+                <div>
+                    <div class="laxcc-stars" id="laxcc-rating-stars">★★★★★</div>
+                    <div class="laxcc-total-reviews" id="laxcc-rating-count">Loading live reviews...</div>
+                </div>
+            </div>
+            <div id="laxcc-reviews-list">
+                <!-- Fallback content while loading -->
+                <div class="laxcc-review-item">
+                    <div class="laxcc-review-text" style="color:#888; font-style:italic;">Fetching latest reviews from
+                        Google...</div>
+                </div>
+            </div>
+
+            <!-- Leave a Review CTA -->
+            <div class="laxcc-leave-review">
+                <div class="laxcc-qr-text">
+                    <p>Visiting us today?</p>
+                    <a href="https://g.page/r/CRV9PE_uQ_xUEBM/review" target="_blank">Scan or Click to leave an honest
+                        review!</a>
+                </div>
+                <a href="https://g.page/r/CRV9PE_uQ_xUEBM/review" target="_blank">
+                    <img src="https://laxcc.com/wp-content/uploads/2025/12/los-angeles-weed.png"
+                        alt="Leave a Review QR Code" class="laxcc-qr-code">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        // Unique Namespace for this widget to prevent conflicts
+        const WIDGET_ID = 'laxcc_3d_widget_' + Math.random().toString(36).substr(2, 9);
+
+        window.LAX3DWidget = {
+            map: null,
+            location: { lat: 33.961922, lng: -118.420722 },
+            placeId: 'ChIJFX08PjSwwocRFX08T-5D_FQ',
+            mapId: 'e7c8e2901f41efd44ea62d28',
+            interval: null,
+            retryCount: 0,
+
+            // Entry point
+            init: function () {
+                // Check if container exists
+                const mapDiv = document.getElementById('laxcc-3d-map');
+                if (!mapDiv) {
+                    if (this.retryCount < 20) { // Try for 10 seconds (20 * 500ms)
+                        this.retryCount++;
+                        setTimeout(() => this.init(), 500);
+                    }
+                    return;
+                }
+
+                // Check if Google Maps API is loaded
+                if (typeof google === 'undefined' || typeof google.maps === 'undefined') {
+                    // If API script hasn't loaded yet, wait for it
+                    setTimeout(() => this.init(), 500);
+                    return;
+                }
+
+                // Initialize Map
+                this.initMap(mapDiv);
+            },
+
+            initMap: function (mapDiv) {
+                try {
+                    this.map = new google.maps.Map(mapDiv, {
+                        center: this.location,
+                        zoom: 18,
+                        mapId: this.mapId,
+                        heading: 0,
+                        tilt: 45,
+                        mapTypeControl: false,
+                        fullscreenControl: false,
+                        streetViewControl: false,
+                        zoomControl: true,
+                        gestureHandling: 'cooperative' // Better for scrolling pages
+                    });
+
+                    // Add Marker
+                    new google.maps.Marker({
+                        position: this.location,
+                        map: this.map,
+                        title: "LAX Cannabis Club",
+                        animation: google.maps.Animation.DROP
+                    });
+
+                    // Start Flyover automatically
+                    setTimeout(() => this.startFlyover(), 2000);
+
+                    // Fetch Reviews
+                    this.fetchReviews();
+
+                } catch (e) {
+                    console.error("LAX Widget Error:", e);
+                    // Fallback if 3D map fails (e.g. WebGL not supported)
+                    mapDiv.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;background:#eee;color:#666;">Map could not load. Please refresh.</div>';
+                }
+            },
+
+            startFlyover: function () {
+                if (!this.map) return;
+
+                // Update UI
+                const btns = document.querySelectorAll('.laxcc-control-btn');
+                if (btns.length >= 2) {
+                    btns.forEach(b => b.classList.remove('active'));
+                    btns[1].classList.add('active');
+                }
+
+                // Cinematic settings
+                this.map.setZoom(19);
+                this.map.setTilt(67.5);
+
+                let heading = this.map.getHeading() || 0;
+                if (this.interval) clearInterval(this.interval);
+
+                // Smooth rotation loop
+                this.interval = setInterval(() => {
+                    // Stop if user interacts (simple check)
+                    if (!this.map.getDiv().matches(':hover')) {
+                        heading += 0.2;
+                        this.map.setHeading(heading);
+                    }
+                }, 40);
+            },
+
+            resetView: function () {
+                if (!this.map) return;
+                if (this.interval) clearInterval(this.interval);
+
+                const btns = document.querySelectorAll('.laxcc-control-btn');
+                if (btns.length > 0) {
+                    btns.forEach(b => b.classList.remove('active'));
+                    btns[0].classList.add('active');
+                }
+
+                this.map.setZoom(16);
+                this.map.setTilt(0);
+                this.map.setHeading(0);
+                this.map.panTo(this.location);
+            },
+
+            // Try the modern Places API first, fall back to the legacy service,
+            // and always resolve to a usable state (never stuck on "Loading...").
+            fetchReviews: function () {
+                const self = this;
+                this.fetchReviewsNew().catch(function () {
+                    self.fetchReviewsLegacy();
+                });
+            },
+
+            fetchReviewsNew: async function () {
+                if (!google.maps.importLibrary) throw new Error('importLibrary unavailable');
+                const { Place } = await google.maps.importLibrary('places');
+                const place = new Place({ id: this.placeId });
+                await place.fetchFields({ fields: ['rating', 'userRatingCount', 'reviews'] });
+
+                const reviews = (place.reviews || []).map(function (r) {
+                    const a = r.authorAttribution || {};
+                    return {
+                        author: a.displayName || 'Google User',
+                        photo: a.photoURI || '',
+                        rating: r.rating,
+                        text: r.text || '',
+                        timeDesc: r.relativePublishTimeDescription || '',
+                        time: r.publishTime ? new Date(r.publishTime).getTime() : 0
+                    };
+                });
+
+                this.renderReviews({ rating: place.rating, total: place.userRatingCount, reviews: reviews });
+            },
+
+            fetchReviewsLegacy: function () {
+                if (!this.map || !google.maps.places || !google.maps.places.PlacesService) {
+                    this.showReviewsFallback();
+                    return;
+                }
+
+                const self = this;
+                const service = new google.maps.places.PlacesService(this.map);
+                const request = {
+                    placeId: this.placeId,
+                    fields: ['rating', 'user_ratings_total', 'reviews']
+                };
+
+                service.getDetails(request, function (place, status) {
+                    if (status === google.maps.places.PlacesServiceStatus.OK && place) {
+                        const reviews = (place.reviews || []).map(function (r) {
+                            return {
+                                author: r.author_name || 'Google User',
+                                photo: r.profile_photo_url || '',
+                                rating: r.rating,
+                                text: r.text || '',
+                                timeDesc: r.relative_time_description || '',
+                                time: r.time || 0
+                            };
+                        });
+                        self.renderReviews({ rating: place.rating, total: place.user_ratings_total, reviews: reviews });
+                    } else {
+                        self.showReviewsFallback();
+                    }
+                });
+            },
+
+            renderReviews: function (data) {
+                const scoreEl = document.getElementById('laxcc-rating-score');
+                const countEl = document.getElementById('laxcc-rating-count');
+                if (data.rating && scoreEl) scoreEl.textContent = data.rating;
+                if (countEl) countEl.textContent = data.total ? `Based on ${data.total} Google reviews` : 'Google reviews';
+
+                const list = document.getElementById('laxcc-reviews-list');
+                if (!list) return;
+
+                // Newest 5-star reviews first, up to 5
+                const displayReviews = (data.reviews || [])
+                    .filter(function (r) { return r.rating === 5; })
+                    .sort(function (a, b) { return b.time - a.time; })
+                    .slice(0, 5);
+
+                if (displayReviews.length === 0) {
+                    this.showReviewsFallback();
+                    return;
+                }
+
+                list.innerHTML = '';
+                displayReviews.forEach(function (review) {
+                    const item = document.createElement('div');
+                    item.className = 'laxcc-review-item';
+                    const photo = review.photo || ('https://ui-avatars.com/api/?name=' + encodeURIComponent(review.author) + '&background=random');
+                    const text = review.text;
+                    item.innerHTML = `
+                            <div class="laxcc-review-author">
+                                <img src="${photo}" alt="${review.author}" onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(review.author)}&background=random'">
+                                <div style="display:flex; flex-direction:column; line-height:1.2;">
+                                    <span>${review.author}</span>
+                                    <span style="font-size:0.75rem; color:#888; font-weight:400;">${review.timeDesc}</span>
+                                </div>
+                                <span style="color:#fbc02d; margin-left:auto;">${'★'.repeat(review.rating)}</span>
+                            </div>
+                            <div class="laxcc-review-text">"${text}"</div>
+                        `;
+                    list.appendChild(item);
+                });
+            },
+
+            // Graceful state when live reviews can't be fetched — never leave "Loading..." up.
+            showReviewsFallback: function () {
+                const countEl = document.getElementById('laxcc-rating-count');
+                if (countEl) countEl.textContent = 'See our reviews on Google';
+
+                const list = document.getElementById('laxcc-reviews-list');
+                if (list) {
+                    list.innerHTML = '<div class="laxcc-review-item" style="border-bottom:none;">'
+                        + '<div class="laxcc-review-text">'
+                        + '<a href="https://g.page/r/CRV9PE_uQ_xUEBM" target="_blank" rel="noopener" style="color:#1D508A; font-weight:700; text-decoration:none;">Read our latest 5-star reviews on Google &rarr;</a>'
+                        + '</div></div>';
+                }
+            }
+        };
+
+        // Initialize on load
+        const init = () => window.LAX3DWidget.init();
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+
+        // Elementor hook
+        window.addEventListener('elementor/frontend/init', () => {
+            setTimeout(init, 1000); // Delay to ensure DOM is ready
+        });
+
+    })();
+</script>
+
+<!-- Google Maps API - Load only if not already present -->
+<script>
+    if (typeof google === 'undefined' || typeof google.maps === 'undefined') {
+        const script = document.createElement('script');
+        script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDVNxPxaI9o-Xbg5hFafQLApN4SyOklSe0&libraries=places&callback=LAX3DWidget.init";
+        script.async = true;
+        script.defer = true;
+        document.head.appendChild(script);
+    }
+</script>

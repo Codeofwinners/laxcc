@@ -1,0 +1,12 @@
+Hello Team,
+
+I wanted to let you know that the homepage is currently running into 500 server errors whenever I try to save my work. This is not normal, and it is not something I experience with other clients, including sites with significantly heavier codebases and more traffic.
+
+Because of that, I’m not sure whether Leafbridge is able to provide the level of hosting support this site needs. If they are unable to resolve the issue, I’d like to recommend a full migration to a different hosting provider.
+
+For example, I built thecannabar.com from the ground up and host it on WP Engine, and we have never had these types of problems there. Backups are easy to restore, and the overall experience is much smoother and more reliable.
+
+The cost for hosting would be around $30/month, plus domain-related costs. If we decide to move forward, I would need access to Dutchie in order to complete the migration.
+
+Best,
+[Your Name]

@@ -1,0 +1,563 @@
+<style>
+    /* ── PREMIUM CREAM SYSTEM ── */
+    #lux-slider-system {
+        box-sizing: border-box !important;
+        width: calc(100% - 40px) !important;
+        max-width: 1400px !important;
+        margin: 0 auto !important;
+        /* Hyper-tight */
+        padding: 5px 0 !important;
+        /* Hyper-tight */
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 5px !important;
+        /* Hyper-tight gap */
+        background: #FCF9F2 !important;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        border-radius: 24px !important;
+        overflow: hidden !important;
+    }
+
+    /* ── BRANDING ABOVE (ON CREAM) ── */
+    #lux-branding-above {
+        text-align: center !important;
+    }
+
+    #lux-branding-above .lux-badge {
+        display: inline-block !important;
+        background: #7ECBB3 !important;
+        color: #fff !important;
+        padding: 4px 14px !important;
+        /* Tightened */
+        border-radius: 100px !important;
+        font-size: 12px !important;
+        font-weight: 800 !important;
+        text-transform: uppercase !important;
+        margin-bottom: 8px !important;
+        /* Tightened */
+        letter-spacing: 0.05em !important;
+        white-space: nowrap !important;
+        max-width: 95% !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+
+    #lux-branding-above .lux-name {
+        font-size: clamp(38px, 6vw, 68px) !important;
+        font-weight: 900 !important;
+        color: #1a1a1a !important;
+        /* Deep Charcoal on Cream */
+        margin: 0 !important;
+        text-transform: uppercase !important;
+        line-height: 0.9 !important;
+        letter-spacing: -0.03em !important;
+    }
+
+    #lux-branding-above .lux-subtitle {
+        font-size: 28px !important;
+        color: #F89459 !important;
+        font-weight: 700 !important;
+        margin-top: 10px !important;
+    }
+
+    /* ── THE CARD (LEAVE THE IMAGE ALONE) ── */
+    #lux-hero {
+        position: relative !important;
+        width: 100% !important;
+        height: 500px !important;
+        border-radius: 20px !important;
+        overflow: hidden !important;
+        background: #F4F1EA !important;
+        /* Slightly darker cream for card depth */
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    #lux-hero .lux-slides {
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 5 !important;
+    }
+
+    #lux-hero .lux-slide {
+        position: absolute !important;
+        inset: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: opacity 0.7s ease !important;
+    }
+
+    #lux-hero .lux-slide.lux-active {
+        opacity: 1 !important;
+        visibility: visible !important;
+        z-index: 10 !important;
+        cursor: pointer !important;
+    }
+
+    /* IMAGE FILLING - 100% UNDISTURBED */
+    #lux-hero .lux-slide picture,
+    #lux-hero .lux-slide img,
+    #lux-hero .lux-slide video {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        border: none !important;
+        outline: none !important;
+    }
+
+    /* Target img inside picture explicitly just in case */
+    #lux-hero .lux-slide picture img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    /* ── CONTENT BELOW (SPLIT FOOTER) ── */
+    #lux-content-below {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 40px !important;
+        padding: 0 10px !important;
+    }
+
+    #lux-content-below .lux-desc-wrap {
+        flex: 1 !important;
+        text-align: left !important;
+    }
+
+    #lux-content-below .lux-desc {
+        font-size: 16px !important;
+        color: #444 !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+    }
+
+    #lux-content-below .lux-cta {
+        flex-shrink: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #F89459 !important;
+        color: #fff !important;
+        padding: 16px 44px !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        font-weight: 800 !important;
+        font-size: 15px !important;
+        text-transform: uppercase !important;
+        transition: 0.2s !important;
+        cursor: pointer !important;
+        box-shadow: 0 8px 25px rgba(248, 148, 89, 0.2) !important;
+    }
+
+    #lux-content-below .lux-cta:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 12px 35px rgba(248, 148, 89, 0.3) !important;
+    }
+
+    /* ── DOCK ── */
+    #lux-hero-dock {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        margin-top: 8px !important;
+        /* Hyper-tight */
+    }
+
+    .lux-thumb {
+        width: 52px !important;
+        height: 52px !important;
+        border-radius: 10px !important;
+        overflow: hidden !important;
+        cursor: pointer !important;
+        opacity: 0.5 !important;
+        border: 2px solid transparent !important;
+        transition: 0.3s !important;
+        background: #fff !important;
+    }
+
+    .lux-thumb.lux-active {
+        opacity: 1 !important;
+        border-color: #F89459 !important;
+        transform: translateY(-5px) !important;
+    }
+
+    .lux-thumb img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    /* ── SLIDE IMAGE CREDIT (per-slide, plain-text attribution — non-clickable
+       so WP themes can't inject an external-link icon on it) ── */
+    #lux-hero .lux-slide span.lux-credit {
+        position: absolute !important;
+        bottom: 12px !important;
+        right: 12px !important;
+        z-index: 15 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+        padding: 5px 10px !important;
+        background: rgba(15, 23, 42, 0.55) !important;
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+        border-radius: 100px !important;
+        font-size: 11px !important;
+        font-weight: 600 !important;
+        color: #ffffff !important;
+        letter-spacing: 0.02em !important;
+        pointer-events: none !important;
+    }
+    #lux-hero .lux-slide span.lux-credit::before,
+    #lux-hero .lux-slide span.lux-credit::after {
+        content: none !important;
+        display: none !important;
+    }
+
+    /* ── ARROWS ── */
+    .lux-arrow {
+        position: absolute !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 44px !important;
+        height: 44px !important;
+        background: rgba(255, 255, 255, 0.8) !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+        z-index: 20 !important;
+        transition: 0.3s !important;
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        opacity: 0 !important;
+        /* Hidden until hover */
+    }
+
+    #lux-hero:hover .lux-arrow {
+        opacity: 1 !important;
+    }
+
+    .lux-arrow-prev {
+        left: 15px !important;
+    }
+
+    .lux-arrow-next {
+        right: 15px !important;
+    }
+
+    .lux-arrow svg {
+        width: 18px !important;
+        height: 18px !important;
+        fill: #1a1a1a !important;
+    }
+
+    .lux-arrow:hover {
+        background: #fff !important;
+        transform: translateY(-50%) scale(1.1) !important;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+        #lux-slider-system {
+            padding: 0 !important;
+            gap: 0 !important;
+        }
+
+        /* Hyper-tight mobile gap */
+        #lux-hero {
+            height: 260px !important;
+            margin: 5px 0 !important;
+        }
+
+        #lux-branding-above {
+            padding: 5px 0 0 0 !important;
+        }
+
+        #lux-branding-above .lux-badge {
+            margin-bottom: 2px !important;
+            font-size: 11px !important;
+            padding: 3px 10px !important;
+        }
+
+        #lux-branding-above .lux-name {
+            font-size: 52px !important;
+            margin: 0 !important;
+            line-height: 0.9 !important;
+            letter-spacing: -0.04em !important;
+        }
+
+        #lux-branding-above .lux-subtitle {
+            font-size: 30px !important;
+            margin: 0 !important;
+            line-height: 1 !important;
+        }
+
+        #lux-content-below {
+            flex-direction: column !important;
+            text-align: center !important;
+            gap: 10px !important;
+            padding: 5px 10px !important;
+        }
+
+        #lux-content-below .lux-desc-wrap {
+            text-align: center !important;
+        }
+
+        #lux-content-below .lux-desc {
+            font-size: 14px !important;
+            line-height: 1.3 !important;
+        }
+
+        #lux-content-below .lux-cta {
+            width: 100% !important;
+            padding: 12px !important;
+            font-size: 14px !important;
+        }
+
+        #lux-hero-dock {
+            margin-top: 5px !important;
+            gap: 5px !important;
+        }
+    }
+</style>
+
+<div id="lux-slider-system">
+
+    <!-- BRANDING ABOVE (ON CREAM) -->
+    <div id="lux-branding-above">
+        <span id="lux-sync-badge" class="lux-badge">100mg THC Drinks from $10</span>
+        <h2 id="lux-sync-name" class="lux-name">THC Drinks</h2>
+        <p id="lux-sync-subtitle" class="lux-subtitle">Refreshing Cannabis Beverages</p>
+    </div>
+
+    <!-- THE IMAGE CARD (CLEAN & FILLED) -->
+    <div id="lux-hero">
+        <!-- Minimalist Arrows -->
+        <div class="lux-arrow lux-arrow-prev" id="lux-prev"><svg viewBox="0 0 24 24">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg></div>
+        <div class="lux-arrow lux-arrow-next" id="lux-next"><svg viewBox="0 0 24 24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+            </svg></div>
+
+        <div class="lux-slides">
+            <!-- THC Drinks (lead slide) -->
+            <div class="lux-slide lux-active" data-badge="100mg THC Drinks from $10"
+                data-name="THC Drinks"
+                data-subtitle="Refreshing Cannabis Beverages"
+                data-desc="CQ, Uncle Arnie's, St. Ides &amp; Not Your Father's — 100mg THC sodas, lemonades and root beer. Fast-acting, great-tasting and ready for same-day pickup near LAX."
+                data-link="https://laxcc.com/buy-thc-drinks-near-lax-airport/">
+                <img src="https://laxcc.com/wp-content/uploads/2026/05/best-thc-drinks-los-angeles-1.png"
+                    alt="THC drinks near LAX Airport at LAXCC">
+            </div>
+
+            <!-- Coldfire Extracts -->
+            <div class="lux-slide" data-badge="$78 .5g Rosin AIO · $70 1g Cart (81% THC)"
+                data-name="Coldfire Extracts"
+                data-subtitle="All-Natural · Flavor-First Vape"
+                data-desc="The best-flavor all-natural vape in California. Single-pass below -100°F — no additives, no distillate, no cutting agents. Just full-spectrum oil."
+                data-link="https://laxcc.com/shop-coldfire-extracts-carts-rosin/">
+                <img src="https://coldfireextracts.com/wp-content/uploads/2026/03/coldfire-categories-cartridges-4.jpg"
+                    alt="Coldfire Extracts cartridge and concentrate lineup at LAXCC">
+                <span class="lux-credit" aria-hidden="true">© Coldfire</span>
+            </div>
+
+            <!-- Bloom -->
+            <div class="lux-slide" data-badge="Carts $36/g · AIO $42-45/g" data-name="Bloom Surf Disposables"
+                data-subtitle="Distillate & Live Resin"
+                data-desc="Bloom AIO disposables: distillate with botanical terpenes is $42/g, live resin is $45/g. 510 carts start at $36 per gram."
+                data-link="https://laxcc.com/brand/bloom/">
+                <img src="https://laxcc.com/wp-content/uploads/2026/05/shp-bloom-vapes-near-lax-airport.png"
+                    alt="Bloom">
+            </div>
+
+            <!-- Highatus -->
+            <div class="lux-slide" data-badge="$20 Specials" data-name="Highatus Rosin Gummies"
+                data-subtitle="Rosin Gummies"
+                data-desc="Flavor-first cannabis edibles crafted with natural ingredients to help you recharge, relax, and enjoy your break."
+                data-link="https://laxcc.com/brand/highatus/">
+                <picture>
+                    <source media="(min-width: 769px)"
+                        srcset="https://laxcc.com/wp-content/uploads/2026/05/highatus-gummies.png">
+                    <img src="https://laxcc.com/wp-content/uploads/2026/05/highatus-THC-gummies-LA.png" alt="Highatus">
+                </picture>
+            </div>
+
+            <!-- Aims -->
+            <div class="lux-slide" data-badge="$21 7-Packs & $30 1/8ths" data-name="Aims Horticulture" data-subtitle="Indoor Flower & Prerolls"
+                data-desc="Premium indoor flower from Los Angeles' finest cultivators. $30 eighths and 7-pack of 1/8 oz pre-rolls for just $21. Consistent quality and exceptional terpene profiles."
+                data-link="https://laxcc.com/brand/aims-horticulture/">
+                <img src="https://aims.la/wp-content/uploads/2021/04/E69A9763.jpg" alt="Aims">
+            </div>
+
+            <!-- Stiiizy -->
+            <div class="lux-slide" data-badge="Starting at $25" data-name="Stiiizy Disposables & Pods"
+                data-subtitle="California's Favorite"
+                data-desc="The #1 vape brand in California. Starting at $25 for half gram disposables. Sleek, potent, and purely excellent."
+                data-link="https://laxcc.com/brand/stiiizy/">
+                <img src="https://laxcc.com/wp-content/uploads/2026/05/buy-stiiizy-vape-LA.png" alt="Stiiizy LA">
+            </div>
+
+            <!-- Staff Picks -->
+            <div class="lux-slide" data-badge="2026 Selection" data-name="LAXCC Staff Picks"
+                data-subtitle="Top 10 THC Vapes"
+                data-desc="Our definitive guide to the top 10 THC & disposable vapes for 2026. Expertly curated for unmatched potency and flavor."
+                data-link="https://laxcc.com/top-10-thc-vape-carts-staff-picks/">
+                <img src="https://laxcc.com/wp-content/uploads/2024/08/best-LA-Cannabis-Club.jpg"
+                    alt="LAXCC Staff Picks">
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT BELOW (SPLIT FOOTER) -->
+    <div id="lux-content-below">
+        <div class="lux-desc-wrap">
+            <p id="lux-sync-desc" class="lux-desc">CQ, Uncle Arnie's, St. Ides &amp; Not Your Father's — 100mg THC sodas, lemonades and root beer. Fast-acting, great-tasting and ready for same-day pickup near LAX.</p>
+        </div>
+        <a id="lux-sync-cta" href="https://laxcc.com/buy-thc-drinks-near-lax-airport/" class="lux-cta">Shop THC Drinks</a>
+    </div>
+
+    <!-- THUMBNAILS (PICKER) -->
+    <div id="lux-hero-dock">
+        <div class="lux-thumb lux-active" data-idx="0"><img
+                src="https://laxcc.com/wp-content/uploads/2026/05/best-thc-drinks-los-angeles-1.png"
+                alt="THC Drinks"></div>
+        <div class="lux-thumb" data-idx="1"><img
+                src="https://coldfireextracts.com/wp-content/uploads/2026/03/coldfire-categories-cartridges-4.jpg"
+                alt="Coldfire Extracts"></div>
+        <div class="lux-thumb" data-idx="2"><img
+                src="https://laxcc.com/wp-content/uploads/2026/05/shp-bloom-vapes-near-lax-airport.png"></div>
+        <div class="lux-thumb" data-idx="3"><img
+                src="https://laxcc.com/wp-content/uploads/2026/05/highatus-gummies.png"></div>
+        <div class="lux-thumb" data-idx="4"><img src="https://aims.la/wp-content/uploads/2021/04/E69A9763.jpg"></div>
+        <div class="lux-thumb" data-idx="5"><img
+                src="https://laxcc.com/wp-content/uploads/2026/05/buy-stiiizy-vape-LA.png"></div>
+        <div class="lux-thumb" data-idx="6"><img
+                src="https://laxcc.com/wp-content/uploads/2024/08/best-LA-Cannabis-Club.jpg"></div>
+    </div>
+</div>
+
+</div>
+
+<script>
+    (function () {
+        var wrap = document.getElementById('lux-slider-system');
+        if (!wrap) return;
+
+        var slides = wrap.querySelectorAll('.lux-slide');
+        var thumbs = wrap.querySelectorAll('.lux-thumb');
+        var current = 0;
+        var autoInterval = null;
+        var manualOverride = false;
+
+        // UI Elements
+        var badge = document.getElementById('lux-sync-badge');
+        var name = document.getElementById('lux-sync-name');
+        var sub = document.getElementById('lux-sync-subtitle');
+        var desc = document.getElementById('lux-sync-desc');
+        var cta = document.getElementById('lux-sync-cta');
+
+        function update(idx) {
+            slides[current].classList.remove('lux-active');
+            thumbs[current].classList.remove('lux-active');
+
+            current = idx;
+            var active = slides[current];
+
+            active.classList.add('lux-active');
+            thumbs[current].classList.add('lux-active');
+
+            // Sync external text
+            badge.textContent = active.getAttribute('data-badge');
+            name.textContent = active.getAttribute('data-name');
+            sub.textContent = active.getAttribute('data-subtitle');
+            desc.textContent = active.getAttribute('data-desc');
+            cta.href = active.getAttribute('data-link');
+
+            // Handle nofollow for Stiiizy
+            if (active.getAttribute('data-name').indexOf('Stiiizy') !== -1) {
+                cta.setAttribute('rel', 'nofollow');
+            } else {
+                cta.removeAttribute('rel');
+            }
+
+            cta.textContent = "Shop " + active.getAttribute('data-name');
+        }
+
+        function stopAuto() {
+            manualOverride = true;
+            if (autoInterval) clearInterval(autoInterval);
+        }
+
+        wrap.addEventListener('click', function (e) {
+            var thumb = e.target.closest('[data-idx]');
+            if (thumb) {
+                stopAuto();
+                update(parseInt(thumb.getAttribute('data-idx'), 10));
+                return;
+            }
+
+            var btnNext = e.target.closest('#lux-next');
+            if (btnNext) {
+                stopAuto();
+                update((current + 1) % slides.length);
+                return;
+            }
+
+            var btnPrev = e.target.closest('#lux-prev');
+            if (btnPrev) {
+                stopAuto();
+                update((current - 1 + slides.length) % slides.length);
+                return;
+            }
+
+            // Click on the active slide image → go to its data-link (same as CTA button).
+            // Synthesize a real <a> click so the browser honors rel="nofollow noopener" —
+            // crawlers ignore JS click handlers, but if any DOM-scraping tool reads this
+            // page, the anchor we click carries the same rel as the CTA button.
+            var slideEl = e.target.closest('.lux-slide.lux-active');
+            if (slideEl) {
+                var link = slideEl.getAttribute('data-link');
+                if (link) {
+                    var isStiiizy = (slideEl.getAttribute('data-name') || '').indexOf('Stiiizy') !== -1;
+                    var rel = isStiiizy ? 'nofollow noopener noreferrer' : 'noopener';
+                    var newTab = e.ctrlKey || e.metaKey;
+                    var a = document.createElement('a');
+                    a.href = link;
+                    a.rel = rel;
+                    if (newTab) a.target = '_blank';
+                    a.style.display = 'none';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                }
+            }
+        });
+
+        // Touch Support
+        var touchStartX = 0;
+        wrap.addEventListener('touchstart', function (e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        wrap.addEventListener('touchend', function (e) {
+            var touchEndX = e.changedTouches[0].screenX;
+            var diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                stopAuto();
+                if (diff > 0) update((current + 1) % slides.length);
+                else update((current - 1 + slides.length) % slides.length);
+            }
+        }, { passive: true });
+
+        autoInterval = setInterval(function () {
+            if (!manualOverride) {
+                update((current + 1) % slides.length);
+            }
+        }, 6000);
+    })();
+</script>

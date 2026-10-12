@@ -1,0 +1,990 @@
+<!-- ============================================================
+     LAX CANNABIS CLUB - HALF-OUNCE WEED CATEGORY PRODUCTS
+     Elementor-safe category layout patterned after
+     prerolls-category-page/elementor-shake-category-page.html.
+     Product cards are loaded from the live Dutchie menu API at runtime.
+     ============================================================ -->
+
+<section id="laxcc-half-ounce-brands-strip" class="vbs-section">
+    <div class="vbs-container">
+        <div class="vbs-header">
+            <div class="vbs-header-left">
+                <span class="vbs-kicker">Shop By Weight &bull; Live Flower Inventory</span>
+                <h2 class="vbs-title">Half-Ounce Weed for Sale in Los Angeles</h2>
+                <p class="vbs-subtitle">Shop 1/2oz and 14g cannabis flower near LAX. Compare shake, whole flower,
+                    infused flower, THC/CBD, and current price per gram.</p>
+            </div>
+        </div>
+
+        <div class="vbs-scroll-track">
+            <div class="vbs-grid" aria-live="polite">
+                <div class="half-ounce-live-status">Checking live brand inventory&hellip;</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    #laxcc-half-ounce-brands-strip,
+    #laxcc-half-ounce-brands-strip *,
+    #laxcc-half-ounce-explainer,
+    #laxcc-half-ounce-explainer *,
+    #laxcc-half-ounce-filters-strip,
+    #laxcc-half-ounce-filters-strip *,
+    #laxcc-half-ounce-live-results,
+    #laxcc-half-ounce-live-results * {
+        box-sizing: border-box;
+    }
+
+    #laxcc-half-ounce-brands-strip {
+        --vbs-navy: #1D508A;
+        --vbs-orange: #F89459;
+        --vbs-cream: #FBF8F2;
+        --vbs-border: rgba(23, 64, 122, .12);
+        --vbs-text-muted: #64748b;
+        width: 100%;
+        margin: 0 auto;
+        padding: 2.5rem 1rem 1.25rem;
+        background: var(--vbs-cream);
+        color: #0f172a;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    #laxcc-half-ounce-brands-strip .vbs-container {
+        max-width: 1360px;
+        margin: 0 auto;
+    }
+
+    #laxcc-half-ounce-brands-strip .vbs-header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1.2rem;
+    }
+
+    #laxcc-half-ounce-brands-strip .vbs-header-left {
+        width: 100%;
+        min-width: 0;
+    }
+
+    #laxcc-half-ounce-brands-strip .vbs-kicker {
+        display: block;
+        margin-bottom: .45rem;
+        color: var(--vbs-orange);
+        font-size: .72rem;
+        font-weight: 800;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+    }
+
+    #laxcc-half-ounce-brands-strip .vbs-title {
+        margin: 0;
+        color: var(--vbs-navy);
+        font-size: clamp(1.7rem, 4vw, 2.35rem);
+        font-weight: 800;
+        letter-spacing: -.045em;
+        line-height: 1.05;
+    }
+
+    #laxcc-half-ounce-brands-strip .vbs-subtitle {
+        max-width: none;
+        margin: .7rem 0 0;
+        color: var(--vbs-text-muted);
+        font-size: .94rem;
+        line-height: 1.5;
+    }
+
+    #laxcc-half-ounce-brands-strip .vbs-scroll-track {
+        width: 100%;
+        overflow-x: auto;
+        padding: .25rem .25rem .7rem;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(23, 64, 122, .25) transparent;
+    }
+
+    #laxcc-half-ounce-brands-strip .vbs-grid {
+        display: grid;
+        grid-template-rows: 76px;
+        grid-auto-flow: column;
+        grid-auto-columns: 250px;
+        gap: 12px;
+        width: max-content;
+    }
+
+    #laxcc-half-ounce-brands-strip .vbs-card {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 100%;
+        padding: 8px 12px;
+        border: 1px solid var(--vbs-border);
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
+        color: inherit;
+        text-decoration: none;
+        transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    #laxcc-half-ounce-brands-strip .vbs-card:hover,
+    #laxcc-half-ounce-brands-strip .vbs-card:focus-visible {
+        border-color: #17407A;
+        box-shadow: 0 8px 22px rgba(23, 64, 122, .12);
+        outline: none;
+        transform: translateY(-2px);
+    }
+
+    #laxcc-half-ounce-brands-strip .vbs-card-logo-wrap {
+        display: grid;
+        flex: 0 0 48px;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        border: 1px solid rgba(0, 0, 0, .04);
+        border-radius: 8px;
+        background: #f8fafc;
+    }
+
+    #laxcc-half-ounce-brands-strip .vbs-card-logo {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    #laxcc-half-ounce-brands-strip .vbs-card-body {
+        min-width: 0;
+    }
+
+    #laxcc-half-ounce-brands-strip .vbs-card-name {
+        overflow: hidden;
+        margin: 0 0 .2rem;
+        color: var(--vbs-navy);
+        font-size: .98rem;
+        font-weight: 800;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    #laxcc-half-ounce-brands-strip .vbs-card-count {
+        color: var(--vbs-orange);
+        font-size: .72rem;
+        font-weight: 700;
+    }
+
+    @media (min-width:769px) {
+        #laxcc-half-ounce-brands-strip {
+            width: 100vw;
+            max-width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+        }
+
+        #laxcc-half-ounce-brands-strip .vbs-container,
+        #laxcc-half-ounce-brands-strip .vbs-header {
+            width: 100%;
+            max-width: none;
+        }
+    }
+
+    #laxcc-half-ounce-explainer {
+        padding: 1.5rem 1rem .75rem;
+        background: #FBF8F2;
+        color: #0f172a;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    #laxcc-half-ounce-explainer .half-ounce-explainer-inner {
+        max-width: 1360px;
+        margin: 0 auto;
+        padding: 0 .25rem;
+    }
+
+    #laxcc-half-ounce-explainer .half-ounce-explainer-kicker {
+        display: block;
+        margin-bottom: .45rem;
+        color: #F89459;
+        font-size: .72rem;
+        font-weight: 800;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+    }
+
+    #laxcc-half-ounce-explainer h2 {
+        margin: 0;
+        color: #1D508A;
+        font-size: clamp(1.55rem, 3vw, 2.1rem);
+        font-weight: 800;
+        letter-spacing: -.04em;
+        line-height: 1.1;
+    }
+
+    #laxcc-half-ounce-explainer .half-ounce-explainer-lead {
+        margin: .55rem 0 1rem;
+        color: #64748b;
+        font-size: .95rem;
+        line-height: 1.5;
+    }
+
+    #laxcc-half-ounce-explainer .half-ounce-explainer-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    #laxcc-half-ounce-explainer .half-ounce-explainer-card {
+        padding: 16px 18px;
+        border: 1px solid rgba(23, 64, 122, .12);
+        border-radius: 12px;
+        background: #fff;
+    }
+
+    #laxcc-half-ounce-explainer .half-ounce-explainer-card h3 {
+        margin: 0 0 .35rem;
+        color: #17407A;
+        font-size: 1rem;
+        font-weight: 800;
+    }
+
+    #laxcc-half-ounce-explainer .half-ounce-explainer-card p {
+        margin: 0;
+        color: #64748b;
+        font-size: .86rem;
+        line-height: 1.55;
+    }
+
+    #laxcc-half-ounce-explainer .half-ounce-explainer-note {
+        margin: .85rem 0 0;
+        color: #64748b;
+        font-size: .76rem;
+        line-height: 1.5;
+    }
+
+    #laxcc-half-ounce-filters-strip {
+        width: 100%;
+        margin: 0 auto;
+        padding: .5rem 1rem;
+        background: #FBF8F2;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    #laxcc-half-ounce-filters-strip .half-ounce-filters-wrapper {
+        display: flex;
+        max-width: 1360px;
+        margin: 0 auto;
+        overflow: hidden;
+        align-items: center;
+        gap: 16px;
+    }
+
+    #laxcc-half-ounce-filters-strip .half-ounce-filters-track {
+        display: flex;
+        flex: 1 1 auto;
+        min-width: 0;
+        align-items: center;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 4px 0;
+        scrollbar-width: none;
+    }
+
+    #laxcc-half-ounce-filters-strip .half-ounce-filters-track::-webkit-scrollbar {
+        display: none;
+    }
+
+    #laxcc-half-ounce-filters-strip .half-ounce-filter-pill {
+        display: inline-flex;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        min-width: max-content;
+        height: 36px;
+        margin: 0;
+        padding: 0 14px;
+        border: 1px solid rgba(23, 64, 122, .15);
+        border-radius: 999px;
+        background: #fff;
+        box-shadow: none;
+        color: #17407A;
+        cursor: pointer;
+        font: 750 12px/1.2 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        white-space: nowrap;
+        appearance: none;
+    }
+
+    #laxcc-half-ounce-filters-strip .half-ounce-filter-pill:hover,
+    #laxcc-half-ounce-filters-strip .half-ounce-filter-pill.active {
+        border-color: #17407A;
+        background: #17407A;
+        color: #fff;
+    }
+
+    #laxcc-half-ounce-filters-strip .half-ounce-sort-toolbar {
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        margin: 0;
+    }
+
+    #laxcc-half-ounce-filters-strip .half-ounce-sort-label {
+        color: #17407A;
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap;
+    }
+
+    #laxcc-half-ounce-filters-strip .half-ounce-sort-select {
+        width: 245px;
+        height: 36px;
+        padding: 0 34px 0 11px;
+        border: 1px solid rgba(23, 64, 122, .22);
+        border-radius: 8px;
+        background: #fff;
+        color: #17407A;
+        font: 700 12px/1.2 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    #laxcc-half-ounce-live-results {
+        width: 100%;
+        max-width: 1360px;
+        margin: 0 auto;
+        padding: .75rem 1rem 2.5rem;
+        scroll-margin-top: 24px;
+        color: #0f172a;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    #laxcc-half-ounce-live-results .half-ounce-grid-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 1.25rem;
+        padding: 8px 14px;
+        border: 1px solid rgba(23, 64, 122, .1);
+        border-radius: 12px;
+        background: #f7fafc;
+    }
+
+    #laxcc-half-ounce-live-results .half-ounce-grid-header-left {
+        display: flex;
+        align-items: center;
+        gap: 8px 12px;
+        flex-wrap: wrap;
+        min-width: 0;
+    }
+
+    #laxcc-half-ounce-live-results .half-ounce-grid-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 4px 10px;
+        border-radius: 20px;
+        background: rgba(248, 148, 89, .15);
+        color: #e06c28;
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap;
+    }
+
+    #laxcc-half-ounce-live-results .half-ounce-grid-count {
+        color: #64748b;
+        font-size: 12px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    #laxcc-half-ounce-live-results .half-ounce-products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 18px;
+    }
+
+    #laxcc-half-ounce-brands-strip .half-ounce-live-status,
+    #laxcc-half-ounce-live-results .half-ounce-live-status {
+        grid-column: 1/-1;
+        padding: 24px;
+        border: 1px dashed rgba(23, 64, 122, .2);
+        border-radius: 12px;
+        background: #f8fafc;
+        color: #64748b;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    #laxcc-half-ounce-live-results .laxcc-prod-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        padding: 14px;
+        border: 1px solid rgba(0, 0, 0, .08);
+        border-radius: 14px;
+        background: #fff;
+        color: inherit;
+        text-decoration: none !important;
+        transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    #laxcc-half-ounce-live-results .laxcc-prod-card[hidden] {
+        display: none !important;
+    }
+
+    #laxcc-half-ounce-live-results .laxcc-prod-card:hover,
+    #laxcc-half-ounce-live-results .laxcc-prod-card:focus-visible {
+        border-color: rgba(248, 148, 89, .4);
+        box-shadow: 0 10px 24px rgba(23, 64, 122, .12);
+        outline: none;
+        transform: translateY(-3px);
+    }
+
+    #laxcc-half-ounce-live-results .laxcc-prod-img-wrap {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 10px;
+        background: #f8fafc;
+        overflow: hidden;
+        margin-bottom: 12px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #laxcc-half-ounce-live-results .laxcc-prod-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .3s ease;
+    }
+
+    #laxcc-half-ounce-live-results .laxcc-prod-card:hover .laxcc-prod-img {
+        transform: scale(1.04);
+    }
+
+    #laxcc-half-ounce-live-results .laxcc-prod-strain {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        padding: 3px 8px;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, .92);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+        color: #17407A;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+    }
+
+    #laxcc-half-ounce-live-results .laxcc-prod-potency-badge {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        padding: 3px 7px;
+        border-radius: 6px;
+        background: rgba(23, 64, 122, .88);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, .12);
+        color: #fff;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: .02em;
+    }
+
+    #laxcc-half-ounce-live-results .laxcc-prod-brand {
+        display: block;
+        margin-bottom: 4px;
+        color: #00AFC9;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+    }
+
+    #laxcc-half-ounce-live-results .laxcc-prod-name {
+        display: -webkit-box;
+        min-height: 36px;
+        margin: 0 0 6px;
+        overflow: hidden;
+        color: #17407A;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.3;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    #laxcc-half-ounce-live-results .laxcc-prod-potency-line {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 0 0 10px;
+        color: #64748b;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    #laxcc-half-ounce-live-results .laxcc-prod-weight-pill {
+        padding: 2px 6px;
+        border-radius: 4px;
+        background: rgba(23, 64, 122, .1);
+        color: #17407A;
+        font-size: 10px;
+        font-weight: 800;
+    }
+
+    #laxcc-half-ounce-live-results .laxcc-prod-cbd-pill {
+        padding: 2px 6px;
+        border-radius: 4px;
+        background: rgba(0, 175, 201, .12);
+        color: #00879c;
+        font-size: 10px;
+        font-weight: 800;
+    }
+
+    #laxcc-half-ounce-live-results .laxcc-prod-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-top: auto;
+    }
+
+    #laxcc-half-ounce-live-results .laxcc-prod-price {
+        color: #17407A;
+        font-size: 16px;
+        font-weight: 800;
+    }
+
+    #laxcc-half-ounce-live-results .laxcc-prod-order-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 6px 12px;
+        border-radius: 8px;
+        background: #F89459;
+        color: #fff !important;
+        font-size: 11px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    #laxcc-half-ounce-live-results .laxcc-prod-order-btn:hover {
+        background: #e06c28;
+    }
+
+    @media (max-width:768px) {
+        #laxcc-half-ounce-brands-strip {
+            padding: 1.75rem .75rem 1rem;
+        }
+
+        #laxcc-half-ounce-brands-strip .vbs-grid {
+            grid-template-rows: 68px;
+            grid-auto-columns: 220px;
+            gap: 8px;
+        }
+
+        #laxcc-half-ounce-brands-strip .vbs-card-logo-wrap {
+            flex-basis: 42px;
+            width: 42px;
+            height: 42px;
+        }
+
+        #laxcc-half-ounce-explainer {
+            padding: 1.25rem .75rem .5rem;
+        }
+
+        #laxcc-half-ounce-filters-strip {
+            padding: .35rem .75rem;
+        }
+
+        #laxcc-half-ounce-filters-strip .half-ounce-filters-wrapper {
+            align-items: stretch;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        #laxcc-half-ounce-filters-strip .half-ounce-filters-track {
+            width: 100%;
+            padding: 4px 0;
+        }
+
+        #laxcc-half-ounce-filters-strip .half-ounce-sort-toolbar {
+            width: 100%;
+            align-items: stretch;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        #laxcc-half-ounce-filters-strip .half-ounce-sort-select {
+            width: 100%;
+        }
+
+        #laxcc-half-ounce-live-results {
+            padding: .75rem .75rem 2rem;
+        }
+
+        #laxcc-half-ounce-live-results .half-ounce-grid-header {
+            padding: 6px 10px;
+            margin-bottom: .85rem;
+        }
+
+        #laxcc-half-ounce-live-results .half-ounce-products-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        #laxcc-half-ounce-live-results .laxcc-prod-card {
+            padding: 10px;
+        }
+
+        #laxcc-half-ounce-live-results .laxcc-prod-name {
+            font-size: 12px;
+            min-height: 32px;
+        }
+
+        #laxcc-half-ounce-live-results .laxcc-prod-price {
+            font-size: 14px;
+        }
+
+        #laxcc-half-ounce-live-results .laxcc-prod-order-btn {
+            padding: 4px 8px;
+            font-size: 10px;
+        }
+    }
+
+    @media (max-width:520px) {
+        #laxcc-half-ounce-explainer .half-ounce-explainer-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div id="laxcc-half-ounce-filters-strip">
+    <div class="half-ounce-filters-wrapper">
+        <div class="half-ounce-filters-track" role="group" aria-label="Half-ounce flower filters">
+            <button type="button" class="half-ounce-filter-pill active" data-filter="all" aria-pressed="true">All
+                Half-Ounce</button>
+            <button type="button" class="half-ounce-filter-pill" data-filter="under-30" aria-pressed="false">Half-Ounce
+                $30 &amp; Under</button>
+            <button type="button" class="half-ounce-filter-pill" data-filter="under-65" aria-pressed="false">Half-Ounce
+                $65 &amp; Under</button>
+            <button type="button" class="half-ounce-filter-pill" data-filter="shake" aria-pressed="false">Half-Ounce
+                Shake</button>
+        </div>
+        <div class="half-ounce-sort-toolbar">
+            <label class="half-ounce-sort-label" for="laxcc-half-ounce-sort">Sort products</label>
+            <select class="half-ounce-sort-select" id="laxcc-half-ounce-sort" aria-label="Sort half-ounce products">
+                <option value="default">Default order</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="thc-percent-asc">THC %: Low to High</option>
+                <option value="thc-percent-desc">THC %: High to Low</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div id="laxcc-half-ounce-live-results">
+    <div class="half-ounce-grid-header">
+        <div class="half-ounce-grid-header-left"><span class="half-ounce-grid-badge">All Half-Ounce</span><span
+                class="half-ounce-grid-count" aria-live="polite">Checking live inventory&hellip;</span></div>
+    </div>
+
+    <div class="half-ounce-products-grid" aria-live="polite">
+        <div class="half-ounce-live-status">Checking live inventory&hellip;</div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        'use strict';
+
+        var filters = document.getElementById('laxcc-half-ounce-filters-strip');
+        var results = document.getElementById('laxcc-half-ounce-live-results');
+        if (!filters || !results) return;
+
+        var buttons = Array.prototype.slice.call(filters.querySelectorAll('.half-ounce-filter-pill'));
+        var grid = results.querySelector('.half-ounce-products-grid');
+        var brandGrid = document.querySelector('#laxcc-half-ounce-brands-strip .vbs-grid');
+        var cards = [];
+        var badge = results.querySelector('.half-ounce-grid-badge');
+        var count = results.querySelector('.half-ounce-grid-count');
+        var sort = document.getElementById('laxcc-half-ounce-sort');
+        var currentFilter = 'all';
+        var currentFilterLabel = 'All Half-Ounce';
+        var lastLoadedAt = 0;
+        var loadingPromise = null;
+
+        var DUTCHIE_ENDPOINT = 'https://plus.dutchie.com/plus/2021-07/graphql';
+        var DUTCHIE_PUBLIC_TOKEN = 'public-eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJBUEktQ0xJRU5UIiwiZXhwIjozMzI0MTMzMzI5OCwiaWF0IjoxNjg0NDI0NDk4LCJpc3MiOiJodHRwczovL2R1dGNoaWUuY29tIiwianRpIjoiNjI0ZjYzMjItZDE3Mi00OTIwLTkzZmItNTA1ZGEzMmY2ZWU2IiwiZW50ZXJwcmlzZV9pZCI6ImI0NTg3NDIzLTZkYjYtNDgxMi1iMDlkLWVlYjM4M2Y0YmYzOCIsInV1aWQiOiJhMjhkMzZiNy00ZDJmLTQ4YTUtODhhNC1kZWI0NWUxMzYxOWUifQ.8jKBV95mBDuXJzxZeUajF_5Mv17xt3B9Iwc-w-zVWdo';
+        var RETAILER_ID = '6ed054f8-19a5-4991-b562-c4df2a287ae3';
+        var PAGE_SIZE = 50;
+        var MAX_PRODUCTS = 500;
+        var REFRESH_MS = 5 * 60 * 1000;
+
+        function escapeHtml(value) {
+            return String(value === null || value === undefined ? '' : value)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function isNumber(value) {
+            return typeof value === 'number' && isFinite(value);
+        }
+
+        function isHalfOunceOption(option) {
+            return /^(?:1\/2oz|14g|half-?ounce)$/i.test(String(option || '').replace(/\s+/g, ''));
+        }
+
+        function priceForVariant(variant) {
+            if (isNumber(variant.specialPriceRec) && variant.specialPriceRec >= 0) return variant.specialPriceRec;
+            if (isNumber(variant.priceRec) && variant.priceRec >= 0) return variant.priceRec;
+            if (isNumber(variant.specialPriceMed) && variant.specialPriceMed >= 0) return variant.specialPriceMed;
+            return isNumber(variant.priceMed) && variant.priceMed >= 0 ? variant.priceMed : null;
+        }
+
+        function normalizeProduct(product) {
+            if (!product || !product.id || !product.name || !product.slug) return null;
+
+            var variants = Array.isArray(product.variants) ? product.variants.filter(function (variant) {
+                return isHalfOunceOption(variant.option) && (!isNumber(variant.quantity) || variant.quantity > 0);
+            }) : [];
+            if (!variants.length) return null;
+
+            var priced = variants.map(function (variant) {
+                return { variant: variant, price: priceForVariant(variant) };
+            }).filter(function (item) { return item.price !== null; });
+            if (!priced.length) return null;
+            priced.sort(function (a, b) { return a.price - b.price; });
+
+            var options = [];
+            variants.forEach(function (variant) {
+                var option = typeof variant.option === 'string' ? variant.option.trim() : '';
+                if (option && options.indexOf(option) === -1) options.push(option);
+            });
+            var quantity = variants.reduce(function (sum, variant) {
+                return sum + (isNumber(variant.quantity) && variant.quantity > 0 ? variant.quantity : 0);
+            }, 0);
+            var name = product.name;
+            var format = /\bshake\b/i.test(name) ? 'shake' : (/\binfused\b/i.test(name) ? 'infused' : 'flower');
+            var thcText = product.potencyThc && product.potencyThc.formatted ? product.potencyThc.formatted : '';
+            var thcMatch = String(thcText).match(/\d+(?:\.\d+)?/);
+            var image = product.images && product.images[0] && typeof product.images[0].url === 'string' ? product.images[0].url : '';
+
+            return {
+                id: product.id,
+                name: name,
+                slug: product.slug,
+                brand: product.brand && product.brand.name ? product.brand.name : '',
+                image: image,
+                strain: product.strainType && product.strainType !== 'NOT_APPLICABLE' ? product.strainType.replace(/_/g, ' ') : '',
+                thc: thcText,
+                thcValue: thcMatch ? Number(thcMatch[0]) : 0,
+                cbd: product.potencyCbd && product.potencyCbd.formatted ? product.potencyCbd.formatted : '',
+                options: options,
+                price: priced[0].price,
+                quantity: quantity,
+                format: format
+            };
+        }
+
+        function fetchDutchiePage(offset, accumulated, expectedCount) {
+            var query = [
+                'query LaxccHalfOunceProducts($retailerId: ID!, $filter: MenuFilter, $pagination: Pagination) {',
+                'menu(retailerId: $retailerId, filter: $filter, pagination: $pagination) {',
+                'productsCount products { id name slug category strainType images { url } brand { name }',
+                'potencyThc { formatted unit range } potencyCbd { formatted }',
+                'variants { id option quantity priceRec priceMed specialPriceRec specialPriceMed }',
+                '} } }'
+            ].join(' ');
+
+            return fetch(DUTCHIE_ENDPOINT, {
+                method: 'POST',
+                cache: 'no-store',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + DUTCHIE_PUBLIC_TOKEN
+                },
+                body: JSON.stringify({
+                    query: query,
+                    variables: {
+                        retailerId: RETAILER_ID,
+                        filter: { category: 'FLOWER' },
+                        pagination: { limit: PAGE_SIZE, offset: offset }
+                    }
+                })
+            }).then(function (response) {
+                if (!response.ok) throw new Error('Dutchie HTTP ' + response.status);
+                return response.json();
+            }).then(function (payload) {
+                if (payload.errors && payload.errors.length) throw new Error(payload.errors[0].message || 'Dutchie GraphQL error');
+                var menu = payload.data && payload.data.menu;
+                if (!menu || !Array.isArray(menu.products)) throw new Error('Dutchie menu data missing');
+
+                var total = expectedCount === null ? menu.productsCount : expectedCount;
+                if (!isNumber(total)) total = accumulated.length + menu.products.length;
+                if (total > MAX_PRODUCTS) throw new Error('Dutchie result exceeds safe product cap');
+
+                var combined = accumulated.concat(menu.products);
+                if (combined.length >= total) return combined.slice(0, total);
+                if (!menu.products.length) throw new Error('Dutchie returned an incomplete product list');
+                return fetchDutchiePage(offset + menu.products.length, combined, total);
+            });
+        }
+
+        function productCard(product, index) {
+            var image = product.image
+                ? '<img src="' + escapeHtml(product.image) + '" class="laxcc-prod-img" alt="' + escapeHtml(product.name) + '" loading="lazy" decoding="async">'
+                : '<span class="laxcc-prod-img" role="img" aria-label="No product image available"></span>';
+            var strain = product.strain ? '<span class="laxcc-prod-strain">' + escapeHtml(product.strain) + '</span>' : '';
+            var thc = product.thc ? '<span class="laxcc-prod-potency-badge">THC ' + escapeHtml(product.thc) + '</span>' : '';
+            var brand = product.brand ? '<span class="laxcc-prod-brand">' + escapeHtml(product.brand) + '</span>' : '';
+            var weight = '<span class="laxcc-prod-weight-pill">Weight: ' + escapeHtml(product.options.join(' / ')) + '</span>';
+            var cbd = product.cbd ? '<span class="laxcc-prod-cbd-pill">CBD: ' + escapeHtml(product.cbd) + '</span>' : '';
+
+            return '<a href="https://laxcc.com/product/' + encodeURIComponent(product.slug) + '/" class="laxcc-prod-card"' +
+                ' data-format="' + product.format + '" data-price="' + product.price + '" data-thc="' + product.thcValue + '"' +
+                ' data-units="' + product.quantity + '" data-laxcc-original-index="' + index + '"' +
+                ' data-dutchie-product-id="' + escapeHtml(product.id) + '" target="_blank" rel="noopener">' +
+                '<div class="laxcc-prod-img-wrap">' + image + strain + thc + '</div>' + brand +
+                '<h3 class="laxcc-prod-name">' + escapeHtml(product.name) + '</h3>' +
+                '<div class="laxcc-prod-potency-line">' + weight + cbd + '</div>' +
+                '<div class="laxcc-prod-footer"><div class="laxcc-prod-price">$' + Number(product.price).toLocaleString('en-US', { maximumFractionDigits: 2 }) + '</div>' +
+                '<span class="laxcc-prod-order-btn">Order &rarr;</span></div></a>';
+        }
+
+        function renderBrands(products) {
+            if (!brandGrid) return;
+            var groups = {};
+            products.forEach(function (product) {
+                var brand = product.brand || 'Other';
+                groups[brand] = (groups[brand] || 0) + 1;
+            });
+            brandGrid.innerHTML = Object.keys(groups).sort().map(function (brand) {
+                var total = groups[brand];
+                return '<a class="vbs-card" href="#laxcc-half-ounce-live-results" data-name="' + escapeHtml(brand.toLowerCase().replace(/[^a-z0-9]+/g, '-')) + '" aria-label="Scroll to ' + escapeHtml(brand) + ' half-ounce products">' +
+                    '<div class="vbs-card-logo-wrap"><div class="vbs-card-initial">' + escapeHtml(brand.charAt(0).toUpperCase()) + '</div></div>' +
+                    '<div class="vbs-card-body"><h3 class="vbs-card-name">' + escapeHtml(brand) + '</h3>' +
+                    '<span class="vbs-card-count">' + total + ' Half-Ounce ' + (total === 1 ? 'Product' : 'Products') + ' &rarr;</span></div></a>';
+            }).join('');
+        }
+
+        function matches(card, filter) {
+            var price = Number(card.dataset.price);
+            if (filter === 'under-30') return price <= 30;
+            if (filter === 'under-65') return price <= 65;
+            if (filter === 'shake') return card.dataset.format === 'shake';
+            return true;
+        }
+
+        function applyFilter(filter, label) {
+            var visible = 0;
+            var units = 0;
+            currentFilter = filter;
+            currentFilterLabel = label;
+            cards.forEach(function (card) {
+                var show = matches(card, filter);
+                card.hidden = !show;
+                if (show) {
+                    visible += 1;
+                    units += Number(card.dataset.units) || 0;
+                }
+            });
+            buttons.forEach(function (button) {
+                var active = button.dataset.filter === filter;
+                button.classList.toggle('active', active);
+                button.setAttribute('aria-pressed', String(active));
+            });
+            badge.textContent = label;
+            count.textContent = visible + (visible === 1 ? ' product' : ' products') + ' \u2022 ' + units + (units === 1 ? ' unit' : ' units') + ' \u2022 Live Inventory';
+        }
+
+        function applySort() {
+            var mode = sort.value;
+            var sorted = cards.slice().sort(function (a, b) {
+                if (mode === 'price-asc') return Number(a.dataset.price) - Number(b.dataset.price);
+                if (mode === 'price-desc') return Number(b.dataset.price) - Number(a.dataset.price);
+                if (mode === 'thc-percent-asc') return Number(a.dataset.thc) - Number(b.dataset.thc);
+                if (mode === 'thc-percent-desc') return Number(b.dataset.thc) - Number(a.dataset.thc);
+                return Number(a.dataset.laxccOriginalIndex) - Number(b.dataset.laxccOriginalIndex);
+            });
+            sorted.forEach(function (card) { grid.appendChild(card); });
+        }
+
+        function publishProducts(products) {
+            var normalized = products.map(normalizeProduct).filter(Boolean);
+            normalized.sort(function (a, b) {
+                return a.price - b.price || a.name.localeCompare(b.name);
+            });
+            if (normalized.length) {
+                grid.innerHTML = normalized.map(productCard).join('');
+            } else {
+                grid.innerHTML = '<div class="half-ounce-live-status">No half-ounce flower is currently in stock. Please check back soon.</div>';
+            }
+            cards = Array.prototype.slice.call(grid.querySelectorAll('.laxcc-prod-card'));
+            renderBrands(normalized);
+            results.setAttribute('data-laxcc-api-status', 'live');
+            results.removeAttribute('aria-busy');
+            lastLoadedAt = Date.now();
+            applySort();
+            applyFilter(currentFilter, currentFilterLabel);
+        }
+
+        function showInventoryUnavailable(error) {
+            grid.innerHTML = '<div class="half-ounce-live-status">Live inventory is temporarily unavailable. Please use the online menu to confirm current stock.</div>';
+            if (brandGrid) brandGrid.innerHTML = '<div class="half-ounce-live-status">Live brand inventory is temporarily unavailable.</div>';
+            cards = [];
+            count.textContent = 'Live inventory temporarily unavailable';
+            results.setAttribute('data-laxcc-api-status', 'unavailable');
+            results.removeAttribute('aria-busy');
+            if (window.console && console.warn) console.warn('[LAXCC] Dutchie half-ounce inventory refresh failed.', error);
+        }
+
+        function refreshInventory() {
+            if (loadingPromise) return loadingPromise;
+            results.setAttribute('aria-busy', 'true');
+            count.textContent = 'Refreshing live inventory\u2026';
+            loadingPromise = fetchDutchiePage(0, [], null).then(function (products) {
+                publishProducts(products);
+                return true;
+            }).catch(function (error) {
+                showInventoryUnavailable(error);
+                return false;
+            }).then(function (result) {
+                loadingPromise = null;
+                return result;
+            });
+            return loadingPromise;
+        }
+
+        buttons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                applyFilter(button.dataset.filter, button.textContent.trim());
+            });
+        });
+
+        sort.addEventListener('change', function () {
+            applySort();
+        });
+
+        window.setInterval(function () {
+            if (!document.hidden && Date.now() - lastLoadedAt >= REFRESH_MS) refreshInventory();
+        }, 60 * 1000);
+        document.addEventListener('visibilitychange', function () {
+            if (!document.hidden && Date.now() - lastLoadedAt >= REFRESH_MS) refreshInventory();
+        });
+
+        refreshInventory();
+    }());
+</script>

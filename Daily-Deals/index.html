@@ -1,9 +1,16 @@
 <!-- LAXCC Daily Deals - Elementor Optimized (No External CDN Dependencies) -->
+<!-- SEO META — paste into Yoast/RankMath for this page -->
+<!-- Title: Best Los Angeles Dispensary Deals | Daily Weed Deals Near LAX | LAXCC -->
+<!-- Description: The best Los Angeles dispensary deals, updated daily — BOGOs, buy-two-get-one & half-off drops on top weed brands at LAX Cannabis Club, 5 minutes from LAX Airport. -->
+<!-- Canonical: https://laxcc.com/deals/ -->
+<!-- Primary keyword: Best Los Angeles Dispensary Deals -->
+<!-- Secondary: best weed deals in Los Angeles, daily dispensary deals LA, weed deals near LAX, cheap weed prices LA, LAX Cannabis Club deals -->
 <link
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
     rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
 
 <style>
     /* ========== RESET & BASE ========== */
@@ -593,7 +600,7 @@
     }
 
     #laxcc-deals-wrapper .laxcc-mobile-card-img .laxcc-initials-placeholder {
-        font-size: 1.5rem;
+        font-size: 2.25rem;
     }
 
     #laxcc-deals-wrapper .laxcc-card:hover .laxcc-card-img {
@@ -756,7 +763,7 @@
     /* Mobile Cards */
     #laxcc-deals-wrapper .laxcc-mobile-main {
         padding: 1rem;
-        padding-bottom: 6rem;
+        padding-bottom: 1rem;
     }
 
     #laxcc-deals-wrapper .laxcc-mobile-section-title {
@@ -794,9 +801,9 @@
     }
 
     #laxcc-deals-wrapper .laxcc-mobile-card-img {
-        width: 64px;
-        height: 64px;
-        border-radius: 0.5rem;
+        width: 104px;
+        height: 104px;
+        border-radius: 0.625rem;
         background: #f8fafc;
         overflow: hidden;
         flex-shrink: 0;
@@ -833,14 +840,20 @@
         color: #1e293b;
         overflow: hidden;
         text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
+    /* Deal text truncates to 2 lines with an ellipsis — never wraps the card taller */
     #laxcc-deals-wrapper .laxcc-mobile-card-deal {
         font-size: 0.875rem;
+        line-height: 1.35;
         color: #64748b;
         overflow: hidden;
         text-overflow: ellipsis;
-        white-space: nowrap;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
 
     /* ========== RESPONSIVE BREAKPOINTS (Scoped) ========== */
@@ -925,17 +938,323 @@
     #laxcc-deals-wrapper .laxcc-mobile-card-img.laxcc-filled img {
         object-fit: cover !important;
         border-radius: 0.5rem;
-        /* Match container */
+    }
+
+    #laxcc-deals-wrapper .laxcc-card-img-container.laxcc-white-bg {
+        background: #fff;
+    }
+
+    #laxcc-deals-wrapper .laxcc-mobile-card-img.laxcc-white-bg {
+        background: #fff;
+    }
+
+    #laxcc-deals-wrapper .laxcc-card-img-container.laxcc-black-bg {
+        background: #111;
+    }
+
+    #laxcc-deals-wrapper .laxcc-mobile-card-img.laxcc-black-bg {
+        background: #111;
+    }
+
+    /* ========== SEO CONTENT (Scoped, no borders) ========== */
+    #laxcc-deals-wrapper .laxcc-seo-hero {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 2.5rem 1rem 0.25rem;
+    }
+
+    #laxcc-deals-wrapper .laxcc-seo-h1 {
+        font-size: clamp(2.4rem, 8.5vw, 3.2rem);
+        font-weight: 900;
+        letter-spacing: -0.025em;
+        color: #0f172a;
+        line-height: 1.1;
+    }
+
+    #laxcc-deals-wrapper .laxcc-seo-h1 .accent {
+        color: #00AFC9;
+    }
+
+    #laxcc-deals-wrapper .laxcc-seo-tagline {
+        margin-top: 0.6rem;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #00AFC9;
+    }
+
+    #laxcc-deals-wrapper .laxcc-seo-hero p {
+        margin-top: 0.75rem;
+        font-size: 1.05rem;
+        line-height: 1.65;
+        color: #475569;
+        max-width: 100%;
+    }
+
+    #laxcc-deals-wrapper .laxcc-seo-hero a,
+    #laxcc-deals-wrapper .laxcc-seo-outro a {
+        color: #00AFC9;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    /* ===== Full-bleed hero with the page title layered on the image ===== */
+    #laxcc-deals-wrapper #laxcc-deals-hero {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0 0 0.25rem;
+    }
+
+    #laxcc-deals-wrapper #laxcc-deals-hero::before {
+        content: "";
+        position: relative;
+        grid-area: 1 / 1;
+        background: linear-gradient(90deg, rgba(6, 25, 35, 0.82), rgba(6, 25, 35, 0.35));
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    #laxcc-deals-wrapper .laxcc-hero-graphic {
+        grid-area: 1 / 1;
+        width: 100%;
+        height: 100%;
+        min-height: clamp(280px, 42vw, 420px);
+        background-image: url('https://laxcc.com/wp-content/uploads/2024/12/best-cannabis-in-LA.jpg');
+        background-size: cover;
+        background-position: center 42%;
+        background-repeat: no-repeat;
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+
+    #laxcc-deals-wrapper #laxcc-deals-hero .laxcc-seo-h1 {
+        color: #ffffff;
+        font-size: clamp(2.35rem, 5.5vw, 4.75rem);
+        max-width: 860px;
+        text-shadow: 0 3px 22px rgba(0, 0, 0, 0.32);
+    }
+
+    #laxcc-deals-wrapper #laxcc-deals-hero .laxcc-seo-tagline {
+        color: #00AFC9;
+    }
+
+    #laxcc-deals-wrapper #laxcc-deals-hero p {
+        color: #475569;
+        width: 100%;
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    #laxcc-deals-wrapper #laxcc-deals-hero .laxcc-seo-tagline {
+        margin-top: 1.25rem;
+    }
+
+    #laxcc-deals-wrapper #laxcc-deals-hero .laxcc-seo-h1row {
+        position: relative;
+        grid-area: 1 / 1;
+        align-self: center;
+        width: 100%;
+        max-width: 1440px;
+        min-width: 0;
+        margin: 0 auto;
+        padding: 2.5rem 1rem;
+        z-index: 2;
+    }
+
+    #laxcc-deals-wrapper #laxcc-deals-hero .laxcc-jump-mobile {
+        color: #ffffff;
+    }
+
+    @media (max-width: 767px) {
+        #laxcc-deals-wrapper #laxcc-deals-hero .laxcc-seo-h1row {
+            padding: 2rem 1.25rem;
+            gap: 0.75rem;
+        }
+
+        #laxcc-deals-wrapper #laxcc-deals-hero .laxcc-seo-h1 {
+            min-width: 0;
+            font-size: clamp(2rem, 8.5vw, 2.75rem);
+            line-height: 1.12;
+            word-break: normal;
+        }
+
+        #laxcc-deals-wrapper #laxcc-deals-hero .laxcc-jump-mobile {
+            width: 44px;
+            min-height: 44px;
+            padding: 6px;
+        }
+    }
+
+    #laxcc-deals-wrapper .laxcc-seo-outro {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0.25rem 1rem 0.5rem;
+    }
+
+    #laxcc-deals-wrapper .laxcc-seo-outro h2 {
+        font-size: clamp(1.4rem, 4vw, 2rem);
+        font-weight: 800;
+        color: #0f172a;
+        letter-spacing: -0.02em;
+        margin-top: 1.75rem;
+    }
+
+    #laxcc-deals-wrapper .laxcc-seo-outro>h2:first-child {
+        margin-top: 0;
+    }
+
+    #laxcc-deals-wrapper .laxcc-seo-outro h3 {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin-top: 1.35rem;
+    }
+
+    #laxcc-deals-wrapper .laxcc-seo-outro p {
+        margin-top: 0.6rem;
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #475569;
+    }
+
+    #laxcc-deals-wrapper .laxcc-faq-list {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    #laxcc-deals-wrapper .laxcc-faq {
+        background: #ffffff;
+        border-radius: 0.75rem;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+    }
+
+    #laxcc-deals-wrapper .laxcc-faq summary {
+        cursor: pointer;
+        list-style: none;
+        padding: 1rem 1.25rem;
+        font-weight: 700;
+        color: #0f172a;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #laxcc-deals-wrapper .laxcc-faq summary::-webkit-details-marker {
+        display: none;
+    }
+
+    #laxcc-deals-wrapper .laxcc-faq summary::after {
+        content: "+";
+        color: #00AFC9;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1;
+    }
+
+    #laxcc-deals-wrapper .laxcc-faq[open] summary::after {
+        content: "\2013";
+    }
+
+    #laxcc-deals-wrapper .laxcc-faq p {
+        padding: 0 1.25rem 1.15rem;
+        margin: 0;
+        color: #475569;
+        line-height: 1.65;
+    }
+
+    /* "Jump to deals" arrow — sits to the RIGHT of the H1 (mobile + desktop) */
+    #laxcc-deals-wrapper .laxcc-seo-h1row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    #laxcc-deals-wrapper .laxcc-jump-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        background: none;
+        border: none;
+        padding: 6px 6px 6px 10px;
+        cursor: pointer;
+        color: #0f172a;
+        opacity: 0.9;
+        -webkit-tap-highlight-color: transparent;
+        animation: laxcc-jump-bob 1.9s ease-in-out infinite;
+    }
+
+    #laxcc-deals-wrapper .laxcc-jump-mobile:hover {
+        opacity: 0.55;
+    }
+
+    #laxcc-deals-wrapper .laxcc-jump-mobile:active {
+        opacity: 0.45;
+    }
+
+    @keyframes laxcc-jump-bob {
+
+        0%,
+        100% {
+            transform: translateY(0);
+            opacity: 0.9;
+        }
+
+        50% {
+            transform: translateY(5px);
+            opacity: 0.55;
+        }
     }
 </style>
 
 <div id="laxcc-deals-wrapper">
+    <!-- ========== SEO INTRO ========== -->
+    <section class="laxcc-seo-hero" id="laxcc-deals-hero">
+        <div class="laxcc-hero-graphic" role="img" aria-label="Best cannabis in LA — LAX Cannabis Club deals"></div>
+        <div class="laxcc-seo-h1row">
+            <h1 class="laxcc-seo-h1">Best <span class="accent">Los Angeles</span> Dispensary Weed Deals</h1>
+            <button type="button" class="laxcc-jump-mobile" aria-label="Jump to today's deals">
+                <svg viewBox="0 0 24 42" width="18" height="34" fill="none" stroke="currentColor" stroke-width="1.4"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="12" y1="3" x2="12" y2="36"></line>
+                    <polyline points="4 28 12 37 20 28"></polyline>
+                </svg>
+            </button>
+        </div>
+        <p class="laxcc-seo-tagline">Daily &amp; weekly dispensary deals at LAX Cannabis Club — just 5 minutes from LAX
+            Airport.</p>
+        <p>Hunting for the <strong>best Los Angeles dispensary deals</strong>? LAX Cannabis Club drops fresh
+            <strong>daily and weekly weed deals</strong> — BOGOs, buy-two-get-one, and half-off drops — on the most
+            popular weed brands and every kind of cannabis: <a
+                href="https://laxcc.com/shop/cannabis-nearby-lax-airport/">flower</a>, <a
+                href="https://laxcc.com/shop/pre-rolls-nearby-lax-airport/">pre-rolls</a>, <a
+                href="https://laxcc.com/shop/?categories=VAPORIZERS&amp;retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3">vapes</a>,
+            <a href="https://laxcc.com/shop/thc-gummies-edibles-near-lax-airport/">edibles</a> and <a
+                href="https://laxcc.com/shop/thc-concentrates-dabs-near-lax/">concentrates</a>. We're a Los Angeles
+            dispensary just <strong>5 minutes from LAX Airport</strong>, so you can grab the <strong>best weed
+                dispensary
+                deals in LA</strong> the moment you land. Pick your day below to see today's live deals.
+        </p>
+    </section>
+
     <!-- ========== DESKTOP LAYOUT ========== -->
     <div class="laxcc-desktop-wrapper">
         <div style="width: 100%; max-width: 1440px; margin: 0 auto; padding: 2rem 1rem 1rem;">
             <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                <h1 class="laxcc-header-title">Weekly Deals at LAXCC</h1>
-                <p class="laxcc-header-subtitle">January 2026 - Scroll down to explore this week's exclusives.</p>
+                <h2 class="laxcc-header-title">This Week's Weed Deals in Los Angeles</h2>
+                <p class="laxcc-header-subtitle">Fresh dispensary deals every day — scroll down to explore this week's
+                    exclusives near LAX Airport.</p>
             </div>
         </div>
 
@@ -960,7 +1279,7 @@
             <div style="height: 4px;"></div>
             <div class="laxcc-mobile-header-inner">
                 <span class="material-symbols-outlined">calendar_month</span>
-                <h1 class="laxcc-mobile-title">LAXCC Deals</h1>
+                <span class="laxcc-mobile-title">LAXCC Weed Deals</span>
                 <span class="material-symbols-outlined">account_circle</span>
             </div>
         </div>
@@ -971,7 +1290,7 @@
                 <button class="laxcc-calendar-nav-btn">
                     <span class="material-symbols-outlined" style="font-size: 20px;">chevron_left</span>
                 </button>
-                <h2 id="mobile-month-label" class="laxcc-calendar-month">January 2026</h2>
+                <h2 id="mobile-month-label" class="laxcc-calendar-month">September 2026</h2>
                 <button class="laxcc-calendar-nav-btn">
                     <span class="material-symbols-outlined" style="font-size: 20px;">chevron_right</span>
                 </button>
@@ -980,12 +1299,89 @@
         </div>
 
         <!-- Mobile Deal Cards -->
-        <main class="laxcc-mobile-main">
+        <main class="laxcc-mobile-main" id="mobile-deals-anchor">
             <section>
                 <h2 id="mobile-today-title" class="laxcc-mobile-section-title">Today's Deals</h2>
                 <div id="mobile-deals-list" class="laxcc-mobile-cards-list"></div>
             </section>
         </main>
+    </div>
+    <!-- ========== SEO CONTENT ========== -->
+    <section class="laxcc-seo-outro">
+        <h2>Where to Find the Best Los Angeles Dispensary Deals</h2>
+        <p>Los Angeles has more dispensaries than almost anywhere on earth, so the real question isn't where to buy weed
+            — it's where to get the <strong>best weed dispensary deals</strong> without a long drive. LAX Cannabis Club
+            answers both. As a licensed <a href="https://laxcc.com/">Los Angeles dispensary</a> just <strong>5 minutes
+                from LAX Airport</strong> at 8332 Lincoln Blvd, we run rotating deals seven days a week, plus everyday
+            BOGOs that never expire. Locals restocking and travelers fresh off a flight get the same prices — some of
+            the
+            <a href="https://laxcc.com/best-cheap-weed-prices-la/">best cheap weed prices in LA</a>.
+        </p>
+
+        <h3>Deals on the most popular weed brands</h3>
+        <p>Our weekly lineup covers the names Angelenos actually search for — STIIIZY, Jeeter, Raw Garden, West Coast
+            Cure, Kingpen, KANHA, PlugPlay, Maven, Claybourne, CIZI, Wyld and more. Whether you're loyal to one label or
+            hunting for the best deal of the day, there's almost always a buy-two-get-one or BOGO running on a top LA
+            weed brand.</p>
+
+        <h3>Deals across every cannabis category</h3>
+        <p>These aren't flower-only specials. You'll find weed deals on top-shelf flower and eighths, infused pre-rolls,
+            vape carts and disposable pods, THC edibles and gummies, and concentrates and dabs — every format, every
+            week. It's the easiest way to try a new category or stock up on a favorite for less.</p>
+
+        <h2>Los Angeles Weed Deals FAQ</h2>
+        <div class="laxcc-faq-list">
+            <details class="laxcc-faq">
+                <summary>What are the best weed deals in Los Angeles right now?</summary>
+                <p>LAX Cannabis Club runs fresh dispensary deals every day of the week — BOGOs, buy-two-get-one offers
+                    and half-off drops — on top LA weed brands and every category, from flower and pre-rolls to vapes,
+                    edibles and concentrates. Pick today's date on this page to see the live deals, then order for
+                    pickup
+                    minutes from LAX Airport.</p>
+            </details>
+            <details class="laxcc-faq">
+                <summary>Does LAX Cannabis Club have daily weed deals?</summary>
+                <p>Yes. Beyond the rotating weekly specials, we keep everyday deals running — like BOGO jars and
+                    buy-two-get-one pods — so there's a great weed deal available any day you visit, 5 minutes from LAX
+                    Airport.</p>
+            </details>
+            <details class="laxcc-faq">
+                <summary>What kinds of weed products are the deals on?</summary>
+                <p>Every kind. Our Los Angeles dispensary deals cover flower and eighths, infused pre-rolls, vape carts
+                    and pods, THC edibles and gummies, and concentrates and dabs — across popular brands like STIIIZY,
+                    Jeeter, KANHA and West Coast Cure.</p>
+            </details>
+            <details class="laxcc-faq">
+                <summary>Where can I find weed dispensary deals near LAX Airport?</summary>
+                <p>Right here. LAX Cannabis Club is at 8332 Lincoln Blvd, Los Angeles, CA 90045 — about 5 minutes from
+                    LAX Airport and a short ride from Playa del Rey and the South Bay — making it the closest spot to
+                    score the best weed deals in LA the moment you land.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Brand Credits -->
+    <div
+        style="max-width:1440px;margin:2rem auto 0;padding:0 1rem 1.5rem;font-size:11px;color:#94a3b8;line-height:1.6;">
+        <p style="margin:0;">Brand imagery courtesy of their respective owners. <a href="https://habitatcannabis.com/"
+                rel="nofollow" target="_blank" style="color:#94a3b8;">Habitat</a> · <a
+                href="https://www.calicreamery.com/" rel="nofollow" target="_blank" style="color:#94a3b8;">Cali
+                Creamery</a> · <a href="https://presidentialthc.com/" rel="nofollow" target="_blank"
+                style="color:#94a3b8;">Presidential</a> · <a href="https://www.goodtidecannabis.com/" rel="nofollow"
+                target="_blank" style="color:#94a3b8;">Good Tides</a> · <a href="https://wyldcanna.com/" rel="nofollow"
+                target="_blank" style="color:#94a3b8;">WYLD</a> · <a href="https://americanweedco.com/" rel="nofollow"
+                target="_blank" style="color:#94a3b8;">American Weed Co.</a> · <a href="https://www.kingpen.com/"
+                rel="nofollow" target="_blank" style="color:#94a3b8;">Kingroll &amp; Kingpen</a> · <a
+                href="https://pacificstonebrand.com/" rel="nofollow" target="_blank" style="color:#94a3b8;">Pacific
+                Stone</a> · <a href="https://timemachinebrand.com/" rel="nofollow" target="_blank"
+                style="color:#94a3b8;">Time Machine</a> · <a href="https://hibirdies.com/" rel="nofollow"
+                target="_blank" style="color:#94a3b8;">Birdies</a> · <a href="https://thcdesign.com/" rel="nofollow"
+                target="_blank" style="color:#94a3b8;">THC Design</a> · <a href="https://westcoastcure.com/"
+                rel="nofollow" target="_blank" style="color:#94a3b8;">West Coast Cure</a> · <a
+                href="https://namelessgenetics.com/" rel="nofollow" target="_blank" style="color:#94a3b8;">Nameless</a>
+            · <a href="https://drinkcq.com/" rel="nofollow" target="_blank" style="color:#94a3b8;">CQ</a> · <a
+                href="https://www.pharmacann.com/brands/cam" rel="nofollow" target="_blank"
+                style="color:#94a3b8;">CAM</a></p>
     </div>
 </div>
 
@@ -994,111 +1390,255 @@
         // --- LINK DATA ---
         var baseLink = 'https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=';
         var linkOverrides = {
-            "Jeeter": "https://laxcc.com/categories/pre_rolls/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&categories=PRE_ROLLS&brands=d80165b1-f4b5-45ea-9071-f5f571b47e4d",
-            "Camino": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&collection_type=PICKUP&products_search=camino"
+            "710 Labs": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=ef96572a-2030-4b58-9504-5b98a7bd9c7e",
+            "Aether Fields": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=70175080-ebc1-4928-9e5f-5dd2f49556e0",
+            "Aims": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=5b240c06-a77b-4276-95cb-66fc886bf59c",
+            "American Weed Co.": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=1148dc1d-6fa1-4d43-949c-0257f74c14ce",
+            "Big Petes": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=f6f6b30a-49d4-4bbf-b9fa-775f6fc6d70c",
+            "Birdies": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=e1171f8f-a117-4fe8-82a3-48d9c3908d47",
+            "Bloom": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=1d682d79-2ceb-45dc-826a-0c702cc68f42",
+            "Boutiq": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=bc87a8a2-5182-4c79-bb07-f2053a35f645",
+            "Boutiq - Prerolls": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=bc87a8a2-5182-4c79-bb07-f2053a35f645",
+            "CAM": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=cam",
+            "CIZI": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=68c0f43b-c6cb-407f-8008-a67f43301e81",
+            "CQ": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d68c4f6a-32db-4b2b-a3c2-598a6f5f9d2a",
+            "Cali Creamery": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=8f758d71-ace5-4c21-ac6e-f933cb52c939",
+            "Camino": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d5a04b99-5ebf-4f65-b243-2d36ac5de7db",
+            "Cannabiotix": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=505217fb-f296-4c6d-8b26-d74b46aa2b9a",
+            "Care by Design": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=600b849e-87dd-4f84-914a-2c848cb99be9",
+            "Chico Verde": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=bf230249-277b-4e9d-88df-b9fb7d17169d",
+            "Claybourne": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=5369177f-42fc-47c8-8ff7-799e521b0429",
+            "ColdFire": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=40189139-1c62-486a-af4a-067ae09f18d9",
+            "Delighted": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=44bfe537-7bbb-4a78-940c-227efb7fbac3",
+            "Dompen": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=5ec5f475-e696-4f61-afa7-d25d9b356e51",
+            "Drops": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=edb40dc1-9b3c-43a6-8dc8-dc3aa37b1c4e",
+            "El Blunto": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=02310a6b-cbbf-4bed-a715-c08778511a4b",
+            "Emerald Bay": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=0057a600-eb4b-46f6-b4ce-f5e0284bf2d3",
+            "Emerald Sky": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=bb70e53c-5160-41c7-8809-e7de80167a2d",
+            "Froot": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=5f795974-685c-480e-a1ef-366cf0a5cf82",
+            "Goldmine": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=fd27daf9-341e-49e1-a751-c8bb408555d5",
+            "Good Tides": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=c6349e33-3c1e-4c16-9bf8-00fa42d59469",
+            "Grasshoppers": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=50ce6902-1e08-441b-b4c2-b764a30619ed",
+            "Habitat": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d7715bec-be5e-46c3-939a-041ac8c93f32",
+            "Happy Place": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d5a9f1a4-8051-4192-83fa-593bf22fd951",
+            "Hash Holes by Cizi": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=68c0f43b-c6cb-407f-8008-a67f43301e81",
+            "Heirbloom": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=24a6f4be-0371-41f6-8ef1-63df88d06148",
+            "Highatus": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=3fdc295c-cafd-46c6-a8a7-084704225d4a",
+            "Jeeter": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d80165b1-f4b5-45ea-9071-f5f571b47e4d",
+            "Jetty Extracts": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=9a513505-fdb9-41aa-a7cd-4bfeced6dad1",
+            "Kanha": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=18bb1389-9029-40dc-877e-cb1ec992bf3d",
+            "Kingroll & Kingpen": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=ac1d9691-a426-4401-bc8a-cf0186dad693",
+            "Kiva": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=677de0df-da8a-4253-9a02-ff71a42ae0dc",
+            "Koa": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d829ed6a-6842-4fb6-8cb6-43cc5867b1c0",
+            "Korova": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=ee641884-f562-4690-b08f-e79cded33ed3",
+            "Kyles": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=00211102-7314-430a-8d46-f8bee81b6c63",
+            "Lift Tickets": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=22e232f6-36dc-4d7a-b899-c0f21bd36a31",
+            "Lolo": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d675866b-4bb1-4dc6-9fd9-fc8778c88be0",
+            "Lusty": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=059c2471-6311-45cb-a612-973890ebe85f",
+            "Maven": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=168f8d00-fae4-4ba4-a59f-451d1ad5266b",
+            "MicroBar": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=98aba420-d4ad-4a05-9c40-57442a904157",
+            "Nameless": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=775dea2b-0341-4227-9faf-85780c1d1229",
+            "Nuvata": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&products_search=nuvata",
+            "PBR": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=ceb8c1cb-73e4-41a8-8fc1-5766dfb9aebc",
+            "Pacific Stone": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=6708af15-e788-4b40-9cd5-b729167e21fd",
+            "Papa & Barkley": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=c78b7047-7c5f-4e61-9bdf-c92e7bec302d",
+            "Planta": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=9a5deac8-f3bb-49b4-a532-df7452c69210",
+            "PlugPlay": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=4f1e6e20-5ab7-409e-901a-262f4c9ec830",
+            "Presidential": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=584b8301-b7e1-494d-9234-70886a1defd0",
+            "Raw Garden": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=bbdf26e3-c442-4346-898a-9dc657ff3acb",
+            "Rockstar": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=2adf1f26-66f8-4524-a5ee-f24e5e803d4d",
+            "Rove": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=daa99d8d-6b0b-4db5-8664-534d7d3868b1",
+            "Royal Blunts": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d021fa69-07e1-4213-aa06-07655ec9d001",
+            "STEREO": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=fe06933a-db69-4c96-ba69-b3aa19e6e150",
+            "Selfies": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=1dc45f47-4011-4beb-b2b6-81d6ac01b865",
+            "Sluggers": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=8a36b114-ab9f-4fbd-a2c9-5d33e4a7a656",
+            "Smokiez": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=42fc93f4-b11c-4b69-8110-198027021ad4",
+            "St. Ides": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=9002435f-1106-405e-8ebd-f47ff0ad67eb",
+            "St. Ides / PBR / NY Fathers": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=9002435f-1106-405e-8ebd-f47ff0ad67eb",
+            "Stiiizy": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=1cebe6f5-bab2-4f15-a50a-9730fee79de4",
+            "THC Design": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=61c55fcf-2d64-4e61-82e2-b730dd46826a",
+            "Time Machine": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=a5936b7f-9ca5-4bff-b34c-4e671fe68e2a",
+            "Timeless": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=708dbaf2-0738-458e-8014-8a465b1fa357",
+            "Top Shelf": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=33f66fce-e622-471c-abca-3d694c067fb7",
+            "Top Shelf Cultivation": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=33f66fce-e622-471c-abca-3d694c067fb7",
+            "Turn": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=ddf076f1-936e-4eb5-8d8d-0d726ff4a2b6",
+            "Uncle Arnies": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=1e5c266e-9328-4472-8125-e6090fed2f0f",
+            "WYLD": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=d8a9a6d9-224c-440e-a408-bc56b5e3785c",
+            "West Coast Cure": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=12bf51c6-d7f0-414c-997e-9c0af5c0f15d",
+            "Whoa": "https://laxcc.com/shop/?pagination=1&sort=POPULAR_DESC&retailer_id=6ed054f8-19a5-4991-b562-c4df2a287ae3&menu_type=RECREATIONAL&collection_type=PICKUP&brands=536abc1c-7ae9-4389-a71a-696e6808b03b"
         };
 
         function getBrandLink(brand) {
-            return linkOverrides[brand] || (baseLink + encodeURIComponent(brand));
+            return linkOverrides[brand] || (baseLink + brand.toLowerCase().replace(/\s+/g, '+'));
         }
 
         // --- DEAL DATA ---
         const everydayDeals = [
-            { brand: "710 Labs", deal: "Buy pod get battery", type: "HOT", color: "#F97316" }
+            { brand: "Kyles", deal: "BOGO on 1/8ths", type: "BOGO", color: "#F97316" },
+            { brand: "Heirbloom", deal: "BOGO prerolls", type: "BOGO", color: "#F97316" },
+            { brand: "Koa", deal: "BOGO on gummies", type: "BOGO", color: "#F97316" },
+            { brand: "Royal Blunts", deal: "Buy 2 get 1 (non-infused prerolls)", type: "B2G1", color: "#3B82f6" },
+            { brand: "CIZI", deal: "BOGO on hash holes", type: "BOGO", color: "#F97316" },
+            { brand: "Selfies", deal: "BOGO on 2pks", type: "BOGO", color: "#F97316" },
+            { brand: "Big Petes", deal: "Buy any Big Pete's item and get gummies or a rice crispy", type: "HOT", color: "#F97316" },
+            { brand: "Emerald Sky", deal: "Buy any Emerald Sky item and get Mellow Melon gummies", type: "HOT", color: "#F97316" },
+            { brand: "Whoa", deal: "Buy a 100mg gummy and get a 25mg gummy", type: "HOT", color: "#F97316" },
+            { brand: "Emerald Bay", deal: "Buy 1 syringe and get a 25mg tablet", type: "HOT", color: "#F97316" },
+            { brand: "Stiiizy", deal: "BOGO on 1g pods", type: "BOGO", color: "#F97316" },
+            { brand: "Lift Tickets", deal: "BOGO", type: "BOGO", color: "#F97316" },
+            { brand: "Highatus", deal: "Buy 1 and get two 2pks", type: "B1G2", color: "#3B82f6" },
+            { brand: "Top Shelf", deal: "BOGO prerolls", type: "BOGO", color: "#F97316" },
+            { brand: "Lolo", deal: "Buy 1 and get a preroll", type: "HOT", color: "#F97316" }
         ];
 
         const weeklyDeals = {
             Sunday: [
-                { brand: "Koa", deal: "Buy 10pk get 2pk", type: "HOT", color: "#db2777" },
-                { brand: "Uncle Arnies", deal: "Buy 2 Get 1", type: "B2G1", color: "#3B82f6" },
-                { brand: "Turn", deal: "Buy POD get battery / B2G1 Pods & AIO", type: "HOT", color: "#EF4444" },
-                { brand: "Aims", deal: "Buy 1/8th get 1g / Buy 2 7pk get 1", type: "BOGO", color: "#F97316" },
-                { brand: "Korova", deal: "Buy Bar/Gel Tabs get Terp Ropes", type: "HOT", color: "#EF4444" }
+                { brand: "Aims", deal: "Buy 2 get 1 on prerolls / Buy a 1/8th and get 1g", type: "B2G1", color: "#F97316" },
+                { brand: "Care by Design", deal: "BOGO", type: "BOGO", color: "#F97316" },
+                { brand: "Koa", deal: "BOGO prerolls", type: "BOGO", color: "#F97316", img: "https://images.dutchie.com/d611c675173ad6bc8c45906c22efb850?w=400&h=400&fm=webp" },
+                { brand: "Uncle Arnies", deal: "Buy 2 get 1", type: "B2G1", color: "#F97316" },
+                { brand: "Highatus", deal: "Buy 2 get 1 (full size, not mini)", type: "B2G1", color: "#F97316" }
             ],
             Monday: [
+                { brand: "Smokiez", deal: "BOGO", type: "BOGO", color: "#3B82f6" },
+                { brand: "Selfies", deal: "BOGO on 2pks & groupies", type: "BOGO", color: "#3B82f6" },
+                { brand: "Sluggers", deal: "BOGO on .7g prerolls", type: "BOGO", color: "#3B82f6" },
+                { brand: "PlugPlay", deal: "BOGO", type: "BOGO", color: "#3B82f6" },
                 { brand: "Drops", deal: "Buy 2 get 1", type: "B2G1", color: "#3B82f6" },
-                { brand: "Aether Fields", deal: "Buy 1/8th Get 1g flower", type: "HOT", color: "#EF4444" },
-                { brand: "Sluggers", deal: "Buy 5pk get .7g Infused Preroll", type: "HOT", color: "#EF4444" },
-                { brand: "St. Ides", deal: "Buy 2 get 1 (St. Ides/PBR/NY Fathers)", type: "B2G1", color: "#3B82f6" },
-                { brand: "Daily Smoke", deal: "Buy 1/8th get 1g Preroll", type: "HOT", color: "#EF4444" }
+                { brand: "Timeless", deal: "Buy a cart get an AIO", type: "HOT", color: "#3B82f6" }
             ],
             Tuesday: [
-                { brand: "Raw Garden", deal: "Buy 2 1g Cart get 1g AIO / Buy 2 Get 1 Wax", type: "HOT", color: "#EF4444" },
-                { brand: "Bloom", deal: "BOGO on cart", type: "BOGO", color: "#F97316" },
-                { brand: "Kiva", deal: "Lost Farm buy 2 get 1", type: "B2G1", color: "#3B82f6" },
-                { brand: "MicroBar", deal: "Buy 2 get 1", type: "B2G1", color: "#3B82f6" },
-                { brand: "Habitat", deal: "Buy 1/8th get 1g preroll", type: "HOT", color: "#EF4444" }
+                { brand: "Kiva", deal: "Lost Farm buy 2 get 1 / Camino buy 2 get 1", type: "B2G1", color: "#db2777" },
+                { brand: "Habitat", deal: "Buy 2 get 1 on prerolls & 1/8ths", type: "B2G1", color: "#db2777" },
+                { brand: "Raw Garden", deal: "Buy any 2 get 1 (AIO, 1g carts, wax)", type: "B2G1", color: "#db2777" },
+                { brand: "Presidential", deal: "Buy 1 get 1", type: "BOGO", color: "#db2777" },
+                { brand: "MicroBar", deal: "Buy 2 get 1", type: "B2G1", color: "#db2777" },
+                { brand: "Bloom", deal: "Buy 1 and get an AIO", type: "HOT", color: "#db2777" }
             ],
             Wednesday: [
-                { brand: "Good Tides", deal: "Buy 2 get 1", type: "B2G1", color: "#3B82f6" },
-                { brand: "7 Leaves", deal: "Buy 1/8th get a 1g preroll", type: "HOT", color: "#EF4444" },
-                { brand: "Kingroll", deal: "Buy 2 1.3g get 1 / B1G.5g / B2G1 Cart", type: "B2G1", color: "#3B82f6" },
-                { brand: "American Weed Co.", deal: "Buy 14g get 3.5g / Buy 1/8th get 1g", type: "BOGO", color: "#F97316" },
-                { brand: "Pacific Stone", deal: "Buy 2 get 1", type: "B2G1", color: "#3B82f6" }
+                { brand: "Time Machine", deal: "Buy 1 get 2g", type: "HOT", color: "#3D7A2A" },
+                { brand: "Pacific Stone", deal: "Buy 1 and get 2g", type: "HOT", color: "#3D7A2A" },
+                { brand: "Good Tides", deal: "Buy 2 get 1", type: "B2G1", color: "#3D7A2A" },
+                { brand: "WYLD", deal: "Buy 2 get 1", type: "B2G1", color: "#3D7A2A" },
+                { brand: "Kingroll & Kingpen", deal: "Buy 2 1.3g prerolls get 1 / Buy 1 get .5g preroll / Buy 2 get 1 cart", type: "B2G1", color: "#3D7A2A" },
+                { brand: "Jetty Extracts", deal: "Buy 2 get 1", type: "B2G1", color: "#3D7A2A" }
             ],
             Thursday: [
-                { brand: "West Coast Cure", deal: "Buy 1 cart get 2nd 1/2 off / Buy 1/8th get 1g", type: "HOT", color: "#EF4444" },
-                { brand: "Nameless", deal: "Buy 1 get 1 1/2 off", type: "50% OFF", color: "#8B5CF6" },
-                { brand: "CQ", deal: "Buy 2 get 1", type: "B2G1", color: "#3B82f6" },
-                { brand: "CAM", deal: "Buy 1/8th get a 1g Preroll", type: "HOT", color: "#EF4444" },
-                { brand: "LAX Packs", deal: "Buy 1/8th get a 1g Preroll", type: "HOT", color: "#EF4444" }
+                { brand: "Goldmine", deal: "Buy 1 get 2 singles", type: "HOT", color: "#F97316" },
+                { brand: "West Coast Cure", deal: "BOGO 1g preroll / Buy 1 get 1/2 off carts", type: "HOT", color: "#F97316" },
+                { brand: "Turn", deal: "Buy 2 get 1", type: "B2G1", color: "#F97316" },
+                { brand: "Rove", deal: "Buy 2 get 1 carts & pods", type: "B2G1", color: "#F97316" },
+                { brand: "Delighted", deal: "Buy 2 get 1", type: "B2G1", color: "#F97316" },
+                { brand: "Boutiq", deal: "Buy 2 get 1 prerolls", type: "B2G1", color: "#F97316" }
             ],
             Friday: [
-                { brand: "Maven", deal: "Buy 1/8th get 1g", type: "HOT", color: "#EF4444" },
-                { brand: "Rove", deal: "BOGO Carts / BOGO AIO / B2G1 Reload", type: "BOGO", color: "#F97316" },
-                { brand: "Stiiizy", deal: "Buy 2 (1g/0.5g) get 1", type: "B2G1", color: "#3B82f6" },
-                { brand: "El Blunto", deal: "Buy 1.6g get .65g Preroll", type: "HOT", color: "#EF4444" },
-                { brand: "Claybourne", deal: "Buy 2 get 1", type: "B2G1", color: "#3B82f6" },
-                { brand: "Highatus", deal: "Buy 2 get 1", type: "B2G1", color: "#3B82f6" }
+                { brand: "Maven", deal: "BOGO Goldies & 5pk / Buy 2 get 1 on 1/8ths", type: "BOGO", color: "#3B82f6" },
+                { brand: "Emerald Bay", deal: "Buy 1 get a 25mg", type: "HOT", color: "#3B82f6" },
+                { brand: "CIZI", deal: "BOGO 2pk prerolls / BOGO hash holes (all other offers available only when the rep is here)", type: "BOGO", color: "#3B82f6" },
+                { brand: "Top Shelf", deal: "BOGO 1g prerolls", type: "BOGO", color: "#3B82f6" },
+                { brand: "Claybourne", deal: "Buy 2 get 1 AIO / Buy 1/8th get 2g flower", type: "B2G1", color: "#3B82f6" },
+                { brand: "Nuvata", deal: "Buy 2 get 1", type: "B2G1", color: "#3B82f6" }
             ],
             Saturday: [
-                { brand: "Canabiotix", deal: "Buy Rosin get 1 Terp sugar", type: "HOT", color: "#EF4444" },
-                { brand: "Dompen Disposable Vape Pen", deal: "$40/1g • Buy 2 Get 1", type: "B2G1", color: "#3B82f6" },
-                { brand: "Jeeter", deal: "Buy 1 get 0.5g", type: "HOT", color: "#EF4444" },
-                { brand: "St. Ides", deal: "Buy 2 get 1", type: "B2G1", color: "#3B82f6" },
-                { brand: "Clone Goddess", deal: "Buy 2 get 1", type: "B2G1", color: "#3B82f6" }
+                { brand: "Heirbloom", deal: "Buy 2 1/8ths get 1", type: "B2G1", color: "#F97316" },
+                { brand: "Froot", deal: "Buy 2 get 1", type: "B2G1", color: "#F97316" },
+                { brand: "Dompen", deal: "Buy 2 get 1", type: "B2G1", color: "#F97316" },
+                { brand: "PBR", deal: "Buy 2 get 1", type: "B2G1", color: "#F97316" },
+                { brand: "Chico Verde", deal: "Buy 2 get 1 on prerolls & 1/8ths", type: "B2G1", color: "#F97316" },
+                { brand: "THC Design", deal: "Buy 2 get 1 prerolls", type: "B2G1", color: "#F97316" }
             ]
         };
 
         const brandImages = {
-            "710 Labs": "https://images.dutchie.com/8f98a9542653d43af728461c21eef812?w=500&h=500&fm=webp",
-            "Koa": "https://images.dutchie.com/b2212a5e874b578d0b06ed126eba0b76?w=500&h=500&fm=webp",
+            "Koa": "https://images.dutchie.com/855d57c48eaa8316fa943911b3a56a88?w=500&h=500&fm=webp",
             "Uncle Arnies": "https://images.dutchie.com/2b369c452ce5f21c9101609da9e3ea29?w=500&h=500&fm=webp",
             "Turn": "https://images.dutchie.com/5cb159360fde764c5cd67a017a53e3c2?w=500&h=500&fm=webp",
             "Korova": "https://images.dutchie.com/1658c38caf59faed9d8028854dbb27ea?w=500&h=500&fm=webp",
-            "Drops": "https://images.dutchie.com/64d303efb692f19992a19c558da440d8?w=500&h=500&fm=webp",
-            "Sluggers": "https://images.dutchie.com/003a21eb653bab7b1e81aeb054e47b9b?w=500&h=500&fm=webp",
-            "Daily Smoke": "https://images.dutchie.com/1e009457ca3d2832cf296ed3479e8512?w=500&h=500&fm=webp",
+            "Aims": "https://images.dutchie.com/4713b5a67bd476a33ce5b899f20c5404?w=500&h=500&fm=webp",
             "Aether Fields": "https://images.dutchie.com/db7558cd89c095e6a084658a200dbb80",
+            "Sluggers": "https://images.dutchie.com/003a21eb653bab7b1e81aeb054e47b9b?w=500&h=500&fm=webp",
+            "St. Ides": "https://laxcc.com/wp-content/uploads/2026/01/best-thc-drinks-for-sale.jpg",
+            "St. Ides / PBR / NY Fathers": "https://laxcc.com/wp-content/uploads/2026/01/best-thc-drinks-for-sale.jpg",
+            "Drops": "https://images.dutchie.com/64d303efb692f19992a19c558da440d8?w=500&h=500&fm=webp",
             "Raw Garden": "https://images.dutchie.com/c60382b8c18664439cd3d7bb071ae49e",
             "Bloom": "https://images.dutchie.com/f930bb84f256cc546ce1755ac36e8791?w=500&h=500&fm=webp",
             "Kiva": "https://images.dutchie.com/8b16bf446b8c2192ef8a5eb1841b60b3?w=500&h=500&fm=webp",
             "MicroBar": "https://images.dutchie.com/b5c1dda81a1ff0009edd13e6ae38c5af?w=500&h=500&fm=webp",
+            "Habitat": "https://images.dutchie.com/582165c24be85c4eb7c0e79959ed93e7?w=500&h=500&fm=webp",
+            "Cali Creamery": "https://images.dutchie.com/89d60794c5321424b8764411ec990a57?w=500&h=500&fm=webp",
+            "Presidential": "https://images.dutchie.com/0f0989a05267da7a6befe91cb5ea7d3d?w=500&h=500&fm=webp",
             "Good Tides": "https://images.dutchie.com/cc58a6d9402b6f0017956b108e5f6c70?w=500&h=500&fm=webp",
-            "7 Leaves": "https://images.dutchie.com/b15f2780158a377b365e05a178e0b6a3?w=500&h=500&fm=webp",
-            "Kingroll": "https://images.dutchie.com/fc640cae64abbb9ca90de3a75cb1ccd7?w=500&h=500&fm=webp",
+            "WYLD": "https://images.dutchie.com/eeae4ee25c35c03202cc65b1fb17efc2?w=500&h=500&fm=webp",
+            "Lolo": "https://images.squarespace-cdn.com/content/v1/65b16a2a27b29622d7a61230/d2d81f69-2165-4c4f-8cbe-9a7f4fd9f33c/lolo-infused-rtr.png?format=1000w",
+            "Whoa": "https://images.dutchie.com/e51241ac5580c5d6eea354814485aff6?w=500&h=500&fm=webp",
+            "Grasshoppers": "https://images.dutchie.com/54b4b0d90b3e22a25699716c7ccdfe31?w=500&h=500&fm=webp",
             "American Weed Co.": "https://images.dutchie.com/e04d8595a8dbe67338a86f1ab7be83ba?w=500&h=500&fm=webp",
-            "West Coast Cure": "https://images.dutchie.com/95aedabf83f5cc29fe96240bb3ebba55?w=500&h=500&fm=webp",
-            "Nameless": "https://images.dutchie.com/d2f209986822b007c952fc881bbd9327?w=500&h=500&fm=webp",
-            "CQ": "https://images.dutchie.com/d6cb43e006a59fee777dbc318a0a7f0b?w=500&h=500&fm=webp",
-            "CAM": "https://images.dutchie.com/36dbccacc58b34dd893e9bc4db7a4559?w=500&h=500&fm=webp",
-            "LAX Packs": "https://images.dutchie.com/9708fce7cefb47ca683b42ef4104fd9b?w=500&h=500&fm=webp",
+            "Kingroll & Kingpen": "https://www.kingpen.com/wp-content/uploads/2024/06/Kingpen-Product-Family_Cropped_Updated-e1758512263289.jpg",
+            "Pacific Stone": "https://images.dutchie.com/4f89d464f8abf255ed00ffc95e7538b8?w=500&h=500&fm=webp",
+            "Time Machine": "https://images.dutchie.com/3f09658a3c76b509372dd0aeea4cc1ea?w=500&h=500&fm=webp",
+            "Birdies": "https://images.dutchie.com/e7184e245e3c7de34aed96819399c9ea?w=400&h=400&fm=webp",
+            "THC Design": "https://images.dutchie.com/1e009457ca3d2832cf296ed3479e8512?w=500&h=500&fm=webp",
+            "West Coast Cure": "https://images.dutchie.com/969ebb1fafd79205bbe228b4fbeb4d97?w=500&h=500&fm=webp",
+            "Nameless": "https://images.dutchie.com/d2f209986822b007c952fc881bbd9327?w=400&h=400&fm=webp",
+            "CQ": "https://drinkcq.com/wp-content/uploads/2023/11/CQ_DTC_SipUnwind_Cans_11_15_23.png",
+            "CAM": "https://images.squarespace-cdn.com/content/v1/60736ce59afd9c3ea39b0d41/3229b4a5-f350-4464-97a7-33cd26863c3e/cam-logo-comp.png",
             "Maven": "https://images.dutchie.com/515bf5602c7ad9df9ca6eeaf0a7f6757?w=500&h=500&fm=webp",
             "Rove": "https://dutchie-images.s3.us-west-2.amazonaws.com/819919252882ad3f8f0a6e7bf4db89aa?w=500&h=500&fm=webp",
             "Stiiizy": "https://images.dutchie.com/1ef5da628dfa4e18c3b46362aa579f54",
+            "Lift Tickets": "https://images.dutchie.com/bdc5cf66e72cfb2e92a87d19ad92ca77?w=400&h=400&fm=webp",
             "El Blunto": "https://images.dutchie.com/b8a7c6c380faee2471303a62de7bf240?w=500&h=500&fm=webp",
-            "Highatus": "https://images.dutchie.com/b35b91297274d9daa40305be77a0d6c8?w=500&h=500&fm=webp",
-            "Canabiotix": "https://images.dutchie.com/b9095cebe1c394baf39931bb1ec46177?w=500&h=500&fm=webp",
-            "Dompen Disposable Vape Pen": "https://laxcc.com/wp-content/uploads/2026/01/buy-dompen-vape-near-lax-airport.png",
-            "Jeeter": "https://images.dutchie.com/dde10e30cf0c8922ba2cc7d098451ebb?w=500&h=500&fm=webp",
-            "Camino": "https://images.dutchie.com/842415c8c73bc1feb68c90f28de86c6b",
             "Claybourne": "https://images.dutchie.com/801acb3de7abcdc894439c2e645ffc28",
-            "St. Ides": "https://laxcc.com/wp-content/uploads/2026/01/best-thc-drinks-for-sale.jpg",
-            "Clone Goddess": "https://images.dutchie.com/332f18541693953eb78a8eb171760865",
-            "Pacific Stone": "https://images.dutchie.com/ec44daf8c8000c09961b649a33e5aa97",
-            "Habitat": "https://images.dutchie.com/e605f609299926260afd3000964681f4",
-            "Aims": "https://images.dutchie.com/1d8b4202e7f0a3b63273d971090027f0"
+            "Highatus": "https://images.dutchie.com/b35b91297274d9daa40305be77a0d6c8?w=500&h=500&fm=webp",
+            "Jeeter": "https://images.dutchie.com/dde10e30cf0c8922ba2cc7d098451ebb?w=500&h=500&fm=webp",
+            "Royal Blunts": "https://images.dutchie.com/ca909929dda58d8d7e55ab596f39f6cb",
+            "ColdFire": "https://images.dutchie.com/cc35761f829c68e95b88dc12cc7147f2?w=500&h=500&fm=webp",
+            "Big Petes": "https://images.dutchie.com/5730895861f9619a5dca87068777dd4b?w=500&h=500&fm=webp",
+            "Smokiez": "https://images.dutchie.com/a29fe06f2f9cfb6f384dae571ea41703",
+            "Heirbloom": "https://images.dutchie.com/4e2478badb674bece94cc5906a18dc7e?w=500&h=500&fm=webp",
+            "Froot": "https://images.dutchie.com/75144afeffee420d609471c2ca99af3f?w=500&h=500&fm=webp",
+            "Rockstar": "https://images.dutchie.com/a6f293c2f791de202ae299e1c961bbae?w=400&h=400&fm=webp",
+            "Papa & Barkley": "https://images.dutchie.com/d7a7e50dde5aa23f66e4b585516d04e7?w=500&h=500&fm=webp",
+            "Planta": "https://images.dutchie.com/0ab1507b6653ead5a7dcc65b6d952176?w=500&h=500&fm=webp",
+            "Goldmine": "https://findbreez.com/wp-content/uploads/2024/01/Breez-Category-4-1.jpg",
+            "Lusty": "https://images.dutchie.com/7ebf4edba255f4914848c9596492cb56?w=500&h=500&fm=webp",
+            "710 Labs": "https://images.dutchie.com/750b3355398da55be8572debb56660f1?w=500&h=500&fm=webp",
+            "Selfies": "https://images.dutchie.com/2af123206f662e0e1cf54d13365d2a1c?w=500&h=500&fm=webp",
+            "Happy Place": "https://images.dutchie.com/f195eb19ed2e0482fee9ccb840ad5503?w=400&h=400&fm=webp",
+            "Boutiq - Prerolls": "https://images.dutchie.com/75024eeb9518ce6becc4df9021a27269?w=500&h=500&fm=webp",
+            "Boutiq": "https://images.dutchie.com/75024eeb9518ce6becc4df9021a27269?w=500&h=500&fm=webp",
+            "CIZI": "https://images.dutchie.com/f7f3b8001b31466241eabf5f0fe69bf6?w=500&h=500&fm=webp",
+            "Hash Holes by Cizi": "https://images.dutchie.com/14cfa5cf01ea2b20bcb75c65cee9c169?w=500&h=500&fm=webp",
+            "Delighted": "https://images.dutchie.com/dd1b437d22c11e9a8ada482190eb40e7?w=400&h=400&fm=webp",
+            "Care by Design": "https://images.dutchie.com/9eb812d66c6959495c64501e8bb248b3?w=500&h=500&fm=webp",
+            "STEREO": "https://images.dutchie.com/c86baa55291cf9294ea8d7c8613d7562?w=500&h=500&fm=webp",
+            "Dompen": "https://images.dutchie.com/3a7be27fbca7bfa98b54b9385940144d?w=500&h=500&fm=webp",
+            "Kanha": "https://images.dutchie.com/3d259124e46207717d4c0fc647d1b3c2?w=500&h=500&fm=webp",
+            "Kyles": "https://images.dutchie.com/30c7e942f08cdbc0617b3d2a073a5f8d?w=500&h=500&fm=webp",
+            "Chico Verde": "https://images.dutchie.com/ff8e22c75cd239e61a58724729a1fe55?w=400&h=400&fm=webp",
+            "Emerald Sky": "https://images.dutchie.com/064ab441341c103f398e8ebdfb12c1cb?w=500&h=500&fm=webp",
+            "Emerald Bay": "https://images.dutchie.com/c099f83853650e83530b9b0577caff33?w=500&h=500&fm=webp",
+            "Top Shelf Cultivation": "https://images.dutchie.com/836f49ce5095617eb6f58ae2eb047fa4?w=500&h=500&fm=webp",
+            "Top Shelf": "https://images.dutchie.com/836f49ce5095617eb6f58ae2eb047fa4?w=500&h=500&fm=webp",
+            "Cannabiotix": "https://images.dutchie.com/b9095cebe1c394baf39931bb1ec46177?w=500&h=500&fm=webp",
+            "PBR": "https://images.dutchie.com/809b8eb7fcfbb6765143d259edeb690c?w=500&h=500&fm=webp",
+            "PlugPlay": "https://images.dutchie.com/73021912152258b9719bc989aa455f4c?w=500&h=500&fm=webp",
+            "Timeless": "https://images.dutchie.com/62677f385adfeeb165f90db458998e51?w=500&h=500&fm=webp",
+            "Jetty Extracts": "https://images.dutchie.com/b55555ea1484b8d0bfa3d782ced70881?w=500&h=500&fm=webp",
+            "Nuvata": "https://images.dutchie.com/84d8365966db43e26c2d71a91cdbf201?w=500&h=500&fm=webp"
         };
+
+        // Day's deals = that day's specials first, then everyday deals — skipping any
+        // brand already featured that day so a brand never renders two cards side by side.
+        function getDealsForDay(dayName) {
+            var dayDeals = weeklyDeals[dayName] || [];
+            var featured = {};
+            for (var i = 0; i < dayDeals.length; i++) featured[dayDeals[i].brand] = true;
+            var extras = [];
+            for (var j = 0; j < everydayDeals.length; j++) {
+                if (!featured[everydayDeals[j].brand]) extras.push(everydayDeals[j]);
+            }
+            return dayDeals.concat(extras);
+        }
 
         function getInitials(name) {
             if (!name) return "";
@@ -1141,7 +1681,7 @@
             container.innerHTML = '';
 
             dayNames.forEach(function (day, i) {
-                var deals = [].concat(weeklyDeals[day] || [], everydayDeals);
+                var deals = getDealsForDay(day);
                 var isToday = i === currentDayIndex;
                 var date = new Date(today);
                 date.setDate(today.getDate() - currentDayIndex + i);
@@ -1158,10 +1698,15 @@
                 } else {
                     cardsHTML = '<div class="laxcc-cards-grid">';
                     deals.forEach(function (deal) {
-                        var imgUrl = brandImages[deal.brand];
+                        var imgUrl = deal.img || brandImages[deal.brand];
                         var link = getBrandLink(deal.brand);
                         var imageHtml = "";
-                        var filledClass = (deal.brand === 'Dompen Disposable Vape Pen' || deal.brand === 'St. Ides') ? ' laxcc-filled' : '';
+                        var filledBrands = ['St. Ides', 'St. Ides / PBR / NY Fathers', 'Habitat', 'Kingroll & Kingpen', 'THC Design', 'West Coast Cure', 'Cali Creamery'];
+                        var whiteBgBrands = ['Royal Blunts'];
+                        var blackBgBrands = [];
+                        var filledClass = filledBrands.indexOf(deal.brand) !== -1 ? ' laxcc-filled' : '';
+                        var whiteBgClass = whiteBgBrands.indexOf(deal.brand) !== -1 ? ' laxcc-white-bg' : '';
+                        var blackBgClass = blackBgBrands.indexOf(deal.brand) !== -1 ? ' laxcc-black-bg' : '';
 
                         if (imgUrl) {
                             imageHtml = '<img class="laxcc-card-img' + filledClass + '" src="' + imgUrl + '" alt="' + deal.brand + '" loading="lazy"/>';
@@ -1169,7 +1714,7 @@
                             imageHtml = '<div class="laxcc-initials-placeholder">' + getInitials(deal.brand) + '</div>';
                         }
 
-                        cardsHTML += '<a href="' + link + '" target="_blank" class="laxcc-card"><div class="laxcc-card-img-container"><div class="laxcc-card-badge" style="background:' + deal.color + '">' + deal.type + '</div>' + imageHtml + '</div><div class="laxcc-card-content"><h4 class="laxcc-card-title">' + deal.brand + '</h4><p class="laxcc-card-deal">' + deal.deal + '</p></div></a>';
+                        cardsHTML += '<a href="' + link + '" target="_blank" rel="nofollow" class="laxcc-card"><div class="laxcc-card-img-container' + whiteBgClass + blackBgClass + '"><div class="laxcc-card-badge" style="background:' + deal.color + '">' + deal.type + '</div>' + imageHtml + '</div><div class="laxcc-card-content"><h4 class="laxcc-card-title">' + deal.brand + '</h4><p class="laxcc-card-deal">' + deal.deal + '</p></div></a>';
                     });
                     cardsHTML += '</div>';
                 }
@@ -1237,7 +1782,7 @@
             if (!list) return;
 
             var selectedDayName = dayNames[selectedDayIndex];
-            var dayDeals = [].concat(weeklyDeals[selectedDayName] || [], everydayDeals);
+            var dayDeals = getDealsForDay(selectedDayName);
 
             if (title) title.textContent = selectedDayName + "'s Deals";
 
@@ -1249,10 +1794,15 @@
             }
 
             dayDeals.forEach(function (deal) {
-                var imgUrl = brandImages[deal.brand];
+                var imgUrl = deal.img || brandImages[deal.brand];
                 var link = getBrandLink(deal.brand);
                 var imageHtml = "";
-                var filledClass = (deal.brand === 'Dompen Disposable Vape Pen' || deal.brand === 'St. Ides') ? ' laxcc-filled' : '';
+                var filledBrands = ['St. Ides', 'St. Ides / PBR / NY Fathers', 'Habitat', 'Kingroll & Kingpen', 'THC Design', 'West Coast Cure', 'Cali Creamery'];
+                var whiteBgBrands = ['Royal Blunts'];
+                var blackBgBrands = [];
+                var filledClass = filledBrands.indexOf(deal.brand) !== -1 ? ' laxcc-filled' : '';
+                var whiteBgClass = whiteBgBrands.indexOf(deal.brand) !== -1 ? ' laxcc-white-bg' : '';
+                var blackBgClass = blackBgBrands.indexOf(deal.brand) !== -1 ? ' laxcc-black-bg' : '';
 
                 if (imgUrl) {
                     imageHtml = '<img src="' + imgUrl + '" alt="' + deal.brand + '" loading="lazy"/>';
@@ -1260,16 +1810,31 @@
                     imageHtml = '<div class="laxcc-initials-placeholder">' + getInitials(deal.brand) + '</div>';
                 }
 
-                list.innerHTML += '<a href="' + link + '" target="_blank" class="laxcc-mobile-card"><div class="laxcc-mobile-card-img' + filledClass + '">' + imageHtml + '</div><div class="laxcc-mobile-card-content"><span class="laxcc-mobile-card-badge" style="background:' + deal.color + '">' + deal.type + '</span><h4 class="laxcc-mobile-card-title">' + deal.brand + '</h4><p class="laxcc-mobile-card-deal">' + deal.deal + '</p></div></a>';
+                list.innerHTML += '<a href="' + link + '" target="_blank" rel="nofollow" class="laxcc-mobile-card"><div class="laxcc-mobile-card-img' + filledClass + whiteBgClass + blackBgClass + '">' + imageHtml + '</div><div class="laxcc-mobile-card-content"><span class="laxcc-mobile-card-badge" style="background:' + deal.color + '">' + deal.type + '</span><h4 class="laxcc-mobile-card-title">' + deal.brand + '</h4><p class="laxcc-mobile-card-deal">' + deal.deal + '</p></div></a>';
             });
         }
 
         // --- INIT ---
         function init() {
+            // Keep the calendar month label in sync with the real date so it never goes stale
+            var monthLabel = document.getElementById('mobile-month-label');
+            if (monthLabel) monthLabel.textContent = today.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
             renderDesktopNav();
             renderDesktopSections();
             renderMobileDayStrip();
             renderMobileDeals();
+
+            // wire the "jump to deals" arrow — scrolls to whichever layout is visible (no inline handler — WAF-safe)
+            var jump = document.querySelector('.laxcc-jump-mobile');
+            if (jump) {
+                jump.addEventListener('click', function () {
+                    var desktop = document.getElementById('desktop-deals-sections');
+                    var mobile = document.getElementById('mobile-deals-anchor');
+                    var target = (desktop && desktop.offsetParent !== null) ? desktop : mobile;
+                    if (target && target.offsetParent !== null) { target.scrollIntoView({ behavior: 'smooth' }); }
+                });
+            }
 
             // Auto-scroll to current day on desktop
             setTimeout(function () {
@@ -1286,4 +1851,30 @@
             init();
         }
     })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What are the best weed deals in Los Angeles right now?", "acceptedAnswer": { "@type": "Answer", "text": "LAX Cannabis Club runs fresh dispensary deals every day of the week — BOGOs, buy-two-get-one offers and half-off drops — on top LA weed brands and every category, from flower and pre-rolls to vapes, edibles and concentrates. It's an easy pickup minutes from LAX Airport." } },
+        { "@type": "Question", "name": "Does LAX Cannabis Club have daily weed deals?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Beyond the rotating weekly specials, LAX Cannabis Club keeps everyday deals running like BOGO jars and buy-two-get-one pods, so there's a great weed deal available any day you visit, 5 minutes from LAX Airport." } },
+        { "@type": "Question", "name": "What kinds of weed products are the deals on?", "acceptedAnswer": { "@type": "Answer", "text": "Every kind — flower and eighths, infused pre-rolls, vape carts and pods, THC edibles and gummies, and concentrates and dabs — across popular brands like STIIIZY, Jeeter, KANHA and West Coast Cure." } },
+        { "@type": "Question", "name": "Where can I find weed dispensary deals near LAX Airport?", "acceptedAnswer": { "@type": "Answer", "text": "LAX Cannabis Club is at 8332 Lincoln Blvd, Los Angeles, CA 90045, about 5 minutes from LAX Airport and a short ride from Playa del Rey and the South Bay — the closest spot to score the best weed deals in LA." } }
+      ]
+    },
+    {
+      "@type": "Store",
+      "name": "LAX Cannabis Club",
+      "description": "Los Angeles dispensary with daily and weekly weed deals on the most popular cannabis brands — flower, pre-rolls, vapes, edibles and concentrates — 5 minutes from LAX Airport.",
+      "url": "https://laxcc.com/deals/",
+      "priceRange": "$$",
+      "address": { "@type": "PostalAddress", "streetAddress": "8332 Lincoln Blvd", "addressLocality": "Los Angeles", "addressRegion": "CA", "postalCode": "90045", "addressCountry": "US" },
+      "areaServed": ["Los Angeles", "LAX Airport", "Westchester", "Playa del Rey", "Inglewood"]
+    }
+  ]
+}
 </script>

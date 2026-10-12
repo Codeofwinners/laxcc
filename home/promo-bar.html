@@ -1,0 +1,534 @@
+<!-- LAXCC First Visit Deal Promo Bar - Elementor WordPress Version -->
+<!-- Add this to its own HTML widget in Elementor, placed below the Hours bar -->
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<div id="laxcc-promo-anchor"></div>
+
+<style>
+    /* ========================================
+       FIRST VISIT DEAL - PROMO BAR STYLES
+       MOBILE FIRST
+       ======================================== */
+    .laxcc-promo-bar-wrapper {
+        --laxcc-primary: #F89459;
+        --laxcc-navy: #1D508A;
+        --laxcc-bg-light: #ffffff;
+        --laxcc-text-primary: #1e293b;
+        --laxcc-text-secondary: #64748b;
+        --laxcc-border: #e8eef5;
+
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        width: 100%;
+        padding: 0 0.4rem 4px 0.4rem;
+        background-color: var(--laxcc-bg-light);
+    }
+
+    .elementor-widget-container .laxcc-promo-bar-wrapper,
+    .elementor-widget-container .laxcc-promo-bar-wrapper * {
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    }
+
+    .laxcc-promo-bar-wrapper *,
+    .laxcc-promo-bar-wrapper *::before,
+    .laxcc-promo-bar-wrapper *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .laxcc-promo-bar-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        background: #ffffff !important;
+        padding: 10px 12px 8px 12px !important;
+        position: relative !important;
+    }
+
+    .laxcc-promo-bar-content {
+        width: 100% !important;
+    }
+
+    .laxcc-promo-bar-left {
+        display: block !important;
+        cursor: pointer !important;
+        user-select: none !important;
+        -webkit-user-select: none;
+        min-width: 0 !important;
+    }
+
+    .laxcc-promo-bar-summary {
+        display: grid !important;
+        grid-template-columns: 50px minmax(0, 1fr) auto !important;
+        grid-template-areas: 'image copy chevron' !important;
+        gap: 16px !important;
+        align-items: center !important;
+        text-align: left !important;
+    }
+
+    .laxcc-promo-bar-copy {
+        grid-area: copy !important;
+        min-width: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0px !important;
+        text-align: left !important;
+    }
+
+    .laxcc-promo-bar-deal-thumb {
+        grid-area: image !important;
+        width: 50px !important;
+        height: 75px !important;
+        max-width: 50px !important;
+        min-width: 50px !important;
+        max-height: 75px !important;
+        object-fit: contain !important;
+        object-position: center !important;
+        border-radius: 8px !important;
+        display: block !important;
+        flex-shrink: 0 !important;
+        margin: 0 !important;
+    }
+
+    .laxcc-promo-bar-label {
+        font-size: 1.6rem !important; /* Massive increase to 2x+ density */
+        font-weight: 900 !important;
+        color: var(--laxcc-navy) !important; /* Using Navy for better contrast at scale */
+        line-height: 0.95 !important;
+        letter-spacing: -0.03em !important;
+        margin-bottom: 6px !important;
+        text-transform: uppercase !important;
+    }
+
+    .laxcc-promo-bar-subtext {
+        font-size: 0.85rem !important;
+        font-weight: 600 !important;
+        color: var(--laxcc-text-secondary) !important;
+        line-height: 1.2 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+    }
+
+    .laxcc-promo-bar-chevron {
+        grid-area: chevron !important;
+        position: static !important;
+        font-size: 1.4rem !important;
+        color: var(--laxcc-navy);
+        opacity: 0.5;
+    }
+
+    .laxcc-promo-bar-discount-row {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        margin-top: 14px !important;
+        padding: 10px 0 0 0 !important;
+        border-top: 1px solid rgba(0,0,0,0.08) !important;
+        text-align: center !important;
+    }
+
+    .laxcc-promo-bar-discount {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 4px 8px !important;
+        min-width: 0 !important;
+    }
+
+    .laxcc-promo-bar-discount-label {
+        font-size: 0.56rem !important;
+        font-weight: 800 !important;
+        color: var(--laxcc-navy) !important;
+        letter-spacing: 0.14em !important;
+        line-height: 1.2 !important;
+        text-transform: uppercase !important;
+        opacity: 0.72 !important;
+    }
+
+    .laxcc-promo-bar-discount-text {
+        font-size: 0.84rem !important;
+        font-weight: 800 !important;
+        color: var(--laxcc-text-primary) !important;
+        line-height: 1.25 !important;
+    }
+
+    .laxcc-promo-bar-discount-text strong {
+        color: var(--laxcc-primary);
+        font-weight: 900;
+    }
+
+    /* Button Styles */
+    .laxcc-promo-bar-wrapper .laxcc-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-width: 84px !important;
+        width: auto !important;
+        max-width: 100% !important;
+        height: 34px !important;
+        padding: 0 0.95rem !important;
+        border-radius: 9999px !important;
+        font-size: 0.72rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.03em !important;
+        line-height: 1 !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+        transition: background-color 0.2s ease !important;
+        border: none !important;
+        overflow: hidden !important;
+        white-space: nowrap !important;
+        box-shadow: none !important;
+    }
+
+    .laxcc-promo-bar-wrapper .laxcc-btn span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .laxcc-btn-promo {
+        background-color: #F89459 !important;
+        color: #ffffff !important;
+    }
+
+    .laxcc-btn-promo:hover {
+        background-color: #ec894b !important;
+    }
+
+    .laxcc-promo-bar-wrapper a.laxcc-btn:link,
+    .laxcc-promo-bar-wrapper a.laxcc-btn:visited {
+        color: #ffffff !important;
+    }
+
+    .laxcc-promo-bar-detail {
+        max-height: 0 !important;
+        overflow: hidden !important;
+        transition: max-height 0.35s ease, opacity 0.3s ease !important;
+        opacity: 0 !important;
+    }
+
+    .laxcc-promo-bar-wrapper.laxcc-promo-expanded .laxcc-promo-bar-detail {
+        max-height: 600px !important; /* Increased for safety */
+        opacity: 1 !important;
+    }
+
+    .laxcc-promo-bar-detail-inner {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        padding: 20px 15px !important;
+        border-top: 1px solid var(--laxcc-border) !important;
+        margin-top: 10px !important;
+    }
+
+    .laxcc-promo-bar-detail-copy {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 16px !important;
+        min-width: 0 !important;
+        text-align: center !important;
+    }
+
+    .laxcc-promo-bar-detail-text {
+        font-size: 0.9rem !important;
+        color: var(--laxcc-text-secondary) !important;
+        line-height: 1.6 !important;
+        font-weight: 500 !important;
+        max-width: 480px !important;
+        margin: 0 auto !important;
+    }
+
+    .laxcc-promo-bar-detail-text strong {
+        color: var(--laxcc-navy) !important;
+        font-weight: 800 !important;
+    }
+
+    .laxcc-promo-bar-detail-note {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 4px !important;
+        padding: 12px 20px !important;
+        background: #f8fafc !important; /* Subtle clinical background */
+        border-radius: 12px !important;
+        width: 100% !important;
+        max-width: 400px !important;
+    }
+
+    .laxcc-promo-bar-detail-note-label {
+        font-size: 0.6rem !important;
+        color: var(--laxcc-navy) !important;
+        line-height: 1.2 !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.14em !important;
+        text-transform: uppercase !important;
+        opacity: 0.72 !important;
+    }
+
+    .laxcc-promo-bar-detail-note-text {
+        font-size: 0.85rem !important;
+        color: var(--laxcc-text-primary) !important;
+        line-height: 1.4 !important;
+        font-weight: 800 !important;
+    }
+
+    .laxcc-promo-bar-detail-cta {
+        padding-top: 8px !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .laxcc-promo-bar-detail-cta .laxcc-btn {
+        width: 100% !important;
+        max-width: 320px !important;
+        height: 48px !important; /* Larger CTA */
+        font-size: 0.85rem !important;
+        box-shadow: 0 4px 15px rgba(248, 148, 89, 0.25) !important;
+    }
+
+    /* Material Symbols */
+    .laxcc-promo-bar-wrapper .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    /* Elementor Full-Width Override */
+    .elementor-widget-container .laxcc-promo-bar-wrapper {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Desktop Enhancement */
+    @media (min-width: 901px) {
+        .laxcc-promo-bar-wrapper {
+            padding: 0 1rem 5px 1rem;
+        }
+
+        .laxcc-promo-bar-container {
+            padding: 15px 18px 10px 18px !important;
+        }
+
+        .laxcc-promo-bar-left {
+            min-width: 0 !important;
+            display: grid !important;
+            grid-template-columns: minmax(0, 1fr) minmax(220px, 280px) !important;
+            gap: 18px !important;
+            align-items: center !important;
+        }
+
+        .laxcc-promo-bar-summary {
+            grid-template-columns: 48px minmax(0, 1fr) auto !important;
+            grid-template-areas: 'image copy chevron' !important;
+            gap: 14px !important;
+            align-items: center !important;
+        }
+
+        .laxcc-promo-bar-deal-thumb {
+            width: 48px !important;
+            height: 68px !important;
+            max-width: 48px !important;
+            min-width: 48px !important;
+            max-height: 68px !important;
+        }
+
+        .laxcc-promo-bar-discount-row {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            padding-left: 18px !important;
+            border-top: none !important;
+            border-left: none !important;
+            justify-content: flex-start !important;
+            text-align: left !important;
+        }
+
+        .laxcc-promo-bar-discount {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            justify-content: flex-start !important;
+            gap: 4px !important;
+            min-width: 0 !important;
+        }
+
+        .laxcc-promo-bar-discount-label {
+            font-size: 0.62rem;
+        }
+
+        .laxcc-promo-bar-discount-text {
+            font-size: 0.92rem;
+        }
+
+        .laxcc-promo-bar-wrapper .laxcc-btn {
+            width: auto !important;
+            min-width: 150px !important;
+            height: 38px !important;
+            padding: 0 1rem !important;
+            font-size: 0.76rem !important;
+        }
+
+        .laxcc-promo-bar-detail-cta .laxcc-btn {
+            display: inline-flex !important;
+            width: auto !important;
+            min-width: 150px !important;
+            flex: 0 0 auto !important;
+            align-self: flex-start !important;
+        }
+
+        .laxcc-promo-bar-wrapper.laxcc-promo-expanded .laxcc-promo-bar-detail {
+            max-height: 420px !important;
+        }
+
+        .laxcc-promo-bar-detail-inner {
+            padding: 14px 0 4px 34px !important;
+        }
+
+        .laxcc-promo-bar-summary .laxcc-promo-bar-copy {
+            align-items: flex-start !important;
+            text-align: left !important;
+        }
+
+        .laxcc-promo-bar-detail-copy {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .laxcc-promo-bar-detail-text {
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        .laxcc-promo-bar-detail-note {
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            padding-left: 0;
+            border-left: none;
+            text-align: left;
+        }
+
+        .laxcc-promo-bar-detail-cta {
+            justify-content: flex-start;
+        }
+
+        .laxcc-promo-bar-detail-note::before {
+            content: '';
+            width: 18px;
+            height: 1px;
+            background: rgba(248, 148, 89, 0.42);
+            flex-shrink: 0;
+        }
+    }
+</style>
+
+<script>
+    (function () {
+        function handleToggle() {
+            var bar = this.closest('.laxcc-promo-bar-wrapper');
+            if (bar) bar.classList.toggle('laxcc-promo-expanded');
+        }
+
+        function attachPromoToggle(bar) {
+            var toggle = bar.querySelector('#laxccPromoToggle');
+            if (!toggle) return;
+            toggle.removeEventListener('click', handleToggle);
+            toggle.addEventListener('click', handleToggle);
+        }
+
+        function initPromo() {
+            var promoBar = document.querySelector('.laxcc-promo-bar-wrapper');
+            if (promoBar) {
+                attachPromoToggle(promoBar);
+                return;
+            }
+
+            var anchor = document.getElementById('laxcc-promo-anchor');
+            if (!anchor) return;
+
+            var _d = function(s) {
+                try { return decodeURIComponent(escape(atob(s))); } catch (e) { return atob(s); }
+            };
+
+            var _k = {
+                barLabel: 'McKiIEVJR0hUSCDigJQgRklSU1QgVklTSVQgREVBTA==',
+                barSubtext: 'TEEgZGlzcGVuc2FyeSBuZWFyIExBWCDigJQgbGVhdmUgYSA1LXN0YXIgR29vZ2xlIHJldmlldw==',
+                barDiscountLabel: 'Q29tbXVuaXR5IGRpc2NvdW50',
+                barDiscountText: 'VmV0ZXJhbnMgJiBzZW5pb3JzIGdldCA8c3Ryb25nPjEwJSBvZmY8L3N0cm9uZz4=',
+                barDetail: 'TGVhdmUgYSA8c3Ryb25nPjUtc3RhciBHb29nbGUgcmV2aWV3PC9zdHJvbmc+IGZvciA8c3Ryb25nPkxBWCBDYW5uYWJpcyBDbHViPC9zdHJvbmc+IGFuZCBzaG93IGl0IHRvIHlvdXIgYnVkdGVuZGVyIHRvIGdldCBhbiA8c3Ryb25nPjEvOHRoIG9mIGZsb3dlciBmb3IganVzdCAxwqI8L3N0cm9uZz4uIFN0cmFpbiBpcyBidWR0ZW5kZXIncyBjaG9pY2UuIDxzdHJvbmc+JDUgbWluaW11bSBwdXJjaGFzZSByZXF1aXJlZC48L3N0cm9uZz4gV2hpbGUgc3VwcGxpZXMgbGFzdCDigJQgbGltaXRlZCB0aW1lIG9ubHku',
+                barNoteLabel: 'Q29tbXVuaXR5IGRpc2NvdW50',
+                barNoteText: 'VmV0ZXJhbnMgYW5kIHNlbmlvcnMgZ2V0IDxzdHJvbmc+MTAlIG9mZjwvc3Ryb25nPi4=',
+                barWhereLabel: 'VmlzaXQgdXM=',
+                barWhereText: 'PHN0cm9uZz5MQVggQ2FubmFiaXMgQ2x1Yjwvc3Ryb25nPiDigJQgTG9zIEFuZ2VsZXMgZGlzcGVuc2FyeSBuZWFyIExBWCBhaXJwb3J0LiA4MzMyIExpbmNvbG4gQmx2ZCwgV2VzdGNoZXN0ZXIu',
+                barBtn: 'TGVhdmUgYSBSZXZpZXc=',
+                dealImg: 'aHR0cHM6Ly9sYXhjYy5jb20vd3AtY29udGVudC91cGxvYWRzLzIwMjYvMDQvYmVzdC1kaXNwZW5zYXJ5LWluLWxvcy1hbmdlbGVzLnBuZw==',
+                dealAlt: 'QmVzdCBkaXNwZW5zYXJ5IGluIExvcyBBbmdlbGVzIOKAlCBMQVggQ2FubmFiaXMgQ2x1YiBmaXJzdCB2aXNpdCBkZWFs',
+                popUrl: 'aHR0cHM6Ly9nLnBhZ2Uvci9DUlY5UEVfdVFfeFVFQUUvcmV2aWV3'
+            };
+
+            var _url = _d(_k.popUrl);
+            var _bar = document.createElement('div');
+            _bar.className = 'laxcc-promo-bar-wrapper';
+
+            _bar.innerHTML =
+                '<div class="laxcc-promo-bar-container">' +
+                    '<div class="laxcc-promo-bar-content">' +
+                        '<div class="laxcc-promo-bar-left" id="laxccPromoToggle">' +
+                            '<div class="laxcc-promo-bar-summary">' +
+                                '<img class="laxcc-promo-bar-deal-thumb" src="' + _d(_k.dealImg) + '" alt="' + _d(_k.dealAlt) + '" loading="lazy">' +
+                                '<div class="laxcc-promo-bar-copy">' +
+                                    '<span class="laxcc-promo-bar-label">' + _d(_k.barLabel) + '</span>' +
+                                    '<span class="laxcc-promo-bar-subtext">' + _d(_k.barSubtext) + '</span>' +
+                                '</div>' +
+                                '<span class="laxcc-promo-bar-chevron material-symbols-outlined">expand_more</span>' +
+                            '</div>' +
+                            '<div class="laxcc-promo-bar-discount-row">' +
+                                '<div class="laxcc-promo-bar-discount">' +
+                                    '<span class="laxcc-promo-bar-discount-label">' + _d(_k.barDiscountLabel) + '</span>' +
+                                    '<span class="laxcc-promo-bar-discount-text">' + _d(_k.barDiscountText) + '</span>' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="laxcc-promo-bar-detail">' +
+                        '<div class="laxcc-promo-bar-detail-inner">' +
+                            '<div class="laxcc-promo-bar-detail-copy">' +
+                                '<span class="laxcc-promo-bar-detail-text">' + _d(_k.barDetail) + '</span>' +
+                                '<div class="laxcc-promo-bar-detail-note">' +
+                                    '<span class="laxcc-promo-bar-detail-note-label">' + _d(_k.barNoteLabel) + '</span>' +
+                                    '<span class="laxcc-promo-bar-detail-note-text">' + _d(_k.barNoteText) + '</span>' +
+                                '</div>' +
+                                '<div class="laxcc-promo-bar-detail-note">' +
+                                    '<span class="laxcc-promo-bar-detail-note-label">' + _d(_k.barWhereLabel) + '</span>' +
+                                    '<span class="laxcc-promo-bar-detail-note-text">' + _d(_k.barWhereText) + '</span>' +
+                                '</div>' +
+                                '<div class="laxcc-promo-bar-detail-cta">' +
+                                    '<a href="' + _url + '" target="_blank" rel="noopener" class="laxcc-btn laxcc-btn-promo"><span>' + _d(_k.barBtn) + '</span></a>' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>';
+
+            anchor.parentNode.insertBefore(_bar, anchor.nextSibling);
+            attachPromoToggle(_bar);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initPromo);
+        } else {
+            initPromo();
+        }
+    })();
+</script>

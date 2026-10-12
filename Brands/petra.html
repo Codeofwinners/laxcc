@@ -1,0 +1,696 @@
+<!-- SEO META — paste into Yoast/RankMath for this page -->
+<!-- Title: Buy Petra Edibles | LAXCC Los Angeles Dispensary CA -->
+<!-- Description: Buy Petra edibles at LAXCC — licensed LA dispensary 5 min from LAX. Gummies, chocolates & more, lab-tested. Walk in or order pickup today. -->
+<meta name="description" content="Buy Petra edibles at LAXCC — licensed LA dispensary 5 min from LAX. Gummies, chocolates & more, lab-tested. Walk in or order pickup today.">
+
+<style>
+    /* ========================================
+       PETRA BRAND PAGE — LAXCC
+       Scoped to .laxcc-petra
+       Elementor-safe: all rules use !important
+       ======================================== */
+
+    .laxcc-petra *,
+    .laxcc-petra *::before,
+    .laxcc-petra *::after {
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .laxcc-petra {
+        --navy: #1D508A;
+        --teal: #00AFC9;
+        --orange: #F89459;
+        --green: #7ECBB3;
+        --cream: #FBF8F2;
+        --white: #ffffff;
+        --text: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --navy-deep: #0f3a5f;
+
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        background: var(--cream) !important;
+        color: var(--text) !important;
+        line-height: 1.6 !important;
+        overflow-x: hidden !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+    }
+
+    @keyframes laxcc-petra-fadeUp {
+        from { opacity: 0; transform: translateY(24px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* HERO — mobile-first */
+    .laxcc-petra .petra-hero { background: var(--cream) !important; }
+
+    .laxcc-petra .petra-hero-img {
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #ffffff !important;
+        padding: 40px 20px !important;
+        overflow: hidden !important;
+    }
+
+    .laxcc-petra .petra-hero-img img {
+        max-width: 400px !important;
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+    /* Gallery photo fill mode */
+    .laxcc-petra .petra-hero-img-fill {
+        width: 100% !important;
+        overflow: hidden !important;
+        background: none !important;
+        padding: 0 !important;
+    }
+
+    .laxcc-petra .petra-hero-img-fill img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
+    }
+
+    .laxcc-petra .petra-hero-body {
+        max-width: 1400px !important;
+        margin: 0 auto !important;
+        padding: 32px 20px 28px !important;
+    }
+
+    .laxcc-petra .petra-hero-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        background: none !important;
+        border: none !important;
+        color: var(--text-muted) !important;
+        font-size: 0.65rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 2px !important;
+        text-transform: uppercase !important;
+        padding: 6px 14px !important;
+        border-radius: 100px !important;
+        margin-bottom: 16px !important;
+        white-space: nowrap !important;
+        width: fit-content !important;
+    }
+
+    .laxcc-petra .petra-hero-badge i { font-size: 0.55rem !important; }
+
+    .laxcc-petra .petra-hero h1 {
+        font-size: 2.4rem !important;
+        font-weight: 900 !important;
+        line-height: 1 !important;
+        letter-spacing: -0.03em !important;
+        color: var(--navy) !important;
+        margin-bottom: 16px !important;
+    }
+
+    .laxcc-petra .petra-hero h1 span { color: var(--orange) !important; }
+
+    .laxcc-petra .petra-hero-sub {
+        font-size: 0.95rem !important;
+        color: var(--text-muted) !important;
+        line-height: 1.6 !important;
+        margin-bottom: 24px !important;
+        max-width: 520px !important;
+    }
+
+    .laxcc-petra .petra-hero-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        margin-bottom: 28px !important;
+    }
+
+    .laxcc-petra .petra-hero-stats {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 12px !important;
+        border-top: 1px solid var(--border) !important;
+        padding-top: 24px !important;
+    }
+
+    .laxcc-petra .petra-stat-val {
+        font-size: 1.5rem !important;
+        font-weight: 900 !important;
+        color: var(--orange) !important;
+        letter-spacing: -0.03em !important;
+        line-height: 1 !important;
+        margin-bottom: 2px !important;
+    }
+
+    .laxcc-petra .petra-stat-lbl {
+        font-size: 0.6rem !important;
+        font-weight: 700 !important;
+        color: var(--text-muted) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    /* Buttons */
+    .laxcc-petra .petra-btn-primary,
+    .laxcc-petra a.petra-btn-primary,
+    .laxcc-petra a.petra-btn-primary:link,
+    .laxcc-petra a.petra-btn-primary:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        background: var(--orange) !important;
+        color: #fff !important;
+        font-size: 0.85rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.06em !important;
+        text-transform: uppercase !important;
+        padding: 16px 32px !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        transition: all 0.3s ease !important;
+        border: none !important;
+        cursor: pointer !important;
+    }
+
+    .laxcc-petra a.petra-btn-primary:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 32px rgba(248, 148, 89, 0.4) !important;
+    }
+
+    .laxcc-petra .petra-btn-secondary,
+    .laxcc-petra a.petra-btn-secondary,
+    .laxcc-petra a.petra-btn-secondary:link,
+    .laxcc-petra a.petra-btn-secondary:visited {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        background: transparent !important;
+        color: var(--navy) !important;
+        font-size: 0.85rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.04em !important;
+        text-transform: uppercase !important;
+        padding: 16px 32px !important;
+        border-radius: 12px !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+        border: 1px solid var(--navy) !important;
+        transition: all 0.3s ease !important;
+        cursor: pointer !important;
+    }
+
+    .laxcc-petra a.petra-btn-secondary:hover {
+        border-color: var(--orange) !important;
+        color: var(--orange) !important;
+        background: rgba(248, 148, 89, 0.06) !important;
+    }
+
+    /* Desktop hero */
+    @media (min-width: 769px) {
+        .laxcc-petra .petra-hero {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            min-height: 100vh !important;
+        }
+        .laxcc-petra .petra-hero-img {
+            height: 100% !important;
+            min-height: 100vh !important;
+            border-radius: 0 0 0 32px !important;
+            order: 2 !important;
+            padding: 60px 40px !important;
+        }
+        .laxcc-petra .petra-hero-img img { max-width: 480px !important; }
+        .laxcc-petra .petra-hero-img-fill {
+            height: 100% !important;
+            min-height: 100vh !important;
+            border-radius: 0 0 0 32px !important;
+            order: 2 !important;
+            padding: 0 !important;
+        }
+        .laxcc-petra .petra-hero-img-fill img { max-width: none !important; }
+        .laxcc-petra .petra-hero-body {
+            order: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            padding: 80px 60px !important;
+        }
+        .laxcc-petra .petra-hero h1 { font-size: clamp(2.8rem, 4vw, 4.2rem) !important; margin-bottom: 24px !important; }
+        .laxcc-petra .petra-hero-sub { font-size: 1.05rem !important; margin-bottom: 36px !important; }
+        .laxcc-petra .petra-hero-actions { flex-direction: row !important; margin-bottom: 0 !important; }
+        .laxcc-petra .petra-hero-stats { margin-top: 48px !important; padding-top: 32px !important; }
+        .laxcc-petra .petra-stat-val { font-size: 2rem !important; }
+        .laxcc-petra .petra-stat-lbl { font-size: 0.7rem !important; }
+    }
+
+    /* ABOUT section */
+    .laxcc-petra .petra-about { padding: 24px 0 0 !important; background: var(--cream) !important; }
+    .laxcc-petra .petra-about-container { max-width: 1400px !important; margin: 0 auto !important; padding: 0 20px !important; }
+    .laxcc-petra .petra-about-header { max-width: 680px !important; }
+
+    .laxcc-petra .petra-section-label {
+        display: inline-block !important;
+        font-size: 0.7rem !important;
+        font-weight: 800 !important;
+        letter-spacing: 3px !important;
+        text-transform: uppercase !important;
+        color: var(--orange) !important;
+        margin-bottom: 20px !important;
+        position: relative !important;
+        padding-left: 36px !important;
+    }
+    .laxcc-petra .petra-section-label::before {
+        content: '' !important;
+        position: absolute !important;
+        left: 0 !important;
+        top: 50% !important;
+        width: 24px !important;
+        height: 2px !important;
+        background: var(--orange) !important;
+    }
+
+    .laxcc-petra .petra-about-top { display: flex !important; align-items: flex-end !important; justify-content: space-between !important; gap: 24px !important; margin-bottom: 16px !important; }
+    .laxcc-petra .petra-about-header h2 { font-size: clamp(2rem, 3.5vw, 3rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1.05 !important; margin-bottom: 12px !important; }
+    .laxcc-petra .petra-about-header p { font-size: 1rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; max-width: 480px !important; }
+
+    .laxcc-petra .petra-scroll-arrows { display: flex !important; gap: 8px !important; flex-shrink: 0 !important; }
+    .laxcc-petra .petra-scroll-arrow {
+        width: 40px !important; height: 40px !important; border-radius: 50% !important;
+        border: 1px solid var(--border) !important; background: var(--white) !important;
+        display: flex !important; align-items: center !important; justify-content: center !important;
+        cursor: pointer !important; transition: all 0.2s ease !important;
+        color: var(--text) !important; font-size: 0.8rem !important;
+    }
+    .laxcc-petra .petra-scroll-arrow:hover { border-color: var(--navy) !important; color: var(--navy) !important; }
+
+    .laxcc-petra .petra-about-track {
+        display: flex !important; gap: 20px !important; overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important; padding-bottom: 4px !important;
+    }
+    .laxcc-petra .petra-about-track::-webkit-scrollbar { display: none !important; }
+    .laxcc-petra .petra-about-slide {
+        flex: 0 0 280px !important; scroll-snap-align: start !important;
+        padding: 16px 0 0 !important; border-top: 2px solid var(--border) !important;
+        transition: border-color 0.3s ease !important;
+    }
+    .laxcc-petra .petra-about-slide:hover { border-color: var(--navy) !important; }
+    .laxcc-petra .petra-about-slide-num { font-size: 0.7rem !important; font-weight: 700 !important; color: var(--text-muted) !important; letter-spacing: 0.5px !important; margin-bottom: 12px !important; }
+    .laxcc-petra .petra-about-slide h3 { font-size: 1.1rem !important; font-weight: 800 !important; color: var(--text) !important; letter-spacing: -0.01em !important; margin-bottom: 8px !important; }
+    .laxcc-petra .petra-about-slide p { font-size: 0.85rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; }
+    @media (min-width: 769px) { .laxcc-petra .petra-about-slide { flex: 0 0 320px !important; } }
+
+    /* EDUCATION section */
+    .laxcc-petra .petra-education { padding: 24px 0 !important; background: var(--cream) !important; }
+    .laxcc-petra .petra-education-container { max-width: 1400px !important; margin: 0 auto !important; padding: 0 20px !important; }
+    .laxcc-petra .petra-education-top { display: flex !important; align-items: flex-end !important; justify-content: space-between !important; gap: 24px !important; margin-bottom: 16px !important; }
+    .laxcc-petra .petra-education-intro h2 { font-size: clamp(2rem, 3.5vw, 3rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1.05 !important; margin-bottom: 8px !important; }
+    .laxcc-petra .petra-education-intro p { font-size: 0.9rem !important; color: var(--text-muted) !important; line-height: 1.6 !important; max-width: 480px !important; }
+    .laxcc-petra .petra-education-track {
+        display: flex !important; gap: 20px !important; overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important; -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+    }
+    .laxcc-petra .petra-education-track::-webkit-scrollbar { display: none !important; }
+    .laxcc-petra .petra-education-slide {
+        flex: 0 0 220px !important; scroll-snap-align: start !important;
+        padding: 16px 0 0 !important; border-top: 2px solid var(--border) !important;
+        text-align: center !important; transition: border-color 0.3s ease !important;
+    }
+    .laxcc-petra .petra-education-slide:hover { border-color: var(--navy) !important; }
+    .laxcc-petra .petra-education-num { font-size: 2.5rem !important; font-weight: 900 !important; color: var(--orange) !important; line-height: 1 !important; margin-bottom: 6px !important; }
+    .laxcc-petra .petra-education-name { font-size: 0.9rem !important; font-weight: 700 !important; color: var(--navy) !important; margin-bottom: 6px !important; }
+    .laxcc-petra .petra-education-desc { font-size: 0.8rem !important; color: var(--text-muted) !important; line-height: 1.5 !important; }
+    @media (min-width: 769px) {
+        .laxcc-petra .petra-education { padding: 60px 0 !important; }
+        .laxcc-petra .petra-education-container { padding: 0 60px !important; }
+        .laxcc-petra .petra-education-slide { flex: 0 0 260px !important; }
+    }
+
+    /* FAQ */
+    .laxcc-petra .petra-faq { padding: 140px 0 !important; background: var(--cream) !important; }
+    .laxcc-petra .petra-faq-container {
+        max-width: 1400px !important; margin: 0 auto !important; padding: 0 60px !important;
+        display: grid !important; grid-template-columns: 380px 1fr !important;
+        gap: 80px !important; align-items: start !important;
+    }
+    .laxcc-petra .petra-faq-sidebar { position: sticky !important; top: 40px !important; }
+    .laxcc-petra .petra-faq-sidebar h2 { font-size: 3rem !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; line-height: 1 !important; margin-bottom: 24px !important; }
+    .laxcc-petra .petra-faq-sidebar p { font-size: 1.05rem !important; color: var(--text-muted) !important; line-height: 1.7 !important; margin-bottom: 32px !important; }
+    .laxcc-petra .petra-faq-deco { width: 80px !important; height: 4px !important; background: var(--orange) !important; border-radius: 2px !important; }
+    .laxcc-petra .petra-faq-list { display: flex !important; flex-direction: column !important; }
+    .laxcc-petra .petra-faq-item { border-bottom: 1px solid var(--border) !important; padding: 32px 0 !important; }
+    .laxcc-petra .petra-faq-item:first-child { border-top: 1px solid var(--border) !important; }
+    .laxcc-petra .petra-faq-q {
+        font-size: 1.3rem !important; font-weight: 800 !important; color: var(--navy) !important;
+        cursor: pointer !important; display: flex !important; align-items: center !important;
+        justify-content: space-between !important; gap: 20px !important;
+        list-style: none !important; transition: color 0.3s ease !important; padding: 0 !important;
+    }
+    .laxcc-petra .petra-faq-q::-webkit-details-marker { display: none !important; }
+    .laxcc-petra .petra-faq-q:hover { color: var(--orange) !important; }
+    .laxcc-petra .petra-faq-q .petra-faq-toggle {
+        font-size: 1.3rem !important; font-weight: 300 !important; flex-shrink: 0 !important;
+        transition: transform 0.3s ease !important; color: var(--text-muted) !important;
+    }
+    .laxcc-petra .petra-faq-item[open] .petra-faq-toggle { transform: rotate(45deg) !important; color: var(--orange) !important; }
+    .laxcc-petra .petra-faq-a {
+        padding-top: 16px !important; font-size: 1rem !important; color: var(--text-muted) !important;
+        line-height: 1.7 !important; max-width: 90% !important; animation: laxcc-petra-fadeUp 0.4s ease !important;
+    }
+
+    /* CTA */
+    .laxcc-petra .petra-cta {
+        padding: 120px 0 !important; background: var(--cream) !important;
+        text-align: center !important; position: relative !important; overflow: hidden !important;
+    }
+    .laxcc-petra .petra-cta::before {
+        content: '' !important; position: absolute !important; top: 50% !important; left: 50% !important;
+        transform: translate(-50%, -50%) !important; width: 600px !important; height: 600px !important;
+        background: radial-gradient(circle, rgba(248, 148, 89, 0.06) 0%, transparent 70%) !important;
+        border-radius: 50% !important; pointer-events: none !important;
+    }
+    .laxcc-petra .petra-cta-container { max-width: 700px !important; margin: 0 auto !important; padding: 0 40px !important; position: relative !important; z-index: 1 !important; }
+    .laxcc-petra .petra-cta h2 { font-size: clamp(2.5rem, 5vw, 4rem) !important; font-weight: 900 !important; color: var(--navy) !important; letter-spacing: -0.03em !important; margin-bottom: 20px !important; line-height: 1.05 !important; }
+    .laxcc-petra .petra-cta p { font-size: 1.1rem !important; color: var(--text-muted) !important; margin-bottom: 40px !important; line-height: 1.7 !important; }
+    .laxcc-petra .petra-cta-actions { display: flex !important; gap: 16px !important; justify-content: center !important; flex-wrap: wrap !important; }
+    .laxcc-petra .petra-cta-location { margin-top: 48px !important; padding-top: 32px !important; border-top: 1px solid rgba(29, 80, 138, 0.1) !important; }
+    .laxcc-petra .petra-cta-location p { font-size: 0.85rem !important; color: var(--text-muted) !important; margin-bottom: 0 !important; }
+    .laxcc-petra .petra-cta-location strong { color: var(--navy) !important; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .laxcc-petra .petra-about-container,
+        .laxcc-petra .petra-education-container,
+        .laxcc-petra .petra-faq-container { padding: 0 40px !important; }
+        .laxcc-petra .petra-faq-container { grid-template-columns: 1fr !important; gap: 48px !important; }
+        .laxcc-petra .petra-faq-sidebar { position: static !important; }
+    }
+    @media (max-width: 640px) {
+        .laxcc-petra .petra-education,
+        .laxcc-petra .petra-faq { padding: 40px 0 !important; }
+        .laxcc-petra .petra-about-container,
+        .laxcc-petra .petra-education-container,
+        .laxcc-petra .petra-faq-container { padding: 0 24px !important; }
+        .laxcc-petra .petra-faq-sidebar h2 { font-size: 2.2rem !important; }
+        .laxcc-petra .petra-faq-q { font-size: 1.1rem !important; }
+        .laxcc-petra .petra-cta { padding: 80px 0 !important; }
+    }
+
+    /* Elementor override */
+    .elementor-widget-container .laxcc-petra {
+        width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+</style>
+
+<div class="laxcc-petra">
+
+    <!-- HERO -->
+    <section class="petra-hero">
+        <div class="petra-hero-img">
+            <img src="https://kiva.sfo2.digitaloceanspaces.com/kiva/_768xAUTO_crop_center-center_none/24585/20200821_Petra_MM-Marquee.webp"
+                alt="Petra products available at LAXCC dispensary in Los Angeles near LAX Airport"
+                loading="eager">
+        </div>
+
+        <div class="petra-hero-body">
+            <div class="petra-hero-badge">
+                <i class="fas fa-shield-halved"></i>
+                Licensed Dispensary &bull; 5 Min From LAX
+            </div>
+            <h1>Buy Petra <span>Cannabis Edibles</span> in Los Angeles</h1>
+            <p class="petra-hero-sub">
+                Micro-dosed cannabis mints by Kiva — 2.5mg per piece for precise, discreet consumption. Shop Petra at LAXCC — a licensed Los Angeles dispensary just 5 minutes from LAX Airport. Available in-store and for pickup.
+            </p>
+            <div class="petra-hero-actions">
+                <a href="#petra-live-menu" class="petra-btn-primary">
+                    Shop Petra <i class="fas fa-arrow-down"></i>
+                </a>
+                <a href="https://www.google.com/maps?daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045"
+                    target="_blank" rel="noopener noreferrer" class="petra-btn-secondary">
+                    <i class="fas fa-location-dot"></i> Get Directions
+                </a>
+            </div>
+            <div class="petra-hero-stats">
+                <div>
+                    <div class="petra-stat-val">100mg</div>
+                    <div class="petra-stat-lbl">Up to Per Pack</div>
+                </div>
+                <div>
+                    <div class="petra-stat-val">100%</div>
+                    <div class="petra-stat-lbl">Lab Tested</div>
+                </div>
+                <div>
+                    <div class="petra-stat-val">CA</div>
+                    <div class="petra-stat-lbl">Licensed</div>
+                </div>
+                <div>
+                    <div class="petra-stat-val">5+</div>
+                    <div class="petra-stat-lbl">Products Stocked</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+<!-- END scoped wrapper — shortcode lives OUTSIDE -->
+
+<!-- LIVE MENU -->
+<section id="petra-live-menu">
+    [leafbridge_specific_product_filter brand="4c9f982e-1da5-4232-a18d-01d3c8e8e24d" count="20"]
+</section>
+
+<!-- Resume scoped wrapper -->
+<div class="laxcc-petra">
+
+    <!-- ABOUT -->
+    <section class="petra-about">
+        <div class="petra-about-container">
+            <div class="petra-about-top">
+                <div class="petra-about-header">
+                    <span class="petra-section-label">About the Brand</span>
+                    <h2>Why Petra</h2>
+                    <p>Micro-dosed cannabis mints by Kiva — 2.5mg per piece for precise, discreet consumption.</p>
+                </div>
+                <div class="petra-scroll-arrows">
+                    <button class="petra-scroll-arrow petra-about-arrow" data-dir="-1" aria-label="Previous"><i class="fas fa-arrow-left"></i></button>
+                    <button class="petra-scroll-arrow petra-about-arrow" data-dir="1" aria-label="Next"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="petra-about-track">
+                <div class="petra-about-slide">
+                    <div class="petra-about-slide-num">01</div>
+                    <h3>Precise Dosing</h3>
+                    <p>Every piece is dosed consistently so you know exactly what you're getting. Whether it's 5mg or 10mg per serving, the experience is predictable and reliable.</p>
+                </div>
+                <div class="petra-about-slide">
+                    <div class="petra-about-slide-num">02</div>
+                    <h3>Premium Ingredients</h3>
+                    <p>Made with quality ingredients and real cannabis extract — not synthetic cannabinoids. Great taste that happens to be infused, not infused products trying to taste good.</p>
+                </div>
+                <div class="petra-about-slide">
+                    <div class="petra-about-slide-num">03</div>
+                    <h3>Multiple Options</h3>
+                    <p>From gummies and chocolates to baked goods and mints — there's an edible format for every preference and occasion.</p>
+                </div>
+                <div class="petra-about-slide">
+                    <div class="petra-about-slide-num">04</div>
+                    <h3>California Licensed</h3>
+                    <p>Manufactured in a licensed California facility with strict quality controls. Every batch is lab-tested for accurate dosing, potency, and contaminants.</p>
+                </div>
+                <div class="petra-about-slide">
+                    <div class="petra-about-slide-num">05</div>
+                    <h3>Available at LAXCC</h3>
+                    <p>We carry Petra at our dispensary near LAX Airport — walk in at 8332 Lincoln Blvd or order ahead for pickup. New products rotate in regularly, so check the live menu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="petra-education">
+        <div class="petra-education-container">
+            <div class="petra-education-top">
+                <div class="petra-education-intro">
+                    <span class="petra-section-label">Know Your Product</span>
+                    <h2>What to Know About Cannabis Edibles</h2>
+                    <p>Edibles hit different than smoking. Here's what every customer should know before buying.</p>
+                </div>
+                <div class="petra-scroll-arrows">
+                    <button class="petra-scroll-arrow petra-education-arrow" data-dir="-1" aria-label="Previous"><i class="fas fa-arrow-left"></i></button>
+                    <button class="petra-scroll-arrow petra-education-arrow" data-dir="1" aria-label="Next"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="petra-education-track">
+                <div class="petra-education-slide">
+                    <div class="petra-education-num">1</div>
+                    <div class="petra-education-name">Precise Dosing</div>
+                    <div class="petra-education-desc">Quality edibles deliver consistent mg per piece. Look for brands that test every batch for accurate dosing — no hot spots, no surprises.</div>
+                </div>
+                <div class="petra-education-slide">
+                    <div class="petra-education-num">2</div>
+                    <div class="petra-education-name">Onset Time</div>
+                    <div class="petra-education-desc">Edibles take 30-90 minutes to kick in because they're processed through your digestive system. Don't redose too soon.</div>
+                </div>
+                <div class="petra-education-slide">
+                    <div class="petra-education-num">3</div>
+                    <div class="petra-education-name">Duration</div>
+                    <div class="petra-education-desc">Effects typically last 4-8 hours — much longer than smoking or vaping. Plan accordingly, especially if you're new.</div>
+                </div>
+                <div class="petra-education-slide">
+                    <div class="petra-education-num">4</div>
+                    <div class="petra-education-name">Start Low</div>
+                    <div class="petra-education-desc">If you're new to edibles, begin with 2.5-5mg THC and wait at least 2 hours before taking more. You can always eat more, never less.</div>
+                </div>
+                <div class="petra-education-slide">
+                    <div class="petra-education-num">5</div>
+                    <div class="petra-education-name">Lab Testing</div>
+                    <div class="petra-education-desc">Every batch is tested for THC/CBD accuracy, pesticides, and contaminants. What's on the label is what's in the package.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="petra-faq">
+        <div class="petra-faq-container">
+            <div class="petra-faq-sidebar">
+                <h2>Common Questions</h2>
+                <p>Everything you need to know about buying Petra at LAXCC near LAX Airport in Los Angeles.</p>
+                <div class="petra-faq-deco"></div>
+            </div>
+
+            <div class="petra-faq-list">
+                <details class="petra-faq-item">
+                    <summary class="petra-faq-q">
+                        Where can I buy Petra near LAX?
+                        <span class="petra-faq-toggle">+</span>
+                    </summary>
+                    <div class="petra-faq-a">
+                        LAXCC is a licensed Los Angeles dispensary at 8332 Lincoln Blvd, Los Angeles, CA 90045 — just 5 minutes from LAX Airport. We carry Petra edibles, gummies & infused treats. Walk in or order ahead for pickup.
+                    </div>
+                </details>
+
+                <details class="petra-faq-item">
+                    <summary class="petra-faq-q">
+                        What Petra products does LAXCC carry?
+                        <span class="petra-faq-toggle">+</span>
+                    </summary>
+                    <div class="petra-faq-a">
+                        We stock a curated selection of Petra edibles, gummies & infused treats. Availability rotates with new drops — check our live menu above for the most current inventory and pricing.
+                    </div>
+                </details>
+
+                <details class="petra-faq-item">
+                    <summary class="petra-faq-q">
+                        How strong are Petra edibles?
+                        <span class="petra-faq-toggle">+</span>
+                    </summary>
+                    <div class="petra-faq-a">
+                        Potency varies by product — most Petra edibles range from 5mg to 10mg THC per serving, with packages up to 100mg total. Check the label for exact dosing. If you're new to edibles, start with a low dose (2.5-5mg) and wait at least 2 hours before taking more.
+                    </div>
+                </details>
+
+                <details class="petra-faq-item">
+                    <summary class="petra-faq-q">
+                        How much does Petra cost at LAXCC?
+                        <span class="petra-faq-toggle">+</span>
+                    </summary>
+                    <div class="petra-faq-a">
+                        Pricing varies by product and size — check the live menu on this page for current prices. LAXCC includes all taxes in our listed prices, so what you see is what you pay.
+                    </div>
+                </details>
+
+                <details class="petra-faq-item">
+                    <summary class="petra-faq-q">
+                        What are LAXCC's hours and location?
+                        <span class="petra-faq-toggle">+</span>
+                    </summary>
+                    <div class="petra-faq-a">
+                        LAXCC is open daily from 9:00 AM to 9:30 PM at 8332 Lincoln Blvd in Westchester, Los Angeles — 5 minutes from LAX Airport and 8 minutes from the beach. Walk-ins welcome, no appointment needed. We also offer pickup, curbside, and drive-thru options.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="petra-cta">
+        <div class="petra-cta-container">
+            <h2>Get Petra Today at LAXCC</h2>
+            <p>
+                Walk into our licensed dispensary near LAX Airport and shop Petra edibles, gummies & infused treats. All products lab-tested and ready for you.
+            </p>
+            <div class="petra-cta-actions">
+                <a href="https://www.google.com/maps?daddr=8332+Lincoln+Blvd,+Los+Angeles,+CA+90045"
+                    target="_blank" rel="noopener noreferrer" class="petra-btn-primary">
+                    <i class="fas fa-location-dot"></i> Directions to LAXCC
+                </a>
+            </div>
+            <div class="petra-cta-location">
+                <p><strong>LAXCC</strong> &bull; 8332 Lincoln Blvd, Los Angeles, CA 90045 &bull; Open Daily 9AM - 9:30PM</p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    (function () {
+        var ld = {
+            "@context": "https://schema.org",
+            "@type": "Store",
+            "name": "LAXCC - LAX Cannabis Club",
+            "description": "Licensed dispensary near LAX Airport carrying Petra edibles, gummies & infused treats in Los Angeles.",
+            "url": "https://laxcc.com",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "8332 Lincoln Blvd",
+                "addressLocality": "Los Angeles",
+                "addressRegion": "CA",
+                "postalCode": "90045",
+                "addressCountry": "US"
+            },
+            "openingHours": "Mo-Su 09:00-21:30",
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 33.9575,
+                "longitude": -118.4178
+            }
+        };
+        var s = document.createElement('script');
+        s.type = 'application/ld+json';
+        s.textContent = JSON.stringify(ld);
+        document.head.appendChild(s);
+    })();
+
+    /* Horizontal scroll arrows */
+    (function () {
+        [
+            { track: '.petra-about-track', btns: '.petra-about-arrow', step: 340 },
+            { track: '.petra-education-track', btns: '.petra-education-arrow', step: 240 }
+        ].forEach(function (cfg) {
+            var track = document.querySelector('.laxcc-petra ' + cfg.track);
+            if (!track) return;
+            document.querySelectorAll('.laxcc-petra ' + cfg.btns).forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var dir = parseInt(this.getAttribute('data-dir'));
+                    track.scrollBy({ left: dir * cfg.step, behavior: 'smooth' });
+                });
+            });
+        });
+    })();
+</script>

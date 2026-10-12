@@ -1,0 +1,548 @@
+<div class="laxcc-blog-post-2026">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Maven+Pro:wght@400..900&display=swap');
+
+        /* BRAND DESIGN TOKENS */
+        .laxcc-blog-post-2026 {
+            --primary-teal: #00AFC9;
+            --primary-dark: #0f3a5f;
+            --accent-orange: #F89459;
+            --accent-green: #3daa6e;
+            --cream: #fbf8f2;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --white: #ffffff;
+
+            font-family: 'Maven Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            background: none;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 900px;
+            padding: 4rem 1.5rem;
+            box-sizing: border-box;
+            font-size: 19px;
+        }
+
+        .laxcc-blog-post-2026 *,
+        .laxcc-blog-post-2026 *::before,
+        .laxcc-blog-post-2026 *::after {
+            box-sizing: inherit;
+        }
+
+        /* TYPOGRAPHY */
+        .laxcc-blog-header {
+            text-align: left;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid var(--primary-teal);
+            padding-bottom: 2rem;
+        }
+
+        .laxcc-blog-meta {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .laxcc-blog-title {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            text-transform: none;
+        }
+
+        .laxcc-blog-author-line {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .laxcc-blog-content h2 {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+            border-left: 6px solid var(--primary-teal);
+            padding-left: 1rem;
+        }
+
+        .laxcc-blog-content h3 {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .laxcc-blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .laxcc-blog-content ul, .laxcc-blog-content ol {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+
+        .laxcc-blog-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        .laxcc-blog-content a {
+            color: var(--primary-teal);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .laxcc-blog-content a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        /* IMAGES */
+        .laxcc-blog-featured-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(15, 58, 95, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        /* QUOTES */
+        .laxcc-blog-quote {
+            background-color: var(--white);
+            border: 1px solid rgba(0, 175, 201, 0.2);
+            border-left: 8px solid var(--primary-teal);
+            padding: 2rem;
+            margin: 3rem 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            border-radius: 0 12px 12px 0;
+            box-shadow: 4px 4px 20px rgba(0,0,0,0.03);
+        }
+
+        /* WARNING BOX */
+        .laxcc-blog-warning-box {
+            background-color: var(--white);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            padding: 0;
+            border-radius: 12px;
+            margin: 3rem 0;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .laxcc-blog-warning-box h3 {
+            color: var(--primary-dark) !important;
+            margin-top: 0 !important;
+        }
+
+        .laxcc-blog-warning-box ul {
+            margin-bottom: 0;
+        }
+
+        /* INFO BOX */
+        .laxcc-blog-info-box {
+            background-color: var(--white);
+            color: var(--text-main);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .laxcc-blog-info-box h3 {
+            color: var(--primary-dark) !important;
+            margin-top: 0 !important;
+        }
+
+        .laxcc-blog-info-box strong {
+            color: var(--primary-dark);
+        }
+
+        .laxcc-blog-info-box a {
+            color: var(--primary-teal) !important;
+        }
+
+        .laxcc-blog-info-box a:hover {
+            color: var(--primary-dark) !important;
+        }
+
+        /* STAT GRID */
+        .laxcc-blog-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .laxcc-blog-stat-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 175, 201, 0.1);
+        }
+
+        .laxcc-blog-stat-number {
+            font-family: 'Archivo Narrow', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-teal);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .laxcc-blog-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* CTA SECTION */
+        .laxcc-blog-cta {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: center;
+            color: var(--text-main);
+            margin-top: 4rem;
+            border: none;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .laxcc-blog-cta h2 {
+            color: var(--primary-dark) !important;
+            margin-top: 0;
+            border-left: none;
+            padding-left: 0;
+            text-align: center;
+            font-family: 'Archivo Narrow', sans-serif;
+        }
+
+        .laxcc-blog-cta p {
+            color: var(--text-muted);
+        }
+
+        .laxcc-blog-btn,
+        .laxcc-blog-btn:link,
+        .laxcc-blog-btn:visited {
+            display: inline-block;
+            background-color: #F89459 !important;
+            color: #ffffff !important;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none !important;
+            margin-top: 1.5rem;
+            white-space: nowrap;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .laxcc-blog-btn:hover {
+            transform: translateY(-3px);
+            background-color: #e07a3a !important;
+        }
+
+        .laxcc-blog-btn-orange,
+        .laxcc-blog-btn-orange:link,
+        .laxcc-blog-btn-orange:visited {
+            display: inline-block;
+            background-color: var(--accent-orange) !important;
+            color: #ffffff !important;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none !important;
+            margin-top: 1rem;
+            white-space: nowrap;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .laxcc-blog-btn-orange:hover {
+            transform: translateY(-3px);
+            background-color: #e07a3a !important;
+        }
+
+        /* DIVIDER */
+        .laxcc-blog-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-teal), transparent);
+            margin: 4rem 0;
+            opacity: 0.3;
+        }
+
+        /* SOURCES */
+        .laxcc-blog-sources {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            border-top: 1px solid #e2e8f0;
+            padding-top: 2rem;
+        }
+
+        .laxcc-blog-sources ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .laxcc-blog-sources li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .laxcc-blog-post-2026 {
+                padding: 2rem 1rem;
+                font-size: 17px;
+            }
+            .laxcc-blog-title {
+                font-size: 32px;
+            }
+            .laxcc-blog-cta {
+                padding: 2rem 1rem;
+            }
+            .laxcc-blog-stat-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+
+    <!-- META: Title (55 chars max): 24-Hour Dispensaries in Los Angeles Are Illegal -->
+    <!-- META: Description (155 chars max): Every 24-hour dispensary in LA is unlicensed. Learn the legal hours, health risks of unregulated products, and how to verify any dispensary's license. -->
+
+    <header class="laxcc-blog-header">
+        <div class="laxcc-blog-meta">April 12, 2026 &bull; Cannabis Safety & Education</div>
+        <h1 class="laxcc-blog-title">24-Hour Dispensaries in Los Angeles Are Illegal</h1>
+        <p style="font-size:1.15rem; color:var(--text-muted); margin:0; line-height:1.4; font-weight:500;">The risks of buying from unlicensed cannabis shops — and how to verify a legal dispensary</p>
+        <div class="laxcc-blog-author-line" style="margin-top:1.25rem;">
+            <span>By LAX Cannabis Club</span>
+        </div>
+    </header>
+
+    <div class="laxcc-blog-content">
+
+        <img src="https://laxcc.com/wp-content/uploads/2026/04/24-hour-dispensaries-LA-illegal.jpg" alt="24-hour dispensaries in Los Angeles are illegal and unlicensed" class="laxcc-blog-featured-image">
+
+        <p>Search "dispensary open 24 hours near me" late at night in Los Angeles and you'll find results. Storefronts with neon signs, no line, and someone buzzing you in at 2 AM. It feels convenient. But every single one of those shops is operating illegally under California and Los Angeles law. And the products they sell could put your health at serious risk.</p>
+
+        <p>Here's what every LA cannabis consumer needs to know before walking into one of those doors.</p>
+
+        <h2>It's Illegal. Period.</h2>
+
+        <img src="https://laxcc.com/wp-content/uploads/2026/04/Weed-Delivery-curfew-in-Los-Angeles.png" alt="Cannabis dispensary curfew hours in Los Angeles - legal operating hours 6 AM to 10 PM" class="laxcc-blog-featured-image">
+
+        <p>Licensed cannabis dispensaries in the City of Los Angeles are required to operate between <strong>6:00 AM and 10:00 PM only</strong>. This isn't a suggestion or a guideline — it's codified in the <a href="https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/" target="_blank" rel="noopener noreferrer">Los Angeles Municipal Code (LAMC), Article 4, Chapter X</a>, the city's cannabis regulatory framework enforced by the <a href="https://cannabis.lacity.gov/" target="_blank" rel="noopener noreferrer">LA Department of Cannabis Regulation (DCR)</a>.</p>
+
+        <p>Any dispensary advertising 24-hour operation in LA is, by definition, unlicensed. No legal retailer has authorization to sell cannabis outside that window. It is the single clearest red flag that you're dealing with an illegal operation.</p>
+
+        <div class="laxcc-blog-quote">
+            "If a cannabis retail shop in Los Angeles is open past 10 PM or before 6 AM, they do not hold a valid city or state license. There are zero exceptions."<br>
+            <span style="font-style:normal; font-size:0.9rem; color:var(--text-muted);">&mdash; LA Department of Cannabis Regulation</span>
+        </div>
+
+        <h2>The Scale of the Problem</h2>
+
+        <p>The illegal cannabis market in Los Angeles is massive. At any given time, hundreds of unlicensed cannabis shops operate across the city — significantly outnumbering the roughly 200 legally licensed retail locations. Statewide, the illegal cannabis market is estimated to rival or exceed the legal market in total revenue.</p>
+
+        <div class="laxcc-blog-stat-grid">
+            <div class="laxcc-blog-stat-card">
+                <div class="laxcc-blog-stat-number">200+</div>
+                <div class="laxcc-blog-stat-label">Licensed Dispensaries in LA</div>
+            </div>
+            <div class="laxcc-blog-stat-card">
+                <div class="laxcc-blog-stat-number">2:1</div>
+                <div class="laxcc-blog-stat-label">Illegal-to-Legal Market Ratio (CA)</div>
+            </div>
+            <div class="laxcc-blog-stat-card">
+                <div class="laxcc-blog-stat-number">270+</div>
+                <div class="laxcc-blog-stat-label">UCETF Search Warrants Served</div>
+            </div>
+        </div>
+
+        <p>Governor Newsom established the <a href="https://cannabis.ca.gov/about-us/ucetf/" target="_blank" rel="noopener noreferrer">Unified Cannabis Enforcement Taskforce (UCETF)</a> in 2022 specifically to coordinate state and local agencies against the illegal market. The taskforce — which includes the Department of Cannabis Control, California Highway Patrol, and CDTFA — has seized tens of millions of dollars in illegal cannabis products and shut down hundreds of unlicensed operations.</p>
+
+        <h2>What You're Actually Buying</h2>
+
+        <p>When you buy from a licensed dispensary, every product on the shelf has passed mandatory laboratory testing regulated by the <a href="https://cannabis.ca.gov/cannabis-laws/laws-and-regulations/" target="_blank" rel="noopener noreferrer">California Department of Cannabis Control (DCC)</a>. Products are tested for:</p>
+
+        <ul>
+            <li><strong>Pesticides</strong> — including chemicals banned for human consumption</li>
+            <li><strong>Heavy metals</strong> — lead, arsenic, cadmium, mercury</li>
+            <li><strong>Microbial contaminants</strong> — mold, bacteria, E. coli, salmonella</li>
+            <li><strong>Residual solvents</strong> — from the extraction process in concentrates</li>
+            <li><strong>Foreign material</strong> — glass, hair, insects, or other physical contaminants</li>
+        </ul>
+
+        <p>Products from unlicensed shops skip all of this. Every single test. There is zero quality control, zero oversight, and no accountability if a product makes you sick.</p>
+
+        <div class="laxcc-blog-warning-box">
+            <h3 style="padding:1.5rem 2rem; margin:0 !important; border-bottom:1px solid rgba(0,0,0,0.06);"><i class="fas fa-skull-crossbones" style="color:#e53e3e; margin-right:8px;"></i> Real Health Dangers from Unlicensed Products</h3>
+            <div style="display:grid; gap:0;">
+                <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.25rem 2rem; border-bottom:1px solid rgba(0,0,0,0.04);">
+                    <i class="fas fa-lungs" style="color:#e53e3e; font-size:1.1rem; margin-top:3px; min-width:20px;"></i>
+                    <div><strong>Vape cartridges with vitamin E acetate</strong><br><span style="color:var(--text-muted); font-size:0.95rem;">Directly linked to the <a href="https://www.cdc.gov/tobacco/basic_information/e-cigarettes/severe-lung-disease.html" target="_blank" rel="noopener noreferrer">2019 EVALI lung injury outbreak</a> that hospitalized thousands. The CDC confirmed the majority of cases involved illicit-market THC vape products</span></div>
+                </div>
+                <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.25rem 2rem; border-bottom:1px solid rgba(0,0,0,0.04);">
+                    <i class="fas fa-bug" style="color:#e53e3e; font-size:1.1rem; margin-top:3px; min-width:20px;"></i>
+                    <div><strong>Pesticide contamination</strong><br><span style="color:var(--text-muted); font-size:0.95rem;">The DCC has documented illegal products with pesticide levels far exceeding safe thresholds</span></div>
+                </div>
+                <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.25rem 2rem; border-bottom:1px solid rgba(0,0,0,0.04);">
+                    <i class="fas fa-radiation" style="color:#e53e3e; font-size:1.1rem; margin-top:3px; min-width:20px;"></i>
+                    <div><strong>Heavy metal contamination</strong><br><span style="color:var(--text-muted); font-size:0.95rem;">Particularly in unregulated vape hardware where cheap metals like lead leach into the oil</span></div>
+                </div>
+                <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.25rem 2rem; border-bottom:1px solid rgba(0,0,0,0.04);">
+                    <i class="fas fa-percentage" style="color:#e53e3e; font-size:1.1rem; margin-top:3px; min-width:20px;"></i>
+                    <div><strong>Inaccurate labeling</strong><br><span style="color:var(--text-muted); font-size:0.95rem;">THC percentages are fabricated, dosages are wrong, and ingredients are not disclosed</span></div>
+                </div>
+                <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.25rem 2rem; border-bottom:1px solid rgba(0,0,0,0.04);">
+                    <i class="fas fa-calendar-times" style="color:#e53e3e; font-size:1.1rem; margin-top:3px; min-width:20px;"></i>
+                    <div><strong>Expired products</strong><br><span style="color:var(--text-muted); font-size:0.95rem;">Unlicensed shops have no inventory oversight. Edibles, tinctures, vape cartridges, and flower sitting on shelves long past their expiration date is common. Expired cannabis products lose potency, develop mold, and the oils in vape carts and edibles degrade into compounds that can cause nausea, headaches, and respiratory irritation</span></div>
+                </div>
+                <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.25rem 2rem;">
+                    <i class="fas fa-box-open" style="color:#e53e3e; font-size:1.1rem; margin-top:3px; min-width:20px;"></i>
+                    <div><strong>No batch tracking or recalls</strong><br><span style="color:var(--text-muted); font-size:0.95rem;">Licensed dispensaries use California's track-and-trace system to pull contaminated or expired batches from shelves. Unlicensed shops have no tracking system at all — if a product is bad, there's no way to identify it, recall it, or notify anyone who already bought it</span></div>
+                </div>
+            </div>
+        </div>
+
+        <h2>How to Spot an Illegal Dispensary</h2>
+
+        <p>Not every unlicensed shop is obvious. Some have professional signage, security guards, and product displays that look legitimate. But there are clear tells:</p>
+
+        <div class="laxcc-blog-info-box" style="padding:0; overflow:hidden;">
+            <h3 style="padding:1.5rem 2rem; margin:0 !important; border-bottom:1px solid rgba(0,0,0,0.06);"><i class="fas fa-exclamation-triangle" style="color:#e53e3e; margin-right:8px;"></i> Red Flags to Watch For</h3>
+            <div style="display:grid; gap:0;">
+                <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.25rem 2rem; border-bottom:1px solid rgba(0,0,0,0.04);">
+                    <i class="fas fa-clock" style="color:#e53e3e; font-size:1.1rem; margin-top:3px; min-width:20px;"></i>
+                    <div><strong>Open past 10 PM or before 6 AM</strong><br><span style="color:var(--text-muted); font-size:0.95rem;">No licensed LA dispensary operates outside these hours</span></div>
+                </div>
+                <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.25rem 2rem; border-bottom:1px solid rgba(0,0,0,0.04);">
+                    <i class="fas fa-globe" style="color:#e53e3e; font-size:1.1rem; margin-top:3px; min-width:20px;"></i>
+                    <div><strong>No license number on their website</strong><br><span style="color:var(--text-muted); font-size:0.95rem;">The biggest tell. Licensed dispensaries proudly display their license number because it proves they're legal. If you can't find one anywhere on their site, they don't have one</span></div>
+                </div>
+                <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.25rem 2rem; border-bottom:1px solid rgba(0,0,0,0.04);">
+                    <i class="fas fa-store-slash" style="color:#e53e3e; font-size:1.1rem; margin-top:3px; min-width:20px;"></i>
+                    <div><strong>No license posted inside the store</strong><br><span style="color:var(--text-muted); font-size:0.95rem;">California law requires both state and local licenses displayed in a visible area. If you walk in and don't see it framed on the wall, walk out</span></div>
+                </div>
+                <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.25rem 2rem; border-bottom:1px solid rgba(0,0,0,0.04);">
+                    <i class="fas fa-tag" style="color:#e53e3e; font-size:1.1rem; margin-top:3px; min-width:20px;"></i>
+                    <div><strong>Products without state-mandated labeling</strong><br><span style="color:var(--text-muted); font-size:0.95rem;">Legal products carry a UID tracking number, lab test results, and required health warnings</span></div>
+                </div>
+                <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.25rem 2rem; border-bottom:1px solid rgba(0,0,0,0.04);">
+                    <i class="fas fa-child" style="color:#e53e3e; font-size:1.1rem; margin-top:3px; min-width:20px;"></i>
+                    <div><strong>No childproof packaging</strong><br><span style="color:var(--text-muted); font-size:0.95rem;">California law requires all cannabis products sold in childproof containers</span></div>
+                </div>
+                <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.25rem 2rem; border-bottom:1px solid rgba(0,0,0,0.04);">
+                    <i class="fas fa-receipt" style="color:#e53e3e; font-size:1.1rem; margin-top:3px; min-width:20px;"></i>
+                    <div><strong>No receipts</strong><br><span style="color:var(--text-muted); font-size:0.95rem;">Illegal shops avoid paper trails to evade tax enforcement</span></div>
+                </div>
+                <div style="display:flex; align-items:flex-start; gap:1rem; padding:1.25rem 2rem;">
+                    <i class="fas fa-map-marker-alt" style="color:#e53e3e; font-size:1.1rem; margin-top:3px; min-width:20px;"></i>
+                    <div><strong>Located where cannabis retail isn't zoned</strong><br><span style="color:var(--text-muted); font-size:0.95rem;">Many pop up in areas where the city hasn't approved retail cannabis</span></div>
+                </div>
+            </div>
+        </div>
+
+        <h2>How to Search for Licensed Dispensaries in Los Angeles</h2>
+
+        <p>You don't have to guess. California and the City of Los Angeles both provide free, public tools that let anyone search for licensed dispensaries. It takes less than 60 seconds and it should be the first thing you do before buying cannabis from anywhere.</p>
+
+        <h3>Step 1: Search the California State License Database</h3>
+        <p>The California Department of Cannabis Control runs an official license search at <a href="https://search.cannabis.ca.gov" target="_blank" rel="noopener noreferrer">search.cannabis.ca.gov</a>. Here's how to use it:</p>
+        <ol>
+            <li>Go to <a href="https://search.cannabis.ca.gov" target="_blank" rel="noopener noreferrer">search.cannabis.ca.gov</a></li>
+            <li>Type the dispensary's name or street address into the search bar</li>
+            <li>Look for a result with <strong>License Status: Active</strong> and <strong>License Type: Retailer</strong></li>
+            <li>If nothing comes up — or the status says "Revoked," "Expired," or "Suspended" — that dispensary is not authorized to sell cannabis in California</li>
+        </ol>
+        <p>Every legal dispensary in the state is in this database. No exceptions. If a shop isn't listed, they don't have a license.</p>
+
+        <h3>Step 2: Confirm the LA City License</h3>
+        <p>A state license alone isn't enough — dispensaries in Los Angeles also need a local license from the city. The <a href="https://cannabis.lacity.gov/" target="_blank" rel="noopener noreferrer">LA Department of Cannabis Regulation (cannabis.lacity.gov)</a> maintains the official list of all authorized cannabis businesses operating within city limits. You can search by business name or browse the full directory. If a dispensary doesn't appear on both the state and city lists, it's not legal.</p>
+
+        <h3>What a Real License Looks Like</h3>
+        <p>A legitimate California cannabis retail license includes a license number in the format <strong>C10-XXXXXXX-LIC</strong> (the "C10" prefix specifically identifies a retail license). The dispensary should display this number on their website and inside their store. For example, LAX Cannabis Club holds active state license <a href="https://search.cannabis.ca.gov/results/6089" target="_blank" rel="noopener noreferrer">C10-0000141-LIC</a> — you can click that link and verify it yourself right now on the state database.</p>
+
+        <p>If a dispensary can't show you a number like that, or if the number they show doesn't come back as "Active" on <a href="https://search.cannabis.ca.gov" target="_blank" rel="noopener noreferrer">search.cannabis.ca.gov</a>, don't buy from them.</p>
+
+        <h2>Who Gets Hurt by Illegal Shops</h2>
+
+        <p>It's not just your health at risk. Every dollar spent at an unlicensed dispensary:</p>
+
+        <ul>
+            <li><strong>Evades state and local cannabis taxes</strong> — taxes that fund public schools, drug abuse prevention, and environmental restoration under <a href="https://leginfo.legislature.ca.gov/faces/codes_displayexpandedbranch.xhtml?tocCode=RTC" target="_blank" rel="noopener noreferrer">California Revenue and Taxation Code Section 34010</a></li>
+            <li><strong>Undercuts licensed businesses</strong> — legal dispensaries invest heavily in compliance, testing, and safety. Illegal shops have none of those costs and can sell at artificially low prices</li>
+            <li><strong>Undermines social equity programs</strong> — LA's <a href="https://cannabis.lacity.gov/licensing/social-equity-program" target="_blank" rel="noopener noreferrer">Social Equity Program</a> was designed to ensure communities disproportionately impacted by the war on drugs benefit from legalization. Illegal operators drain resources from that mission</li>
+            <li><strong>Often involves other criminal activity</strong> — unlicensed operations frequently lack security standards, attract robberies, and are linked to broader illegal distribution networks</li>
+        </ul>
+
+        <h2>What Happens When They Get Caught</h2>
+
+        <p>The City of Los Angeles and the State of California are actively shutting down illegal cannabis operations. The <a href="https://www.lacityattorney.org/" target="_blank" rel="noopener noreferrer">LA City Attorney's Office</a> pursues civil enforcement and nuisance abatement actions. LAPD participates in joint enforcement operations with the DCC and UCETF.</p>
+
+        <p>Penalties for operating an unlicensed cannabis business in California include:</p>
+
+        <ul>
+            <li>Fines up to <strong>$30,000 per violation per day</strong> under state law</li>
+            <li>Criminal charges under <a href="https://leginfo.legislature.ca.gov/faces/codes_displayexpandedbranch.xhtml?tocCode=BPC&division=10." target="_blank" rel="noopener noreferrer">Business and Professions Code, Division 10 (MAUCRSA)</a></li>
+            <li>Property seizure and nuisance abatement under Health and Safety Code Section 11570</li>
+            <li>Back taxes, penalties, and interest from the CDTFA</li>
+        </ul>
+
+        <p>These shops get shut down, reopen somewhere else, and get shut down again. But the cycle only continues because consumers keep walking in.</p>
+
+        <h2>Buy Legal. Buy Safe. Buy Licensed.</h2>
+
+        <p>Convenience isn't worth the risk. A dispensary that's open at 2 AM in Los Angeles has no license, no lab-tested products, and no accountability. The "deal" you think you're getting could contain pesticides, heavy metals, or synthetic additives that no lab has ever tested.</p>
+
+        <p>Licensed dispensaries like <a href="https://laxcc.com/">LAX Cannabis Club</a> exist because we went through the process — state licensing, city licensing, lab testing on every product, full compliance with California's regulatory framework. Our license is public record: <a href="https://search.cannabis.ca.gov/results/6089" target="_blank" rel="noopener noreferrer">C10-0000141-LIC</a>. We're open <strong>9:00 AM to 9:30 PM daily</strong>, because that's what the law allows.</p>
+
+        <div class="laxcc-blog-divider"></div>
+
+        <div class="laxcc-blog-sources">
+            <h3>Sources &amp; Official References</h3>
+            <ul>
+                <li><a href="https://cannabis.ca.gov/" target="_blank" rel="noopener noreferrer">California Department of Cannabis Control (DCC)</a> — State cannabis regulatory authority</li>
+                <li><a href="https://search.cannabis.ca.gov" target="_blank" rel="noopener noreferrer">DCC License Search Tool</a> — Verify any dispensary's license status</li>
+                <li><a href="https://cannabis.ca.gov/cannabis-laws/laws-and-regulations/" target="_blank" rel="noopener noreferrer">DCC Laws &amp; Regulations</a> — Full California cannabis regulatory text</li>
+                <li><a href="https://cannabis.ca.gov/about-us/ucetf/" target="_blank" rel="noopener noreferrer">Unified Cannabis Enforcement Taskforce (UCETF)</a> — State enforcement coordination</li>
+                <li><a href="https://cannabis.lacity.gov/" target="_blank" rel="noopener noreferrer">LA Department of Cannabis Regulation</a> — City of LA licensing authority</li>
+                <li><a href="https://codelibrary.amlegal.com/codes/los_angeles/latest/lamc/" target="_blank" rel="noopener noreferrer">Los Angeles Municipal Code</a> — City cannabis operating regulations</li>
+                <li><a href="https://cannabis.lacity.gov/licensing/social-equity-program" target="_blank" rel="noopener noreferrer">LA Social Equity Program</a> — Community reinvestment through legal cannabis</li>
+                <li><a href="https://leginfo.legislature.ca.gov/faces/codes_displayexpandedbranch.xhtml?tocCode=BPC&division=10." target="_blank" rel="noopener noreferrer">MAUCRSA — California Business &amp; Professions Code, Division 10</a> — State cannabis law</li>
+                <li><a href="https://www.cdc.gov/tobacco/basic_information/e-cigarettes/severe-lung-disease.html" target="_blank" rel="noopener noreferrer">CDC EVALI Investigation</a> — Lung injuries linked to illicit THC vape products</li>
+                <li><a href="https://www.lacityattorney.org/" target="_blank" rel="noopener noreferrer">LA City Attorney's Office</a> — Civil enforcement against illegal dispensaries</li>
+            </ul>
+        </div>
+
+        <div class="laxcc-blog-cta">
+            <h2>Shop a Licensed, Lab-Tested Menu</h2>
+            <p>LAX Cannabis Club is a fully licensed California dispensary near LAX. Every product is lab-tested, properly labeled, and sold in compliance with state and city law. Open daily 9 AM &ndash; 9:30 PM.</p>
+            <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1.5rem;">
+                <a href="https://laxcc.com/shop/" class="laxcc-blog-btn" style="margin-top:0;">Browse the Menu</a>
+                <a href="https://search.cannabis.ca.gov/results/6089" class="laxcc-blog-btn-orange" style="margin-top:0;" target="_blank" rel="noopener noreferrer">Verify Our License</a>
+            </div>
+        </div>
+    </div>
+</div>

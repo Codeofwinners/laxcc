@@ -1,0 +1,205 @@
+<!-- LAXCC — Brands endless marquee (homepage section) -->
+<!-- 100% CSS + HTML, ZERO JavaScript (no <script>, no onclick, no onerror) — WAF-safe, will not 403. -->
+<!-- Auto-scrolls via CSS animation; hover pauses; header has pure-CSS Reverse + Pause/Play toggles (checkbox hack). -->
+<!-- NOTE: brand-page slugs are generated from names (pattern /brand/<name>/). Verify any that 404. -->
+<!-- REMOVED pending correct logo URLs: STIIIZY (had Rove's image), Raw (dupe of Raw Garden), Heirbloom (image 404'd). Send URLs to re-add. -->
+<!-- NOTE: Raw Garden currently uses image a78f5481… — confirm that's actually Raw Garden's logo, not Raw's. -->
+<style>
+    .lbm {
+        font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: #FCF9F2;
+        padding: 2rem 0;
+        width: 100%;
+        overflow: hidden;
+    }
+    .lbm * { box-sizing: border-box; }
+
+    .lbm-head {
+        max-width: 1680px;
+        margin: 0 auto 1.5rem;
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1rem 2rem;
+        flex-wrap: wrap;
+    }
+    .lbm-headings { display: flex; flex-direction: column; gap: 8px; }
+    .lbm-eyebrow {
+        font-size: .72rem;
+        font-weight: 800;
+        color: #F89459;
+        text-transform: uppercase;
+        letter-spacing: .18em;
+        margin: 0;
+    }
+    .lbm-h {
+        font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+        font-weight: 900;
+        color: #1D508A;
+        letter-spacing: -0.02em;
+        line-height: 1.05;
+        margin: 0;
+    }
+    .lbm-h span { color: #F89459; }
+    .lbm-sub {
+        font-size: .98rem;
+        color: #64748b;
+        line-height: 1.5;
+        margin: 2px 0 0;
+        max-width: 60ch;
+    }
+    .lbm-all {
+        font-size: .8rem;
+        font-weight: 800;
+        color: #F89459 !important;
+        text-decoration: none !important;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding-bottom: 4px;
+    }
+    .lbm-all:hover { opacity: .8; }
+
+    /* CSS-only auto-scroll marquee (no JS needed — WAF-safe) */
+    .lbm-viewport {
+        width: 100%;
+        overflow: hidden;
+    }
+    .lbm-track {
+        display: flex;
+        width: max-content;
+        gap: 16px;
+        padding: 4px 16px;
+        animation: lbm-scroll 55s linear infinite;
+        will-change: transform;
+    }
+    /* Pause when hovering the strip */
+    .lbm-viewport:hover .lbm-track { animation-play-state: paused; }
+    @keyframes lbm-scroll {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+    }
+
+    /* Controls — PURE CSS checkbox toggles. Zero JavaScript (WAF-safe). */
+    .lbm-toggle { position: absolute; width: 0; height: 0; opacity: 0; pointer-events: none; }
+    .lbm-head-right { display: flex; align-items: center; gap: 1rem; }
+    .lbm-ctrls { display: flex; align-items: center; gap: .5rem; }
+    .lbm-btn {
+        width: 40px; height: 40px; padding: 0; border: none; border-radius: 50%;
+        background: #1D508A; color: #fff; cursor: pointer; flex: 0 0 auto; line-height: 0;
+        display: inline-flex; align-items: center; justify-content: center;
+        transition: background .2s ease, transform .12s ease;
+    }
+    .lbm-btn:hover { background: #F89459; }
+    .lbm-btn:active { transform: scale(.92); }
+    .lbm-btn svg { width: 16px; height: 16px; display: block; }
+    .lbm-btn .ico-play { display: none; }
+
+    /* Pause toggle: when checked, freeze the marquee + swap pause icon → play icon */
+    #lbm-pause:checked ~ .lbm-viewport .lbm-track { animation-play-state: paused !important; }
+    #lbm-pause:checked ~ .lbm-head .lbm-btn-pause .ico-pause { display: none; }
+    #lbm-pause:checked ~ .lbm-head .lbm-btn-pause .ico-play { display: block; }
+
+    /* Reverse toggle: flip scroll direction */
+    #lbm-rev:checked ~ .lbm-viewport .lbm-track { animation-direction: reverse; }
+    #lbm-rev:checked ~ .lbm-head .lbm-btn-rev { background: #F89459; }
+
+    /* Square white logo tiles — no rounded corners */
+    .lbm-item {
+        flex: 0 0 auto;
+        width: 172px;
+        height: 104px;
+        background: #fff;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 22px;
+        box-shadow: 0 3px 10px rgba(23, 34, 46, .06);
+        text-decoration: none;
+        transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .lbm-item:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(23, 34, 46, .12); }
+    .lbm-item img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+</style>
+
+<div class="lbm" id="laxcc-brands">
+    <input type="checkbox" id="lbm-pause" class="lbm-toggle" aria-hidden="true">
+    <input type="checkbox" id="lbm-rev" class="lbm-toggle" aria-hidden="true">
+    <div class="lbm-head">
+        <div class="lbm-headings">
+            <p class="lbm-eyebrow">Top-Shelf Labels</p>
+            <h2 class="lbm-h">Shop the Best Weed Brands in <span>Los Angeles</span></h2>
+            <p class="lbm-sub">The California names Angelenos actually ask for &mdash; flower, vapes, edibles &amp; more, all in stock at LAX Cannabis Club.</p>
+        </div>
+        <div class="lbm-head-right">
+            <div class="lbm-ctrls">
+                <label for="lbm-rev" class="lbm-btn lbm-btn-rev" role="button" tabindex="0" aria-label="Reverse direction" title="Reverse direction">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+                </label>
+                <label for="lbm-pause" class="lbm-btn lbm-btn-pause" role="button" tabindex="0" aria-label="Pause or play" title="Pause / Play">
+                    <svg class="ico-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg>
+                    <svg class="ico-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5l12 7-12 7z"></path></svg>
+                </label>
+            </div>
+            <a class="lbm-all" href="https://laxcc.com/brands/">All Brands &rarr;</a>
+        </div>
+    </div>
+
+    <div class="lbm-viewport" id="lbm-viewport">
+        <div class="lbm-track" id="lbm-track">
+            <!-- SET 1 -->
+            <a class="lbm-item" href="https://laxcc.com/brand/710-labs/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/76f7cc4a7d01878120c931fc6bf04726" alt="710 Labs" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/bloom/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/64b7d574e171f2a110b8c610a13ccb1a" alt="Bloom" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/birdies/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/abc3f570332bd3de6b379f4d70c4d094" alt="Birdies" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/boutiq/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/896d62899d4c4855e8ef66ebb1c1fbe5" alt="Boutiq" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/camino/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/4644d038476c24bc7834f7b63b12b8df" alt="Camino" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/cbx/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/2d1fd47349de28bc24ffa1798228f737" alt="CBX" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/dr-norms/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/baa437806105a381ca69e45f238c7a16" alt="Dr. Norms" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/drops/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/10b9f5e688e5fc0984d87cbef2123d6c" alt="Drops" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/el-blunto/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/ea7520680c63788ec97b81bf64fb9598" alt="El Blunto" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/froot/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/b421c4c5111644db4f94214fee5fa93c" alt="Froot" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/highatus/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/fcbf2763c6b8c75d0e2ec88ffb5f2ea7" alt="Highatus" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/kingpen/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/18535c02b1de4b76ba941abb5b213c71" alt="Kingpen" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/plugplay/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/b942e573db896d281e7905dc7e6f333e" alt="PlugPlay" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/raw-garden/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/a78f548120d29516425857dc50b27a37" alt="Raw Garden" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/rove/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/6f73f09d1763c3d3190c04ba322b3da0" alt="Rove" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/thc-design/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/4e7f8cdaf05352a31b689b57392deccd" alt="THC Design" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/turn/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/616e939ba5f6155e9104bd15a42d154f" alt="Turn" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/uncle-arnies/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/3274729d5aed43c8fe055662ca3a5e65" alt="Uncle Arnies" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/wyld/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/a0d92619be2179b6716977307c25184e" alt="WYLD" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/zig-zag/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/efb06b1156a7b40a554e7c2dee05238e" alt="Zig Zag" referrerpolicy="no-referrer" loading="lazy"></a>
+
+            <!-- SET 2 (duplicate — seamless loop) -->
+            <a class="lbm-item" href="https://laxcc.com/brand/710-labs/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/76f7cc4a7d01878120c931fc6bf04726" alt="710 Labs" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/bloom/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/64b7d574e171f2a110b8c610a13ccb1a" alt="Bloom" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/birdies/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/abc3f570332bd3de6b379f4d70c4d094" alt="Birdies" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/boutiq/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/896d62899d4c4855e8ef66ebb1c1fbe5" alt="Boutiq" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/camino/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/4644d038476c24bc7834f7b63b12b8df" alt="Camino" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/cbx/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/2d1fd47349de28bc24ffa1798228f737" alt="CBX" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/dr-norms/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/baa437806105a381ca69e45f238c7a16" alt="Dr. Norms" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/drops/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/10b9f5e688e5fc0984d87cbef2123d6c" alt="Drops" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/el-blunto/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/ea7520680c63788ec97b81bf64fb9598" alt="El Blunto" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/froot/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/b421c4c5111644db4f94214fee5fa93c" alt="Froot" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/highatus/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/fcbf2763c6b8c75d0e2ec88ffb5f2ea7" alt="Highatus" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/kingpen/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/18535c02b1de4b76ba941abb5b213c71" alt="Kingpen" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/plugplay/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/b942e573db896d281e7905dc7e6f333e" alt="PlugPlay" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/raw-garden/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/a78f548120d29516425857dc50b27a37" alt="Raw Garden" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/rove/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/6f73f09d1763c3d3190c04ba322b3da0" alt="Rove" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/thc-design/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/4e7f8cdaf05352a31b689b57392deccd" alt="THC Design" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/turn/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/616e939ba5f6155e9104bd15a42d154f" alt="Turn" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/uncle-arnies/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/3274729d5aed43c8fe055662ca3a5e65" alt="Uncle Arnies" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/wyld/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/a0d92619be2179b6716977307c25184e" alt="WYLD" referrerpolicy="no-referrer" loading="lazy"></a>
+            <a class="lbm-item" href="https://laxcc.com/brand/zig-zag/"><img src="https://s3-us-west-2.amazonaws.com/dutchie-images/efb06b1156a7b40a554e7c2dee05238e" alt="Zig Zag" referrerpolicy="no-referrer" loading="lazy"></a>
+        </div>
+    </div>
+</div>

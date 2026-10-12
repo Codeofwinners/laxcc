@@ -1,0 +1,491 @@
+<style>
+    :root {
+        --primary: #1D508A;
+        --secondary: #00AFC9;
+        --accent: #F89459;
+        --success: #7ECBB3;
+        --bg: #f4f7f9;
+        --card-bg: #ffffff;
+        --text-main: #2d3436;
+        --text-muted: #636e72;
+        --radius: 16px;
+        --shadow: 0 10px 30px rgba(29, 80, 138, 0.08);
+    }
+
+    .product-section {
+        padding: 40px 15px;
+        max-width: 1100px;
+        margin: 0 auto;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .product-container {
+        background: var(--card-bg);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        margin-bottom: 24px;
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.03);
+        position: relative;
+        height: 260px;
+    }
+
+
+
+    .product-number {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: var(--primary);
+        color: white;
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 14px;
+        z-index: 10;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .product-img-container {
+        padding: 20px;
+        background: #fff;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 1px solid #f0f0f0;
+        overflow: hidden;
+    }
+
+    .product-img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+
+
+
+    .product-content {
+        padding: 20px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .product-header {
+        background: transparent;
+        padding: 0;
+        margin-bottom: 8px;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .product-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--primary);
+        margin: 0;
+        line-height: 1.2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .thc-badge {
+        background: rgba(126, 203, 179, 0.15);
+        color: #2d6a4f;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .product-description {
+        font-size: 13px;
+        color: var(--text-muted);
+        line-height: 1.5;
+        margin: 0 0 10px 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .product-info-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        background: #f8fafc;
+        padding: 12px 20px;
+        border-radius: 12px;
+        margin-bottom: 0;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text-main);
+    }
+
+    .info-item i {
+        color: var(--secondary);
+        font-size: 14px;
+    }
+
+    .actions {
+        margin-top: 15px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .see-more-btn {
+        background: var(--accent);
+        color: #fff !important;
+        text-decoration: none;
+        padding: 8px 24px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+
+
+    .out-of-stock {
+        background: #e2e8f0;
+        color: #64748b;
+        cursor: not-allowed;
+    }
+
+    @media (max-width: 992px) {
+        .product-container {
+            grid-template-columns: 200px 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .product-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            padding: 20px 10px;
+        }
+
+        .product-container {
+            grid-template-columns: 1fr;
+            height: auto !important;
+            margin-bottom: 0;
+        }
+
+        .product-img-container {
+            height: 160px;
+            border-right: none;
+            border-bottom: 1px solid #f0f0f0;
+            padding: 10px;
+        }
+
+        .product-content {
+            padding: 12px;
+        }
+
+        .product-info-grid {
+            grid-template-columns: 1fr;
+            padding: 8px;
+            gap: 6px;
+        }
+
+        .product-title {
+            font-size: 14px;
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .thc-badge {
+            font-size: 9px;
+            padding: 2px 6px;
+        }
+
+        .product-description {
+            display: none;
+        }
+
+        .see-more-btn {
+            width: 100%;
+            padding: 6px;
+            font-size: 12px;
+        }
+    }
+</style>
+
+<div class="product-section">
+    <!-- Micro Bar Disposable Vape -->
+    <div class="product-container">
+        <div class="product-number">10</div>
+        <div class="product-img-container">
+            <img src="https://images.dutchie.com/bc73a246ce19acc9a1a0d149868b50a7?w=400&h=400&fm=webp"
+                alt="Micro Bar Disposable Vape" class="product-img">
+        </div>
+        <div class="product-content">
+            <div class="product-header">
+                <h2 class="product-title">Micro Bar Disposable Vape</h2>
+                <span class="thc-badge">~80% THC</span>
+            </div>
+            <p class="product-description">Micro Bar is a high-performance, ultra-compact disposable vape that has taken
+                the Los Angeles market by storm. Engineered for discretion and power, each bar is filled with premium,
+                high-potency distillate oil.</p>
+            <div class="product-info-grid">
+                <div class="info-item"><i class="fas fa-dollar-sign"></i> $40</div>
+                <div class="info-item"><i class="fas fa-weight-hanging"></i> 1 Gram</div>
+                <div class="info-item"><i class="fas fa-vial"></i> All-in-One</div>
+            </div>
+            <div class="actions">
+                <a href="https://laxcc.com/brand/micro-bar/" class="see-more-btn" target="_blank">Shop Micro Bar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- DomPen All-in-One Disposable -->
+    <div class="product-container">
+        <div class="product-number">9</div>
+        <div class="product-img-container">
+            <img src="https://images.dutchie.com/e18268c87a68b4be067d31b1843be8a1?w=500&h=500&fm=webp"
+                alt="DomPen All-in-One Disposable" class="product-img">
+        </div>
+        <div class="product-content">
+            <div class="product-header">
+                <h2 class="product-title">DomPen All-in-One Disposable</h2>
+                <span class="thc-badge">~87% THC</span>
+            </div>
+            <p class="product-description">DomPen is a leader in flavor-forward, high-potency vaporization. Known for
+                their triple-distilled oil and sleek, effortless design, DomPen offers one of the most reliable vaping
+                experiences in California.</p>
+            <div class="product-info-grid">
+                <div class="info-item"><i class="fas fa-dollar-sign"></i> $45</div>
+                <div class="info-item"><i class="fas fa-weight-hanging"></i> 1 Gram</div>
+                <div class="info-item"><i class="fas fa-vial"></i> All-in-One</div>
+            </div>
+            <div class="actions">
+                <a href="https://laxcc.com/brand/dompen/" class="see-more-btn" target="_blank">Shop DomPen</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- STIIIZY Disposables & Pods -->
+    <div class="product-container">
+        <div class="product-number">8</div>
+        <div class="product-img-container">
+            <img src="https://images.dutchie.com/cdf52e7c0e4f8daafcc5fdecd41c44a7?w=500&h=500&fm=webp"
+                alt="STIIIZY Disposables & Pods" class="product-img">
+        </div>
+        <div class="product-content">
+            <div class="product-header">
+                <h2 class="product-title">STIIIZY Disposables & Pods</h2>
+                <span class="thc-badge">85% THC Avg</span>
+            </div>
+            <p class="product-description">California's favorite vape brand. STIIIZY offers a wide range of disposables and pods known for their sleek, proprietary design and unmatched flavor profiles.</p>
+            <div class="product-info-grid">
+                <div class="info-item"><i class="fas fa-dollar-sign"></i> $40</div>
+                <div class="info-item"><i class="fas fa-weight-hanging"></i> 1 Gram</div>
+                <div class="info-item"><i class="fas fa-vial"></i> Disposable / Pod</div>
+            </div>
+            <div class="actions">
+                <a href="https://laxcc.com/brand/stiiizy/"
+                    class="see-more-btn" target="_blank">Shop STIIIZY</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Claybourne Gassers All-in-One -->
+    <div class="product-container">
+        <div class="product-number">7</div>
+        <div class="product-img-container">
+            <img src="https://images.dutchie.com/91adbb126a9e23b43cc6e514fbb135a1?w=500&h=500&fm=webp"
+                alt="Claybourne Gassers All-in-One" class="product-img">
+        </div>
+        <div class="product-content">
+            <div class="product-header">
+                <h2 class="product-title">Claybourne Gassers All-in-One</h2>
+                <span class="thc-badge">87% THC Avg</span>
+            </div>
+            <p class="product-description">Claybourne Co. Gassers deliver a high-potency distillate experience designed
+                for power and consistency. Known for their clean delivery and bold effects.</p>
+            <div class="product-info-grid">
+                <div class="info-item"><i class="fas fa-dollar-sign"></i> $45</div>
+                <div class="info-item"><i class="fas fa-weight-hanging"></i> 1 Gram</div>
+                <div class="info-item"><i class="fas fa-vial"></i> All-in-One</div>
+            </div>
+            <div class="actions">
+                <a href="https://laxcc.com/brand/claybourne-co/" class="see-more-btn" target="_blank">Shop Claybourne</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cizi All-in-One Disposable -->
+    <div class="product-container">
+        <div class="product-number">6</div>
+        <div class="product-img-container">
+            <img src="https://images.dutchie.com/b9bb729042ee572aa1317d022624e7d4?w=500&h=500&fm=webp"
+                alt="Cizi All-in-One Disposable" class="product-img">
+        </div>
+        <div class="product-content">
+            <div class="product-header">
+                <h2 class="product-title">Cizi All-in-One Disposable</h2>
+                <span class="thc-badge">High THC</span>
+            </div>
+            <p class="product-description">Cizi is setting a new standard for value and quality in Los Angeles. Their
+                All-in-One disposables are designed for the modern consumer who demands high-potency oil and reliable
+                hardware at an accessible price point.</p>
+            <div class="product-info-grid">
+                <div class="info-item"><i class="fas fa-dollar-sign"></i> $32</div>
+                <div class="info-item"><i class="fas fa-weight-hanging"></i> 1 Gram</div>
+                <div class="info-item"><i class="fas fa-vial"></i> All-in-One</div>
+            </div>
+            <div class="actions">
+                <a href="https://laxcc.com/brand/cizi/" class="see-more-btn" target="_blank">Shop Cizi</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-container">
+        <div class="product-number">5</div>
+        <div class="product-img-container">
+            <img src="https://images.dutchie.com/ecf0c41c22f0e447e6cc17dff34b9e10?w=500&h=500&fm=webp"
+                alt="Raw Garden AIO Disposable" class="product-img">
+        </div>
+        <div class="product-content">
+            <div class="product-header">
+                <h2 class="product-title">Raw Garden AIO Disposable</h2>
+                <span class="thc-badge">91.8% THC</span>
+            </div>
+            <p class="product-description">Raw Garden's cartridges are known for purity and flavor. Award-winning live
+                resin with pure cannabis terpenes and no additives for a smooth experience.</p>
+            <div class="product-info-grid">
+                <div class="info-item"><i class="fas fa-dollar-sign"></i> $55</div>
+                <div class="info-item"><i class="fas fa-weight-hanging"></i> 1 Gram</div>
+                <div class="info-item"><i class="fas fa-vial"></i> AIO Disposable</div>
+            </div>
+            <div class="actions">
+                <a href="https://laxcc.com/brand/raw-garden/"
+                    class="see-more-btn" target="_blank">Shop Raw Garden</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kingpen Solventless & Distillate -->
+    <div class="product-container">
+        <div class="product-number">4</div>
+        <div class="product-img-container">
+            <img src="https://images.dutchie.com/5d56f649a57a476db98153cf27a8b3e9?w=500&h=500&fm=webp" alt="Kingpen Solventless"
+                class="product-img">
+        </div>
+        <div class="product-content">
+            <div class="product-header">
+                <h2 class="product-title">Kingpen Solventless & Distillate</h2>
+                <span class="thc-badge">90.24% THC</span>
+            </div>
+            <p class="product-description">Kingpen is highly recognized for its award-winning cartridges. Now offering premium solventless options alongside their classic, award-winning distillate.</p>
+            <div class="product-info-grid">
+                <div class="info-item"><i class="fas fa-dollar-sign"></i> $66</div>
+                <div class="info-item"><i class="fas fa-weight-hanging"></i> 1 Gram</div>
+                <div class="info-item"><i class="fas fa-vial"></i> Solventless</div>
+            </div>
+            <div class="actions">
+                <a href="https://laxcc.com/brand/kingpen/" class="see-more-btn"
+                    target="_blank">Shop Kingpen</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bloom Vapes (Live Resin & Distillate) -->
+    <div class="product-container">
+        <div class="product-number">3</div>
+        <div class="product-img-container">
+            <img src="https://images.dutchie.com/078c2079d5d937af50655a0593822fae"
+                alt="Bloom Vapes" class="product-img">
+        </div>
+        <div class="product-content">
+            <div class="product-header">
+                <h2 class="product-title">Bloom Vapes</h2>
+                <span class="thc-badge">High THC</span>
+            </div>
+            <p class="product-description">Bloom offers a curated selection of premium vape products, featuring both their high-terpene Live Resin and classic, potent Distillate lines. Known for clean, consistent hardware and flavor.</p>
+            <div class="product-info-grid">
+                <div class="info-item"><i class="fas fa-dollar-sign"></i> $36+</div>
+                <div class="info-item"><i class="fas fa-weight-hanging"></i> 0.5-1g</div>
+                <div class="info-item"><i class="fas fa-vial"></i> Live Resin / Distillate</div>
+            </div>
+            <div class="actions">
+                <a href="https://laxcc.com/brand/bloom/"
+                    class="see-more-btn" target="_blank">Shop Bloom</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plug Play That Juice Pod -->
+    <div class="product-container">
+        <div class="product-number">2</div>
+        <div class="product-img-container">
+            <img src="https://images.dutchie.com/e33bab5603c6855eec6fb4c34b5e954e" alt="Plug Play That Juice Pod"
+                class="product-img">
+        </div>
+        <div class="product-content">
+            <div class="product-header">
+                <h2 class="product-title">Plug Play That Juice</h2>
+                <span class="thc-badge">88.3% THC</span>
+            </div>
+            <p class="product-description">From the Exotics line, delivering a citrusy flavor profile designed to create
+                a happy and uplifted mood with natural flavors.</p>
+            <div class="product-info-grid">
+                <div class="info-item"><i class="fas fa-dollar-sign"></i> $55</div>
+                <div class="info-item"><i class="fas fa-weight-hanging"></i> 1 Gram</div>
+                <div class="info-item"><i class="fas fa-vial"></i> Distillate</div>
+            </div>
+            <div class="actions">
+                <a href="https://laxcc.com/brand/plug-play/" class="see-more-btn"
+                    target="_blank">Shop Plug Play</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ColdFire Juice Carts -->
+    <div class="product-container">
+        <div class="product-number">1</div>
+        <div class="product-img-container">
+            <img src="https://images.dutchie.com/cc35761f829c68e95b88dc12cc7147f2?w=500&h=500&fm=webp" alt="ColdFire Juice Cart" class="product-img">
+        </div>
+        <div class="product-content">
+            <div class="product-header">
+                <h2 class="product-title">ColdFire Juice Carts</h2>
+                <span class="thc-badge">High Terpenes</span>
+            </div>
+            <p class="product-description">Flavor speaks louder than words. ColdFire Juice is made with a low-temp, single-pass process to preserve the pure cannabis flavor with no additives and zero distillate.</p>
+            <div class="product-info-grid">
+                <div class="info-item"><i class="fas fa-dollar-sign"></i> $70</div>
+                <div class="info-item"><i class="fas fa-weight-hanging"></i> 1 Gram</div>
+                <div class="info-item"><i class="fas fa-vial"></i> Resin Juice</div>
+            </div>
+            <div class="actions">
+                <a href="https://laxcc.com/brand/cold-fire/" class="see-more-btn"
+                    target="_blank">Shop ColdFire</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,148 @@
+SCHEMA FOR: https://laxcc.com/best-cannabis-events-los-angeles/
+
+DO NOT paste this into the Elementor HTML widget — the WAF returns a 403 on any
+<script> tag, including application/ld+json. Paste it into Rank Math / Yoast
+custom schema, the theme header, or a schema plugin instead.
+
+Two blocks below: (1) FAQPage matching the on-page FAQ accordion, (2) the Store
+entity for LAXCC. Both can go in the same location.
+
+================================================================================
+BLOCK 1 — FAQPage
+================================================================================
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the biggest cannabis event in Los Angeles in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puffcon 2026, on October 3 and 4 at Los Angeles Center Studios in Downtown LA. It is a two-day, 21+ block party with more than 75 brands, glass art, limited product drops, a Smorgasburg-curated food area, and a music lineup led by Metro Boomin, Action Bronson & The Human Growth Hormone, Curren$y, Ohgeesy, and The Alchemist & Boldy James. Tickets run $50 for Sunday, $65 for Saturday, or $85 for both days, plus taxes and fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there weekly cannabis events in LA, or only annual festivals?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are weekly ones. The Cannabis Cafe runs comedy nights every Wednesday from 8:00 PM to 10:00 PM hosted by Jay Davis, with food and legal onsite cannabis service. Catalyst Social Club also runs a rotating calendar of lounge events, and the Puff, Puff, Paint series runs guided painting classes at LA-area venues through December."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I legally smoke at a cannabis event in Los Angeles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only in specific settings. Public consumption is generally prohibited in California. Legal options are a licensed consumption lounge, private property where it is permitted, or a state-licensed temporary cannabis event, which is an approved event lasting one to four days where licensed sales and consumption may occur. An event describing itself as cannabis friendly does not automatically mean onsite consumption or sales are authorized."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to be 21 to attend cannabis events in Los Angeles?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every event on this list is 21 and over, and a valid government-issued ID is required. That is also the requirement for adult-use purchases at LAXCC, with medical patients 18+ with valid documentation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is the closest dispensary to LAX for an event weekend?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LAXCC is at 8332 Lincoln Blvd, Los Angeles, CA 90045, about five minutes from LAX Airport and an easy stop on the way to Downtown LA, West Hollywood, Hawthorne or the beaches. Open daily 9:00 AM to 9:30 PM. Order ahead on the live menu for pickup, or walk in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know these event dates are still accurate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every listing links to the organizer's own page. Dates, times, venues and ticket prices are as published at the time of writing and can change, and a couple of these events had not announced a venue yet. Always confirm with the organizer before buying tickets or making travel plans, and check the year on any event listing found in search, since expired 2025 events still rank well."
+      }
+    }
+  ]
+}
+</script>
+
+================================================================================
+BLOCK 2 — Store (LAXCC)
+================================================================================
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "LAX Cannabis Club - LAXCC",
+  "description": "Top-rated cannabis dispensary in Los Angeles on Lincoln Blvd, about five minutes from LAX Airport and an easy stop before cannabis events in Downtown LA, West Hollywood and Hawthorne. Best California brands at every budget.",
+  "url": "https://laxcc.com",
+  "telephone": "+1-310-429-3789",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "8332 Lincoln Blvd",
+    "addressLocality": "Los Angeles",
+    "addressRegion": "CA",
+    "postalCode": "90045",
+    "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 33.9575, "longitude": -118.4178 },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00",
+      "closes": "21:30"
+    }
+  ]
+}
+</script>
+
+================================================================================
+OPTIONAL — Event schema for Puffcon
+================================================================================
+
+Only add this if you want the page eligible for event rich results. Note that
+Google prefers Event schema on the organizer's own page, and marking up an event
+you do not host can be flagged. Recommended: skip it, or add it only for Puffcon.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Puffcon 2026",
+  "startDate": "2026-10-03T14:00-07:00",
+  "endDate": "2026-10-04T20:00-07:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "Los Angeles Center Studios",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1201 W 5th St",
+      "addressLocality": "Los Angeles",
+      "addressRegion": "CA",
+      "postalCode": "90017",
+      "addressCountry": "US"
+    }
+  },
+  "description": "A two-day 21+ cannabis culture block party in Downtown Los Angeles with 75+ brands, live music, glass art, limited product drops and a Smorgasburg-curated food area.",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.puffco.com/pages/events",
+    "price": "50",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "performer": [
+    { "@type": "MusicGroup", "name": "Metro Boomin" },
+    { "@type": "MusicGroup", "name": "Action Bronson & The Human Growth Hormone" },
+    { "@type": "MusicGroup", "name": "Curren$y" },
+    { "@type": "MusicGroup", "name": "Ohgeesy" },
+    { "@type": "MusicGroup", "name": "The Alchemist & Boldy James" }
+  ]
+}
+</script>

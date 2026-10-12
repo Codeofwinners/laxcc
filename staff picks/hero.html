@@ -1,0 +1,87 @@
+<style>
+    :root {
+        --primary: #1D508A;
+        --secondary: #00AFC9;
+        --accent: #F89459;
+        --text-dark: #2d3436;
+        --white: #ffffff;
+    }
+
+    .hero-text-container {
+        padding: 60px 20px;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .staff-picks-badge {
+        background: var(--accent);
+        color: var(--white);
+        padding: 6px 16px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        color: var(--primary);
+        line-height: 1.1;
+        margin-bottom: 15px;
+    }
+
+    .hero-description {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: #636e72;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
+    }
+
+    .featured-image-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .featured-image {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        display: block;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+        .hero-text-container {
+            padding: 40px 15px;
+        }
+        .featured-image-container {
+            padding: 0 10px;
+        }
+    }
+</style>
+
+<div class="hero-text-container">
+    <div class="staff-picks-badge">
+        <i class="fas fa-certificate"></i> 2026 Staff Picks
+    </div>
+    
+    <h1 class="hero-title">The Best Vapes & Vaporizers in Los Angeles</h1>
+    
+    <p class="hero-description">
+        Expertly curated selection of the highest potency oil cartridges at LA Cannabis Club, your top-rated <strong>dispensary near LAX airport</strong>.
+    </p>
+</div>
+
+<div class="featured-image-container">
+    <img src="https://laxcc.com/wp-content/uploads/2024/08/best-LA-Cannabis-Club.jpg" alt="Best LA Cannabis Club Storefront" class="featured-image">
+</div>
